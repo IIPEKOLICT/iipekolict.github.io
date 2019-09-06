@@ -1,0 +1,14 @@
+/* повторяющиеся параметры (оптимизация) */
+
+a { text-decoration: none; } /* фикс подчеркивателя/осинителя ссылок */
+body { margin: 0; padding: 0; background-color: #FFF; } /* фикс отступов и фон страницы */
+img { margin: 0 auto; top: 0; bottom: 0; left: 0; right: 0; } /* фикс подчеркивателя/осинителя ссылок */
+.abs { position: absolute; } /* фикс позиции */
+.fixed { position: fixed; }
+.block { /* фикс для всех блоков */
+  top: 0; /* убийство всех отступов */
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: none; /* скрыть нахой */
+}
