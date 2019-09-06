@@ -54,7 +54,10 @@ table.menu td a:visited { font-weight: bold; }  /* жирный текст у в
   top: 0;  /* отступ сверху */
   width: calc(100% - 300px);  /* ширина (вся страница - ширина меню) */
   height: calc(100% - 60px);  /* высота (на всю страницу) */
+  min-height: 100%;
   display: block;   /* отображать как блок */
+  color: #DDD;
+  text-align: center;
 }
 .t1 { top: 60px; background: #000; }  /* переключаемые блоки-страницы */
 .t2 { top: 60px; background: #228; }
