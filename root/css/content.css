@@ -1,10 +1,8 @@
 /* пресет для контента */
 
 p {
- margin: 20px;
- text-align: left;
- font-family: Arial; /* тип шрифта */
- font-size: 14pt; /* Размер шрифта в пунктах */
+  text-align: left;
+  margin: 20px;
 }
 
  /* оптимизация */
@@ -13,4 +11,3 @@ p.content {
   padding: 10px;
   border-radius: 5px;
 }
-a.content { text-decoration: underline; }

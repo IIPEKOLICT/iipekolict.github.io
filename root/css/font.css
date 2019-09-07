@@ -1,0 +1,26 @@
+/* жирный шрифт */
+
+.bold {font-weight: bold;}
+table.menu td a:visited {font-weight: bold;} /* жирный текст у выбранной ссылки */
+#shc {font-weight: bold;}
+.shm {font-weight: bold;}
+
+/* подчеркивание ссылки */
+
+a { text-decoration: none; } /* фикс подчеркивателя/осинителя ссылок */
+a.content {text-decoration: underline;}
+table.menu td a {text-decoration: none;} /* без подчеркивания */
+
+/* тип шрифта */
+
+p {font-family: Arial;}
+table.bar td { font-family: sans-serif;}
+#shc {font-family: sans-serif;}
+.shm {font-family: sans-serif;}
+
+/* размер шрифта */
+
+p {font-size: 14pt;}
+table.bar td {font-size: 32pt;}
+#shc {font-size: 36pt;}
+.shm {font-size: 24pt;}
