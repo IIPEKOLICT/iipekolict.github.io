@@ -15,51 +15,34 @@ a.con {
  color: #969696;
 }
 p.v {
- background: #1D1D1D;
+ background: #808080;
  padding: 10px;
  border-radius: 5px;
  font-weight: bold;
  color: #F00;
 }
 p.t {
- background: #1D1D1D;
+ background: #808080;
  padding: 10px;
  border-radius: 5px;
  font-weight: bold;
  color: #BDB76B;
 }
 p.k {
- background: #050505;
+ background: #474747;
  padding: 10px;
  border-radius: 3px;
  color: #DDD;
 }
 p.s {
- background: #1D1D1D;
+ background: #808080;
  padding: 10px;
  border-radius: 5px;
- color: #C0C0C0;
+ color: #FFF;
 }
-.spoiler {
- left: 400px;
- width: calc(100% - 800px);
- height: 30px;
+p.spoiler {
+ background: #808080;
+ padding: 10px;
  border-radius: 5px;
- position: relative;
- background: #212121;
- display: block;
- transition: ease-out 0.2s;  /* длительность анимации */
-}
-.spoiler:hover {
- left: 25px;
- width: calc(100% - 50px);
- height: 100px;
-}
-.spc {
- display: inline-block;
- opacity: 0;
- transition: ease-out 0.2s;  /* длительность анимации */
-}
-.spc:hover {
- opacity: 1;
+ color: #FFF;
 }
