@@ -4,11 +4,42 @@
 .rc { color: #F00; }
 .gc { color: #0F0; }
 .bc { color: #00F; }
+.active { color: #DDD; }
 p.warning { color: #F99; }
 p.need { color: #FF9; }
 p.code { color: #9F9; }
 p.spisok { color: #FFF; }
 p.download { color: #99F; }
 a.content { color: #99A; }
+table.menu td { color: #FFF; } /* цвет текста */
+table.menu td a { color: #FFF; } /* цвет текста ссылок */
+table.bar td { color: #DDD; }
+#sh { color: #DDD; } /* цвет текста */
+
+/* цвета текста при наведении */
+
+table.menu td a:hover { color: #474747; }  /* цвет текста при выделении ссылки */
+.shm:hover { color: #212121; } /* цвет текста */
 
 /* цвета фона */
+
+body { background-color: #FFF; }
+p.content { background: #424242; }
+.active { background: #000; }
+table.menu { background: #000; }
+table.bar { background: #000; } /* цвет фона статусбара */
+#sh { background-color: #1D1D1D; } /* фон шторки */
+.shm { background: #808080; } /* цвет фона */
+
+/* цвета фона при наведении (акцент) */
+
+table.menu td:hover { background: #80CBC4; } /* ячеки табл-меню */
+.shm:hover { background: #80CBC4; } /* меню в шторке при наведении */
+
+/* границы */
+
+table.menu { border-right: 1px solid #212121; } /* граница справа табл-меню */
+table.menu td { border-bottom: 1px solid #212121; } /* граница снизу ячеек табл-меню */
+table.bar { border-bottom: 2px solid #212121; } /* граница снизу и ее цвет */
+table.bar td.barc { border-left: 1px solid #212121; } /* граница слева и ее цвет */
+#shc { border-bottom: 2px solid #1D1D1D; } /* граница снизу (нужно, иначе выебоны) */

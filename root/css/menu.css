@@ -10,9 +10,7 @@ table.menu {   /* параметры табл-меню */
   top: 60px;  /* отступ сверху */
   width: 299px;  /* ширина (100 писк - граница) */
   height: calc(100% - 60px);   /* высота (вся страница - отступ сверху) */
-  background: #000;   /* цвет фона */
   border-collapse: collapse;  /* фикс границ */
-  border-right: 1px solid #212121;   /* граница справа */
 }
 table.menu tr { /* параметры строк табл-меню */
   width: 299px; /* ширина */
@@ -20,16 +18,13 @@ table.menu tr { /* параметры строк табл-меню */
   display: block;  /* отображать как блок */
 }
 table.menu td { /* параметры ячеек табл-меню */
-  color: #FFF;  /* цвет текста */
   display: block;  /* отображать как блок */
-  border-bottom: 1px solid #212121;  /* граница снизу */
   transition: ease-out 0.2s;  /* длительность анимации */
 }
 table.menu td:hover {  /* параметры ячеек табл-меню при наведении */
   transform: scale(0.8);  /* уменьшение на 20% */
   border-radius: 30px; /* скругление углов */
   border: 0px; /* убийство границы */
-  background: #80CBC4;  /* заливка цветом акцента */
 }
 
 /* ссылки в меню */
@@ -37,14 +32,12 @@ table.menu td:hover {  /* параметры ячеек табл-меню при
 table.menu td a {  /* параметры ссылки */
   text-decoration: none; /* фикс подчеркивателя/осинителя ссылок */
   line-height: 60px; /* фикс для выравния по вертикали */
-  color: #FFF; /* цвет текста ссылок */
   width: 100%;  /* ширина */
   height: 100%;  /* высота */
   display: flex; /* надо, иначе будет выебываться */
   align-items: center; /* выравнивание по вертикали */
   justify-content: center; /* выравнивание по горизонтали */
 }
-table.menu td a:hover { color: #474747; }  /* цвет текста при выделении ссылки */
 table.menu td a:visited { font-weight: bold; }  /* жирный текст у выбранной ссылки */
 
 /* мое */
@@ -55,11 +48,5 @@ table.menu td a:visited { font-weight: bold; }  /* жирный текст у в
   width: calc(100% - 300px);  /* ширина (вся страница - ширина меню) */
   min-height: calc(100% - 60px);
   display: block;   /* отображать как блок */
-  color: #DDD;
   text-align: center;
 }
-.t1 { background: #000; }  /* переключаемые блоки-страницы */
-.t2 { background: #228; }
-.t3 { top: 60px; background: #282; }
-.t4 { top: 60px; background: #822; }
-.t5 { top: 60px; background: #FFF; }
