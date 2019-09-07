@@ -1,0 +1,14 @@
+/* цвета текста */
+
+.wc { color: #FFF; }
+.rc { color: #F00; }
+.gc { color: #0F0; }
+.bc { color: #00F; }
+p.warning { color: #F99; }
+p.need { color: #FF9; }
+p.code { color: #9F9; }
+p.spisok { color: #FFF; }
+p.download { color: #99F; }
+a.content { color: #99A; }
+
+/* цвета фона */

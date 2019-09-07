@@ -51,16 +51,15 @@ table.menu td a:visited { font-weight: bold; }  /* жирный текст у в
 
 .active {  /* параметры активного элемента */
   left: 300px;  /* отступ слева */
-  top: 0;  /* отступ сверху */
+  top: 60px;  /* отступ сверху */
   width: calc(100% - 300px);  /* ширина (вся страница - ширина меню) */
-  height: calc(100% - 60px);  /* высота (на всю страницу) */
-  min-height: 100%;
+  min-height: calc(100% - 60px);
   display: block;   /* отображать как блок */
   color: #DDD;
   text-align: center;
 }
-.t1 { top: 60px; background: #000; }  /* переключаемые блоки-страницы */
-.t2 { top: 60px; background: #228; }
+.t1 { background: #000; }  /* переключаемые блоки-страницы */
+.t2 { background: #228; }
 .t3 { top: 60px; background: #282; }
 .t4 { top: 60px; background: #822; }
 .t5 { top: 60px; background: #FFF; }

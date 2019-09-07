@@ -5,6 +5,7 @@ body { margin: 0; padding: 0; background-color: #FFF; } /* фикс отступ
 img { margin: 0 auto; top: 0; bottom: 0; left: 0; right: 0; } /* фикс подчеркивателя/осинителя ссылок */
 .abs { position: absolute; } /* фикс позиции */
 .fixed { position: fixed; }
+.bold { font-weight: bold; }
 .block { /* фикс для всех блоков */
   top: 0; /* убийство всех отступов */
   left: 0;
