@@ -1,48 +1,31 @@
 /* пресет для контента */
 
-h1.hw { color: #FFF; }
-h1.hr { color: #F00; }
-h1.hg { color: #0F0; }
-h1.hb { color: #00F; }
 p {
- margin: 25px;
+ margin: 20px;
  text-align: left;
  font-family: Arial; /* тип шрифта */
  font-size: 14pt; /* Размер шрифта в пунктах */
 }
-a.con {
- text-decoration: underline;
- color: #969696;
+
+ /* оптимизация */
+
+.bold { font-weight: bold; }
+p.content {
+  background: #424242;
+  padding: 10px;
+  border-radius: 5px;
 }
-p.v {
- background: #808080;
- padding: 10px;
- border-radius: 5px;
- font-weight: bold;
- color: #F00;
-}
-p.t {
- background: #808080;
- padding: 10px;
- border-radius: 5px;
- font-weight: bold;
- color: #BDB76B;
-}
-p.k {
- background: #474747;
- padding: 10px;
- border-radius: 3px;
- color: #DDD;
-}
-p.s {
- background: #808080;
- padding: 10px;
- border-radius: 5px;
- color: #FFF;
-}
-p.spoiler {
- background: #808080;
- padding: 10px;
- border-radius: 5px;
- color: #FFF;
-}
+a.content { text-decoration: underline; }
+
+ /* цвета текста */
+
+.wc { color: #FFF; }
+.rc { color: #F00; }
+.gc { color: #0F0; }
+.bc { color: #00F; }
+p.warning { color: #F99; }
+p.need { color: #FF9; }
+p.code { color: #9F9; }
+p.spisok { color: #FFF; }
+p.download { color: #99F; }
+a.content { color: #99A; }
