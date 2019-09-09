@@ -1,26 +1,64 @@
 /* жирный шрифт */
 
-.bold {font-weight: bold;}
-table.menu td a:visited {font-weight: bold;} /* жирный текст у выбранной ссылки */
-#shc {font-weight: bold;}
-.shm {font-weight: bold;}
+  .bold {font-weight: bold;}
+
+  /* жирный текст у выбранной ссылки */
+
+    table.menu td a:visited {font-weight: bold;} /* активная ссылка в табл-меню */
+
+  /* жирные шрифты в шторке */
+
+    #shc {font-weight: bold;} /* дата */
+    .shm {font-weight: bold;} /* меню шторки */
+
+  /**/
 
 /* подчеркивание ссылки */
 
-a { text-decoration: none; } /* фикс подчеркивателя/осинителя ссылок */
-a.content {text-decoration: underline;}
-table.menu td a {text-decoration: none;} /* без подчеркивания */
+  a.content {text-decoration: underline;} /* подчеркивать только ссылки в контенте */
+
+  /* для всех (дефолтный) */
+
+    a { text-decoration: none; } /* не подчеркивать/красить */
+
+  /* ссылки в табл-меню */
+
+    table.menu td a {text-decoration: none;} /* без подчеркивания */
+
+  /**/
 
 /* тип шрифта */
 
-p {font-family: Arial;}
-table.bar td { font-family: sans-serif;}
-#shc {font-family: sans-serif;}
-.shm {font-family: sans-serif;}
+  /* дефолтный для текста */
+
+    p {font-family: Arial;}
+
+  /* статусбар */
+
+    table.bar td { font-family: sans-serif;}
+
+  /* шторка */
+
+    #shc {font-family: sans-serif;} /* дата */
+    .shm {font-family: sans-serif;} /* меню шторки */
+
+  /**/
 
 /* размер шрифта */
 
-p {font-size: 14pt;}
-table.bar td {font-size: 32pt;}
-#shc {font-size: 36pt;}
-.shm {font-size: 24pt;}
+  /* дефолтный для текста */
+
+    p {font-size: 14pt;}
+
+  /* статусбар */
+
+    table.bar td {font-size: 32pt;}
+
+  /* шторка */
+
+    #shc {font-size: 36pt;} /* дата */
+    .shm {font-size: 24pt;} /* меню шторки */
+
+  /**/
+
+/**/
