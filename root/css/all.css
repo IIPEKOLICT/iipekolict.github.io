@@ -5,7 +5,7 @@
   .block {top: 0; left: 0; right: 0; bottom: 0; display: none;}
   img {margin: 0 auto; top: 0; bottom: 0; left: 0; right: 0;} /* фикс отступов для картинок */
   p {margin: 20px; text-align: left;} /* отступы и позиционирование для текста */
-  
+
   /* позиционирование */
 
   .abs {position: absolute;}
@@ -78,29 +78,37 @@
 
   /* параметры табл-меню слева */
 
-  table.menu {
+  .menu {
     top: 60px; /* отступ сверху */
     width: 299px; /* ширина (300 пх - граница) */
     height: calc(100% - 60px); /* высота (вся страница - отступ сверху) */
-    border-collapse: collapse; /* фикс границ */
   }
-  table.menu tr {width: 299px; height: 60px; display: block;} /* параметры строк табл-меню */
-  table.menu td {
-    display: block;
+  .menu0 {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: table;
+  }
+  .segment {
+    height: auto;
+    width: 100%;
+    display: table-row;
     transition: ease-out 0.2s;
   }
-  table.menu td:hover {
+  .segment:hover {
     border-radius: 30px; /* скругление углов */
     border: 0px; /* убийство границы */
     transform: scale(0.8); /* уменьшение на 20% */
   }
-  table.menu td a {
-    line-height: 60px; /* фикс для выравнивания по вертикали */
+  .menu0 a {
     width: 100%;  /* ширина */
     height: 100%;  /* высота */
+    text-align: center;
+    vertical-align: middle;
     display: flex; /* надо, иначе будет выебываться */
-    align-items: center; /* выравнивание по вертикали */
-    justify-content: center; /* выравнивание по горизонтали */
+    justify-content: center;
+    align-items: center;
   }
 
   /* область контента */

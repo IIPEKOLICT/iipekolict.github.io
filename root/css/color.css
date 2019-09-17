@@ -26,6 +26,18 @@ body {background-color: #FFF;}
 
   /* табл-меню */
 
+  .menu {
+    background: #000;
+    border-right: 1px solid #212121;
+  }
+  .segment:hover {
+    background: #80CBC4;
+  }
+  .menu0 a {color: #FFF;}
+  .menu0 a:hover {color: #474747;}
+
+=====================================
+
   table.menu {
     background: #000;
     border-right: 1px solid #212121;

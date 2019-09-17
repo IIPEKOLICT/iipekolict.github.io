@@ -28,5 +28,11 @@ a {text-decoration: none;} /* не подчеркивать/красить де�
     font-family: Arial;
     font-size: 14pt;
   }
+  b {color:#80CBC4;}
+  .segment a {text-decoration: none;}
+  .segment a:visited {font-weight: bold;}
+
+===================================
+
   table.menu td a {text-decoration: none;} /* ссылки в табл-меню, без подчеркивания */
   table.menu td a:visited {font-weight: bold;} /* активная ссылка в табл-меню */
