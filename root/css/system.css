@@ -1,0 +1,115 @@
+/* дефолтные настройки -----------------------------------------------------------------------------*/
+
+  body {margin: 0; padding: 0;} /* фикс отступов */
+  img {margin: 0 auto; top: 0; bottom: 0; left: 0; right: 0;} /* фикс отступов для картинок */
+  p {margin: 20px; text-align: left;} /* отступы и позиционирование для текста */
+
+  .block {top: 0; left: 0; right: 0; bottom: 0; display: none;}
+
+  /* позиционирование */
+
+  .abs {position: absolute;}
+  .fixed {position: fixed;}
+
+/* параметры шторки --------------------------------------------------------------------------------*/
+
+  /* материнский блок */
+
+  #sh {
+    width: 300px; /* ширина с учетом двух отступов по бокам */
+    height: 60px; /* высота активной области статусбара для вызова шторки */
+    text-align: center; /* текст по центру */
+    display: flex;
+    opacity: 0;
+    transition: ease-out 0.3s;
+    transform: translateX(-61%) translateY(-12%);
+  }
+  #sh:hover {
+    width: 100%; /* ширина с учетом новых пользователей */
+    height: 100%; /* высота, тоже новая */
+    opacity: 1; /* минус прозрачность */
+    display: table;
+    transform: translateX(0%) translateY(0%);
+  }
+  .sh {
+    width: 30%;
+    height: 100%;
+    display: inline-table;
+    justify-content: center;
+    align-items: center;
+  } /* строка с менюшками */
+  .sh a {
+    margin-top: 6%;
+    width: 90%;  /* ширина */
+    height: 90%;  /* высота */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .shm {
+    display: table-row;
+    transition: ease-out 0.3s;
+  }
+  .shm:hover {transform: scale(0.8);} /* уменьшение на 20% */
+
+/* контент -----------------------------------------------------------------------------------------*/
+
+  /* механизм-переключалка для внутристраничной навигации */
+
+  #one {display: block;} /* первый элемент, отображать как блок */
+  div:target {display: block;} /* выбранный элемент, отображать как блок */
+  div[id*=t]:target ~ #one {display: none;} /* скрытие первого блока при выборе следующего */
+
+  /* параметры табл-меню слева */
+
+  .menu {
+    width: 299px; /* ширина (300 пх - граница) */
+    height: 100%; /* высота */
+  }
+  .nav {
+    width: 299px; /* ширина (300 пх - граница) */
+    height: 60px; /* высота */
+    display: flex; /* надо, иначе будет выебываться */
+    justify-content: center;
+    align-items: center;
+    color: #999;
+  }
+  .menu0 {
+    top: 60px;
+    height: calc(100% - 60px);
+    width: 100%;
+    display: table;
+  }
+  .menu0 a {
+    margin-top: 2px;
+    width: 100%;  /* ширина */
+    height: calc(100% - 1px);  /* высота */
+    display: flex; /* надо, иначе будет выебываться */
+    justify-content: center;
+    align-items: center;
+  }
+  .segment {
+    display: table-row;
+    transition: ease-out 0.2s;
+  }
+  .segment:hover {transform: scale(0.8);} /* уменьшение на 20% */
+  .segment b {
+    width: 100%;  /* ширина */
+    height: 100%;  /* высота */
+    display: flex; /* надо, иначе будет выебываться */
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* область контента */
+
+  .active {
+    left: 300px;  /* отступ слева */
+    width: calc(100% - 300px);  /* ширина (вся страница - ширина меню) */
+    min-height: 100%;
+    display: block;   /* отображать как блок */
+    text-align: center;
+  }
+  p.content {padding: 10px;} /* блоки с особым текстом  */
+
+/*--------------------------------------------------------------------------------------------------*/

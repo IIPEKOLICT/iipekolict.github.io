@@ -3,9 +3,8 @@
 <head>
   <meta charset="utf-8" />
 	<title>Тестовая сборка</title>
-	<link rel="stylesheet" href="root/css/all.css">
-  <link rel="stylesheet" href="root/css/color.css">
-  <link rel="stylesheet" href="root/css/font.css">
+	<link rel="stylesheet" href="root/css/system.css">
+  <link rel="stylesheet" href="root/css/ui.css">
 </head>
 <body>
   <!-- контент + табл-меню -->
@@ -13,6 +12,9 @@
  	<div> <!-- материнский блок -->
  	  <div id="one" class="abs block"> <!-- 1 сегмент -->
       <div class="menu fixed">
+        <div class="nav">
+          тест
+        </div>
         <div class="menu0">
           <div class="segment"><a href="#one"><b>Черный</b></a></div>
           <div class="segment"><a href="#t2">Синий</a></div>
@@ -36,7 +38,7 @@
  	  </div>
     <div id="t2" class="abs block"> <!-- 1 сегмент -->
       <div class="menu fixed">
-        <div class="menu0">
+        <div class="menu0 abs">
           <div class="segment"><a href="#one">Черный</a></div>
           <div class="segment"><a href="#t2"><b>Синий</b></a></div>
           <div class="segment"><a href="#t3">Зеленый</a></div>
@@ -61,46 +63,20 @@
 
   <!-- контент + табл-меню, конец -->
 
- 	<!-- статусбар -->
-
-  <div id="bar">
-  	<table class="bar fixed">
-  		<tr>
-  			<td>ТЕСТ</td>
-  			<td class="barc">ТЕСТ</td>
-  		</tr>
-  	</table>
-	</div>
-
- 	<!-- статусбар, конец -->
-
  	<!-- шторка -->
 
  	<div id="sh" class="fixed">
- 		<div id="shc">
- 			ДАТА
+ 		<div class="sh">
+ 			<div class="shm"><a href="">Ядро</a></div>
+ 		  <div class="shm"><a href="">Инструкции</a></div>
  		</div>
  		<div class="sh">
- 			<div class="shm">
- 				Ядро
- 			</div>
- 			<div class="shm">
- 				Настройки
- 			</div>
- 			<div class="shm">
- 				Реестр
- 			</div>
+      <div class="shm"><a href="">Настройки</a></div>
+      <div class="shm"><a href="">Технологии</a></div>
  		</div>
- 		<div class="sh">
- 			<div class="shm">
- 				Инструкции
- 			</div>
- 			<div class="shm">
- 				Технологии
- 			</div>
- 			<div class="shm">
- 				Репозиторий
- 			</div>
+    <div class="sh">
+      <div class="shm"><a href="">Реестр</a></div>
+      <div class="shm"><a href="">Репозиторий</a></div>
  		</div>
  	</div>
 

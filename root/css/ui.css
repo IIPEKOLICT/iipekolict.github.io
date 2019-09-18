@@ -1,0 +1,86 @@
+/* дефолтные настройки -----------------------------------------------------------------------------*/
+
+  a {text-decoration: none;} /* не подчеркивать/красить дефолтные ссылки */
+  body {background-color: #FFF;}
+  p {
+    font-family: Arial;
+    font-size: 14pt;
+  }
+  .bold {font-weight: bold;}
+
+/* шторка ------------------------------------------------------------------------------------------*/
+
+  #sh {background: #000;}
+  #sh:hover {background: rgba(29,29,29,0.7);}
+  .sh a {
+    background: #808080;
+    color: #DDD;
+    font-family: sans-serif;
+    font-size: 20pt;
+    font-weight: bold;
+    border-width: 2px; /* ширина границ */
+    border-radius: 20px; /* закругления */
+  }
+  .sh a:hover { /* меню в шторке при наведении */
+    background: #80CBC4;
+    color: #212121;
+    border-radius: 60px; /* закругления */
+  }
+
+/* контент -----------------------------------------------------------------------------------------*/
+
+  /* табл-меню */
+
+  .menu {
+    background: #212121;
+    border-right: 1px solid #212121;
+  }
+  .nav {
+    background: #000;
+    border-right: 1px solid #212121;
+  }
+  .menu0 a {
+    background: #000;
+    color: #808080;
+  }
+  .menu0 a:hover {
+    background: #80CBC4;
+    color: #474747;
+  }
+  .segment:hover {
+    background: #80CBC4;
+    border-radius: 30px; /* скругление углов */
+    border: 0px; /* убийство границы */
+  }
+  .segment b {color:#FFF;}
+  .segment b:hover {color:#474747;}
+
+  /* цвета текста встариваемые (отдельным классом) */
+
+  .wc {color: #FFF;}
+  .rc {color: #F00;}
+  .gc {color: #0F0;}
+  .bc {color: #00F;}
+
+  /* цвета для особого текста */
+
+  p.warning {color: #F99;} /* внимание */
+  p.need {color: #FF9;} /* требования */
+  p.code {color: #9F9;} /* код */
+  p.spisok {color: #FFF;} /* список */
+  p.download {color: #99F;} /* блок с ссылками */
+
+  /* остальное */
+
+  .active {
+    background: #000;
+    color: #DDD;
+  }
+  a.content {
+    color: #99A;
+    text-decoration: underline; /* подчеркивать только ссылки в контенте */
+  }
+  p.content { /* особый текст */
+    background: #424242;
+    border-radius: 5px;
+  }
