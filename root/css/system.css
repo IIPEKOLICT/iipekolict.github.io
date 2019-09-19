@@ -39,12 +39,16 @@
     width: 30%;
     height: 100%;
     display: inline-table;
+    justify-content: center;
+    align-items: center;
   } /* строка с менюшками */
   .sh a {
     margin-top: 6%;
     width: 90%;  /* ширина */
     height: 90%;  /* высота */
     display: flex;
+    justify-content: center;
+    align-items: center;
   }
   .shm {
     display: table-row;
@@ -70,6 +74,8 @@
     width: 299px; /* ширина (300 пх - граница) */
     height: 60px; /* высота */
     display: flex; /* надо, иначе будет выебываться */
+    justify-content: center;
+    align-items: center;
     color: #999;
   }
   .menu0 {
@@ -83,6 +89,8 @@
     width: 100%;  /* ширина */
     height: calc(100% - 1px);  /* высота */
     display: flex; /* надо, иначе будет выебываться */
+    justify-content: center;
+    align-items: center;
   }
   .segment {
     display: table-row;
@@ -93,6 +101,8 @@
     width: 100%;  /* ширина */
     height: 100%;  /* высота */
     display: flex; /* надо, иначе будет выебываться */
+    justify-content: center;
+    align-items: center;
   }
 
   /* область контента */
