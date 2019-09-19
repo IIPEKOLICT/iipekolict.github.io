@@ -10,6 +10,11 @@
 
   .abs {position: absolute;}
   .fixed {position: fixed;}
+  .centerfix {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
 /* параметры шторки --------------------------------------------------------------------------------*/
 
