@@ -12,18 +12,25 @@
 
   #sh {background: #000;}
   #sh:hover {background: rgba(29,29,29,0.7);}
+  #shn {
+    color: #DDD;
+    font-family: sans-serif;
+    font-size: 36pt;
+    font-weight: bold;
+  }
   .sh a {
-    background: #808080;
     color: #DDD;
     font-family: sans-serif;
     font-size: 20pt;
     font-weight: bold;
-    border-width: 2px; /* ширина границ */
+  }
+  .sh a:hover {color: #212121;} /* меню в шторке при наведении */
+  .shm {
+    background: #808080;
     border-radius: 20px; /* закругления */
   }
-  .sh a:hover { /* меню в шторке при наведении */
+  .shm:hover {
     background: #80CBC4;
-    color: #212121;
     border-radius: 60px; /* закругления */
   }
 
