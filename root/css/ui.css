@@ -7,23 +7,18 @@
     font-size: 14pt;
   }
   .bold {font-weight: bold;}
+  .sb {
+    color: #DDD;
+    font-family: sans-serif;
+    font-weight: bold;
+  }
 
 /* шторка ------------------------------------------------------------------------------------------*/
 
   #sh {background: #000;}
   #sh:hover {background: rgba(29,29,29,0.7);}
-  #shn {
-    color: #DDD;
-    font-family: sans-serif;
-    font-size: 36pt;
-    font-weight: bold;
-  }
-  .sh a {
-    color: #DDD;
-    font-family: sans-serif;
-    font-size: 20pt;
-    font-weight: bold;
-  }
+  #shn {font-size: 36pt;}
+  .sh a {font-size: 20pt;}
   .sh a:hover {color: #212121;} /* меню в шторке при наведении */
   .shm {
     background: #808080;
@@ -38,7 +33,7 @@
 
   /* табл-меню */
 
-  .menu {
+  .bar {
     background: #212121;
     border-right: 1px solid #212121;
   }
@@ -46,11 +41,12 @@
     background: #000;
     border-right: 1px solid #212121;
   }
-  .menu0 a {
+  .menu a {
     background: #000;
     color: #808080;
+    font-family: sans-serif;
   }
-  .menu0 a:hover {
+  .menu a:hover {
     background: #80CBC4;
     color: #474747;
   }
@@ -71,11 +67,11 @@
 
   /* цвета для особого текста */
 
-  p.warning {color: #F99;} /* внимание */
-  p.need {color: #FF9;} /* требования */
-  p.code {color: #9F9;} /* код */
-  p.spisok {color: #FFF;} /* список */
-  p.download {color: #99F;} /* блок с ссылками */
+  p.v {color: #F99;} /* внимание */
+  p.n {color: #FF9;} /* требования */
+  p.k {color: #9F9;} /* код */
+  p.s {color: #FFF;} /* список */
+  p.w {color: #99F;} /* блок с ссылками */
 
   /* остальное */
 
@@ -83,11 +79,13 @@
     background: #000;
     color: #DDD;
   }
-  a.content {
+  a.con {
     color: #99A;
     text-decoration: underline; /* подчеркивать только ссылки в контенте */
   }
-  p.content { /* особый текст */
+  p.con { /* особый текст */
     background: #424242;
     border-radius: 5px;
   }
+
+/* --------------------------------------------------------------------------------------------------*/
