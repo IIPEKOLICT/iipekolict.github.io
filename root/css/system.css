@@ -79,30 +79,35 @@
   /* параметры табл-меню слева */
 
   .bar {
-    width: 299px; /* ширина (300 пх - граница) */
+    width: 300px; /* ширина (300 пх - граница) */
     height: 100%; /* высота */
   }
   .nav {
-    width: 299px; /* ширина (300 пх - граница) */
-    height: 60px; /* высота */
-    color: #999;
+    width: calc(100% - 1px); /* ширина (300 пх - граница) */
+    height: 59px; /* высота */
   }
   .menu {
-    top: 60px;
-    height: calc(100% - 60px);
-    width: 100%;
+    top: 61px;
+    height: calc(100% - 121px);
+    width: calc(100% - 1px);
     display: table;
   }
   .menu a {
-    margin-top: 2px;
     width: 100%;  /* ширина */
-    height: calc(100% - 1px);  /* высота */
+    height: 100%;  /* высота */
   }
-  .segment {display: table-row;}
+  .segment {
+    display: table-row;
+  }
   .segment:hover {transform: scale(0.8);} /* уменьшение на 20% */
   .segment b {
     width: 100%;  /* ширина */
     height: 100%;  /* высота */
+  }
+  .set {
+    bottom: 0;
+    width: calc(100% - 1px); /* ширина (300 пх - граница) */
+    height: 59px; /* высота */
   }
 
   /* область контента */
