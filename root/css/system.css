@@ -16,12 +16,14 @@
     text-align: left;
   }
 
+/* фиксы -------------------------------------------------------------------------------------------*/
+
   /* позиционирование */
 
   .abs {position: absolute;}
   .fixed {position: fixed;}
 
-  /* фиксы */
+  /* оптимизация */
 
   .block {
     top: 0;
@@ -36,6 +38,13 @@
     align-items: center;
   }
   .anime {transition: ease-out 0.3s;} /* сток анимация */
+
+  /* механизм-переключалка для внутристраничной навигации */
+
+  #bootloader {display: block;} /* стартовый блок */
+  div:target {display: block;} /* выбранный элемент, отображать как блок */
+
+  #bootloader:target ~ #custom {visibility: hidden;}
 
 /* параметры шторки --------------------------------------------------------------------------------*/
 
@@ -69,36 +78,27 @@
   }
   .shm:hover {transform: scale(0.75);}
 
-/* контент -----------------------------------------------------------------------------------------*/
-
-  /* механизм-переключалка для внутристраничной навигации */
-
-  #bootloader {display: block;} /* стартовый блок */
-  div:target {display: block;} /* выбранный элемент, отображать как блок */
-
-  /* параметры табл-меню слева */
+/* табл-меню ---------------------------------------------------------------------------------------*/
 
   .bar {
     width: 300px; /* ширина (300 пх - граница) */
     height: 100%; /* высота */
   }
   .nav {
-    width: calc(100% - 1px); /* ширина (300 пх - граница) */
-    height: 59px; /* высота */
+    width: calc(100% - 3px); /* ширина (300 пх - граница) */
+    height: 49px; /* высота */
   }
   .menu {
-    top: 61px;
-    height: calc(100% - 121px);
-    width: calc(100% - 1px);
+    top: 52px;
+    height: calc(100% - 103px);
+    width: calc(100% - 3px);
     display: table;
   }
   .menu a {
     width: 100%;  /* ширина */
     height: 100%;  /* высота */
   }
-  .segment {
-    display: table-row;
-  }
+  .segment {display: table-row;}
   .segment:hover {transform: scale(0.8);} /* уменьшение на 20% */
   .segment b {
     width: 100%;  /* ширина */
@@ -106,11 +106,42 @@
   }
   .set {
     bottom: 0;
-    width: calc(100% - 1px); /* ширина (300 пх - граница) */
-    height: 59px; /* высота */
+    width: calc(100% - 3px); /* ширина (300 пх - граница) */
+    height: 49px; /* высота */
   }
 
-  /* область контента */
+/* вторая шторка -----------------------------------------------------------------------------------*/
+
+  #ugol {
+    bottom: 0;
+    width: 300px; /* ширина */
+    height: 50px; /* высота */
+  }
+  #ugol:hover ~ #custom {
+    bottom: 0px;
+    left: 0px;
+    width: 300px;
+    height: 300px;
+    background: #474747;
+  }
+  #custom {
+    bottom: 15px;
+    left: 100px;
+    width: 97px; /* ширина (300 пх - граница) */
+    height: 19px; /* высота */
+    background: #FFF;
+    border-radius: 12px;
+    transition: ease-out 0.4s;
+  }
+  #custom:hover {
+    bottom: 0px;
+    left: 0px;
+    width: 300px;
+    height: 300px;
+    background: #474747;
+  }
+
+/* контент -----------------------------------------------------------------------------------------*/
 
   .active {
     left: 300px;  /* отступ слева */
