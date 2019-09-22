@@ -16,11 +16,11 @@
 
 /* шторка ------------------------------------------------------------------------------------------*/
 
-  #sh {background: #000;}
-  #sh:hover {background: rgba(29,29,29,0.7);}
-  #shn {font-size: 36pt;}
-  .sh a {font-size: 20pt;}
-  .sh a:hover {color: #212121;} /* меню в шторке при наведении */
+  .sh {background: #000;}
+  .sh:hover {background: rgba(29,29,29,0.7);}
+  .shn {font-size: 36pt;}
+  .shs a {font-size: 20pt;}
+  .shs a:hover {color: #212121;} /* меню в шторке при наведении */
   .shm {
     background: #808080;
     border-radius: 20px; /* закругления */
@@ -79,10 +79,7 @@
 
   /* остальное */
 
-  .active {
-    background: #000;
-    color: #DDD;
-  }
+  .active {color: #DDD;}
   a.con {
     color: #99A;
     text-decoration: underline; /* подчеркивать только ссылки в контенте */
