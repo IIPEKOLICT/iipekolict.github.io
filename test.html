@@ -5,29 +5,21 @@
 	<title>Тестовая сборка</title>
 	<link rel="stylesheet" href="root/css/system.css">
   <link rel="stylesheet" href="root/css/ui.css">
+  <script src="root/js/jquery.js"></script>
+  <script src="root/js/test.js"></script>
 </head>
 <body>
 
   <!-- bootloader -->
 
   <div id="bootloader" class="abs block">
-     <div class="active abs">
-      <h1 class="wc">Bootloader</h1>
-    </div>
-    <div class="sh fixed anime">
-      <div class="shn cfix sb">МЕНЮ НАВИГАЦИИ</div>
-      <div class="shs">
-         <div class="shm anime"><a href="#boot" class="cfix anime sb">Ядро</a></div>
-        <div class="shm anime"><a href="#recovery" class="cfix anime sb">Предустановки</a></div>
-        <div class="shm anime"><a href="#data" class="cfix anime sb">Реестр</a></div>
-       </div>
-       <div class="shs">
-        <div class="shm anime"><a href="#system" class="cfix anime sb">Инструкции</a></div>
-        <div class="shm anime"><a href="#vendor" class="cfix anime sb">Технологии</a></div>
-        <div class="shm anime"><a href="#userdata" class="cfix anime sb">Репозиторий</a></div>
-       </div>
-    </div>
-   </div>
+    <div class="shm anime"><a href="#boot" class="cfix anime sb">Ядро</a></div>
+    <div class="shm anime"><a href="#recovery" class="cfix anime sb">Предустановки</a></div>
+    <div class="shm anime"><a href="#data" class="cfix anime sb">Реестр</a></div>
+    <div class="shm anime"><a href="#system" class="cfix anime sb">Инструкции</a></div>
+    <div class="shm anime"><a href="#vendor" class="cfix anime sb">Технологии</a></div>
+    <div class="shm anime"><a href="#userdata" class="cfix anime sb">Репозиторий</a></div>
+  </div>
 
   <!-- тестовый сегмент -->
 
@@ -41,23 +33,10 @@
         <div class="segment anime"><a href="#boot4" class="cfix">ОСНОВНАЯ ЧАСТЬ ЯДРА</a></div>
         <div class="segment anime"><a href="#boot5" class="cfix">Второстепенные принципы</a></div>
       </div>
-      <div class="set abs"></div>
+      <div onmouseover="changeItem()" onmouseout="rechangeItem()" class="set abs"></div>
     </div>
  	  <div class="active abs">
       <h1 class="wc">Функции ядра</h1>
-    </div>
-    <div class="sh fixed anime">
-      <div class="shn cfix sb">МЕНЮ НАВИГАЦИИ</div>
-      <div class="shs">
-     	  <div class="shm anime"><a href="#boot" class="cfix anime sb">Ядро</a></div>
-        <div class="shm anime"><a href="#recovery" class="cfix anime sb">Предустановки</a></div>
-        <div class="shm anime"><a href="#data" class="cfix anime sb">Реестр</a></div>
-     	</div>
-     	<div class="shs">
-        <div class="shm anime"><a href="#system" class="cfix anime sb">Инструкции</a></div>
-        <div class="shm anime"><a href="#vendor" class="cfix anime sb">Технологии</a></div>
-        <div class="shm anime"><a href="#userdata" class="cfix anime sb">Репозиторий</a></div>
-     	</div>
     </div>
  	</div>
 
@@ -76,19 +55,6 @@
  	  <div class="active abs">
       <h1 class="bc">Основные определения</h1>
     </div>
-    <div class="sh fixed anime">
-      <div class="shn cfix sb">МЕНЮ НАВИГАЦИИ</div>
-      <div class="shs">
-     	  <div class="shm anime"><a href="#boot" class="cfix anime sb">Ядро</a></div>
-        <div class="shm anime"><a href="#recovery" class="cfix anime sb">Предустановки</a></div>
-        <div class="shm anime"><a href="#data" class="cfix anime sb">Реестр</a></div>
-     	</div>
-     	<div class="shs">
-        <div class="shm anime"><a href="#system" class="cfix anime sb">Инструкции</a></div>
-        <div class="shm anime"><a href="#vendor" class="cfix anime sb">Технологии</a></div>
-        <div class="shm anime"><a href="#userdata" class="cfix anime sb">Репозиторий</a></div>
-     	</div>
-    </div>
  	</div>
 
   <div id="boot3" class="abs block"> <!-- 3 сегмент -->
@@ -105,19 +71,6 @@
     </div>
  	  <div class="active abs">
       <h1 class="gc">Бан-триггеры</h1>
-    </div>
-    <div class="sh fixed anime">
-      <div class="shn cfix sb">МЕНЮ НАВИГАЦИИ</div>
-      <div class="shs">
-     	  <div class="shm anime"><a href="#boot" class="cfix anime sb">Ядро</a></div>
-        <div class="shm anime"><a href="#recovery" class="cfix anime sb">Предустановки</a></div>
-        <div class="shm anime"><a href="#data" class="cfix anime sb">Реестр</a></div>
-     	</div>
-     	<div class="shs">
-        <div class="shm anime"><a href="#system" class="cfix anime sb">Инструкции</a></div>
-        <div class="shm anime"><a href="#vendor" class="cfix anime sb">Технологии</a></div>
-        <div class="shm anime"><a href="#userdata" class="cfix anime sb">Репозиторий</a></div>
-     	</div>
     </div>
  	</div>
 
@@ -136,19 +89,6 @@
  	  <div class="active abs">
       <h1 class="gc">ОСНОВНАЯ ЧАСТЬ ЯДРА</h1>
     </div>
-    <div class="sh fixed anime">
-      <div class="shn cfix sb">МЕНЮ НАВИГАЦИИ</div>
-      <div class="shs">
-     	  <div class="shm anime"><a href="#boot" class="cfix anime sb">Ядро</a></div>
-        <div class="shm anime"><a href="#recovery" class="cfix anime sb">Предустановки</a></div>
-        <div class="shm anime"><a href="#data" class="cfix anime sb">Реестр</a></div>
-     	</div>
-     	<div class="shs">
-        <div class="shm anime"><a href="#system" class="cfix anime sb">Инструкции</a></div>
-        <div class="shm anime"><a href="#vendor" class="cfix anime sb">Технологии</a></div>
-        <div class="shm anime"><a href="#userdata" class="cfix anime sb">Репозиторий</a></div>
-     	</div>
-    </div>
  	</div>
 
   <div id="boot5" class="abs block"> <!-- 5 сегмент -->
@@ -166,23 +106,24 @@
  	  <div class="active abs">
       <h1 class="gc">Второстепенные принципы</h1>
     </div>
-    <div class="sh fixed anime">
-      <div class="shn cfix sb">МЕНЮ НАВИГАЦИИ</div>
-      <div class="shs">
-     	  <div class="shm anime"><a href="#boot" class="cfix anime sb">Ядро</a></div>
-        <div class="shm anime"><a href="#recovery" class="cfix anime sb">Предустановки</a></div>
-        <div class="shm anime"><a href="#data" class="cfix anime sb">Реестр</a></div>
-     	</div>
-     	<div class="shs">
-        <div class="shm anime"><a href="#system" class="cfix anime sb">Инструкции</a></div>
-        <div class="shm anime"><a href="#vendor" class="cfix anime sb">Технологии</a></div>
-        <div class="shm anime"><a href="#userdata" class="cfix anime sb">Репозиторий</a></div>
-     	</div>
-    </div>
  	</div>
 
-  <div id="ugol" class="abs"></div>
-  <div id="custom" class="abs anime"></div>
+  <div onmouseover="changeItem()" onmouseout="rechangeItem()" id="custom" class="abs anime">
+    <a href="#" onclick="changeCSS('positive.css', 0);">STYLE 1</a>
+    <a href="#" onclick="changeCSS('negative.css', 0);">STYLE 2</a>
+  </div>
+
+  <div id="sh" class="sh fixed anime">
+    <div class="shs">
+      <div class="shm anime"><a href="#boot" class="cfix anime sb">Ядро</a></div>
+      <div class="shm anime"><a href="#recovery" class="cfix anime sb">Предустановки</a></div>
+      <div class="shm anime"><a href="#data" class="cfix anime sb">Реестр</a></div>
+      <div class="shm anime"><a href="#system" class="cfix anime sb">Инструкции</a></div>
+      <div class="shm anime"><a href="#vendor" class="cfix anime sb">Технологии</a></div>
+      <div class="shm anime"><a href="#userdata" class="cfix anime sb">Репозиторий</a></div>
+    </div>
+    <div class="shn cfix sb">МЕНЮ НАВИГАЦИИ</div>
+  </div>
 
 </body>
 </html>

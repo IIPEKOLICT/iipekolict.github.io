@@ -17,8 +17,11 @@
 /* шторка ------------------------------------------------------------------------------------------*/
 
   .sh {background: #000;}
-  .sh:hover {background: rgba(29,29,29,0.7);}
-  .shn {font-size: 36pt;}
+  .sh:hover {
+    background: rgba(29,29,29,0.9);
+    border-radius: 0px 0px 20px 20px;
+  }
+  .shn {font-size: 18pt;}
   .shs a {font-size: 20pt;}
   .shs a:hover {color: #212121;} /* меню в шторке при наведении */
   .shm {
