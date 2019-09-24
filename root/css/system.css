@@ -47,11 +47,14 @@
   #custom {visibility: hidden;}
   div:target ~ #custom {visibility: visible;}
   #bootloader:target ~ #custom {visibility: hidden;}
+  #custom0 {visibility: hidden;}
+  div:target ~ #custom0 {visibility: visible;}
+  #bootloader:target ~ #custom0 {visibility: hidden;}
 
   .sh {visibility: hidden;}
   div:target ~ .sh {visibility: visible;}
   #bootloader:target ~ .sh {visibility: hidden;}
-  
+
 /* параметры шторки --------------------------------------------------------------------------------*/
 
   .sh {
@@ -123,10 +126,7 @@
     left: 100px;
     width: 97px; /* ширина (300 пх - граница) */
     height: 19px; /* высота */
-    background: #FFF;
-    border-radius: 12px;
-    opacity: 0;
-    transition: ease-out 0.4s;
+    transition: ease-out 0.5s;
   }
   #custom:hover {
     bottom: 0px;
@@ -134,15 +134,18 @@
     width: 300px;
     height: 300px;
     opacity: 1;
-    background: #474747;
   }
-  .hovered {
+  #custom0 {
+    bottom: 0;
+    width: 297px; /* ширина (300 пх - граница) */
+    height: 49px; /* высота */
+  }
+  #custom0:hover ~ #custom {
     bottom: 0px;
     left: 0px;
     width: 300px;
     height: 300px;
     opacity: 1;
-    background: #474747;
   }
 
 /* контент -----------------------------------------------------------------------------------------*/
