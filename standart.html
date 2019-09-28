@@ -3,133 +3,37 @@
 <head>
   <meta charset="utf-8" />
 	<title>Тестовая сборка</title>
-	<link rel="stylesheet" href="root/css/all.css">
-  <link rel="stylesheet" href="root/css/color.css">
-  <link rel="stylesheet" href="root/css/font.css">
+	<link rel="stylesheet" href="root/css/boot.css">
+  <link rel="stylesheet" href="root/css/system.css">
+  <link rel="stylesheet" href="root/css/ui.css">
 </head>
 <body>
-  <!-- контент + табл-меню -->
-
- 	<div> <!-- материнский блок -->
- 	  <div id="t5" class="abs block"> <!-- конструкция, 5 сегмент -->
-
- 	    <table class="menu fixed"> <!-- табл-меню слева -->
- 	      <tr><td><a href="#one">Черный</a></td></tr> <!-- ссылки на сегменты в виде таблицы -->
- 	      <tr><td><a href="#t2">Синий</a></td></tr>
- 	      <tr><td><a href="#t3">Зеленый</a></td></tr>
- 	      <tr><td><a href="#t4">Красный</a></td></tr>
- 	      <tr><td><b><a href="#t5">Белый</a></b></td></tr>
- 	    </table>
- 	    <div class="t5 active abs"></div> <!-- контент, который переключается посредством табл-меню -->
- 	  </div> <!-- конец конструкции, далее еще 4 подобных... -->
-
- 	  <div id="t4" class="abs block"> <!-- 4 сегмент -->
-
- 	    <table class="menu fixed">
- 	      <tr><td><a href="#one">Черный</a></td></tr>
- 	      <tr><td><a href="#t2">Синий</a></td></tr>
- 	      <tr><td><a href="#t3">Зеленый</a></td></tr>
- 	      <tr><td><b><a href="#t4">Красный</a></b></td></tr>
- 	      <tr><td><a href="#t5">Белый</a></td></tr>
- 	    </table>
- 	    <div class="t4 active abs"></div>
- 	  </div>
-
- 	  <div id="t3" class="abs block"> <!-- 3 сегмент -->
-
- 	    <table class="menu fixed">
- 	      <tr><td><a href="#one">Черный</a></td></tr>
- 	      <tr><td><a href="#t2">Синий</a></td></tr>
- 	      <tr><td><b><a href="#t3">Зеленый</a></b></td></tr>
- 	      <tr><td><a href="#t4">Красный</a></td></tr>
- 	      <tr><td><a href="#t5">Белый</a></td></tr>
- 	    </table>
- 	    <div class="t3 active abs"></div>
- 	  </div>
-
- 	  <div id="t2" class="abs block"> <!-- 2 сегмент -->
- 	    <table class="menu fixed">
- 	      <tr><td><a href="#one">Черный</a></td></tr>
- 	      <tr><td><b><a href="#t2">Синий</a></b></td></tr>
- 	      <tr><td><a href="#t3">Зеленый</a></td></tr>
- 	      <tr><td><a href="#t4">Красный</a></td></tr>
- 	      <tr><td><a href="#t5">Белый</a></td></tr>
- 	    </table>
- 	    <div class="t2 active abs"></div>
- 	  </div>
-
- 	  <div id="one" class="abs block"> <!-- 1 сегмент -->
-
- 	    <table class="menu fixed">
- 	      <tr><td><b><a href="#one">Черный</a></b></td></tr>
- 	      <tr><td><a href="#t2">Синий</a></td></tr>
- 	      <tr><td><a href="#t3">Зеленый</a></td></tr>
- 	      <tr><td><a href="#t4">Красный</a></td></tr>
- 	      <tr><td><a href="#t5">Белый</a></td></tr>
- 	    </table>
- 	    <div class="t1 active abs">
-        <h1 class="bc">Заголовок</h1>
-        <p>первая строка текста <a class="content" href="#">ссылка</a>
-        </br>
-        </br>
-        вторая строка текста
-        </p>
-        <a class="content" href="#">ссылка</a>
-        <p class="content bold warning">ВАЖНО: пошол нахуй!</p>
-        <p class="content bold need">ТРЕБОВАНИЯ: соси хуй!</p>
-        <p class="content code">пример кода</p>
-        <p class="content spisok">Список:</br>1.</br>2.</p>
-        <p class="content download">Ссылки:</br><a class="content" href="#">ссылка</a></p>
+  <div id="boot" class="abs block"> <!-- 1 сегмент -->
+    <div class="bar fixed">
+      <div class="nav cfix sb">Ядро</div>
+      <div class="menu abs">
+        <div class="segment anime"><a href="#boot" class="cfix"><b class="cfix sb">Функции ядра</b></a></div>
+        <div class="segment anime"><a href="#boot2" class="cfix">Основные определения</a></div>
+        <div class="segment anime"><a href="#boot3" class="cfix">Бан-триггеры</a></div>
+        <div class="segment anime"><a href="#boot4" class="cfix">ОСНОВНАЯ ЧАСТЬ ЯДРА</a></div>
+        <div class="segment anime"><a href="#boot5" class="cfix">Второстепенные принципы</a></div>
       </div>
- 	  </div>
+      <div class="set abs"></div>
+    </div>
+ 	  <div class="active abs">
+      <h1 class="bc">Заголовок</h1>
+      <p>первая строка текста <a class="con" href="#">ссылка</a>
+      </br>
+      </br>
+      вторая строка текста
+      </p>
+      <a class="con" href="#">ссылка</a>
+      <p class="con bold v">ВАЖНО: пошол нахуй!</p>
+      <p class="con bold n">ТРЕБОВАНИЯ: соси хуй!</p>
+      <p class="con k">пример кода</p>
+      <p class="con s">Список:</br>1.</br>2.</p>
+      <p class="con w">Ссылки:</br><a class="con" href="#">ссылка</a></p>
+    </div>
  	</div>
-
-  <!-- контент + табл-меню, конец -->
-
- 	<!-- статусбар -->
-
-  <div id="bar">
-  	<table class="bar fixed">
-  		<tr>
-  			<td>ТЕСТ</td>
-  			<td class="barc">ТЕСТ</td>
-  		</tr>
-  	</table>
-	</div>
-
- 	<!-- статусбар, конец -->
-
- 	<!-- шторка -->
-
- 	<div id="sh" class="fixed">
- 		<div id="shc">
- 			ДАТА
- 		</div>
- 		<div class="sh">
- 			<div class="shm">
- 				Ядро
- 			</div>
- 			<div class="shm">
- 				Настройки
- 			</div>
- 			<div class="shm">
- 				Реестр
- 			</div>
- 		</div>
- 		<div class="sh">
- 			<div class="shm">
- 				Инструкции
- 			</div>
- 			<div class="shm">
- 				Технологии
- 			</div>
- 			<div class="shm">
- 				Репозиторий
- 			</div>
- 		</div>
- 	</div>
-
- 	<!-- шторка, конец -->
-
 </body>
 </html>
