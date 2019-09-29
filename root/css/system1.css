@@ -1,45 +1,24 @@
 /* параметры шторки --------------------------------------------------------------------------------*/
 
-  #sh {
-    width: 100%; /* ширина с учетом двух отступов по бокам */
-    height: 50px; /* высота активной области статусбара для вызова шторки */
-  }
-  #sh:hover {height: 50%;}
-  #sh:hover .sh {
-    top: 0;
-    right: 300px;
-    width: calc(100% - 600px); /* ширина с учетом новых пользователей */
-    height: 40%; /* высота, тоже новая */
-    display: table;
-  }
-  #sh:hover .sh .shn {transform: scale(1);}
-  #sh:hover .sh .shs {transform: scale(1);}
   .sh {
-    top: 15px;
-    right: 15px;
-    width: 20px; /* ширина с учетом двух отступов по бокам */
-    height: 20px; /* высота активной области статусбара для вызова шторки */
-    display: block;
+    width: 300px; /* ширина с учетом двух отступов по бокам */
+    height: 60px; /* высота активной области статусбара для вызова шторки */
+    display: table;
+    opacity: 0;
+    transform: translateX(-5%) translateY(-30%);
   }
   .sh:hover {
-    top: 0;
-    right: 300px;
-    width: calc(100% - 600px); /* ширина с учетом новых пользователей */
-    height: 40%; /* высота, тоже новая */
-    display: table;
+    width: 100%; /* ширина с учетом новых пользователей */
+    height: 25%; /* высота, тоже новая */
+    opacity: 1; /* минус прозрачность */
+    transform: translateX(0%) translateY(0%);
   }
-  .sh:hover .shn {transform: scale(1);}
-  .sh:hover .shs {transform: scale(1);}
-  .shn {
-    height: 10%;
-    transform: scale(0.001);
-  }
+  .shn {height: 20%;}
   .shs { /* строка с менюшками */
     width: 100%;
-    height: 45%;
+    height: 80%;
     display: table;
     table-layout: fixed;
-    transform: scale(0.001);
   }
   .shs a {
     width: 100%;  /* ширина */
@@ -85,25 +64,26 @@
 
 /* вторая шторка -----------------------------------------------------------------------------------*/
 
-  .custom {
+  #custom {
     bottom: 15px;
     left: 100px;
     width: 97px; /* ширина (300 пх - граница) */
     height: 19px; /* высота */
+    transition: ease-out 0.5s;
   }
-  .custom:hover {
+  #custom:hover {
     bottom: 0px;
     left: 0px;
     width: 300px;
     height: 300px;
     opacity: 1;
   }
-  #custom {
+  #custom0 {
     bottom: 0;
     width: 297px; /* ширина (300 пх - граница) */
     height: 49px; /* высота */
   }
-  #custom:hover .custom {
+  #custom0:hover ~ #custom {
     bottom: 0px;
     left: 0px;
     width: 300px;
@@ -113,16 +93,10 @@
 
 /* контент -----------------------------------------------------------------------------------------*/
 
-  .head {
-    right: 0;
-    width: calc(100% - 300px); /* ширина с учетом двух отступов по бокам */
-    height: 50px; /* высота активной области статусбара для вызова шторки */
-  }
   .active {
-    top: 50px;
     left: 300px;  /* отступ слева */
     width: calc(100% - 300px);  /* ширина (вся страница - ширина меню) */
-    min-height: calc(100% - 50px);
+    min-height: 100%;
     display: block;   /* отображать как блок */
     text-align: center;
   }

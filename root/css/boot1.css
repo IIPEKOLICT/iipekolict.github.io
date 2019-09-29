@@ -49,16 +49,12 @@
   #custom {visibility: hidden;}
   div:target ~ #custom {visibility: visible;}
   #bootloader:target ~ #custom {visibility: hidden;}
+  #custom0 {visibility: hidden;}
+  div:target ~ #custom0 {visibility: visible;}
+  #bootloader:target ~ #custom0 {visibility: hidden;}
 
-  #sh {visibility: hidden;}
-  div:target ~ #sh {visibility: visible;}
-  #bootloader:target ~ #sh {visibility: hidden;}
+  .sh {visibility: hidden;}
+  div:target ~ .sh {visibility: visible;}
+  #bootloader:target ~ .sh {visibility: hidden;}
 
-  #sh:hover .sh .shn {visibility: visible;}
-  #sh:hover .sh .shs {visibility: visible;}
-  .sh:hover .shn {visibility: visible;}
-  .sh:hover .shs {visibility: visible;}
-  .shn {visibility: hidden;}
-  .shs {visibility: hidden;}
-  
 /*--------------------------------------------------------------------------------------------------*/
