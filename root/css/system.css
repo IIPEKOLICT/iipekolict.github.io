@@ -4,12 +4,12 @@
     width: 100%; /* ширина с учетом двух отступов по бокам */
     height: 50px; /* высота активной области статусбара для вызова шторки */
   }
-  #sh:hover {height: 50%;}
+  #sh:hover {height: 70%;}
   #sh:hover .sh {
-    top: 0;
+    top: 5px;
     right: 300px;
     width: calc(100% - 600px); /* ширина с учетом новых пользователей */
-    height: 40%; /* высота, тоже новая */
+    height: 50%; /* высота, тоже новая */
     display: table;
   }
   #sh:hover .sh .shn {transform: scale(1);}
@@ -22,10 +22,10 @@
     display: block;
   }
   .sh:hover {
-    top: 0;
+    top: 5px;
     right: 300px;
     width: calc(100% - 600px); /* ширина с учетом новых пользователей */
-    height: 40%; /* высота, тоже новая */
+    height: 50%; /* высота, тоже новая */
     display: table;
   }
   .sh:hover .shn {transform: scale(1);}
@@ -36,7 +36,7 @@
   }
   .shs { /* строка с менюшками */
     width: 100%;
-    height: 45%;
+    height: 40%;
     display: table;
     table-layout: fixed;
     transform: scale(0.001);
@@ -51,6 +51,38 @@
   }
   .shm:hover {transform: scale(0.65);}
 
+/* вторая шторка -----------------------------------------------------------------------------------*/
+
+  .custom:hover {
+    right: 300px;
+    top: 60px;
+    width: calc(100% - 600px);
+    height: 100%;
+    transform: scale(1);
+  }
+  #custom {
+    bottom: 0;
+    left: 10%;
+    width: 80%;
+    height: 10%;
+    transform: scale(0.4);
+  }
+  #custom:hover {
+    position: fixed;
+    top: 42%;
+    left: 0;
+    width: 100%;
+    height: 20%;
+    transform: scale(1);
+  }
+  #custom:hover .custom {
+    right: 300px;
+    top: 60px;
+    width: calc(100% - 600px);
+    height: 100%;
+    transform: scale(1);
+  }
+
 /* табл-меню ---------------------------------------------------------------------------------------*/
 
   .bar {
@@ -63,7 +95,7 @@
   }
   .menu {
     top: 52px;
-    height: calc(100% - 103px);
+    height: calc(100% - 52px);
     width: calc(100% - 3px);
     display: table;
   }
@@ -76,39 +108,6 @@
   .segment b {
     width: 100%;  /* ширина */
     height: 100%;  /* высота */
-  }
-  .set {
-    bottom: 0;
-    width: calc(100% - 3px); /* ширина (300 пх - граница) */
-    height: 49px; /* высота */
-  }
-
-/* вторая шторка -----------------------------------------------------------------------------------*/
-
-  .custom {
-    bottom: 15px;
-    left: 100px;
-    width: 97px; /* ширина (300 пх - граница) */
-    height: 19px; /* высота */
-  }
-  .custom:hover {
-    bottom: 0px;
-    left: 0px;
-    width: 300px;
-    height: 300px;
-    opacity: 1;
-  }
-  #custom {
-    bottom: 0;
-    width: 297px; /* ширина (300 пх - граница) */
-    height: 49px; /* высота */
-  }
-  #custom:hover .custom {
-    bottom: 0px;
-    left: 0px;
-    width: 300px;
-    height: 300px;
-    opacity: 1;
   }
 
 /* контент -----------------------------------------------------------------------------------------*/

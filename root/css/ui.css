@@ -1,7 +1,7 @@
 /* дефолтные настройки -----------------------------------------------------------------------------*/
 
   a {text-decoration: none;} /* не подчеркивать/красить дефолтные ссылки */
-  body {background: #000;}
+  body {background: none;}
   p {
     font-family: Arial;
     font-size: 14pt;
@@ -33,16 +33,24 @@
     border-radius: 60px; /* закругления */
   }
 
+/* вторая шторка -----------------------------------------------------------------------------------*/
+
+  #custom {
+    background: #FFF;
+    border-radius: 20px;
+  }
+  #custom:hover {background: rgba(0,0,0,0);}
+  .custom {
+    background: rgba(29,29,29,1);
+    border-radius: 20px;
+  }
+
 /* табл-меню ---------------------------------------------------------------------------------------*/
 
-  .bar {
-    background: #212121;
-    border-radius: 0px 20px 20px 0px;
-  }
+  .bar {background: #212121;}
   .nav {
     background: #000;
     font-size: 24pt;
-    border-radius: 0px 20px 0px 0px;
   }
   .menu a {
     background: #000;
@@ -60,19 +68,7 @@
     background: #80CBC4;
   }
   .segment b:hover {border-radius: 20px;}
-  .set {
-    background: #000;
-    border-radius: 0px 0px 20px 0px;
-  }
-
-/* вторая шторка -----------------------------------------------------------------------------------*/
-
-  #custom:hover ~ .custom {background: #474747;}
-  .custom {
-    background: #FFF;
-    border-radius: 12px;
-  }
-  .custom:hover {background: #474747;}
+  .set {background: #000;}
 
 /* контент -----------------------------------------------------------------------------------------*/
 

@@ -44,11 +44,7 @@
   #bootloader {display: block;} /* стартовый блок */
   div:target {display: block;} /* выбранный элемент, отображать как блок */
 
-  /* фиксы видимости */
-
-  #custom {visibility: hidden;}
-  div:target ~ #custom {visibility: visible;}
-  #bootloader:target ~ #custom {visibility: hidden;}
+/* видимость --------------------------------------------------------------------------------------- */
 
   #sh {visibility: hidden;}
   div:target ~ #sh {visibility: visible;}
@@ -60,5 +56,9 @@
   .sh:hover .shs {visibility: visible;}
   .shn {visibility: hidden;}
   .shs {visibility: hidden;}
-  
+
+  .custom {visibility: hidden;}
+  .custom:hover {visibility: visible;}
+  #custom:hover .custom {visibility: visible;}
+
 /*--------------------------------------------------------------------------------------------------*/
