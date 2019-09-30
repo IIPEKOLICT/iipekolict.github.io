@@ -61,11 +61,4 @@
   .custom:hover {visibility: visible;}
   #custom:hover .custom {visibility: visible;}
 
-  .shnc {visibility: hidden;}
-  #homeb {visibility: hidden;}
-  #setb {visibility: hidden;}
-  #custom:hover .custom .shnc {visibility: visible;}
-  #custom:hover .custom #homeb {visibility: visible;}
-  #custom:hover .custom #setb {visibility: visible;}
-
 /*--------------------------------------------------------------------------------------------------*/
