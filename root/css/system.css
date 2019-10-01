@@ -1,57 +1,68 @@
 /* параметры шторки --------------------------------------------------------------------------------*/
 
+  /* активная область */
+
   #sh {
     width: 100%; /* ширина с учетом двух отступов по бокам */
     height: 50px; /* высота активной области статусбара для вызова шторки */
   }
   #sh:hover {height: 70%;}
   #sh:hover .sh {
-    top: 5px;
-    right: 300px;
+    top: 5px; /* отступ сверху */
+    right: 300px; /* отступ справа */
     width: calc(100% - 600px); /* ширина с учетом новых пользователей */
     height: 50%; /* высота, тоже новая */
-    display: table;
+    display: table; /* отображать, как таблицу */
   }
-  #sh:hover .sh .shn {transform: scale(1);}
-  #sh:hover .sh .shs {transform: scale(1);}
+  #sh:hover .sh #sh1 {transform: scale(1);} /* вернуть размеры 1 шторки при наведении на акт обл */
+
+  /* основная часть шторки (материнский блок) */
+
   .sh {
-    top: 15px;
-    right: 15px;
+    top: 15px; /* отступ сверху */
+    right: 15px; /* отступ справа */
     width: 20px; /* ширина с учетом двух отступов по бокам */
     height: 20px; /* высота активной области статусбара для вызова шторки */
-    display: block;
+    display: block; /* отображать, как блок */
   }
   .sh:hover {
     top: 5px;
     right: 300px;
     width: calc(100% - 600px); /* ширина с учетом новых пользователей */
     height: 50%; /* высота, тоже новая */
-    display: table;
+    display: table; /* отображать, как таблицу */
   }
-  .sh:hover .shn {transform: scale(1);}
-  .sh:hover .shs {transform: scale(1);}
-  .shn {
-    height: 10%;
-    transform: scale(0.001);
+
+  /* фикс анимаций вложенных элементов */
+
+  .sh0 {
+    width: 100%; /* растянуть на весь материнский блок */
+    height: 100%
+    transform: scale(0.001); /* уменьшить в 100 раз (чтоб видно не было) */
   }
+
+  /* элементы внутри основной шторки */
+
+  .shn {height: 10%;}
   .shs { /* строка с менюшками */
     width: 100%;
     height: 40%;
-    display: table;
-    table-layout: fixed;
-    transform: scale(0.001);
+    display: table; /* отображать, как таблицу */
+    table-layout: fixed; /* фикс для уравнивания ширины ячеек таблицы */
   }
   .shs a {
     width: 100%;  /* ширина */
     height: 100%;  /* высота */
   }
   .shm {
-    display: table-cell;
-    transform: scale(0.8);
+    display: table-cell; /* отображать, как ячейку таблицы */
+    transform: scale(0.8); /* уменьшение на 20% (искусственная граница) */
   }
-  .shm:hover {transform: scale(0.65);}
+  .shm:hover {transform: scale(0.65);} /* уменьшение на 35% */
 
 /* вторая шторка -----------------------------------------------------------------------------------*/
+
+  /* активная область */
 
   #custom {
     bottom: 0;
@@ -62,26 +73,27 @@
   }
   #custom:hover {
     position: fixed;
-    top: 42%;
+    top: 45%;
     left: 0;
     width: 100%;
-    height: 25%;
+    height: 40%;
     transform: scale(1);
   }
-  #custom:hover .custom {
+  #custom:hover .custom {height: 100%;} /* вызов расш шторки при наведении на активную область */
+  #custom:hover .custom #sh2 {transform: scale(1);}
+
+  /* расширенная часть шторки (материнский блок) */
+
+  .custom {
+    top: 0;
     right: 300px;
-    top: 60px;
+    height: 5%;
     width: calc(100% - 600px);
-    height: 100%;
-    transform: scale(1);
   }
-  .custom:hover {
-    right: 300px;
-    top: 60px;
-    width: calc(100% - 600px);
-    height: 100%;
-    transform: scale(1);
-  }
+  .custom:hover {height: 100%;}
+
+  /* элементы в расширенной части шторки */
+
   .shnc {
     bottom: 0;
     width: 100%;
@@ -94,6 +106,7 @@
     width: 40px;
     height: 40px;
   }
+  .button:hover {transform: scale(0.8);}
 
 /* табл-меню ---------------------------------------------------------------------------------------*/
 
@@ -124,12 +137,12 @@
 
 /* контент -----------------------------------------------------------------------------------------*/
 
-  .head {
+  .head { /* заголовок страницы */
     right: 0;
     width: calc(100% - 300px); /* ширина с учетом двух отступов по бокам */
     height: 50px; /* высота активной области статусбара для вызова шторки */
   }
-  .active {
+  .active { /* область контента */
     top: 50px;
     left: 300px;  /* отступ слева */
     width: calc(100% - 300px);  /* ширина (вся страница - ширина меню) */

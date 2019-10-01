@@ -46,19 +46,17 @@
 
 /* видимость --------------------------------------------------------------------------------------- */
 
-  #sh {visibility: hidden;}
-  div:target ~ #sh {visibility: visible;}
-  #bootloader:target ~ #sh {visibility: hidden;}
+  /* фикс видимости шторки в бутлоадере */
 
-  #sh:hover .sh .shn {visibility: visible;}
-  #sh:hover .sh .shs {visibility: visible;}
-  .sh:hover .shn {visibility: visible;}
-  .sh:hover .shs {visibility: visible;}
-  .shn {visibility: hidden;}
-  .shs {visibility: hidden;}
+  #sh {visibility: hidden;} /* скрыть по дефолту */
+  div:target ~ #sh {visibility: visible;} /* показать при выборе любого блока */
+  #bootloader:target ~ #sh {visibility: hidden;} /* скрыть при выборе бутлоадера */
 
-  .custom {visibility: hidden;}
-  .custom:hover {visibility: visible;}
-  #custom:hover .custom {visibility: visible;}
+  /* фикс для шторок */
+
+  #sh1 {visibility: hidden;} /* скрыть 1 шторку по дефолту */
+  #sh2 {visibility: hidden;} /* скрыть 2 шторку по дефолту */
+  #sh:hover .sh #sh1 {visibility: visible;} /* показать 1 шторку при выборе верхней активной области */
+  #custom:hover .custom #sh2 {visibility: visible;} /* то же самое для 2 шторки */
 
 /*--------------------------------------------------------------------------------------------------*/
