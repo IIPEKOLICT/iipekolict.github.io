@@ -4,7 +4,7 @@
     margin: 0;
     padding: 0;
   }
-  img { /* фикс отступов для картинок */
+  img { /* фикс отступов для картинок (выравнивает по центру) */
     margin: 0 auto;
     top: 0;
     bottom: 0;
@@ -20,19 +20,19 @@
 
   /* позиционирование */
 
-  .abs {position: absolute;}
-  .fixed {position: fixed;}
+  .abs {position: absolute;} /* абсолютное позиционирование, отд класс */
+  .fixed {position: fixed;} /* фиксированная позиция, отд класс */
 
   /* оптимизация */
 
-  .block {
+  .block { /* класс для всех блоков-страниц */
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
     display: none;
   }
-  .cfix {
+  .cfix { /* фикс центрирования */
     display: flex;
     justify-content: center;
     align-items: center;
