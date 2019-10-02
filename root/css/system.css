@@ -152,4 +152,26 @@
   }
   p.con {padding: 10px;} /* блоки с особым текстом, отступы изнутри */
 
+  /* о системе */
+
+  .abouth {
+    background: #808080;
+    height: 240px;
+    width: 100%;
+  }
+  .abouth img {
+    margin: 0;
+    padding: 20px;
+    height: 200px;
+    width: 285px;
+  }
+  .abouttxt {
+    background: #336;
+    padding: 20px;
+    right: 0;
+    height: 200px;
+    width: calc(100% - 365px);
+    text-align: left;
+  }
+
 /*--------------------------------------------------------------------------------------------------*/

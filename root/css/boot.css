@@ -50,7 +50,7 @@
 
   #sh {visibility: hidden;} /* скрыть по дефолту */
   div:target ~ #sh {visibility: visible;} /* показать при выборе любого блока */
-  #bootloader:target ~ #sh {visibility: hidden;} /* скрыть при выборе бутлоадера */
+  #bootloader:target ~ #sh {display: none;} /* скрыть при выборе бутлоадера */
 
   /* фикс для шторок */
 
@@ -58,5 +58,8 @@
   #sh2 {visibility: hidden;} /* скрыть 2 шторку по дефолту */
   #sh:hover .sh #sh1 {visibility: visible;} /* показать 1 шторку при выборе верхней активной области */
   #custom:hover .custom #sh2 {visibility: visible;} /* то же самое для 2 шторки */
+
+  #custom {visibility: hidden;} /* скрыть акт область 2 шторки по дефолту */
+  #sh:hover #custom {visibility: visible;} /* показать акт область 2 шторки при выборе 1 акт области */
 
 /*--------------------------------------------------------------------------------------------------*/
