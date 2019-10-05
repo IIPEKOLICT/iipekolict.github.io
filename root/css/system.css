@@ -152,26 +152,70 @@
   }
   p.con {padding: 10px;} /* блоки с особым текстом, отступы изнутри */
 
-  /* о системе */
+  /* о системе -------------------------------------------------------------------------------------*/
 
-  .abouth {
-    background: #808080;
+  .abh {
     height: 240px;
     width: 100%;
+    border-top: 1px solid #212121;
   }
-  .abouth img {
+  .abh img {
     margin: 0;
     padding: 20px;
     height: 200px;
     width: 285px;
   }
-  .abouttxt {
-    background: #336;
-    padding: 20px;
+  .abhr {
     right: 0;
-    height: 200px;
-    width: calc(100% - 365px);
-    text-align: left;
+    width: calc(100% - 345px);  /* ширина */
+    height: 20%;  /* высота */
+    justify-content: flex-start;
   }
+  .abouts {
+    top: 240px;
+    width: calc(100% - 1px);
+    height: 40%;
+    border-bottom: 2px solid #212121;
+    display: table; /* отображать, как таблицу */
+    table-layout: fixed; /* фикс для уравнивания ширины ячеек таблицы */
+  }
+  .abmat {
+    height: 100%;
+    border-radius: 20px;
+    display: table-cell; /* отображать, как ячейку таблицы */
+  }
+  .borl {border-left: 1px solid #212121;}
+  .borlr {
+    border-right: 1px solid #212121;
+    border-left: 1px solid #212121;
+  }
+  .borr {border-right: 1px solid #212121;}
+  .abp {
+    width: 100%;  /* ширина */
+    height: 100%;  /* высота */
+    background: #000;
+  }
+  .abvt {
+    top: 30%;
+    color: #AAA;
+    font-size: 18pt;
+  }
+  .abnt {
+    bottom: 30%;
+    color: #FFF;
+    font-size: 14pt;
+  }
+  .abr {
+    width: 25%;  /* ширина */
+    height: 20%;  /* высота */
+  }
+  .abn {
+    bottom: 0;
+    width: calc(100% - 1px);
+    height: calc(60% - 240px);
+    display: table; /* отображать, как таблицу */
+    table-layout: fixed; /* фикс для уравнивания ширины ячеек таблицы */
+  }
+  .abn0 {font-size: 16pt;}
 
-/*--------------------------------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------------------------------*/
