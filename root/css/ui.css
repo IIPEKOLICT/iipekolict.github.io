@@ -108,4 +108,38 @@
     border-radius: 5px;
   }
 
+/* спойлеры -----------------------------------------------------------------------------------------*/
+
+  .spoiler {
+    background: #212121;
+    border-radius: 5px;
+  }
+  .spoiler a.sp {color: #DDD;}
+  .sphide b {color: #AAA;}
+
+/* borderы -----------------------------------------------------------------------------------------*/
+
+  .borl {border-left: 1px solid #212121;}
+  .borlr {
+    border-right: 1px solid #212121;
+    border-left: 1px solid #212121;
+  }
+  .borr {border-right: 1px solid #212121;}
+
+/* о системе ---------------------------------------------------------------------------------------*/
+
+  .abh {border-top: 1px solid #212121;}
+  .abouts {border-bottom: 2px solid #212121;}
+  .abmat {border-radius: 20px;}
+  .abp {background: #000;}
+  .abvt {
+    color: #AAA;
+    font-size: 18pt;
+  }
+  .abnt {
+    color: #FFF;
+    font-size: 14pt;
+  }
+  .abn0 {font-size: 16pt;}
+
 /*--------------------------------------------------------------------------------------------------*/

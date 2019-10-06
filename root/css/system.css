@@ -152,12 +152,41 @@
   }
   p.con {padding: 10px;} /* блоки с особым текстом, отступы изнутри */
 
-  /* о системе -------------------------------------------------------------------------------------*/
+/* спойлеры -----------------------------------------------------------------------------------------*/
+
+  .spoiler {
+    margin: 10px;
+    width: calc(100% - 20px);
+    min-height: 30px;
+  }
+  .spoiler:hover {min-height: 58px;}
+  .spoiler:hover .sphide {
+    padding: 10px;
+    width: calc(100% - 20px);
+    height: calc(100% - 20px);
+    text-align: left;
+    display: block;
+  }
+  .spoiler:hover a.sp1 {display: none;}
+  .spoiler:hover a.sp2 {display: none;}
+  .spoiler a.sp {
+    padding: 20px;
+    width: calc(50% - 40px);
+    height: calc(100% - 40px);
+    display: block;
+  }
+  .spoiler a.sp1 {text-align: left;}
+  .spoiler a.sp2 {
+    right: 0;
+    text-align: right;
+  }
+  .sphide {display: none;}
+
+/* о системе ---------------------------------------------------------------------------------------*/
 
   .abh {
     height: 240px;
     width: 100%;
-    border-top: 1px solid #212121;
   }
   .abh img {
     margin: 0;
@@ -175,36 +204,19 @@
     top: 240px;
     width: calc(100% - 1px);
     height: 40%;
-    border-bottom: 2px solid #212121;
     display: table; /* отображать, как таблицу */
     table-layout: fixed; /* фикс для уравнивания ширины ячеек таблицы */
   }
   .abmat {
     height: 100%;
-    border-radius: 20px;
     display: table-cell; /* отображать, как ячейку таблицы */
   }
-  .borl {border-left: 1px solid #212121;}
-  .borlr {
-    border-right: 1px solid #212121;
-    border-left: 1px solid #212121;
-  }
-  .borr {border-right: 1px solid #212121;}
   .abp {
     width: 100%;  /* ширина */
     height: 100%;  /* высота */
-    background: #000;
   }
-  .abvt {
-    top: 30%;
-    color: #AAA;
-    font-size: 18pt;
-  }
-  .abnt {
-    bottom: 30%;
-    color: #FFF;
-    font-size: 14pt;
-  }
+  .abvt {top: 30%;}
+  .abnt {bottom: 30%;}
   .abr {
     width: 25%;  /* ширина */
     height: 20%;  /* высота */
@@ -216,6 +228,5 @@
     display: table; /* отображать, как таблицу */
     table-layout: fixed; /* фикс для уравнивания ширины ячеек таблицы */
   }
-  .abn0 {font-size: 16pt;}
 
 /*-------------------------------------------------------------------------------------------------*/
