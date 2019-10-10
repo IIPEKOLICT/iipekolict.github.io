@@ -2,32 +2,25 @@
 
   a {text-decoration: none;} /* не подчеркивать/красить дефолтные ссылки */
   body {background: none;}
-  p {
-    font-family: Arial;
-    font-size: 14pt;
-  }
+
+  /* оптимизация */
+
   .bold {font-weight: bold;}
   .sb {
     color: #DDD;
     font-family: sans-serif;
     font-weight: bold;
   }
-  .block {background: #000;}
+  .ab {background: #000;} /* "akcent background", стандартный для темы цвет фона */
 
 /* шторка ------------------------------------------------------------------------------------------*/
 
   #sh:hover .sh {background: rgba(29,29,29,1);}
-  .sh {
-    background: #FFF;
-    border-radius: 20px;
-  }
+  .sh {background: #FFF;}
   .shn {font-size: 18pt;}
   .shs a {font-size: 16pt;}
   .shs a:hover {color: #212121;} /* меню в шторке при наведении */
-  .shm {
-    background: #808080;
-    border-radius: 20px; /* закругления */
-  }
+  .shm {background: #808080;}
   .shm:hover {
     background: #80CBC4;
     border-radius: 60px; /* закругления */
@@ -35,29 +28,18 @@
 
 /* вторая шторка -----------------------------------------------------------------------------------*/
 
-  #custom {
-    background: #FFF;
-    border-radius: 20px;
-  }
+  #custom {background: #FFF;}
   #custom:hover {background: rgba(0,0,0,0);}
-  .custom {
-    background: rgba(29,29,29,1);
-    border-radius: 20px;
-  }
+  .custom {background: rgba(29,29,29,1);}
   .shns {font-size: 24pt;}
 
 /* табл-меню ---------------------------------------------------------------------------------------*/
 
   .bar {background: #212121;}
-  .nav {
-    background: #000;
-    font-size: 24pt;
-  }
+  .nav {font-size: 24pt;}
   .menu a {
-    background: #000;
     color: #808080;
     font-family: sans-serif;
-    border-bottom: 1px solid #212121;
   }
   .menu a:hover {
     background: #80CBC4;
@@ -69,43 +51,26 @@
     background: #80CBC4;
   }
   .segment b:hover {border-radius: 20px;}
-  .set {background: #000;}
 
 /* контент -----------------------------------------------------------------------------------------*/
 
-  .head {
-    background: #000;
-    font-size: 20pt;
-  }
+  .head {font-size: 20pt;}
 
   /* цвета текста встариваемые (отдельным классом) */
 
+  .sc {color: #DDD;} /* цвет текста стандартный (серый) */
+
   .wc {color: #FFF;}
-  .rc {color: #F00;}
-  .gc {color: #0F0;}
-  .bc {color: #00F;}
-
-  /* цвета для особого текста */
-
-  p.v {color: #F99;} /* внимание */
-  p.n {color: #FF9;} /* требования */
-  p.k {color: #9F9;} /* код */
-  p.s {color: #FFF;} /* список */
-  p.w {color: #99F;} /* блок с ссылками */
+  .rc {color: #F99;} /* внимание */
+  .yc {color: #FF9;} /* требования */
+  .gc {color: #9F9;} /* код */
+  .bc {color: #99F;} /* блок с ссылками */
 
   /* остальное */
 
-  .active {
-    background: #000;
-    color: #DDD;
-  }
-  a.con {
-    color: #99A;
-    text-decoration: underline; /* подчеркивать только ссылки в контенте */
-  }
-  p.con { /* особый текст */
-    background: #424242;
-    border-radius: 5px;
+  .text {
+    font-family: Arial;
+    font-size: 14pt;
   }
 
 /* спойлеры -----------------------------------------------------------------------------------------*/
@@ -116,22 +81,27 @@
   }
   .spoiler a.sp {color: #DDD;}
   .sphide b {color: #AAA;}
+  .sphide li {color: #DDD;}
 
 /* borderы -----------------------------------------------------------------------------------------*/
 
-  .borl {border-left: 1px solid #212121;}
-  .borlr {
+  .bor-l1 {border-left: 1px solid #212121;}
+  .bor-r1 {border-right: 1px solid #212121;}
+  .bor-t1 {border-top: 1px solid #212121;}
+  .bor-b1 {border-bottom: 1px solid #212121;}
+  .bor-lr1 {
     border-right: 1px solid #212121;
     border-left: 1px solid #212121;
   }
-  .borr {border-right: 1px solid #212121;}
+  .bor-l2 {border-left: 2px solid #212121;}
+  .bor-r2 {border-right: 2px solid #212121;}
+  .bor-t2 {border-top: 2px solid #212121;}
+  .bor-b2 {border-bottom: 2px solid #212121;}
 
-/* о системе ---------------------------------------------------------------------------------------*/
+  .bor-20 {border-radius: 20px;}
 
-  .abh {border-top: 1px solid #212121;}
-  .abouts {border-bottom: 2px solid #212121;}
-  .abmat {border-radius: 20px;}
-  .abp {background: #000;}
+/* пункт "о системе" ---------------------------------------------------------------------------------------*/
+
   .abvt {
     color: #AAA;
     font-size: 18pt;
@@ -140,6 +110,6 @@
     color: #FFF;
     font-size: 14pt;
   }
-  .abn0 {font-size: 16pt;}
+  #aboutn {font-size: 16pt;}
 
 /*--------------------------------------------------------------------------------------------------*/
