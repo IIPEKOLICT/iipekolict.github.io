@@ -53,7 +53,7 @@
   #sh1 {visibility: hidden;} /* скрыть 1 шторку по дефолту */
   #sh2 {visibility: hidden;} /* скрыть 2 шторку по дефолту */
   #sh:hover .sh #sh1 {visibility: visible;} /* показать 1 шторку при выборе верхней активной области */
-  #custom:hover .custom #sh2 {visibility: visible;} /* то же самое для 2 шторки */
+  #custom:hover #sh2 {visibility: visible;} /* то же самое для 2 шторки */
 
   #custom {visibility: hidden;} /* скрыть акт область 2 шторки по дефолту */
   #sh:hover #custom {visibility: visible;} /* показать акт область 2 шторки при выборе 1 акт области */
@@ -124,8 +124,8 @@
     height: 40%;
     transform: scale(1); /* вернуть исходный размер */
   }
-  #custom:hover .custom {height: 100%;} /* вызов расш шторки при наведении на активную область */
-  #custom:hover .custom #sh2 {transform: scale(1);} /* вернуть размеры 2 шторки при наведении */
+  #custom:hover #sh2 {transform: scale(1);} /* вернуть размеры 2 шторки при наведении */
+  #custom:hover #sh2 .custom {height: 100%;} /* видимая часть 2 шторки */
 
   /* основная часть второй шторки (материнский блок) */
 
