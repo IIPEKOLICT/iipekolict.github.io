@@ -5,6 +5,7 @@
 	<title>Виртуалка</title>
 	<link rel="stylesheet" href="root/css/boot.css">
   <link rel="stylesheet" href="root/css/test.css">
+  <link rel="stylesheet" href="root/css/radio.css">
   <link id="theme_akcent" rel="stylesheet" src="root/css/akcent/akc1.css"/>
   <link id="theme_background" rel="stylesheet" src="root/css/background/bg1.css"/>
   <script src="root/js/jquery.js"></script>
@@ -104,9 +105,11 @@
           <a class="sp sp1">LOSHICA UI 3.0 Test Release (#)</a>
           <a class="sp sp2 r0">Дата выпуска: .10.2019</a>
           <div class="sphide dn">
-            <ul><b>.10.2019 (#):</b>
+            <ul><b>13.10.2019 (#):</b>
               <li>сделал пункт "Персонализация"</li>
-              <li>завел скрипт тем (2 темки)</li>
+              <li>завел скрипт тем (3 темки)</li>
+              <li>добавил радиокнопки двух видов</li>
+              <li>начал калибровать цвета и допиливать темы</li>
             </ul>
             <ul><b>10.10.2019 (#15):</b>
               <li>расширенная оптимизация кода</li>
@@ -208,19 +211,46 @@
    	  <div class="content ab ac abs">
         <div class="info fw">
           <div class="ver bor-20 bor-t1"><div class="uip ab text bold sc">Цвет акцента:</br></br>
-            <a href="#" onclick="change_akcent(1); return false;">Акцент 1</a></br>
-            <a href="#" onclick="change_akcent(2); return false;">Акцент 2</a></br>
-            <a href="#" onclick="change_akcent(3); return false;">Акцент 3</a></br>
+            <label for="cyan_akc" class="ver_radio" onclick="change_akcent(1)">
+              <input type="radio" name="cvet" value="cyan" id="cyan_akc" checked>
+              <span></span>
+            </label>
+            <label for="blue_akc" class="ver_radio" onclick="change_akcent(2)">
+              <input type="radio" name="cvet" value="blue" id="blue_akc">
+              <span></span>
+            </label>
+            <label for="green_akc" class="ver_radio" onclick="change_akcent(3)">
+              <input type="radio" name="cvet" value="green" id="green_akc">
+              <span></span>
+            </label>
           </div></div>
           <div class="ver bor-20 bor-t1"><div class="uip ab text bold sc">Цвет фона:</br></br>
-            <a href="#" onclick="change_background(1); return false;">Черный</a></br>
-            <a href="#" onclick="change_background(2); return false;">Темно-серый</a></br>
-            <a href="#" onclick="change_background(3); return false;">Серый</a></br>
+            <label for="black_bg" class="mat_krug" onclick="change_background(1)">
+              <input type="radio" name="akcent" id="black_bg" checked>
+              <span class="krug">Черный</span>
+            </label>
+            <label for="grey_bg" class="mat_krug" onclick="change_background(2)">
+              <input type="radio" name="akcent" id="grey_bg">
+              <span class="krug">Темно-серый</span>
+            </label>
+            <label for="zenui_bg" class="mat_krug" onclick="change_background(3)">
+              <input type="radio" name="akcent" id="zenui_bg">
+              <span class="krug">Серый</span>
+            </label>
           </div></div>
           <div class="ver bor-20 bor-t1"><div class="uip ab text bold sc">Темы:</br></br>
-            <a href="#" onclick="change_akcent(1); change_background(1); return false;">Oxygen</a></br>
-            <a href="#" onclick="change_akcent(3); change_background(3); return false;">ZenUI</a></br>
-            <a href="#" onclick="change_akcent(2); change_background(2); return false;">Pixel</a></br>
+            <label for="oxy_th" class="mat_krug" onclick="change_akcent(1); change_background(1)">
+              <input type="radio" name="theme" id="oxy_th" checked>
+              <span class="krug">Oxygen</span>
+            </label>
+            <label for="zen_th" class="mat_krug" onclick="change_akcent(3); change_background(3)">
+              <input type="radio" name="theme" id="zen_th">
+              <span class="krug">ZenUI</span>
+            </label>
+            <label for="pixel_th" class="mat_krug" onclick="change_akcent(2); change_background(2)">
+              <input type="radio" name="theme" id="pixel_th">
+              <span class="krug">Pixel</span>
+            </label>
           </div></div>
         </div>
       </div>
