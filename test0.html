@@ -13,291 +13,330 @@
 </head>
 <body>
 
-    <!-- bootloader -->
+  <!-- bootloader -->
 
-   	<div id="bootloader" class="abs t0 l0 r0 b0 dn ab">
-      <div class="shn cfix sb">МЕНЮ НАВИГАЦИИ</div>
-      <div class="shs fw anime">
-        <div class="shm anime bor-20"><a href="#boot" class="cfix anime sb fw fh">Ядро</a></div>
-        <div class="shm anime bor-20"><a href="#recovery" class="cfix anime sb fw fh">Предустановки</a></div>
-        <div class="shm anime bor-20"><a href="#data" class="cfix anime sb fw fh">Реестр</a></div>
-      </div>
-      <div class="shs fw anime">
-        <div class="shm anime bor-20"><a href="#system" class="cfix anime sb fw fh">Инструкции</a></div>
-        <div class="shm anime bor-20"><a href="#vendor" class="cfix anime sb fw fh">Технологии</a></div>
-        <div class="shm anime bor-20"><a href="#userdata" class="cfix anime sb fw fh">Репозиторий</a></div>
+  <div id="bootloader" class="abs t0 l0 r0 b0 dn ab">
+    <div class="shn cfix sb">МЕНЮ НАВИГАЦИИ</div>
+    <div class="shs fw anime">
+      <div class="shm anime bor-20"><a href="#boot" class="cfix anime sb fw fh">Ядро</a></div>
+      <div class="shm anime bor-20"><a href="#recovery" class="cfix anime sb fw fh">Предустановки</a></div>
+      <div class="shm anime bor-20"><a href="#data" class="cfix anime sb fw fh">Реестр</a></div>
+    </div>
+    <div class="shs fw anime">
+      <div class="shm anime bor-20"><a href="#system" class="cfix anime sb fw fh">Инструкции</a></div>
+      <div class="shm anime bor-20"><a href="#vendor" class="cfix anime sb fw fh">Технологии</a></div>
+      <div class="shm anime bor-20"><a href="#userdata" class="cfix anime sb fw fh">Репозиторий</a></div>
+    </div>
+  </div>
+
+  <!-- boot -->
+
+  <div id="boot" class="abs t0 l0 r0 b0 dn ab"> <!-- 1 сегмент -->
+    <div class="bar fixed fh">
+      <div class="nav cfix sb ab">Ядро</div>
+      <div class="menu abs">
+        <div class="segment anime"><a href="#boot" class="cfix fw fh ab"><b class="cfix sb fw fh">Функции ядра</b></a></div>
+        <div class="segment anime"><a href="#boot2" class="cfix fw fh ab">Основные определения</a></div>
+        <div class="segment anime"><a href="#boot3" class="cfix fw fh ab">Бан-триггеры</a></div>
+        <div class="segment anime"><a href="#boot4" class="cfix fw fh ab">ОСНОВНАЯ ЧАСТЬ ЯДРА</a></div>
+        <div class="segment anime"><a href="#boot5" class="cfix fw fh ab">Второстепенные принципы</a></div>
       </div>
     </div>
+    <div class="content ab ac abs">
 
-    <!-- boot -->
+    </div>
+    <div class="head r0 ab fixed sb cfix">Функции ядра</div>
+  </div>
 
-    <div id="boot" class="abs t0 l0 r0 b0 dn ab"> <!-- 1 сегмент -->
-      <div class="bar fixed fh">
-        <div class="nav cfix sb ab">Ядро</div>
-        <div class="menu abs">
-          <div class="segment anime"><a href="#boot" class="cfix fw fh ab bor-b1"><b class="cfix sb fw fh">Функции ядра</b></a></div>
-          <div class="segment anime"><a href="#boot2" class="cfix fw fh ab bor-b1">Основные определения</a></div>
-          <div class="segment anime"><a href="#boot3" class="cfix fw fh ab bor-b1">Бан-триггеры</a></div>
-          <div class="segment anime"><a href="#boot4" class="cfix fw fh ab bor-b1">ОСНОВНАЯ ЧАСТЬ ЯДРА</a></div>
-          <div class="segment anime"><a href="#boot5" class="cfix fw fh ab bor-b1">Второстепенные принципы</a></div>
+  <!-- settings -->
+
+  <div id="themes" class="abs t0 l0 r0 b0 dn ab"> <!-- themes -->
+    <div class="bar fixed fh">
+      <div class="nav cfix sb ab">Параметры</div>
+      <div class="menu abs">
+        <div class="segment anime"><a href="#themes" class="cfix fw fh ab"><b class="cfix sb fw fh">Персонализация</b></a></div>
+        <div class="segment anime"><a href="#standart" class="cfix fw fh ab">Шаблоны</a></div>
+        <div class="segment anime"><a href="#changlog" class="cfix fw fh ab">Список изменений</a></div>
+        <div class="segment anime"><a href="#about" class="cfix fw fh ab">Сведения о системе</a></div>
+      </div>
+    </div>
+    <div class="content ab ac abs">
+      <div class="info fw">
+        <div class="ver bor-20 bor-t1"><div class="uip ab text bold sc">Цвет акцента:</br></br>
+          <label for="cyan_akc" class="active" onclick="change_akcent(1)">
+            <input type="radio" name="akcent" value="#80CBC4" id="cyan_akc" checked>
+            <span class="krug hor cvet"></span>
+          </label>
+          <label for="blue_akc" class="active" onclick="change_akcent(2)">
+            <input type="radio" name="akcent" value="#33A" id="blue_akc">
+            <span class="krug hor cvet"></span>
+          </label>
+          <label for="green_akc" class="active" onclick="change_akcent(3)">
+            <input type="radio" name="akcent" value="#3A3" id="green_akc">
+            <span class="krug hor cvet"></span>
+          </label>
+        </div></div>
+        <div class="ver bor-20 bor-t1"><div class="uip ab text bold sc">Цвет фона:</br></br>
+          <label for="black_bg" class="active stroka" onclick="change_background(1)">
+            <input type="radio" name="background" id="black_bg" checked>
+            <span class="krug ver">Черный</span>
+          </label>
+          <label for="grey_bg" class="active stroka" onclick="change_background(2)">
+            <input type="radio" name="background" id="grey_bg">
+            <span class="krug ver">Темно-серый</span>
+          </label>
+          <label for="zenui_bg" class="active stroka" onclick="change_background(3)">
+            <input type="radio" name="background" id="zenui_bg">
+            <span class="krug ver">Серый</span>
+          </label>
+        </div></div>
+        <div class="ver bor-20 bor-t1"><div class="uip ab text bold sc">Темы:</br></br>
+          <label for="oxy_th" class="active stroka" onclick="change_akcent(1); change_background(1)">
+            <input type="radio" name="theme" id="oxy_th" checked>
+            <span class="krug ver">Oxygen</span>
+          </label>
+          <label for="zen_th" class="active stroka" onclick="change_akcent(3); change_background(3)">
+            <input type="radio" name="theme" id="zen_th">
+            <span class="krug ver">ZenUI</span>
+          </label>
+          <label for="pixel_th" class="active stroka" onclick="change_akcent(2); change_background(2)">
+            <input type="radio" name="theme" id="pixel_th">
+            <span class="krug ver">Pixel</span>
+          </label>
+        </div></div>
+      </div>
+    </div>
+    <div class="head r0 fixed ab sb cfix">Персонализация</div>
+  </div>
+
+  <div id="standart" class="abs t0 l0 r0 b0 dn ab"> <!-- standart -->
+    <div class="bar fixed fh">
+      <div class="nav cfix sb ab">Параметры</div>
+      <div class="menu abs">
+        <div class="segment anime"><a href="#themes" class="cfix fw fh ab">Персонализация</a></div>
+        <div class="segment anime"><a href="#standart" class="cfix fw fh ab"><b class="cfix sb fw fh">Шаблоны</b></a></div>
+        <div class="segment anime"><a href="#changlog" class="cfix fw fh ab">Список изменений</a></div>
+        <div class="segment anime"><a href="#about" class="cfix fw fh ab">Сведения о системе</a></div>
+      </div>
+    </div>
+    <div class="content ab ac abs">
+      <div class="info fw">
+        <div class="ver bor-20 bor-t1"><div class="uip ab text bold rc">ВАЖНО: пошол нахуй!</div></div>
+        <div class="ver bor-20 bor-t1"><div class="uip ab text bold yc">ТРЕБОВАНИЯ: соси хуй!</div></div>
+        <div class="ver bor-20 bor-t1"><div class="uip ab text sc">
+          <ul><b>Заголовок:</b>
+            <li>1 пункт</li>
+            <li>2 пункт</li>
+            <li>3 пункт</li>
+          </ul>
+        </div></div>
+        <div class="ver bor-20 bor-t1"><div class="uip ab text gc">код</div></div>
+        <div class="ver bor-20 bor-t1"><div class="uip ab text bc">Версия ядра</div></div>
+      </div>
+      <div class="info fw">
+        <div class="hor fh bor-20 bor-r1"><div class="uip ab text sb">Версия ядра</div></div>
+        <div class="hor fh bor-20 bor-l1"><div class="uip ab text sb">Версия ядра</div></div>
+      </div>
+    </div>
+    <div class="head r0 fixed ab sb cfix">Шаблоны</div>
+  </div>
+
+  <div id="changlog" class="abs t0 l0 r0 b0 dn ab"> <!-- changlog -->
+    <div class="bar fixed fh">
+      <div class="nav cfix sb ab">Параметры</div>
+      <div class="menu abs">
+        <div class="segment anime"><a href="#themes" class="cfix fw fh ab">Персонализация</a></div>
+        <div class="segment anime"><a href="#standart" class="cfix fw fh ab">Шаблоны</a></div>
+        <div class="segment anime"><a href="#changlog" class="cfix fw fh ab"><b class="cfix sb fw fh">Список изменений</b></a></div>
+        <div class="segment anime"><a href="#about" class="cfix fw fh ab">Сведения о системе</a></div>
+      </div>
+    </div>
+    <div class="content ab ac abs">
+      <div class="spoiler cfix">
+        <a class="sp sp1">LOSHICA UI 3.0 Test Release (#)</a>
+        <a class="sp sp2 r0">Дата выпуска: .10.2019</a>
+        <div class="sphide dn">
+          <ul><b>.10.2019 (#17):</b>
+            <li>пофиксил бордеры табл-меню</li>
+            <li>рассортировал параметры ui</li>
+          </ul>
+          <ul><b>13.10.2019 (#16):</b>
+            <li>сделал пункт "Персонализация"</li>
+            <li>завел скрипт тем (3 темки)</li>
+            <li>добавил радиокнопки двух видов</li>
+            <li>начал калибровать цвета и допиливать темы</li>
+          </ul>
+          <ul><b>10.10.2019 (#15):</b>
+            <li>расширенная оптимизация кода</li>
+            <li>больше модульности</li>
+            <li>окончательно допилил разметочные классы и интегрировал все изменения</li>
+            <li>бутлоадер теперь временно является по сути 1 шторкой</li>
+          </ul>
+          <ul><b>06.10.2019 (#14):</b>
+            <li>сделал пункт "Сведения о системе"</li>
+            <li>сделал пункт "Список изменений"</li>
+          </ul>
+          <ul><b>01.10.2019 (#13):</b>
+            <li>переделал шторку (теперь она двойная, с выезжанием второй из первой)</li>
+            <li>почистил css</li>
+            <li>добавил коммы в boot.css и system.css</li>
+          </ul>
+          <ul><b>30.09.2019 (#12):</b>
+            <li>сделал кнопки в меню кастомизации</li>
+            <li>добавил заголовок в меню кастомизации</li>
+          </ul>
         </div>
       </div>
-   	  <div class="content ab ac abs">
-
-      </div>
-      <div class="head r0 ab fixed sb cfix">Функции ядра</div>
-   	</div>
-
-    <!-- settings -->
-
-    <div id="about" class="abs t0 l0 r0 b0 dn ab"> <!-- about -->
-      <div class="bar fixed fh">
-        <div class="nav cfix sb ab">Параметры</div>
-        <div class="menu abs">
-          <div class="segment anime"><a href="#about" class="cfix fw fh ab bor-b1"><b class="cfix sb fw fh">Сведения о системе</b></a></div>
-          <div class="segment anime"><a href="#changlog" class="cfix fw fh ab bor-b1">Список изменений</a></div>
-          <div class="segment anime"><a href="#themes" class="cfix fw fh ab bor-b1">Персонализация</a></div>
+      <div class="spoiler cfix">
+        <a class="sp sp1">LOSHICA UI 2.1 Test Release (#11)</a>
+        <a class="sp sp2 r0">Дата выпуска: 29.09.2019</a>
+        <div class="sphide dn">
+          <ul>
+            <li>полностью переделал шторку и сделал ее в итоге двойной</li>
+            <li>добавил статусбар</li>
+            <li>интегрировал все изменения в основной файл</li>
+          </ul>
         </div>
       </div>
-   	  <div class="content ab ac abs">
-        <div id="abouth" class="abs sb bor-t1 fw">
-          <img src="root/images/rns.png" class="abs" />
-          <div class="abvt abs abhr cfix r0">LOSHICA OS</div>
-          <div class="abnt abs abhr cfix r0">Веб-платформа для создания ВСЕГО, что только можно</div>
-        </div>
-        <div id="abouts" class="info fw abs bor-b2">
-          <div class="hor bor-20 bor-r1"><div class="fw fh ab sb">
-            <div class="abvt abs abr cfix">Версия ядра</div><div class="abnt abs abr cfix">4.0</div>
-          </div></div>
-          <div class="hor bor-20 bor-lr1"><div class="fw fh ab sb">
-            <div class="abvt abs abr cfix">Версия Loshica OS</div><div class="abnt abs abr cfix">3.0</div>
-          </div></div>
-          <div class="hor bor-20 bor-lr1"><div class="fw fh ab sb">
-            <div class="abvt abs abr cfix">Номер сборки</div><div class="abnt abs abr cfix">#14</div>
-          </div></div>
-          <div class="hor bor-20 bor-l1"><div class="fw fh ab sb">
-            <div class="abvt abs abr cfix">Дата релиза</div><div class="abnt abs abr cfix">29.09.2019</div>
-          </div></div>
-        </div>
-        <div id="aboutn" class="info fw abs b0">
-          <div class="hor bor-20 bor-r1"><div class="fw fh ab sb cfix">
-            #IIPEKOLICT.github.io
-          </div></div>
-          <div class="hor bor-20 bor-l1"><div class="fw fh ab sb cfix">
-            <div class="abs">IIPEKOLICT, Loshica, Russland</br>All rights recerved</div>
-          </div></div>
+      <div class="spoiler cfix">
+        <a class="sp sp1">LOSHICA UI 2.0 Test Release (#10)</a>
+        <a class="sp sp2 r0">Дата выпуска: 24.09.2019</a>
+        <div class="sphide dn">
+          <ul><b>24.09.2019 (#10):</b>
+            <li>реализовал выезжание 2 шторки через css</li>
+            <li>сделал минималистичный бутлоадер</li>
+            <li>собрал полностью структуру и интегрировал все изменения в index.html</li>
+          </ul>
+          <ul><b>23.09.2019 (#9):</b>
+            <li>переделал шторку</li>
+            <li>допилил мини-шторку снизу</li>
+            <li>пофиксил наложения на бутлоадер (активные области 2х шторок)</li>
+            <li>поигрался чуток со скриптами (!!!)</li>
+          </ul>
+          <ul><b>22.09.2019 (#8):</b>
+            <li>сделал голую структуру сайта</li>
+            <li>мелкие исправления + начал делать мини-шторку снизу</li>
+          </ul>
+          <ul><b>21.09.2019 (#7):</b>
+            <li>полностью починил постраничную двойную навигацию</li>
+            <li>оптимизация кода</li>
+            <li>допилил и откалибровал анимацию и дизайн табл-меню</li>
+          </ul>
+          <ul><b>20.09.2019 (#6):</b>
+            <li>+ оптимизация</li>
+            <li>внедрил вторую постраничную навигацию посредством шторки</li>
+          </ul>
+          <ul><b>19.09.2019 (#5):</b>
+            <li>переделал и откалибровал шторку (теперь реализована через строки)</li>
+            <li>масштабная оптимизация кода в system.css</li>
+          </ul>
+          <ul><b>18.09.2019 (#4):</b>
+            <li>переделал шторку</li>
+            <li>вырезал статусбар</li>
+            <li>оптимизация кода</li>
+            <li>исправления дизайна табл-меню</li>
+          </ul>
+          <ul><b>17.09.2019 (#3):</b>
+            <li>переход на новый синтаксис</li>
+            <li>переделал табл-меню</li>
+          </ul>
         </div>
       </div>
-      <div class="head r0 ab fixed sb cfix">Сведения о системе</div>
-   	</div>
+      <div class="spoiler cfix">
+        <a class="sp sp1">LOSHICA UI 1.1 Test Build (#2)</a>
+        <a class="sp sp2 r0">Дата выпуска: 13.09.2019</a>
+      </div>
+      <div class="spoiler cfix">
+        <a class="sp sp1">LOSHICA UI 1.0 Test Initial Build (#1)</a>
+        <a class="sp sp2 r0">Дата выпуска: 03.09.2019</a>
+      </div>
+    </div>
+    <div class="head r0 ab fixed ab sb cfix">Список изменений</div>
+  </div>
 
-    <div id="changlog" class="abs t0 l0 r0 b0 dn ab"> <!-- changlog -->
-      <div class="bar fixed fh">
-        <div class="nav cfix sb ab">Параметры</div>
-        <div class="menu abs">
-          <div class="segment anime"><a href="#about" class="cfix fw fh ab bor-b1">Сведения о системе</a></div>
-          <div class="segment anime"><a href="#changlog" class="cfix fw fh ab bor-b1"><b class="cfix sb fw fh">Список изменений</b></a></div>
-          <div class="segment anime"><a href="#themes" class="cfix fw fh ab bor-b1">Персонализация</a></div>
-        </div>
+  <div id="about" class="abs t0 l0 r0 b0 dn ab"> <!-- about -->
+    <div class="bar fixed fh">
+      <div class="nav cfix sb ab">Параметры</div>
+      <div class="menu abs">
+        <div class="segment anime"><a href="#themes" class="cfix fw fh ab">Персонализация</a></div>
+        <div class="segment anime"><a href="#standart" class="cfix fw fh ab">Шаблоны</a></div>
+        <div class="segment anime"><a href="#changlog" class="cfix fw fh ab">Список изменений</a></div>
+        <div class="segment anime"><a href="#about" class="cfix fw fh ab"><b class="cfix sb fw fh">Сведения о системе</b></a></div>
       </div>
-   	  <div class="content ab ac abs">
-        <div class="spoiler cfix">
-          <a class="sp sp1">LOSHICA UI 3.0 Test Release (#)</a>
-          <a class="sp sp2 r0">Дата выпуска: .10.2019</a>
-          <div class="sphide dn">
-            <ul><b>13.10.2019 (#):</b>
-              <li>сделал пункт "Персонализация"</li>
-              <li>завел скрипт тем (3 темки)</li>
-              <li>добавил радиокнопки двух видов</li>
-              <li>начал калибровать цвета и допиливать темы</li>
-            </ul>
-            <ul><b>10.10.2019 (#15):</b>
-              <li>расширенная оптимизация кода</li>
-              <li>больше модульности</li>
-              <li>окончательно допилил разметочные классы и интегрировал все изменения</li>
-              <li>бутлоадер теперь временно является по сути 1 шторкой</li>
-            </ul>
-            <ul><b>06.10.2019 (#14):</b>
-              <li>сделал пункт "Сведения о системе"</li>
-              <li>сделал пункт "Список изменений"</li>
-            </ul>
-            <ul><b>01.10.2019 (#13):</b>
-              <li>переделал шторку (теперь она двойная, с выезжанием второй из первой)</li>
-              <li>почистил css</li>
-              <li>добавил коммы в boot.css и system.css</li>
-            </ul>
-            <ul><b>30.09.2019 (#12):</b>
-              <li>сделал кнопки в меню кастомизации</li>
-              <li>добавил заголовок в меню кастомизации</li>
-            </ul>
-          </div>
-        </div>
-        <div class="spoiler cfix">
-          <a class="sp sp1">LOSHICA UI 2.1 Test Release (#11)</a>
-          <a class="sp sp2 r0">Дата выпуска: 29.09.2019</a>
-          <div class="sphide dn">
-            <ul>
-              <li>полностью переделал шторку и сделал ее в итоге двойной</li>
-              <li>добавил статусбар</li>
-              <li>интегрировал все изменения в основной файл</li>
-            </ul>
-          </div>
-        </div>
-        <div class="spoiler cfix">
-          <a class="sp sp1">LOSHICA UI 2.0 Test Release (#10)</a>
-          <a class="sp sp2 r0">Дата выпуска: 24.09.2019</a>
-          <div class="sphide dn">
-            <ul><b>24.09.2019 (#10):</b>
-              <li>реализовал выезжание 2 шторки через css</li>
-              <li>сделал минималистичный бутлоадер</li>
-              <li>собрал полностью структуру и интегрировал все изменения в index.html</li>
-            </ul>
-            <ul><b>23.09.2019 (#9):</b>
-              <li>переделал шторку</li>
-              <li>допилил мини-шторку снизу</li>
-              <li>пофиксил наложения на бутлоадер (активные области 2х шторок)</li>
-              <li>поигрался чуток со скриптами (!!!)</li>
-            </ul>
-            <ul><b>22.09.2019 (#8):</b>
-              <li>сделал голую структуру сайта</li>
-              <li>мелкие исправления + начал делать мини-шторку снизу</li>
-            </ul>
-            <ul><b>21.09.2019 (#7):</b>
-              <li>полностью починил постраничную двойную навигацию</li>
-              <li>оптимизация кода</li>
-              <li>допилил и откалибровал анимацию и дизайн табл-меню</li>
-            </ul>
-            <ul><b>20.09.2019 (#6):</b>
-              <li>+ оптимизация</li>
-              <li>внедрил вторую постраничную навигацию посредством шторки</li>
-            </ul>
-            <ul><b>19.09.2019 (#5):</b>
-              <li>переделал и откалибровал шторку (теперь реализована через строки)</li>
-              <li>масштабная оптимизация кода в system.css</li>
-            </ul>
-            <ul><b>18.09.2019 (#4):</b>
-              <li>переделал шторку</li>
-              <li>вырезал статусбар</li>
-              <li>оптимизация кода</li>
-              <li>исправления дизайна табл-меню</li>
-            </ul>
-            <ul><b>17.09.2019 (#3):</b>
-              <li>переход на новый синтаксис</li>
-              <li>переделал табл-меню</li>
-            </ul>
-          </div>
-        </div>
-        <div class="spoiler cfix">
-          <a class="sp sp1">LOSHICA UI 1.1 Test Build (#2)</a>
-          <a class="sp sp2 r0">Дата выпуска: 13.09.2019</a>
-        </div>
-        <div class="spoiler cfix">
-          <a class="sp sp1">LOSHICA UI 1.0 Test Initial Build (#1)</a>
-          <a class="sp sp2 r0">Дата выпуска: 03.09.2019</a>
-        </div>
+    </div>
+    <div class="content ab ac abs">
+      <div id="abouth" class="abs sb bor-t1 fw">
+        <img src="root/images/rns.png" class="abs" />
+        <div class="abvt abs abhr cfix r0">LOSHICA OS</div>
+        <div class="abnt abs abhr cfix r0">Веб-платформа для создания ВСЕГО, что только можно</div>
       </div>
-      <div class="head r0 ab fixed sb cfix">Список изменений</div>
-   	</div>
+      <div id="abouts" class="info fw abs bor-b2">
+        <div class="hor bor-20 bor-r1"><div class="fw fh ab sb">
+          <div class="abvt abs abr cfix">Версия ядра</div><div class="abnt abs abr cfix">4.0</div>
+        </div></div>
+        <div class="hor bor-20 bor-lr1"><div class="fw fh ab sb">
+          <div class="abvt abs abr cfix">Версия Loshica OS</div><div class="abnt abs abr cfix">3.0</div>
+        </div></div>
+        <div class="hor bor-20 bor-lr1"><div class="fw fh ab sb">
+          <div class="abvt abs abr cfix">Номер сборки</div><div class="abnt abs abr cfix">#14</div>
+        </div></div>
+        <div class="hor bor-20 bor-l1"><div class="fw fh ab sb">
+          <div class="abvt abs abr cfix">Дата релиза</div><div class="abnt abs abr cfix">29.09.2019</div>
+        </div></div>
+      </div>
+      <div id="aboutn" class="info fw abs b0">
+        <div class="hor bor-20 bor-r1"><div class="fw fh ab sb cfix">
+          #IIPEKOLICT.github.io
+        </div></div>
+        <div class="hor bor-20 bor-l1"><div class="fw fh ab sb cfix">
+          <div class="abs">IIPEKOLICT, Loshica, Russland</br>All rights recerved</div>
+        </div></div>
+      </div>
+    </div>
+    <div class="head r0 ab fixed ab sb cfix">Сведения о системе</div>
+  </div>
 
-    <div id="themes" class="abs t0 l0 r0 b0 dn ab"> <!-- themes -->
-      <div class="bar fixed fh">
-        <div class="nav cfix sb ab">Параметры</div>
-        <div class="menu abs">
-          <div class="segment anime"><a href="#about" class="cfix fw fh ab bor-b1">Сведения о системе</a></div>
-          <div class="segment anime"><a href="#changlog" class="cfix fw fh ab bor-b1">Список изменений</a></div>
-          <div class="segment anime"><a href="#themes" class="cfix fw fh ab bor-b1"><b class="cfix sb fw fh">Персонализация</b></a></div>
-        </div>
-      </div>
-   	  <div class="content ab ac abs">
-        <div class="info fw">
-          <div class="ver bor-20 bor-t1"><div class="uip ab text bold sc">Цвет акцента:</br></br>
-            <label for="cyan_akc" class="ver_radio" onclick="change_akcent(1)">
-              <input type="radio" name="cvet" value="cyan" id="cyan_akc" checked>
-              <span></span>
-            </label>
-            <label for="blue_akc" class="ver_radio" onclick="change_akcent(2)">
-              <input type="radio" name="cvet" value="blue" id="blue_akc">
-              <span></span>
-            </label>
-            <label for="green_akc" class="ver_radio" onclick="change_akcent(3)">
-              <input type="radio" name="cvet" value="green" id="green_akc">
-              <span></span>
-            </label>
-          </div></div>
-          <div class="ver bor-20 bor-t1"><div class="uip ab text bold sc">Цвет фона:</br></br>
-            <label for="black_bg" class="mat_krug" onclick="change_background(1)">
-              <input type="radio" name="akcent" id="black_bg" checked>
-              <span class="krug">Черный</span>
-            </label>
-            <label for="grey_bg" class="mat_krug" onclick="change_background(2)">
-              <input type="radio" name="akcent" id="grey_bg">
-              <span class="krug">Темно-серый</span>
-            </label>
-            <label for="zenui_bg" class="mat_krug" onclick="change_background(3)">
-              <input type="radio" name="akcent" id="zenui_bg">
-              <span class="krug">Серый</span>
-            </label>
-          </div></div>
-          <div class="ver bor-20 bor-t1"><div class="uip ab text bold sc">Темы:</br></br>
-            <label for="oxy_th" class="mat_krug" onclick="change_akcent(1); change_background(1)">
-              <input type="radio" name="theme" id="oxy_th" checked>
-              <span class="krug">Oxygen</span>
-            </label>
-            <label for="zen_th" class="mat_krug" onclick="change_akcent(3); change_background(3)">
-              <input type="radio" name="theme" id="zen_th">
-              <span class="krug">ZenUI</span>
-            </label>
-            <label for="pixel_th" class="mat_krug" onclick="change_akcent(2); change_background(2)">
-              <input type="radio" name="theme" id="pixel_th">
-              <span class="krug">Pixel</span>
-            </label>
-          </div></div>
-        </div>
-      </div>
-      <div class="head r0 fixed sb cfix">Персонализация</div>
-   	</div>
+  <!-- шторка -->
 
-      <!-- шторка -->
+  <div id="sh" class="fixed fw">
+    <div class="sh fixed anime bor-20">
+      <div id="sh1" class="abs fw fh sh0">
+        <div class="shn cfix sb">МЕНЮ НАВИГАЦИИ</div>
+        <div class="shs fw anime">
+          <div class="shm anime bor-20"><a href="#boot" class="cfix anime sb fw fh">Ядро</a></div>
+          <div class="shm anime bor-20"><a href="#recovery" class="cfix anime sb fw fh">Предустановки</a></div>
+          <div class="shm anime bor-20"><a href="#data" class="cfix anime sb fw fh">Реестр</a></div>
+        </div>
+        <div class="shs fw anime">
+          <div class="shm anime bor-20"><a href="#system" class="cfix anime sb fw fh">Инструкции</a></div>
+          <div class="shm anime bor-20"><a href="#vendor" class="cfix anime sb fw fh">Технологии</a></div>
+          <div class="shm anime bor-20"><a href="#userdata" class="cfix anime sb fw fh">Репозиторий</a></div>
+        </div>
+        <a href="#bootloader"><div id="homeb" class="abs button b0 l0 cfix anime">
+            <img src="root/icons/home.png" />
+        </div></a>
+        <a href="#themes"><div id="setb" class="abs button b0 cfix anime r0">
+            <img src="root/icons/settings.png" />
+        </div></a>
+      </div>
 
-      <div id="sh" class="fixed fw">
-        <div class="sh fixed anime bor-20">
-          <div id="sh1" class="abs fw fh sh0">
-            <div class="shn cfix sb">МЕНЮ НАВИГАЦИИ</div>
-            <div class="shs fw anime">
-              <div class="shm anime bor-20"><a href="#boot" class="cfix anime sb fw fh">Ядро</a></div>
-              <div class="shm anime bor-20"><a href="#recovery" class="cfix anime sb fw fh">Предустановки</a></div>
-              <div class="shm anime bor-20"><a href="#data" class="cfix anime sb fw fh">Реестр</a></div>
-            </div>
-            <div class="shs fw anime">
-              <div class="shm anime bor-20"><a href="#system" class="cfix anime sb fw fh">Инструкции</a></div>
-              <div class="shm anime bor-20"><a href="#vendor" class="cfix anime sb fw fh">Технологии</a></div>
-              <div class="shm anime bor-20"><a href="#userdata" class="cfix anime sb fw fh">Репозиторий</a></div>
-            </div>
+      <!-- расширенная шторка -->
+
+      <div id="custom" class="abs b0 bor-20">
+        <div id="sh2" class="fw fh sh0">
+          <div class="custom t0 fixed anime bor-20">
+            <div class="shnc abs cfix sb b0 fw">МЕНЮ КАСТОМИЗАЦИИ</div>
             <a href="#bootloader"><div id="homeb" class="abs button b0 l0 cfix anime">
-                <img src="root/icons/home.png" />
+              <img src="root/icons/home.png" />
             </div></a>
-            <a href="#about"><div id="setb" class="abs button b0 cfix anime r0">
-                <img src="root/icons/settings.png" />
+            <a href="#themes"><div id="setb" class="abs button b0 cfix anime r0">
+              <img src="root/icons/settings.png" />
             </div></a>
-          </div>
-
-          <!-- расширенная шторка -->
-
-          <div id="custom" class="abs b0 bor-20">
-            <div id="sh2" class="fw fh sh0">
-              <div class="custom t0 fixed anime bor-20">
-                <div class="shnc abs cfix sb b0 fw">МЕНЮ КАСТОМИЗАЦИИ</div>
-                <a href="#bootloader"><div id="homeb" class="abs button b0 l0 cfix anime">
-                  <img src="root/icons/home.png" />
-                </div></a>
-                <a href="#about"><div id="setb" class="abs button b0 cfix anime r0">
-                  <img src="root/icons/settings.png" />
-                </div></a>
-              </div>
-            </div>
           </div>
         </div>
       </div>
+    </div>
+  </div>
 
 </body>
 </html>

@@ -44,6 +44,7 @@
   .menu a:hover {
     background: #80CBC4;
     color: #474747;
+    border-bottom: 1px solid #212121;
     border-radius: 20px;
   }
   .segment b {

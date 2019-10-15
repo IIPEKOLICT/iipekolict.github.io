@@ -8,87 +8,47 @@
   position: absolute;
   width: 1px;
 }
-label.mat_krug { /* строчка с радиокнопкой */
+label.active {cursor: pointer;} /* строчка с радиокнопкой */
+label.stroka { /* строчка с радиокнопкой */
   display: block;
-  cursor: pointer;
   line-height: 40px;
 }
-[type="radio"] + span.krug {display: block;} /* показать текст и саму радиокнопку */
+[type="radio"] + span.krug.ver {display: block;} /* показать текст и саму радиокнопку */
 [type="radio"] + span.krug:before { /* параметры радиокнопки по дефолту */
   content: '';
   display: inline-block;
   width: 16px;
   height: 16px;
+  transition: 0.3s ease all;
+}
+[type="radio"] + span.krug.ver:before { /* параметры радиокнопки в вертикальном списке */
   vertical-align: -0.25em;
   margin-right: 20px;
-  transition: 0.3s ease all;
 }
-
-
-/* акцентные параметры */
-
-[type="radio"] + span.krug:before {box-shadow: 0 0 0 2px #80CBC4;} /* колечко в радиокнопке */
-[type="radio"]:checked + span.krug:before { /* отмеченная радиокнопка (кольцо+кружок) */
-  background: #80CBC4;
-  box-shadow: 0 0 0 2px #80CBC4;
-}
-
-/* параметры фона */
-
-[type="radio"] + span.krug:before {border: 2px solid #000;} /* "прозрачный" промежуток между кольцом и кружком в радиокнопке */
-
-/* закругления */
-
-[type="radio"] + span.krug:before {border-radius: 16px;} /* у радиокнопки */
-
-
-
-/*----------------------------------------------------------------------------------------------------------------------------------------*/
-
-
-
-label.ver_radio {cursor: pointer;} /* строчка с радиокнопкой */
-[type="radio"][name="cvet"] + span:before { /* параметры радиокнопки по дефолту */
-  content: '';
-  display: inline-block;
-  width: 16px;
-  height: 16px;
-  margin: 8px;
-  transition: 0.3s ease all;
-}
-
-/* параметры фона */
-
-[type="radio"][name="cvet"] + span:before {border: 2px solid #000;} /* "прозрачный" промежуток между кольцом и кружком в радиокнопке */
-
-/* закругления */
-
-[type="radio"][name="cvet"] + span:before {border-radius: 16px;} /* у радиокнопки */
-
-
+[type="radio"] + span.krug.hor:before {margin: 8px;} /* параметры радиокнопки горизонтального списка */
 
 /* параметры расцветки ----------------------------------------------------------------------------------------------------------------*/
 
 /* cyan */
 
-[type="radio"][name="cvet"][value="cyan"] + span:before {box-shadow: 0 0 0 2px #80CBC4;} /* колечко в радиокнопке */
-[type="radio"][name="cvet"][value="cyan"]:checked + span:before { /* отмеченная радиокнопка (кольцо+кружок) */
+[type="radio"][value="#80CBC4"] + span.cvet:before {box-shadow: 0 0 0 2px #80CBC4;} /* колечко в радиокнопке */
+[type="radio"][value="#80CBC4"]:checked + span.cvet:before { /* отмеченная радиокнопка (кольцо+кружок) */
   background: #80CBC4;
   box-shadow: 0 0 0 2px #80CBC4;
 }
 
 /* blue */
 
-[type="radio"][name="cvet"][value="blue"] + span:before {box-shadow: 0 0 0 2px #33A;} /* колечко в радиокнопке */
-[type="radio"][name="cvet"][value="blue"]:checked + span:before { /* отмеченная радиокнопка (кольцо+кружок) */
+[type="radio"][value="#33A"] + span.cvet:before {box-shadow: 0 0 0 2px #33A;} /* колечко в радиокнопке */
+[type="radio"][value="#33A"]:checked + span.cvet:before { /* отмеченная радиокнопка (кольцо+кружок) */
   background: #33A;
   box-shadow: 0 0 0 2px #33A;
 }
 
 /* green */
 
-[type="radio"][name="cvet"][value="green"] + span:before {box-shadow: 0 0 0 2px #3A3;} /* колечко в радиокнопке */
-[type="radio"][name="cvet"][value="green"]:checked + span:before { /* отмеченная радиокнопка (кольцо+кружок) */
+[type="radio"][value="#3A3"] + span.cvet:before {box-shadow: 0 0 0 2px #3A3;} /* колечко в радиокнопке */
+[type="radio"][value="#3A3"]:checked + span.cvet:before { /* отмеченная радиокнопка (кольцо+кружок) */
   background: #3A3;
   box-shadow: 0 0 0 2px #3A3;
 }
