@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="root/css/radio.css">
   <link id="theme_akcent" rel="stylesheet" src="root/css/akcent/akc1.css"/>
   <link id="theme_background" rel="stylesheet" src="root/css/background/bg1.css"/>
+  <link id="theme_krug" rel="stylesheet" src="root/css/krug/kr1.css"/>
   <script src="root/js/jquery.js"></script>
   <script src="root/js/themes.js"></script>
 </head>
@@ -25,7 +26,7 @@
     <div class="shs fw anime">
       <div class="shm anime bor-20"><a href="#system" class="cfix anime sb fw fh">Инструкции</a></div>
       <div class="shm anime bor-20"><a href="#vendor" class="cfix anime sb fw fh">Технологии</a></div>
-      <div class="shm anime bor-20"><a href="#userdata" class="cfix anime sb fw fh">Репозиторий</a></div>
+      <div class="shm anime bor-20"><a href="#userdata" class="cfix anime sb fw fh">Информация</a></div>
     </div>
   </div>
 
@@ -42,7 +43,7 @@
         <div class="segment anime"><a href="#boot5" class="cfix fw fh ab">Второстепенные принципы</a></div>
       </div>
     </div>
-    <div class="content ab ac abs">
+    <div class="content ab sc abs">
 
     </div>
     <div class="head r0 ab fixed sb cfix">Функции ядра</div>
@@ -60,49 +61,111 @@
         <div class="segment anime"><a href="#about" class="cfix fw fh ab">Сведения о системе</a></div>
       </div>
     </div>
-    <div class="content ab ac abs">
+    <div class="content ab sc abs">
       <div class="info fw">
-        <div class="ver bor-20 bor-t1"><div class="uip ab text bold sc">Цвет акцента:</br></br>
+        <div class="ver bor-t1"><div class="uip ab text bold">Цвет акцента:</br></br>
           <label for="cyan_akc" class="active" onclick="change_akcent(1)">
-            <input type="radio" name="akcent" value="#80CBC4" id="cyan_akc" checked>
+            <input type="radio" name="akcent" value="#80CBC4" id="cyan_akc">
             <span class="krug hor cvet"></span>
           </label>
           <label for="blue_akc" class="active" onclick="change_akcent(2)">
-            <input type="radio" name="akcent" value="#33A" id="blue_akc">
+            <input type="radio" name="akcent" value="#42A5F6" id="blue_akc">
             <span class="krug hor cvet"></span>
           </label>
           <label for="green_akc" class="active" onclick="change_akcent(3)">
-            <input type="radio" name="akcent" value="#3A3" id="green_akc">
+            <input type="radio" name="akcent" value="#208559" id="green_akc">
+            <span class="krug hor cvet"></span>
+          </label>
+          <label for="fiolet_akc" class="active" onclick="change_akcent(4)">
+            <input type="radio" name="akcent" value="#9675CE" id="fiolet_akc">
+            <span class="krug hor cvet"></span>
+          </label>
+          <label for="red_akc" class="active" onclick="change_akcent(5)">
+            <input type="radio" name="akcent" value="#EB0028" id="red_akc">
+            <span class="krug hor cvet"></span>
+          </label>
+          <label for="ocean_akc" class="active" onclick="change_akcent(6)">
+            <input type="radio" name="akcent" value="#25C6DA" id="ocean_akc">
+            <span class="krug hor cvet"></span>
+          </label>
+          <label for="kor_akc" class="active" onclick="change_akcent(7)">
+            <input type="radio" name="akcent" value="#CC6F4E" id="kor_akc">
+            <span class="krug hor cvet"></span>
+          </label>
+          <label for="orange_akc" class="active" onclick="change_akcent(8)">
+            <input type="radio" name="akcent" value="#E5A544" id="orange_akc">
+            <span class="krug hor cvet"></span>
+          </label>
+          <label for="lgreen_akc" class="active" onclick="change_akcent(9)">
+            <input type="radio" name="akcent" value="#7DC32F" id="lgreen_akc">
+            <span class="krug hor cvet"></span>
+          </label>
+          <label for="pink_akc" class="active" onclick="change_akcent(10)">
+            <input type="radio" name="akcent" value="#F06292" id="pink_akc">
             <span class="krug hor cvet"></span>
           </label>
         </div></div>
-        <div class="ver bor-20 bor-t1"><div class="uip ab text bold sc">Цвет фона:</br></br>
+        <div class="ver bor-t1"><div class="uip ab text bold">Цвет фона:</br></br>
           <label for="black_bg" class="active stroka" onclick="change_background(1)">
-            <input type="radio" name="background" id="black_bg" checked>
+            <input type="radio" name="background" id="black_bg">
             <span class="krug ver">Черный</span>
           </label>
-          <label for="grey_bg" class="active stroka" onclick="change_background(2)">
-            <input type="radio" name="background" id="grey_bg">
+          <label for="bgrey_bg" class="active stroka" onclick="change_background(2)">
+            <input type="radio" name="background" id="bgrey_bg">
             <span class="krug ver">Темно-серый</span>
           </label>
-          <label for="zenui_bg" class="active stroka" onclick="change_background(3)">
-            <input type="radio" name="background" id="zenui_bg">
+          <label for="grey_bg" class="active stroka" onclick="change_background(3)">
+            <input type="radio" name="background" id="grey_bg">
             <span class="krug ver">Серый</span>
           </label>
+          <label for="white_bg" class="active stroka" onclick="change_background(4)">
+            <input type="radio" name="background" id="white_bg">
+            <span class="krug ver">Белый (бета)</span>
+          </label>
         </div></div>
-        <div class="ver bor-20 bor-t1"><div class="uip ab text bold sc">Темы:</br></br>
-          <label for="oxy_th" class="active stroka" onclick="change_akcent(1); change_background(1)">
-            <input type="radio" name="theme" id="oxy_th" checked>
-            <span class="krug ver">Oxygen</span>
+        <div class="ver bor-t1"><div class="uip ab text bold">Закругления:</br></br>
+          <label for="krug_on" class="active stroka" onclick="change_krug(1)">
+            <input type="radio" name="krug" id="krug_on" checked>
+            <span class="krug ver">Есть</span>
           </label>
-          <label for="zen_th" class="active stroka" onclick="change_akcent(3); change_background(3)">
-            <input type="radio" name="theme" id="zen_th">
-            <span class="krug ver">ZenUI</span>
+          <label for="krug_off" class="active stroka" onclick="change_krug(2)">
+            <input type="radio" name="krug" id="krug_off">
+            <span class="krug ver">Нет</span>
           </label>
-          <label for="pixel_th" class="active stroka" onclick="change_akcent(2); change_background(2)">
-            <input type="radio" name="theme" id="pixel_th">
-            <span class="krug ver">Pixel</span>
-          </label>
+        </div></div>
+        <div class="ver bor-t2"><div class="uip ab text bold">
+          <input type="checkbox" id="id-name--1" name="set-name" class="switch-input">
+	        <label for="id-name--1" class="switch-label">Тестовый переключатель <span class="toggle--on">активен</span><span class="toggle--off">неактивен</span></label>
+        </div></div>
+        <div class="ver bor-t2"><div class="uip ab text bold">
+          <div class="shs fw anime">
+            <div class="shm anime bor-20">
+              <input type="radio" id="los_th" name="knopka">
+              <label for="los_th" class="active fw fh cfix sb" onclick="change_krug(1); change_akcent(1); change_background(1)">LOSHICA UI</label>
+            </div>
+            <div class="shm anime bor-20">
+              <input type="radio" id="oxy_th" name="knopka">
+              <label for="oxy_th" class="active fw fh cfix sb" onclick="change_krug(1); change_akcent(4); change_background(1)">Oxygen</label>
+            </div>
+            <div class="shm anime bor-20">
+              <input type="radio" id="pixel_th" name="knopka">
+              <label for="pixel_th" class="active fw fh cfix sb" onclick="change_krug(1); change_akcent(2); change_background(2)">Pixel</label>
+            </div>
+          </div>
+          <div class="shs fw anime">
+            <div class="shm anime bor-20">
+              <input type="radio" id="mat_th" name="knopka">
+              <label for="mat_th" class="active fw fh cfix sb" onclick="change_krug(1); change_akcent(6); change_background(3)">Material</label>
+            </div>
+            <div class="shm anime bor-20">
+              <input type="radio" id="win_th" name="knopka">
+              <label for="win_th" class="active fw fh cfix sb" onclick="change_krug(2); change_akcent(3); change_background(1)">Windows</label>
+            </div>
+            <div class="shm anime bor-20">
+              <input type="radio" id="meme_th" name="knopka">
+              <label for="meme_th" class="active fw fh cfix sb" onclick="change_krug(1); change_akcent(2); change_background(4)">Meme UI</label>
+            </div>
+          </div>
         </div></div>
       </div>
     </div>
@@ -121,21 +184,21 @@
     </div>
     <div class="content ab ac abs">
       <div class="info fw">
-        <div class="ver bor-20 bor-t1"><div class="uip ab text bold rc">ВАЖНО: пошол нахуй!</div></div>
-        <div class="ver bor-20 bor-t1"><div class="uip ab text bold yc">ТРЕБОВАНИЯ: соси хуй!</div></div>
-        <div class="ver bor-20 bor-t1"><div class="uip ab text sc">
+        <div class="ver bor-t1"><div class="uip ab text bold rc">ВАЖНО: пошол нахуй!</div></div>
+        <div class="ver bor-t1"><div class="uip ab text bold yc">ТРЕБОВАНИЯ: соси хуй!</div></div>
+        <div class="ver bor-t1"><div class="uip ab text sc">
           <ul><b>Заголовок:</b>
             <li>1 пункт</li>
             <li>2 пункт</li>
             <li>3 пункт</li>
           </ul>
         </div></div>
-        <div class="ver bor-20 bor-t1"><div class="uip ab text gc">код</div></div>
-        <div class="ver bor-20 bor-t1"><div class="uip ab text bc">Версия ядра</div></div>
+        <div class="ver bor-t1"><div class="uip ab text gc">код</div></div>
+        <div class="ver bor-t1"><div class="uip ab text bc">Версия ядра</div></div>
       </div>
-      <div class="info fw">
-        <div class="hor fh bor-20 bor-r1"><div class="uip ab text sb">Версия ядра</div></div>
-        <div class="hor fh bor-20 bor-l1"><div class="uip ab text sb">Версия ядра</div></div>
+      <div class="info fw bor-t2">
+        <div class="hor fh bor-r1"><div class="uip ab text sb">Версия ядра</div></div>
+        <div class="hor fh bor-l1"><div class="uip ab text sb">Версия ядра</div></div>
       </div>
     </div>
     <div class="head r0 fixed ab sb cfix">Шаблоны</div>
@@ -156,7 +219,9 @@
         <a class="sp sp1">LOSHICA UI 3.0 Test Release (#)</a>
         <a class="sp sp2 r0">Дата выпуска: .10.2019</a>
         <div class="sphide dn">
-          <ul><b>.10.2019 (#17):</b>
+          <ul><b>17.10.2019 (#17):</b>
+            <li>начал делать светлую тему</li>
+            <li>откалибровал 3 фона, 10 акцентов и выключатель закруглений для темок</li>
             <li>пофиксил бордеры табл-меню</li>
             <li>рассортировал параметры ui</li>
           </ul>
@@ -271,29 +336,29 @@
         <div class="abnt abs abhr cfix r0">Веб-платформа для создания ВСЕГО, что только можно</div>
       </div>
       <div id="abouts" class="info fw abs bor-b2">
-        <div class="hor bor-20 bor-r1"><div class="fw fh ab sb">
+        <div class="hor bor-r1"><div class="fw fh ab sb">
           <div class="abvt abs abr cfix">Версия ядра</div><div class="abnt abs abr cfix">4.0</div>
         </div></div>
-        <div class="hor bor-20 bor-lr1"><div class="fw fh ab sb">
+        <div class="hor bor-lr1"><div class="fw fh ab sb">
           <div class="abvt abs abr cfix">Версия Loshica OS</div><div class="abnt abs abr cfix">3.0</div>
         </div></div>
-        <div class="hor bor-20 bor-lr1"><div class="fw fh ab sb">
+        <div class="hor bor-lr1"><div class="fw fh ab sb">
           <div class="abvt abs abr cfix">Номер сборки</div><div class="abnt abs abr cfix">#14</div>
         </div></div>
-        <div class="hor bor-20 bor-l1"><div class="fw fh ab sb">
+        <div class="hor bor-l1"><div class="fw fh ab sb">
           <div class="abvt abs abr cfix">Дата релиза</div><div class="abnt abs abr cfix">29.09.2019</div>
         </div></div>
       </div>
       <div id="aboutn" class="info fw abs b0">
-        <div class="hor bor-20 bor-r1"><div class="fw fh ab sb cfix">
+        <div class="hor bor-r1"><div class="fw fh ab sb cfix">
           #IIPEKOLICT.github.io
         </div></div>
-        <div class="hor bor-20 bor-l1"><div class="fw fh ab sb cfix">
+        <div class="hor bor-l1"><div class="fw fh ab sb cfix">
           <div class="abs">IIPEKOLICT, Loshica, Russland</br>All rights recerved</div>
         </div></div>
       </div>
     </div>
-    <div class="head r0 ab fixed ab sb cfix">Сведения о системе</div>
+    <div class="head r0 ab fixed ab sb cfix bor-b1">Сведения о системе</div>
   </div>
 
   <!-- шторка -->
@@ -304,19 +369,19 @@
         <div class="shn cfix sb">МЕНЮ НАВИГАЦИИ</div>
         <div class="shs fw anime">
           <div class="shm anime bor-20"><a href="#boot" class="cfix anime sb fw fh">Ядро</a></div>
-          <div class="shm anime bor-20"><a href="#recovery" class="cfix anime sb fw fh">Предустановки</a></div>
+          <div class="shm anime bor-20"><a href="#recovery" class="cfix anime sb fw fh">Надстройки</a></div>
           <div class="shm anime bor-20"><a href="#data" class="cfix anime sb fw fh">Реестр</a></div>
         </div>
         <div class="shs fw anime">
           <div class="shm anime bor-20"><a href="#system" class="cfix anime sb fw fh">Инструкции</a></div>
           <div class="shm anime bor-20"><a href="#vendor" class="cfix anime sb fw fh">Технологии</a></div>
-          <div class="shm anime bor-20"><a href="#userdata" class="cfix anime sb fw fh">Репозиторий</a></div>
+          <div class="shm anime bor-20"><a href="#userdata" class="cfix anime sb fw fh">Информация</a></div>
         </div>
         <a href="#bootloader"><div id="homeb" class="abs button b0 l0 cfix anime">
-            <img src="root/icons/home.png" />
+          <img src="root/icons/home.png" />
         </div></a>
         <a href="#themes"><div id="setb" class="abs button b0 cfix anime r0">
-            <img src="root/icons/settings.png" />
+          <img src="root/icons/settings.png" />
         </div></a>
       </div>
 
@@ -325,7 +390,35 @@
       <div id="custom" class="abs b0 bor-20">
         <div id="sh2" class="fw fh sh0">
           <div class="custom t0 fixed anime bor-20">
-            <div class="shnc abs cfix sb b0 fw">МЕНЮ КАСТОМИЗАЦИИ</div>
+            <div class="shnc cfix sb t0 fw">ТЕМЫ</div>
+            <div class="shs fw anime">
+              <div class="shm anime bor-20">
+                <input type="radio" id="los_th" name="knopka">
+                <label for="los_th" class="active fw fh cfix sb" onclick="change_krug(1); change_akcent(1); change_background(1)">LOSHICA UI</label>
+              </div>
+              <div class="shm anime bor-20">
+                <input type="radio" id="oxy_th" name="knopka">
+                <label for="oxy_th" class="active fw fh cfix sb" onclick="change_krug(1); change_akcent(4); change_background(1)">Oxygen</label>
+              </div>
+              <div class="shm anime bor-20">
+                <input type="radio" id="pixel_th" name="knopka">
+                <label for="pixel_th" class="active fw fh cfix sb" onclick="change_krug(1); change_akcent(2); change_background(2)">Pixel</label>
+              </div>
+            </div>
+            <div class="shs fw anime">
+              <div class="shm anime bor-20">
+                <input type="radio" id="mat_th" name="knopka">
+                <label for="mat_th" class="active fw fh cfix sb" onclick="change_krug(1); change_akcent(6); change_background(3)">Material</label>
+              </div>
+              <div class="shm anime bor-20">
+                <input type="radio" id="win_th" name="knopka">
+                <label for="win_th" class="active fw fh cfix sb" onclick="change_krug(2); change_akcent(3); change_background(1)">Windows</label>
+              </div>
+              <div class="shm anime bor-20">
+                <input type="radio" id="meme_th" name="knopka">
+                <label for="meme_th" class="active fw fh cfix sb" onclick="change_krug(1); change_akcent(2); change_background(4)">Meme UI</label>
+              </div>
+            </div>
             <a href="#bootloader"><div id="homeb" class="abs button b0 l0 cfix anime">
               <img src="root/icons/home.png" />
             </div></a>
