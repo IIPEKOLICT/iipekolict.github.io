@@ -35,3 +35,22 @@ function change_background(a) {
     localStorage.setItem('theme_background', a);
   };
 };
+
+// Включение/выключение закруглений
+
+$(function() {
+  if(!localStorage.getItem('theme_krug')) {
+    $('#theme_krug').attr('href', 'root/css/krug/kr1.css');
+  } else {
+    $('#theme_krug').attr('href', 'root/css/krug/kr' + localStorage.getItem('theme_krug') + '.css');
+  };
+});
+function change_krug(a) {
+  if(a == 1) {
+    $('#theme_krug').attr('href', 'root/css/krug/kr1.css');
+    localStorage.removeItem('theme_krug');
+  } else {
+    $('#theme_krug').attr('href', 'root/css/krug/kr' + a + '.css');
+    localStorage.setItem('theme_krug', a);
+  };
+};
