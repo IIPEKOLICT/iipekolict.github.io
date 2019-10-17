@@ -247,4 +247,42 @@
     text-align: center;
   }
 
-/*-------------------------------------------------------------------------------------------------*/
+/*--------------------------------------------------------------------------------------------------------*/
+/* переключатели/радиокнопки/чекбоксы и т. д. */
+/*--------------------------------------------------------------------------------------------------------*/
+
+  [type="radio"] { /* фикс видимости радио */
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+  label.active {cursor: pointer;} /* строчка с радиокнопкой */
+  label.stroka { /* строчка с радиокнопкой */
+    display: block;
+    line-height: 40px;
+  }
+  [type="radio"] + span.krug.ver {display: block;} /* показать текст и саму радиокнопку */
+  [type="radio"] + span.krug:before { /* параметры радиокнопки по дефолту */
+    content: '';
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    transition: 0.3s ease all;
+  }
+  [type="radio"] + span.krug.ver:before { /* параметры радиокнопки в вертикальном списке */
+    vertical-align: -0.25em;
+    margin-right: 20px;
+  }
+  [type="radio"] + span.krug.hor:before {margin: 8px;} /* параметры радиокнопки горизонтального списка */
+
+  input[type=radio][name="knopka"]:checked + label { /* параметры радиокнопки в форме кнопки */
+    background: inherit;
+    border-radius: inherit; /* наследовать закругления от родителя */
+  }
+
+/*--------------------------------------------------------------------------------------------------------*/

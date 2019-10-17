@@ -1,65 +1,127 @@
-/* дефолтные настройки -----------------------------------------------------------------------------*/
+/* дефолтные настройки -------------------------------------------------------------------------------------*/
 
   a {text-decoration: none;} /* не подчеркивать/красить дефолтные ссылки */
-  body {background: none;}
+  body {background: none;} /* фон всего дока дефолтный */
 
-  /* оптимизация */
+/* параметры текста (без цвета) ----------------------------------------------------------------------------*/
 
-  .bold {font-weight: bold;}
-  .sb {
-    color: #DDD;
+  /* встраиваемые классы */
+
+  .bold {font-weight: bold;} /* жирный шрифт */
+  .sb { /* параметры текста стандартные (табл-меню+статусбар+шторка) */
     font-family: sans-serif;
     font-weight: bold;
   }
-  .ab {background: #000;} /* "akcent background", стандартный для темы цвет фона */
 
-/* шторка ------------------------------------------------------------------------------------------*/
+  /* шторка */
 
-  #sh:hover .sh {background: rgba(29,29,29,1);}
-  .sh {background: #FFF;}
-  .shn {font-size: 18pt;}
-  .shs a {font-size: 16pt;}
-  .shs a:hover {color: #212121;} /* меню в шторке при наведении */
-  .shm {background: #808080;}
-  .shm:hover {
+  .shn {font-size: 18pt;} /* заголовок 1 шторки */
+  .shs a {font-size: 16pt;} /* текст в меню шторки */
+  .shns {font-size: 24pt;} /* заголовок 2 шторки */
+
+  /* табл-меню */
+
+  .nav {font-size: 24pt;} /* надпись с именем раздела */
+  .menu a {font-family: sans-serif;} /* текст в ячейках табл-меню */
+
+  /* контент */
+
+  .head {font-size: 20pt;} /* статусбар */
+  .text { /* дефолтный класс для блоков с текстом */
+    font-family: Arial;
+    font-size: 14pt;
+  }
+  .abvt {font-size: 18pt;} /* "о системе", текст в верхней части блока */
+  .abnt {font-size: 14pt;} /* "о системе", текст в нижней части блока */
+  #aboutn {font-size: 16pt;} /* "о системе", текст в 2 колонках в самом низу */
+
+  .ver, .hor {border-radius: 20px;}
+
+/* параметры расцветки радиокнопок (неизменны при любой теме) ------------------------------------------------------------------*/
+
+  /* #80CBC4 */
+
+  [type="radio"][value="#80CBC4"] + span.cvet:before {box-shadow: 0 0 0 2px #80CBC4;} /* колечко в радиокнопке */
+  [type="radio"][value="#80CBC4"]:checked + span.cvet:before { /* отмеченная радиокнопка (кольцо+кружок) */
     background: #80CBC4;
-    border-radius: 60px; /* закругления */
+    box-shadow: 0 0 0 2px #80CBC4;
   }
 
-/* вторая шторка -----------------------------------------------------------------------------------*/
+  /* #42A5F6 */
 
-  #custom {background: #FFF;}
-  #custom:hover {background: rgba(0,0,0,0);}
-  .custom {background: rgba(29,29,29,1);}
-  .shns {font-size: 24pt;}
-
-/* табл-меню ---------------------------------------------------------------------------------------*/
-
-  .bar {background: #212121;}
-  .nav {font-size: 24pt;}
-  .menu a {
-    color: #808080;
-    font-family: sans-serif;
+  [type="radio"][value="#42A5F6"] + span.cvet:before {box-shadow: 0 0 0 2px #42A5F6;} /* колечко в радиокнопке */
+  [type="radio"][value="#42A5F6"]:checked + span.cvet:before { /* отмеченная радиокнопка (кольцо+кружок) */
+    background: #42A5F6;
+    box-shadow: 0 0 0 2px #42A5F6;
   }
-  .menu a:hover {
-    background: #80CBC4;
-    color: #474747;
-    border-bottom: 1px solid #212121;
-    border-radius: 20px;
-  }
-  .segment b {
-    color: #474747;
-    background: #80CBC4;
-  }
-  .segment b:hover {border-radius: 20px;}
 
-/* контент -----------------------------------------------------------------------------------------*/
+  /* #208559 */
 
-  .head {font-size: 20pt;}
+  [type="radio"][value="#208559"] + span.cvet:before {box-shadow: 0 0 0 2px #208559;} /* колечко в радиокнопке */
+  [type="radio"][value="#208559"]:checked + span.cvet:before { /* отмеченная радиокнопка (кольцо+кружок) */
+    background: #208559;
+    box-shadow: 0 0 0 2px #208559;
+  }
+
+  /* #9675CE */
+
+  [type="radio"][value="#9675CE"] + span.cvet:before {box-shadow: 0 0 0 2px #9675CE;} /* колечко в радиокнопке */
+  [type="radio"][value="#9675CE"]:checked + span.cvet:before { /* отмеченная радиокнопка (кольцо+кружок) */
+    background: #9675CE;
+    box-shadow: 0 0 0 2px #9675CE;
+  }
+
+  /* #EB0028 */
+
+  [type="radio"][value="#EB0028"] + span.cvet:before {box-shadow: 0 0 0 2px #EB0028;} /* колечко в радиокнопке */
+  [type="radio"][value="#EB0028"]:checked + span.cvet:before { /* отмеченная радиокнопка (кольцо+кружок) */
+    background: #EB0028;
+    box-shadow: 0 0 0 2px #EB0028;
+  }
+
+  /* #25C6DA */
+
+  [type="radio"][value="#25C6DA"] + span.cvet:before {box-shadow: 0 0 0 2px #25C6DA;} /* колечко в радиокнопке */
+  [type="radio"][value="#25C6DA"]:checked + span.cvet:before { /* отмеченная радиокнопка (кольцо+кружок) */
+    background: #25C6DA;
+    box-shadow: 0 0 0 2px #25C6DA;
+  }
+
+  /* #CC6F4E */
+
+  [type="radio"][value="#CC6F4E"] + span.cvet:before {box-shadow: 0 0 0 2px #CC6F4E;} /* колечко в радиокнопке */
+  [type="radio"][value="#CC6F4E"]:checked + span.cvet:before { /* отмеченная радиокнопка (кольцо+кружок) */
+    background: #CC6F4E;
+    box-shadow: 0 0 0 2px #CC6F4E;
+  }
+
+  /* #E5A544 */
+
+  [type="radio"][value="#E5A544"] + span.cvet:before {box-shadow: 0 0 0 2px #E5A544;} /* колечко в радиокнопке */
+  [type="radio"][value="#E5A544"]:checked + span.cvet:before { /* отмеченная радиокнопка (кольцо+кружок) */
+    background: #E5A544;
+    box-shadow: 0 0 0 2px #E5A544;
+  }
+
+  /* #7DC32F */
+
+  [type="radio"][value="#7DC32F"] + span.cvet:before {box-shadow: 0 0 0 2px #7DC32F;} /* колечко в радиокнопке */
+  [type="radio"][value="#7DC32F"]:checked + span.cvet:before { /* отмеченная радиокнопка (кольцо+кружок) */
+    background: #7DC32F;
+    box-shadow: 0 0 0 2px #7DC32F;
+  }
+
+  /* #F06292 */
+
+  [type="radio"][value="#F06292"] + span.cvet:before {box-shadow: 0 0 0 2px #F06292;} /* колечко в радиокнопке */
+  [type="radio"][value="#F06292"]:checked + span.cvet:before { /* отмеченная радиокнопка (кольцо+кружок) */
+    background: #F06292;
+    box-shadow: 0 0 0 2px #F06292;
+  }
+
+/* пока не трогать -----------------------------------------------------------------------------------------*/
 
   /* цвета текста встариваемые (отдельным классом) */
-
-  .sc {color: #DDD;} /* цвет текста стандартный (серый) */
 
   .wc {color: #FFF;}
   .rc {color: #F99;} /* внимание */
@@ -67,50 +129,16 @@
   .gc {color: #9F9;} /* код */
   .bc {color: #99F;} /* блок с ссылками */
 
-  /* остальное */
+  /* спойлеры */
 
-  .text {
-    font-family: Arial;
-    font-size: 14pt;
-  }
-
-/* спойлеры -----------------------------------------------------------------------------------------*/
-
-  .spoiler {
-    background: #212121;
-    border-radius: 5px;
-  }
+  .spoiler {background: #212121;}
   .spoiler a.sp {color: #DDD;}
   .sphide b {color: #AAA;}
   .sphide li {color: #DDD;}
 
-/* borderы -----------------------------------------------------------------------------------------*/
+  /* пункт "о системе" */
 
-  .bor-l1 {border-left: 1px solid #212121;}
-  .bor-r1 {border-right: 1px solid #212121;}
-  .bor-t1 {border-top: 1px solid #212121;}
-  .bor-b1 {border-bottom: 1px solid #212121;}
-  .bor-lr1 {
-    border-right: 1px solid #212121;
-    border-left: 1px solid #212121;
-  }
-  .bor-l2 {border-left: 2px solid #212121;}
-  .bor-r2 {border-right: 2px solid #212121;}
-  .bor-t2 {border-top: 2px solid #212121;}
-  .bor-b2 {border-bottom: 2px solid #212121;}
+  .abvt {color: #AAA;}
+  .abnt {color: #FFF;}
 
-  .bor-20 {border-radius: 20px;}
-
-/* пункт "о системе" ---------------------------------------------------------------------------------------*/
-
-  .abvt {
-    color: #AAA;
-    font-size: 18pt;
-  }
-  .abnt {
-    color: #FFF;
-    font-size: 14pt;
-  }
-  #aboutn {font-size: 16pt;}
-
-/*--------------------------------------------------------------------------------------------------*/
+/*----------------------------------------------------------------------------------------------------------*/
