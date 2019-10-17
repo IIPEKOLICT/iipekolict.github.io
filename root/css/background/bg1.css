@@ -8,12 +8,12 @@
 
   #sh:hover .sh {background: rgba(29,29,29,1);} /* 1 шторка при наведении на активную область, фон */
   .sh {background: #FFF;} /* 1 шторка по дефолту, фон */
+  .shs a:hover {color: #212121;} /* цвет текста в меню шторки при наведении */
   .shm {background: #808080;} /* фон пунктов меню шторки */
 
   /* вторая шторка */
 
   #custom {background: #FFF;} /* цвет фона активной области для 2 шторки по дефолту */
-  #custom:hover {background: rgba(0,0,0,0);} /* активная область второй шторки при наведении (невидимая) */
   .custom {background: rgba(29,29,29,1);} /* цвет фона второй шторки */
 
   /* табл-меню */
@@ -33,11 +33,6 @@
     border-left: 1px solid #212121;
   }
   .bor-t1 {border-top: 1px solid #212121;} /* 1 пиксель сверху */
-  .bor-b1 {border-bottom: 1px solid #212121;} /* 1 пиксель снизу */
-  .bor-l2 {border-left: 2px solid #212121;} /* 2 пикселя слева */
-  .bor-r2 {border-right: 2px solid #212121;} /* 2 пикселя справа */
-  .bor-t2 {border-top: 2px solid #212121;} /* 2 пикселя сверху */
-  .bor-b2 {border-bottom: 2px solid #212121;} /* 2 пикселя снизу */
 
   /* радиокнопки */
 

@@ -1,6 +1,0 @@
-  .bor-20 {border-radius: 20px;} /* дефолтные закругления */
-  .shm:hover {border-radius: 60px;} /* пункт шторочного меню при наведении */
-  .menu a:hover {border-radius: 20px;} /* пункт табл-меню при наведении */
-  .segment b:hover {border-radius: 20px;} /* активный пункт табл-меню при наведении */
-  .spoiler {border-radius: 5px;} /* закругления у спойлера */
-  [type="radio"] + span.krug:before {border-radius: 16px;} /* у круглой радиокнопки */
