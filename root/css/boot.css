@@ -207,6 +207,7 @@
   }
   .spoiler:hover a.sp1 {display: none;}
   .spoiler:hover a.sp2 {display: none;}
+  .spoiler:hover a.sp3 {display: none;}
   .spoiler a.sp {
     padding: 20px;
     width: calc(50% - 40px);
@@ -215,6 +216,10 @@
   }
   .spoiler a.sp1 {text-align: left;}
   .spoiler a.sp2 {text-align: right;}
+  .spoiler a.sp3 {
+    width: calc(100% - 40px);
+    text-align: center;
+  }
 
 /* о системе ---------------------------------------------------------------------------------------*/
 
