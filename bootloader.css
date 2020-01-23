@@ -1,0 +1,45 @@
+a {
+  height: calc(100% - 10px);
+  color: #FFF;
+  text-decoration: none;
+  font-size: 24pt;
+  text-align: center;
+  width: calc(100% - 10px);
+}
+body {
+  margin: 0;
+  padding: 0;
+  background: #000;
+  color: #FFF;
+}
+.cfix {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#head {
+  position: absolute;
+  height: 20%;
+  color: #DDD;
+  font-size: 32pt;
+  width: 100%;
+}
+#menu {
+  bottom: 0;
+  position: absolute;
+  height: 80%;
+  width: 100%;
+}
+.pmenu {
+  background: #212121;
+  border-radius: 20px;
+  height: 50%;
+  min-width: 25%;
+  max-width: 50%;
+  transition: ease-out 0.3s;
+}
+.pmenu:hover {
+  background: #80CBC4;
+  transform: scale(0.8);
+}
+.pmenu:hover a {color: #474747;}
