@@ -685,8 +685,8 @@
         <div class="segment anime"><a href="#system" class="cfix fw fh ab"><b class="cfix sb fw fh">Работа с Fastboot</b></a></div>
         <div class="segment anime"><a href="#system2" class="cfix fw fh ab">Fastboot-команды для А/В устройств</a></div>
         <div class="segment anime"><a href="#system3" class="cfix fw fh ab">Установка GSI</a></div>
-        <div class="segment anime"><a href="#system4" class="cfix fw fh ab">Установка OOS на 5z</a></div>
-        <div class="segment anime"><a href="#system5" class="cfix fw fh ab">Установка AOSP-based на 5z</a></div>
+        <div class="segment anime"><a href="#system4" class="cfix fw fh ab">Установка TWRP-прошивки</a></div>
+        <div class="segment anime"><a href="#system5" class="cfix fw fh ab">Установка ROM (zip-кастом)</a></div>
       </div>
     </div>
  	  <div class="content ab sc abs">
@@ -790,8 +790,8 @@
         <div class="segment anime"><a href="#system" class="cfix fw fh ab">Работа с Fastboot</a></div>
         <div class="segment anime"><a href="#system2" class="cfix fw fh ab"><b class="cfix sb fw fh">Fastboot-команды для А/В устройств</b></a></div>
         <div class="segment anime"><a href="#system3" class="cfix fw fh ab">Установка GSI</a></div>
-        <div class="segment anime"><a href="#system4" class="cfix fw fh ab">Установка OOS на 5z</a></div>
-        <div class="segment anime"><a href="#system5" class="cfix fw fh ab">Установка AOSP-based на 5z</a></div>
+        <div class="segment anime"><a href="#system4" class="cfix fw fh ab">Установка TWRP-прошивки</a></div>
+        <div class="segment anime"><a href="#system5" class="cfix fw fh ab">Установка ROM (zip-кастом)</a></div>
       </div>
     </div>
  	  <div class="content ab sc abs">
@@ -887,8 +887,8 @@
         <div class="segment anime"><a href="#system" class="cfix fw fh ab">Работа с Fastboot</a></div>
         <div class="segment anime"><a href="#system2" class="cfix fw fh ab">Fastboot-команды для А/В устройств</a></div>
         <div class="segment anime"><a href="#system3" class="cfix fw fh ab"><b class="cfix sb fw fh">Установка GSI</b></a></div>
-        <div class="segment anime"><a href="#system4" class="cfix fw fh ab">Установка OOS на 5z</a></div>
-        <div class="segment anime"><a href="#system5" class="cfix fw fh ab">Установка AOSP-based на 5z</a></div>
+        <div class="segment anime"><a href="#system4" class="cfix fw fh ab">Установка TWRP-прошивки</a></div>
+        <div class="segment anime"><a href="#system5" class="cfix fw fh ab">Установка ROM (zip-кастом)</a></div>
       </div>
     </div>
  	  <div class="content ab sc abs">
@@ -917,9 +917,6 @@
               </div>
           </div>
         </div>
-
-
-
       </div>
     </div>
     <div class="head r0 ab fixed sb cfix">Установка GSI</div>
@@ -932,14 +929,53 @@
         <div class="segment anime"><a href="#system" class="cfix fw fh ab">Работа с Fastboot</a></div>
         <div class="segment anime"><a href="#system2" class="cfix fw fh ab">Fastboot-команды для А/В устройств</a></div>
         <div class="segment anime"><a href="#system3" class="cfix fw fh ab">Установка GSI</a></div>
-        <div class="segment anime"><a href="#system4" class="cfix fw fh ab"><b class="cfix sb fw fh">Установка OOS на 5z</b></a></div>
-        <div class="segment anime"><a href="#system5" class="cfix fw fh ab">Установка AOSP-based на 5z</a></div>
+        <div class="segment anime"><a href="#system4" class="cfix fw fh ab"><b class="cfix sb fw fh">Установка TWRP-прошивки</b></a></div>
+        <div class="segment anime"><a href="#system5" class="cfix fw fh ab">Установка ROM (zip-кастом)</a></div>
       </div>
     </div>
  	  <div class="content ab sc abs">
-
+      <div class="info fw">
+        <div class="ver bor-t1">
+          <div class="uip ab text sc">
+              <div class="uip ab text sb cfix">На примере Oxygen OS для 5z</div>
+              <div class="uip ab text bold yc">Требования: разблокированный загрузчик, карта памяти с необходимыми файлами, ком строка в режиме администратора/запущен терминал, тел подключен по USB к компу и находится в fastboot-режиме, на неосновном слоте уже стоит TWRP.</div>
+              <div class="uip ab text bold rc">Важно: vbmeta должна ОБЯЗАТЕЛЬНО быть той же прошивки, что и вендор (т. е. для 72 - 72, 58 - 58 и так далее). Пункты 3 и 4 нужно делать строго, только если vbmeta не прошивалась ранее (переход с ZenUI).</div>
+              <ol>
+                <li>Поместить папку “OnePlus 6 Oxygen OS For ZenFone 5Z” (папку с бэкапом) на карту памяти в директорию /TWRP/BACKUP/(серийный номер аппарата)/;</li>
+                <li>Удалить гугл-аккаунт в мобиле и сделать вайпы;</li>
+                <li>Прописать команду
+                  <div class="uip text gc">fastboot -w</div>
+                </li>
+                <li>Прописать команду
+                  <div class="uip text gc">fastboot --disable-verity --disable-verification flash vbmeta vbmeta.img</div>
+                </li>
+                <li>Перезагрузка на неосновной слот в TWRP;</li>
+                <li>Переключить слот на основной;</li>
+                <li>Пункт “востановление”, изменить там “накопитель” на MicroSD Card и выбрать нужный бэкап (OnePlus 6 Oxygen OS For ZenFone 5Z);</li>
+                <li>Должны стоять галки напротив 4 разделов: boot, data, system и vendor;</li>
+                <li>Свайпнуть для запуска процесса;</li>
+                <li>По окончании перезагрузиться на основной слот в TWRP (да, renice и twrp 3.3.1 “из коробки”);</li>
+                <li>Установить Magisk.zip;</li>
+                <li>Установить OOS_brightness_patch.zip (если выдает ошибку 7 - попробовать запустить установку по новой либо отметить галочками в пункте “монтирование” разделы system и vendor;</li>
+                <li>Перезагрузка в систему;</li>
+                <li>Установка market.apk и services.apk, вот <a href="https://www.apkmirror.com/apk/google-inc/google-play-store/">здесь</a> и <a href="https://www.apkmirror.com/apk/google-inc/google-play-services/">здесь</a> можно скачать новее;</li>
+                <li>Доустановить Magisk;</li>
+                <li>С помощью модуля в magisk Oxy-ify доустановить отсутствующие приложения и снова перезагрузить.</li>
+              </ol>
+              <div class="spoiler cfix">
+                <a class="sp sp3">Ссылки</a>
+                <div class="sphide dn">
+                  <a href="https://github.com/topjohnwu/Magisk/releases" class="bc cfix">Magisk-релизы</a>
+                  <a href="https://t.me/ASUSZenfone5ZChannel" class="bc cfix">Telegram-канал с прошивками</a>
+                  <a href="https://drive.google.com/file/d/1jQbPTvhtH54lAVAb8b7s96BzXsTVi4cr/view" class="bc cfix">Ссылка на окси-бэкап</a>
+                  <a href="http://4pda.ru/forum/index.php?s=&showtopic=915110&view=findpost&p=88063966" class="bc cfix">Ссылка на оригинальную статью</a>
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="head r0 ab fixed sb cfix">Установка OOS на 5z</div>
+    <div class="head r0 ab fixed sb cfix">Установка TWRP-образной прошивки</div>
  	</div>
 
   <div id="system5" class="abs t0 l0 r0 b0 dn ab"> <!-- 5 сегмент -->
@@ -949,14 +985,49 @@
         <div class="segment anime"><a href="#system" class="cfix fw fh ab">Работа с Fastboot</a></div>
         <div class="segment anime"><a href="#system2" class="cfix fw fh ab">Fastboot-команды для А/В устройств</a></div>
         <div class="segment anime"><a href="#system3" class="cfix fw fh ab">Установка GSI</a></div>
-        <div class="segment anime"><a href="#system4" class="cfix fw fh ab">Установка OOS на 5z</a></div>
-        <div class="segment anime"><a href="#system5" class="cfix fw fh ab"><b class="cfix sb fw fh">Установка AOSP-based на 5z</b></a></div>
+        <div class="segment anime"><a href="#system4" class="cfix fw fh ab">Установка TWRP-прошивки</a></div>
+        <div class="segment anime"><a href="#system5" class="cfix fw fh ab"><b class="cfix sb fw fh">Установка ROM (zip-кастом)</b></a></div>
       </div>
     </div>
  	  <div class="content ab sc abs">
-
+      <div class="info fw">
+        <div class="ver bor-t1">
+          <div class="uip ab text sc">
+              <div class="uip ab text bold yc">Требования: разблокированный загрузчик, карта памяти с необходимыми файлами, ком строка в режиме администратора/запущен терминал, тел подключен по USB к компу и находится в fastboot-режиме, в бутлоадере активен основной слот А, неосновным является слот В, на основном слоте вендор и исходное ядро - 72+, TWRP на неосновном слоте В уже установлен.</div>
+              <div class="uip ab text bold rc">Важно: vbmeta должна ОБЯЗАТЕЛЬНО быть той же прошивки, что и вендор (т. е. для 72 - 72, 58 - 58 и так далее).</div>
+              <ol>
+                <li>Прописать команду
+                  <div class="uip text gc">fastboot -w</div>
+                </li>
+                <li>Прописать команду
+                  <div class="uip text gc">fastboot --disable-verity --disable-verification flash vbmeta vbmeta.img</div>
+                </li>
+                <li>Загрузка в TWRP на слот В;</li>
+                <li>НЕ ПЕРЕКЛЮЧАЯ СЛОТОВ, установить уже скачанный zip с прошивкой (НЕ НАДО ничего распаковывать, скачали zip и просто этот zip кидаете в память и в дальнейшем ставите через twrp. ТАКЖЕ ВАЖНО: тврп действует по такому принципу, что и система во время обновления. То есть, установка идет со слота, с которого загружен тврп (в моем случае В) на ПРОТИВОПОЛОНЫЙ (то есть, А). Помните об этом. Во всяком случае, в меню перезагрузки ничто не мешает лишний раз убедиться в правильности сделанного);</li>
+                <li>Перезагрузка в Загрузчик;</li>
+                <li>Переключить слот на В и загрузиться в TWRP;</li>
+                <li>Переключить на слот А и установить <a href="https://opengapps.org/">OpenGapps</a> (Pico, 9.0, arm64);</li>
+                <li>Переключая слоты в TWRP в пункте "перезагрузка", установить DisableForceEncryption.zip на оба слота;</li>
+                <li>Установить twrp-installer-3.3.0-0-Z01R.zip (тут уже не важно, с какого слота, он сам установится в оба);</li>
+                <li>Перезагрузиться (не переключение, именно перезагрузка) в TWRP в слот В;</li>
+                <li>Установить Renice-z01r-Beta.zip (ставит renice в слот А) (только, если в кастоме нет своего ядра);</li>
+                <li>Перезагрузиться в TWRP на слот A и установить Renice последней версии, после чего установить Magisk-v19.3.zip;</li>
+                <li>Вайпы и перезагрузка в систему.</li>
+              </ol>
+              <div class="uip ab text bold rc">Важно: файлы можно использовать и более новые, при их наличии, за исключением Renice-z01r-Beta.zip, оный является строго обязательным и замены ему пока что нет.</div>
+              <div class="spoiler cfix">
+                <a class="sp sp3">Ссылки</a>
+                <div class="sphide dn">
+                  <a href="https://github.com/topjohnwu/Magisk/releases" class="bc cfix">Magisk-релизы</a>
+                  <a href="https://t.me/ASUSZenfone5ZChannel" class="bc cfix">Telegram-канал с прошивками</a>
+                  <a href="https://4pda.ru/forum/index.php?s=&showtopic=915110&view=findpost&p=86811954" class="bc cfix">Ссылка на оригинальную статью</a>
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="head r0 ab fixed sb cfix">Установка AOSP-based на 5z</div>
+    <div class="head r0 ab fixed sb cfix">Установка ROM (zip-кастом)</div>
  	</div>
 
   <!-- vendor -->
