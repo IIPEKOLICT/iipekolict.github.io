@@ -1,0 +1,3 @@
+<link rel="stylesheet" href="kernel/boot.css" media="screen" />
+<link rel="stylesheet" href="kernel/boot_mobile.css" media="handheld" />
+
