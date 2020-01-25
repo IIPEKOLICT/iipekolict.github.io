@@ -1,4 +1,4 @@
-body {
+body { /* фикс отступов */
   margin: 0;
   padding: 0;
 }
@@ -6,28 +6,39 @@ body {
 #bootloader {display: block;} /* стартовый блок */
 div:target {display: block;} /* выбранный элемент, отображать как блок */
 
+.flex_cc {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+ /* темы */
+
+.bg_black {background: #000;}
+.color_white {color: #FFF;}
+.color_lgrey {color: #DDD;}
+.text_m {font-size: 32pt;}
+.text_h {font-size: 48pt;}
+
+.border_theme {
+  border: 1px solid #80CBC4;
+  border-radius: 20px;
+}
+
+ /* навигационное меню */
+
 .menu {
   position: fixed;
   height: 100%;
   width: 100%;
 }
-.menu_black {background: #000;}
 
 .menu__head {
   width: 100%;
   height: 20%;
   position: absolute;
 }
-.menu__head-text {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-}
-.menu__head-text_theme-loshica {
-  color: #DDD;
-  font-size: 40pt;
-}
+.menu__head-text {height: 100%;}
 
 .menu__container {
   display: table;
@@ -38,25 +49,18 @@ div:target {display: block;} /* выбранный элемент, отобра�
 }
 .menu__container-item {display: table-row;}
 .menu__container-item-link {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   height: 100%;
   text-decoration: none;
   transform: scale(0.9);
   transition: 0.3s ease-out;
 }
-.menu__container-item-link_text-m {font-size: 16pt;}
-.menu__container-item-link_theme-loshica {
-  color: #FFF;
-  border: 1px solid #80CBC4;
-  border-radius: 20px;
-}
-.menu__container-item-link_theme-loshica:hover {
+.menu__container-item-link:hover {
   transform: scale(0.75);
   background: #80CBC4;
   color: #212121;
 }
+
+ /*  */
 
 .aaa {
   display: none;
