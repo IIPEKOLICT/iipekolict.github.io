@@ -6,7 +6,7 @@ body { /* фикс отступов */
 #bootloader {display: block;} /* стартовый блок */
 div:target {display: block;} /* выбранный элемент, отображать как блок */
 
-.flex_cc {
+.flex__cc {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -14,66 +14,121 @@ div:target {display: block;} /* выбранный элемент, отобра�
 
  /* темы */
 
-.bg_black {background: #000;}
-.color_white {color: #FFF;}
-.color_lgrey {color: #DDD;}
-.text_m {font-size: 32pt;}
-.text_h {font-size: 48pt;}
+.theme__bg {background: #000;}
+.theme__head-text {
+  color: #DDD;
+  font-size: 64pt;
+}
+.theme__item_text {
+  color: #FFF;
+  font-size: 48pt;
+}
+.theme__item-container {
 
-.border_theme {
-  border: 1px solid #80CBC4;
-  border-radius: 20px;
+}
+.theme__item_border {
+  border: 3px solid #80CBC4;
+  border-radius: 40px;
+}
+
+ /* оверлей */
+
+.site {
+  display: none;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.header {
+  position: fixed;
+  top: 0;
+  height: 16%;
+  width: 100%;
+}
+.main {
+  position: absolute;
+  top: 16%;
+  bottom: 8%;
+  width: 100%;
+  min-height: 76%;
+}
+.dockbar {
+  position: fixed;
+  bottom: 0;
+  height: 8%;
+  width: 100%;
+}
+
+ /* шапка */
+
+.header__container {
+  height: calc(100% - 2px);
+  border-bottom: 2px solid #222;
+}
+.header__head-text {
+  font-family: sans-serif;
+  font-weight: bold;
+}
+
+ /* меню */
+
+.main__container {
+  height: 100%;
+  width: inherit;
+  position: absolute;
+}
+.menu {}
+.menu__container {height: 200px;}
+.menu__container_end {height: 10%;}
+.menu__item {
+  height: calc(100% - 6px);
+  width: calc(100% - 6px;);
+}
+.menu__item-link {
+  height: 100%;
+  text-decoration: none;
+  transform: scale(0.9);
+  transition: ease-out 0.3s;
+}
+.menu__item-link:hover {
+  transform: scale(0.75);
+  background: #80CBC4;
+  color: #212121;
 }
 
  /* навигационное меню */
 
-.menu {
+.nav {
   position: fixed;
   height: 100%;
   width: 100%;
 }
 
-.menu__head {
+.nav__head {
   width: 100%;
   height: 20%;
   position: absolute;
 }
-.menu__head-text {height: 100%;}
+.nav__head-text {height: 100%;}
 
-.menu__container {
+.nav__container {
   display: table;
   width: 100%;
   height: 80%;
   bottom: 0;
   position: absolute;
 }
-.menu__container-item {display: table-row;}
-.menu__container-item-link {
+.nav__item {display: table-row;}
+.nav__item-link {
   height: 100%;
   text-decoration: none;
   transform: scale(0.9);
   transition: ease-out 0.3s;
 }
-.menu__container-item-link:hover {
+.nav__item-link:hover {
   transform: scale(0.75);
   background: #80CBC4;
   color: #212121;
 }
-
- /*  */
-
-.aaa {
-  display: none;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: #00F;
-}
-
-
-
-
-
-
-.main {}
-.dockbar {}
