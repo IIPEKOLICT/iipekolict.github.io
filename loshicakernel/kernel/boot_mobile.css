@@ -133,6 +133,20 @@ div:target {display: block;} /* выбранный элемент, отобра�
   line-height: 80px;
 }
 
+ /* меню */
+
+.dockbar__container {
+  border-top: 2px solid #222;
+  height: 98px;
+}
+.dockbar__nav {
+  height: 100%;
+  width: 100%;
+  transform: scaleX(0.45) scaleY(0.3);
+  border-radius: 15px;
+  background: #FFF;
+}
+
  /* навигационное меню */
 
 .nav {
