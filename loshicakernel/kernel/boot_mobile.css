@@ -142,9 +142,14 @@ div:target {display: block;} /* выбранный элемент, отобра�
 .dockbar__nav {
   height: 100%;
   width: 100%;
-  transform: scaleX(0.4) scaleY(0.2);
-  border-radius: 10px;
+  transform: scaleX(0.3) scaleY(0.2);
+  border-radius: 150px;
   background: #FFF;
+}
+.aaa {
+  position: absolute;
+  width: 100%;
+  height: 100%;
 }
 
  /* навигационное меню */
