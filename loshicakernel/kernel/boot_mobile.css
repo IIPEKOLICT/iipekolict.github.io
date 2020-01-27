@@ -22,9 +22,13 @@ div:target {display: block;} /* выбранный элемент, отобра�
   color: #DDD;
   font-size: 64pt;
 }
-.theme__item_text {
+.theme__item_text-h {
   color: #FFF;
   font-size: 48pt;
+}
+.theme__item_text-m {
+  color: #AAA;
+  font-size: 32pt;
 }
 .theme__item-container {
 
@@ -66,8 +70,8 @@ div:target {display: block;} /* выбранный элемент, отобра�
  /* шапка */
 
 .header__container {
-  height: calc(100% - 2px);
-  border-bottom: 2px solid #222;
+  height: calc(100% - 3px);
+  border-bottom: 3px solid #222;
 }
 .header__head-text {
   font-family: sans-serif;
@@ -82,18 +86,35 @@ div:target {display: block;} /* выбранный элемент, отобра�
 .menu__container_end {height: 100px;}
 .menu__item {
   height: calc(100% - 6px);
-  width: calc(100% - 6px;);
+  transform: scale(0.8);
+  border-bottom: 3px solid #474747;
+  transition: ease-out 0.3s;
+}
+.menu__item:hover {
+  height: 100%;
+  transform: scale(0.6);
+  border-bottom: 0px;
 }
 .menu__item-link {
+  color: #FFF;
+  font-size: 48pt;
+  line-height: 100px;
   height: 100%;
+  padding-left: 20px;
   text-decoration: none;
-  transform: scale(0.9);
   transition: ease-out 0.3s;
 }
 .menu__item-link:hover {
-  transform: scale(0.75);
   background: #80CBC4;
   color: #212121;
+  border-radius: 40px;
+}
+.menu__item-text_h {
+  height: 100px;
+}
+.menu__item-text_m {
+  height: 100px;
+  bottom: 0;
 }
 
  /* навигационное меню */
