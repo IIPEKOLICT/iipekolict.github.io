@@ -100,7 +100,6 @@ div:target {display: block;} /* выбранный элемент, отобра�
   font-size: 48pt;
   line-height: 100px;
   height: 100%;
-  padding-left: 20px;
   text-decoration: none;
   transition: ease-out 0.3s;
 }
@@ -109,14 +108,30 @@ div:target {display: block;} /* выбранный элемент, отобра�
   color: #212121;
   border-radius: 40px;
 }
+.menu__item-icon {
+  background: #999;
+  position: absolute;
+  top: 40px;
+  left: 40px;
+  width: 120px;
+  height: 120px;
+  border-radius: 60px;
+}
 .menu__item-text_h {
+  position: absolute;
   height: 100px;
-  line-height: 130px;
+  top: 0;
+  left: 200px;
+  width: calc(100% - 200px);
+  line-height: 120px;
 }
 .menu__item-text_m {
+  position: absolute;
   height: 100px;
-  bottom: 0;
-  line-height: 70px;
+  left: 200px;
+  width: calc(100% - 200px);
+  top: 100px;
+  line-height: 80px;
 }
 
  /* навигационное меню */
