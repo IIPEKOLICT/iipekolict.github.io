@@ -111,10 +111,12 @@ div:target {display: block;} /* выбранный элемент, отобра�
 }
 .menu__item-text_h {
   height: 100px;
+  line-height: 130px;
 }
 .menu__item-text_m {
   height: 100px;
   bottom: 0;
+  line-height: 70px;
 }
 
  /* навигационное меню */
