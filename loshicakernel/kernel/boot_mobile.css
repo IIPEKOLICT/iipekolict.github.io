@@ -4,6 +4,9 @@ body { /* фикс отступов */
 }
 
 #bootloader {display: block;} /* стартовый блок */
+#dockbar {display: none;}
+#bootloader:target ~ #dockbar {display: none;}
+div:target ~ #dockbar {display: block;}
 div:target {display: block;} /* выбранный элемент, отображать как блок */
 
 .flex__cc {
