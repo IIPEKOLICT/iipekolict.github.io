@@ -142,8 +142,8 @@ div:target {display: block;} /* выбранный элемент, отобра�
 .dockbar__nav {
   height: 100%;
   width: 100%;
-  transform: scaleX(0.45) scaleY(0.3);
-  border-radius: 15px;
+  transform: scaleX(0.4) scaleY(0.2);
+  border-radius: 10px;
   background: #FFF;
 }
 
