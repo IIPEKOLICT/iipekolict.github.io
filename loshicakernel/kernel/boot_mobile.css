@@ -71,7 +71,7 @@ div:target {display: block;} /* выбранный элемент, отобра�
 
 .header__container {
   height: calc(100% - 3px);
-  border-bottom: 3px solid #222;
+  border-bottom: 2px solid #222;
 }
 .header__head-text {
   font-family: sans-serif;
@@ -81,55 +81,54 @@ div:target {display: block;} /* выбранный элемент, отобра�
  /* меню */
 
 .main__container {}
-.menu {}
+.menu {
+  padding: 0px 20px 0px 20px;
+  width: calc(100% - 40px);
+}
 .menu__container {height: 200px;}
 .menu__container_end {height: 100px;}
 .menu__item {
-  height: calc(100% - 6px);
+  height: calc(100% - 2px);
   transform: scale(0.9);
-  border-bottom: 3px solid #474747;
+  border-bottom: 2px solid #474747;
   transition: ease-out 0.3s;
 }
 .menu__item:hover {
   height: 100%;
-  transform: scale(0.7);
   border-bottom: 0px;
 }
 .menu__item-link {
-  color: #FFF;
-  font-size: 48pt;
-  line-height: 100px;
   height: 100%;
   text-decoration: none;
   transition: ease-out 0.3s;
 }
 .menu__item-link:hover {
-  background: #80CBC4;
-  color: #212121;
-  border-radius: 40px;
+  background: #212121;
+  border-radius: 50px;
+}
+.menu__item-container {
+  position: absolute;
+  width: 200px;
+  height: 200px;
 }
 .menu__item-icon {
-  background: #999;
-  position: absolute;
-  top: 40px;
-  left: 40px;
-  width: 120px;
-  height: 120px;
-  border-radius: 60px;
+  height: 100%;
+  transform: scale(0.8);
+  background: #222;
 }
-.menu__item-text_h {
+.menu__item-text {
   position: absolute;
-  height: 100px;
-  top: 0;
   left: 200px;
   width: calc(100% - 200px);
+  height: 200px;
+  padding-left: 20px;
+}
+.menu__item-text_h {
+  height: 100px;
   line-height: 120px;
 }
 .menu__item-text_m {
-  position: absolute;
   height: 100px;
-  left: 200px;
-  width: calc(100% - 200px);
   top: 100px;
   line-height: 80px;
 }
