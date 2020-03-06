@@ -9,26 +9,68 @@
     <link rel="stylesheet" href="kernel/css/kernel.css">
   </head>
 
-  <body>
+  <body class="page">
 
-    <header>
-      <h1>Стартовая</h1>
-      <nav>
-        <ul>
-          <li><a href="#">Ссылка12</a></li>
-          <li><a href="#">Ссылка122</a></li>
-          <li><a href="#">Ссылка1222</a></li>
+    <header class="header">
+      <nav class="nav">
+        <ul class="nav_menu">
+          <li class="nav-item nav_item_header"><a class="nav-item_link" href="#portfolio">Портфолио</a></li>
+          <li class="nav-item nav_item_header"><a class="nav-item_link" href="#templates">Примеры</a></li>
+          <li class="nav-item nav_item_header"><a class="nav-item_link" href="#sandbox">Песочница</a></li>
+          <li class="nav-item nav_item_header"><a class="nav-item_link" href="settings.html">Настройки</a></li>
         </ul>
       </nav>
     </header>
 
-    <main>
-      <section></section>
-      <section></section>
-      <section></section>
+    <main class="main-content">
+      <section id="portfolio" class="main-content_container">
+        <h2 class="main-content_container-header">Портфолио</h2>
+        <figure class="site">
+          <img class="site-img" src="kernel/icons/1.png" />
+          <figcaption class="site-name">Сайт 1</figcaption>
+          <p class="site-description">Краткое описание</p>
+        </figure>
+        <figure class="site">
+          <img class="site-img" src="kernel/icons/1.png" />
+          <figcaption class="site-name">Сайт 2</figcaption>
+          <p class="site-description">Краткое описание</p>
+        </figure>
+      </section>
+
+      <section id="templates" class="main-content_container">
+        <h2 class="main-content_container-header">Примеры</h2>
+        <figure class="site">
+          <img class="site-img" src="kernel/icons/1.png" />
+          <figcaption class="site-name">Сайт 3</figcaption>
+          <p class="site-description">Краткое описание</p>
+        </figure>
+      </section>
+
+      <section id="sandbox" class="main-content_container">
+        <h2 class="main-content_container-header">Песочница</h2>
+        <figure class="site">
+          <img class="site-img" src="kernel/icons/1.png" />
+          <figcaption class="site-name">Сайт 4</figcaption>
+          <p class="site-description">Краткое описание</p>
+        </figure>
+      </section>
     </main>
 
-    <footer>Смэрть</footer>
+    <footer class="footer">
+      <nav class="nav">
+        <ul class="nav_menu">
+          <li class="nav-item nav-item_footer"><a class="nav-item_link" href="#portfolio">Портфолио</a></li>
+          <li class="nav-item nav-item_footer"><a class="nav-item_link" href="#templates">Примеры</a></li>
+          <li class="nav-item nav-item_footer"><a class="nav-item_link" href="#sandbox">Песочница</a></li>
+          <li class="nav-item nav-item_footer"><a class="nav-item_link" href="settings.html">Настройки</a></li>
+        </ul>
+      </nav>
+      <p>Locshica Corporation TM</p>
+      <p>@all rights reserved</p>
+    </footer>
 
+    <script src="kernel/js/jquery.js"></script>
+    <script src="kernel/js/script.js"></script>
+    <script src="kernel/js/themes.js"></script>
   </body>
 </html>
