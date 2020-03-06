@@ -6,40 +6,27 @@
     <meta name="keywords" content="Сайты" />
     <meta name="description" content="Мое портфолио; сайты, сделанные мной" />
 	  <title>Настройки</title>
-    <link id="theme_akcent" rel="stylesheet" src="kernel/css/akc/akc1.css"/>
     <link rel="stylesheet" href="kernel/css/kernel.css">
+    <link id="accent-color" rel="stylesheet" href="kernel/css/ac/ac1.css">
+    <link id="color-scheme" rel="stylesheet" href="kernel/css/cs/cs1.css">
   </head>
 
   <body class="page">
 
-    <header>
-      <h1>Настройки</h1>
-      <nav>
-        <ul>
-          <li><a href="#">Портфолио</a></li>
-          <li><a href="#">Песочница</a></li>
-          <li><a href="settings.html">Настройки</a></li>
-        </ul>
-      </nav>
+    <header class="header">
+      <h1 class="header-name">Настройки</h1>
     </header>
 
-    <main>
-      <section>
-        <button class="theme-button" type="button">Изменить тему</button>
-      </section>
-      <section>
-        <a href="index.html">Главная</a>
-      </section>
-      <h2>Цвет акцента</h2>
-      <section>
-        <a onclick="change_akcent(1)">Красный</a>
-      </section>
-      <section>
-        <a onclick="change_akcent(2)">Зеленый</a>
-      </section>
+    <main class="main-content main-content_container">
+      <a class="menu-item_link" href="#">
+        <section id="themes-item" class="main-content_menu-item">
+          <aside class="menu-item_text">
+            <div class="menu-item_name">Персонализация</div>
+            <div class="menu-item_description">Цветовая схема, цвет акцента и т. д.</div>
+          </aside>
+        </section>
+      </a>
     </main>
-
-    <footer>Смэрть</footer>
 
     <script src="kernel/js/jquery.js"></script>
     <script src="kernel/js/script.js"></script>

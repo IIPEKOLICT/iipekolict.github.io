@@ -1,27 +1,28 @@
-body
+/* Дефолтное --------------------------------------------------*/
+
+.page
 {
   margin: 0;
   padding: 0;
-}
-.page
-{
-  background-color: #000;
-  color: #fff;
   font-family: Arial, sans-serif;
   font-size: 24px;
 }
 
-.header
+/* Шапка (header) --------------------------------------------------*/
+
+.header-name /* Заголовок в шапке */
 {
-  border-bottom: 2px solid #212121;
+  padding: 20px 50px;
 }
+
+/* Навигационное горизонтальное меню */
 
 .nav
 {
   line-height: 1.8em;
   font-size: 1.2em;
 }
-.nav_menu
+.nav-menu
 {
   display: flex;
   justify-content: space-evenly;
@@ -34,19 +35,6 @@ body
   display: inline-block;
   transition: ease-out 0.3s;
 }
-.nav_item_header
-{
-  border-top: 2px solid #000;
-}
-.nav-item_footer
-{
-  border-bottom: 2px solid #000;
-}
-.nav-item:hover
-{
-  color: #80cbc4;
-  border-color: #80cbc4;
-}
 .nav-item_link
 {
   padding: 5px 25px;
@@ -54,6 +42,8 @@ body
   color: inherit;
   display: flex;
 }
+
+/* Основное содержание (main) --------------------------------------------------*/
 
 .main-content
 {
@@ -63,7 +53,6 @@ body
 .main-content_container
 {
   padding: 0 4%;
-  border-bottom: 1px solid #212121;
 }
 .main-content_container:last-of-type
 {
@@ -74,17 +63,60 @@ body
   margin: 40px 0;
 }
 
-.site
+/* Пункты меню настроек */
+
+.main-content_menu-item
 {
-  margin: 2%;
-  background-color: #212121;
-  border: 2px solid #212121;
+  margin: 20px 0;
+  height: 120px;
+  text-align: left;
   border-radius: 20px;
   transition: ease-out 0.3s;
 }
-.site:hover
+.main-content_menu-item::before
 {
-  border-color: #80cbc4;
+  content: "";
+  margin: 20px;
+  width: 80px;
+  height: 80px;
+  float: left;
+  border-radius: 50%;
+}
+
+.menu-item_text
+{
+  height: inherit;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.menu-item_name,
+.menu-item_description
+{
+  margin: inherit;
+  padding: 4px 0;
+}
+.menu-item_name
+{
+  font-size: 1em;
+}
+.menu-item_description
+{
+  font-size: 0.6em;
+}
+.menu-item_link
+{
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Ссылки на сайты на стратовой странице */
+
+.site
+{
+  margin: 2%;
+  border-radius: 20px;
+  transition: ease-out 0.3s;
 }
 .site-img
 {
@@ -99,13 +131,24 @@ body
 }
 .site-description
 {
-  text-align: left;
-  color: #ddd;
-  font-size: 0.6em;
   padding: 0 40px 20px 40px;
+  text-align: left;
+  font-size: 0.6em;
 }
 
-.footer
+/* Подвал (footer) --------------------------------------------------*/
+
+.footer-container
 {
-  border-top: 2px solid #212121;
+  display: flex;
+  justify-content: space-between;
+}
+.footer-text
+{
+  padding: 0 20px;
+  font-size: 0.8em;
+}
+.sup
+{
+  font-size: 0.5em;
 }
