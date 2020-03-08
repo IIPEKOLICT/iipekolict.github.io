@@ -12,6 +12,10 @@
 {
   border-bottom: 2px solid #212121;
 }
+.header-back_button
+{
+  background-image: url("../../icons/back.png");
+}
 
 /* Навигационное горизонтальное меню */
 

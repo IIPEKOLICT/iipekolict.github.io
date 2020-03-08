@@ -20,15 +20,30 @@
   right: 0;
 }
 
-#start {display: block;} /* стартовый блок */
-div:target {display: block;} /* выбранный элемент, отображать как блок */
+#start
+{
+  display:block;
+}
+.page-block:target /* выбранный элемент, отображать как блок */
+{
+  display: block;
+}
+.page-block:not(:target) main
+{
+  display: none;
+}
 
 /* Шапка (header) --------------------------------------------------*/
 
 .header
 {
-  display: flex;
   padding: 2em 0;
+  display: flex;
+}
+.header-nav
+{
+  padding: 0;
+  display: block;
 }
 .header-main
 {
@@ -45,7 +60,7 @@ div:target {display: block;} /* выбранный элемент, отобра�
   margin: 0 0.5em;
   padding: 0;
   width: 1em;
-  background: url("../icons/back.png") no-repeat 50% 50%;
+  background: none no-repeat 50% 50%;
   background-size: contain;
   border: none;
   border-radius: 1em;
@@ -67,10 +82,10 @@ div:target {display: block;} /* выбранный элемент, отобра�
 }
 .nav-menu
 {
-  display: flex;
-  justify-content: space-evenly;
   margin: inherit;
   padding: inherit;
+  display: flex;
+  justify-content: space-evenly;
 }
 
 .nav-item
@@ -81,17 +96,17 @@ div:target {display: block;} /* выбранный элемент, отобра�
 .nav-item_link
 {
   padding: 5px 25px;
+  display: flex;
   text-decoration: none;
   color: inherit;
-  display: flex;
 }
 
 /* Основное содержание (main) --------------------------------------------------*/
 
 .main-content
 {
-  font-size: 1.2em;
   text-align: center;
+  font-size: 1.2em;
 }
 .main-content_container
 {
@@ -125,6 +140,7 @@ div:target {display: block;} /* выбранный элемент, отобра�
   width: 80px;
   height: 80px;
   float: left;
+  background-size: 50% !important;
   border-radius: 50%;
 }
 
@@ -195,11 +211,12 @@ div:target {display: block;} /* выбранный элемент, отобра�
 
 .page-block_main
 {
-
+  font-size: 1.2em;
+  padding: 0 5%;
 }
 .page-block_section
 {
-
+  border-bottom: 2px solid #212121;
 }
 
 /* Подвал (footer) --------------------------------------------------*/

@@ -1,0 +1,56 @@
+/* HTML5 Boilerplate accessible hidden styles */
+[type="radio"]
+{
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px; margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+/* One radio button per line */
+.radio
+{
+  display: block;
+  cursor: pointer;
+  line-height: 2.5em;
+}
+
+[type="radio"] + span
+{
+  display: block;
+}
+
+/* the basic, unchecked style */
+[type="radio"] + span:before
+{
+  content: '';
+  display: inline-block;
+  width: 0.8em;
+  height: 0.8em;
+  vertical-align: -0.4em;
+  border: 0.3em solid;
+  border-radius: 0.8em;
+  margin: 0 0.8em;
+  transition: 0.3s ease all;
+}
+
+/* акцент */
+
+[type="radio"] + span:before
+{
+  box-shadow: 0 0 0 0.1em #80cbc4;
+}
+[type="radio"]:checked + span:before
+{
+  background-color: #80cbc4;
+}
+
+/* цветовая схема */
+
+[type="radio"] + span:before
+{
+  border-color: #000;
+}

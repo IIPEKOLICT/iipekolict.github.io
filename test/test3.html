@@ -7,9 +7,9 @@
     <meta name="description" content="Мое портфолио; сайты, сделанные мной" />
 	  <title>Настройки</title>
     <link rel="stylesheet" href="kernel/css/kernel.css">
+    <link rel="stylesheet" href="kernel/css/test3.css">
     <link id="accent-color" rel="stylesheet" href="kernel/css/ac/ac1.css">
     <link id="color-scheme" rel="stylesheet" href="kernel/css/cs/cs1.css">
-    <link rel="stylesheet" href="kernel/css/test2.css">
   </head>
 
   <body class="page">
@@ -66,20 +66,6 @@
 
       <div class="page-block_main">
         <section class="page-block_section">
-          <label class="radio" for="v1">
-            <input type="radio" value="v1" name="test" id="v1" checked>
-            <span>Вариант 1</span>
-          </label>
-          <label class="radio" for="v2">
-            <input type="radio" value="v2" name="test" id="v2">
-            <span>Вариант 2</span>
-          </label>
-          <label class="radio" for="v3">
-            <input type="radio" value="v3"  name="test" id="v3">
-            <span>Вариант 3</span>
-          </label>
-        </section>
-        <section class="page-block_section">
           <a href="test1.html">1-я тестовая сборка</a>
           <a href="test2.html">2-я тестовая сборка</a>
           <a href="test3.html">3-я тестовая сборка</a>
@@ -95,7 +81,10 @@
 
       <div class="page-block_main">
         <section class="page-block_section">
-
+          <label for="cyan_akc" class="active" onclick="change_akcent(1)">
+            <input type="radio" name="akcent" value="#80CBC4" id="cyan_akc">
+            <span class="krug hor cvet"></span>
+          </label>
         </section>
       </div>
     </div>
