@@ -8,11 +8,54 @@
   font-size: 24px;
 }
 
+/* Внутристраничная навигация --------------------------------------------------*/
+
+.page-block
+{
+  display: none;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+#start {display: block;} /* стартовый блок */
+div:target {display: block;} /* выбранный элемент, отображать как блок */
+
 /* Шапка (header) --------------------------------------------------*/
 
+.header
+{
+  display: flex;
+  padding: 2em 0;
+}
+.header-main
+{
+  padding-left: 2em;
+}
 .header-name /* Заголовок в шапке */
 {
-  padding: 20px 50px;
+  margin: 0;
+  line-height: 1em;
+  font-size: 2em;
+}
+.header-back_button
+{
+  margin: 0 0.5em;
+  padding: 0;
+  width: 1em;
+  background: url("../icons/back.png") no-repeat 50% 50%;
+  background-size: contain;
+  border: none;
+  border-radius: 1em;
+  font-size: 2em;
+  cursor: pointer;
+  transition: ease-out 0.3s;
+}
+.header-back_button:hover
+{
+  transform: scale(0.8);
 }
 
 /* Навигационное горизонтальное меню */
@@ -61,6 +104,8 @@
 .main-content_container-header
 {
   margin: 40px 0;
+  padding-bottom: 10px;
+  text-align: left;
 }
 
 /* Пункты меню настроек */
@@ -127,13 +172,34 @@
 }
 .site-name
 {
-  padding: 10px 0;
+  margin: 20px;
+  margin-top: 10px;
+  padding: 20px;
+  padding-bottom: 5px;
+  border-radius: inherit;
+  transition: ease-out 0.3s;
+}
+.site-header
+{
+  margin: 0;
+  padding-bottom: 5px;
+  font-size: 0.8em;
 }
 .site-description
 {
-  padding: 0 40px 20px 40px;
   text-align: left;
   font-size: 0.6em;
+}
+
+/* Оформление подстраниц в настройках */
+
+.page-block_main
+{
+
+}
+.page-block_section
+{
+
 }
 
 /* Подвал (footer) --------------------------------------------------*/

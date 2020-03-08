@@ -13,20 +13,35 @@
 
   <body class="page">
 
-    <header class="header">
-      <h1 class="header-name">Настройки</h1>
-    </header>
+    <div id="start" class="page page-block">
+      <header class="header header-main">
+        <h1 class="header-name">Настройки</h1>
+      </header>
 
-    <main class="main-content main-content_container">
-      <a class="menu-item_link" href="#">
-        <section id="themes-item" class="main-content_menu-item">
-          <aside class="menu-item_text">
-            <div class="menu-item_name">Персонализация</div>
-            <div class="menu-item_description">Цветовая схема, цвет акцента и т. д.</div>
-          </aside>
+      <main class="main-content main-content_container">
+        <a class="menu-item_link" href="#theme">
+          <section id="themes-item" class="main-content_menu-item">
+            <aside class="menu-item_text">
+              <div class="menu-item_name">Персонализация</div>
+              <div class="menu-item_description">Цветовая схема, цвет акцента и т. д.</div>
+            </aside>
+          </section>
+        </a>
+      </main>
+    </div>
+
+    <div id="theme" class="page page-block">
+      <header class="header">
+        <button class="header-back_button" onclick="history.back()"></button>
+        <h2 class="header-name">Персонализация</h2>
+      </header>
+
+      <div class="page-block_main">
+        <section class="page-block_section">
+          
         </section>
-      </a>
-    </main>
+      </div>
+    </div>
 
     <script src="kernel/js/jquery.js"></script>
     <script src="kernel/js/script.js"></script>
