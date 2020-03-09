@@ -6,10 +6,10 @@
     <meta name="keywords" content="Сайты" />
     <meta name="description" content="Мое портфолио; сайты, сделанные мной" />
 	  <title>Настройки</title>
-    <link rel="stylesheet" href="kernel/css/kernel.css">
-    <link rel="stylesheet" href="kernel/css/test1.css">
-    <link id="accent-color" rel="stylesheet" href="kernel/css/ac/ac1.css">
-    <link id="color-scheme" rel="stylesheet" href="kernel/css/cs/cs1.css">
+    <link rel="stylesheet" href="../../kernel/css/kernel.css">
+    <link id="accent-color" rel="stylesheet" href="../../kernel/css/ac/ac1.css">
+    <link id="color-scheme" rel="stylesheet" href="../../kernel/css/cs/cs1.css">
+    <link rel="stylesheet" href="../../kernel/css/test.css">
   </head>
 
   <body class="page">
@@ -20,7 +20,7 @@
       </header>
 
       <main class="main-content main-content_container">
-        <a class="menu-item_link" href="#theme">
+        <a class="link-hidden" href="#theme">
           <section id="accent-item" class="main-content_menu-item">
             <aside class="menu-item_text">
               <div class="menu-item_name">Цвет акцента</div>
@@ -29,7 +29,7 @@
           </section>
         </a>
 
-        <a class="menu-item_link" href="#color">
+        <a class="link-hidden" href="#color">
           <section id="color-item" class="main-content_menu-item">
             <aside class="menu-item_text">
               <div class="menu-item_name">Цветовая схема</div>
@@ -38,7 +38,7 @@
           </section>
         </a>
 
-        <a class="menu-item_link" href="#style">
+        <a class="link-hidden" href="#style">
           <section id="style-item" class="main-content_menu-item">
             <aside class="menu-item_text">
               <div class="menu-item_name">Стиль переключателей</div>
@@ -47,7 +47,7 @@
           </section>
         </a>
 
-        <a class="menu-item_link" onclick="history.back()">
+        <a class="link-hidden" onclick="history.back()">
           <section id="exit-item" class="main-content_menu-item">
             <aside class="menu-item_text">
               <div class="menu-item_name">Назад</div>
@@ -66,9 +66,18 @@
 
       <div class="page-block_main">
         <section class="page-block_section">
-          <a href="test1.html">1-я тестовая сборка</a>
-          <a href="test2.html">2-я тестовая сборка</a>
-          <a href="test3.html">3-я тестовая сборка</a>
+          <label class="radio" for="v1">
+            <input type="radio" value="v1" name="test" id="v1" checked>
+            <span>Вариант 1</span>
+          </label>
+          <label class="radio" for="v2">
+            <input type="radio" value="v2" name="test" id="v2">
+            <span>Вариант 2</span>
+          </label>
+          <label class="radio" for="v3">
+            <input type="radio" value="v3"  name="test" id="v3">
+            <span>Вариант 3</span>
+          </label>
         </section>
       </div>
     </div>
@@ -81,10 +90,7 @@
 
       <div class="page-block_main">
         <section class="page-block_section">
-          <label for="cyan_akc" class="active" onclick="change_akcent(1)">
-            <input type="radio" name="akcent" value="#80CBC4" id="cyan_akc">
-            <span class="krug hor cvet"></span>
-          </label>
+
         </section>
       </div>
     </div>
@@ -102,8 +108,10 @@
       </div>
     </div>
 
+    <!--
     <script src="kernel/js/jquery.js"></script>
     <script src="kernel/js/script.js"></script>
     <script src="kernel/js/themes.js"></script>
+    -->
   </body>
 </html>

@@ -17,9 +17,9 @@
 
 /* Основное содержание (main) --------------------------------------------------*/
 
-.main-content_container-header
+.main-content_container:hover .main-content_container-header
 {
-  border-bottom: 2px solid #80cbc4;
+  border-color: #80cbc4;
 }
 
 /* Пункты меню настроек */
