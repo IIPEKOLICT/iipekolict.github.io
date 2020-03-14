@@ -1,90 +1,25 @@
 /* Дефолтное --------------------------------------------------*/
 
-.page
-{
-  background-color: #000;
-  color: #fff;
-}
+
 
 /* Шапка (header) --------------------------------------------------*/
 
-.header
-{
-  border-bottom: 2px solid #212121;
-}
-.header-back_button
-{
-  background-image: url("../../icons/back.png");
-}
+
 
 /* Навигационное горизонтальное меню */
 
-.nav-item_header
-{
-  border-top: 2px solid #000;
-}
-.nav-item_footer
-{
-  border-bottom: 2px solid #000;
-}
+
 
 /* Основное содержание (main) --------------------------------------------------*/
 
-.main-content_container
-{
-  border-bottom: 1px solid #212121;
-}
-.main-content_container-header
-{
-  border-color: #000;
-}
+
 
 /* Пункты меню настроек */
 
-.main-content_menu-item
-{
-  border: 1px solid #000;
-}
-.main-content_menu-item:hover
-{
-  background-color: #212121;
-}
-.main-content_menu-item::before
-{
-  background: #141414 no-repeat 50% 50%;
-}
-.menu-item_description
-{
-  color: #bbb;
-}
+
 
 /* Ссылки на сайты на стратовой странице */
 
-.site
-{
-  background-color: #141414;
-  border: 2px solid #141414;
-}
-.site:hover
-{
-  background-color: #282828;
-}
-.site-header
-{
-  border-bottom: 1px solid #383838;
-}
-.site-description
-{
-  color: #ddd;
-}
+
 
 /* Подвал (footer) --------------------------------------------------*/
-
-.footer
-{
-  border-top: 2px solid #212121;
-}
-.footer-text
-{
-  color: #808080;
-}

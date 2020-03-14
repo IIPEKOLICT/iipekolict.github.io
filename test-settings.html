@@ -7,8 +7,8 @@
     <meta name="description" content="Мое портфолио; сайты, сделанные мной" />
 	  <title>Настройки (бета)</title>
     <link rel="stylesheet" href="kernel/css/kernel.css">
-    <link id="accent-color" rel="stylesheet" href="kernel/css/ac/ac1.css">
-    <link id="color-scheme" rel="stylesheet" href="kernel/css/cs/cs1.css">
+    <link rel="stylesheet" href="kernel/css/accent-color.css">
+    <link rel="stylesheet" href="kernel/css/color-scheme.css">
     <link rel="stylesheet" href="kernel/css/test.css">
   </head>
 
@@ -66,18 +66,35 @@
 
       <div class="page-block_main">
         <section class="page-block_section">
-          <label class="radio" for="v1">
-            <input type="radio" value="v1" name="test" id="v1" checked>
-            <span>Вариант 1</span>
+          <label class="radio" for="1">
+            <input onchange="changeAccent('#80cbc4')"
+            type="radio" id="1" name="accent-color">
+            <span>Окси</span>
           </label>
-          <label class="radio" for="v2">
-            <input type="radio" value="v2" name="test" id="v2">
-            <span>Вариант 2</span>
+          <label class="radio" for="2">
+            <input onchange="changeAccent('red')"
+            type="radio" id="2" name="accent-color">
+            <span>Красный</span>
           </label>
-          <label class="radio" for="v3">
-            <input type="radio" value="v3"  name="test" id="v3">
-            <span>Вариант 3</span>
+          <label class="radio" for="3">
+            <input onchange="changeAccent('green')"
+            type="radio" id="3" name="accent-color">
+            <span>Зеленый</span>
           </label>
+          <label class="radio" for="4">
+            <input onchange="changeAccent('yellow')"
+            type="radio" id="4" name="accent-color">
+            <span>Желтый</span>
+          </label>
+          <label class="radio" for="5">
+            <input onchange="changeAccent('purple')"
+            type="radio" id="5" name="accent-color">
+            <span>Пурпурный</span>
+          </label>
+        </section>
+
+        <section class="page-block_section">
+
         </section>
       </div>
     </div>
@@ -107,6 +124,9 @@
         </section>
       </div>
     </div>
+
+    <script src="kernel/js/script.js"></script>
+    <script src="kernel/js/test.js"></script>
 
     <!--
     <script src="kernel/js/jquery.js"></script>

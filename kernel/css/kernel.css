@@ -4,6 +4,8 @@
 {
   margin: 0;
   padding: 0;
+  background-color: var(--default_bg-color);
+  color: var(--default_text-color);
   font-family: Arial, sans-serif;
   font-size: 24px;
 }
@@ -40,6 +42,7 @@
 {
   padding: 2em 0;
   display: flex;
+  border-bottom: 2px solid var(--default_border-color);
 }
 .header-nav
 {
@@ -71,6 +74,7 @@
 }
 .header-back_button:hover
 {
+  background-color: var(--accent-color);
   transform: scale(0.8);
 }
 
@@ -94,6 +98,19 @@
   display: inline-block;
   transition: ease-out 0.3s;
 }
+.nav-item:hover
+{
+  color: var(--accent-color);
+  border-color: var(--accent-color);
+}
+.nav-item_header
+{
+  border-top: 2px solid var(--default_bg-color);
+}
+.nav-item_footer
+{
+  border-bottom: 2px solid var(--default_bg-color);
+}
 .nav-item_link
 {
   padding: 5px 25px;
@@ -110,16 +127,22 @@
 .main-content_container
 {
   padding: 0 4%;
+  border-bottom: 1px solid var(--default_border-color);
+  border-bottom-color:;
 }
 .main-content_container:last-of-type
 {
   border-bottom: none;
 }
+.main-content_container:hover .main-content_container-header
+{
+  border-color: var(--accent-color);
+}
 .main-content_container-header
 {
   margin: 40px 0;
   padding-bottom: 10px;
-  border-bottom: 2px solid;
+  border-bottom: 2px solid var(--default_bg-color);
   transition: ease-out 0.3s;
 }
 
@@ -130,8 +153,14 @@
   margin: 20px 0;
   height: 120px;
   text-align: left;
+  border: 1px solid var(--default_bg-color);
   border-radius: 20px;
   transition: ease-out 0.3s;
+}
+.main-content_menu-item:hover
+{
+  background-color: var(--default_border-color);
+  border-color: var(--accent-color);
 }
 .main-content_menu-item::before
 {
@@ -141,6 +170,7 @@
   height: 80px;
   float: left;
   background-size: 50% !important;
+  background: var(--menu-item_bg-color) no-repeat 50% 50%;
   border-radius: 50%;
 }
 
@@ -163,6 +193,7 @@
 }
 .menu-item_description
 {
+  color: var(--secondary_text-color);
   font-size: 0.6em;
 }
 
@@ -172,8 +203,15 @@
 {
   margin: 1em;
   padding: 1em;
+  background-color: var(--menu-item_bg-color);
+  border: 2px solid var(--menu-item_bg-color);
   border-radius: 1em;
   transition: ease-out 0.3s;
+}
+.site:hover
+{
+  background-color: var(--site-hover_bg-color);
+  border-color: var(--accent-color);
 }
 .site-img
 {
@@ -189,11 +227,13 @@
   margin: 0;
   line-height: 1.5em;
   font-size: 0.8em;
+  border-bottom: 1px solid var(--site-header_border-color);
 }
 .site-description
 {
   margin: 0;
   padding-top: 0.5em;
+  color: var(--secondary_text-color);
   text-align: justify;
   font-size: 0.6em;
 }
@@ -212,6 +252,10 @@
 
 /* Подвал (footer) --------------------------------------------------*/
 
+.footer
+{
+  border-top: 2px solid var(--default_border-color);
+}
 .footer-container
 {
   display: flex;
@@ -220,6 +264,7 @@
 .footer-text
 {
   padding: 0 20px;
+  color: var(--footer_text-color);
   font-size: 0.8em;
 }
 .sup

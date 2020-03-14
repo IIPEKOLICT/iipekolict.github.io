@@ -41,16 +41,16 @@
 
 [type="radio"] + span:before
 {
-  box-shadow: 0 0 0 0.1em #80cbc4;
+  box-shadow: 0 0 0 0.1em var(--accent-color);
 }
 [type="radio"]:checked + span:before
 {
-  background-color: #80cbc4;
+  background-color: var(--accent-color);
 }
 
 /* цветовая схема */
 
 [type="radio"] + span:before
 {
-  border-color: #000;
+  border-color: var(--default_bg-color);
 }

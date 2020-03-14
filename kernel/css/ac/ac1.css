@@ -1,55 +1,25 @@
 /* Дефолтное --------------------------------------------------*/
 
+
+
 /* Шапка (header) --------------------------------------------------*/
 
-.header-back_button:hover
-{
-  background-color: #80cbc4;
-}
+
 
 /* Навигационное горизонтальное меню */
 
-.nav-item:hover
-{
-  color: #80cbc4;
-  border-color: #80cbc4;
-}
+
 
 /* Основное содержание (main) --------------------------------------------------*/
 
-.main-content_container:hover .main-content_container-header
-{
-  border-color: #80cbc4;
-}
+
 
 /* Пункты меню настроек */
 
-.main-content_menu-item:hover
-{
-  border-color: #80cbc4;
-}
-#accent-item::before
-{
-  background-image: url("../../../kernel/icons/theme-item.png");
-}
-#color-item::before
-{
-  background-image: url("../../../kernel/icons/color-item.png");
-}
-#style-item::before
-{
-  background-image: url("../../../kernel/icons/style-item.png");
-}
-#exit-item::before
-{
-  background-image: url("../../../kernel/icons/exit-item.png");
-}
+
 
 /* Ссылки на сайты на стратовой странице */
 
-.site:hover
-{
-  border-color: #80cbc4;
-}
+
 
 /* Подвал (footer) --------------------------------------------------*/

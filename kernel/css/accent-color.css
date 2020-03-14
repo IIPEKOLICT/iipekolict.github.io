@@ -1,0 +1,21 @@
+:root
+{
+  --accent-color: #80cbc4;
+}
+
+#accent-item::before
+{
+  background-image: url("../../kernel/icons/theme-item.png");
+}
+#color-item::before
+{
+  background-image: url("../../kernel/icons/color-item.png");
+}
+#style-item::before
+{
+  background-image: url("../../kernel/icons/style-item.png");
+}
+#exit-item::before
+{
+  background-image: url("../../kernel/icons/exit-item.png");
+}
