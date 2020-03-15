@@ -8,9 +8,5 @@
   --site-hover_bg-color: #282828;
   --site-header_border-color: #383838;
   --footer_text-color: #808080;
-}
-
-.header-back_button
-{
-  background-image: url("../icons/back.png");
+  --header-back_button: url(../icons/back-white.png);
 }
