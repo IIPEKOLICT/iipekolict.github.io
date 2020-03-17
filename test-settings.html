@@ -38,11 +38,29 @@
           </section>
         </a>
 
-        <a class="link-hidden" href="#style">
+        <a class="link-hidden" href="#other">
           <section id="style-item" class="main-content_menu-item">
             <aside class="menu-item_text">
-              <div class="menu-item_name">Стиль переключателей</div>
+              <div class="menu-item_name">Другое</div>
               <div class="menu-item_description">Стилистика чекбоксов, тумблеров, кнопок и т. д.</div>
+            </aside>
+          </section>
+        </a>
+
+        <a class="link-hidden" href="#changelog">
+          <section id="" class="main-content_menu-item">
+            <aside class="menu-item_text">
+              <div class="menu-item_name">Список изменений</div>
+              <div class="menu-item_description">Что изменилось на сайте за последнее время</div>
+            </aside>
+          </section>
+        </a>
+
+        <a class="link-hidden" href="#about">
+          <section id="" class="main-content_menu-item">
+            <aside class="menu-item_text">
+              <div class="menu-item_name">Об устройстве</div>
+              <div class="menu-item_description">Версия Loshica OS, ядра и вот это вот все</div>
             </aside>
           </section>
         </a>
@@ -59,8 +77,8 @@
     </div>
 
     <div id="accent" class="page page-block">
-      <header class="header">
-        <button class="header-back_button" onclick="history.back()"></button>
+      <header class="header header-page">
+        <div class="header-back_button" onclick="history.back()"></div>
         <h2 class="header-name">Цвет акцента</h2>
       </header>
 
@@ -96,33 +114,57 @@
     </div>
 
     <div id="color" class="page page-block">
-      <header class="header">
-        <button class="header-back_button" onclick="history.back()"></button>
+      <header class="header header-page">
+        <div class="header-back_button" onclick="history.back()"></div>
         <h2 class="header-name">Цветовая схема</h2>
       </header>
 
       <div class="main-content page-block_main">
         <section class="main-content_container">
           <label class="radio-label" for="cs1">
-            <input onchange="changeColorScheme(
-            'black','white','#212121','#141414','#bbb','#282828','#383838','#808080',
+            <input onchange="changeColorScheme('black','#141414','#282828','white','#bbb','#212121',
             'url(../icons/back-white.png)')" type="radio" id="cs1" name="color-scheme">
             <span class="radio-name">Черная</span>
           </label>
           <label class="radio-label" for="cs2">
-            <input onchange="changeColorScheme(
-            'white','black','#ccc','#696969','#808080','#ddd','#969696','#bbb',
-            'url(../icons/back-black.png)')" type="radio" id="cs2" name="color-scheme">
-            <span class="radio-name">Светлая</span>
+            <input onchange="changeColorScheme('#151618','#212121','#313131','white','#b5b7b6','#8f9190',
+            'url(../icons/back-white.png)')" type="radio" id="cs2" name="color-scheme">
+            <span class="radio-name">Серая</span>
           </label>
         </section>
       </div>
     </div>
 
-    <div id="style" class="page page-block">
-      <header class="header">
-        <button class="header-back_button" onclick="history.back()"></button>
-        <h2 class="header-name">Стиль переключателей</h2>
+    <div id="other" class="page page-block">
+      <header class="header header-page">
+        <div class="header-back_button" onclick="history.back()"></div>
+        <h2 class="header-name">Другое</h2>
+      </header>
+
+      <div class="main-content page-block_main">
+        <section class="main-content_container">
+
+        </section>
+      </div>
+    </div>
+
+    <div id="changelog" class="page page-block">
+      <header class="header header-page">
+        <div class="header-back_button" onclick="history.back()"></div>
+        <h2 class="header-name">Список изменений</h2>
+      </header>
+
+      <div class="main-content page-block_main">
+        <section class="main-content_container">
+
+        </section>
+      </div>
+    </div>
+
+    <div id="about" class="page page-block">
+      <header class="header header-page">
+        <div class="header-back_button" onclick="history.back()"></div>
+        <h2 class="header-name">Об устройстве</h2>
       </header>
 
       <div class="main-content page-block_main">

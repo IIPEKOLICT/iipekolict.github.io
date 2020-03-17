@@ -31,7 +31,7 @@
   height: 0.6em;
   vertical-align: -0.3em;
   display: inline-block;
-  border: 0.3em solid var(--default_bg-color);
+  border: 0.3em solid var(--main_bg-color);
   border-radius: 0.6em;
   box-shadow: 0 0 0 0.1em var(--accent-color);
   transition: 0.3s ease all;

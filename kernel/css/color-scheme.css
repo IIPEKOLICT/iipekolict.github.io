@@ -1,12 +1,13 @@
 :root
 {
-  --default_bg-color: black;
-  --default_text-color: white;
-  --default_border-color: #212121;
-  --menu-item_bg-color: #141414;
+  --main_bg-color: black;
+  --secondary_bg-color: #141414;
+  --hover_bg-color: #282828;
+
+  --main_text-color: white;
   --secondary_text-color: #bbb;
-  --site-hover_bg-color: #282828;
-  --site-header_border-color: #383838;
-  --footer_text-color: #808080;
+
+  --main_border-color: #212121;
+
   --header-back_button: url(../icons/back-white.png);
 }

@@ -15,59 +15,55 @@ document.addEventListener("DOMContentLoaded", () => { // Событие загу
   } else {
     localStorage.setItem('accentColor', '#80cbc4'); // Дефолтный ключ, если сохраненного не было
   }
-  if(localStorage.getItem('defaultBgColor')) { // Если в ЛХ есть ключ основного цвета фона
-    var defaultBgColor = localStorage.getItem('defaultBgColor');
-    document.documentElement.style.setProperty('--default_bg-color', defaultBgColor); // Установить цвет
+
+  if(localStorage.getItem('mainBgColor')) { // Если в ЛХ есть ключ основного цвета фона
+    var mainBgColor = localStorage.getItem('mainBgColor');
+    document.documentElement.style.setProperty('--main_bg-color', mainBgColor); // Установить цвет
   } else {
-    localStorage.setItem('defaultBgColor', 'black'); // Дефолтный ключ, если сохраненного не было
+    localStorage.setItem('mainBgColor', 'black'); // Дефолтный ключ, если сохраненного не было
+    document.documentElement.style.setProperty('--main_bg-color', 'black');
   }
-  if(localStorage.getItem('defaultTextColor')) { // Если в ЛХ есть ключ основного цвета текста
-    var defaultTextColor = localStorage.getItem('defaultTextColor');
-    document.documentElement.style.setProperty('--default_text-color', defaultTextColor); // Установить цвет
+  if(localStorage.getItem('secondaryBgColor')) { // Если в ЛХ есть ключ основного цвета текста
+    var secondaryBgColor = localStorage.getItem('secondaryBgColor');
+    document.documentElement.style.setProperty('--secondary_bg-color', secondaryBgColor); // Установить цвет
   } else {
-    localStorage.setItem('defaultTextColor', 'white'); // Дефолтный ключ, если сохраненного не было
+    localStorage.setItem('secondaryBgColor', '#141414'); // Дефолтный ключ, если сохраненного не было
+    document.documentElement.style.setProperty('--secondary_bg-color', '#141414');
   }
-  if(localStorage.getItem('defaultBorderColor')) { // Если в ЛХ есть ключ основного цвета бордеров
-    var defaultBorderColor = localStorage.getItem('defaultBorderColor');
-    document.documentElement.style.setProperty('--default_border-color', defaultBorderColor); // Установить цвет
+  if(localStorage.getItem('hoverBgColor')) { // Если в ЛХ есть ключ цвета акцента
+    var hoverBgColor = localStorage.getItem('hoverBgColor');
+    document.documentElement.style.setProperty('--hover_bg-color', hoverBgColor); // Установить цвет
   } else {
-    localStorage.setItem('defaultBorderColor', '#212121'); // Дефолтный ключ, если сохраненного не было
+    localStorage.setItem('hoverBgColor', '#282828'); // Дефолтный ключ, если сохраненного не было
+    document.documentElement.style.setProperty('--hover_bg-color', '#282828');
   }
-  if(localStorage.getItem('menuItemBgColor')) { // Если в ЛХ есть ключ цвета кружочков для иконок в меню
-    var menuItemBgColor = localStorage.getItem('menuItemBgColor');
-    document.documentElement.style.setProperty('--menu-item_bg-color', menuItemBgColor); // Установить цвет
+  if(localStorage.getItem('mainTextColor')) { // Если в ЛХ есть ключ цвета акцента
+    var mainTextColor = localStorage.getItem('mainTextColor');
+    document.documentElement.style.setProperty('--main_text-color', mainTextColor); // Установить цвет
   } else {
-    localStorage.setItem('menuItemBgColor', '#141414'); // Дефолтный ключ, если сохраненного не было
+    localStorage.setItem('mainTextColor', 'white'); // Дефолтный ключ, если сохраненного не было
+    document.documentElement.style.setProperty('--main_text-color', 'white');
   }
-  if(localStorage.getItem('secondaryTextColor')) { // Если в ЛХ есть ключ второстепенного цвета текста
+  if(localStorage.getItem('secondaryTextColor')) { // Если в ЛХ есть ключ цвета акцента
     var secondaryTextColor = localStorage.getItem('secondaryTextColor');
     document.documentElement.style.setProperty('--secondary_text-color', secondaryTextColor); // Установить цвет
   } else {
     localStorage.setItem('secondaryTextColor', '#bbb'); // Дефолтный ключ, если сохраненного не было
+    document.documentElement.style.setProperty('--secondary_text-color', '#bbb');
   }
-  if(localStorage.getItem('siteHoverBgColor')) { // Если в ЛХ есть ключ цвета выделенных плашек
-    var siteHoverBgColor = localStorage.getItem('siteHoverBgColor');
-    document.documentElement.style.setProperty('--site-hover_bg-color', siteHoverBgColor); // Установить цвет
+  if(localStorage.getItem('mainBorderColor')) { // Если в ЛХ есть ключ цвета акцента
+    var mainBorderColor = localStorage.getItem('mainBorderColor');
+    document.documentElement.style.setProperty('--main_border-color', mainBorderColor); // Установить цвет
   } else {
-    localStorage.setItem('siteHoverBgColor', '#282828'); // Дефолтный ключ, если сохраненного не было
-  }
-  if(localStorage.getItem('siteHeaderBorderColor')) { // Если в ЛХ есть ключ цвета бордера в плашке
-    var siteHeaderBorderColor = localStorage.getItem('siteHeaderBorderColor');
-    document.documentElement.style.setProperty('--site-header_border-color', siteHeaderBorderColor); // Установить цвет
-  } else {
-    localStorage.setItem('siteHeaderBorderColor', '#383838'); // Дефолтный ключ, если сохраненного не было
-  }
-  if(localStorage.getItem('footerTextColor')) { // Если в ЛХ есть ключ цвета текста в футере
-    var footerTextColor = localStorage.getItem('footerTextColor');
-    document.documentElement.style.setProperty('--footer_text-color', footerTextColor); // Установить цвет
-  } else {
-    localStorage.setItem('footerTextColor', '#808080'); // Дефолтный ключ, если сохраненного не было
+    localStorage.setItem('mainBorderColor', '#212121'); // Дефолтный ключ, если сохраненного не было
+    document.documentElement.style.setProperty('--main_border-color', '#212121');
   }
   if(localStorage.getItem('headerBackButton')) { // Если в ЛХ есть ключ кнопки назад из хедера
     var headerBackButton = localStorage.getItem('headerBackButton');
     document.documentElement.style.setProperty('--header-back_button', headerBackButton); // Установить кнопку
   } else {
     localStorage.setItem('headerBackButton', 'url(../icons/back-white.png)'); // Дефолтный ключ, если сохраненного не было
+    document.documentElement.style.setProperty('--header-back_button', 'url(../icons/back-white.png)');
   }
 
   if(localStorage.getItem('checkedAccentNo')) { // Если в ЛХ есть ключ номера выбранного акц-инпута
@@ -108,34 +104,30 @@ for (var i = 0; i < colorSchemeInputs.length; i++) { // Цикл опроса в
   }
 }
 
-accentInputs.forEach(input => input.addEventListener('change', changeAccent(a))); // Прослушка акц-инпутов
-function changeAccent(a) { // Функция смены акцента (при нажатии на акц-инпут)
-  document.documentElement.style.setProperty('--accent-color', a); // Смена цвета
-  localStorage.setItem('accentColor', a); // Сохранить ключ
+accentInputs.forEach(input => input.addEventListener('change', changeAccent(acp1))); // Прослушка акц-инпутов
+function changeAccent(acp1) { // Функция смены акцента (при нажатии на акц-инпут)
+  document.documentElement.style.setProperty('--accent-color', acp1); // Смена цвета
+  localStorage.setItem('accentColor', acp1); // Сохранить ключ
 }
 
 colorSchemeInputs.forEach(input => input.addEventListener
-  ('change', changeColorScheme(p1,p2,p3,p4,p5,p6,p7,p8,p9))); // Прослушка CS-инпутов
-function changeColorScheme(p1,p2,p3,p4,p5,p6,p7,p8,p9) {
+  ('change', changeColorScheme(csp1,csp2,csp3,csp4,csp5,csp6,csp7))); // Прослушка CS-инпутов
+function changeColorScheme(csp1,csp2,csp3,csp4,csp5,csp6,csp7) {
   // Функция смены цветовой схемы (при нажатии на CS-инпут)
-  document.documentElement.style.setProperty('--default_bg-color', p1);
-  document.documentElement.style.setProperty('--default_text-color', p2);
-  document.documentElement.style.setProperty('--default_border-color', p3);
-  document.documentElement.style.setProperty('--menu-item_bg-color', p4);
-  document.documentElement.style.setProperty('--secondary_text-color', p5);
-  document.documentElement.style.setProperty('--site-hover_bg-color', p6);
-  document.documentElement.style.setProperty('--site-header_border-color', p7);
-  document.documentElement.style.setProperty('--footer_text-color', p8);
-  document.documentElement.style.setProperty('--header-back_button', p9);
-  localStorage.setItem('defaultBgColor', p1);
-  localStorage.setItem('defaultTextColor', p2);
-  localStorage.setItem('defaultBorderColor', p3);
-  localStorage.setItem('menuItemBgColor', p4);
-  localStorage.setItem('secondaryTextColor', p5);
-  localStorage.setItem('siteHoverBgColor', p6);
-  localStorage.setItem('siteHeaderBorderColor', p7);
-  localStorage.setItem('footerTextColor', p8);
-  localStorage.setItem('headerBackButton', p9);
+  document.documentElement.style.setProperty('--main_bg-color', csp1);
+  document.documentElement.style.setProperty('--secondary_bg-color', csp2);
+  document.documentElement.style.setProperty('--hover_bg-color', csp3);
+  document.documentElement.style.setProperty('--main_text-color', csp4);
+  document.documentElement.style.setProperty('--secondary_text-color', csp5);
+  document.documentElement.style.setProperty('--main_border-color', csp6);
+  document.documentElement.style.setProperty('--header-back_button', csp7);
+  localStorage.setItem('mainBgColor', csp1);
+  localStorage.setItem('secondaryBgColor', csp2);
+  localStorage.setItem('hoverBgColor', csp3);
+  localStorage.setItem('mainTextColor', csp4);
+  localStorage.setItem('secondaryTextColor', csp5);
+  localStorage.setItem('mainBorderColor', csp6);
+  localStorage.setItem('headerBackButton', csp7);
 }
 
 /*

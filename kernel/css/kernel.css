@@ -1,6 +1,6 @@
 /* Дефолтное --------------------------------------------------*/
 
-html
+:root
 {
   font-size: 4vh;
 }
@@ -9,8 +9,8 @@ html
 {
   margin: 0;
   padding: 0;
-  background-color: var(--default_bg-color);
-  color: var(--default_text-color);
+  background-color: var(--main_bg-color);
+  color: var(--main_text-color);
   font-family: Arial, sans-serif;
 }
 .link-hidden /* дефолтные ссылки для всех страниц (никак не выделены) */
@@ -43,81 +43,83 @@ html
 
 .header
 {
-  padding: 2.5rem 0;
-  display: flex;
-  border-bottom: 2px solid var(--default_border-color);
-}
-.header-nav
-{
   padding: 0;
-  display: block;
+  border-bottom: 2px solid var(--main_border-color);
+  font-size: 2rem;
 }
 .header-main
 {
-  padding-left: 2.5rem;
+  padding: 0 2.5rem;
+}
+.header-page
+{
+  display: flex;
 }
 .header-name /* Заголовок в шапке */
 {
   margin: 0;
+  padding: 2.5rem 0;
+  font-size: 1em;
   line-height: 1em;
-  font-size: 2em;
+}
+.header-name_nav
+{
+  padding: 2.5rem;
 }
 .header-back_button
 {
-  margin: 0 0.5em;
-  padding: 0;
+  margin: 0.5em 0;
+  padding: 0.7em;
   width: 1em;
   cursor: pointer;
   background: var(--header-back_button) no-repeat 50% 50%;
-  background-size: contain;
+  background-size: 1em;
   border: 0.05em solid rgba(0,0,0,0);
-  border-radius: 1em;
-  font-size: 2em;
+  border-radius: 50%;
   transition: ease-out 0.3s;
 }
 .header-back_button:hover
 {
   border-color: var(--accent-color);
-  transform: scale(0.8);
+  transform: scale(0.6);
 }
 
 /* Навигационное горизонтальное меню */
 
 .nav
 {
-  line-height: 2rem;
   font-size: 1rem;
+  line-height: 2rem;
 }
 .nav-menu
 {
   margin: inherit;
-  padding: inherit;
-  display: flex;
-  justify-content: space-evenly;
+  padding: 0.2em;
+  width: calc(100% - 0.4em);
+  display: table;
+  table-layout: fixed;
+  list-style-type: none;
 }
 
 .nav-item
 {
-  display: inline-block;
+  display: table-cell;
+  text-align: center;
+  background-color: var(--secondary_bg-color);
+  border: 2px solid var(--secondary_bg-color);
+  border-radius: 0.5em;
+  transform: scale(0.9);
   transition: ease-out 0.3s;
 }
 .nav-item:hover
 {
   color: var(--accent-color);
+  background-color: var(--hover_bg-color);
   border-color: var(--accent-color);
-}
-.nav-item_header
-{
-  border-top: 2px solid var(--default_bg-color);
-}
-.nav-item_footer
-{
-  border-bottom: 2px solid var(--default_bg-color);
 }
 .nav-item_link
 {
-  padding: 0.2em 0.5em;
-  display: flex;
+  display: block;
 }
 
 /* Основное содержание (main) --------------------------------------------------*/
@@ -130,7 +132,7 @@ html
 .main-content_container
 {
   padding: 0 4vw;
-  border-bottom: 1px solid var(--default_border-color);
+  border-bottom: 1px solid var(--main_border-color);
 }
 .main-content_container:last-of-type
 {
@@ -144,7 +146,7 @@ html
 {
   margin: 1.2em 0;
   padding-bottom: 0.4em;
-  border-bottom: 2px solid var(--default_bg-color);
+  border-bottom: 2px solid var(--main_bg-color);
   transition: ease-out 0.3s;
 }
 
@@ -155,13 +157,13 @@ html
   margin: 19px 0;
   height: 20vh;
   text-align: left;
-  border: 1px solid var(--default_bg-color);
+  border: 1px solid var(--main_bg-color);
   border-radius: 20px;
   transition: ease-out 0.3s;
 }
 .main-content_menu-item:hover
 {
-  background-color: var(--default_border-color);
+  background-color: var(--hover_bg-color);
   border-color: var(--accent-color);
 }
 .main-content_menu-item::before
@@ -172,7 +174,7 @@ html
   height: calc(20vh - 40px);
   float: left;
   background-size: 50% !important;
-  background: var(--menu-item_bg-color) no-repeat 50% 50%;
+  background: var(--secondary_bg-color) no-repeat 50% 50%;
   border-radius: 50%;
 }
 
@@ -207,14 +209,14 @@ html
 {
   margin: 2.5vw;
   padding: 2.5vw;
-  background-color: var(--menu-item_bg-color);
-  border: 2px solid var(--menu-item_bg-color);
+  background-color: var(--secondary_bg-color);
+  border: 2px solid var(--secondary_bg-color);
   border-radius: 2.5vw;
   transition: ease-out 0.3s;
 }
 .site:hover
 {
-  background-color: var(--site-hover_bg-color);
+  background-color: var(--hover_bg-color);
   border-color: var(--accent-color);
 }
 .site-img
@@ -231,7 +233,7 @@ html
 {
   line-height: 1.8em;
   font-size: 1em;
-  border-bottom: 1px solid var(--site-header_border-color);
+  border-bottom: 1px solid var(--secondary_text-color);
 }
 .site-description
 {
@@ -252,7 +254,7 @@ html
 
 .footer
 {
-  border-top: 2px solid var(--default_border-color);
+  border-top: 2px solid var(--main_border-color);
 }
 .footer-container
 {
@@ -263,7 +265,7 @@ html
 {
   margin: inherit;
   padding: 0.5em;
-  color: var(--footer_text-color);
+  color: var(--secondary_text-color);
   font-size: 0.8rem;
 }
 .sup
