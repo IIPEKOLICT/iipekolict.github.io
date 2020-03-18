@@ -1,0 +1,52 @@
+@media screen and (max-width: 700px), handheld and (min-width: 300px)
+{
+  :root
+  {
+    font-size: 5vw;
+  }
+
+  .nav-item
+  {
+    display: block;
+    border: 2px solid var(--main_border-color);
+    border-radius: 0.5em;
+  }
+  .nav-item_header:last-of-type
+  {
+    margin-bottom: 0.1rem;
+  }
+  .nav-item_footer:first-of-type
+  {
+    margin-top: 0.1rem;
+  }
+
+  .main-content_menu-item
+  {
+    margin: 1vw 0;
+    height: 16vw;
+    border-radius: 2vw;
+  }
+  .main-content_menu-item::before
+  {
+    margin: 2vw;
+    width: calc(16vw - 4vw);
+    height: calc(16vw - 4vw);
+  }
+
+  .menu-item_name,
+  .menu-item_description
+  {
+    padding: 0.05rem 0;
+  }
+  .menu-item_name
+  {
+    line-height: 1.25em;
+    font-size: 0.8em;
+  }
+  .menu-item_description
+  {
+    color: var(--secondary_text-color);
+    line-height: 2em;
+    font-size: 0.5em;
+  }
+}
