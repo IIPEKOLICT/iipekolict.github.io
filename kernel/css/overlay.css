@@ -1,8 +1,19 @@
-@media screen and (max-width: 700px), handheld and (min-width: 300px)
+@media screen and (max-width: 625px), handheld and (orientation:portrait)
 {
   :root
   {
     font-size: 5vw;
+  }
+
+  .header-page
+  {
+    font-size: 1rem;
+  }
+  .header-back_button
+  {
+    width: 1.8em;
+    height: 1.8em;
+    border-width: 0.1em;
   }
 
   .nav-item
@@ -20,33 +31,58 @@
     margin-top: 0.1rem;
   }
 
+  .main-content_container
+  {
+    padding: 0 1em;
+  }
+
   .main-content_menu-item
   {
-    margin: 1vw 0;
-    height: 16vw;
-    border-radius: 2vw;
+    height: 3em;
   }
   .main-content_menu-item::before
   {
-    margin: 2vw;
-    width: calc(16vw - 4vw);
-    height: calc(16vw - 4vw);
+    margin: 0.4em;
+    width: 2.2em;
+    height: 2.2em;
   }
 
   .menu-item_name,
   .menu-item_description
   {
-    padding: 0.05rem 0;
+    padding: 0.05em 0;
   }
   .menu-item_name
   {
-    line-height: 1.25em;
     font-size: 0.8em;
+    line-height: 1.25em;
   }
   .menu-item_description
   {
-    color: var(--secondary_text-color);
-    line-height: 2em;
     font-size: 0.5em;
+    line-height: 2em;
+  }
+
+  .site
+  {
+    margin: 0.8em;
+    border-radius: 0.8em;
+  }
+  .site-header
+  {
+    line-height: 2em;
+    font-size: 0.8em;
+  }
+  .site-description
+  {
+    font-size: 0.5em;
+  }
+}
+
+@media handheld and (orientation:portrait)
+{
+  .site-img
+  {
+    display: none;
   }
 }
