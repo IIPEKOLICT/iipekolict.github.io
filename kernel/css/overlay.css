@@ -1,9 +1,13 @@
-@media screen and (max-width: 625px), handheld and (orientation:portrait)
+@media screen and (max-width: 625px), handheld and (orientation:portrait) /* узкие экраны */
 {
+  /* Дефолтное --------------------------------------------------*/
+
   :root
   {
-    font-size: 5vw;
+    font-size: 5vw; /* дефолтный шрифт */
   }
+
+  /* Шапка (header) --------------------------------------------------*/
 
   .header-page
   {
@@ -15,6 +19,8 @@
     height: 1.8em;
     border-width: 0.1em;
   }
+
+  /* Навигационное горизонтальное меню */
 
   .nav-item
   {
@@ -31,24 +37,26 @@
     margin-top: 0.1rem;
   }
 
+  /* Основное содержание (main) --------------------------------------------------*/
+
   .main-content_container
   {
     padding: 0 1em;
   }
 
-  .main-content_menu-item
+  /* Меню внутристраничной навигации (окси-стилистика) */
+
+  .menu-item
   {
     height: 3em;
   }
-  .main-content_menu-item::before
+  .menu-item::before
   {
     margin: 0.4em;
     width: 2.2em;
     height: 2.2em;
   }
-
-  .menu-item_name,
-  .menu-item_description
+  .menu-item_text
   {
     padding: 0.05em 0;
   }
@@ -63,26 +71,43 @@
     line-height: 2em;
   }
 
-  .site
+  /* Меню внешней навигации (стилистика рекомендаций из настроек) */
+
+  .navigation-item
   {
     margin: 0.8em;
     border-radius: 0.8em;
   }
-  .site-header
+  .navigation-item_img
+  {
+    display: none;
+  }
+  .navigation-item_name
   {
     line-height: 2em;
     font-size: 0.8em;
   }
-  .site-description
+  .navigation-item_description
   {
     font-size: 0.5em;
   }
+
+  /* Подвал (footer) --------------------------------------------------*/
+
 }
 
-@media handheld and (orientation:portrait)
+@media screen and (min-width: 500px) /* узкие мониторы, фикс видимости картинок */
 {
-  .site-img
+  .navigation-item_img
   {
-    display: none;
+    display: block;
+  }
+}
+
+@media screen and (min-width: 1000px) /* широкие мониторы, фикс отступов основного навигационного меню */
+{
+  .navigation-item
+  {
+    margin: 1em calc(50% - 400px);
   }
 }

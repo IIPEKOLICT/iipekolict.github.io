@@ -6,11 +6,10 @@
     <meta name="keywords" content="Сайты" />
     <meta name="description" content="Мое портфолио; сайты, сделанные мной" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-	  <title>Настройки (бета)</title>
+	  <title>Тестовые настройки</title>
     <link rel="stylesheet" href="kernel/css/kernel.css">
     <link rel="stylesheet" href="kernel/css/overlay.css">
     <link rel="stylesheet" href="kernel/css/accent-color.css">
-    <link rel="stylesheet" href="kernel/css/color-scheme.css">
     <link rel="stylesheet" href="kernel/css/test.css">
   </head>
 
@@ -23,55 +22,55 @@
 
       <main class="main-content main-content_container">
         <a class="link-hidden" href="#accent">
-          <section id="accent-item" class="main-content_menu-item">
-            <aside class="menu-item_text">
-              <div class="menu-item_name">Цвет акцента</div>
-              <div class="menu-item_description">Цвет элементов интерфейса при наведении</div>
+          <section id="accent-item" class="menu-item">
+            <aside class="menu-item_text-container">
+              <div class="menu-item_text menu-item_name">Цвет акцента</div>
+              <div class="menu-item_text menu-item_description">Цвет элементов интерфейса при наведении</div>
             </aside>
           </section>
         </a>
 
         <a class="link-hidden" href="#color">
-          <section id="color-item" class="main-content_menu-item">
-            <aside class="menu-item_text">
-              <div class="menu-item_name">Цветовая схема</div>
-              <div class="menu-item_description">Цвет элементов интерфейса</div>
+          <section id="color-item" class="menu-item">
+            <aside class="menu-item_text-container">
+              <div class="menu-item_text menu-item_name">Цветовая схема</div>
+              <div class="menu-item_text menu-item_description">Цвет элементов интерфейса</div>
             </aside>
           </section>
         </a>
 
         <a class="link-hidden" href="#other">
-          <section id="style-item" class="main-content_menu-item">
-            <aside class="menu-item_text">
-              <div class="menu-item_name">Другое</div>
-              <div class="menu-item_description">Стилистика чекбоксов, тумблеров, кнопок и т. д.</div>
+          <section id="style-item" class="menu-item">
+            <aside class="menu-item_text-container">
+              <div class="menu-item_text menu-item_name">Другое</div>
+              <div class="menu-item_text menu-item_description">Стилистика чекбоксов, тумблеров, кнопок и т. д.</div>
             </aside>
           </section>
         </a>
 
         <a class="link-hidden" href="#changelog">
-          <section id="" class="main-content_menu-item">
-            <aside class="menu-item_text">
-              <div class="menu-item_name">Список изменений</div>
-              <div class="menu-item_description">Что изменилось на сайте за последнее время</div>
+          <section id="" class="menu-item">
+            <aside class="menu-item_text-container">
+              <div class="menu-item_text menu-item_name">Список изменений</div>
+              <div class="menu-item_text menu-item_description">Что изменилось на сайте за последнее время</div>
             </aside>
           </section>
         </a>
 
         <a class="link-hidden" href="#about">
-          <section id="" class="main-content_menu-item">
-            <aside class="menu-item_text">
-              <div class="menu-item_name">Об устройстве</div>
-              <div class="menu-item_description">Версия Loshica OS, ядра и вот это вот все</div>
+          <section id="" class="menu-item">
+            <aside class="menu-item_text-container">
+              <div class="menu-item_text menu-item_name">Об устройстве</div>
+              <div class="menu-item_text menu-item_description">Версия Loshica OS, ядра и вот это вот все</div>
             </aside>
           </section>
         </a>
 
         <a class="link-hidden" onclick="history.back()">
-          <section id="exit-item" class="main-content_menu-item">
-            <aside class="menu-item_text">
-              <div class="menu-item_name">Назад</div>
-              <div class="menu-item_description">Вернуться на предыдущую страницу</div>
+          <section id="exit-item" class="menu-item">
+            <aside class="menu-item_text-container">
+              <div class="menu-item_text menu-item_name">Назад</div>
+              <div class="menu-item_text menu-item_description">Вернуться на предыдущую страницу</div>
             </aside>
           </section>
         </a>
@@ -159,6 +158,15 @@
       <div class="main-content page-block_main">
         <section class="main-content_container">
 
+          <div class="changelog-container">
+            <h3 class="release-name"></h3>
+            <aside class="release-date"></aside>
+            <ul class="release-notes">
+              <li class="release-note">Я сделал какую-то хрень</li>
+              <li class="release-note">Ну я и даун</li>
+            </ul>
+          </div>
+          
         </section>
       </div>
     </div>
@@ -176,13 +184,12 @@
       </div>
     </div>
 
-    <script src="kernel/js/script.js"></script>
+    <script src="kernel/js/themes.js"></script>
 
     <!--
     <script src="kernel/js/test.js"></script>
 
     <script src="kernel/js/jquery.js"></script>
-    <script src="kernel/js/themes.js"></script>
     -->
   </body>
 </html>
