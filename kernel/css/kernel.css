@@ -272,6 +272,78 @@
   text-align: left;
 }
 
+/* Changelog (спойлеры) */
+
+.changelog-container
+{
+  padding: 0.5em;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--secondary_bg-color);
+}
+.changelog-container::before
+{
+  content: none;
+}
+.release-info
+{
+  display: flex;
+  flex-direction: row;
+}
+.release-info_text-container
+{
+  padding: 0 1em;
+  flex: 70%;
+}
+.spoiler-button
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 30%;
+}
+.button
+{
+  padding: 0.5em;
+  color: var(--main_bg-color);
+  background-color: var(--accent-color);
+  border: none;
+  border-radius: 0.25em;
+  font-style: inherit;
+  font-size: inherit;
+}
+.release-notes
+{
+  margin: 0;
+  padding: 0.5em 1em;
+  list-style-type: circle;
+  color: var(--main_text-color);
+  border-bottom: 1px solid var(--main_border-color);
+}
+.release-notes:last-of-type
+{
+  border-bottom: none;
+}
+.release-note
+{
+  color: var(--secondary_text-color);
+  font-size: 0.8em;
+}
+
+.spoiler
+{
+  border-top: 1px solid var(--secondary_text-color);
+}
+.spoiler-hidden
+{
+  display: none;
+}
+.spoiler-shown
+{
+  display: block;
+}
+
 /* Подвал (footer) --------------------------------------------------*/
 
 .footer
