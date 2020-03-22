@@ -18,8 +18,9 @@
   --secondary_text-color: #bbb; /* второстепенный */
   /* цветовая схема, цвет бордеров */
   --main_border-color: #212121;
-  /* цветовая схема, расположение иконки назад */
-  --header-back_button: url(../icons/back-white.png);
+  /* цветовая схема, расположение иконок */
+  --header-back_button: url(../icons/back-white.png); /* "назад" из хедера */
+  --nav-menu_button: url(../icons/nav-menu_white.png); /* кнопка вызова меню на стартовой */
 }
 
 .page /* дефолтные для всех страниц */
@@ -86,7 +87,6 @@
 .header-name_nav /* Заголовок в шапке, где также присутсвует меню навигации */
 {
   padding: 1em;
-  text-align: center;
 }
 .header-back_button
 {
@@ -108,6 +108,14 @@
 
 /* Навигационное горизонтальное меню */
 
+.header-nav
+{
+  text-align: center;
+}
+.show-menu_button-container
+{
+  display: none;
+}
 .nav
 {
   text-align: center;
@@ -298,14 +306,14 @@
 }
 .spoiler-button
 {
+  padding: 0.4em;
+  padding-left: 0;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  flex: 30%;
 }
 .button
 {
   padding: 0.5em;
+  cursor: pointer;
   color: var(--main_bg-color);
   background-color: var(--accent-color);
   border: none;
@@ -316,7 +324,7 @@
 .release-notes
 {
   margin: 0;
-  padding: 0.5em 1em;
+  padding: 0.4em 1em;
   list-style-type: circle;
   color: var(--main_text-color);
   border-bottom: 1px solid var(--main_border-color);

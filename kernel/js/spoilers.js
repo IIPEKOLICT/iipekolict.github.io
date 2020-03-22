@@ -46,11 +46,21 @@ for (var i = 0; i < changelogButtons.length; i++) { // Цикл опроса в�
 alert(changelogButtons);
 */
 
-  function showChangelogSpoiler(sectionNo,releaseNo) {
-    var changelogContainer = document.querySelector
-    ('.main-content_container:nth-last-of-type(' + sectionNo + ') .changelog-container:nth-last-of-type('
-     + releaseNo + ')');
-    var spoiler = changelogContainer.querySelector('.spoiler');
-    spoiler.classList.toggle('spoiler-hidden'); // переключение класса (если есть - удаляется, в противном случае добавляется)
-    spoiler.classList.toggle('spoiler-shown'); // в разметке обязательно должен быть только один из классов, иначе не заработает
-  }
+function showChangelogSpoiler(sectionNo,releaseNo) { // сугубо для ченжлогов, по номеру с конца секции и релиза
+  var changelogContainer = document.querySelector
+  ('.main-content_container:nth-last-of-type(' + sectionNo + ') .changelog-container:nth-last-of-type('
+   + releaseNo + ')'); // нахождение нужных секции и контейнера
+  var spoiler = changelogContainer.querySelector('.spoiler'); // нахождение спойлера
+  spoiler.classList.toggle('spoiler-hidden');
+  spoiler.classList.toggle('spoiler-shown');
+  // переключение класса (если есть - удаляется, в противном случае добавляется)
+  // в разметке обязательно должен быть только один из классов, иначе не заработает
+}
+
+function showItemByLd(itemId,firstClass,secondClass) { // универсальная для показа элементов с определенным id
+  var itemById = document.getElementById(itemId); // находим элемент, id которого был в качестве параметра
+  itemById.classList.toggle(firstClass);
+  itemById.classList.toggle(secondClass);
+  // переключение класса (если есть - удаляется, в противном случае добавляется)
+  // в разметке обязательно должен быть только один из классов, иначе не заработает
+}

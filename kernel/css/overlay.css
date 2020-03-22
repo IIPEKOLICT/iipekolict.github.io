@@ -1,4 +1,4 @@
-@media screen and (max-width: 625px), handheld and (orientation:portrait) /* узкие экраны */
+@media screen and (max-width: 730px), handheld and (orientation:portrait) /* узкие экраны */
 {
   /* Дефолтное --------------------------------------------------*/
 
@@ -22,19 +22,63 @@
 
   /* Навигационное горизонтальное меню */
 
+  .header-nav
+  {
+    padding: 1em;
+    display: flex;
+    flex-direction: row;
+  }
+  .header-name_nav /* Заголовок в шапке, где также присутсвует меню навигации */
+  {
+    padding: 0;
+    flex: 80%;
+    text-align: left;
+  }
+  .show-menu_button-container
+  {
+    display: flex;
+  }
+  .nav-menu_button
+  {
+    background: var(--nav-menu_button) no-repeat 50% 50%;
+    background-size: 1em;
+  }
+
+  #nav
+  {
+    left: 0;
+    bottom: 0;
+    position: fixed;
+    background-color: var(--main_bg-color);
+    border-top: 2px solid var(--accent-color);
+    border-radius: 0.5em 0.5em 0 0;
+  }
+  .nav-hidden
+  {
+    display: none;
+  }
+  .nav-shown
+  {
+    display: block;
+  }
   .nav-item
   {
     display: block;
-    border: 2px solid var(--main_border-color);
+    background-color: var(--secondary_bg-color);
+    border: 2px solid var(--secondary_bg-color);
     border-radius: 0.5em;
   }
-  .nav-item_header:last-of-type
+  .nav-item:first-of-type
+  {
+    margin-top: 0.1rem;
+  }
+  .nav-item:last-of-type
   {
     margin-bottom: 0.1rem;
   }
-  .nav-item_footer:first-of-type
+  .nav-item:hover
   {
-    margin-top: 0.1rem;
+    background-color: var(--hover_bg-color);
   }
 
   /* Основное содержание (main) --------------------------------------------------*/
@@ -90,6 +134,26 @@
   .navigation-item_description
   {
     font-size: 0.5em;
+  }
+
+  /* Changelog (спойлеры) */
+
+  .changelog-container
+  {
+    padding: 0.5em;
+    height: auto;
+  }
+  .release-info_text-container
+  {
+    padding: 0 0.2em;
+  }
+  .release-notes
+  {
+    font-size: 0.8em;
+  }
+  .release-note
+  {
+    font-size: 0.65em;
   }
 
   /* Подвал (footer) --------------------------------------------------*/

@@ -15,7 +15,10 @@
 
     <header class="header header-nav">
       <h1 class="header-name header-name_nav">Стартовая</h1>
-      <nav class="nav">
+      <div class="show-menu_button-container">
+        <button class="button nav-menu_button" onclick="showItemByLd('nav','nav-hidden','nav-shown')"></button>
+      </div>
+      <nav id="nav" class="nav nav-hidden">
         <ul class="nav-menu">
           <li class="nav-item nav-item_header">
             <a class="link-hidden nav-item_link" href="#portfolio">Портфолио</a>
@@ -103,7 +106,7 @@
     </main>
 
     <footer class="footer">
-      <nav class="nav">
+      <nav class="nav nav-hidden">
         <ul class="nav-menu">
           <li class="nav-item nav-item_footer">
             <a class="link-hidden nav-item_link" href="#portfolio">Портфолио</a>
@@ -127,6 +130,7 @@
 
 
     <script src="kernel/js/themes.js"></script>
+    <script src="kernel/js/spoilers.js"></script>
 
     <!--
     <script src="kernel/js/jquery.js"></script>

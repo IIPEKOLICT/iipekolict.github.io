@@ -124,12 +124,12 @@
         <section class="main-content_container">
           <label class="radio-label" for="cs1">
             <input onchange="changeColorScheme('black','#141414','#282828','white','#bbb','#212121',
-            'url(../icons/back-white.png)')" type="radio" id="cs1" name="color-scheme">
+            'url(../icons/back-white.png)','url(../icons/nav-menu_white.png)')" type="radio" id="cs1" name="color-scheme">
             <span class="radio-name">Черная</span>
           </label>
           <label class="radio-label" for="cs2">
             <input onchange="changeColorScheme('#151618','#212121','#313131','white','#b5b7b6','#8f9190',
-            'url(../icons/back-white.png)')" type="radio" id="cs2" name="color-scheme">
+            'url(../icons/back-white.png)','url(../icons/nav-menu_white.png)')" type="radio" id="cs2" name="color-scheme">
             <span class="radio-name">Серая</span>
           </label>
         </section>
@@ -158,6 +158,31 @@
       <div class="main-content page-block_main">
         <section class="main-content_container">
           <h3 class="main-content_container-name">Версия 0.5</h3>
+
+          <div class="menu-item changelog-container">
+            <div class="release-info">
+              <div class="menu-item_text-container release-info_text-container">
+                <h3 class="menu-item_text menu-item_name">0.5 Open Beta 2</h3>
+                <time datatime="2020-03-22" class="menu-item_text menu-item_description">22.03.2020</time>
+              </div>
+              <div class="spoiler-button">
+                <button class="button" onclick="showChangelogSpoiler(3,2)">Показать</button>
+              </div>
+            </div>
+            <div class="spoiler spoiler-hidden">
+              <ul class="release-notes">UI:
+                <li class="release-note">ширина оверлея узких мониторов увеличена до 730 пикселей</li>
+                <li class="release-note">вызов навигации на стратовой по нажатию кнопки рядом с хедером</li>
+                <li class="release-note">обновленный стиль навигационного меню, заточенный под управление 1 рукой</li>
+                <li class="release-note">навигация в футере выпилена из узкого оверлея за ненадобностью</li>
+              </ul>
+              <ul class="release-notes">Код:
+                <li class="release-note">теперь есть универсальная функция для скрытия/показа элемента по id</li>
+                <li class="release-note">местоположение иконки нав меню хранится в переменной</li>
+                <li class="release-note">все нововведения интегрированы в переключатель тем</li>
+              </ul>
+            </div>
+          </div>
 
           <div class="menu-item changelog-container">
             <div class="release-info">
@@ -336,7 +361,7 @@
     </div>
 
     <script src="kernel/js/themes.js"></script>
-    <script src="kernel/js/changelog.js"></script>
+    <script src="kernel/js/spoilers.js"></script>
 
     <!--
     <script src="kernel/js/test.js"></script>

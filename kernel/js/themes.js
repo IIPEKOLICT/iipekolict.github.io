@@ -65,6 +65,13 @@ document.addEventListener("DOMContentLoaded", () => { // Событие загу
     localStorage.setItem('headerBackButton', 'url(../icons/back-white.png)'); // Дефолтный ключ, если сохраненного не было
     document.documentElement.style.setProperty('--header-back_button', 'url(../icons/back-white.png)');
   }
+  if(localStorage.getItem('navMenuButton')) { // Если в ЛХ есть ключ кнопки вызова нав. меню стартовой
+    var navMenuButton = localStorage.getItem('navMenuButton');
+    document.documentElement.style.setProperty('--nav-menu_button', navMenuButton); // Установить кнопку
+  } else {
+    localStorage.setItem('navMenuButton', 'url(../icons/nav-menu_white.png)'); // Дефолтный ключ, если сохраненного не было
+    document.documentElement.style.setProperty('--nav-menu_button', 'url(../icons/nav-menu_white.png)');
+  }
 
   if(localStorage.getItem('checkedAccentNo')) { // Если в ЛХ есть ключ номера выбранного акц-инпута
     var checkedAccentNo = localStorage.getItem('checkedAccentNo');
@@ -111,8 +118,8 @@ function changeAccent(acp1) { // Функция смены акцента (пр�
 }
 
 colorSchemeInputs.forEach(input => input.addEventListener
-  ('change', changeColorScheme(csp1,csp2,csp3,csp4,csp5,csp6,csp7))); // Прослушка CS-инпутов
-function changeColorScheme(csp1,csp2,csp3,csp4,csp5,csp6,csp7) {
+  ('change', changeColorScheme(csp1,csp2,csp3,csp4,csp5,csp6,csp7,csp8))); // Прослушка CS-инпутов
+function changeColorScheme(csp1,csp2,csp3,csp4,csp5,csp6,csp7,csp8) {
   // Функция смены цветовой схемы (при нажатии на CS-инпут)
   document.documentElement.style.setProperty('--main_bg-color', csp1);
   document.documentElement.style.setProperty('--secondary_bg-color', csp2);
@@ -121,6 +128,7 @@ function changeColorScheme(csp1,csp2,csp3,csp4,csp5,csp6,csp7) {
   document.documentElement.style.setProperty('--secondary_text-color', csp5);
   document.documentElement.style.setProperty('--main_border-color', csp6);
   document.documentElement.style.setProperty('--header-back_button', csp7);
+  document.documentElement.style.setProperty('--nav-menu_button', csp8);
   localStorage.setItem('mainBgColor', csp1);
   localStorage.setItem('secondaryBgColor', csp2);
   localStorage.setItem('hoverBgColor', csp3);
@@ -128,6 +136,7 @@ function changeColorScheme(csp1,csp2,csp3,csp4,csp5,csp6,csp7) {
   localStorage.setItem('secondaryTextColor', csp5);
   localStorage.setItem('mainBorderColor', csp6);
   localStorage.setItem('headerBackButton', csp7);
+  localStorage.setItem('navMenuButton', csp8);
 }
 
 /*
