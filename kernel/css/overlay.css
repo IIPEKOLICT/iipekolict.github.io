@@ -1,4 +1,4 @@
-@media screen and (max-width: 730px), handheld and (orientation:portrait) /* узкие экраны */
+@media (max-width: 750px) /* узкие экраны шириной до 750 пикселей */
 {
   /* Дефолтное --------------------------------------------------*/
 
@@ -20,53 +20,8 @@
     border-width: 0.1em;
   }
 
-  /* Навигационное горизонтальное меню, заголовок и кнопка для вызова меню */
-
-  .header-nav
-  {
-    padding: 1em;
-    display: flex;
-    flex-direction: row;
-  }
-  .header-name_nav /* Заголовок в шапке, где также присутсвует меню навигации */
-  {
-    padding: 0;
-    flex: 80%;
-    text-align: left;
-  }
-  .show-menu_button-container
-  {
-    display: flex;
-  }
-  .nav-menu_button
-  {
-    background: var(--nav-menu_button) no-repeat 50% 50%;
-    background-size: 1em;
-  }
-
   /* Навигационное горизонтальное меню */
 
-  .nav
-  {
-    font-size: 2rem;
-  }
-  #nav
-  {
-    left: 0;
-    bottom: 0;
-    position: fixed;
-    background-color: var(--main_bg-color);
-    border-top: 2px solid var(--accent-color);
-    border-radius: 0.5em 0.5em 0 0;
-  }
-  .nav-hidden
-  {
-    display: none;
-  }
-  .nav-shown
-  {
-    display: block;
-  }
   .nav-item
   {
     display: block;
@@ -128,10 +83,6 @@
     margin: 0.8em;
     border-radius: 0.8em;
   }
-  .navigation-item_img
-  {
-    display: none;
-  }
   .navigation-item_name
   {
     line-height: 2em;
@@ -177,8 +128,10 @@
   }
 }
 
-@media screen and (min-width: 360px) and (max-width: 730px) /* узкие мониторы, видимость нав меню */
+@media (min-aspect-ratio: 9/16) and (max-width:750px) /* диапазон 9:16 - мах-ширина 750 пикселей */
 {
+  /* Шапка (header) --------------------------------------------------*/
+
   /* Навигационное горизонтальное меню, заголовок и кнопка для вызова меню */
 
   .header-nav
@@ -212,17 +165,80 @@
   {
     display: block;
   }
-}
 
-@media screen and (min-width: 500px) /* узкие мониторы, фикс видимости картинок */
-{
+  /* Основное содержание (main) --------------------------------------------------*/
+
+  /* Меню внешней навигации (стилистика рекомендаций из настроек) */
+
   .navigation-item_img
   {
     display: block;
   }
 }
 
-@media screen and (min-width: 1000px) /* широкие мониторы, фикс отступов основного навигационного меню */
+@media (max-aspect-ratio: 9/16) /* диапазон 9:16 и уже */
+{
+  /* Шапка (header) --------------------------------------------------*/
+
+  /* Навигационное горизонтальное меню, заголовок и кнопка для вызова меню */
+
+  .header-nav
+  {
+    padding: 1em;
+    display: flex;
+    flex-direction: row;
+  }
+  .header-name_nav /* Заголовок в шапке, где также присутсвует меню навигации */
+  {
+    padding: 0;
+    flex: 80%;
+    text-align: left;
+  }
+  .show-menu_button-container
+  {
+    display: flex;
+  }
+  .nav-menu_button
+  {
+    background: var(--nav-menu_button) no-repeat 50% 50%;
+    background-size: 1em;
+  }
+
+  /* Навигационное горизонтальное меню */
+
+  .nav
+  {
+    font-size: 2rem;
+  }
+  #nav
+  {
+    left: 0;
+    bottom: 0;
+    position: fixed;
+    background-color: var(--main_bg-color);
+    border-top: 2px solid var(--accent-color);
+    border-radius: 0.5em 0.5em 0 0;
+  }
+  .nav-hidden
+  {
+    display: none;
+  }
+  .nav-shown
+  {
+    display: block;
+  }
+
+  /* Основное содержание (main) --------------------------------------------------*/
+
+  /* Меню внешней навигации (стилистика рекомендаций из настроек) */
+
+  .navigation-item_img
+  {
+    display: none;
+  }
+}
+
+@media (min-width: 1000px) /* широкие мониторы, фикс отступов основного навигационного меню */
 {
   .navigation-item
   {
