@@ -106,7 +106,7 @@
   transform: scale(0.6);
 }
 
-/* Навигационное горизонтальное меню */
+/* Навигационное горизонтальное меню, заголовок и кнопка для вызова меню */
 
 .header-nav
 {
@@ -116,11 +116,14 @@
 {
   display: none;
 }
+
+/* Навигационное горизонтальное меню */
+
 .nav
 {
   text-align: center;
   font-size: 1rem;
-  line-height: 2rem;
+  line-height: 2em;
 }
 .nav-menu
 {
@@ -357,6 +360,7 @@
 .footer
 {
   border-top: 2px solid var(--main_border-color);
+  font-size: 0.8rem;
 }
 .footer-container
 {
@@ -368,5 +372,5 @@
   margin: inherit;
   padding: 0.5em;
   color: var(--secondary_text-color);
-  font-size: 0.8rem;
+  font-size: 1em;
 }

@@ -20,7 +20,7 @@
     border-width: 0.1em;
   }
 
-  /* Навигационное горизонтальное меню */
+  /* Навигационное горизонтальное меню, заголовок и кнопка для вызова меню */
 
   .header-nav
   {
@@ -44,6 +44,12 @@
     background-size: 1em;
   }
 
+  /* Навигационное горизонтальное меню */
+
+  .nav
+  {
+    font-size: 2rem;
+  }
   #nav
   {
     left: 0;
@@ -70,11 +76,11 @@
   }
   .nav-item:first-of-type
   {
-    margin-top: 0.1rem;
+    margin-top: 0.2em;
   }
   .nav-item:last-of-type
   {
-    margin-bottom: 0.1rem;
+    margin-bottom: 0.2em;
   }
   .nav-item:hover
   {
@@ -158,6 +164,54 @@
 
   /* Подвал (footer) --------------------------------------------------*/
 
+  .footer-container
+  {
+    padding: 1em;
+    align-items: center;
+    flex-direction: column;
+  }
+  .footer-text
+  {
+    padding: 0.1em;
+    font-size: 0.8em;
+  }
+}
+
+@media screen and (min-width: 360px) and (max-width: 730px) /* узкие мониторы, видимость нав меню */
+{
+  /* Навигационное горизонтальное меню, заголовок и кнопка для вызова меню */
+
+  .header-nav
+  {
+    padding: 0;
+    display: block;
+  }
+  .header-name_nav /* Заголовок в шапке, где также присутсвует меню навигации */
+  {
+    padding: 1em;
+    text-align: center;
+  }
+  .show-menu_button-container
+  {
+    display: none;
+  }
+
+  /* Навигационное горизонтальное меню */
+
+  .nav
+  {
+    font-size: 1rem;
+  }
+  #nav
+  {
+    position: inherit;
+    background: none;
+    border: none;
+  }
+  .nav-hidden
+  {
+    display: block;
+  }
 }
 
 @media screen and (min-width: 500px) /* узкие мониторы, фикс видимости картинок */
