@@ -76,6 +76,7 @@
 .header-page
 {
   display: flex;
+  align-items: center;
 }
 .header-name /* Заголовок в шапке */
 {
@@ -90,7 +91,7 @@
 }
 .header-back_button
 {
-  margin: 0.5em;
+  margin: 0 0.5em;
   width: 1.9em;
   height: 1.9em;
   cursor: pointer;
@@ -117,7 +118,57 @@
   display: none;
 }
 
-/* Навигационное горизонтальное меню */
+/* Основное содержание (main) --------------------------------------------------*/
+
+.main-content
+{
+  text-align: center;
+  font-size: 1rem;
+}
+.main-content_container
+{
+  padding: 0 4vw;
+  border-bottom: 1px solid var(--main_border-color);
+}
+.main-content_container:last-of-type
+{
+  border-bottom: none;
+}
+.main-content_container:hover .main-content_container-name
+{
+  border-color: var(--accent-color);
+}
+.main-content_container-name
+{
+  margin: 1em 0;
+  padding-bottom: 0.2em;
+  border-bottom: 2px solid var(--main_bg-color);
+  transition: ease-out 0.3s;
+}
+
+/* Подвал (footer) --------------------------------------------------*/
+
+.footer
+{
+  border-top: 2px solid var(--main_border-color);
+  font-size: 0.8rem;
+}
+.footer-container
+{
+  display: flex;
+  justify-content: space-between;
+}
+.footer-text
+{
+  margin: inherit;
+  padding: 0.5em;
+  color: var(--secondary_text-color);
+  font-size: 1em;
+}
+
+/* Менюшки --------------------------------------------------*/
+
+/* Навигационное горизонтальное меню на стартовой */
 
 .nav
 {
@@ -156,34 +207,6 @@
 .nav-item_link
 {
   display: block;
-}
-
-/* Основное содержание (main) --------------------------------------------------*/
-
-.main-content
-{
-  text-align: center;
-  font-size: 1rem;
-}
-.main-content_container
-{
-  padding: 0 4vw;
-  border-bottom: 1px solid var(--main_border-color);
-}
-.main-content_container:last-of-type
-{
-  border-bottom: none;
-}
-.main-content_container:hover .main-content_container-name
-{
-  border-color: var(--accent-color);
-}
-.main-content_container-name
-{
-  margin: 1em 0;
-  padding-bottom: 0.2em;
-  border-bottom: 2px solid var(--main_bg-color);
-  transition: ease-out 0.3s;
 }
 
 /* Меню внутристраничной навигации (окси-стилистика) */
@@ -235,6 +258,9 @@
   color: var(--secondary_text-color);
   font-size: 0.8em;
   line-height: 1.875em;
+  white-space: nowrap; /* Отменяем перенос текста */
+  overflow: hidden; /* Обрезаем содержимое */
+  text-overflow: ellipsis; /* Многоточие */
 }
 
 /* Меню внешней навигации (стилистика рекомендаций из настроек) */
@@ -276,6 +302,65 @@
   color: var(--secondary_text-color);
 }
 
+/* Интерактивные элементы --------------------------------------------------*/
+
+/* дефолтные радиокнопки */
+
+.radio-label /* лейблы для радиокнопок */
+{
+  display: block;
+  cursor: pointer;
+  line-height: 2.4em;
+}
+[type="radio"] /* Фикс видимости инпутов для радиокнопок */
+{
+  margin: -1px;
+  padding: 0;
+  height: 1px;
+  width: 1px;
+  position: absolute;
+  overflow: hidden;
+  border: 0;
+  clip: rect(0 0 0 0);
+}
+[type="radio"] + .radio-name /* текст подписи радиокнопки */
+{
+  display: block;
+}
+[type="radio"] + .radio-name::before /* стиль неотмеченной радиокнопки */
+{
+  content: '';
+  margin: 0 0.6em;
+  width: 0.6em;
+  height: 0.6em;
+  vertical-align: -0.3em;
+  display: inline-block;
+  border: 0.3em solid var(--main_bg-color);
+  border-radius: 0.6em;
+  box-shadow: 0 0 0 0.1em var(--accent-color);
+  transition: 0.3s ease all;
+}
+[type="radio"]:checked + .radio-name::before /* стиль отмеченной радиокнопки */
+{
+  background-color: var(--accent-color);
+}
+
+/* дефолтные кнопки */
+
+.button
+{
+  padding: 0.5em;
+  cursor: pointer;
+  color: var(--main_bg-color);
+  background-color: var(--accent-color);
+  border: none;
+  border-radius: 0.25em;
+  font-style: inherit;
+  font-size: inherit;
+}
+
+/* Другое --------------------------------------------------*/
+
 /* Оформление подстраниц в настройках */
 
 .page-block_main
@@ -313,17 +398,6 @@
   padding-left: 0;
   display: flex;
 }
-.button
-{
-  padding: 0.5em;
-  cursor: pointer;
-  color: var(--main_bg-color);
-  background-color: var(--accent-color);
-  border: none;
-  border-radius: 0.25em;
-  font-style: inherit;
-  font-size: inherit;
-}
 .release-notes
 {
   margin: 0;
@@ -355,22 +429,70 @@
   display: block;
 }
 
-/* Подвал (footer) --------------------------------------------------*/
+/* #About (об устройстве) */
 
-.footer
+.about-header
 {
-  border-top: 2px solid var(--main_border-color);
-  font-size: 0.8rem;
+  padding: 0.5em 0;
+  height: 15em;
+  display: flex;
+  flex-direction: row;
 }
-.footer-container
+.about-header .about_primary-text
+{
+  text-transform: uppercase;
+}
+.about-header_img
+{
+  flex: 50%;
+  background: url(../icons/1.png) no-repeat 50% 50%;
+  background-size: 10em;
+  transform: scale(0.8);
+}
+.about-header_specs
 {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
+  flex: 50%;
+  flex-direction: column;
 }
-.footer-text
+.about_primary-text
 {
-  margin: inherit;
-  padding: 0.5em;
   color: var(--secondary_text-color);
-  font-size: 1em;
+}
+.about_secondary-text
+{
+  color: var(--main_text-color);
+}
+.about-txt_mobile
+{
+  display: none;
+}
+.about-section
+{
+  padding: 0.5em 0;
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1px solid var(--main_border-color);
+}
+.about-section:last-of-type
+{
+  border-bottom: none;
+}
+.about-container
+{
+  height: 5em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 50%;
+}
+.about-container:nth-of-type(odd)
+{
+  border-right: 1px solid var(--main_border-color);
+  padding-right: 0.5em;
+}
+.about-container:nth-of-type(even)
+{
+  padding-left: 0.5em;
 }

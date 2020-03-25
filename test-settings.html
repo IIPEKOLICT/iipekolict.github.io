@@ -162,6 +162,29 @@
           <div class="menu-item changelog-container">
             <div class="release-info">
               <div class="menu-item_text-container release-info_text-container">
+                <h3 class="menu-item_text menu-item_name">0.5 Open Beta 4</h3>
+                <time datatime="2020-03-25" class="menu-item_text menu-item_description">25.03.2020</time>
+              </div>
+              <div class="spoiler-button">
+                <button class="button" onclick="showChangelogSpoiler(3,4)">Показать</button>
+              </div>
+            </div>
+            <div class="spoiler spoiler-hidden">
+              <ul class="release-notes">UI:
+                <li class="release-note">оверлеи теперь строятся на соотношении сторон</li>
+                <li class="release-note">оверлей для футера на узких экранах</li>
+                <li class="release-note">фишка из оксиджен для второстепенного текста в пунктах меню (при недостаточной ширине автоматом вставляется троеточие)</li>
+                <li class="release-note">сделал пункт "об устройстве"</li>
+              </ul>
+              <ul class="release-notes">Код:
+                <li class="release-note">оптимизация кода оверлеев</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="menu-item changelog-container">
+            <div class="release-info">
+              <div class="menu-item_text-container release-info_text-container">
                 <h3 class="menu-item_text menu-item_name">0.5 Open Beta 3</h3>
                 <time datatime="2020-03-23" class="menu-item_text menu-item_description">23.03.2020</time>
               </div>
@@ -170,13 +193,9 @@
               </div>
             </div>
             <div class="spoiler spoiler-hidden">
-              <ul class="release-notes">UI:
+              <ul class="release-notes">
                 <li class="release-note">дополнительный оверлей для узких мониторов в диапазоне 360-730 пикселей, где показывается нав меню сразу развернутым</li>
                 <li class="release-note">увеличенные в 2 раза размеры в нав меню для узких экранов</li>
-                <li class="release-note">оверлей для футера на узких экранах</li>
-              </ul>
-              <ul class="release-notes">Код:
-                
               </ul>
             </div>
           </div>
@@ -377,7 +396,118 @@
 
       <div class="main-content page-block_main">
         <section class="main-content_container">
+          <article class="about-header">
+            <div class="about-header_img"></div>
+            <aside class="about-header_specs">
+              <div class="menu-item_text-container">
+                <div class="menu-item_text menu-item_name about_primary-text">
+                  <span class="">CPU</span>
+                </div>
+                <div class="menu-item_text menu-item_description about_secondary-text">
+                  <span class="about-txt_pc">AMD Ryzen 9 3900X</span>
+                  <span class="about-txt_mobile">Snapdragon<sup class="sup">TM</sup> 855</span>
+                </div>
+              </div>
+              <div class="menu-item_text-container">
+                <div class="menu-item_text menu-item_name about_primary-text">
+                  <span class="about-txt_pc">GPU</span>
+                  <span class="about-txt_mobile">Хранилище</span>
+                </div>
+                <div class="menu-item_text menu-item_description about_secondary-text">
+                  <span class="about-txt_pc">NVIDIA RTX 2080 Super</span>
+                  <span class="about-txt_mobile">8GB RAM + 128GB ROM</span>
+                </div>
+              </div>
+              <div class="menu-item_text-container">
+                <div class="menu-item_text menu-item_name about_primary-text">
+                  <span class="about-txt_pc">Хранилище</span>
+                  <span class="about-txt_mobile">Камера</span>
+                </div>
+                <div class="menu-item_text menu-item_description about_secondary-text">
+                  <span class="about-txt_pc">32GB RAM + 2048GB ROM</span>
+                  <span class="about-txt_mobile">16 + 20MP Dual Camera</span>
+                </div>
+              </div>
+              <div class="menu-item_text-container">
+                <div class="menu-item_text menu-item_name about_primary-text">Экран</div>
+                <div class="menu-item_text menu-item_description about_secondary-text">
+                  <span class="about-txt_pc">IPS LCD 27' Display</span>
+                  <span class="about-txt_mobile">Dynamic AMOLED 6,67' Display</span>
+                </div>
+              </div>
+            </aside>
+          </article>
 
+          <div class="about-section">
+            <div class="about-container">
+              <div class="menu-item_text-container">
+                <div class="menu-item_text menu-item_name about_primary-text">
+                  <span class="">Название устройства</span>
+                </div>
+                <div class="menu-item_text menu-item_description about_secondary-text">
+                  <span class="about-txt_pc">Правильный комп</span>
+                  <span class="about-txt_mobile">Правильный смартфон</span>
+                </div>
+              </div>
+            </div>
+            <div class="about-container">
+              <div class="menu-item_text-container">
+                <div class="menu-item_text menu-item_name about_primary-text">
+                  <span class="">Этикетки сертификации</span>
+                </div>
+                <div class="menu-item_text menu-item_description about_secondary-text">
+                  <span class=""></span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="about-section">
+            <div class="about-container">
+              <div class="menu-item_text-container">
+                <div class="menu-item_text menu-item_name about_primary-text">
+                  <span class="about-txt_pc">Версия Windows</span>
+                  <span class="about-txt_mobile">Версия Android</span>
+                </div>
+                <div class="menu-item_text menu-item_description about_secondary-text">
+                  <span class="about-txt_pc">10 1903 Build</span>
+                  <span class="about-txt_mobile">10</span>
+                </div>
+              </div>
+            </div>
+            <div class="about-container">
+              <div class="menu-item_text-container">
+                <div class="menu-item_text menu-item_name about_primary-text">
+                  <span class="">Версия сайта</span>
+                </div>
+                <div class="menu-item_text menu-item_description about_secondary-text">
+                  <span class="">0.5 Open Beta 4</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="about-section">
+            <div class="about-container">
+              <div class="menu-item_text-container">
+                <div class="menu-item_text menu-item_name about_primary-text">
+                  <span class="">Номер сборки</span>
+                </div>
+                <div class="menu-item_text menu-item_description about_secondary-text">
+                  <span class="">#20</span>
+                </div>
+              </div>
+            </div>
+            <div class="about-container">
+              <div class="menu-item_text-container">
+                <div class="menu-item_text menu-item_name about_primary-text">
+                  <span class="">Модель</span>
+                </div>
+                <div class="menu-item_text menu-item_description about_secondary-text">
+                  <span class="about-txt_pc">Asus ROG PC</span>
+                  <span class="about-txt_mobile">OnePlus 7 Pro</span>
+                </div>
+              </div>
+            </div>
+          </div>
         </section>
       </div>
     </div>

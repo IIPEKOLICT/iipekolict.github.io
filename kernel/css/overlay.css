@@ -1,4 +1,4 @@
-@media (max-width: 750px) /* узкие экраны шириной до 750 пикселей */
+@media (max-aspect-ratio: 3/4) /* диапазон 3:4 и уже */
 {
   /* Дефолтное --------------------------------------------------*/
 
@@ -11,16 +11,225 @@
 
   .header-page
   {
-    font-size: 1rem;
+    font-size: 1.5rem;
+  }
+  .header-page .header-name
+  {
+    padding: 1.5em 0;
+  }
+  .header-name_nav /* Заголовок в шапке, где также присутсвует меню навигации */
+  {
+    padding: 0;
+    flex: 80%;
+    text-align: left;
   }
   .header-back_button
   {
-    width: 1.8em;
-    height: 1.8em;
+    margin: 0;
+    width: 2.5em;
+    height: 2.5em;
     border-width: 0.1em;
   }
 
-  /* Навигационное горизонтальное меню */
+  /* Навигационное горизонтальное меню, заголовок и кнопка для вызова меню */
+
+  .header-nav
+  {
+    padding: 1em;
+    display: flex;
+    flex-direction: row;
+  }
+  .show-menu_button-container
+  {
+    display: flex;
+  }
+  .nav-menu_button
+  {
+    background: var(--nav-menu_button) no-repeat 50% 50%;
+    background-size: 1em;
+  }
+
+  /* Основное содержание (main) --------------------------------------------------*/
+
+  .main-content
+  {
+    font-size: 1.25rem;
+  }
+
+  /* Подвал (footer) --------------------------------------------------*/
+
+  .footer
+  {
+    font-size: 1rem;
+  }
+
+  /* Менюшки --------------------------------------------------*/
+
+  /* Навигационное горизонтальное меню на стартовой */
+
+  #nav
+  {
+    left: 0;
+    bottom: 0;
+    position: fixed;
+    background-color: var(--main_bg-color);
+    border-top: 2px solid var(--accent-color);
+    border-radius: 0.5em 0.5em 0 0;
+  }
+  .nav
+  {
+    font-size: 2rem;
+  }
+  .nav-hidden
+  {
+    display: none;
+  }
+  .nav-shown
+  {
+    display: block;
+  }
+
+  /* Меню внутристраничной навигации (окси-стилистика) */
+
+  /* Меню внешней навигации (стилистика рекомендаций из настроек) */
+
+  .navigation-item
+  {
+    border-radius: 0.8em;
+  }
+  .navigation-item_img
+  {
+    display: none;
+  }
+
+  /* Интерактивные элементы --------------------------------------------------*/
+
+  /* дефолтные радиокнопки */
+
+  /* дефолтные кнопки */
+
+  /* Другое --------------------------------------------------*/
+
+  /* Оформление подстраниц в настройках */
+
+  /* Changelog (спойлеры) */
+
+  /* #About (об устройстве) */
+
+}
+
+@media (min-aspect-ratio: 3/4) and (max-aspect-ratio: 6/5) /* диапазон 3:4 - 6:5 */
+{
+  /* Дефолтное --------------------------------------------------*/
+
+  :root
+  {
+    font-size: 4vw; /* дефолтный шрифт */
+  }
+
+  /* Шапка (header) --------------------------------------------------*/
+
+  /* Навигационное горизонтальное меню, заголовок и кнопка для вызова меню */
+
+  .header-nav
+  {
+    padding: 0;
+    display: block;
+  }
+  .header-name_nav /* Заголовок в шапке, где также присутсвует меню навигации */
+  {
+    padding: 1em;
+    text-align: center;
+  }
+  .show-menu_button-container
+  {
+    display: none;
+  }
+
+  /* Основное содержание (main) --------------------------------------------------*/
+
+  .main-content
+  {
+    font-size: 1.5rem;
+  }
+
+  /* Подвал (footer) --------------------------------------------------*/
+
+  /* Менюшки --------------------------------------------------*/
+
+  /* Навигационное горизонтальное меню на стартовой */
+
+  #nav
+  {
+    position: inherit;
+    background: none;
+    border: none;
+  }
+  .nav
+  {
+    font-size: 1rem;
+  }
+  .nav-hidden
+  {
+    display: block;
+  }
+
+  /* Меню внутристраничной навигации (окси-стилистика) */
+
+  /* Меню внешней навигации (стилистика рекомендаций из настроек) */
+
+  .navigation-item_img
+  {
+    display: block;
+  }
+
+  /* Интерактивные элементы --------------------------------------------------*/
+
+  /* дефолтные радиокнопки */
+
+  /* дефолтные кнопки */
+
+  /* Другое --------------------------------------------------*/
+
+  /* Оформление подстраниц в настройках */
+
+  /* Changelog (спойлеры) */
+
+  /* #About (об устройстве) */
+}
+
+@media (max-aspect-ratio: 6/5) /* узкие экраны до 6:5 */
+{
+  /* Дефолтное --------------------------------------------------*/
+
+  /* Шапка (header) --------------------------------------------------*/
+
+  /* Навигационное горизонтальное меню, заголовок и кнопка для вызова меню */
+
+  /* Основное содержание (main) --------------------------------------------------*/
+
+  .main-content_container
+  {
+    padding: 0 1em;
+  }
+
+  /* Подвал (footer) --------------------------------------------------*/
+
+  .footer-container
+  {
+    padding: 1em;
+    align-items: center;
+    flex-direction: column;
+  }
+  .footer-text
+  {
+    padding: 0.1em;
+    font-size: 0.8em;
+  }
+
+  /* Менюшки --------------------------------------------------*/
+
+  /* Навигационное горизонтальное меню на стартовой */
 
   .nav-item
   {
@@ -40,13 +249,6 @@
   .nav-item:hover
   {
     background-color: var(--hover_bg-color);
-  }
-
-  /* Основное содержание (main) --------------------------------------------------*/
-
-  .main-content_container
-  {
-    padding: 0 1em;
   }
 
   /* Меню внутристраничной навигации (окси-стилистика) */
@@ -81,17 +283,26 @@
   .navigation-item
   {
     margin: 0.8em;
-    border-radius: 0.8em;
+    border-radius: 0.4em;
   }
   .navigation-item_name
   {
-    line-height: 2em;
-    font-size: 0.8em;
+    line-height: 1.5em;
   }
   .navigation-item_description
   {
-    font-size: 0.5em;
+    padding-top: 0.6em;
   }
+
+  /* Интерактивные элементы --------------------------------------------------*/
+
+  /* дефолтные радиокнопки */
+
+  /* дефолтные кнопки */
+
+  /* Другое --------------------------------------------------*/
+
+  /* Оформление подстраниц в настройках */
 
   /* Changelog (спойлеры) */
 
@@ -113,132 +324,15 @@
     font-size: 0.65em;
   }
 
-  /* Подвал (footer) --------------------------------------------------*/
+  /* #About (об устройстве) */
 
-  .footer-container
+  .about-header
   {
-    padding: 1em;
-    align-items: center;
-    flex-direction: column;
-  }
-  .footer-text
-  {
-    padding: 0.1em;
-    font-size: 0.8em;
+    height: 10em;
   }
 }
 
-@media (min-aspect-ratio: 3/4) and (max-width:750px) /* диапазон 3:4 - мах-ширина 750 пикселей */
-{
-  /* Шапка (header) --------------------------------------------------*/
-
-  /* Навигационное горизонтальное меню, заголовок и кнопка для вызова меню */
-
-  .header-nav
-  {
-    padding: 0;
-    display: block;
-  }
-  .header-name_nav /* Заголовок в шапке, где также присутсвует меню навигации */
-  {
-    padding: 1em;
-    text-align: center;
-  }
-  .show-menu_button-container
-  {
-    display: none;
-  }
-
-  /* Навигационное горизонтальное меню */
-
-  .nav
-  {
-    font-size: 1rem;
-  }
-  #nav
-  {
-    position: inherit;
-    background: none;
-    border: none;
-  }
-  .nav-hidden
-  {
-    display: block;
-  }
-
-  /* Основное содержание (main) --------------------------------------------------*/
-
-  /* Меню внешней навигации (стилистика рекомендаций из настроек) */
-
-  .navigation-item_img
-  {
-    display: block;
-  }
-}
-
-@media (max-aspect-ratio: 3/4) /* диапазон 3:4 и уже */
-{
-  /* Шапка (header) --------------------------------------------------*/
-
-  /* Навигационное горизонтальное меню, заголовок и кнопка для вызова меню */
-
-  .header-nav
-  {
-    padding: 1em;
-    display: flex;
-    flex-direction: row;
-  }
-  .header-name_nav /* Заголовок в шапке, где также присутсвует меню навигации */
-  {
-    padding: 0;
-    flex: 80%;
-    text-align: left;
-  }
-  .show-menu_button-container
-  {
-    display: flex;
-  }
-  .nav-menu_button
-  {
-    background: var(--nav-menu_button) no-repeat 50% 50%;
-    background-size: 1em;
-  }
-
-  /* Навигационное горизонтальное меню */
-
-  .nav
-  {
-    font-size: 2rem;
-  }
-  #nav
-  {
-    left: 0;
-    bottom: 0;
-    position: fixed;
-    background-color: var(--main_bg-color);
-    border-top: 2px solid var(--accent-color);
-    border-radius: 0.5em 0.5em 0 0;
-  }
-  .nav-hidden
-  {
-    display: none;
-  }
-  .nav-shown
-  {
-    display: block;
-  }
-
-  /* Основное содержание (main) --------------------------------------------------*/
-
-  /* Меню внешней навигации (стилистика рекомендаций из настроек) */
-
-  .navigation-item_img
-  {
-    display: none;
-  }
-}
-
-@media (min-width: 1000px) /* широкие мониторы, фикс отступов основного навигационного меню */
+@media (min-aspect-ratio: 16/9) /* широкие мониторы, фикс отступов основного навигационного меню */
 {
   .navigation-item
   {
