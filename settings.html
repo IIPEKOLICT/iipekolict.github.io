@@ -6,11 +6,10 @@
     <meta name="keywords" content="Сайты" />
     <meta name="description" content="Мое портфолио; сайты, сделанные мной" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-	  <title>Настройки (бета)</title>
+	  <title>Настройки</title>
     <link rel="stylesheet" href="kernel/css/kernel.css">
     <link rel="stylesheet" href="kernel/css/overlay.css">
     <link rel="stylesheet" href="kernel/css/accent-color.css">
-    <link rel="stylesheet" href="kernel/css/test.css">
   </head>
 
   <body class="page">
@@ -157,7 +156,251 @@
 
       <div class="main-content page-block_main">
         <section class="main-content_container">
+          <h3 class="main-content_container-name">Версия 0.5</h3>
 
+          <div class="menu-item changelog-container">
+            <div class="release-info">
+              <div class="menu-item_text-container release-info_text-container">
+                <h3 class="menu-item_text menu-item_name">0.5 Open Beta 5</h3>
+                <time datatime="2020-03-26" class="menu-item_text menu-item_description">26.03.2020</time>
+              </div>
+              <div class="spoiler-button">
+                <button class="button" onclick="showChangelogSpoiler(3,5)">Показать</button>
+              </div>
+            </div>
+            <div class="spoiler spoiler-hidden">
+              <ul class="release-notes">
+                <li class="release-note">окончательно допилил пункт "об устройстве"</li>
+                <li class="release-note">финальный релиз версии 0.5</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="menu-item changelog-container">
+            <div class="release-info">
+              <div class="menu-item_text-container release-info_text-container">
+                <h3 class="menu-item_text menu-item_name">0.5 Open Beta 4</h3>
+                <time datatime="2020-03-25" class="menu-item_text menu-item_description">25.03.2020</time>
+              </div>
+              <div class="spoiler-button">
+                <button class="button" onclick="showChangelogSpoiler(3,4)">Показать</button>
+              </div>
+            </div>
+            <div class="spoiler spoiler-hidden">
+              <ul class="release-notes">UI:
+                <li class="release-note">оверлеи теперь строятся на соотношении сторон</li>
+                <li class="release-note">оверлей для футера на узких экранах</li>
+                <li class="release-note">фишка из оксиджен для второстепенного текста в пунктах меню (при недостаточной ширине автоматом вставляется троеточие)</li>
+                <li class="release-note">сделал пункт "об устройстве"</li>
+              </ul>
+              <ul class="release-notes">Код:
+                <li class="release-note">оптимизация кода оверлеев</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="menu-item changelog-container">
+            <div class="release-info">
+              <div class="menu-item_text-container release-info_text-container">
+                <h3 class="menu-item_text menu-item_name">0.5 Open Beta 3</h3>
+                <time datatime="2020-03-23" class="menu-item_text menu-item_description">23.03.2020</time>
+              </div>
+              <div class="spoiler-button">
+                <button class="button" onclick="showChangelogSpoiler(3,3)">Показать</button>
+              </div>
+            </div>
+            <div class="spoiler spoiler-hidden">
+              <ul class="release-notes">
+                <li class="release-note">дополнительный оверлей для узких мониторов в диапазоне 360-730 пикселей, где показывается нав меню сразу развернутым</li>
+                <li class="release-note">увеличенные в 2 раза размеры в нав меню для узких экранов</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="menu-item changelog-container">
+            <div class="release-info">
+              <div class="menu-item_text-container release-info_text-container">
+                <h3 class="menu-item_text menu-item_name">0.5 Open Beta 2</h3>
+                <time datatime="2020-03-22" class="menu-item_text menu-item_description">22.03.2020</time>
+              </div>
+              <div class="spoiler-button">
+                <button class="button" onclick="showChangelogSpoiler(3,2)">Показать</button>
+              </div>
+            </div>
+            <div class="spoiler spoiler-hidden">
+              <ul class="release-notes">UI:
+                <li class="release-note">ширина оверлея узких мониторов увеличена до 730 пикселей</li>
+                <li class="release-note">вызов навигации на стратовой по нажатию кнопки рядом с хедером</li>
+                <li class="release-note">обновленный стиль навигационного меню, заточенный под управление 1 рукой</li>
+                <li class="release-note">навигация в футере выпилена из узкого оверлея за ненадобностью</li>
+              </ul>
+              <ul class="release-notes">Код:
+                <li class="release-note">теперь есть универсальная функция для скрытия/показа элемента по id</li>
+                <li class="release-note">местоположение иконки нав меню хранится в переменной</li>
+                <li class="release-note">все нововведения интегрированы в переключатель тем</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="menu-item changelog-container">
+            <div class="release-info">
+              <div class="menu-item_text-container release-info_text-container">
+                <h3 class="menu-item_text menu-item_name">0.5 Open Beta 1</h3>
+                <time datatime="2020-03-22" class="menu-item_text menu-item_description">22.03.2020</time>
+              </div>
+              <div class="spoiler-button">
+                <button class="button" onclick="showChangelogSpoiler(3,1)">Показать</button>
+              </div>
+            </div>
+            <div class="spoiler spoiler-hidden">
+              <ul class="release-notes">UI:
+                <li class="release-note">сделал ченжлог, большая часть элементво базируется на стилях пунктов меню</li>
+                <li class="release-note">спойлеры раскрываются при нажатии кнопки</li>
+              </ul>
+              <ul class="release-notes">Код:
+                <li class="release-note">несколько костыльная реализация скрытия/раскрытия спойлеров</li>
+                <li class="release-note">элементы ченжлога построены на флексах</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section class="main-content_container">
+          <h3 class="main-content_container-name">Версия 0.4</h3>
+
+          <div class="menu-item changelog-container">
+            <div class="release-info">
+              <div class="menu-item_text-container release-info_text-container">
+                <h3 class="menu-item_text menu-item_name">0.4 Open Beta 4</h3>
+                <time datatime="2020-03-21" class="menu-item_text menu-item_description">21.03.2020</time>
+              </div>
+              <div class="spoiler-button">
+                <button class="button" onclick="showChangelogSpoiler(2,4)">Показать</button>
+              </div>
+            </div>
+            <div class="spoiler spoiler-hidden">
+              <ul class="release-notes">UI:
+                <li class="release-note">улучшения для сверхшироких экранов</li>
+                <li class="release-note">фикс видимости превьюшек в мобильной версии</li>
+              </ul>
+              <ul class="release-notes">Код:
+                <li class="release-note">перенес переменные в основной ксс-файл</li>
+                <li class="release-note">оптимизация стилей пунктов меню</li>
+                <li class="release-note">навел порядок в файловой системе</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="menu-item changelog-container">
+            <div class="release-info">
+              <div class="menu-item_text-container release-info_text-container">
+                <h3 class="menu-item_text menu-item_name">0.4 Open Beta 3</h3>
+                <time datatime="2020-03-19" class="menu-item_text menu-item_description">19.03.2020</time>
+              </div>
+              <div class="spoiler-button">
+                <button class="button" onclick="showChangelogSpoiler(2,3)">Показать</button>
+              </div>
+            </div>
+            <div class="spoiler spoiler-hidden">
+              <ul class="release-notes">
+                <li class="release-note">улучшения мобильной версии</li>
+                <li class="release-note">теперь размеры плашек и пунктов меню зависят от шрифта</li>
+                <li class="release-note">скрытие картинок в плашках в моильной версии</li>
+                <li class="release-note">большая адаптивность размеров к основному размеру шрифта</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="menu-item changelog-container">
+            <div class="release-info">
+              <div class="menu-item_text-container release-info_text-container">
+                <h3 class="menu-item_text menu-item_name">0.4 Open Beta 2</h3>
+                <time datatime="2020-03-18" class="menu-item_text menu-item_description">18.03.2020</time>
+              </div>
+              <div class="spoiler-button">
+                <button class="button" onclick="showChangelogSpoiler(2,2)">Показать</button>
+              </div>
+            </div>
+            <div class="spoiler spoiler-hidden">
+              <ul class="release-notes">
+                <li class="release-note">вернул обратно анимацию и стиль пунктов основного меню</li>
+                <li class="release-note">добавил виевпорт и сделал оверлей для узких экранов</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="menu-item changelog-container">
+            <div class="release-info">
+              <div class="menu-item_text-container release-info_text-container">
+                <h3 class="menu-item_text menu-item_name">0.4 Open Beta 1</h3>
+                <time datatime="2020-03-17" class="menu-item_text menu-item_description">17.03.2020</time>
+              </div>
+              <div class="spoiler-button">
+                <button class="button" onclick="showChangelogSpoiler(2,1)">Показать</button>
+              </div>
+            </div>
+            <div class="spoiler spoiler-hidden">
+              <ul class="release-notes">UI:
+                <li class="release-note">если нет инфы в ЛХ, записываются дефолтные ключи</li>
+                <li class="release-note">шрифт подстраивается под высоту страницы, большинство бордеров - под ширину</li>
+                <li class="release-note">серая цветовая схема, а также переключатель цс</li>
+                <li class="release-note">более оптимизированные хедеры и обновленный стиль главного меню</li>
+              </ul>
+              <ul class="release-notes">Код:
+                <li class="release-note">кнопка назад терь как переменная и более кликабельна</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section class="main-content_container">
+          <h3 class="main-content_container-name">До создания ченжлога</h3>
+
+          <div class="menu-item changelog-container">
+            <div class="release-info">
+              <div class="menu-item_text-container release-info_text-container">
+                <h3 class="menu-item_text menu-item_name">0.3</h3>
+                <time datatime="2020-03-14" class="menu-item_text menu-item_description">14.03.2020</time>
+              </div>
+              <div class="spoiler-button">
+                <button class="button" onclick="showChangelogSpoiler(1,2)">Показать</button>
+              </div>
+            </div>
+            <div class="spoiler spoiler-hidden">
+              <ul class="release-notes">UI:
+                <li class="release-note">пока можно менять только цвет акцента</li>
+                <li class="release-note">динамической окраски радиокнопок пока нет(</li>
+              </ul>
+              <ul class="release-notes">Код:
+                <li class="release-note">реализовал переключение тем с запоминанием в куки</li>
+                <li class="release-note">починил море ебучих багов, связанных с этим</li>
+                <li class="release-note">упорядочил ксс, терь все красиво, логично и стилистика строится на переменных</li>
+                <li class="release-note">доступные цвета акцента можно изменять, используя только HTML. только от него они и зависят</li>
+                <li class="release-note">глючный переключатель ксс для тем терь нах не нужен</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="menu-item changelog-container">
+            <div class="release-info">
+              <div class="menu-item_text-container release-info_text-container">
+                <h3 class="menu-item_text menu-item_name">0.1</h3>
+                <time datatime="2020-03-13" class="menu-item_text menu-item_description">13.03.2020</time>
+              </div>
+              <div class="spoiler-button">
+                <button class="button" onclick="showChangelogSpoiler(1,1)">Показать</button>
+              </div>
+            </div>
+            <div class="spoiler spoiler-hidden">
+              <ul class="release-notes">
+                <li class="release-note">перепаковал, упорядочил, окончательно определился со стилем плашек-ссылок на сайты на стартовой странице, окончательный фикс внутристраничной навигации, убрал лишнее</li>
+                <li class="release-note">починил внутристраничеую навигацию на target-ах и сделал радиокнопки</li>
+                <li class="release-note">улучшения анимации плашек на осн странице и поработал с настройками</li>
+                <li class="release-note">начал делать настройки и допилил стартовую</li>
+                <li class="release-note">initial build епта</li>
+              </ul>
+            </div>
+          </div>
         </section>
       </div>
     </div>
@@ -170,18 +413,123 @@
 
       <div class="main-content page-block_main">
         <section class="main-content_container">
+          <article class="about-header">
+            <div class="about-header_img"></div>
+            <aside class="about-header_specs">
+              <div class="menu-item_text-container">
+                <div class="menu-item_text menu-item_name about_primary-text">
+                  <span class="">CPU</span>
+                </div>
+                <div class="menu-item_text menu-item_description about_secondary-text">
+                  <span class="about-txt_pc">AMD Ryzen 9 3900X</span>
+                  <span class="about-txt_mobile">Snapdragon<sup class="sup">TM</sup> 855</span>
+                </div>
+              </div>
+              <div class="menu-item_text-container">
+                <div class="menu-item_text menu-item_name about_primary-text">
+                  <span class="about-txt_pc">GPU</span>
+                  <span class="about-txt_mobile">Хранилище</span>
+                </div>
+                <div class="menu-item_text menu-item_description about_secondary-text">
+                  <span class="about-txt_pc">NVIDIA RTX 2080 Super</span>
+                  <span class="about-txt_mobile">8GB RAM + 128GB ROM</span>
+                </div>
+              </div>
+              <div class="menu-item_text-container">
+                <div class="menu-item_text menu-item_name about_primary-text">
+                  <span class="about-txt_pc">Хранилище</span>
+                  <span class="about-txt_mobile">Камера</span>
+                </div>
+                <div class="menu-item_text menu-item_description about_secondary-text">
+                  <span class="about-txt_pc">32GB RAM + 2048GB ROM</span>
+                  <span class="about-txt_mobile">48 + 8 + 16MP Triple Camera</span>
+                </div>
+              </div>
+              <div class="menu-item_text-container">
+                <div class="menu-item_text menu-item_name about_primary-text">Экран</div>
+                <div class="menu-item_text menu-item_description about_secondary-text">
+                  <span class="about-txt_pc">IPS LCD 27' Display</span>
+                  <span class="about-txt_mobile">Dynamic AMOLED 6,67' Display</span>
+                </div>
+              </div>
+            </aside>
+          </article>
 
+          <div class="about-section">
+            <div class="about-container">
+              <div class="menu-item_text-container">
+                <div class="menu-item_text menu-item_name about_primary-text">
+                  <span class="">Название устройства</span>
+                </div>
+                <div class="menu-item_text menu-item_description about_secondary-text">
+                  <span class="about-txt_pc">Правильный комп</span>
+                  <span class="about-txt_mobile">Правильный смартфон</span>
+                </div>
+              </div>
+            </div>
+            <div class="about-container">
+              <div class="menu-item_text-container">
+                <div class="menu-item_text menu-item_name about_primary-text">
+                  <span class="">Этикетки сертификации</span>
+                </div>
+                <div class="menu-item_text menu-item_description about_secondary-text">
+                  <span class="">...</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="about-section">
+            <div class="about-container">
+              <div class="menu-item_text-container">
+                <div class="menu-item_text menu-item_name about_primary-text">
+                  <span class="about-txt_pc">Версия Windows</span>
+                  <span class="about-txt_mobile">Версия Android</span>
+                </div>
+                <div class="menu-item_text menu-item_description about_secondary-text">
+                  <span class="about-txt_pc">10 1903 Build</span>
+                  <span class="about-txt_mobile">10</span>
+                </div>
+              </div>
+            </div>
+            <div class="about-container">
+              <div class="menu-item_text-container">
+                <div class="menu-item_text menu-item_name about_primary-text">
+                  <span class="">Версия сайта</span>
+                </div>
+                <div class="menu-item_text menu-item_description about_secondary-text">
+                  <span class=""><a class="link-hidden" href="#changelog">0.5 Open Beta 5</a></span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="about-section">
+            <div class="about-container">
+              <div class="menu-item_text-container">
+                <div class="menu-item_text menu-item_name about_primary-text">
+                  <span class="">Номер сборки</span>
+                </div>
+                <div class="menu-item_text menu-item_description about_secondary-text">
+                  <span class=""><a class="link-hidden" href="#changelog">#21</a></span>
+                </div>
+              </div>
+            </div>
+            <div class="about-container">
+              <div class="menu-item_text-container">
+                <div class="menu-item_text menu-item_name about_primary-text">
+                  <span class="">Модель</span>
+                </div>
+                <div class="menu-item_text menu-item_description about_secondary-text">
+                  <span class="about-txt_pc">Asus ROG PC</span>
+                  <span class="about-txt_mobile">OnePlus 7 Pro</span>
+                </div>
+              </div>
+            </div>
+          </div>
         </section>
       </div>
     </div>
 
     <script src="kernel/js/themes.js"></script>
     <script src="kernel/js/spoilers.js"></script>
-
-    <!--
-    <script src="kernel/js/test.js"></script>
-
-    <script src="kernel/js/jquery.js"></script>
-    -->
   </body>
 </html>
