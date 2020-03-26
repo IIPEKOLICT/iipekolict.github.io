@@ -445,8 +445,8 @@
 .about-header_img
 {
   flex: 50%;
-  background: url(../icons/1.png) no-repeat 50% 50%;
-  background-size: 10em;
+  background: url(../icons/asus-pc.png) no-repeat 50% 50%;
+  background-size: contain;
   transform: scale(0.8);
 }
 .about-header_specs
@@ -470,7 +470,7 @@
 }
 .about-section
 {
-  padding: 0.5em 0;
+  padding: 1.25em 0;
   display: flex;
   flex-direction: row;
   border-bottom: 1px solid var(--main_border-color);
@@ -481,18 +481,15 @@
 }
 .about-container
 {
-  height: 5em;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  height: 6em;
   flex: 50%;
 }
 .about-container:nth-of-type(odd)
 {
   border-right: 1px solid var(--main_border-color);
-  padding-right: 0.5em;
+  padding-right: 1.5em;
 }
 .about-container:nth-of-type(even)
 {
-  padding-left: 0.5em;
+  padding-left: 1.5em;
 }

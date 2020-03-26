@@ -116,6 +116,23 @@
 
   /* #About (об устройстве) */
 
+  .about-header_img
+  {
+    background: url(../icons/op7p.png) no-repeat 50% 50%;
+    background-size: 10em;
+  }
+  .about-txt_pc
+  {
+    display: none;
+  }
+  .about-txt_mobile
+  {
+    display: block;
+  }
+  .about-container
+  {
+    height: 5em;
+  }
 }
 
 @media (min-aspect-ratio: 3/4) and (max-aspect-ratio: 6/5) /* диапазон 3:4 - 6:5 */
@@ -196,6 +213,11 @@
   /* Changelog (спойлеры) */
 
   /* #About (об устройстве) */
+
+  .about-container
+  {
+    height: 4em;
+  }
 }
 
 @media (max-aspect-ratio: 6/5) /* узкие экраны до 6:5 */
@@ -329,6 +351,18 @@
   .about-header
   {
     height: 10em;
+  }
+  .about-section
+  {
+    padding: 0.75em 0;
+  }
+  .about-container:nth-of-type(odd)
+  {
+    padding-right: 0.75em;
+  }
+  .about-container:nth-of-type(even)
+  {
+    padding-left: 0.75em;
   }
 }
 
