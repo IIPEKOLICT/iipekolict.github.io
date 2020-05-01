@@ -46,7 +46,7 @@
 
 /* Шапка (header) --------------------------------------------------*/
 
-.header
+.header /* Сток шапка */
 {
   padding: 0;
   border-bottom: 2px solid var(--main_border-color);
@@ -57,7 +57,7 @@
   display: flex;
   align-items: center;
 }
-.header-back
+.header-back /* Контейнер иконки "назад" в шапке */
 {
   margin: 0.5em;
   padding: 0.45em;
@@ -67,23 +67,12 @@
   border-radius: 50%;
   transition: ease-out 0.3s;
 }
-.header-back:hover
+.header-back:hover /* Контейнер иконки "назад" в шапке при наведении */
 {
   border-color: var(--accent-color);
   transform: scale(0.6);
 }
-.header-back_icon
-{
-  width: 1em;
-  height: 1em;
-}
-.header-back_SVG-all
-{
-  fill: none;
-  stroke: var(--main_text-color);
-  stroke-width: 8px;
-}
-.header-name
+.header-name /* Сток заголовок в шапке */
 {
   margin: 0;
   padding: 1em 0;
@@ -217,7 +206,7 @@
   background-color: var(--hover_bg-color);
   border-color: var(--accent-color);
 }
-.menu-item::before
+/* .menu-item::before
 {
   content: "";
   margin: 0.75em;
@@ -227,7 +216,28 @@
   background: var(--secondary_bg-color) no-repeat 50% 50%;
   background-size: 50%;
   border-radius: 50%;
+} */
+
+
+
+.TEST_menu-item_icon
+{
+  margin: 0.75em;
+  padding: 0.75em;
+  width: 2em;
+  height: 2em;
+  float: left;
+  background: var(--secondary_bg-color) no-repeat 50% 50%;
+  border-radius: 50%;
 }
+  .TEST_SVG-port_2em /* Свг-порт */
+  {
+    width: 2em;
+    height: 2em;
+  }
+
+
+
 .menu-item_text-container
 {
   height: inherit;
@@ -293,6 +303,32 @@
   font-size: 0.6em;
   color: var(--secondary_text-color);
 }
+
+/* SVG-иконки --------------------------------------------------*/
+
+.SVG-port_1em /* Свг-порт иконок "назад" и "меню" в шапке, размер 1ем */
+{
+  width: 1em;
+  height: 1em;
+}
+
+  /* Иконка "назад" в шапке */
+
+  .header-back_SVG-all /* Все SVG-элементы внутри иконки "назад" в шапке |SVG| */
+  {
+    fill: none;
+    stroke: var(--main_text-color);
+    stroke-width: 8px;
+  }
+
+  /* Иконка "меню" в шапке */
+
+  .menu-button_SVG-all /* Все SVG-элементы внутри иконки "назад" в шапке |SVG| */
+  {
+    width: 100px;
+    height: 20px;
+    fill: var(--main_text-color);
+  }
 
 /* Интерактивные элементы --------------------------------------------------*/
 
