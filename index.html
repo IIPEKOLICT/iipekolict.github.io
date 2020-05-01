@@ -13,12 +13,16 @@
 
   <body class="page">
 
-    <header class="header header-nav">
-      <h1 class="header-name header-name_nav">Стартовая</h1>
-      <div class="show-menu_button-container">
-        <button class="button nav-menu_button" onclick="showItemByLd('nav','nav-hidden','nav-shown')"></button>
+    <header class="header header_nav">
+      <h1 class="header-name header-name_main">Стартовая</h1>
+      <div class="menu-button" onclick="showItemByLd('nav','nav_hidden','nav_shown')">
+        <svg class="menu-button_icon" width="100" height="100" viewBox="0 0 100 100">
+          <rect class="menu-button_SVG-all" y="0"></rect>
+          <rect class="menu-button_SVG-all" y="40"></rect>
+          <rect class="menu-button_SVG-all" y="80"></rect>
+        </svg>
       </div>
-      <nav id="nav" class="nav nav-hidden">
+      <nav id="nav" class="nav nav_hidden">
         <ul class="nav-menu">
           <li class="nav-item nav-item_header">
             <a class="link-hidden nav-item_link" href="#portfolio">Портфолио</a>
@@ -106,7 +110,7 @@
     </main>
 
     <footer class="footer">
-      <nav class="nav nav-hidden">
+      <nav class="nav nav_hidden">
         <ul class="nav-menu">
           <li class="nav-item nav-item_footer">
             <a class="link-hidden nav-item_link" href="#portfolio">Портфолио</a>
@@ -131,9 +135,5 @@
 
     <script src="kernel/js/themes.js"></script>
     <script src="kernel/js/spoilers.js"></script>
-
-    <!--
-    <script src="kernel/js/jquery.js"></script>
-    -->
   </body>
 </html>

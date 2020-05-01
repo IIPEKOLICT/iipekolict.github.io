@@ -15,9 +15,9 @@
 
   <body class="page">
 
-    <div id="start" class="page page-block">
-      <header class="header header-main">
-        <h1 class="header-name">Настройки</h1>
+    <div id="start" class="page-block">
+      <header class="header">
+        <h1 class="header-name header-name_main">Настройки</h1>
       </header>
 
       <main class="main-content main-content_container">
@@ -77,68 +77,173 @@
       </main>
     </div>
 
-    <div id="accent" class="page page-block">
-      <header class="header header-page">
-        <div class="header-back_button" onclick="history.back()"></div>
+    <div id="accent" class="page-block">
+      <header class="header header_page">
+        <div class="header-back" onclick="history.back()">
+          <svg class="header-back_icon" width="100" height="100" viewBox="0 0 100 100">
+            <line class="header-back_SVG-all" x1="5" y1="50" x2="95" y2="50"/>
+            <polyline class="header-back_SVG-all" points="41,14 5,50 41,86"/>
+          </svg>
+        </div>
         <h2 class="header-name">Цвет акцента</h2>
       </header>
 
       <div class="main-content page-block_main">
         <section class="main-content_container">
+          <h3>Цветовая палитра из чистого дроида</h3>
+
           <label class="radio-label label_custom-colored" for="ac1">
             <input onchange="changeAccent('#80cbc4')"
             type="radio" id="ac1" name="accent-color" value="#80cbc4">
-            <span class="radio-name">Окси</span>
+            <span class="radio-name">AOSP</span>
           </label>
           <label class="radio-label label_custom-colored" for="ac2">
-            <input onchange="changeAccent('red')"
-            type="radio" id="ac2" name="accent-color" value="red">
-            <span class="radio-name">Красный</span>
+            <input onchange="changeAccent('#2381e1')"
+            type="radio" id="ac2" name="accent-color" value="#2381e1">
+            <span class="radio-name">Pixel Expierence</span>
           </label>
+        </section>
+
+        <section class="main-content_container">
+          <h3>Цветовая палитра из Oxygen OS</h3>
+
           <label class="radio-label label_custom-colored" for="ac3">
-            <input onchange="changeAccent('green')"
-            type="radio" id="ac3" name="accent-color" value="green">
-            <span class="radio-name">Зеленый</span>
+            <input onchange="changeAccent('#42a5f6')"
+            type="radio" id="ac3" name="accent-color" value="#42a5f6">
+            <span class="radio-name">OOS Blue</span>
           </label>
           <label class="radio-label label_custom-colored" for="ac4">
-            <input onchange="changeAccent('yellow')"
-            type="radio" id="ac4" name="accent-color" value="yellow">
-            <span class="radio-name">Желтый</span>
+            <input onchange="changeAccent('#9675ce')"
+            type="radio" id="ac4" name="accent-color" value="#9675ce">
+            <span class="radio-name">OOS Purple</span>
           </label>
           <label class="radio-label label_custom-colored" for="ac5">
-            <input onchange="changeAccent('purple')"
-            type="radio" id="ac5" name="accent-color" value="purple">
-            <span class="radio-name">Пурпурный</span>
+            <input onchange="changeAccent('#eb0028')"
+            type="radio" id="ac5" name="accent-color" value="#eb0028">
+            <span class="radio-name">OOS Red</span>
+          </label>
+          <label class="radio-label label_custom-colored" for="ac6">
+            <input onchange="changeAccent('#cc6f4e')"
+            type="radio" id="ac6" name="accent-color" value="#cc6f4e">
+            <span class="radio-name">OOS Brown</span>
+          </label>
+          <label class="radio-label label_custom-colored" for="ac7">
+            <input onchange="changeAccent('#25c6da')"
+            type="radio" id="ac7" name="accent-color" value="#25c6da">
+            <span class="radio-name">OOS Cyan</span>
+          </label>
+          <label class="radio-label label_custom-colored" for="ac8">
+            <input onchange="changeAccent('#4461d6')"
+            type="radio" id="ac8" name="accent-color" value="#4461d6">
+            <span class="radio-name">OOS DarkBlue</span>
+          </label>
+          <label class="radio-label label_custom-colored" for="ac9">
+            <input onchange="changeAccent('#e5a544')"
+            type="radio" id="ac9" name="accent-color" value="#e5a544">
+            <span class="radio-name">OOS Orange</span>
+          </label>
+          <label class="radio-label label_custom-colored" for="ac10">
+            <input onchange="changeAccent('#f06292')"
+            type="radio" id="ac10" name="accent-color" value="#f06292">
+            <span class="radio-name">OOS Pink</span>
+          </label>
+          <label class="radio-label label_custom-colored" for="ac11">
+            <input onchange="changeAccent('#208559')"
+            type="radio" id="ac11" name="accent-color" value="#208559">
+            <span class="radio-name">OOS DarkGreen</span>
+          </label>
+          <label class="radio-label label_custom-colored" for="ac12">
+            <input onchange="changeAccent('#7dc32f')"
+            type="radio" id="ac12" name="accent-color" value="#7dc32f">
+            <span class="radio-name">OOS Green</span>
+          </label>
+          <label class="radio-label label_custom-colored" for="ac13">
+            <input onchange="changeAccent('#b968c7')"
+            type="radio" id="ac13" name="accent-color" value="#b968c7">
+            <span class="radio-name">OOS LightPurple</span>
+          </label>
+        </section>
+
+        <section class="main-content_container">
+          <h3>Другие цвета</h3>
+
+          <label class="radio-label label_custom-colored" for="ac14">
+            <input onchange="changeAccent('aqua')"
+            type="radio" id="ac14" name="accent-color" value="aqua">
+            <span class="radio-name">Васильковый</span>
+          </label>
+          <label class="radio-label label_custom-colored" for="ac15">
+            <input onchange="changeAccent('maroon')"
+            type="radio" id="ac15" name="accent-color" value="maroon">
+            <span class="radio-name">Бордовый</span>
+          </label>
+          <label class="radio-label label_custom-colored" for="ac16">
+            <input onchange="changeAccent('navy')"
+            type="radio" id="ac16" name="accent-color" value="navy">
+            <span class="radio-name">Темно-синий</span>
+          </label>
+          <label class="radio-label label_custom-colored" for="ac17">
+            <input onchange="changeAccent('olive')"
+            type="radio" id="ac17" name="accent-color" value="olive">
+            <span class="radio-name">Болотистый</span>
+          </label>
+          <label class="radio-label label_custom-colored" for="ac18">
+            <input onchange="changeAccent('teal')"
+            type="radio" id="ac18" name="accent-color" value="teal">
+            <span class="radio-name">Сине-зеленый</span>
+          </label>
+        </section>
+
+        <section class="main-content_container">
+          <h3>Черный/белый</h3>
+
+          <label class="radio-label label_custom-colored" for="ac19">
+            <input onchange="changeAccent('black')"
+            type="radio" id="ac19" name="accent-color" value="black" disabled>
+            <span class="radio-name">Черный</span>
+          </label>
+          <label class="radio-label label_custom-colored" for="ac20">
+            <input onchange="changeAccent('white')"
+            type="radio" id="ac20" name="accent-color" value="white" disabled>
+            <span class="radio-name">Белый</span>
           </label>
         </section>
       </div>
     </div>
 
-    <div id="color" class="page page-block">
-      <header class="header header-page">
-        <div class="header-back_button" onclick="history.back()"></div>
+    <div id="color" class="page-block">
+      <header class="header header_page">
+        <div class="header-back" onclick="history.back()">
+          <svg class="header-back_icon" width="100" height="100" viewBox="0 0 100 100">
+            <line class="header-back_SVG-all" x1="5" y1="50" x2="95" y2="50"/>
+            <polyline class="header-back_SVG-all" points="41,14 5,50 41,86"/>
+          </svg>
+        </div>
         <h2 class="header-name">Цветовая схема</h2>
       </header>
 
       <div class="main-content page-block_main">
         <section class="main-content_container">
           <label class="radio-label" for="cs1">
-            <input onchange="changeColorScheme('black','#141414','#282828','white','#bbb','#212121',
-            'url(../icons/back-white.png)','url(../icons/nav-menu_white.png)')" type="radio" id="cs1" name="color-scheme">
+            <input onchange="changeColorScheme('black','#141414','#282828','white','#bbb','#212121')" type="radio" id="cs1" name="color-scheme">
             <span class="radio-name">Черная</span>
           </label>
           <label class="radio-label" for="cs2">
-            <input onchange="changeColorScheme('#151618','#212121','#313131','white','#b5b7b6','#8f9190',
-            'url(../icons/back-white.png)','url(../icons/nav-menu_white.png)')" type="radio" id="cs2" name="color-scheme">
+            <input onchange="changeColorScheme('#151618','#212121','#313131','white','#b5b7b6','#8f9190')" type="radio" id="cs2" name="color-scheme">
             <span class="radio-name">Серая</span>
           </label>
         </section>
       </div>
     </div>
 
-    <div id="other" class="page page-block">
-      <header class="header header-page">
-        <div class="header-back_button" onclick="history.back()"></div>
+    <div id="other" class="page-block">
+      <header class="header header_page">
+        <div class="header-back" onclick="history.back()">
+          <svg class="header-back_icon" width="100" height="100" viewBox="0 0 100 100">
+            <line class="header-back_SVG-all" x1="5" y1="50" x2="95" y2="50"/>
+            <polyline class="header-back_SVG-all" points="41,14 5,50 41,86"/>
+          </svg>
+        </div>
         <h2 class="header-name">Другое</h2>
       </header>
 
@@ -149,13 +254,43 @@
       </div>
     </div>
 
-    <div id="changelog" class="page page-block">
-      <header class="header header-page">
-        <div class="header-back_button" onclick="history.back()"></div>
+    <div id="changelog" class="page-block">
+      <header class="header header_page">
+        <div class="header-back" onclick="history.back()">
+          <svg class="header-back_icon" width="100" height="100" viewBox="0 0 100 100">
+            <line class="header-back_SVG-all" x1="5" y1="50" x2="95" y2="50"/>
+            <polyline class="header-back_SVG-all" points="41,14 5,50 41,86"/>
+          </svg>
+        </div>
         <h2 class="header-name">Список изменений</h2>
       </header>
 
       <div class="main-content page-block_main">
+        <section class="main-content_container">
+          <h3 class="main-content_container-name">Версия 0.6</h3>
+
+          <div class="menu-item changelog-container">
+            <div class="release-info">
+              <div class="menu-item_text-container release-info_text-container">
+                <h3 class="menu-item_text menu-item_name">0.6.1</h3>
+                <time datatime="2020-05-01" class="menu-item_text menu-item_description">01.05.2020</time>
+              </div>
+              <div class="spoiler-button">
+                <button class="button" onclick="showChangelogSpoiler(4,1)">Показать</button>
+              </div>
+            </div>
+            <div class="spoiler spoiler-hidden">
+              <ul class="release-notes">Сборка #21 Beta
+                <li class="release-note">иконка навигационного меню теперь НЕ КНОПКА, более кликабельна и имеет анимацию (!!!)</li>
+                <li class="release-note">иконки "назад" и "меню" в хедерах заменены на svg</li>
+                <li class="release-note">оптимизация кода, связанного с внутристраничной навигацией</li>
+                <li class="release-note">новые классы для показа/скрытия текста в зависимости от соотношения сторон экрана</li>
+                <li class="release-note">теперь 20 цветов акцента (палитра из окси, пиксель, аосп, черный, белый и еще 5 словесных)</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
         <section class="main-content_container">
           <h3 class="main-content_container-name">Версия 0.5</h3>
 
@@ -170,9 +305,12 @@
               </div>
             </div>
             <div class="spoiler spoiler-hidden">
-              <ul class="release-notes">
-                <li class="release-note">окончательно допилил пункт "об устройстве"</li>
+              <ul class="release-notes">Сборка #20
+                <li class="release-note">интеграция всех изменений</li>
                 <li class="release-note">финальный релиз версии 0.5</li>
+              </ul>
+              <ul class="release-notes">Сборка #19
+                <li class="release-note">окончательно допилил пункт "об устройстве"</li>
               </ul>
             </div>
           </div>
@@ -188,13 +326,10 @@
               </div>
             </div>
             <div class="spoiler spoiler-hidden">
-              <ul class="release-notes">UI:
+              <ul class="release-notes">Сборка #18
                 <li class="release-note">оверлеи теперь строятся на соотношении сторон</li>
-                <li class="release-note">оверлей для футера на узких экранах</li>
                 <li class="release-note">фишка из оксиджен для второстепенного текста в пунктах меню (при недостаточной ширине автоматом вставляется троеточие)</li>
                 <li class="release-note">сделал пункт "об устройстве"</li>
-              </ul>
-              <ul class="release-notes">Код:
                 <li class="release-note">оптимизация кода оверлеев</li>
               </ul>
             </div>
@@ -211,9 +346,17 @@
               </div>
             </div>
             <div class="spoiler spoiler-hidden">
-              <ul class="release-notes">
+              <ul class="release-notes">Сборка #17
+                <li class="release-note">изменил чекпоинт 16:9 на 3:4 в оверлеях (на мобилке не работало с прежним значением)</li>
+              </ul>
+              <ul class="release-notes">Сборка #16
+                <li class="release-note">пофиксил все баги новой беты</li>
+                <li class="release-note">теперь оверлеи строятся на соотношении сторон устройства</li>
+              </ul>
+              <ul class="release-notes">Сборка #15
                 <li class="release-note">дополнительный оверлей для узких мониторов в диапазоне 360-730 пикселей, где показывается нав меню сразу развернутым</li>
                 <li class="release-note">увеличенные в 2 раза размеры в нав меню для узких экранов</li>
+                <li class="release-note">оверлей для футера на узких экранах</li>
               </ul>
             </div>
           </div>
@@ -229,13 +372,11 @@
               </div>
             </div>
             <div class="spoiler spoiler-hidden">
-              <ul class="release-notes">UI:
+              <ul class="release-notes">Сборка #14
                 <li class="release-note">ширина оверлея узких мониторов увеличена до 730 пикселей</li>
                 <li class="release-note">вызов навигации на стратовой по нажатию кнопки рядом с хедером</li>
                 <li class="release-note">обновленный стиль навигационного меню, заточенный под управление 1 рукой</li>
                 <li class="release-note">навигация в футере выпилена из узкого оверлея за ненадобностью</li>
-              </ul>
-              <ul class="release-notes">Код:
                 <li class="release-note">теперь есть универсальная функция для скрытия/показа элемента по id</li>
                 <li class="release-note">местоположение иконки нав меню хранится в переменной</li>
                 <li class="release-note">все нововведения интегрированы в переключатель тем</li>
@@ -254,11 +395,9 @@
               </div>
             </div>
             <div class="spoiler spoiler-hidden">
-              <ul class="release-notes">UI:
+              <ul class="release-notes">Сборка #13
                 <li class="release-note">сделал ченжлог, большая часть элементво базируется на стилях пунктов меню</li>
                 <li class="release-note">спойлеры раскрываются при нажатии кнопки</li>
-              </ul>
-              <ul class="release-notes">Код:
                 <li class="release-note">несколько костыльная реализация скрытия/раскрытия спойлеров</li>
                 <li class="release-note">элементы ченжлога построены на флексах</li>
               </ul>
@@ -280,11 +419,9 @@
               </div>
             </div>
             <div class="spoiler spoiler-hidden">
-              <ul class="release-notes">UI:
+              <ul class="release-notes">Сборка #12
                 <li class="release-note">улучшения для сверхшироких экранов</li>
                 <li class="release-note">фикс видимости превьюшек в мобильной версии</li>
-              </ul>
-              <ul class="release-notes">Код:
                 <li class="release-note">перенес переменные в основной ксс-файл</li>
                 <li class="release-note">оптимизация стилей пунктов меню</li>
                 <li class="release-note">навел порядок в файловой системе</li>
@@ -303,7 +440,7 @@
               </div>
             </div>
             <div class="spoiler spoiler-hidden">
-              <ul class="release-notes">
+              <ul class="release-notes">Сборка #11
                 <li class="release-note">улучшения мобильной версии</li>
                 <li class="release-note">теперь размеры плашек и пунктов меню зависят от шрифта</li>
                 <li class="release-note">скрытие картинок в плашках в моильной версии</li>
@@ -323,7 +460,7 @@
               </div>
             </div>
             <div class="spoiler spoiler-hidden">
-              <ul class="release-notes">
+              <ul class="release-notes">Сборка #10
                 <li class="release-note">вернул обратно анимацию и стиль пунктов основного меню</li>
                 <li class="release-note">добавил виевпорт и сделал оверлей для узких экранов</li>
               </ul>
@@ -341,14 +478,14 @@
               </div>
             </div>
             <div class="spoiler spoiler-hidden">
-              <ul class="release-notes">UI:
-                <li class="release-note">если нет инфы в ЛХ, записываются дефолтные ключи</li>
-                <li class="release-note">шрифт подстраивается под высоту страницы, большинство бордеров - под ширину</li>
-                <li class="release-note">серая цветовая схема, а также переключатель цс</li>
+              <ul class="release-notes">Сборка #9
                 <li class="release-note">более оптимизированные хедеры и обновленный стиль главного меню</li>
               </ul>
-              <ul class="release-notes">Код:
+              <ul class="release-notes">Сборка #8
+                <li class="release-note">если нет инфы в ЛХ, записываются дефолтные ключи</li>
+                <li class="release-note">шрифт подстраивается под высоту страницы, большинство бордеров - под ширину</li>
                 <li class="release-note">кнопка назад терь как переменная и более кликабельна</li>
+                <li class="release-note">серая цветовая схема, а также переключатель цс</li>
               </ul>
             </div>
           </div>
@@ -364,20 +501,36 @@
                 <time datatime="2020-03-14" class="menu-item_text menu-item_description">14.03.2020</time>
               </div>
               <div class="spoiler-button">
-                <button class="button" onclick="showChangelogSpoiler(1,2)">Показать</button>
+                <button class="button" onclick="showChangelogSpoiler(1,3)">Показать</button>
               </div>
             </div>
             <div class="spoiler spoiler-hidden">
-              <ul class="release-notes">UI:
+              <ul class="release-notes">Сборка #7
                 <li class="release-note">пока можно менять только цвет акцента</li>
                 <li class="release-note">динамической окраски радиокнопок пока нет(</li>
-              </ul>
-              <ul class="release-notes">Код:
                 <li class="release-note">реализовал переключение тем с запоминанием в куки</li>
                 <li class="release-note">починил море ебучих багов, связанных с этим</li>
                 <li class="release-note">упорядочил ксс, терь все красиво, логично и стилистика строится на переменных</li>
                 <li class="release-note">доступные цвета акцента можно изменять, используя только HTML. только от него они и зависят</li>
-                <li class="release-note">глючный переключатель ксс для тем терь нах не нужен</li>
+                <li class="release-note">глючный переключатель ксс-файлов для тем терь нах не нужен</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="menu-item changelog-container">
+            <div class="release-info">
+              <div class="menu-item_text-container release-info_text-container">
+                <h3 class="menu-item_text menu-item_name">0.2</h3>
+                <time datatime="2020-03-13" class="menu-item_text menu-item_description">13.03.2020</time>
+              </div>
+              <div class="spoiler-button">
+                <button class="button" onclick="showChangelogSpoiler(1,2)">Показать</button>
+              </div>
+            </div>
+            <div class="spoiler spoiler-hidden">
+              <ul class="release-notes">Сборка #6
+                <li class="release-note">Сделал тестовую версию настроек</li>
+                <li class="release-note">Перестановки в навигационном меню на стартовой</li>
               </ul>
             </div>
           </div>
@@ -393,11 +546,26 @@
               </div>
             </div>
             <div class="spoiler spoiler-hidden">
-              <ul class="release-notes">
-                <li class="release-note">перепаковал, упорядочил, окончательно определился со стилем плашек-ссылок на сайты на стартовой странице, окончательный фикс внутристраничной навигации, убрал лишнее</li>
-                <li class="release-note">починил внутристраничеую навигацию на target-ах и сделал радиокнопки</li>
-                <li class="release-note">улучшения анимации плашек на осн странице и поработал с настройками</li>
-                <li class="release-note">начал делать настройки и допилил стартовую</li>
+              <ul class="release-notes">Сборка #5
+                <li class="release-note">перепаковал</li>
+                <li class="release-note">упорядочил</li>
+                <li class="release-note">окончательно определился со стилем плашек-ссылок на сайты на стартовой странице</li>
+                <li class="release-note">финальный фикс внутристраничной навигации</li>
+                <li class="release-note">убрал лишнее</li>
+              </ul>
+              <ul class="release-notes">Сборка #4
+                <li class="release-note">починил внутристраничную навигацию на target-ах</li>
+                <li class="release-note">сделал радиокнопки</li>
+              </ul>
+              <ul class="release-notes">Сборка #3
+                <li class="release-note">улучшения анимации плашек на основной странице</li>
+                <li class="release-note">улучшения в настройках</li>
+              </ul>
+              <ul class="release-notes">Сборка #2
+                <li class="release-note">начал делать настройки</li>
+                <li class="release-note">допилил стартовую</li>
+              </ul>
+              <ul class="release-notes">Сборка #1
                 <li class="release-note">initial build епта</li>
               </ul>
             </div>
@@ -406,9 +574,14 @@
       </div>
     </div>
 
-    <div id="about" class="page page-block">
-      <header class="header header-page">
-        <div class="header-back_button" onclick="history.back()"></div>
+    <div id="about" class="page-block">
+      <header class="header header_page">
+        <div class="header-back" onclick="history.back()">
+          <svg class="header-back_icon" width="100" height="100" viewBox="0 0 100 100">
+            <line class="header-back_SVG-all" x1="5" y1="50" x2="95" y2="50"/>
+            <polyline class="header-back_SVG-all" points="41,14 5,50 41,86"/>
+          </svg>
+        </div>
         <h2 class="header-name">Об устройстве</h2>
       </header>
 
@@ -422,35 +595,35 @@
                   <span class="">CPU</span>
                 </div>
                 <div class="menu-item_text menu-item_description about_secondary-text">
-                  <span class="about-txt_pc">AMD Ryzen 9 3900X</span>
-                  <span class="about-txt_mobile">Snapdragon<sup class="sup">TM</sup> 855</span>
+                  <span class="txt-in-pc">AMD Ryzen 9 3900X</span>
+                  <span class="txt-in-mobile">Snapdragon<sup class="sup">TM</sup> 855</span>
                 </div>
               </div>
               <div class="menu-item_text-container">
                 <div class="menu-item_text menu-item_name about_primary-text">
-                  <span class="about-txt_pc">GPU</span>
-                  <span class="about-txt_mobile">Хранилище</span>
+                  <span class="txt-in-pc">GPU</span>
+                  <span class="txt-in-mobile">Хранилище</span>
                 </div>
                 <div class="menu-item_text menu-item_description about_secondary-text">
-                  <span class="about-txt_pc">NVIDIA RTX 2080 Super</span>
-                  <span class="about-txt_mobile">8GB RAM + 128GB ROM</span>
+                  <span class="txt-in-pc">NVIDIA RTX 2080 Super</span>
+                  <span class="txt-in-mobile">8GB RAM + 128GB ROM</span>
                 </div>
               </div>
               <div class="menu-item_text-container">
                 <div class="menu-item_text menu-item_name about_primary-text">
-                  <span class="about-txt_pc">Хранилище</span>
-                  <span class="about-txt_mobile">Камера</span>
+                  <span class="txt-in-pc">Хранилище</span>
+                  <span class="txt-in-mobile">Камера</span>
                 </div>
                 <div class="menu-item_text menu-item_description about_secondary-text">
-                  <span class="about-txt_pc">32GB RAM + 2048GB ROM</span>
-                  <span class="about-txt_mobile">48 + 8 + 16MP Triple Camera</span>
+                  <span class="txt-in-pc">32GB RAM + 2048GB ROM</span>
+                  <span class="txt-in-mobile">48 + 16 + 8 MP Triple Camera</span>
                 </div>
               </div>
               <div class="menu-item_text-container">
                 <div class="menu-item_text menu-item_name about_primary-text">Экран</div>
                 <div class="menu-item_text menu-item_description about_secondary-text">
-                  <span class="about-txt_pc">IPS LCD 27' Display</span>
-                  <span class="about-txt_mobile">Dynamic AMOLED 6,67' Display</span>
+                  <span class="txt-in-pc">IPS LCD 27" Display</span>
+                  <span class="txt-in-mobile">Fluid AMOLED 6,67" Display</span>
                 </div>
               </div>
             </aside>
@@ -463,8 +636,8 @@
                   <span class="">Название устройства</span>
                 </div>
                 <div class="menu-item_text menu-item_description about_secondary-text">
-                  <span class="about-txt_pc">Правильный комп</span>
-                  <span class="about-txt_mobile">Правильный смартфон</span>
+                  <span class="txt-in-pc">Правильный комп</span>
+                  <span class="txt-in-mobile">Правильный смартфон</span>
                 </div>
               </div>
             </div>
@@ -483,22 +656,22 @@
             <div class="about-container">
               <div class="menu-item_text-container">
                 <div class="menu-item_text menu-item_name about_primary-text">
-                  <span class="about-txt_pc">Версия Windows</span>
-                  <span class="about-txt_mobile">Версия Android</span>
+                  <span class="txt-in-pc">Версия Windows</span>
+                  <span class="txt-in-mobile">Версия Android</span>
                 </div>
                 <div class="menu-item_text menu-item_description about_secondary-text">
-                  <span class="about-txt_pc">10 1903 Build</span>
-                  <span class="about-txt_mobile">10</span>
+                  <span class="txt-in-pc">10 1903 Build</span>
+                  <span class="txt-in-mobile">10</span>
                 </div>
               </div>
             </div>
             <div class="about-container">
               <div class="menu-item_text-container">
                 <div class="menu-item_text menu-item_name about_primary-text">
-                  <span class="">Версия сайта</span>
+                  <span class="">Версия ядра</span>
                 </div>
                 <div class="menu-item_text menu-item_description about_secondary-text">
-                  <span class=""><a class="link-hidden" href="#changelog">0.5 Open Beta 5</a></span>
+                  <span class=""><a class="link-hidden" href="#changelog">0.6 Open Beta 1</a></span>
                 </div>
               </div>
             </div>
@@ -520,8 +693,8 @@
                   <span class="">Модель</span>
                 </div>
                 <div class="menu-item_text menu-item_description about_secondary-text">
-                  <span class="about-txt_pc">Asus ROG PC</span>
-                  <span class="about-txt_mobile">OnePlus 7 Pro</span>
+                  <span class="txt-in-pc">Asus ROG PC</span>
+                  <span class="txt-in-mobile">OnePlus 7 Pro</span>
                 </div>
               </div>
             </div>
@@ -532,11 +705,5 @@
 
     <script src="kernel/js/themes.js"></script>
     <script src="kernel/js/spoilers.js"></script>
-
-    <!--
-    <script src="kernel/js/test.js"></script>
-
-    <script src="kernel/js/jquery.js"></script>
-    -->
   </body>
 </html>

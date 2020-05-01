@@ -18,15 +18,11 @@
   --secondary_text-color: #bbb; /* второстепенный */
   /* цветовая схема, цвет бордеров */
   --main_border-color: #212121;
-  /* цветовая схема, расположение иконок */
-  --header-back_button: url(../icons/back-white.png); /* "назад" из хедера */
-  --nav-menu_button: url(../icons/nav-menu_white.png); /* кнопка вызова меню на стартовой */
 }
 
 .page /* дефолтные для всех страниц */
 {
   margin: 0;
-  padding: 0;
   background-color: var(--main_bg-color);
   color: var(--main_text-color);
   font-family: Arial, sans-serif;
@@ -43,20 +39,7 @@
 
 /* Внутристраничная навигация --------------------------------------------------*/
 
-.page-block /* растяжение странички на весь экран + невидимость по дефолту */
-{
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  position: absolute;
-  display: none;
-}
-.page-block:target /* выбранная страничка, отображать как блок */
-{
-  display: block;
-}
-.page-block:not(:target) /* все остальные странички, скрыть */
+.page-block:not(:target) /* все странички, кроме выбранной - скрыть */
 {
   display: none;
 }
@@ -69,51 +52,56 @@
   border-bottom: 2px solid var(--main_border-color);
   font-size: 2rem;
 }
-.header-main
-{
-  padding: 0 1em;
-}
-.header-page
+.header_page /* Модификатор шапки, только для страниц, не являющихся главной в HTML-документе */
 {
   display: flex;
   align-items: center;
 }
-.header-name /* Заголовок в шапке */
+.header-back
+{
+  margin: 0.5em;
+  padding: 0.45em;
+  display: flex;
+  cursor: pointer;
+  border: 0.05em solid rgba(0,0,0,0);
+  border-radius: 50%;
+  transition: ease-out 0.3s;
+}
+.header-back:hover
+{
+  border-color: var(--accent-color);
+  transform: scale(0.6);
+}
+.header-back_icon
+{
+  width: 1em;
+  height: 1em;
+}
+.header-back_SVG-all
+{
+  fill: none;
+  stroke: var(--main_text-color);
+  stroke-width: 8px;
+}
+.header-name
 {
   margin: 0;
   padding: 1em 0;
   font-size: 1em;
   line-height: 1em;
 }
-.header-name_nav /* Заголовок в шапке, где также присутсвует меню навигации */
+.header-name_main /* Заголовок в шапке на главной в HTML-документе странице */
 {
   padding: 1em;
-}
-.header-back_button
-{
-  margin: 0 0.5em;
-  width: 1.9em;
-  height: 1.9em;
-  cursor: pointer;
-  background: var(--header-back_button) no-repeat 50% 50%;
-  background-size: 1.2em;
-  border: 0.05em solid rgba(0,0,0,0);
-  border-radius: 50%;
-  transition: ease-out 0.3s;
-}
-.header-back_button:hover
-{
-  border-color: var(--accent-color);
-  transform: scale(0.6);
 }
 
 /* Навигационное горизонтальное меню, заголовок и кнопка для вызова меню */
 
-.header-nav
+.header_nav
 {
   text-align: center;
 }
-.show-menu_button-container
+.menu-button
 {
   display: none;
 }
@@ -175,6 +163,10 @@
   text-align: center;
   font-size: 1rem;
   line-height: 2em;
+}
+.nav_settings
+{
+  display: none;
 }
 .nav-menu
 {
@@ -312,6 +304,10 @@
   cursor: pointer;
   line-height: 2.4em;
 }
+.label_custom-colored .radio-name /* текст подписи крашенной радиокнопки */
+{
+  color: var(--accent-color);
+}
 [type="radio"] /* Фикс видимости инпутов для радиокнопок */
 {
   margin: -1px;
@@ -360,6 +356,11 @@
 }
 
 /* Другое --------------------------------------------------*/
+
+.txt-in-mobile
+{
+  display: none;
+}
 
 /* Оформление подстраниц в настройках */
 
@@ -463,10 +464,6 @@
 .about_secondary-text
 {
   color: var(--main_text-color);
-}
-.about-txt_mobile
-{
-  display: none;
 }
 .about-section
 {
