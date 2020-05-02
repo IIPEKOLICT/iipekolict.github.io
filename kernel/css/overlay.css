@@ -264,29 +264,18 @@
   {
     height: 3em;
   }
-  .menu-item::before
-  {
-    margin: 0.4em;
-    width: 2.2em;
-    height: 2.2em;
-  }
-
-
-
-  .TEST_menu-item_icon
+  .menu-item_icon
   {
     margin: 0.4em;
     padding: 0.4em;
     width: 1.4em;
     height: 1.4em;
   }
-    .TEST_SVG-port_2em /* Свг-порт */
+    .menu-item_svg /* Свг-порт для иконок в окси-меню */
     {
       width: 1.4em;
       height: 1.4em;
     }
-
-
   .menu-item_text
   {
     padding: 0.05em 0;

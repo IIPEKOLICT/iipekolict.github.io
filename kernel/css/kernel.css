@@ -206,21 +206,7 @@
   background-color: var(--hover_bg-color);
   border-color: var(--accent-color);
 }
-/* .menu-item::before
-{
-  content: "";
-  margin: 0.75em;
-  width: 3.5em;
-  height: 3.5em;
-  float: left;
-  background: var(--secondary_bg-color) no-repeat 50% 50%;
-  background-size: 50%;
-  border-radius: 50%;
-} */
-
-
-
-.TEST_menu-item_icon
+.menu-item_icon
 {
   margin: 0.75em;
   padding: 0.75em;
@@ -230,14 +216,12 @@
   background: var(--secondary_bg-color) no-repeat 50% 50%;
   border-radius: 50%;
 }
-  .TEST_SVG-port_2em /* Свг-порт */
+  .menu-item_svg /* Свг-порт для иконок в окси-меню */
   {
+    display: block;
     width: 2em;
     height: 2em;
   }
-
-
-
 .menu-item_text-container
 {
   height: inherit;
