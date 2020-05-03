@@ -9,7 +9,6 @@
 	  <title>Тестовые настройки</title>
     <link rel="stylesheet" href="kernel/css/kernel.css">
     <link rel="stylesheet" href="kernel/css/overlay.css">
-    <link rel="stylesheet" href="kernel/css/accent-color.css">
     <link rel="stylesheet" href="kernel/css/test.css">
   </head>
 
@@ -138,9 +137,9 @@
           <section class="menu-item">
             <div class="menu-item_icon">
               <svg class="menu-item_svg" width="100" height="100" viewBox="0 0 100 100" version="1.1">
-                <g fill="none" stroke="var(--accent-color)">
-                  <line stroke-width="8" stroke-miterlimit="10" x1="16" y1="50" x2="90" y2="50"/>
-                  <polyline stroke-width="8" stroke-miterlimit="10" points="44.3,79.6 14,50 44,20"/>
+                <g fill="none" stroke="var(--accent-color)" stroke-width="8" stroke-miterlimit="10">
+                  <line x1="16" y1="50" x2="90" y2="50"/>
+                  <polyline points="44.3,79.6 14,50 44,20"/>
                 </g>
               </svg>
             </div>
@@ -155,10 +154,12 @@
 
     <div id="accent" class="page-block">
       <header class="header header_page">
-        <div class="header-back" onclick="history.back()">
-          <svg class="SVG-port_1em" width="100" height="100" viewBox="0 0 100 100">
-            <line class="header-back_SVG-all" x1="5" y1="50" x2="95" y2="50"/>
-            <polyline class="header-back_SVG-all" points="41,14 5,50 41,86"/>
+        <div class="header-back_icon" onclick="history.back()">
+          <svg class="header-icon_svg" width="100" height="100" viewBox="0 0 100 100" version="1.1">
+            <g fill="none" stroke="var(--main_text-color)" stroke-width="8" stroke-miterlimit="10">
+              <line x1="16" y1="50" x2="90" y2="50"/>
+              <polyline points="44.3,79.6 14,50 44,20"/>
+            </g>
           </svg>
         </div>
         <h2 class="header-name">Цвет акцента</h2>
@@ -289,10 +290,12 @@
 
     <div id="color" class="page-block">
       <header class="header header_page">
-        <div class="header-back" onclick="history.back()">
-          <svg class="SVG-port_1em" width="100" height="100" viewBox="0 0 100 100">
-            <line class="header-back_SVG-all" x1="5" y1="50" x2="95" y2="50"/>
-            <polyline class="header-back_SVG-all" points="41,14 5,50 41,86"/>
+        <div class="header-back_icon" onclick="history.back()">
+          <svg class="header-icon_svg" width="100" height="100" viewBox="0 0 100 100" version="1.1">
+            <g fill="none" stroke="var(--main_text-color)" stroke-width="8" stroke-miterlimit="10">
+              <line x1="16" y1="50" x2="90" y2="50"/>
+              <polyline points="44.3,79.6 14,50 44,20"/>
+            </g>
           </svg>
         </div>
         <h2 class="header-name">Цветовая схема</h2>
@@ -314,10 +317,12 @@
 
     <div id="other" class="page-block">
       <header class="header header_page">
-        <div class="header-back" onclick="history.back()">
-          <svg class="SVG-port_1em" width="100" height="100" viewBox="0 0 100 100">
-            <line class="header-back_SVG-all" x1="5" y1="50" x2="95" y2="50"/>
-            <polyline class="header-back_SVG-all" points="41,14 5,50 41,86"/>
+        <div class="header-back_icon" onclick="history.back()">
+          <svg class="header-icon_svg" width="100" height="100" viewBox="0 0 100 100" version="1.1">
+            <g fill="none" stroke="var(--main_text-color)" stroke-width="8" stroke-miterlimit="10">
+              <line x1="16" y1="50" x2="90" y2="50"/>
+              <polyline points="44.3,79.6 14,50 44,20"/>
+            </g>
           </svg>
         </div>
         <h2 class="header-name">Другое</h2>
@@ -332,10 +337,12 @@
 
     <div id="changelog" class="page-block">
       <header class="header header_page">
-        <div class="header-back" onclick="history.back()">
-          <svg class="SVG-port_1em" width="100" height="100" viewBox="0 0 100 100">
-            <line class="header-back_SVG-all" x1="5" y1="50" x2="95" y2="50"/>
-            <polyline class="header-back_SVG-all" points="41,14 5,50 41,86"/>
+        <div class="header-back_icon" onclick="history.back()">
+          <svg class="header-icon_svg" width="100" height="100" viewBox="0 0 100 100" version="1.1">
+            <g fill="none" stroke="var(--main_text-color)" stroke-width="8" stroke-miterlimit="10">
+              <line x1="16" y1="50" x2="90" y2="50"/>
+              <polyline points="44.3,79.6 14,50 44,20"/>
+            </g>
           </svg>
         </div>
         <h2 class="header-name">Список изменений</h2>
@@ -349,13 +356,16 @@
             <div class="release-info">
               <div class="menu-item_text-container release-info_text-container">
                 <h3 class="menu-item_text menu-item_name">0.6.1</h3>
-                <time datatime="2020-05-01" class="menu-item_text menu-item_description">01.05.2020</time>
+                <time datatime="2020-05-01" class="menu-item_text menu-item_description">03.05.2020</time>
               </div>
               <div class="spoiler-button">
                 <button class="button" onclick="showChangelogSpoiler(4,1)">Показать</button>
               </div>
             </div>
             <div class="spoiler spoiler-hidden">
+              <ul class="release-notes">Stable (#23)
+                <li class="release-note">Все интерфейсные иконки имеют единый стиль оформления, css на засран svg-параметрами</li>
+              </ul>
               <ul class="release-notes">Open Beta 2 (#22)
                 <li class="release-note">Все интерфейсные иконки теперь svg</li>
               </ul>
@@ -376,7 +386,7 @@
           <div class="menu-item changelog-container">
             <div class="release-info">
               <div class="menu-item_text-container release-info_text-container">
-                <h3 class="menu-item_text menu-item_name">0.5 Open Beta 5</h3>
+                <h3 class="menu-item_text menu-item_name">0.5.5</h3>
                 <time datatime="2020-03-26" class="menu-item_text menu-item_description">26.03.2020</time>
               </div>
               <div class="spoiler-button">
@@ -384,11 +394,11 @@
               </div>
             </div>
             <div class="spoiler spoiler-hidden">
-              <ul class="release-notes">Сборка #20
+              <ul class="release-notes">Stable (#20)
                 <li class="release-note">интеграция всех изменений</li>
                 <li class="release-note">финальный релиз версии 0.5</li>
               </ul>
-              <ul class="release-notes">Сборка #19
+              <ul class="release-notes">Open Beta 1 (#19)
                 <li class="release-note">окончательно допилил пункт "об устройстве"</li>
               </ul>
             </div>
@@ -397,7 +407,7 @@
           <div class="menu-item changelog-container">
             <div class="release-info">
               <div class="menu-item_text-container release-info_text-container">
-                <h3 class="menu-item_text menu-item_name">0.5 Open Beta 4</h3>
+                <h3 class="menu-item_text menu-item_name">0.5.4</h3>
                 <time datatime="2020-03-25" class="menu-item_text menu-item_description">25.03.2020</time>
               </div>
               <div class="spoiler-button">
@@ -405,7 +415,7 @@
               </div>
             </div>
             <div class="spoiler spoiler-hidden">
-              <ul class="release-notes">Сборка #18
+              <ul class="release-notes">Stable (#18)
                 <li class="release-note">оверлеи теперь строятся на соотношении сторон</li>
                 <li class="release-note">фишка из оксиджен для второстепенного текста в пунктах меню (при недостаточной ширине автоматом вставляется троеточие)</li>
                 <li class="release-note">сделал пункт "об устройстве"</li>
@@ -417,7 +427,7 @@
           <div class="menu-item changelog-container">
             <div class="release-info">
               <div class="menu-item_text-container release-info_text-container">
-                <h3 class="menu-item_text menu-item_name">0.5 Open Beta 3</h3>
+                <h3 class="menu-item_text menu-item_name">0.5.3</h3>
                 <time datatime="2020-03-23" class="menu-item_text menu-item_description">23.03.2020</time>
               </div>
               <div class="spoiler-button">
@@ -425,14 +435,14 @@
               </div>
             </div>
             <div class="spoiler spoiler-hidden">
-              <ul class="release-notes">Сборка #17
+              <ul class="release-notes">Stable (#17)
                 <li class="release-note">изменил чекпоинт 16:9 на 3:4 в оверлеях (на мобилке не работало с прежним значением)</li>
               </ul>
-              <ul class="release-notes">Сборка #16
+              <ul class="release-notes">Open Beta 2 (#16)
                 <li class="release-note">пофиксил все баги новой беты</li>
                 <li class="release-note">теперь оверлеи строятся на соотношении сторон устройства</li>
               </ul>
-              <ul class="release-notes">Сборка #15
+              <ul class="release-notes">Open Beta 1 (#15)
                 <li class="release-note">дополнительный оверлей для узких мониторов в диапазоне 360-730 пикселей, где показывается нав меню сразу развернутым</li>
                 <li class="release-note">увеличенные в 2 раза размеры в нав меню для узких экранов</li>
                 <li class="release-note">оверлей для футера на узких экранах</li>
@@ -443,7 +453,7 @@
           <div class="menu-item changelog-container">
             <div class="release-info">
               <div class="menu-item_text-container release-info_text-container">
-                <h3 class="menu-item_text menu-item_name">0.5 Open Beta 2</h3>
+                <h3 class="menu-item_text menu-item_name">0.5.2</h3>
                 <time datatime="2020-03-22" class="menu-item_text menu-item_description">22.03.2020</time>
               </div>
               <div class="spoiler-button">
@@ -451,7 +461,7 @@
               </div>
             </div>
             <div class="spoiler spoiler-hidden">
-              <ul class="release-notes">Сборка #14
+              <ul class="release-notes">Stable (#14)
                 <li class="release-note">ширина оверлея узких мониторов увеличена до 730 пикселей</li>
                 <li class="release-note">вызов навигации на стратовой по нажатию кнопки рядом с хедером</li>
                 <li class="release-note">обновленный стиль навигационного меню, заточенный под управление 1 рукой</li>
@@ -466,7 +476,7 @@
           <div class="menu-item changelog-container">
             <div class="release-info">
               <div class="menu-item_text-container release-info_text-container">
-                <h3 class="menu-item_text menu-item_name">0.5 Open Beta 1</h3>
+                <h3 class="menu-item_text menu-item_name">0.5.1</h3>
                 <time datatime="2020-03-22" class="menu-item_text menu-item_description">22.03.2020</time>
               </div>
               <div class="spoiler-button">
@@ -474,8 +484,8 @@
               </div>
             </div>
             <div class="spoiler spoiler-hidden">
-              <ul class="release-notes">Сборка #13
-                <li class="release-note">сделал ченжлог, большая часть элементво базируется на стилях пунктов меню</li>
+              <ul class="release-notes">Stable (#13)
+                <li class="release-note">сделал ченжлог, большая часть элементов базируется на стилях пунктов меню</li>
                 <li class="release-note">спойлеры раскрываются при нажатии кнопки</li>
                 <li class="release-note">несколько костыльная реализация скрытия/раскрытия спойлеров</li>
                 <li class="release-note">элементы ченжлога построены на флексах</li>
@@ -490,15 +500,15 @@
           <div class="menu-item changelog-container">
             <div class="release-info">
               <div class="menu-item_text-container release-info_text-container">
-                <h3 class="menu-item_text menu-item_name">0.4 Open Beta 4</h3>
+                <h3 class="menu-item_text menu-item_name">0.4.3</h3>
                 <time datatime="2020-03-21" class="menu-item_text menu-item_description">21.03.2020</time>
               </div>
               <div class="spoiler-button">
-                <button class="button" onclick="showChangelogSpoiler(2,4)">Показать</button>
+                <button class="button" onclick="showChangelogSpoiler(2,3)">Показать</button>
               </div>
             </div>
             <div class="spoiler spoiler-hidden">
-              <ul class="release-notes">Сборка #12
+              <ul class="release-notes">Stable (#12)
                 <li class="release-note">улучшения для сверхшироких экранов</li>
                 <li class="release-note">фикс видимости превьюшек в мобильной версии</li>
                 <li class="release-note">перенес переменные в основной ксс-файл</li>
@@ -511,15 +521,15 @@
           <div class="menu-item changelog-container">
             <div class="release-info">
               <div class="menu-item_text-container release-info_text-container">
-                <h3 class="menu-item_text menu-item_name">0.4 Open Beta 3</h3>
+                <h3 class="menu-item_text menu-item_name">0.4.2</h3>
                 <time datatime="2020-03-19" class="menu-item_text menu-item_description">19.03.2020</time>
               </div>
               <div class="spoiler-button">
-                <button class="button" onclick="showChangelogSpoiler(2,3)">Показать</button>
+                <button class="button" onclick="showChangelogSpoiler(2,2)">Показать</button>
               </div>
             </div>
             <div class="spoiler spoiler-hidden">
-              <ul class="release-notes">Сборка #11
+              <ul class="release-notes">Stable (#11)
                 <li class="release-note">улучшения мобильной версии</li>
                 <li class="release-note">теперь размеры плашек и пунктов меню зависят от шрифта</li>
                 <li class="release-note">скрытие картинок в плашках в моильной версии</li>
@@ -531,25 +541,7 @@
           <div class="menu-item changelog-container">
             <div class="release-info">
               <div class="menu-item_text-container release-info_text-container">
-                <h3 class="menu-item_text menu-item_name">0.4 Open Beta 2</h3>
-                <time datatime="2020-03-18" class="menu-item_text menu-item_description">18.03.2020</time>
-              </div>
-              <div class="spoiler-button">
-                <button class="button" onclick="showChangelogSpoiler(2,2)">Показать</button>
-              </div>
-            </div>
-            <div class="spoiler spoiler-hidden">
-              <ul class="release-notes">Сборка #10
-                <li class="release-note">вернул обратно анимацию и стиль пунктов основного меню</li>
-                <li class="release-note">добавил виевпорт и сделал оверлей для узких экранов</li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="menu-item changelog-container">
-            <div class="release-info">
-              <div class="menu-item_text-container release-info_text-container">
-                <h3 class="menu-item_text menu-item_name">0.4 Open Beta 1</h3>
+                <h3 class="menu-item_text menu-item_name">0.4.1</h3>
                 <time datatime="2020-03-17" class="menu-item_text menu-item_description">17.03.2020</time>
               </div>
               <div class="spoiler-button">
@@ -557,10 +549,14 @@
               </div>
             </div>
             <div class="spoiler spoiler-hidden">
-              <ul class="release-notes">Сборка #9
+              <ul class="release-notes">Stable (#10)
+                <li class="release-note">вернул обратно анимацию и стиль пунктов основного меню</li>
+                <li class="release-note">добавил виевпорт и сделал оверлей для узких экранов</li>
+              </ul>
+              <ul class="release-notes">Open Beta 2 (#9)
                 <li class="release-note">более оптимизированные хедеры и обновленный стиль главного меню</li>
               </ul>
-              <ul class="release-notes">Сборка #8
+              <ul class="release-notes">Open Beta 1 (#8)
                 <li class="release-note">если нет инфы в ЛХ, записываются дефолтные ключи</li>
                 <li class="release-note">шрифт подстраивается под высоту страницы, большинство бордеров - под ширину</li>
                 <li class="release-note">кнопка назад терь как переменная и более кликабельна</li>
@@ -584,7 +580,7 @@
               </div>
             </div>
             <div class="spoiler spoiler-hidden">
-              <ul class="release-notes">Сборка #7
+              <ul class="release-notes">Stable (#7)
                 <li class="release-note">пока можно менять только цвет акцента</li>
                 <li class="release-note">динамической окраски радиокнопок пока нет(</li>
                 <li class="release-note">реализовал переключение тем с запоминанием в куки</li>
@@ -607,7 +603,7 @@
               </div>
             </div>
             <div class="spoiler spoiler-hidden">
-              <ul class="release-notes">Сборка #6
+              <ul class="release-notes">Stable (#6)
                 <li class="release-note">Сделал тестовую версию настроек</li>
                 <li class="release-note">Перестановки в навигационном меню на стартовой</li>
               </ul>
@@ -625,26 +621,26 @@
               </div>
             </div>
             <div class="spoiler spoiler-hidden">
-              <ul class="release-notes">Сборка #5
+              <ul class="release-notes">Stable (#5)
                 <li class="release-note">перепаковал</li>
                 <li class="release-note">упорядочил</li>
                 <li class="release-note">окончательно определился со стилем плашек-ссылок на сайты на стартовой странице</li>
                 <li class="release-note">финальный фикс внутристраничной навигации</li>
                 <li class="release-note">убрал лишнее</li>
               </ul>
-              <ul class="release-notes">Сборка #4
+              <ul class="release-notes">Open Beta 4 (#4)
                 <li class="release-note">починил внутристраничную навигацию на target-ах</li>
                 <li class="release-note">сделал радиокнопки</li>
               </ul>
-              <ul class="release-notes">Сборка #3
+              <ul class="release-notes">Open Beta 3 (#3)
                 <li class="release-note">улучшения анимации плашек на основной странице</li>
                 <li class="release-note">улучшения в настройках</li>
               </ul>
-              <ul class="release-notes">Сборка #2
+              <ul class="release-notes">Open Beta 2 (#2)
                 <li class="release-note">начал делать настройки</li>
                 <li class="release-note">допилил стартовую</li>
               </ul>
-              <ul class="release-notes">Сборка #1
+              <ul class="release-notes">Open Beta 1 (#1)
                 <li class="release-note">initial build епта</li>
               </ul>
             </div>
@@ -655,10 +651,12 @@
 
     <div id="about" class="page-block">
       <header class="header header_page">
-        <div class="header-back" onclick="history.back()">
-          <svg class="SVG-port_1em" width="100" height="100" viewBox="0 0 100 100">
-            <line class="header-back_SVG-all" x1="5" y1="50" x2="95" y2="50"/>
-            <polyline class="header-back_SVG-all" points="41,14 5,50 41,86"/>
+        <div class="header-back_icon" onclick="history.back()">
+          <svg class="header-icon_svg" width="100" height="100" viewBox="0 0 100 100" version="1.1">
+            <g fill="none" stroke="var(--main_text-color)" stroke-width="8" stroke-miterlimit="10">
+              <line x1="16" y1="50" x2="90" y2="50"/>
+              <polyline points="44.3,79.6 14,50 44,20"/>
+            </g>
           </svg>
         </div>
         <h2 class="header-name">Об устройстве</h2>
@@ -750,7 +748,7 @@
                   <span class="">Версия ядра</span>
                 </div>
                 <div class="menu-item_text menu-item_description about_secondary-text">
-                  <span class=""><a class="link-hidden" href="#changelog">0.6.1 Open Beta 2</a></span>
+                  <span class=""><a class="link-hidden" href="#changelog">0.6.1</a></span>
                 </div>
               </div>
             </div>
@@ -762,7 +760,7 @@
                   <span class="">Номер сборки</span>
                 </div>
                 <div class="menu-item_text menu-item_description about_secondary-text">
-                  <span class=""><a class="link-hidden" href="#changelog">#22</a></span>
+                  <span class=""><a class="link-hidden" href="#changelog">#23</a></span>
                 </div>
               </div>
             </div>

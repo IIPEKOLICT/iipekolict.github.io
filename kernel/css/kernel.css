@@ -57,7 +57,7 @@
   display: flex;
   align-items: center;
 }
-.header-back /* Контейнер иконки "назад" в шапке */
+.header-back_icon /* Контейнер иконки "назад" в шапке */
 {
   margin: 0.5em;
   padding: 0.45em;
@@ -67,11 +67,16 @@
   border-radius: 50%;
   transition: ease-out 0.3s;
 }
-.header-back:hover /* Контейнер иконки "назад" в шапке при наведении */
+.header-back_icon:hover /* Контейнер иконки "назад" в шапке при наведении */
 {
   border-color: var(--accent-color);
   transform: scale(0.6);
 }
+  .header-icon_svg /* Свг-порт иконок "назад" и "меню" в шапке, размер 1ем */
+  {
+    width: 1em;
+    height: 1em;
+  }
 .header-name /* Сток заголовок в шапке */
 {
   margin: 0;
@@ -218,7 +223,6 @@
 }
   .menu-item_svg /* Свг-порт для иконок в окси-меню */
   {
-    display: block;
     width: 2em;
     height: 2em;
   }
@@ -287,32 +291,6 @@
   font-size: 0.6em;
   color: var(--secondary_text-color);
 }
-
-/* SVG-иконки --------------------------------------------------*/
-
-.SVG-port_1em /* Свг-порт иконок "назад" и "меню" в шапке, размер 1ем */
-{
-  width: 1em;
-  height: 1em;
-}
-
-  /* Иконка "назад" в шапке */
-
-  .header-back_SVG-all /* Все SVG-элементы внутри иконки "назад" в шапке |SVG| */
-  {
-    fill: none;
-    stroke: var(--main_text-color);
-    stroke-width: 8px;
-  }
-
-  /* Иконка "меню" в шапке */
-
-  .menu-button_SVG-all /* Все SVG-элементы внутри иконки "назад" в шапке |SVG| */
-  {
-    width: 100px;
-    height: 20px;
-    fill: var(--main_text-color);
-  }
 
 /* Интерактивные элементы --------------------------------------------------*/
 
