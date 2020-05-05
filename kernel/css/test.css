@@ -1,0 +1,40 @@
+.release-notes:nth-last-of-type(1):not(:first-of-type)::before
+{
+  content: "Open Beta 1 ";
+}
+.release-notes:nth-last-of-type(2):not(:first-of-type)::before
+{
+  content: "Open Beta 2 ";
+}
+.release-notes:nth-last-of-type(3):not(:first-of-type)::before
+{
+  content: "Open Beta 3 ";
+}
+.release-notes:nth-last-of-type(4):not(:first-of-type)::before
+{
+  content: "Open Beta 4 ";
+}
+.release-notes:nth-last-of-type(5):not(:first-of-type)::before
+{
+  content: "Open Beta 5 ";
+}
+.release-notes:nth-last-of-type(6):not(:first-of-type)::before
+{
+  content: "Open Beta 6 ";
+}
+.release-notes:nth-last-of-type(7):not(:first-of-type)::before
+{
+  content: "Open Beta 7 ";
+}
+.release-notes:nth-last-of-type(8):not(:first-of-type)::before
+{
+  content: "Open Beta 8 ";
+}
+.release-notes:nth-last-of-type(9):not(:first-of-type)::before
+{
+  content: "Open Beta 9 ";
+}
+.release-notes:nth-last-of-type(10):not(:first-of-type)::before
+{
+  content: "Open Beta 10 ";
+}

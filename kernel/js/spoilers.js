@@ -1,66 +1,24 @@
 /*
 
-let newChangelogForm = document.querySelector('.new-changelog-form');
-let changelogList = document.querySelector('.changelog-list');
-let changelogField = document.querySelector('.changelog-field');
+// Переменные
 
-newChangelogForm.onsubmit = function () {
-  let newChangelogNote = document.createElement('li');
-  newChangelogNote.classList.add('changelog-note');
-  newChangelogNote.textContent = changelogField.value;
-  changelogField.value = '';
-  changelogList.append(newChangelogNote);
-};
+var changelogSpoilers = document.querySelectorAll('.spoiler_changelog'); // Все
 
+// Проверки локального хранилища
 
+document.addEventListener("DOMContentLoaded", () => { // Событие загузки страницы
 
-let page = document.querySelector('.page'); // нахождение и сохранение в переменную page элемента с классом page (он центральный в данной реализации)
-let themeButton = document.querySelector('.theme-button'); // нахождение и сохранение в переменную themeButton кнопки, коя будет переключать
-
-themeButton.onclick = function() {
-  page.classList.toggle('light-theme'); // переключение класса (если есть - удаляется, в противном случае добавляется)
-  page.classList.toggle('dark-theme'); // в разметке обязательно должен быть только один из классов, иначе не заработает
-};
-
-
-var changelogContainers = document.querySelectorAll('.changelog-container');
-for (var i = 0; i < changelogContainers.length; i++) { // Цикл опроса всех контейнеров ченжлога
-  changelogContainers[i].querySelector('.button').onclick = function() {
-    changelogContainers[i].querySelector('.spoiler').classList.toggle('spoiler-hidden');
-    changelogContainers[i].querySelector('.spoiler').classList.toggle('spoiler-shown');
+  for (var i = 0; i < changelogSpoilers.length; i++) { // Цикл опроса всех
+    var releaseNotes = changelogSpoilers[i].querySelectorAll('.release-notes');
+    var k = releaseNotes.length;
+    for (var j = 0; i < releaseNotes.length; j++) {
+      var theFirstChild = releaseNotes[j].firstChild;
+      var span = document.createElement('span');
+      span.textContent = k;
+      releaseNotes[j].insertBefore(span, theFirstChild);
+      k = k - 1;
+    }
   }
-
-}
+});
 
 */
-/*
-var changelogButtons = document.querySelectorAll('.button');
-for (var i = 0; i < changelogButtons.length; i++) { // Цикл опроса всех контейнеров ченжлога
-  changelogButtons[i].onclick = function() {
-    var spoiler = changelogButtons[i].parentElement.parentElement.parentElement.querySelector('.spoiler');
-
-    spoiler.classList.toggle('spoiler-hidden'); // переключение класса (если есть - удаляется, в противном случае добавляется)
-    spoiler.classList.toggle('spoiler-shown'); // в разметке обязательно должен быть только один из классов, иначе не заработает
-  }
-}
-alert(changelogButtons);
-*/
-
-function showChangelogSpoiler(sectionNo,releaseNo) { // сугубо для ченжлогов, по номеру с конца секции и релиза
-  var changelogContainer = document.querySelector
-  ('.main-content_container:nth-last-of-type(' + sectionNo + ') .changelog-container:nth-last-of-type('
-   + releaseNo + ')'); // нахождение нужных секции и контейнера
-  var spoiler = changelogContainer.querySelector('.spoiler'); // нахождение спойлера
-  spoiler.classList.toggle('spoiler-hidden');
-  spoiler.classList.toggle('spoiler-shown');
-  // переключение класса (если есть - удаляется, в противном случае добавляется)
-  // в разметке обязательно должен быть только один из классов, иначе не заработает
-}
-
-function showItemByLd(itemId,firstClass,secondClass) { // универсальная для показа элементов с определенным id
-  var itemById = document.getElementById(itemId); // находим элемент, id которого был в качестве параметра
-  itemById.classList.toggle(firstClass);
-  itemById.classList.toggle(secondClass);
-  // переключение класса (если есть - удаляется, в противном случае добавляется)
-  // в разметке обязательно должен быть только один из классов, иначе не заработает
-}

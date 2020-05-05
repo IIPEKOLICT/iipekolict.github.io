@@ -353,30 +353,41 @@
           <h3 class="main-content_container-name">Версия 0.6</h3>
 
           <div class="menu-item changelog-container">
-            <div class="release-info">
-              <div class="menu-item_text-container release-info_text-container">
-                <h3 class="menu-item_text menu-item_name">0.6.1</h3>
-                <time datatime="2020-05-01" class="menu-item_text menu-item_description">03.05.2020</time>
-              </div>
-              <div class="spoiler-button">
-                <button class="button" onclick="showChangelogSpoiler(4,1)">Показать</button>
-              </div>
+            <div class="menu-item_text-container release-info">
+              <h3 class="menu-item_text menu-item_name">0.6.2</h3>
+              <time class="menu-item_text menu-item_description" datatime="2020-05-05">05.05.2020</time>
             </div>
-            <div class="spoiler spoiler-hidden">
-              <ul class="release-notes">Stable (#23)
-                <li class="release-note">Все интерфейсные иконки имеют единый стиль оформления, css на засран svg-параметрами</li>
+            <details class="spoiler_changelog">
+              <summary class="spoiler-button_changelog"></summary>
+              <ul class="release-notes">(#24)
+                <li class="release-note">спойлеры на тегах "details", никакой js для их раскрытия теперь не нужен</li>
+                <li class="release-note">умные кнопки у спойлеров (надпись "показать"/"скрыть") и умные заголовки сборок (в зависимости от порядка заголовка ul само выставляет статус "Stable" или же "Open Beta") </li>
+                <li class="release-note">первые десять бет теперь самоименнуются посредством ксс (тестовая фича)</li>
               </ul>
-              <ul class="release-notes">Open Beta 2 (#22)
-                <li class="release-note">Все интерфейсные иконки теперь svg</li>
+            </details>
+          </div>
+
+          <div class="menu-item changelog-container">
+            <div class="menu-item_text-container release-info">
+              <h3 class="menu-item_text menu-item_name">0.6.1</h3>
+              <time class="menu-item_text menu-item_description" datatime="2020-05-03">03.05.2020</time>
+            </div>
+            <details class="spoiler_changelog">
+              <summary class="spoiler-button_changelog"></summary>
+              <ul class="release-notes">(#23)
+                <li class="release-note">все интерфейсные иконки имеют единый стиль оформления, css на засран svg-параметрами</li>
               </ul>
-              <ul class="release-notes">Open Beta 1 (#21)
+              <ul class="release-notes">(#22)
+                <li class="release-note">все интерфейсные иконки теперь svg</li>
+              </ul>
+              <ul class="release-notes">(#21)
                 <li class="release-note">иконка навигационного меню теперь НЕ КНОПКА, более кликабельна и имеет анимацию (!!!)</li>
                 <li class="release-note">иконки "назад" и "меню" в хедерах заменены на svg</li>
                 <li class="release-note">оптимизация кода, связанного с внутристраничной навигацией</li>
                 <li class="release-note">новые классы для показа/скрытия текста в зависимости от соотношения сторон экрана</li>
                 <li class="release-note">теперь 20 цветов акцента (палитра из окси, пиксель, аосп, черный, белый и еще 5 словесных)</li>
               </ul>
-            </div>
+            </details>
           </div>
         </section>
 
@@ -384,84 +395,90 @@
           <h3 class="main-content_container-name">Версия 0.5</h3>
 
           <div class="menu-item changelog-container">
-            <div class="release-info">
-              <div class="menu-item_text-container release-info_text-container">
-                <h3 class="menu-item_text menu-item_name">0.5.5</h3>
-                <time datatime="2020-03-26" class="menu-item_text menu-item_description">26.03.2020</time>
-              </div>
-              <div class="spoiler-button">
-                <button class="button" onclick="showChangelogSpoiler(3,5)">Показать</button>
-              </div>
+            <div class="menu-item_text-container release-info">
+              <h3 class="menu-item_text menu-item_name">0.5.5</h3>
+              <time class="menu-item_text menu-item_description" datatime="2020-03-26">26.03.2020</time>
             </div>
-            <div class="spoiler spoiler-hidden">
-              <ul class="release-notes">Stable (#20)
+            <details class="spoiler_changelog">
+              <summary class="spoiler-button_changelog"></summary>
+              <ul class="release-notes">(#20)
                 <li class="release-note">интеграция всех изменений</li>
                 <li class="release-note">финальный релиз версии 0.5</li>
               </ul>
-              <ul class="release-notes">Open Beta 1 (#19)
+              <ul class="release-notes">(#19)
                 <li class="release-note">окончательно допилил пункт "об устройстве"</li>
               </ul>
-            </div>
+            </details>
           </div>
 
           <div class="menu-item changelog-container">
-            <div class="release-info">
-              <div class="menu-item_text-container release-info_text-container">
-                <h3 class="menu-item_text menu-item_name">0.5.4</h3>
-                <time datatime="2020-03-25" class="menu-item_text menu-item_description">25.03.2020</time>
-              </div>
-              <div class="spoiler-button">
-                <button class="button" onclick="showChangelogSpoiler(3,4)">Показать</button>
-              </div>
+            <div class="menu-item_text-container release-info">
+              <h3 class="menu-item_text menu-item_name">0.5.4</h3>
+              <time class="menu-item_text menu-item_description" datatime="2020-03-25">25.03.2020</time>
             </div>
-            <div class="spoiler spoiler-hidden">
-              <ul class="release-notes">Stable (#18)
+            <details class="spoiler_changelog">
+              <summary class="spoiler-button_changelog"></summary>
+              <ul class="release-notes">(#18)
                 <li class="release-note">оверлеи теперь строятся на соотношении сторон</li>
                 <li class="release-note">фишка из оксиджен для второстепенного текста в пунктах меню (при недостаточной ширине автоматом вставляется троеточие)</li>
                 <li class="release-note">сделал пункт "об устройстве"</li>
                 <li class="release-note">оптимизация кода оверлеев</li>
               </ul>
-            </div>
+            </details>
           </div>
 
           <div class="menu-item changelog-container">
-            <div class="release-info">
-              <div class="menu-item_text-container release-info_text-container">
-                <h3 class="menu-item_text menu-item_name">0.5.3</h3>
-                <time datatime="2020-03-23" class="menu-item_text menu-item_description">23.03.2020</time>
-              </div>
-              <div class="spoiler-button">
-                <button class="button" onclick="showChangelogSpoiler(3,3)">Показать</button>
-              </div>
+            <div class="menu-item_text-container release-info">
+              <h3 class="menu-item_text menu-item_name">0.5.4</h3>
+              <time class="menu-item_text menu-item_description" datatime="2020-03-25">25.03.2020</time>
             </div>
-            <div class="spoiler spoiler-hidden">
-              <ul class="release-notes">Stable (#17)
+            <details class="spoiler_changelog">
+              <summary class="spoiler-button_changelog"></summary>
+              <ul class="release-notes">(#17)
                 <li class="release-note">изменил чекпоинт 16:9 на 3:4 в оверлеях (на мобилке не работало с прежним значением)</li>
               </ul>
-              <ul class="release-notes">Open Beta 2 (#16)
+              <ul class="release-notes">(#16)
                 <li class="release-note">пофиксил все баги новой беты</li>
                 <li class="release-note">теперь оверлеи строятся на соотношении сторон устройства</li>
               </ul>
-              <ul class="release-notes">Open Beta 1 (#15)
+              <ul class="release-notes">(#15)
                 <li class="release-note">дополнительный оверлей для узких мониторов в диапазоне 360-730 пикселей, где показывается нав меню сразу развернутым</li>
                 <li class="release-note">увеличенные в 2 раза размеры в нав меню для узких экранов</li>
                 <li class="release-note">оверлей для футера на узких экранах</li>
               </ul>
-            </div>
+            </details>
           </div>
 
           <div class="menu-item changelog-container">
-            <div class="release-info">
-              <div class="menu-item_text-container release-info_text-container">
-                <h3 class="menu-item_text menu-item_name">0.5.2</h3>
-                <time datatime="2020-03-22" class="menu-item_text menu-item_description">22.03.2020</time>
-              </div>
-              <div class="spoiler-button">
-                <button class="button" onclick="showChangelogSpoiler(3,2)">Показать</button>
-              </div>
+            <div class="menu-item_text-container release-info">
+              <h3 class="menu-item_text menu-item_name">0.5.3</h3>
+              <time class="menu-item_text menu-item_description" datatime="2020-03-23">23.03.2020</time>
             </div>
-            <div class="spoiler spoiler-hidden">
-              <ul class="release-notes">Stable (#14)
+            <details class="spoiler_changelog">
+              <summary class="spoiler-button_changelog"></summary>
+              <ul class="release-notes">(#17)
+                <li class="release-note">изменил чекпоинт 16:9 на 3:4 в оверлеях (на мобилке не работало с прежним значением)</li>
+              </ul>
+              <ul class="release-notes">(#16)
+                <li class="release-note">пофиксил все баги новой беты</li>
+                <li class="release-note">теперь оверлеи строятся на соотношении сторон устройства</li>
+              </ul>
+              <ul class="release-notes">(#15)
+                <li class="release-note">дополнительный оверлей для узких мониторов в диапазоне 360-730 пикселей, где показывается нав меню сразу развернутым</li>
+                <li class="release-note">увеличенные в 2 раза размеры в нав меню для узких экранов</li>
+                <li class="release-note">оверлей для футера на узких экранах</li>
+              </ul>
+            </details>
+          </div>
+
+          <div class="menu-item changelog-container">
+            <div class="menu-item_text-container release-info">
+              <h3 class="menu-item_text menu-item_name">0.5.2</h3>
+              <time class="menu-item_text menu-item_description" datatime="2020-03-22">22.03.2020</time>
+            </div>
+            <details class="spoiler_changelog">
+              <summary class="spoiler-button_changelog"></summary>
+              <ul class="release-notes">(#14)
                 <li class="release-note">ширина оверлея узких мониторов увеличена до 730 пикселей</li>
                 <li class="release-note">вызов навигации на стратовой по нажатию кнопки рядом с хедером</li>
                 <li class="release-note">обновленный стиль навигационного меню, заточенный под управление 1 рукой</li>
@@ -470,27 +487,23 @@
                 <li class="release-note">местоположение иконки нав меню хранится в переменной</li>
                 <li class="release-note">все нововведения интегрированы в переключатель тем</li>
               </ul>
-            </div>
+            </details>
           </div>
 
           <div class="menu-item changelog-container">
-            <div class="release-info">
-              <div class="menu-item_text-container release-info_text-container">
-                <h3 class="menu-item_text menu-item_name">0.5.1</h3>
-                <time datatime="2020-03-22" class="menu-item_text menu-item_description">22.03.2020</time>
-              </div>
-              <div class="spoiler-button">
-                <button class="button" onclick="showChangelogSpoiler(3,1)">Показать</button>
-              </div>
+            <div class="menu-item_text-container release-info">
+              <h3 class="menu-item_text menu-item_name">0.5.1</h3>
+              <time class="menu-item_text menu-item_description" datatime="2020-03-22">22.03.2020</time>
             </div>
-            <div class="spoiler spoiler-hidden">
-              <ul class="release-notes">Stable (#13)
+            <details class="spoiler_changelog">
+              <summary class="spoiler-button_changelog"></summary>
+              <ul class="release-notes">(#13)
                 <li class="release-note">сделал ченжлог, большая часть элементов базируется на стилях пунктов меню</li>
                 <li class="release-note">спойлеры раскрываются при нажатии кнопки</li>
                 <li class="release-note">несколько костыльная реализация скрытия/раскрытия спойлеров</li>
                 <li class="release-note">элементы ченжлога построены на флексах</li>
               </ul>
-            </div>
+            </details>
           </div>
         </section>
 
@@ -498,71 +511,59 @@
           <h3 class="main-content_container-name">Версия 0.4</h3>
 
           <div class="menu-item changelog-container">
-            <div class="release-info">
-              <div class="menu-item_text-container release-info_text-container">
-                <h3 class="menu-item_text menu-item_name">0.4.3</h3>
-                <time datatime="2020-03-21" class="menu-item_text menu-item_description">21.03.2020</time>
-              </div>
-              <div class="spoiler-button">
-                <button class="button" onclick="showChangelogSpoiler(2,3)">Показать</button>
-              </div>
+            <div class="menu-item_text-container release-info">
+              <h3 class="menu-item_text menu-item_name">0.4.3</h3>
+              <time class="menu-item_text menu-item_description" datatime="2020-03-21">21.03.2020</time>
             </div>
-            <div class="spoiler spoiler-hidden">
-              <ul class="release-notes">Stable (#12)
+            <details class="spoiler_changelog">
+              <summary class="spoiler-button_changelog"></summary>
+              <ul class="release-notes">(#12)
                 <li class="release-note">улучшения для сверхшироких экранов</li>
                 <li class="release-note">фикс видимости превьюшек в мобильной версии</li>
                 <li class="release-note">перенес переменные в основной ксс-файл</li>
                 <li class="release-note">оптимизация стилей пунктов меню</li>
                 <li class="release-note">навел порядок в файловой системе</li>
               </ul>
-            </div>
+            </details>
           </div>
 
           <div class="menu-item changelog-container">
-            <div class="release-info">
-              <div class="menu-item_text-container release-info_text-container">
-                <h3 class="menu-item_text menu-item_name">0.4.2</h3>
-                <time datatime="2020-03-19" class="menu-item_text menu-item_description">19.03.2020</time>
-              </div>
-              <div class="spoiler-button">
-                <button class="button" onclick="showChangelogSpoiler(2,2)">Показать</button>
-              </div>
+            <div class="menu-item_text-container release-info">
+              <h3 class="menu-item_text menu-item_name">0.4.2</h3>
+              <time class="menu-item_text menu-item_description" datatime="2020-03-19">19.03.2020</time>
             </div>
-            <div class="spoiler spoiler-hidden">
-              <ul class="release-notes">Stable (#11)
+            <details class="spoiler_changelog">
+              <summary class="spoiler-button_changelog"></summary>
+              <ul class="release-notes">(#11)
                 <li class="release-note">улучшения мобильной версии</li>
                 <li class="release-note">теперь размеры плашек и пунктов меню зависят от шрифта</li>
                 <li class="release-note">скрытие картинок в плашках в моильной версии</li>
                 <li class="release-note">большая адаптивность размеров к основному размеру шрифта</li>
               </ul>
-            </div>
+            </details>
           </div>
 
           <div class="menu-item changelog-container">
-            <div class="release-info">
-              <div class="menu-item_text-container release-info_text-container">
-                <h3 class="menu-item_text menu-item_name">0.4.1</h3>
-                <time datatime="2020-03-17" class="menu-item_text menu-item_description">17.03.2020</time>
-              </div>
-              <div class="spoiler-button">
-                <button class="button" onclick="showChangelogSpoiler(2,1)">Показать</button>
-              </div>
+            <div class="menu-item_text-container release-info">
+              <h3 class="menu-item_text menu-item_name">0.4.1</h3>
+              <time class="menu-item_text menu-item_description" datatime="2020-03-17">17.03.2020</time>
             </div>
-            <div class="spoiler spoiler-hidden">
-              <ul class="release-notes">Stable (#10)
+            <details class="spoiler_changelog">
+              <summary class="spoiler-button_changelog"></summary>
+              <ul class="release-notes">(#10)
                 <li class="release-note">вернул обратно анимацию и стиль пунктов основного меню</li>
                 <li class="release-note">добавил виевпорт и сделал оверлей для узких экранов</li>
               </ul>
-              <ul class="release-notes">Open Beta 2 (#9)
+              <ul class="release-notes">(#9)
                 <li class="release-note">более оптимизированные хедеры и обновленный стиль главного меню</li>
               </ul>
-              <ul class="release-notes">Open Beta 1 (#8)
+              <ul class="release-notes">(#8)
                 <li class="release-note">если нет инфы в ЛХ, записываются дефолтные ключи</li>
                 <li class="release-note">шрифт подстраивается под высоту страницы, большинство бордеров - под ширину</li>
                 <li class="release-note">кнопка назад терь как переменная и более кликабельна</li>
                 <li class="release-note">серая цветовая схема, а также переключатель цс</li>
               </ul>
-            </div>
+            </details>
           </div>
         </section>
 
@@ -570,17 +571,13 @@
           <h3 class="main-content_container-name">До создания ченжлога</h3>
 
           <div class="menu-item changelog-container">
-            <div class="release-info">
-              <div class="menu-item_text-container release-info_text-container">
-                <h3 class="menu-item_text menu-item_name">0.3</h3>
-                <time datatime="2020-03-14" class="menu-item_text menu-item_description">14.03.2020</time>
-              </div>
-              <div class="spoiler-button">
-                <button class="button" onclick="showChangelogSpoiler(1,3)">Показать</button>
-              </div>
+            <div class="menu-item_text-container release-info">
+              <h3 class="menu-item_text menu-item_name">0.3</h3>
+              <time class="menu-item_text menu-item_description" datatime="2020-03-14">14.03.2020</time>
             </div>
-            <div class="spoiler spoiler-hidden">
-              <ul class="release-notes">Stable (#7)
+            <details class="spoiler_changelog">
+              <summary class="spoiler-button_changelog"></summary>
+              <ul class="release-notes">(#7)
                 <li class="release-note">пока можно менять только цвет акцента</li>
                 <li class="release-note">динамической окраски радиокнопок пока нет(</li>
                 <li class="release-note">реализовал переключение тем с запоминанием в куки</li>
@@ -589,61 +586,53 @@
                 <li class="release-note">доступные цвета акцента можно изменять, используя только HTML. только от него они и зависят</li>
                 <li class="release-note">глючный переключатель ксс-файлов для тем терь нах не нужен</li>
               </ul>
-            </div>
+            </details>
           </div>
 
           <div class="menu-item changelog-container">
-            <div class="release-info">
-              <div class="menu-item_text-container release-info_text-container">
-                <h3 class="menu-item_text menu-item_name">0.2</h3>
-                <time datatime="2020-03-13" class="menu-item_text menu-item_description">13.03.2020</time>
-              </div>
-              <div class="spoiler-button">
-                <button class="button" onclick="showChangelogSpoiler(1,2)">Показать</button>
-              </div>
+            <div class="menu-item_text-container release-info">
+              <h3 class="menu-item_text menu-item_name">0.2</h3>
+              <time class="menu-item_text menu-item_description" datatime="2020-03-13">13.03.2020</time>
             </div>
-            <div class="spoiler spoiler-hidden">
-              <ul class="release-notes">Stable (#6)
+            <details class="spoiler_changelog">
+              <summary class="spoiler-button_changelog"></summary>
+              <ul class="release-notes">(#6)
                 <li class="release-note">Сделал тестовую версию настроек</li>
                 <li class="release-note">Перестановки в навигационном меню на стартовой</li>
               </ul>
-            </div>
+            </details>
           </div>
 
           <div class="menu-item changelog-container">
-            <div class="release-info">
-              <div class="menu-item_text-container release-info_text-container">
-                <h3 class="menu-item_text menu-item_name">0.1</h3>
-                <time datatime="2020-03-13" class="menu-item_text menu-item_description">13.03.2020</time>
-              </div>
-              <div class="spoiler-button">
-                <button class="button" onclick="showChangelogSpoiler(1,1)">Показать</button>
-              </div>
+            <div class="menu-item_text-container release-info">
+              <h3 class="menu-item_text menu-item_name">0.1</h3>
+              <time class="menu-item_text menu-item_description" datatime="2020-03-13">13.03.2020</time>
             </div>
-            <div class="spoiler spoiler-hidden">
-              <ul class="release-notes">Stable (#5)
+            <details class="spoiler_changelog">
+              <summary class="spoiler-button_changelog"></summary>
+              <ul class="release-notes">(#5)
                 <li class="release-note">перепаковал</li>
                 <li class="release-note">упорядочил</li>
                 <li class="release-note">окончательно определился со стилем плашек-ссылок на сайты на стартовой странице</li>
                 <li class="release-note">финальный фикс внутристраничной навигации</li>
                 <li class="release-note">убрал лишнее</li>
               </ul>
-              <ul class="release-notes">Open Beta 4 (#4)
+              <ul class="release-notes">(#4)
                 <li class="release-note">починил внутристраничную навигацию на target-ах</li>
                 <li class="release-note">сделал радиокнопки</li>
               </ul>
-              <ul class="release-notes">Open Beta 3 (#3)
+              <ul class="release-notes">(#3)
                 <li class="release-note">улучшения анимации плашек на основной странице</li>
                 <li class="release-note">улучшения в настройках</li>
               </ul>
-              <ul class="release-notes">Open Beta 2 (#2)
+              <ul class="release-notes">(#2)
                 <li class="release-note">начал делать настройки</li>
                 <li class="release-note">допилил стартовую</li>
               </ul>
-              <ul class="release-notes">Open Beta 1 (#1)
+              <ul class="release-notes">(#1)
                 <li class="release-note">initial build епта</li>
               </ul>
-            </div>
+            </details>
           </div>
         </section>
       </div>
@@ -748,7 +737,7 @@
                   <span class="">Версия ядра</span>
                 </div>
                 <div class="menu-item_text menu-item_description about_secondary-text">
-                  <span class=""><a class="link-hidden" href="#changelog">0.6.1</a></span>
+                  <span class=""><a class="link-hidden" href="#changelog">0.6.2</a></span>
                 </div>
               </div>
             </div>
@@ -760,7 +749,7 @@
                   <span class="">Номер сборки</span>
                 </div>
                 <div class="menu-item_text menu-item_description about_secondary-text">
-                  <span class=""><a class="link-hidden" href="#changelog">#23</a></span>
+                  <span class=""><a class="link-hidden" href="#changelog">#24</a></span>
                 </div>
               </div>
             </div>

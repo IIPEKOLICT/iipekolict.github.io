@@ -77,6 +77,10 @@
     width: 1em;
     height: 1em;
   }
+.header-nav_icon
+{
+  display: none;
+}
 .header-name /* Сток заголовок в шапке */
 {
   margin: 0;
@@ -369,33 +373,54 @@
 
 /* Changelog (спойлеры) */
 
+/* DETAILS */
+
 .changelog-container
 {
   padding: 0.5em;
   height: auto;
-  display: flex;
-  flex-direction: column;
   background-color: var(--secondary_bg-color);
-}
-.changelog-container::before
-{
-  content: none;
 }
 .release-info
 {
-  display: flex;
-  flex-direction: row;
-}
-.release-info_text-container
-{
   padding: 0 1em;
-  flex: 70%;
+  height: 3.5em;
+  position: absolute;
 }
-.spoiler-button
+.spoiler_changelog
 {
-  padding: 0.4em;
-  padding-left: 0;
+  height: 3.5em;
+}
+.spoiler_changelog[open]
+{
+  height: auto;
+}
+.spoiler_changelog[open] .spoiler-button_changelog::after
+{
+  content: "Скрыть";
+}
+.spoiler_changelog .spoiler-button_changelog::-webkit-details-marker {
+  display: none;
+}
+.spoiler-button_changelog:focus
+{
+  outline: none;
+}
+.spoiler-button_changelog::after
+{
+  content: "Показать";
+  margin: 0.5em;
+  padding: 0.5em;
+  width: 5em;
+  height: 1.5em;
+  float: right;
   display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--main_bg-color);
+  background-color: var(--accent-color);
+  border-radius: 0.25em;
+  cursor: pointer;
 }
 .release-notes
 {
@@ -403,29 +428,29 @@
   padding: 0.4em 1em;
   list-style-type: circle;
   color: var(--main_text-color);
-  border-bottom: 1px solid var(--main_border-color);
 }
-.release-notes:last-of-type
+.release-notes:first-of-type
 {
-  border-bottom: none;
+  padding-top: 4em;
+}
+.release-notes:first-of-type::before
+{
+  content: "Stable ";
+}
+.release-notes:not(:first-of-type)::before
+{
+  content: "Open Beta ";
 }
 .release-note
 {
+  padding: 0.1em 0;
   color: var(--secondary_text-color);
   font-size: 0.8em;
 }
-
-.spoiler
+.release-note:first-of-type
 {
+  padding-top: 0.4em;
   border-top: 1px solid var(--secondary_text-color);
-}
-.spoiler-hidden
-{
-  display: none;
-}
-.spoiler-shown
-{
-  display: block;
 }
 
 /* #About (об устройстве) */
