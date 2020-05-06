@@ -373,8 +373,6 @@
 
 /* Changelog (спойлеры) */
 
-/* DETAILS */
-
 .changelog-container
 {
   padding: 0.5em;
@@ -433,14 +431,6 @@
 {
   padding-top: 4em;
 }
-.release-notes:first-of-type::before
-{
-  content: "Stable ";
-}
-.release-notes:not(:first-of-type)::before
-{
-  content: "Open Beta ";
-}
 .release-note
 {
   padding: 0.1em 0;
@@ -451,6 +441,10 @@
 {
   padding-top: 0.4em;
   border-top: 1px solid var(--secondary_text-color);
+}
+.release-note:first-letter /* Написание первой буквы предложений каппсом */
+{
+  text-transform: capitalize;
 }
 
 /* #About (об устройстве) */

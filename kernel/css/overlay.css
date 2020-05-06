@@ -317,20 +317,36 @@
 
   .changelog-container
   {
-    padding: 0.5em;
+    padding: 0.25em;
     height: auto;
   }
-  .release-info_text-container
+  .release-info
   {
-    padding: 0 0.2em;
+    padding: 0 0.25em;
+    height: 2.4em;
+  }
+  .spoiler_changelog
+  {
+    height: 2.4em;
+  }
+  .spoiler-button_changelog::after
+  {
+    margin: 0.25em;
+    padding: 0.25em;
+    height: 2em;
+    font-size: 0.8em;
   }
   .release-notes
   {
     font-size: 0.8em;
   }
+  .release-notes:first-of-type
+  {
+    padding-top: 3.5em;
+  }
   .release-note
   {
-    font-size: 0.65em;
+    font-size: 0.6em;
   }
 
   /* #About (об устройстве) */
