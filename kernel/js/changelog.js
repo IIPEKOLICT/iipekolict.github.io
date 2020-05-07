@@ -1,13 +1,50 @@
 // Переменные
 
-var changelogSpoilers = document.querySelectorAll('.spoiler_changelog'); // Все спойлеры (версии)
 var allReleaseNotes = document.querySelectorAll('.release-notes'); // Все релизы (для номера сборки)
 var buildNo = allReleaseNotes.length; // Счетчик номера сборки
-var latestVersion = document.querySelector('.changelog-container:first-of-type h3').textContent;
 
 document.addEventListener("DOMContentLoaded", () => { // Событие загузки страницы
 
-  // Название релиза
+  // Нейминг секции и версий
+
+  var sections = document.querySelectorAll('#changelog .main-content_container'); // Поиск всех секций
+  var sectionNo = sections.length; // Счетчик номера секции
+
+  for (var a = 0; a < sections.length; a++) { // Перебор всех секций
+
+    // Дата последней сборки (поиск + ключ)
+
+    var latestBuildDate = sections[0].querySelector('time:first-of-type').textContent;
+    localStorage.setItem('latestBuildDate', latestBuildDate);
+
+    // Нейминг заголовков секций
+
+    var sectionHeader = sections[a].querySelector('.main-content_container-name'); // Поиск
+    sectionHeader.textContent = sectionNo/10; // Вычисление названия
+    var sectionName = sectionHeader.textContent; // Запись названия
+
+    // Нейминг версий
+
+    var sectionVersionNames = sections[a].querySelectorAll('.release-info .menu-item_name'); // Поиск
+    var c = sectionVersionNames.length; // Обратный счетчик количесва версий в 1 секции
+
+    for (var b = 0; b < sectionVersionNames.length; b++) { // Перебор версий в 1 секции
+
+      if (sectionVersionNames.length != 1) {
+        sectionVersionNames[b].textContent = sectionName + '.' + c; // Если версий в секции не 1
+      } else {
+        sectionVersionNames[b].textContent = sectionName; // Если в секции 1 версия
+      }
+
+      c--; // Уменьшение счетчика версий в 1 секции
+    }
+
+    sectionNo--; // Уменьшение счетчика номера секции
+  }
+
+  // Нейминг релиза
+
+  var changelogSpoilers = document.querySelectorAll('.spoiler_changelog'); // Все спойлеры (версии)
 
   for (var i = 0; i < changelogSpoilers.length; i++) { // Цикл опроса всех спойлеров
     var spoilerReleases = changelogSpoilers[i].querySelectorAll('.release-notes'); // Все релизы в спойлере
@@ -24,6 +61,7 @@ document.addEventListener("DOMContentLoaded", () => { // Событие загу
       }
 
       spoilerReleases[j].insertBefore(releaseName, firstChild); // Вставка спана
+
       releaseNo--; // Уменьшение счетчика порядкового номера релизов в 1 спойлере
     }
   }
@@ -45,21 +83,35 @@ document.addEventListener("DOMContentLoaded", () => { // Событие загу
 
   // Название версии
 
+  var latestVersion = document.querySelector('.changelog-container:first-of-type h3').textContent; // Название последней версии
+
   if (latestVersion != undefined) {
     localStorage.setItem('latestVersion', latestVersion); // Ключ названия версии, если нет ошибок
   } else {
     localStorage.setItem('latestVersion', 'unknown'); // Ключ названия версии при ошибке
   }
 
-  // Проверки локального хранилища
+  // Запись сгенерированной инфы в "Об устройстве"
 
-  if (localStorage.getItem('buildNo')) { // Если в ЛХ есть ключ номера сборки
-    var aboutBuildNo = document.querySelector('#about #build-number'); // Элемент в "об устройстве"
-    aboutBuildNo.textContent = localStorage.getItem('buildNo'); // Присваивание
+  var aboutBuildNo = document.querySelector('#about #build-number'); // Элемент в "об устройстве"
+  var aboutLatestVersion = document.querySelector('#about #latest-version'); // Элемент в "об устройстве"
+  var aboutLatestBuildDate = document.querySelector('#about #build-date'); // Элемент в "об устройстве"
+
+  if (localStorage.getItem('buildNo')) {
+    aboutBuildNo.textContent = localStorage.getItem('buildNo'); // Если в ЛХ есть ключ номера сборки
+  } else {
+    aboutBuildNo.textContent = 'unknown'; // Если нет
   }
 
-  if (localStorage.getItem('latestVersion')) { // Если в ЛХ есть ключ названия версии
-    var aboutLatestVersion = document.querySelector('#about #latest-version'); // Элемент в "об устройстве"
-    aboutLatestVersion.textContent = localStorage.getItem('latestVersion'); // Присваивание
+  if (localStorage.getItem('latestVersion')) {
+    aboutLatestVersion.textContent = localStorage.getItem('latestVersion'); // Если в ЛХ есть ключ номера сборки
+  } else {
+    aboutLatestVersion.textContent = 'unknown'; // Если нет
+  }
+
+  if (localStorage.getItem('latestBuildDate')) {
+    aboutLatestBuildDate.textContent = localStorage.getItem('latestBuildDate'); // Если в ЛХ есть ключ номера сборки
+  } else {
+    aboutLatestBuildDate.textContent = 'unknown'; // Если нет
   }
 });

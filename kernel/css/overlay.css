@@ -130,6 +130,28 @@
   {
     height: 5em;
   }
+
+  #about-specs-2p::after
+  {
+    content: "хранилище";
+  }
+  #about-specs-2s::after
+  {
+    content: "8GB RAM + 128GB ROM";
+  }
+
+  #about-specs-3p::after
+  {
+    content: "камера";
+  }
+  #about-specs-3s::after
+  {
+    content: "48 + 16 + 8 MP Triple Camera";
+  }
+  #about-specs-4s::after
+  {
+    content: 'Fluid AMOLED 6,67" Display';
+  }
 }
 
 @media (min-aspect-ratio: 3/4) and (max-aspect-ratio: 6/5) /* диапазон 3:4 - 6:5 */

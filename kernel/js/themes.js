@@ -102,6 +102,7 @@ accentInputs.forEach(input => input.addEventListener('change', changeAccent(acp1
 function changeAccent(acp1) { // Функция смены акцента (при нажатии на акц-инпут)
   document.documentElement.style.setProperty('--accent-color', acp1); // Смена цвета
   localStorage.setItem('accentColor', acp1); // Сохранить ключ
+  location.reload();
 }
 
 colorSchemeInputs.forEach(input => input.addEventListener

@@ -373,6 +373,11 @@
 
 /* Changelog (спойлеры) */
 
+#changelog .main-content_container-name::before
+{
+  content: "Версия "; /* Все, кроме самой старой версии */
+}
+
 .changelog-container
 {
   padding: 0.5em;
@@ -506,4 +511,26 @@
 .about-container:nth-of-type(even)
 {
   padding-left: 1.5em;
+}
+
+#about-specs-2p::after
+{
+  content: "GPU";
+}
+#about-specs-2s::after
+{
+  content: "NVIDIA RTX 2080 Super";
+}
+
+#about-specs-3p::after
+{
+  content: "хранилище";
+}
+#about-specs-3s::after
+{
+  content: "32GB RAM + 2048GB ROM";
+}
+#about-specs-4s::after
+{
+  content: 'IPS LCD 27" Display';
 }
