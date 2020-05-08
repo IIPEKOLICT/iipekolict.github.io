@@ -373,9 +373,9 @@
 
 /* Changelog (спойлеры) */
 
-#changelog .main-content_container-name::before
+#changelog .main-content_container-name::after
 {
-  content: "Версия "; /* Все, кроме самой старой версии */
+  content: " версия";
 }
 
 .changelog-container
@@ -513,24 +513,68 @@
   padding-left: 1.5em;
 }
 
-#about-specs-2p::after
+.about-header_specs .menu-item_text-container:first-of-type .about_primary-text::before
+{
+  content: "CPU";
+}
+.about-header_specs .menu-item_text-container:nth-of-type(2) .about_primary-text::before
 {
   content: "GPU";
 }
-#about-specs-2s::after
+.about-header_specs .menu-item_text-container:nth-of-type(2) .about_secondary-text::before
 {
   content: "NVIDIA RTX 2080 Super";
 }
-
-#about-specs-3p::after
+.about-header_specs .menu-item_text-container:nth-of-type(3) .about_primary-text::before
 {
   content: "хранилище";
 }
-#about-specs-3s::after
+.about-header_specs .menu-item_text-container:nth-of-type(3) .about_secondary-text::before
 {
   content: "32GB RAM + 2048GB ROM";
 }
-#about-specs-4s::after
+.about-header_specs .menu-item_text-container:last-of-type .about_primary-text::before
+{
+  content: "экран";
+}
+.about-header_specs .menu-item_text-container:last-of-type .about_secondary-text::before
 {
   content: 'IPS LCD 27" Display';
+}
+
+.about-section:first-of-type .about-container:first-of-type .about_primary-text::before
+{
+  content: "Название устройства";
+}
+.about-section:first-of-type .about-container:first-of-type .about_secondary-text::before
+{
+  content: "Правильный комп";
+}
+.about-section:first-of-type .about-container:nth-of-type(2) .about_primary-text::before
+{
+  content: "Модель";
+}
+.about-section:first-of-type .about-container:nth-of-type(2) .about_secondary-text::before
+{
+  content: "Asus ROG PC";
+}
+.about-section:nth-of-type(2) .about-container:first-of-type .about_primary-text::before
+{
+  content: "Версия Windows";
+}
+.about-section:nth-of-type(2) .about-container:first-of-type .about_secondary-text::before
+{
+  content: "10 1903 Build";
+}
+.about-section:nth-of-type(2) .about-container:nth-of-type(2) .about_primary-text::before
+{
+  content: "Версия ядра";
+}
+.about-section:last-of-type .about-container:first-of-type .about_primary-text::before
+{
+  content: "Номер сборки";
+}
+.about-section:last-of-type .about-container:nth-of-type(2) .about_primary-text::before
+{
+  content: "Дата сборки";
 }

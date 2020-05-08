@@ -1,0 +1,14 @@
+<g id="00">   <g fill="none" stroke="none">
+<g id="01">   <g fill="none" stroke="var(--accent-color)">
+<g id="02">   <g fill="none" stroke="var(--secondary_bg-color)">
+<g id="10">   <g fill="var(--accent-color)" stroke="none">
+<g id="11">   <g fill="var(--accent-color)" stroke="var(--accent-color)">
+<g id="12">   <g fill="var(--accent-color)" stroke="var(--secondary_bg-color)">
+<g id="20">   <g fill="var(--secondary_bg-color)" stroke="none">
+<g id="21">   <g fill="var(--secondary_bg-color)" stroke="var(--accent-color)">
+<g id="22">   <g fill="var(--secondary_bg-color)" stroke="var(--secondary_bg-color)">
+
+<!-- Фикс для работы движка тем -->
+
+<?xml-stylesheet type="text/css" href="../css/kernel.css"?> <!-- 2 строчкой -->
+<script xlink:href="../js/themes.js" /> <!-- Внутрь свг-тега -->

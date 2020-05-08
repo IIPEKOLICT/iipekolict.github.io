@@ -131,26 +131,42 @@
     height: 5em;
   }
 
-  #about-specs-2p::after
+  .about-header_specs .menu-item_text-container:nth-of-type(2) .about_primary-text::before
   {
     content: "хранилище";
   }
-  #about-specs-2s::after
+  .about-header_specs .menu-item_text-container:nth-of-type(2) .about_secondary-text::before
   {
     content: "8GB RAM + 128GB ROM";
   }
-
-  #about-specs-3p::after
+  .about-header_specs .menu-item_text-container:nth-of-type(3) .about_primary-text::before
   {
     content: "камера";
   }
-  #about-specs-3s::after
+  .about-header_specs .menu-item_text-container:nth-of-type(3) .about_secondary-text::before
   {
     content: "48 + 16 + 8 MP Triple Camera";
   }
-  #about-specs-4s::after
+  .about-header_specs .menu-item_text-container:last-of-type .about_secondary-text::before
   {
     content: 'Fluid AMOLED 6,67" Display';
+  }
+
+  .about-section:first-of-type .about-container:first-of-type .about_secondary-text::before
+  {
+    content: "Правильный смартфон";
+  }
+  .about-section:first-of-type .about-container:nth-of-type(2) .about_secondary-text::before
+  {
+    content: "OnePlus 7 Pro";
+  }
+  .about-section:nth-of-type(2) .about-container:first-of-type .about_primary-text::before
+  {
+    content: "Версия Android";
+  }
+  .about-section:nth-of-type(2) .about-container:first-of-type .about_secondary-text::before
+  {
+    content: "10";
   }
 }
 

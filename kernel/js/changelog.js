@@ -1,117 +1,87 @@
-// Переменные
-
-var allReleaseNotes = document.querySelectorAll('.release-notes'); // Все релизы (для номера сборки)
-var buildNo = allReleaseNotes.length; // Счетчик номера сборки
-
 document.addEventListener("DOMContentLoaded", () => { // Событие загузки страницы
 
-  // Нейминг секции и версий
+  // Переменные
 
+  var allReleases = document.querySelectorAll('.release-notes'); // Все релизы (для номера сборки)
+  var buildNo = allReleases.length; // Счетчик номера сборки
   var sections = document.querySelectorAll('#changelog .main-content_container'); // Поиск всех секций
   var sectionNo = sections.length; // Счетчик номера секции
 
+  // Дата последней сборки (поиск + занести в "Об устройстве")
+
+  document.querySelector('#about #build-date').textContent = sections[0].querySelector('time:first-of-type').textContent;
+
   for (var a = 0; a < sections.length; a++) { // Перебор всех секций
-
-    // Дата последней сборки (поиск + ключ)
-
-    var latestBuildDate = sections[0].querySelector('time:first-of-type').textContent;
-    localStorage.setItem('latestBuildDate', latestBuildDate);
 
     // Нейминг заголовков секций
 
     var sectionHeader = sections[a].querySelector('.main-content_container-name'); // Поиск
-    sectionHeader.textContent = sectionNo/10; // Вычисление названия
-    var sectionName = sectionHeader.textContent; // Запись названия
+    sectionHeader.textContent = sectionNo; // Вычисление названия
 
     // Нейминг версий
 
-    var sectionVersionNames = sections[a].querySelectorAll('.release-info .menu-item_name'); // Поиск
-    var c = sectionVersionNames.length; // Обратный счетчик количесва версий в 1 секции
+    var versions = sections[a].querySelectorAll('.release-info .menu-item_name'); // Поиск
+    var versionNo = versions.length; // Обратный счетчик количесва версий в 1 секции
 
-    for (var b = 0; b < sectionVersionNames.length; b++) { // Перебор версий в 1 секции
+    for (var b = 0; b < versions.length; b++) { // Перебор версий в 1 секции
 
-      if (sectionVersionNames.length != 1) {
-        sectionVersionNames[b].textContent = sectionName + '.' + c; // Если версий в секции не 1
+      if (versions.length != 1) {
+        versions[b].textContent = sectionHeader.textContent + '.' + versionNo; // Если версий в секции не 1
       } else {
-        sectionVersionNames[b].textContent = sectionName; // Если в секции 1 версия
+        versions[b].textContent = sectionHeader.textContent; // Если в секции 1 версия
       }
 
-      c--; // Уменьшение счетчика версий в 1 секции
+      versionNo--; // Уменьшение счетчика версий в 1 секции
     }
 
     sectionNo--; // Уменьшение счетчика номера секции
-  }
 
-  // Нейминг релиза
+    // Нейминг релиза
 
-  var changelogSpoilers = document.querySelectorAll('.spoiler_changelog'); // Все спойлеры (версии)
+    var changelogSpoilers = sections[a].querySelectorAll('.spoiler_changelog'); // Все спойлеры (тег details)
 
-  for (var i = 0; i < changelogSpoilers.length; i++) { // Цикл опроса всех спойлеров
-    var spoilerReleases = changelogSpoilers[i].querySelectorAll('.release-notes'); // Все релизы в спойлере
-    var releaseNo = spoilerReleases.length; // Счетчик порядкового номера релизов в 1 спойлере
+    for (var c = 0; c < changelogSpoilers.length; c++) { // Цикл опроса всех спойлеров
+      var spoilerReleases = changelogSpoilers[c].querySelectorAll('.release-notes'); // Все релизы в спойлере
+      var releaseNo = spoilerReleases.length; // Счетчик порядкового номера релизов в 1 спойлере
 
-    for (var j = 0; j < spoilerReleases.length; j++) { // Цикл опроса всех релизов в 1 спойлере
-      var firstChild = spoilerReleases[j].firstChild; // Первый дочерний в релизе элемент
-      var releaseName = document.createElement('span'); // Спан, содержащий название релиза
+      for (var d = 0; d < spoilerReleases.length; d++) { // Цикл опроса всех релизов в 1 спойлере
+        var firstReleaseChild = spoilerReleases[d].firstChild; // Первый дочерний в релизе элемент
+        var releaseName = document.createElement('span'); // Спан, в который будет помещено название релиза
 
-      if (releaseNo == spoilerReleases.length) {
-        releaseName.textContent = 'Stable '; // Стабл, если это первый релиз в спойлере
-      } else {
-        releaseName.textContent = 'Open Beta ' + releaseNo; // Бета-наименование, если нет
+        if (releaseNo == spoilerReleases.length) {
+          releaseName.textContent = 'Stable '; // Стабл, если это первый релиз в спойлере
+        } else {
+          releaseName.textContent = 'Open Beta ' + releaseNo; // Бета-наименование, если нет
+        }
+
+        spoilerReleases[d].insertBefore(releaseName, firstReleaseChild); // Вставка спана
+        releaseNo--; // Уменьшение счетчика порядкового номера релизов в 1 спойлере
       }
-
-      spoilerReleases[j].insertBefore(releaseName, firstChild); // Вставка спана
-
-      releaseNo--; // Уменьшение счетчика порядкового номера релизов в 1 спойлере
     }
   }
 
-  // Номер сборки
+  // Номер сборки (запись в "Об устройстве" и выставление для каждой из сборок)
 
   if (buildNo > 0 || buildNo != undefined) {
-    localStorage.setItem('buildNo', '#' + buildNo); // Ключ номера сборки, если не 0вая (нет)
+    document.querySelector('#about #build-number').textContent = '#' + buildNo; // Если нет ошибок
   } else {
-    localStorage.setItem('buildNo', 'unknown'); // Ключ номера сборки при ошибке
+    document.querySelector('#about #build-number').textContent = 'unknown'; // Если есть
   }
 
-  for (var k = 0; k < allReleaseNotes.length; k++) { // Цикл опроса абсолютно всех релизов
-    var fullReleaseName = allReleaseNotes[k].querySelector('span'); // Поиск уже выданного релизу спана с именем релиза
-    var releaseNameText = fullReleaseName.textContent; // Чтение тамошнего текста
-    fullReleaseName.textContent = releaseNameText + ' (#' + buildNo + ')'; // Добавление в этот текст номера сборки
+  for (var e = 0; e < allReleases.length; e++) { // Цикл опроса абсолютно всех релизов
+    var fullReleaseName = allReleases[e].querySelector('span'); // Поиск уже выданного релизу спана с именем релиза
+    var stockReleaseName = fullReleaseName.textContent; // Чтение тамошнего текста
+    fullReleaseName.textContent = stockReleaseName + ' (#' + buildNo + ')'; // Добавление в этот текст номера сборки
     buildNo--; // Уменьшение счетчика номера сборки
   }
 
-  // Название версии
+  // Название последней версии (поиск и запись в "Об устройстве")
 
-  var latestVersion = document.querySelector('.changelog-container:first-of-type h3').textContent; // Название последней версии
+  var latestVersion = document.querySelector('.changelog-container:first-of-type h3').textContent;
 
   if (latestVersion != undefined) {
-    localStorage.setItem('latestVersion', latestVersion); // Ключ названия версии, если нет ошибок
+    document.querySelector('#about #latest-version').textContent = latestVersion; // Если нет ошибок
   } else {
-    localStorage.setItem('latestVersion', 'unknown'); // Ключ названия версии при ошибке
-  }
-
-  // Запись сгенерированной инфы в "Об устройстве"
-
-  var aboutBuildNo = document.querySelector('#about #build-number'); // Элемент в "об устройстве"
-  var aboutLatestVersion = document.querySelector('#about #latest-version'); // Элемент в "об устройстве"
-  var aboutLatestBuildDate = document.querySelector('#about #build-date'); // Элемент в "об устройстве"
-
-  if (localStorage.getItem('buildNo')) {
-    aboutBuildNo.textContent = localStorage.getItem('buildNo'); // Если в ЛХ есть ключ номера сборки
-  } else {
-    aboutBuildNo.textContent = 'unknown'; // Если нет
-  }
-
-  if (localStorage.getItem('latestVersion')) {
-    aboutLatestVersion.textContent = localStorage.getItem('latestVersion'); // Если в ЛХ есть ключ номера сборки
-  } else {
-    aboutLatestVersion.textContent = 'unknown'; // Если нет
-  }
-
-  if (localStorage.getItem('latestBuildDate')) {
-    aboutLatestBuildDate.textContent = localStorage.getItem('latestBuildDate'); // Если в ЛХ есть ключ номера сборки
-  } else {
-    aboutLatestBuildDate.textContent = 'unknown'; // Если нет
+    document.querySelector('#about #latest-version').textContent = 'unknown'; // Если есть
   }
 });

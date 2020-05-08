@@ -6,7 +6,7 @@
     <meta name="keywords" content="Сайты" />
     <meta name="description" content="Мое портфолио; сайты, сделанные мной" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-	  <title>Тестовые настройки</title>
+	  <title>Настройки</title>
     <link rel="stylesheet" href="kernel/css/kernel.css">
     <link rel="stylesheet" href="kernel/css/overlay.css">
     <link rel="stylesheet" href="kernel/css/test.css">
@@ -84,7 +84,7 @@
         <a class="link-hidden" href="#test">
           <section class="menu-item">
             <div class="menu-item_icon">
-
+              <object class="menu-item_svg" type="image/svg+xml" data="kernel/svg/test-icon.svg"></object>
             </div>
             <aside class="menu-item_text-container">
               <div class="menu-item_text menu-item_name">Бета-тест</div>
@@ -110,7 +110,7 @@
     <div id="accent" class="page-block">
       <header class="header header_page">
         <div class="header-back_icon" onclick="history.back()">
-          <object class="header-icon_svg" type="image/svg+xml" data="kernel/svg/exit-h-icon.svg"></object>
+          <object class="header-icon_svg" type="image/svg+xml" data="kernel/svg/exit-icon_header.svg"></object>
         </div>
         <h2 class="header-name">Цвет акцента</h2>
       </header>
@@ -241,7 +241,7 @@
     <div id="color" class="page-block">
       <header class="header header_page">
         <div class="header-back_icon" onclick="history.back()">
-          <object class="header-icon_svg" type="image/svg+xml" data="kernel/svg/exit-h-icon.svg"></object>
+          <object class="header-icon_svg" type="image/svg+xml" data="kernel/svg/exit-icon_header.svg"></object>
         </div>
         <h2 class="header-name">Цветовая схема</h2>
       </header>
@@ -263,7 +263,7 @@
     <div id="other" class="page-block">
       <header class="header header_page">
         <div class="header-back_icon" onclick="history.back()">
-          <object class="header-icon_svg" type="image/svg+xml" data="kernel/svg/exit-h-icon.svg"></object>
+          <object class="header-icon_svg" type="image/svg+xml" data="kernel/svg/exit-icon_header.svg"></object>
         </div>
         <h2 class="header-name">Другое</h2>
       </header>
@@ -278,7 +278,7 @@
     <div id="changelog" class="page-block">
       <header class="header header_page">
         <div class="header-back_icon" onclick="history.back()">
-          <object class="header-icon_svg" type="image/svg+xml" data="kernel/svg/exit-h-icon.svg"></object>
+          <object class="header-icon_svg" type="image/svg+xml" data="kernel/svg/exit-icon_header.svg"></object>
         </div>
         <h2 class="header-name">Список изменений</h2>
       </header>
@@ -295,18 +295,11 @@
             <details class="spoiler_changelog">
               <summary class="spoiler-button_changelog"></summary>
               <ul class="release-notes">
-                <li class="release-note"></li>
+                <li class="release-note">в настройках появился пункт "Бета-тест"</li>
+                <li class="release-note">заменил все svg, кроме навигационного с инлайного на object-svg, пофиксил тамошний баг с темами (вставкой внешнего ксс-файла, урезанной для свг копии движка тем)</li>
+                <li class="release-note">допилил и почистил от мусора раздел "Об устройстве", теперь там веь текстовый контент (кроме процессора) показывается с помощью псевдоэлементов</li>
+                <li class="release-note">допилил и почистил от мусора changelog.js</li>
               </ul>
-            </details>
-          </div>
-
-          <div class="menu-item changelog-container">
-            <div class="menu-item_text-container release-info">
-              <h3 class="menu-item_text menu-item_name"></h3>
-              <time class="menu-item_text menu-item_description" datatime="2020-05-07">07.05.2020</time>
-            </div>
-            <details class="spoiler_changelog">
-              <summary class="spoiler-button_changelog"></summary>
               <ul class="release-notes">
                 <li class="release-note">полностью автоматизированный нейминг версий и секций в ченжлоге</li>
                 <li class="release-note">в пункте "об устройстве" теперь еще и динамически обновляемая информация о дате последней сборки</li>
@@ -360,7 +353,6 @@
               <summary class="spoiler-button_changelog"></summary>
               <ul class="release-notes">
                 <li class="release-note">интеграция всех изменений</li>
-                <li class="release-note">финальный релиз версии 0.5</li>
               </ul>
               <ul class="release-notes">
                 <li class="release-note">окончательно допилил пункт "об устройстве"</li>
@@ -370,28 +362,6 @@
                 <li class="release-note">фишка из оксиджен для второстепенного текста в пунктах меню (при недостаточной ширине автоматом вставляется троеточие)</li>
                 <li class="release-note">сделал пункт "об устройстве"</li>
                 <li class="release-note">оптимизация кода оверлеев</li>
-              </ul>
-            </details>
-          </div>
-
-          <div class="menu-item changelog-container">
-            <div class="menu-item_text-container release-info">
-              <h3 class="menu-item_text menu-item_name"></h3>
-              <time class="menu-item_text menu-item_description" datatime="2020-03-25">25.03.2020</time>
-            </div>
-            <details class="spoiler_changelog">
-              <summary class="spoiler-button_changelog"></summary>
-              <ul class="release-notes">
-                <li class="release-note">изменил чекпоинт 16:9 на 3:4 в оверлеях (на мобилке не работало с прежним значением)</li>
-              </ul>
-              <ul class="release-notes">
-                <li class="release-note">пофиксил все баги новой беты</li>
-                <li class="release-note">теперь оверлеи строятся на соотношении сторон устройства</li>
-              </ul>
-              <ul class="release-notes">
-                <li class="release-note">дополнительный оверлей для узких мониторов в диапазоне 360-730 пикселей, где показывается нав меню сразу развернутым</li>
-                <li class="release-note">увеличенные в 2 раза размеры в нав меню для узких экранов</li>
-                <li class="release-note">оверлей для футера на узких экранах</li>
               </ul>
             </details>
           </div>
@@ -452,10 +422,6 @@
               </ul>
             </details>
           </div>
-        </section>
-
-        <section class="main-content_container">
-          <h3 class="main-content_container-name"></h3>
 
           <div class="menu-item changelog-container">
             <div class="menu-item_text-container release-info">
@@ -533,30 +499,12 @@
                 <li class="release-note">доступные цвета акцента можно изменять, используя только HTML. только от него они и зависят</li>
                 <li class="release-note">глючный переключатель ксс-файлов для тем терь нах не нужен</li>
               </ul>
-            </details>
-          </div>
-        </section>
-
-        <section class="main-content_container">
-          <h3 class="main-content_container-name"></h3>
-
-          <div class="menu-item changelog-container">
-            <div class="menu-item_text-container release-info">
-              <h3 class="menu-item_text menu-item_name"></h3>
-              <time class="menu-item_text menu-item_description" datatime="2020-03-13">13.03.2020</time>
-            </div>
-            <details class="spoiler_changelog">
-              <summary class="spoiler-button_changelog"></summary>
               <ul class="release-notes">
                 <li class="release-note">Сделал тестовую версию настроек</li>
                 <li class="release-note">Перестановки в навигационном меню на стартовой</li>
               </ul>
             </details>
           </div>
-        </section>
-
-        <section class="main-content_container">
-          <h3 class="main-content_container-name"></h3>
 
           <div class="menu-item changelog-container">
             <div class="menu-item_text-container release-info">
@@ -596,7 +544,7 @@
     <div id="about" class="page-block">
       <header class="header header_page">
         <div class="header-back_icon" onclick="history.back()">
-          <object class="header-icon_svg" type="image/svg+xml" data="kernel/svg/exit-h-icon.svg"></object>
+          <object class="header-icon_svg" type="image/svg+xml" data="kernel/svg/exit-icon_header.svg"></object>
         </div>
         <h2 class="header-name">Об устройстве</h2>
       </header>
@@ -607,33 +555,23 @@
             <div class="about-header_img"></div>
             <aside class="about-header_specs">
               <div class="menu-item_text-container">
-                <div class="menu-item_text menu-item_name about_primary-text">CPU</div>
+                <div class="menu-item_text menu-item_name about_primary-text"></div>
                 <div class="menu-item_text menu-item_description about_secondary-text">
                   <span class="txt-in-pc">AMD Ryzen<sup class="sup">TM</sup> 9 3900X</span>
                   <span class="txt-in-mobile">Snapdragon<sup class="sup">TM</sup> 855</span>
                 </div>
               </div>
               <div class="menu-item_text-container">
-                <div class="menu-item_text menu-item_name about_primary-text">
-                  <span id="about-specs-2p"></span>
-                </div>
-                <div class="menu-item_text menu-item_description about_secondary-text">
-                  <span id="about-specs-2s"></span>
-                </div>
+                <div class="menu-item_text menu-item_name about_primary-text"></div>
+                <div class="menu-item_text menu-item_description about_secondary-text"></div>
               </div>
               <div class="menu-item_text-container">
-                <div class="menu-item_text menu-item_name about_primary-text">
-                  <span id="about-specs-3p"></span>
-                </div>
-                <div class="menu-item_text menu-item_description about_secondary-text">
-                  <span id="about-specs-3s"></span>
-                </div>
+                <div class="menu-item_text menu-item_name about_primary-text"></div>
+                <div class="menu-item_text menu-item_description about_secondary-text"></div>
               </div>
               <div class="menu-item_text-container">
-                <div class="menu-item_text menu-item_name about_primary-text">Экран</div>
-                <div class="menu-item_text menu-item_description about_secondary-text">
-                  <span id="about-specs-4s"></span>
-                </div>
+                <div class="menu-item_text menu-item_name about_primary-text"></div>
+                <div class="menu-item_text menu-item_description about_secondary-text"></div>
               </div>
             </aside>
           </article>
@@ -641,23 +579,29 @@
           <div class="about-section">
             <div class="about-container">
               <div class="menu-item_text-container">
-                <div class="menu-item_text menu-item_name about_primary-text">
-                  <span class="">Название устройства</span>
-                </div>
-                <div class="menu-item_text menu-item_description about_secondary-text">
-                  <span class="txt-in-pc">Правильный комп</span>
-                  <span class="txt-in-mobile">Правильный смартфон</span>
-                </div>
+                <div class="menu-item_text menu-item_name about_primary-text"></div>
+                <div class="menu-item_text menu-item_description about_secondary-text"></div>
               </div>
             </div>
             <div class="about-container">
               <div class="menu-item_text-container">
-                <div class="menu-item_text menu-item_name about_primary-text">
-                  <span class="">Модель</span>
-                </div>
+                <div class="menu-item_text menu-item_name about_primary-text"></div>
+                <div class="menu-item_text menu-item_description about_secondary-text"></div>
+              </div>
+            </div>
+          </div>
+          <div class="about-section">
+            <div class="about-container">
+              <div class="menu-item_text-container">
+                <div class="menu-item_text menu-item_name about_primary-text"></div>
+                <div class="menu-item_text menu-item_description about_secondary-text"></div>
+              </div>
+            </div>
+            <div class="about-container">
+              <div class="menu-item_text-container">
+                <div class="menu-item_text menu-item_name about_primary-text"></div>
                 <div class="menu-item_text menu-item_description about_secondary-text">
-                  <span class="txt-in-pc">Asus ROG PC</span>
-                  <span class="txt-in-mobile">OnePlus 7 Pro</span>
+                  <a id="latest-version" class="link-hidden" href="#changelog"></a>
                 </div>
               </div>
             </div>
@@ -665,33 +609,7 @@
           <div class="about-section">
             <div class="about-container">
               <div class="menu-item_text-container">
-                <div class="menu-item_text menu-item_name about_primary-text">
-                  <span class="txt-in-pc">Версия Windows</span>
-                  <span class="txt-in-mobile">Версия Android</span>
-                </div>
-                <div class="menu-item_text menu-item_description about_secondary-text">
-                  <span class="txt-in-pc">10 1903 Build</span>
-                  <span class="txt-in-mobile">10</span>
-                </div>
-              </div>
-            </div>
-            <div class="about-container">
-              <div class="menu-item_text-container">
-                <div class="menu-item_text menu-item_name about_primary-text">
-                  <span class="">Версия ядра</span>
-                </div>
-                <div class="menu-item_text menu-item_description about_secondary-text">
-                  <span class=""><a id="latest-version" class="link-hidden" href="#changelog"></a></span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="about-section">
-            <div class="about-container">
-              <div class="menu-item_text-container">
-                <div class="menu-item_text menu-item_name about_primary-text">
-                  <span class="">Номер сборки</span>
-                </div>
+                <div class="menu-item_text menu-item_name about_primary-text"></div>
                 <div class="menu-item_text menu-item_description about_secondary-text">
                   <span class=""><a id="build-number" class="link-hidden" href="#changelog"></a></span>
                 </div>
@@ -699,11 +617,9 @@
             </div>
             <div class="about-container">
               <div class="menu-item_text-container">
-                <div class="menu-item_text menu-item_name about_primary-text">
-                  <span class="">Дата сборки</span>
-                </div>
+                <div class="menu-item_text menu-item_name about_primary-text"></div>
                 <div class="menu-item_text menu-item_description about_secondary-text">
-                  <span id="build-date" class=""></span>
+                  <span id="build-date"></span>
                 </div>
               </div>
             </div>
@@ -715,7 +631,7 @@
     <div id="test" class="page-block">
       <header class="header header_page">
         <div class="header-back_icon" onclick="history.back()">
-          <object class="header-icon_svg" type="image/svg+xml" data="kernel/svg/exit-h-icon.svg"></object>
+          <object class="header-icon_svg" type="image/svg+xml" data="kernel/svg/exit-icon_header.svg"></object>
         </div>
         <h2 class="header-name">Бета-тест</h2>
       </header>
