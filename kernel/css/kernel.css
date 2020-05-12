@@ -357,40 +357,64 @@
   font-size: inherit;
 }
 
-/* Другое --------------------------------------------------*/
+/* СПОЙЛЕРЫ --------------------------------------------------*/
 
-.txt-in-mobile
-{
-  display: none;
-}
+/* Базовые стили */
 
-/* Оформление подстраниц в настройках */
-
-.page-block_main
-{
-  text-align: left;
-}
-
-/* Changelog (спойлеры) */
-
-#changelog .main-content_container-name::after
-{
-  content: " версия";
-}
-
-.changelog-container
+.spoiler-container /* контейнер со спойлером */
 {
   padding: 0.5em;
   height: auto;
   background-color: var(--secondary_bg-color);
 }
-.release-info
+.spoiler .spoiler-content /* фикс видимости для длинных спойлеров */
 {
-  padding: 0 1em;
-  height: 3.5em;
-  position: absolute;
+  overflow: hidden;
 }
-.spoiler_changelog
+.spoiler[open] .spoiler-content /* анимация контента при раскрытии спойлера */
+{
+  animation: spoiler-stock 2s;
+}
+@keyframes spoiler-stock {
+  0%   {max-height: 0;}
+  100% {max-height: 40em;}
+}
+.spoiler[open] .spoiler-button::after /* изменение текста кнопки (псевдоэлемент) при раскрытии спойлера */
+{
+  content: "Скрыть";
+}
+.spoiler .spoiler-button::-webkit-details-marker { /* фикс дефолтного треугольничка у суммари */
+  display: none;
+}
+.spoiler-button /* дефолтный стиль кнопки */
+{
+  margin: 0.5em;
+  padding: 0.5em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--main_bg-color);
+  background-color: var(--accent-color);
+  border-radius: 0.25em;
+  cursor: pointer;
+}
+.spoiler-button::after /* дефолтная подпись суммари (псевдоэлемент) */
+{
+  content: "Показать";
+}
+.spoiler-button:focus /* фикс выделения суммари */
+{
+  outline: none;
+}
+
+.spoiler-content /* дефолтный класс для содержимого спойлера */
+{
+  padding: 0 0.5em;
+}
+
+/* #changelog */
+
+.spoiler_changelog /* модификация контейнера для раздела "Список изменений" */
 {
   height: 3.5em;
 }
@@ -398,32 +422,19 @@
 {
   height: auto;
 }
-.spoiler_changelog[open] .spoiler-button_changelog::after
+.spoiler-button_changelog /* модификация кнопки для раздела "Список изменений" */
 {
-  content: "Скрыть";
-}
-.spoiler_changelog .spoiler-button_changelog::-webkit-details-marker {
-  display: none;
-}
-.spoiler-button_changelog:focus
-{
-  outline: none;
-}
-.spoiler-button_changelog::after
-{
-  content: "Показать";
-  margin: 0.5em;
-  padding: 0.5em;
   width: 5em;
   height: 1.5em;
   float: right;
-  display: flex;
   justify-content: center;
-  align-items: center;
-  color: var(--main_bg-color);
-  background-color: var(--accent-color);
-  border-radius: 0.25em;
-  cursor: pointer;
+}
+
+.release-info
+{
+  padding: 0 1em;
+  height: 3.5em;
+  position: absolute;
 }
 .release-notes
 {
@@ -450,6 +461,27 @@
 .release-note:first-letter /* Написание первой буквы предложений каппсом */
 {
   text-transform: capitalize;
+}
+
+/* Другое --------------------------------------------------*/
+
+.txt-in-mobile
+{
+  display: none;
+}
+
+/* Оформление подстраниц в настройках */
+
+.page-block_main
+{
+  text-align: left;
+}
+
+/* #changelog, заголовки секций */
+
+#changelog .main-content_container-name::after
+{
+  content: " версия";
 }
 
 /* #About (об устройстве) */

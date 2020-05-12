@@ -2,14 +2,14 @@ document.addEventListener("DOMContentLoaded", () => { // Событие загу
 
   // Переменные
 
-  var allReleases = document.querySelectorAll('.release-notes'); // Все релизы (для номера сборки)
+  var allReleases = document.querySelectorAll('#changelog .release-notes'); // Все релизы (для номера сборки)
   var buildNo = allReleases.length; // Счетчик номера сборки
   var sections = document.querySelectorAll('#changelog .main-content_container'); // Поиск всех секций
   var sectionNo = sections.length; // Счетчик номера секции
 
   // Дата последней сборки (поиск + занести в "Об устройстве")
 
-  document.querySelector('#about #build-date').textContent = sections[0].querySelector('time:first-of-type').textContent;
+  document.querySelector('#about #build-date').textContent = sections[0].querySelector('#changelog time:first-of-type').textContent;
 
   for (var a = 0; a < sections.length; a++) { // Перебор всех секций
 
@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", () => { // Событие загу
 
     // Нейминг релиза
 
-    var changelogSpoilers = sections[a].querySelectorAll('.spoiler_changelog'); // Все спойлеры (тег details)
+    var changelogSpoilers = sections[a].querySelectorAll('#changelog .spoiler_changelog'); // Все спойлеры (тег details)
 
     for (var c = 0; c < changelogSpoilers.length; c++) { // Цикл опроса всех спойлеров
       var spoilerReleases = changelogSpoilers[c].querySelectorAll('.release-notes'); // Все релизы в спойлере
@@ -77,7 +77,7 @@ document.addEventListener("DOMContentLoaded", () => { // Событие загу
 
   // Название последней версии (поиск и запись в "Об устройстве")
 
-  var latestVersion = document.querySelector('.changelog-container:first-of-type h3').textContent;
+  var latestVersion = document.querySelector('#changelog .spoiler-container:first-of-type h3').textContent;
 
   if (latestVersion != undefined) {
     document.querySelector('#about #latest-version').textContent = latestVersion; // Если нет ошибок

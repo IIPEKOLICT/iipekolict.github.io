@@ -347,32 +347,43 @@
 
   /* дефолтные кнопки */
 
+  /* СПОЙЛЕРЫ --------------------------------------------------*/
+
+  /* Базовые стили */
+
+  .spoiler-container /* контейнер со спойлером */
+  {
+    padding: 0.25em;
+  }
+  .spoiler-button /* дефолтный стиль кнопки */
+  {
+    flex-direction: column;
+  }
+
+  /* #changelog */
+
+  .spoiler_changelog /* модификация контейнера для раздела "Список изменений" */
+  {
+    height: 2.4em;
+  }
+  .spoiler-button_changelog /* модификация кнопки для раздела "Список изменений" */
+  {
+    margin: 0.25em;
+    padding: 0.25em;
+    height: 2em;
+    font-size: 0.8em;
+  }
+
   /* Другое --------------------------------------------------*/
 
   /* Оформление подстраниц в настройках */
 
   /* Changelog (спойлеры) */
 
-  .changelog-container
-  {
-    padding: 0.25em;
-    height: auto;
-  }
   .release-info
   {
     padding: 0 0.25em;
     height: 2.4em;
-  }
-  .spoiler_changelog
-  {
-    height: 2.4em;
-  }
-  .spoiler-button_changelog::after
-  {
-    margin: 0.25em;
-    padding: 0.25em;
-    height: 2em;
-    font-size: 0.8em;
   }
   .release-notes
   {

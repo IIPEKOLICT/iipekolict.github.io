@@ -287,13 +287,27 @@
         <section class="main-content_container">
           <h3 class="main-content_container-name"></h3>
 
-          <div class="menu-item changelog-container">
+          <div class="menu-item spoiler-container">
+            <div class="menu-item_text-container release-info">
+              <h3 class="menu-item_text menu-item_name"></h3>
+              <time class="menu-item_text menu-item_description" datatime="2020-05-12">12.05.2020</time>
+            </div>
+            <details class="spoiler spoiler_changelog">
+              <summary class="spoiler-button spoiler-button_changelog"></summary>
+              <ul class="release-notes">
+                <li class="release-note">более оптимизированы спойлеры, теперь в них применяется миксование классов</li>
+                <li class="release-note">новый, стоковый вид спойлеров, где массово применяется флекс-позиционирование</li>
+              </ul>
+            </details>
+          </div>
+
+          <div class="menu-item spoiler-container">
             <div class="menu-item_text-container release-info">
               <h3 class="menu-item_text menu-item_name"></h3>
               <time class="menu-item_text menu-item_description" datatime="2020-05-08">08.05.2020</time>
             </div>
-            <details class="spoiler_changelog">
-              <summary class="spoiler-button_changelog"></summary>
+            <details class="spoiler spoiler_changelog">
+              <summary class="spoiler-button spoiler-button_changelog"></summary>
               <ul class="release-notes">
                 <li class="release-note">в настройках появился пункт "Бета-тест"</li>
                 <li class="release-note">заменил все svg, кроме навигационного с инлайного на object-svg, пофиксил тамошний баг с темами (вставкой внешнего ксс-файла, урезанной для свг копии движка тем)</li>
@@ -317,13 +331,13 @@
             </details>
           </div>
 
-          <div class="menu-item changelog-container">
+          <div class="menu-item spoiler-container">
             <div class="menu-item_text-container release-info">
               <h3 class="menu-item_text menu-item_name"></h3>
               <time class="menu-item_text menu-item_description" datatime="2020-05-03">03.05.2020</time>
             </div>
-            <details class="spoiler_changelog">
-              <summary class="spoiler-button_changelog"></summary>
+            <details class="spoiler spoiler_changelog">
+              <summary class="spoiler-button spoiler-button_changelog"></summary>
               <ul class="release-notes">
                 <li class="release-note">все интерфейсные иконки имеют единый стиль оформления, css на засран svg-параметрами</li>
               </ul>
@@ -344,13 +358,13 @@
         <section class="main-content_container">
           <h3 class="main-content_container-name"></h3>
 
-          <div class="menu-item changelog-container">
+          <div class="menu-item spoiler-container">
             <div class="menu-item_text-container release-info">
               <h3 class="menu-item_text menu-item_name"></h3>
               <time class="menu-item_text menu-item_description" datatime="2020-03-26">26.03.2020</time>
             </div>
-            <details class="spoiler_changelog">
-              <summary class="spoiler-button_changelog"></summary>
+            <details class="spoiler spoiler_changelog">
+              <summary class="spoiler-button spoiler-button_changelog"></summary>
               <ul class="release-notes">
                 <li class="release-note">интеграция всех изменений</li>
               </ul>
@@ -366,13 +380,13 @@
             </details>
           </div>
 
-          <div class="menu-item changelog-container">
+          <div class="menu-item spoiler-container">
             <div class="menu-item_text-container release-info">
               <h3 class="menu-item_text menu-item_name"></h3>
               <time class="menu-item_text menu-item_description" datatime="2020-03-23">23.03.2020</time>
             </div>
-            <details class="spoiler_changelog">
-              <summary class="spoiler-button_changelog"></summary>
+            <details class="spoiler spoiler_changelog">
+              <summary class="spoiler-button spoiler-button_changelog"></summary>
               <ul class="release-notes">
                 <li class="release-note">изменил чекпоинт 16:9 на 3:4 в оверлеях (на мобилке не работало с прежним значением)</li>
               </ul>
@@ -388,13 +402,13 @@
             </details>
           </div>
 
-          <div class="menu-item changelog-container">
+          <div class="menu-item spoiler-container">
             <div class="menu-item_text-container release-info">
               <h3 class="menu-item_text menu-item_name"></h3>
               <time class="menu-item_text menu-item_description" datatime="2020-03-22">22.03.2020</time>
             </div>
-            <details class="spoiler_changelog">
-              <summary class="spoiler-button_changelog"></summary>
+            <details class="spoiler spoiler_changelog">
+              <summary class="spoiler-button spoiler-button_changelog"></summary>
               <ul class="release-notes">
                 <li class="release-note">ширина оверлея узких мониторов увеличена до 730 пикселей</li>
                 <li class="release-note">вызов навигации на стратовой по нажатию кнопки рядом с хедером</li>
@@ -404,32 +418,12 @@
                 <li class="release-note">местоположение иконки нав меню хранится в переменной</li>
                 <li class="release-note">все нововведения интегрированы в переключатель тем</li>
               </ul>
-            </details>
-          </div>
-
-          <div class="menu-item changelog-container">
-            <div class="menu-item_text-container release-info">
-              <h3 class="menu-item_text menu-item_name"></h3>
-              <time class="menu-item_text menu-item_description" datatime="2020-03-22">22.03.2020</time>
-            </div>
-            <details class="spoiler_changelog">
-              <summary class="spoiler-button_changelog"></summary>
               <ul class="release-notes">
                 <li class="release-note">сделал ченжлог, большая часть элементов базируется на стилях пунктов меню</li>
                 <li class="release-note">спойлеры раскрываются при нажатии кнопки</li>
                 <li class="release-note">несколько костыльная реализация скрытия/раскрытия спойлеров</li>
                 <li class="release-note">элементы ченжлога построены на флексах</li>
               </ul>
-            </details>
-          </div>
-
-          <div class="menu-item changelog-container">
-            <div class="menu-item_text-container release-info">
-              <h3 class="menu-item_text menu-item_name"></h3>
-              <time class="menu-item_text menu-item_description" datatime="2020-03-21">21.03.2020</time>
-            </div>
-            <details class="spoiler_changelog">
-              <summary class="spoiler-button_changelog"></summary>
               <ul class="release-notes">
                 <li class="release-note">улучшения для сверхшироких экранов</li>
                 <li class="release-note">фикс видимости превьюшек в мобильной версии</li>
@@ -437,36 +431,26 @@
                 <li class="release-note">оптимизация стилей пунктов меню</li>
                 <li class="release-note">навел порядок в файловой системе</li>
               </ul>
-            </details>
-          </div>
-
-          <div class="menu-item changelog-container">
-            <div class="menu-item_text-container release-info">
-              <h3 class="menu-item_text menu-item_name"></h3>
-              <time class="menu-item_text menu-item_description" datatime="2020-03-19">19.03.2020</time>
-            </div>
-            <details class="spoiler_changelog">
-              <summary class="spoiler-button_changelog"></summary>
               <ul class="release-notes">
                 <li class="release-note">улучшения мобильной версии</li>
                 <li class="release-note">теперь размеры плашек и пунктов меню зависят от шрифта</li>
                 <li class="release-note">скрытие картинок в плашках в моильной версии</li>
                 <li class="release-note">большая адаптивность размеров к основному размеру шрифта</li>
               </ul>
-            </details>
-          </div>
-
-          <div class="menu-item changelog-container">
-            <div class="menu-item_text-container release-info">
-              <h3 class="menu-item_text menu-item_name"></h3>
-              <time class="menu-item_text menu-item_description" datatime="2020-03-17">17.03.2020</time>
-            </div>
-            <details class="spoiler_changelog">
-              <summary class="spoiler-button_changelog"></summary>
               <ul class="release-notes">
                 <li class="release-note">вернул обратно анимацию и стиль пунктов основного меню</li>
                 <li class="release-note">добавил виевпорт и сделал оверлей для узких экранов</li>
               </ul>
+            </details>
+          </div>
+
+          <div class="menu-item spoiler-container">
+            <div class="menu-item_text-container release-info">
+              <h3 class="menu-item_text menu-item_name"></h3>
+              <time class="menu-item_text menu-item_description" datatime="2020-03-17">17.03.2020</time>
+            </div>
+            <details class="spoiler spoiler_changelog">
+              <summary class="spoiler-button spoiler-button_changelog"></summary>
               <ul class="release-notes">
                 <li class="release-note">более оптимизированные хедеры и обновленный стиль главного меню</li>
               </ul>
@@ -476,20 +460,6 @@
                 <li class="release-note">кнопка назад терь как переменная и более кликабельна</li>
                 <li class="release-note">серая цветовая схема, а также переключатель цс</li>
               </ul>
-            </details>
-          </div>
-        </section>
-
-        <section class="main-content_container">
-          <h3 class="main-content_container-name"></h3>
-
-          <div class="menu-item changelog-container">
-            <div class="menu-item_text-container release-info">
-              <h3 class="menu-item_text menu-item_name"></h3>
-              <time class="menu-item_text menu-item_description" datatime="2020-03-14">14.03.2020</time>
-            </div>
-            <details class="spoiler_changelog">
-              <summary class="spoiler-button_changelog"></summary>
               <ul class="release-notes">
                 <li class="release-note">пока можно менять только цвет акцента</li>
                 <li class="release-note">динамической окраски радиокнопок пока нет(</li>
@@ -506,13 +476,13 @@
             </details>
           </div>
 
-          <div class="menu-item changelog-container">
+          <div class="menu-item spoiler-container">
             <div class="menu-item_text-container release-info">
               <h3 class="menu-item_text menu-item_name"></h3>
               <time class="menu-item_text menu-item_description" datatime="2020-03-13">13.03.2020</time>
             </div>
-            <details class="spoiler_changelog">
-              <summary class="spoiler-button_changelog"></summary>
+            <details class="spoiler spoiler_changelog">
+              <summary class="spoiler-button spoiler-button_changelog"></summary>
               <ul class="release-notes">
                 <li class="release-note">перепаковал</li>
                 <li class="release-note">упорядочил</li>
@@ -638,7 +608,77 @@
 
       <div class="main-content page-block_main">
         <section class="main-content_container">
+          <h2 class="TEST_main-content_container-name">Спойлеры</h2>
 
+          <div class="menu-item spoiler-container">
+            <details class="spoiler">
+              <summary class="spoiler-button">Имя спойлера</summary>
+              <p class="spoiler-content">Инфа<br/>Инфа</p>
+            </details>
+          </div>
+
+          <div class="menu-item spoiler-container">
+            <details class="spoiler">
+              <summary class="spoiler-button">Имя спойлера</summary>
+              <p class="spoiler-content">Инфа<br/>Инфа<br/>Инфа<br/>Инфа<br/>Инфа<br/>Инфа<br/>Инфа<br/>Инфа<br/>Инфа<br/>Инфа<br/>Инфа<br/>Инфа<br/>Инфа<br/>Инфа<br/>Инфа<br/>Инфа<br/>Инфа<br/>Инфа<br/>Инфа<br/>Инфа<br/>Инфа<br/>Инфа<br/>Инфа<br/>Инфа<br/></p>
+            </details>
+          </div>
+        </section>
+
+        <section class="TEST_main-content_container">
+          <h2 class="TEST_main-content_container-name">Раскладка в 2 колонки</h2>
+
+          <a class="link-hidden" href="">
+            <div class="TEST_navigation-item">
+              <img class="TEST_navigation-item_img" src="res/preview/backup2019.png" />
+              <div class="TEST_navigation-item_text-container">
+                <h3 class="menu-item_text TEST_navigation-item_name">Название сайта</h3>
+                <p class="menu-item_text TEST_navigation-item_description">
+                  Впредверии осеннего призыва резко понадобилось собрать всю изученную
+                  важную информацию в одном месте (на всякий пожарный), заодно потренировался делать сайты.
+                </p>
+              </div>
+            </div>
+          </a>
+
+          <a class="link-hidden" href="">
+            <div class="TEST_navigation-item">
+              <img class="TEST_navigation-item_img" src="res/preview/backup2019.png" />
+              <div class="TEST_navigation-item_text-container">
+                <h3 class="menu-item_text TEST_navigation-item_name">Название сайта</h3>
+                <p class="menu-item_text TEST_navigation-item_description">
+                  Впредверии осеннего призыва резко понадобилось собрать всю изученную
+                  важную информацию в одном месте (на всякий пожарный), заодно потренировался делать сайты.
+                </p>
+              </div>
+            </div>
+          </a>
+
+          <a class="link-hidden" href="">
+            <div class="TEST_navigation-item">
+              <img class="TEST_navigation-item_img" src="res/preview/backup2019.png" />
+              <div class="TEST_navigation-item_text-container">
+                <h3 class="menu-item_text TEST_navigation-item_name">Название сайта</h3>
+                <p class="menu-item_text TEST_navigation-item_description">
+                  Впредверии осеннего призыва резко понадобилось собрать всю изученную
+                  важную информацию в одном месте (на всякий пожарный), заодно потренировался делать сайты.
+                </p>
+              </div>
+            </div>
+          </a>
+
+          <a class="link-hidden" href="">
+            <div class="TEST_navigation-item">
+              <img class="TEST_navigation-item_img" src="res/preview/backup2019.png" />
+              <div class="TEST_navigation-item_text-container">
+                <h3 class="menu-item_text TEST_navigation-item_name">Название сайта</h3>
+                <p class="menu-item_text TEST_navigation-item_description">
+                  Впредверии осеннего призыва резко понадобилось собрать всю изученную
+                  важную информацию в одном месте (на всякий пожарный), заодно потренировался делать сайты.
+                </p>
+              </div>
+            </div>
+          </a>
         </section>
       </div>
     </div>
