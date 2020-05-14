@@ -7,9 +7,18 @@
     <meta name="description" content="Мое портфолио; сайты, сделанные мной" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	  <title>Настройки</title>
+    <!--
     <link rel="stylesheet" href="kernel/css/kernel.css">
     <link rel="stylesheet" href="kernel/css/overlay.css">
     <link rel="stylesheet" href="kernel/css/test.css">
+    -->
+
+
+    <link rel="stylesheet" href="kernel/css/bootloader.css">
+    <link rel="stylesheet" href="kernel/css/changelog.css">
+    <link rel="stylesheet" href="kernel/css/about.css">
+    <link rel="stylesheet" href="kernel/css/test.css">
+    
   </head>
 
   <body class="page">
@@ -294,6 +303,11 @@
             </div>
             <details class="spoiler spoiler_changelog">
               <summary class="spoiler-button spoiler-button_changelog"></summary>
+              <ul class="release-notes">
+                <li class="release-note">закомментил весь css-код, кроме #about, он впоследствии будет переделан</li>
+                <li class="release-note">почистил от мусорных классов css-код</li>
+                <li class="release-note">реформат css-кода, теперь он более читаем и разделен на файлы-разделы со встроенными оверлеями</li>
+              </ul>
               <ul class="release-notes">
                 <li class="release-note">более оптимизированы спойлеры, теперь в них применяется миксование классов</li>
                 <li class="release-note">новый, стоковый вид спойлеров, где массово применяется флекс-позиционирование</li>
@@ -610,16 +624,15 @@
         <section class="main-content_container">
           <h2 class="TEST_main-content_container-name">Спойлеры</h2>
 
-          <div class="menu-item spoiler-container">
-            <details class="spoiler">
-              <summary class="spoiler-button">Имя спойлера</summary>
-              <p class="spoiler-content">Инфа<br/>Инфа</p>
-            </details>
-          </div>
+          <details class="spoiler">
+            <summary>Имя спойлера</summary>
+            <p class="spoiler-content">Инфа<br/>Инфа</p>
+          </details>
 
           <div class="menu-item spoiler-container">
+            <div>Имя спойлера</div>
             <details class="spoiler">
-              <summary class="spoiler-button">Имя спойлера</summary>
+              <summary class="spoiler-button"></summary>
               <p class="spoiler-content">Инфа<br/>Инфа<br/>Инфа<br/>Инфа<br/>Инфа<br/>Инфа<br/>Инфа<br/>Инфа<br/>Инфа<br/>Инфа<br/>Инфа<br/>Инфа<br/>Инфа<br/>Инфа<br/>Инфа<br/>Инфа<br/>Инфа<br/>Инфа<br/>Инфа<br/>Инфа<br/>Инфа<br/>Инфа<br/>Инфа<br/>Инфа<br/></p>
             </details>
           </div>

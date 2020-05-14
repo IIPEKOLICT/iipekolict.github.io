@@ -1,0 +1,46 @@
+/*------------------------------*/
+/*---РАЗДЕЛ RADIO--------------*/
+/*------------------------------*/
+
+.radio-label /* лейблы для радиокнопок */
+{
+  display: block;
+  cursor: pointer;
+  line-height: 2.4em;
+}
+[type="radio"] /* Фикс видимости инпутов для радиокнопок */
+{
+  margin: -1px;
+  padding: 0;
+  height: 1px;
+  width: 1px;
+  position: absolute;
+  overflow: hidden;
+  border: 0;
+  clip: rect(0 0 0 0);
+}
+[type="radio"] + .radio-name /* текст подписи радиокнопки */
+{
+  display: block;
+}
+[type="radio"] + .radio-name::before /* стиль неотмеченной радиокнопки */
+{
+  content: '';
+  margin: 0 0.6em;
+  width: 0.6em;
+  height: 0.6em;
+  vertical-align: -0.3em;
+  display: inline-block;
+  border: 0.3em solid var(--main_bg-color);
+  border-radius: 0.6em;
+  box-shadow: 0 0 0 0.1em var(--accent-color);
+  transition: 0.3s ease all;
+}
+[type="radio"]:checked + .radio-name::before /* стиль отмеченной радиокнопки */
+{
+  background-color: var(--accent-color);
+}
+.label_custom-colored .radio-name /* текст подписи крашенной радиокнопки */
+{
+  color: var(--accent-color);
+}

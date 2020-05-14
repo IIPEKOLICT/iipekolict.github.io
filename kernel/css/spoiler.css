@@ -1,0 +1,110 @@
+/*------------------------------*/
+/*---РАЗДЕЛ SPOILER-------------*/
+/*------------------------------*/
+
+/* Стили контейнера ------------------------------*/
+
+.spoiler-container /* контейнер со спойлером */
+{
+  padding: 0.5em;
+  height: auto;
+  background-color: var(--secondary_bg-color);
+}
+
+/* Стили <details> ------------------------------*/
+
+.spoiler .spoiler-content /* фикс видимости для длинных спойлеров */
+{
+  overflow: hidden;
+}
+.spoiler[open] .spoiler-content /* анимация контента при раскрытии спойлера */
+{
+  animation: spoiler_stock 2s;
+}
+@keyframes spoiler_stock {
+  0%   {max-height: 0;}
+  100% {max-height: 40em;}
+}
+.spoiler[open] .spoiler-button::after /* изменение текста кнопки (псевдоэлемент) при раскрытии спойлера */
+{
+  content: "Скрыть";
+}
+.spoiler_changelog /* модификация контейнера для раздела "Список изменений" */
+{
+  height: 3.5em;
+}
+.spoiler_changelog[open]
+{
+  height: auto;
+}
+
+/* Стили <summary> ------------------------------*/
+
+.spoiler .spoiler-button::-webkit-details-marker { /* фикс дефолтного треугольничка у суммари */
+  display: none;
+}
+.spoiler-button /* дефолтный стиль кнопки */
+{
+  margin: 0.5em;
+  padding: 0.5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--main_bg-color);
+  background-color: var(--accent-color);
+  border-radius: 0.25em;
+  cursor: pointer;
+}
+.spoiler-button_changelog /* модификация кнопки для раздела "Список изменений" */
+{
+  width: 5em;
+  height: 1.5em;
+  float: right;
+}
+.spoiler-button::after /* дефолтная подпись суммари (псевдоэлемент) */
+{
+  content: "Показать";
+}
+.spoiler-button:focus /* фикс выделения суммари */
+{
+  outline: none;
+}
+
+/* Стили для контента ------------------------------*/
+
+.spoiler-content /* дефолтный класс для содержимого спойлера */
+{
+  padding: 0 0.5em;
+}
+
+/*------------------------------*/
+/*---ОВЕРЛЕЙ [6:5]--------------*/
+/*------------------------------*/
+
+@media (max-aspect-ratio: 6/5) /* узкие экраны до 6:5 */
+{
+  /* Стили контейнера ------------------------------*/
+
+  .spoiler-container /* контейнер со спойлером */
+  {
+    padding: 0.25em;
+    height: auto;
+  }
+
+  /* Стили <details> ------------------------------*/
+
+  .spoiler_changelog /* модификация контейнера для раздела "Список изменений" */
+  {
+    height: 2.4em;
+  }
+
+  /* Стили <summary> ------------------------------*/
+
+  .spoiler-button_changelog /* модификация кнопки для раздела "Список изменений" */
+  {
+    margin: 0.25em;
+    padding: 0.25em;
+    height: 2em;
+    font-size: 0.8em;
+  }
+}

@@ -1,0 +1,69 @@
+/*------------------------------*/
+/*---РАЗДЕЛ MAIN----------------*/
+/*------------------------------*/
+
+.main-content /* сток <main> и все блоки, выполняющие его роль */
+{
+  text-align: center;
+  font-size: 1rem;
+}
+.main-content_container /* секции внутри <main> */
+{
+  padding: 0 4vw;
+  border-bottom: 1px solid var(--main_border-color);
+}
+.main-content_container:hover .main-content_container-name /* при наведении на содержимое секции ее заголовок подчеркивается снизу  */
+{
+  border-color: var(--accent-color);
+}
+.main-content_container:last-of-type /* у последней секции нет бордера снизу */
+{
+  border-bottom: none;
+}
+.main-content_container-name /* заголовок секции */
+{
+  margin: 1em 0;
+  padding-bottom: 0.2em;
+  border-bottom: 2px solid var(--main_bg-color);
+  transition: ease-out 0.3s;
+}
+#changelog .main-content_container-name::after /* Допись в заголовок секции в ченжлоге */
+{
+  content: " версия";
+}
+
+/*------------------------------*/
+/*---ОВЕРЛЕЙ [3:4]--------------*/
+/*------------------------------*/
+
+@media (max-aspect-ratio: 3/4) /* диапазон 3:4 и уже */
+{
+  .main-content /* сток <main> и все блоки, выполняющие его роль */
+  {
+    font-size: 1.25rem;
+  }
+}
+
+/*------------------------------*/
+/*---ОВЕРЛЕЙ [3:4 - 6:5]--------*/
+/*------------------------------*/
+
+@media (min-aspect-ratio: 3/4) and (max-aspect-ratio: 6/5) /* диапазон 3:4 - 6:5 */
+{
+  .main-content /* сток <main> и все блоки, выполняющие его роль */
+  {
+    font-size: 1.5rem;
+  }
+}
+
+/*------------------------------*/
+/*---ОВЕРЛЕЙ [6:5]--------------*/
+/*------------------------------*/
+
+@media (max-aspect-ratio: 6/5) /* узкие экраны до 6:5 */
+{
+  .main-content_container /* секции внутри <main> */
+  {
+    padding: 0 1em;
+  }
+}

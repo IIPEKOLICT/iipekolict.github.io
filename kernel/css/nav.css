@@ -1,0 +1,138 @@
+/*------------------------------*/
+/*---РАЗДЕЛ NAV-----------------*/
+/*------------------------------*/
+
+/* Разметка ------------------------------*/
+
+.nav /* материнский блок */
+{
+  text-align: center;
+  font-size: 1rem;
+  line-height: 2em;
+}
+.nav-menu /* контейнер с пунктами меню (<ul>) */
+{
+  margin: inherit;
+  padding-left: 0;
+  width: 100%;
+  display: table;
+  table-layout: fixed;
+  list-style-type: none;
+}
+
+/* Стиль пунктов меню ------------------------------*/
+
+.nav-item /* пункт меню */
+{
+  display: table-cell;
+  transform: scale(0.8);
+  transition: ease-out 0.3s;
+}
+.nav-item:hover /* пункт меню при наведении */
+{
+  color: var(--accent-color);
+  border-color: var(--accent-color);
+}
+.nav-item_header /* модификация пункта меню для хедера */
+{
+  border-top: 2px solid var(--main_border-color);
+}
+.nav-item_footer /* модификация пункта меню для футера */
+{
+  border-bottom: 2px solid var(--main_border-color);
+}
+.nav-item_link /* ссылка, лежащая в каждом из пунктов меню */
+{
+  display: block;
+}
+
+/*------------------------------*/
+/*---ОВЕРЛЕЙ [3:4]--------------*/
+/*------------------------------*/
+
+@media (max-aspect-ratio: 3/4) /* диапазон 3:4 и уже */
+{
+  /* Разметка ------------------------------*/
+
+  #nav /* материнский блок, дополнительные параметры, которые на компах не нужны */
+  {
+    left: 0;
+    bottom: 0;
+    position: fixed;
+    background-color: var(--main_bg-color);
+    border-top: 2px solid var(--accent-color);
+    border-radius: 0.5em 0.5em 0 0;
+  }
+  .nav /* материнский блок */
+  {
+    font-size: 2rem;
+  }
+  .nav_hidden /* класс для скрытия навигационного блока (переключаются скриптом) */
+  {
+    display: none;
+  }
+  .nav_shown /* класс для показа навигационного блока (переключаются скриптом) */
+  {
+    display: block;
+  }
+}
+
+/*------------------------------*/
+/*---ОВЕРЛЕЙ [3:4 - 6:5]--------*/
+/*------------------------------*/
+
+@media (min-aspect-ratio: 3/4) and (max-aspect-ratio: 6/5) /* диапазон 3:4 - 6:5 */
+{
+  /* Разметка ------------------------------*/
+
+  #nav /* материнский блок, дополнительные параметры, которые на компах не нужны */
+  {
+    position: inherit;
+    background: none;
+    border: none;
+  }
+  .nav /* материнский блок */
+  {
+    font-size: 1rem;
+  }
+  .nav_hidden /* класс для скрытия навигационного блока (переключаются скриптом) */
+  {
+    display: block;
+  }
+  .nav_shown /* класс для показа навигационного блока (переключаются скриптом) */
+  {
+    display: none;
+  }
+}
+
+/*------------------------------*/
+/*---ОВЕРЛЕЙ [6:5]--------------*/
+/*------------------------------*/
+
+@media (max-aspect-ratio: 6/5) /* узкие экраны до 6:5 */
+{
+  /* Разметка ------------------------------*/
+
+  .nav-item /* пункт меню */
+  {
+    display: block;
+    background-color: var(--secondary_bg-color);
+    border: 2px solid var(--secondary_bg-color);
+    border-radius: 0.5em;
+  }
+
+  /* Стиль пунктов меню ------------------------------*/
+
+  .nav-item:first-of-type /* самый первый пункт меню */
+  {
+    margin-top: 0.2em;
+  }
+  .nav-item:last-of-type /* самый нижний пункт меню */
+  {
+    margin-bottom: 0.2em;
+  }
+  .nav-item:hover /* пункт меню при наведении */
+  {
+    background-color: var(--hover_bg-color);
+  }
+}

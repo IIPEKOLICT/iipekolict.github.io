@@ -354,10 +354,7 @@
   .spoiler-container /* контейнер со спойлером */
   {
     padding: 0.25em;
-  }
-  .spoiler-button /* дефолтный стиль кнопки */
-  {
-    flex-direction: column;
+    height: auto;
   }
 
   /* #changelog */

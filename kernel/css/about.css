@@ -1,0 +1,248 @@
+/*------------------------------*/
+/*---РАЗДЕЛ ABOUT---------------*/
+/*------------------------------*/
+
+/* Контейнер со спеками в самом верху страницы ------------------------------*/
+
+.about-header
+{
+  padding: 0.5em 0;
+  height: 15em;
+  display: flex;
+  flex-direction: row;
+}
+.about-header .about_primary-text
+{
+  text-transform: uppercase;
+}
+
+/* Картинка и спеки устройства ------------------------------*/
+
+.about-header_img
+{
+  flex: 50%;
+  background: url(../icons/asus-pc.png) no-repeat 50% 50%;
+  background-size: contain;
+  transform: scale(0.8);
+}
+.about-header_specs
+{
+  display: flex;
+  justify-content: space-around;
+  flex: 50%;
+  flex-direction: column;
+}
+
+/* Классы для текста ------------------------------*/
+
+.about_primary-text
+{
+  color: var(--secondary_text-color);
+}
+.about_secondary-text
+{
+  color: var(--main_text-color);
+}
+
+/* Текст в спеках сверху страницы ------------------------------*/
+
+.about-header_specs .menu-item_text-container:first-of-type .about_primary-text::before
+{
+  content: "CPU";
+}
+.about-header_specs .menu-item_text-container:nth-of-type(2) .about_primary-text::before
+{
+  content: "GPU";
+}
+.about-header_specs .menu-item_text-container:nth-of-type(2) .about_secondary-text::before
+{
+  content: "NVIDIA RTX 2080 Super";
+}
+.about-header_specs .menu-item_text-container:nth-of-type(3) .about_primary-text::before
+{
+  content: "хранилище";
+}
+.about-header_specs .menu-item_text-container:nth-of-type(3) .about_secondary-text::before
+{
+  content: "32GB RAM + 2048GB ROM";
+}
+.about-header_specs .menu-item_text-container:last-of-type .about_primary-text::before
+{
+  content: "экран";
+}
+.about-header_specs .menu-item_text-container:last-of-type .about_secondary-text::before
+{
+  content: 'IPS LCD 27" Display';
+}
+
+/* Конструкция из 6 блоков снизу страницы ------------------------------*/
+
+.about-section
+{
+  padding: 1.25em 0;
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1px solid var(--main_border-color);
+}
+.about-section:last-of-type
+{
+  border-bottom: none;
+}
+.about-container
+{
+  height: 6em;
+  flex: 50%;
+}
+.about-container:nth-of-type(odd)
+{
+  border-right: 1px solid var(--main_border-color);
+  padding-right: 1.5em;
+}
+.about-container:nth-of-type(even)
+{
+  padding-left: 1.5em;
+}
+
+/* Текст в 6 блоках снизу ------------------------------*/
+
+.about-section:first-of-type .about-container:first-of-type .about_primary-text::before
+{
+  content: "Название устройства";
+}
+.about-section:first-of-type .about-container:first-of-type .about_secondary-text::before
+{
+  content: "Правильный комп";
+}
+.about-section:first-of-type .about-container:nth-of-type(2) .about_primary-text::before
+{
+  content: "Модель";
+}
+.about-section:first-of-type .about-container:nth-of-type(2) .about_secondary-text::before
+{
+  content: "Asus ROG PC";
+}
+.about-section:nth-of-type(2) .about-container:first-of-type .about_primary-text::before
+{
+  content: "Версия Windows";
+}
+.about-section:nth-of-type(2) .about-container:first-of-type .about_secondary-text::before
+{
+  content: "10 1903 Build";
+}
+.about-section:nth-of-type(2) .about-container:nth-of-type(2) .about_primary-text::before
+{
+  content: "Версия ядра";
+}
+.about-section:last-of-type .about-container:first-of-type .about_primary-text::before
+{
+  content: "Номер сборки";
+}
+.about-section:last-of-type .about-container:nth-of-type(2) .about_primary-text::before
+{
+  content: "Дата сборки";
+}
+
+/*------------------------------*/
+/*---ОВЕРЛЕЙ [3:4]--------------*/
+/*------------------------------*/
+
+@media (max-aspect-ratio: 3/4) /* диапазон 3:4 и уже */
+{
+  /* Картинка и спеки устройства ------------------------------*/
+
+  .about-header_img
+  {
+    background: url(../icons/op7p.png) no-repeat 50% 50%;
+    background-size: 10em;
+  }
+
+  /* Текст в спеках сверху страницы ------------------------------*/
+
+  .about-header_specs .menu-item_text-container:nth-of-type(2) .about_primary-text::before
+  {
+    content: "хранилище";
+  }
+  .about-header_specs .menu-item_text-container:nth-of-type(2) .about_secondary-text::before
+  {
+    content: "8GB RAM + 128GB ROM";
+  }
+  .about-header_specs .menu-item_text-container:nth-of-type(3) .about_primary-text::before
+  {
+    content: "камера";
+  }
+  .about-header_specs .menu-item_text-container:nth-of-type(3) .about_secondary-text::before
+  {
+    content: "48 + 16 + 8 MP Triple Camera";
+  }
+  .about-header_specs .menu-item_text-container:last-of-type .about_secondary-text::before
+  {
+    content: 'Fluid AMOLED 6,67" Display';
+  }
+
+  /* Конструкция из 6 блоков снизу страницы ------------------------------*/
+
+  .about-container
+  {
+    height: 5em;
+  }
+
+  /* Текст в 6 блоках снизу ------------------------------*/
+
+  .about-section:first-of-type .about-container:first-of-type .about_secondary-text::before
+  {
+    content: "Правильный смартфон";
+  }
+  .about-section:first-of-type .about-container:nth-of-type(2) .about_secondary-text::before
+  {
+    content: "OnePlus 7 Pro";
+  }
+  .about-section:nth-of-type(2) .about-container:first-of-type .about_primary-text::before
+  {
+    content: "Версия Android";
+  }
+  .about-section:nth-of-type(2) .about-container:first-of-type .about_secondary-text::before
+  {
+    content: "10";
+  }
+}
+
+/*------------------------------*/
+/*---ОВЕРЛЕЙ [3:4 - 6:5]--------*/
+/*------------------------------*/
+
+@media (min-aspect-ratio: 3/4) and (max-aspect-ratio: 6/5) /* диапазон 3:4 - 6:5 */
+{
+  .about-container
+  {
+    height: 4em;
+  }
+}
+
+/*------------------------------*/
+/*---ОВЕРЛЕЙ [6:5]--------------*/
+/*------------------------------*/
+
+@media (max-aspect-ratio: 6/5) /* узкие экраны до 6:5 */
+{
+  /* Контейнер со спеками в самом верху страницы ------------------------------*/
+
+  .about-header
+  {
+    height: 10em;
+  }
+
+  /* Конструкция из 6 блоков снизу страницы ------------------------------*/
+
+  .about-section
+  {
+    padding: 0.75em 0;
+  }
+  .about-container:nth-of-type(odd)
+  {
+    padding-right: 0.75em;
+  }
+  .about-container:nth-of-type(even)
+  {
+    padding-left: 0.75em;
+  }
+}

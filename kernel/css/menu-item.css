@@ -1,0 +1,109 @@
+/*------------------------------*/
+/*---РАЗДЕЛ MENU-ITEM-----------*/
+/*------------------------------*/
+
+.menu-item /* контейнер/материнский блок */
+{
+  margin: 0.5em 0;
+  height: 5em;
+  text-align: left;
+  border: 1px solid var(--main_bg-color);
+  border-radius: 0.5em;
+  transition: ease-out 0.3s;
+}
+.menu-item:hover /* контейнер при наведении */
+{
+  background-color: var(--hover_bg-color);
+  border-color: var(--accent-color);
+}
+
+/* Иконка слева ------------------------------*/
+
+.menu-item_icon /* контейнер для иконки слева */
+{
+  margin: 0.75em;
+  padding: 0.75em;
+  width: 2em;
+  height: 2em;
+  float: left;
+  background: var(--secondary_bg-color) no-repeat 50% 50%;
+  border-radius: 50%;
+}
+  .menu-item_svg /* Свг-порт для иконки слева */
+  {
+    width: 2em;
+    height: 2em;
+  }
+
+/* Текстовый контейнер справа ------------------------------*/
+
+.menu-item_text-container /* контейнер для текстового содержимого */
+{
+  height: inherit;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.menu-item_text /* общие стили для заголовка и описания */
+{
+  margin: inherit;
+  padding: 0.1em 0;
+}
+.menu-item_name /* заголовок */
+{
+  font-size: 1.2em;
+  line-height: 1.25em;
+}
+.menu-item_description /* описание */
+{
+  color: var(--secondary_text-color);
+  font-size: 0.8em;
+  line-height: 1.875em;
+  white-space: nowrap; /* Отменяем перенос текста */
+  overflow: hidden; /* Обрезаем содержимое */
+  text-overflow: ellipsis; /* Многоточие */
+}
+
+/*------------------------------*/
+/*---ОВЕРЛЕЙ [6:5]--------------*/
+/*------------------------------*/
+
+@media (max-aspect-ratio: 6/5) /* узкие экраны до 6:5 */
+{
+  .menu-item /* контейнер/материнский блок */
+  {
+    height: 3em;
+  }
+
+  /* Иконка слева ------------------------------*/
+
+  .menu-item_icon /* контейнер для иконки слева */
+  {
+    margin: 0.4em;
+    padding: 0.4em;
+    width: 1.4em;
+    height: 1.4em;
+  }
+    .menu-item_svg /* Свг-порт для иконки слева */
+    {
+      width: 1.4em;
+      height: 1.4em;
+    }
+    
+  /* Текстовый контейнер справа ------------------------------*/
+
+  .menu-item_text /* общие стили для заголовка и описания */
+  {
+    padding: 0.05em 0;
+  }
+  .menu-item_name /* заголовок */
+  {
+    font-size: 0.8em;
+    line-height: 1.25em;
+  }
+  .menu-item_description /* описание */
+  {
+    font-size: 0.5em;
+    line-height: 2em;
+  }
+}
