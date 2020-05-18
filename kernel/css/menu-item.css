@@ -56,6 +56,7 @@
 }
 .menu-item_description /* описание */
 {
+  height: 100%;
   color: var(--secondary_text-color);
   font-size: 0.8em;
   line-height: 1.875em;
@@ -89,7 +90,7 @@
       width: 1.4em;
       height: 1.4em;
     }
-    
+
   /* Текстовый контейнер справа ------------------------------*/
 
   .menu-item_text /* общие стили для заголовка и описания */
