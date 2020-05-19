@@ -11,8 +11,11 @@
   background-color: var(--secondary_bg-color);
 }
 
-/* Стили <details> ------------------------------*/
+/* Базовые стили <details> ------------------------------*/
 
+.spoiler .spoiler-button::-webkit-details-marker { /* фикс дефолтного треугольничка у суммари */
+  display: none;
+}
 .spoiler .spoiler-content /* фикс видимости для длинных спойлеров */
 {
   overflow: hidden;
@@ -21,14 +24,17 @@
 {
   animation: spoiler_stock 2s;
 }
-@keyframes spoiler_stock {
-  0%   {max-height: 0;}
-  100% {max-height: 40em;}
-}
+  @keyframes spoiler_stock {
+    0%   {max-height: 0;}
+    100% {max-height: 40em;}
+  }
 .spoiler[open] .spoiler-button::after /* изменение текста кнопки (псевдоэлемент) при раскрытии спойлера */
 {
   content: "Скрыть";
 }
+
+/* Стили <details> в #changelog (кнопка сбоку) ------------------------------*/
+
 .spoiler_changelog /* модификация контейнера для раздела "Список изменений" */
 {
   height: 3.5em;
@@ -38,11 +44,36 @@
   height: auto;
 }
 
-/* Стили <summary> ------------------------------*/
+/* Стили <details> в плиточном меню (замена картинки на описание при нажатии) ------------------------------*/
 
-.spoiler .spoiler-button::-webkit-details-marker { /* фикс дефолтного треугольничка у суммари */
-  display: none;
+.spoiler_tile[open] /* Спойлер в плитке при открытии */
+{
+  height: 11.8em;
+  position: relative; /* Фикс для суммари снизу, 1 часть */
 }
+.spoiler_tile[open] + .menu-tile_img /* Скрытие картинки-превью при открытии спойлера в плитке */
+{
+  height: 0;
+}
+.spoiler_tile[open] .menu-tile_description /* Граница и анимашка для содержимого спойлера плитки */
+{
+  border-top: 1px solid var(--secondary_text-color);
+  animation: TEST_spoiler 0.75s;
+}
+  @keyframes TEST_spoiler {
+    0%   {opacity: 0;}
+    100% {opacity: 1;}
+  }
+.spoiler_tile[open] .spoiler-button_tile /* Фикс для суммари снизу, 2 часть */
+{
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+/* Базовые стили <summary> ------------------------------*/
+
 .spoiler-button /* дефолтный стиль кнопки */
 {
   margin: 0.5em;
@@ -55,12 +86,6 @@
   border-radius: 0.25em;
   cursor: pointer;
 }
-.spoiler-button_changelog /* модификация кнопки для раздела "Список изменений" */
-{
-  width: 5em;
-  height: 1.5em;
-  float: right;
-}
 .spoiler-button::after /* дефолтная подпись суммари (псевдоэлемент) */
 {
   content: "Показать";
@@ -70,11 +95,49 @@
   outline: none;
 }
 
+/* Стили <summary> в #changelog (кнопка сбоку) ------------------------------*/
+
+.spoiler-button_changelog /* модификация кнопки для раздела "Список изменений" */
+{
+  width: 5em;
+  height: 1.5em;
+  float: right;
+}
+
+/* Стили <summary> в плиточном меню (замена картинки на описание при нажатии) ------------------------------*/
+
+.spoiler-button_tile /* Убирает маргины у дефолтного <summary>, ведь в плитке они задаются через паддинг контейнера */
+{
+  margin: 0;
+}
+.spoiler-button_tile::after /* Надпись в <symmary> при неоткрытом спойлере плитки */
+{
+  content: "Подробнее"
+}
+
 /* Стили для контента ------------------------------*/
 
 .spoiler-content /* дефолтный класс для содержимого спойлера */
 {
   padding: 0 0.5em;
+}
+
+/*------------------------------*/
+/*---ОВЕРЛЕЙ [3:4]--------------*/
+/*------------------------------*/
+
+@media (max-aspect-ratio: 3/4) /* диапазон 3:4 и уже */
+{
+  /* Стили <details> в плиточном меню (замена картинки на описание при нажатии) ------------------------------*/
+
+  .spoiler_tile[open] /* Спойлер в плитке при открытии */
+  {
+    height: auto;
+  }
+  .spoiler_tile[open] .menu-tile_description /* Фикс наслоения <summary> для содержимого спойлера плитки */
+  {
+    padding-bottom: 4em;
+  }
 }
 
 /*------------------------------*/
@@ -91,14 +154,14 @@
     height: auto;
   }
 
-  /* Стили <details> ------------------------------*/
+  /* Стили <details> в #changelog (кнопка сбоку) ------------------------------*/
 
   .spoiler_changelog /* модификация контейнера для раздела "Список изменений" */
   {
     height: 2.4em;
   }
 
-  /* Стили <summary> ------------------------------*/
+  /* Стили <summary> в #changelog (кнопка сбоку) ------------------------------*/
 
   .spoiler-button_changelog /* модификация кнопки для раздела "Список изменений" */
   {

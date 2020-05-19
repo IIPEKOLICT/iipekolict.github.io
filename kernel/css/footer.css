@@ -6,6 +6,7 @@
 {
   border-top: 2px solid var(--main_border-color);
   font-size: 0.8rem;
+  clear: both; /* фикс для нормальной работы с флоачеными плитками */
 }
 .footer-container /* контейнер для содержимого футера */
 {

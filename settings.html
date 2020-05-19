@@ -299,12 +299,15 @@
           <div class="menu-item spoiler-container">
             <div class="menu-item_text-container release-info">
               <h3 class="menu-item_text menu-item_name"></h3>
-              <time class="menu-item_text menu-item_description" datatime="2020-05-18">18.05.2020</time>
+              <time class="menu-item_text menu-item_description" datatime="2020-05-19">19.05.2020</time>
             </div>
             <details class="spoiler spoiler_changelog">
               <summary class="spoiler-button spoiler-button_changelog"></summary>
               <ul class="release-notes">
-                <li class="release-note"></li>
+                <li class="release-note">opacity-анимация у спойлера плитки и одинаковые маргины между плитками</li>
+                <li class="release-note">новый способ (float) вызвал выскакивание плиток из контейнеров, для футера сие пофиксил</li>
+                <li class="release-note">фишка с обрезанием текста +троеточием при переполнении у заголовка плитки</li>
+                <li class="release-note">переделал плитки на стартовой, теперь они флоатятся в 2 колонки на десктопной версии, по нажатию на кнопку картинка-превью сменяется описанием</li>
               </ul>
               <ul class="release-notes">
                 <li class="release-note">закомментил весь css-код, кроме #about, он впоследствии будет переделан</li>
@@ -625,7 +628,7 @@
 
       <div class="main-content page-block_main">
         <section class="main-content_container">
-          <h2 class="TEST_main-content_container-name">Спойлеры</h2>
+          <h2 class="TEST_main-content_container-name">Сток спойлеры</h2>
 
           <details class="spoiler">
             <summary>Имя спойлера</summary>
@@ -641,67 +644,10 @@
           </div>
         </section>
 
-        <section class="TEST_main-content_container">
-          <h2 class="TEST_main-content_container-name">Раскладка в 2 колонки</h2>
+        <section class="main-content_container">
+          <h2 class="main-content_container-name">Ссылки на блоки в спойлере-менюхе</h2>
 
-          <a class="link-hidden TEST_navigation-item" href="">
-            <img class="TEST_navigation-item_img" src="res/preview/backup2019.png" />
-            <div class="TEST_navigation-item_text-container">
-              <div class="menu-item_text TEST_navigation-item_name">Название сайта</div>
-              <div class="menu-item_text TEST_navigation-item_description">
-                Впредверии осеннего призыва резко понадобилось собрать всю изученную
-                важную информацию в одном месте (на всякий пожарный), заодно потренировался делать сайты.white-space: nowrap; /* Отменяем перенос текста */
-                overflow: hidden; /* Обрезаем содержимое */
-                text-overflow: ellipsis; /* Многоточие */
-              </div>
-            </div>
-          </a>
 
-          <a class="link-hidden TEST_navigation-item" href="">
-            <img class="TEST_navigation-item_img" src="res/preview/backup2019.png" />
-            <div class="TEST_navigation-item_text-container">
-              <h3 class="menu-item_text TEST_navigation-item_name">Название сайта</h3>
-              <p class="menu-item_text TEST_navigation-item_description">
-                Впредверии осеннего призыва резко понадобилось собрать всю изученную
-                важную информацию в одном месте (на всякий пожарный), заодно потренировался делать сайты.white-space: nowrap; /* Отменяем перенос текста */
-                overflow: hidden; /* Обрезаем содержимое */
-                text-overflow: ellipsis; /* Многоточие */
-              </p>
-            </div>
-          </a>
-
-          <a class="link-hidden TEST_navigation-item" href="">
-            <img class="TEST_navigation-item_img" src="res/preview/backup2019.png" />
-            <div class="TEST_navigation-item_text-container">
-              <h3 class="menu-item_text TEST_navigation-item_name">Название сайта</h3>
-              <p class="menu-item_text TEST_navigation-item_description">
-                Впредверии осеннего призыва резко понадобилось собрать всю изученную
-                важную информацию в одном месте (на всякий пожарный), заодно потренировался делать сайты.
-              </p>
-            </div>
-          </a>
-
-          <a class="link-hidden TEST_navigation-item" href="">
-            <img class="TEST_navigation-item_img" src="res/preview/backup2019.png" />
-            <div class="TEST_navigation-item_text-container">
-              <h3 class="menu-item_text TEST_navigation-item_name">Название сайта</h3>
-              <p class="menu-item_text TEST_navigation-item_description">
-                Впредверии осеннего призыва резко понадобилось собрать всю изученную
-                важную информацию в одном месте (на всякий пожарный), заодно потренировался делать сайты.
-              </p>
-            </div>
-          </a>
-
-          <a class="link-hidden TEST_navigation-item" href="">
-            <img class="TEST_navigation-item_img" src="res/preview/backup2019.png" />
-            <div class="TEST_navigation-item_text-container">
-              <h3 class="menu-item_text TEST_navigation-item_name">Название сайта</h3>
-              <p class="menu-item_text TEST_navigation-item_description">
-                Впредверии осеннего призыва резко понадобилось собрать всю изученную
-                важную информацию в одном месте (на всякий пожарный), заодно потренировался делать сайты.
-              </p>
-            </div>
-          </a>
         </section>
       </div>
     </div>
