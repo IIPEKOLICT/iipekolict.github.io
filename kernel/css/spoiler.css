@@ -8,7 +8,7 @@
 {
   padding: 0.5em;
   height: auto;
-  background-color: var(--secondary_bg-color);
+  background-color: var(--additional_bg-color);
 }
 
 /* Базовые стили <details> ------------------------------*/
@@ -22,9 +22,9 @@
 }
 .spoiler[open] .spoiler-content /* анимация контента при раскрытии спойлера */
 {
-  animation: spoiler_stock 2s;
+  animation: spoiler-content 2s;
 }
-  @keyframes spoiler_stock {
+  @keyframes spoiler-content {
     0%   {max-height: 0;}
     100% {max-height: 40em;}
   }
@@ -58,9 +58,9 @@
 .spoiler_tile[open] .menu-tile_description /* Граница и анимашка для содержимого спойлера плитки */
 {
   border-top: 1px solid var(--secondary_text-color);
-  animation: TEST_spoiler 0.75s;
+  animation: menu-tile_description 0.75s;
 }
-  @keyframes TEST_spoiler {
+  @keyframes menu-tile_description {
     0%   {opacity: 0;}
     100% {opacity: 1;}
   }

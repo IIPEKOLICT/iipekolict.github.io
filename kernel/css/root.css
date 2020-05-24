@@ -6,34 +6,30 @@
 {
   font-size: 4vh; /* дефолтный шрифт */
 
-  /* переменные */
-
   /* цвет акцента */
+
   --accent-color: #80cbc4;
 
   /* цветовая схема, цвета фона */
+
   --main_bg-color: black; /* основной */
-  --secondary_bg-color: #141414; /* второстепенный */
-  --hover_bg-color: #282828; /* при наведении */
+  --secondary_bg-color: #424242; /* второстепенный */
+  --additional_bg-color: #1d1d1d; /* дополнительный */
+  --icon_bg-color: #141414; /* дефолтный фон иконок */
+  --hover_bg-color: #484848; /* при наведении */
+
   /* цветовая схема, цвета текста */
+
   --main_text-color: white; /* основной */
-  --secondary_text-color: #bbb; /* второстепенный */
-  /* цветовая схема, цвет бордеров */
-  --main_border-color: #212121;
-}
+  --secondary_text-color: #7a7a7a; /* второстепенный */
 
-/* Стили <body> и иммитирующих его блоков ------------------------------*/
+  /* цвета границ */
 
-.page /* дефолтные <body> */
-{
-  margin: 0;
-  background-color: var(--main_bg-color);
-  color: var(--main_text-color);
-  font-family: Arial, sans-serif;
-}
-.page-block:not(:target) /* все блоки внутристраничной навигации, кроме выбранной - скрыть */
-{
-  display: none;
+  --main_border-color: #1e1e1e; /* цветовая схема, цвет бордеров */
+
+  /* цвета инпутов */
+
+  --radio_nonactive-color: #898989; /* цвет неотмеченной радиокнопки */
 }
 
 /*------------------------------*/

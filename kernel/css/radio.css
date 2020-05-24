@@ -33,12 +33,17 @@
   display: inline-block;
   border: 0.3em solid var(--main_bg-color);
   border-radius: 0.6em;
-  box-shadow: 0 0 0 0.1em var(--accent-color);
+  box-shadow: 0 0 0 0.1em var(--radio_nonactive-color);
   transition: 0.3s ease all;
+}
+[type="radio"] + .radio-name_interactive::before /* стиль неотмеченной радиокнопки в интерактивном спойлере */
+{
+  border-color: var(--secondary_bg-color); /* да, там другой фон */
 }
 [type="radio"]:checked + .radio-name::before /* стиль отмеченной радиокнопки */
 {
   background-color: var(--accent-color);
+  box-shadow: 0 0 0 0.1em var(--accent-color);
 }
 .label_custom-colored .radio-name /* текст подписи крашенной радиокнопки */
 {

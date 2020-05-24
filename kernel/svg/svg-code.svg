@@ -10,5 +10,5 @@
 
 <!-- Фикс для работы движка тем -->
 
-<?xml-stylesheet type="text/css" href="../css/kernel.css"?> <!-- 2 строчкой -->
-<script xlink:href="../js/themes.js" /> <!-- Внутрь свг-тега -->
+<?xml-stylesheet type="text/css" href="../css/root.css"?> <!-- 2 строчкой -->
+<script xlink:href="../js/theme.js" /> <!-- Внутрь свг-тега -->

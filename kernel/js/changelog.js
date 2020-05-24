@@ -1,10 +1,14 @@
+/*------------------------------------------------------------*/
+/*---МОДУЛЬ ДЛЯ АВТОНЕЙМИНГА В ЧЕНЖЛОГЕ-----------------------*/
+/*------------------------------------------------------------*/
+
 document.addEventListener("DOMContentLoaded", () => { // Событие загузки страницы
 
-  // Переменные
+  // Общие переменные
 
   var allReleases = document.querySelectorAll('#changelog .release-notes'); // Все релизы (для номера сборки)
   var buildNo = allReleases.length; // Счетчик номера сборки
-  var sections = document.querySelectorAll('#changelog .main-content_container'); // Поиск всех секций
+  var sections = document.querySelectorAll('#changelog .main-section'); // Поиск всех секций
   var sectionNo = sections.length; // Счетчик номера секции
 
   // Дата последней сборки (поиск + занести в "Об устройстве")
@@ -15,7 +19,7 @@ document.addEventListener("DOMContentLoaded", () => { // Событие загу
 
     // Нейминг заголовков секций
 
-    var sectionHeader = sections[a].querySelector('.main-content_container-name'); // Поиск
+    var sectionHeader = sections[a].querySelector('.main-header'); // Поиск
     sectionHeader.textContent = sectionNo; // Вычисление названия
 
     // Нейминг версий

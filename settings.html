@@ -7,18 +7,10 @@
     <meta name="description" content="Мое портфолио; сайты, сделанные мной" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	  <title>Настройки</title>
-    <!--
-    <link rel="stylesheet" href="kernel/css/kernel.css">
-    <link rel="stylesheet" href="kernel/css/overlay.css">
-    <link rel="stylesheet" href="kernel/css/test.css">
-    -->
-
-
     <link rel="stylesheet" href="kernel/css/bootloader.css">
     <link rel="stylesheet" href="kernel/css/changelog.css">
     <link rel="stylesheet" href="kernel/css/about.css">
     <link rel="stylesheet" href="kernel/css/test.css">
-
   </head>
 
   <body class="page">
@@ -28,7 +20,7 @@
         <h1 class="header-name header-name_main">Настройки</h1>
       </header>
 
-      <main class="main-content main-content_container">
+      <main class="main main-section">
 
         <a class="link-hidden" href="#accent">
           <section class="menu-item">
@@ -124,9 +116,9 @@
         <h2 class="header-name">Цвет акцента</h2>
       </header>
 
-      <div class="main-content page-block_main">
-        <section class="main-content_container">
-          <h3>Цветовая палитра из чистого дроида</h3>
+      <div class="main page-block_main">
+        <section class="main-section">
+          <h3 class="main-header">Цветовая палитра из чистого дроида</h3>
 
           <label class="radio-label label_custom-colored" for="ac1">
             <input onchange="changeAccent('#80cbc4')"
@@ -140,8 +132,8 @@
           </label>
         </section>
 
-        <section class="main-content_container">
-          <h3>Цветовая палитра из Oxygen OS</h3>
+        <section class="main-section">
+          <h3 class="main-header">Цветовая палитра из Oxygen OS</h3>
 
           <label class="radio-label label_custom-colored" for="ac3">
             <input onchange="changeAccent('#42a5f6')"
@@ -200,8 +192,8 @@
           </label>
         </section>
 
-        <section class="main-content_container">
-          <h3>Другие цвета</h3>
+        <section class="main-section">
+          <h3 class="main-header">Другие цвета</h3>
 
           <label class="radio-label label_custom-colored" for="ac14">
             <input onchange="changeAccent('aqua')"
@@ -230,8 +222,8 @@
           </label>
         </section>
 
-        <section class="main-content_container">
-          <h3>Черный/белый</h3>
+        <section class="main-section">
+          <h3 class="main-header">Черный/белый</h3>
 
           <label class="radio-label label_custom-colored" for="ac19">
             <input onchange="changeAccent('black')"
@@ -255,15 +247,38 @@
         <h2 class="header-name">Цветовая схема</h2>
       </header>
 
-      <div class="main-content page-block_main">
-        <section class="main-content_container">
+      <div class="main page-block_main">
+        <section class="main-section">
+          <h3 class="main-header">Темные</h3>
+
           <label class="radio-label" for="cs1">
-            <input onchange="changeColorScheme('black','#141414','#282828','white','#bbb','#212121')" type="radio" id="cs1" name="color-scheme">
-            <span class="radio-name">Черная</span>
+            <input onchange="changeColorScheme('black','#424242','#1d1d1d','#141414','#505050','white','#7a7a7a','#1e1e1e','#898989')" type="radio" id="cs1" name="color-scheme">
+            <span class="radio-name">Oxygen OS 9</span>
           </label>
           <label class="radio-label" for="cs2">
-            <input onchange="changeColorScheme('#151618','#212121','#313131','white','#b5b7b6','#8f9190')" type="radio" id="cs2" name="color-scheme">
-            <span class="radio-name">Серая</span>
+            <input onchange="changeColorScheme('black','#212121','#121212','#141414','#292929','#d8d8d8','#8a8a8a','#1e1e1e','#898989')" type="radio" id="cs2" name="color-scheme">
+            <span class="radio-name">Oxygen OS 10</span>
+          </label>
+          <label class="radio-label" for="cs3">
+            <input onchange="changeColorScheme('black','#333','#121212','#141414','#414141','white','#8c8c8c','#333333','#666')" type="radio" id="cs3" name="color-scheme">
+            <span class="radio-name">Realme UI</span>
+          </label>
+          <label class="radio-label" for="cs4">
+            <input onchange="changeColorScheme('black','#252525','#232522','#252525','#333','#fafafa','#909090','#3f3f3f','#797979')" type="radio" id="cs4" name="color-scheme">
+            <span class="radio-name">One UI</span>
+          </label>
+          <label class="radio-label" for="cs5">
+            <input onchange="changeColorScheme('#161616','#424242','black','#252525','#505050','white','#b9b9b9','#323232','#c1c1c1')" type="radio" id="cs5" name="color-scheme">
+            <span class="radio-name">Zen UI 6</span>
+          </label>
+        </section>
+
+        <section class="main-section">
+          <h3 class="main-header">Светлые</h3>
+
+          <label class="radio-label" for="cs6">
+            <input onchange="changeColorScheme('#fafafa','white','#dfdfdf','white','#efefef','#191919','#969696','#e6e6e6','#999')" type="radio" id="cs6" name="color-scheme">
+            <span class="radio-name">Oxygen OS 9</span>
           </label>
         </section>
       </div>
@@ -277,8 +292,8 @@
         <h2 class="header-name">Другое</h2>
       </header>
 
-      <div class="main-content page-block_main">
-        <section class="main-content_container">
+      <div class="main page-block_main">
+        <section class="main-section">
 
         </section>
       </div>
@@ -292,17 +307,29 @@
         <h2 class="header-name">Список изменений</h2>
       </header>
 
-      <div class="main-content page-block_main">
-        <section class="main-content_container">
-          <h3 class="main-content_container-name"></h3>
+      <div class="main page-block_main">
+        <section class="main-section">
+          <h3 class="main-header"></h3>
 
           <div class="menu-item spoiler-container">
             <div class="menu-item_text-container release-info">
               <h3 class="menu-item_text menu-item_name"></h3>
-              <time class="menu-item_text menu-item_description" datatime="2020-05-19">19.05.2020</time>
+              <time class="menu-item_text menu-item_description" datatime="2020-05-24">24.05.2020</time>
             </div>
             <details class="spoiler spoiler_changelog">
               <summary class="spoiler-button spoiler-button_changelog"></summary>
+              <ul class="release-notes">
+                <li class="release-note"></li>
+              </ul>
+              <ul class="release-notes">
+                <li class="release-note">добавлен эффект легкого затемения для menu-item при наведении (для лучшей сочетаемости цветов в некоторых ЦС)</li>
+                <li class="release-note">добавлен эффект затемения + блюр для незадействованной области интерактивного спойлера</li>
+                <li class="release-note">новые цветовые схемы: OOS 9 белая, OOS 10, RUI, One UI, Zen UI 6 (черная/белая)</li>
+                <li class="release-note">переработана часть движка тем, связанная с цветовыми схемами (теперь 9 цветов)</li>
+                <li class="release-note">сделал интерактивный спойлер (2 вариант реализации, на дивах, вариант на детаилсах не прокатил), полностью рабочий и с анимацией выезжания снизу</li>
+                <li class="release-note">разделил движок тем на обязательный модуль и дополнительный, в инструментах разрабов больше нет дурацких ошибок, связанных с лишними инструкциями</li>
+                <li class="release-note">почистил от хлама css-код</li>
+              </ul>
               <ul class="release-notes">
                 <li class="release-note">opacity-анимация у спойлера плитки и одинаковые маргины между плитками</li>
                 <li class="release-note">новый способ (float) вызвал выскакивание плиток из контейнеров, для футера сие пофиксил</li>
@@ -375,8 +402,8 @@
           </div>
         </section>
 
-        <section class="main-content_container">
-          <h3 class="main-content_container-name"></h3>
+        <section class="main-section">
+          <h3 class="main-header"></h3>
 
           <div class="menu-item spoiler-container">
             <div class="menu-item_text-container release-info">
@@ -539,8 +566,8 @@
         <h2 class="header-name">Об устройстве</h2>
       </header>
 
-      <div class="main-content page-block_main">
-        <section class="main-content_container">
+      <div class="main page-block_main">
+        <section class="main-section">
           <article class="about-header">
             <div class="about-header_img"></div>
             <aside class="about-header_specs">
@@ -626,33 +653,46 @@
         <h2 class="header-name">Бета-тест</h2>
       </header>
 
-      <div class="main-content page-block_main">
-        <section class="main-content_container">
-          <h2 class="TEST_main-content_container-name">Сток спойлеры</h2>
+      <div class="main page-block_main">
 
-          <details class="spoiler">
-            <summary>Имя спойлера</summary>
-            <p class="spoiler-content">Инфа<br/>Инфа</p>
-          </details>
-
-          <div class="menu-item spoiler-container">
-            <div>Имя спойлера</div>
-            <details class="spoiler">
-              <summary class="spoiler-button"></summary>
-              <p class="spoiler-content">Инфа<br/>Инфа<br/>Инфа<br/>Инфа<br/>Инфа<br/>Инфа<br/>Инфа<br/>Инфа<br/>Инфа<br/>Инфа<br/>Инфа<br/>Инфа<br/>Инфа<br/>Инфа<br/>Инфа<br/>Инфа<br/>Инфа<br/>Инфа<br/>Инфа<br/>Инфа<br/>Инфа<br/>Инфа<br/>Инфа<br/>Инфа<br/></p>
-            </details>
-          </div>
+        <section class="main-section interactive-link" onclick="showInteractive('block1')">
+          <h3 class="main-header interactive-link_name">Блок 1</h3>
         </section>
-
-        <section class="main-content_container">
-          <h2 class="main-content_container-name">Ссылки на блоки в спойлере-менюхе</h2>
-
-
+        <section class="main-section interactive-link" onclick="showInteractive('block2')">
+          <h3 class="main-header interactive-link_name">Блок 2</h3>
+        </section>
+        <section class="main-section interactive-link" onclick="showInteractive('block3')">
+          <h3 class="main-header interactive-link_name">Блок 3</h3>
         </section>
       </div>
     </div>
 
-    <script src="kernel/js/themes.js"></script>
+    <div id="interactive" class="interactive">
+      <div id="interactive-outside" onclick="hideInteractive()"></div>
+      <div id="interactive-container" class="interactive-container">
+        <div id="interactive-button" class="interactive-content interactive-button" onclick="hideInteractive()"></div>
+        <div id="block1" class="interactive-content interactive-block">
+          <label class="radio-label" for="test1">
+            <input type="radio" id="test1" name="test">
+            <span class="radio-name radio-name_interactive">Черная</span>
+          </label>
+          <label class="radio-label" for="test2">
+            <input type="radio" id="test2" name="test">
+            <span class="radio-name radio-name_interactive">Серая</span>
+          </label>
+        </div>
+        <div id="block2" class="interactive-content interactive-block">
+          Блок 2<br />в<br />вв<br />ввв
+        </div>
+        <div id="block3" class="interactive-content interactive-block">
+          Блок 3<br />в<br />вв<br />ввв
+        </div>
+      </div>
+    </div>
+
+    <script src="kernel/js/theme.js"></script>
+    <script src="kernel/js/theme-extended.js"></script>
     <script src="kernel/js/changelog.js"></script>
+    <script src="kernel/js/interactive.js"></script>
   </body>
 </html>

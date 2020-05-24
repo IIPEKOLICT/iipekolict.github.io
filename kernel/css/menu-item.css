@@ -9,12 +9,13 @@
   text-align: left;
   border: 1px solid var(--main_bg-color);
   border-radius: 0.5em;
-  transition: ease-out 0.3s;
+  transition: 0.3s ease;
 }
 .menu-item:hover /* контейнер при наведении */
 {
   background-color: var(--hover_bg-color);
   border-color: var(--accent-color);
+  filter: brightness(75%);
 }
 
 /* Иконка слева ------------------------------*/
@@ -26,7 +27,7 @@
   width: 2em;
   height: 2em;
   float: left;
-  background: var(--secondary_bg-color) no-repeat 50% 50%;
+  background: var(--icon_bg-color) no-repeat 50% 50%;
   border-radius: 50%;
 }
   .menu-item_svg /* Свг-порт для иконки слева */
@@ -56,7 +57,6 @@
 }
 .menu-item_description /* описание */
 {
-  height: 100%;
   color: var(--secondary_text-color);
   font-size: 0.8em;
   line-height: 1.875em;

@@ -2,32 +2,38 @@
 /*---РАЗДЕЛ MAIN----------------*/
 /*------------------------------*/
 
-.main-content /* сток <main> и все блоки, выполняющие его роль */
+.main /* сток <main> и все блоки, выполняющие его роль */
 {
   text-align: center;
   font-size: 1rem;
 }
-.main-content_container /* секции внутри <main> */
+.main-section /* секции внутри <main> */
 {
   padding: 0 4vw;
   border-bottom: 1px solid var(--main_border-color);
 }
-.main-content_container:hover .main-content_container-name /* при наведении на содержимое секции ее заголовок подчеркивается снизу  */
+.main-section:hover .main-header /* при наведении на содержимое секции ее заголовок подчеркивается снизу  */
 {
   border-color: var(--accent-color);
 }
-.main-content_container:last-of-type /* у последней секции нет бордера снизу */
+.main-section:last-of-type /* у последней секции нет бордера снизу */
 {
   border-bottom: none;
 }
-.main-content_container-name /* заголовок секции */
+.main-section::after /* фикс для нормальной работы с флоачеными плитками (невидимый псевдоэлемент в конце секции) */
 {
-  margin: 1em 0;
-  padding-bottom: 0.2em;
+  content: '';
+  display: block;
+  clear: both;
+}
+.main-header /* заголовок секции */
+{
+  margin: 0.8em 0;
+  padding: 0.2em 0;
   border-bottom: 2px solid var(--main_bg-color);
   transition: ease-out 0.3s;
 }
-#changelog .main-content_container-name::after /* Допись в заголовок секции в ченжлоге */
+#changelog .main-header::after /* Допись в заголовок секции в ченжлоге */
 {
   content: " версия";
 }
@@ -38,7 +44,7 @@
 
 @media (max-aspect-ratio: 3/4) /* диапазон 3:4 и уже */
 {
-  .main-content /* сток <main> и все блоки, выполняющие его роль */
+  .main /* сток <main> и все блоки, выполняющие его роль */
   {
     font-size: 1.25rem;
   }
@@ -50,7 +56,7 @@
 
 @media (min-aspect-ratio: 3/4) and (max-aspect-ratio: 6/5) /* диапазон 3:4 - 6:5 */
 {
-  .main-content /* сток <main> и все блоки, выполняющие его роль */
+  .main /* сток <main> и все блоки, выполняющие его роль */
   {
     font-size: 1.5rem;
   }
@@ -62,7 +68,7 @@
 
 @media (max-aspect-ratio: 6/5) /* узкие экраны до 6:5 */
 {
-  .main-content_container /* секции внутри <main> */
+  .main-section /* секции внутри <main> */
   {
     padding: 0 1em;
   }
