@@ -45,6 +45,15 @@
   color: var(--secondary_text-color);
   font-size: 0.6em;
 }
+.spoiler_tile[open] .menu-tile_description /* Граница и анимашка для содержимого спойлера плитки */
+{
+  border-top: 1px solid var(--secondary_text-color);
+  animation: menu-tile_description 0.75s;
+}
+  @keyframes menu-tile_description {
+    0%   {opacity: 0;}
+    100% {opacity: 1;}
+  }
 
 /*------------------------------*/
 /*---ОВЕРЛЕЙ [3:4]--------------*/
@@ -63,6 +72,10 @@
   .menu-tile_img /* Картинка-превью в плитке */
   {
     display: none;
+  }
+  .spoiler_tile[open] .menu-tile_description /* Фикс наслоения <summary> для содержимого спойлера плитки */
+  {
+    padding-bottom: 4em;
   }
 }
 

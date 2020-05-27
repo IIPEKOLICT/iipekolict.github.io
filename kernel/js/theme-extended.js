@@ -26,6 +26,24 @@ document.addEventListener("DOMContentLoaded", () => { // Событие загу
     document.querySelector('input[name="color-scheme"][id="cs1"]')
     .setAttribute('checked','checked');
   }
+  if(localStorage.getItem('checkedHeaderStyleNo')) { // Если в ЛХ есть ключ номера выбранного инпута стиля шапки
+    var checkedHeaderStyleNo = localStorage.getItem('checkedHeaderStyleNo');
+    document.querySelector('input[name="header-style"][id="' + checkedHeaderStyleNo + '"]')
+    .setAttribute('checked','checked'); // Отметить как выбраннный
+  } else {
+    localStorage.setItem('checkedHeaderStyleNo', 'hs1'); // Дефолтные значения, если нет
+    document.querySelector('input[name="header-style"][id="hs1"]')
+    .setAttribute('checked','checked');
+  }
+  if(localStorage.getItem('checkedUiStyleNo')) { // Если в ЛХ есть ключ номера выбранного инпута стиля UI
+    var checkedUiStyleNo = localStorage.getItem('checkedUiStyleNo');
+    document.querySelector('input[name="ui-style"][id="' + checkedUiStyleNo + '"]')
+    .setAttribute('checked','checked'); // Отметить как выбраннный
+  } else {
+    localStorage.setItem('checkedUiStyleNo', 'us1'); // Дефолтные значения, если нет
+    document.querySelector('input[name="ui-style"][id="us1"]')
+    .setAttribute('checked','checked');
+  }
 
   // Покраска инпутов с цветами акцента
 
@@ -43,6 +61,10 @@ const accentInputs = [].slice.call(document.querySelectorAll
   ('input[type="radio"][name="accent-color"]')); // Все инпуты, меняющие цвет акцента
 const colorSchemeInputs = [].slice.call(document.querySelectorAll
   ('input[type="radio"][name="color-scheme"]')); // Все инпуты, меняющие цветовую схему
+const headerStyleInputs = [].slice.call(document.querySelectorAll
+  ('input[type="radio"][name="header-style"]')); // Все инпуты, меняющие стиль шапки
+const uiStyleInputs = [].slice.call(document.querySelectorAll
+  ('input[type="radio"][name="ui-style"]')); // Все инпуты, меняющие стиль UI
 
 for (var i = 0; i < accentInputs.length; i++) { // Цикл опроса всех акц-инпутов
   accentInputs[i].onclick = function() { // Если инпут нажат
@@ -52,6 +74,16 @@ for (var i = 0; i < accentInputs.length; i++) { // Цикл опроса все�
 for (var i = 0; i < colorSchemeInputs.length; i++) { // Цикл опроса всех CS-инпутов
   colorSchemeInputs[i].onclick = function() { // Если инпут нажат
     localStorage.setItem('checkedColorSchemeNo', this.id); // Сохранить ключ номера CS-инпута
+  }
+}
+for (var i = 0; i < headerStyleInputs.length; i++) { // Цикл опроса всех инпутов стиля шапки
+  headerStyleInputs[i].onclick = function() { // Если инпут нажат
+    localStorage.setItem('checkedHeaderStyleNo', this.id); // Сохранить ключ номера инпута
+  }
+}
+for (var i = 0; i < uiStyleInputs.length; i++) { // Цикл опроса всех инпутов стиля UI
+  uiStyleInputs[i].onclick = function() { // Если инпут нажат
+    localStorage.setItem('checkedUiStyleNo', this.id); // Сохранить ключ номера инпута
   }
 }
 
@@ -89,4 +121,37 @@ function changeColorScheme(csp1,csp2,csp3,csp4,csp5,csp6,csp7,csp8,csp9) {
   localStorage.setItem('mainBorderColor', csp8);
   localStorage.setItem('radioNonactiveColor', csp9);
   location.reload();
+}
+
+// Функция смены стиля шапки
+
+headerStyleInputs.forEach(input => input.addEventListener('change', changeHeaderStyle(checkedHS))); // Прослушка
+function changeHeaderStyle(checkedHS) { // Функция смены
+  for (var i = 0; i < headers.length; i++) {
+    if (headers[i].classList.contains(checkedHS) == false) {
+      headers[i].classList.add(checkedHS);
+
+      for (var j = 0; j < headerStyles.length; j++) {
+        if (headers[i].classList.contains(headerStyles[j]) == true && checkedHS != headerStyles[j]) headers[i].classList.remove(headerStyles[j]);
+      }
+    }
+  }
+  localStorage.setItem('headerStyle', checkedHS); // Сохранить ключ
+  location.reload();
+}
+
+// Функция смены стиля UI
+
+uiStyleInputs.forEach(input => input.addEventListener('change', changeUiStyle(usp1))); // Прослушка
+function changeUiStyle(usp1) { // Функция смены
+  if (page.classList.contains(usp1) == false) {
+    page.classList.add(usp1);
+    localStorage.setItem('uiStyle', usp1); // Сохранить ключ
+
+    for (var i = 0; i < uiStyles.length; i++) {
+      if (page.classList.contains(uiStyles[i]) == true && usp1 != uiStyles[i]) page.classList.remove(uiStyles[i]);
+    }
+
+    location.reload();
+  }
 }

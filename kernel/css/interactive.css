@@ -2,44 +2,31 @@
 /*---РАЗДЕЛ INTERACTIVE---------*/
 /*------------------------------*/
 
-#interactive /* вся область, не изменяющиеся при показе/скрытии параметры */
+.interactive /* вся область по дефолту (скрыта) */
 {
   bottom: 0;
   width: 100%;
-  position: fixed;
-  font-size: 1rem;
-}
-.interactive /* вся область по дефолту (скрыта) */
-{
   height: 0;
+  position: fixed;
+  font-size: 1.2rem;
 }
 .interactive_shown /* стиль всей области при показе */
 {
   height: 100%;
   display: flex;
-  flex-direction: column;
   justify-content: flex-end;
-}
-
-/* Незадействованная область сверху и контейнер ------------------------------*/
-
-#interactive-outside /* незадействованная зона сверху, при клике на нее спойлер скрывается */
-{
-  display: flex;
-  flex: auto;
   background-color: rgba(0,0,0,0.5);
-  filter: blur(5em);
 }
-#interactive-container /* контейнер (все, что видно пользователю, по сути сам спойлер). Неизменяющиеся параметры */
-{
-  background-color: var(--secondary_bg-color);
-  border-radius: 1em 1em 0 0;
-  transition: 0.3s ease;
-}
+
+/* Контейнер (диалоговое окно) ------------------------------*/
+
 .interactive-container /* контейнер по дефолту (скрыт) */
 {
   height: 0;
+  background-color: var(--secondary_bg-color);
+  border-radius: 1em 1em 0 0;
   transform: translateY(100%);
+  transition: 0.3s ease;
 }
 .interactive-container_shown /* контейнер при показе */
 {
@@ -64,10 +51,17 @@
   display: block;
 }
 
+.interactive-header
+{
+  margin-top: 0;
+  text-align: center;
+}
+
 /* Кнопка-скрывашка снизу ------------------------------*/
 
-#interactive-button /* стиль кнопки-скрывашки, неизменяющиеся параметры */
+.interactive-button /* стиль кнопки-скрывашки по дефолту (скрыта) */
 {
+  height: 0;
   text-align: center;
   vertical-align: middle;
   color: var(--secondary_text-color);
@@ -75,20 +69,16 @@
   cursor: pointer;
   transition: 0.3s ease;
 }
-#interactive-button:hover /* стиль кнопки-скрывашки при наведении */
+.interactive-button:hover /* стиль кнопки-скрывашки при наведении */
 {
   background-color: var(--hover_bg-color);
   color: var(--main_text-color);
-}
-.interactive-button /* стиль кнопки-скрывашки по дефолту (скрыта) */
-{
-  height: 0;
 }
 .interactive-button_shown /* стиль кнопки-скрывашки при показе */
 {
   height: auto;
 }
-#interactive-button::before /* псевдоэлемент, в котором хранится текст кнопки-скрывашки */
+.interactive-button::before /* псевдоэлемент, в котором хранится текст кнопки-скрывашки */
 {
   content: "Отменить";
 }
@@ -117,10 +107,7 @@
 
 @media (max-aspect-ratio: 3/4) /* диапазон 3:4 и уже */
 {
-  #interactive /* вся область, не изменяющиеся при показе/скрытии параметры */
-  {
-    font-size: 1rem;
-  }
+
 }
 
 /*------------------------------*/
@@ -129,9 +116,13 @@
 
 @media (max-aspect-ratio: 6/5) /* узкие экраны до 6:5 */
 {
-  #interactive /* вся область, не изменяющиеся при показе/скрытии параметры */
+  .interactive /* вся область по дефолту (скрыта) */
   {
-    font-size: 1.2rem;
+    font-size: 1rem;
+  }
+  .interactive_shown /* стиль всей области при показе */
+  {
+    flex-direction: column;
   }
 
   /* Блоки в контейнере ------------------------------*/
@@ -140,11 +131,44 @@
   {
     padding: 1em;
   }
+}
 
-  /* Блоки-ссылки на блоки в спойлере ------------------------------*/
+/*------------------------------*/
+/*---ОВЕРЛЕЙ >[6:5]-------------*/
+/*------------------------------*/
 
-  .interactive-link /* стиль блоков-ссылок */
+@media (min-aspect-ratio: 6/5) /* экраны шире 6:5 */
+{
+  .interactive_shown /* стиль всей области при показе */
   {
-    /* padding: 1em; */
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* Контейнер (диалоговое окно) ------------------------------*/
+
+  .interactive-container /* контейнер по дефолту (скрыт) */
+  {
+    border-radius: 1em;
+    transform: translateY(0);
+    opacity: 0;
+  }
+  .interactive-container_shown /* контейнер при показе */
+  {
+    opacity: 1;
+  }
+
+  /* Блоки в контейнере ------------------------------*/
+
+  .interactive-content /* общие стили для контента в спойлере */
+  {
+    padding: 2em;
+  }
+
+  /* Кнопка-скрывашка снизу ------------------------------*/
+
+  .interactive-button_shown /* стиль кнопки-скрывашки при показе */
+  {
+    display: none;
   }
 }

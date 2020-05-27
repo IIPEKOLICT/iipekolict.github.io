@@ -8,6 +8,14 @@
   border-bottom: 2px solid var(--main_border-color);
   font-size: 2rem;
 }
+.header_ZenUI
+{
+  border-color: var(--accent-color);
+}
+.header_OOSColor
+{
+  background-color: var(--main_border-color);
+}
 .header_nav /* Модификация шапки с навигацией внутри */
 {
   text-align: center;
@@ -16,6 +24,11 @@
 {
   display: flex;
   align-items: center;
+}
+
+.header_RUI
+{
+
 }
 
 /* Иконки ------------------------------*/
@@ -53,6 +66,10 @@
   padding: 1em 0;
   font-size: 1em;
   line-height: 1em;
+}
+.header_ZenUI .header-name
+{
+  color: var(--accent-color);
 }
 .header-name_main /* Заголовок в шапке в главном блоке в HTML-документе */
 {

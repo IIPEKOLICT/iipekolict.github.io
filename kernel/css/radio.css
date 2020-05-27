@@ -45,6 +45,10 @@
   background-color: var(--accent-color);
   box-shadow: 0 0 0 0.1em var(--accent-color);
 }
+.label_custom-colored [type="radio"] + .radio-name::before /* стиль неотмеченной радиокнопки в крашеных лейблах */
+{
+  box-shadow: 0 0 0 0.1em var(--accent-color);
+}
 .label_custom-colored .radio-name /* текст подписи крашенной радиокнопки */
 {
   color: var(--accent-color);

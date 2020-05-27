@@ -11,28 +11,6 @@
   background-color: var(--additional_bg-color);
 }
 
-/* Базовые стили <details> ------------------------------*/
-
-.spoiler .spoiler-button::-webkit-details-marker { /* фикс дефолтного треугольничка у суммари */
-  display: none;
-}
-.spoiler .spoiler-content /* фикс видимости для длинных спойлеров */
-{
-  overflow: hidden;
-}
-.spoiler[open] .spoiler-content /* анимация контента при раскрытии спойлера */
-{
-  animation: spoiler-content 2s;
-}
-  @keyframes spoiler-content {
-    0%   {max-height: 0;}
-    100% {max-height: 40em;}
-  }
-.spoiler[open] .spoiler-button::after /* изменение текста кнопки (псевдоэлемент) при раскрытии спойлера */
-{
-  content: "Скрыть";
-}
-
 /* Стили <details> в #changelog (кнопка сбоку) ------------------------------*/
 
 .spoiler_changelog /* модификация контейнера для раздела "Список изменений" */
@@ -55,22 +33,6 @@
 {
   height: 0;
 }
-.spoiler_tile[open] .menu-tile_description /* Граница и анимашка для содержимого спойлера плитки */
-{
-  border-top: 1px solid var(--secondary_text-color);
-  animation: menu-tile_description 0.75s;
-}
-  @keyframes menu-tile_description {
-    0%   {opacity: 0;}
-    100% {opacity: 1;}
-  }
-.spoiler_tile[open] .spoiler-button_tile /* Фикс для суммари снизу, 2 часть */
-{
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-}
 
 /* Базовые стили <summary> ------------------------------*/
 
@@ -90,9 +52,16 @@
 {
   content: "Показать";
 }
+.spoiler[open] .spoiler-button::after /* изменение текста кнопки (псевдоэлемент) при раскрытии спойлера */
+{
+  content: "Скрыть";
+}
 .spoiler-button:focus /* фикс выделения суммари */
 {
   outline: none;
+}
+.spoiler .spoiler-button::-webkit-details-marker { /* фикс дефолтного треугольничка у суммари */
+  display: none;
 }
 
 /* Стили <summary> в #changelog (кнопка сбоку) ------------------------------*/
@@ -110,6 +79,13 @@
 {
   margin: 0;
 }
+.spoiler_tile[open] .spoiler-button_tile /* Фикс для суммари снизу, 2 часть */
+{
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
 .spoiler-button_tile::after /* Надпись в <symmary> при неоткрытом спойлере плитки */
 {
   content: "Подробнее"
@@ -121,6 +97,18 @@
 {
   padding: 0 0.5em;
 }
+.spoiler .spoiler-content /* фикс видимости для длинных спойлеров */
+{
+  overflow: hidden;
+}
+.spoiler[open] .spoiler-content /* анимация контента при раскрытии спойлера */
+{
+  animation: spoiler-content 2s;
+}
+  @keyframes spoiler-content {
+    0%   {max-height: 0;}
+    100% {max-height: 40em;}
+  }
 
 /*------------------------------*/
 /*---ОВЕРЛЕЙ [3:4]--------------*/
@@ -133,10 +121,6 @@
   .spoiler_tile[open] /* Спойлер в плитке при открытии */
   {
     height: auto;
-  }
-  .spoiler_tile[open] .menu-tile_description /* Фикс наслоения <summary> для содержимого спойлера плитки */
-  {
-    padding-bottom: 4em;
   }
 }
 

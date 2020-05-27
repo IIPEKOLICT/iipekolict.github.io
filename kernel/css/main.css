@@ -7,14 +7,13 @@
   text-align: center;
   font-size: 1rem;
 }
+
+/* Секция ------------------------------*/
+
 .main-section /* секции внутри <main> */
 {
   padding: 0 4vw;
   border-bottom: 1px solid var(--main_border-color);
-}
-.main-section:hover .main-header /* при наведении на содержимое секции ее заголовок подчеркивается снизу  */
-{
-  border-color: var(--accent-color);
 }
 .main-section:last-of-type /* у последней секции нет бордера снизу */
 {
@@ -26,12 +25,19 @@
   display: block;
   clear: both;
 }
+
+/* Заголовок секции ------------------------------*/
+
 .main-header /* заголовок секции */
 {
   margin: 0.8em 0;
   padding: 0.2em 0;
   border-bottom: 2px solid var(--main_bg-color);
   transition: ease-out 0.3s;
+}
+.main-section:hover .main-header /* при наведении на содержимое секции ее заголовок подчеркивается снизу  */
+{
+  border-color: var(--accent-color);
 }
 #changelog .main-header::after /* Допись в заголовок секции в ченжлоге */
 {
@@ -68,6 +74,8 @@
 
 @media (max-aspect-ratio: 6/5) /* узкие экраны до 6:5 */
 {
+  /* Секция ------------------------------*/
+  
   .main-section /* секции внутри <main> */
   {
     padding: 0 1em;

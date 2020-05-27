@@ -11,11 +11,11 @@
     <link rel="stylesheet" href="kernel/css/nav.css">
   </head>
 
-  <body class="page">
+  <body class="page OOS-style">
 
     <header class="header header_nav">
       <h1 class="header-name header-name_main">Стартовая</h1>
-      <div class="header-nav_icon" onclick="showItemByLd('nav','nav_hidden','nav_shown')">
+      <div class="header-nav_icon" onclick="showInteractive('TEST_nav')">
         <svg class="header-icon_svg" width="100" height="100" viewBox="0 0 100 100">
           <g fill="var(--main_text-color)">
 	          <rect x="10" y="10" width="80" height="15"/>
@@ -114,7 +114,23 @@
       </div>
     </footer>
 
+    <div id="interactive" class="interactive">
+      <div id="interactive-container" class="interactive-container">
+        <div id="interactive-button" class="interactive-content interactive-button"></div>
+        <div id="TEST_nav" class="interactive-content interactive-block">
+          <ul class="nav-menu">
+            <li class="nav-item nav-item_header">
+              <a class="link-hidden nav-item_link" href="settings.html#start">Настройки</a>
+            </li>
+            <li class="nav-item nav-item_header">
+              <a class="link-hidden nav-item_link" href="settings.html#start">Настройки</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
     <script src="kernel/js/theme.js"></script>
-    <script src="kernel/js/test.js"></script>
+    <script src="kernel/js/interactive.js"></script>
   </body>
 </html>

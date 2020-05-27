@@ -56,12 +56,7 @@
 
   #nav /* материнский блок, дополнительные параметры, которые на компах не нужны */
   {
-    left: 0;
-    bottom: 0;
-    position: fixed;
-    background-color: var(--main_bg-color);
-    border-top: 2px solid var(--accent-color);
-    border-radius: 0.5em 0.5em 0 0;
+    display: none;
   }
   .nav /* материнский блок */
   {
