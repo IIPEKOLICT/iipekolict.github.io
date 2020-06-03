@@ -31,9 +31,7 @@ document.addEventListener("DOMContentLoaded", () => { // Событие загу
 
       if (versions.length != 1) {
         versions[b].textContent = sectionHeader.textContent + '.' + versionNo; // Если версий в секции не 1
-      } else {
-        versions[b].textContent = sectionHeader.textContent; // Если в секции 1 версия
-      }
+      } else versions[b].textContent = sectionHeader.textContent; // Если в секции 1 версия
 
       versionNo--; // Уменьшение счетчика версий в 1 секции
     }
@@ -54,9 +52,7 @@ document.addEventListener("DOMContentLoaded", () => { // Событие загу
 
         if (releaseNo == spoilerReleases.length) {
           releaseName.textContent = 'Stable '; // Стабл, если это первый релиз в спойлере
-        } else {
-          releaseName.textContent = 'Open Beta ' + releaseNo; // Бета-наименование, если нет
-        }
+        } else releaseName.textContent = 'Open Beta ' + releaseNo; // Бета-наименование, если нет
 
         spoilerReleases[d].insertBefore(releaseName, firstReleaseChild); // Вставка спана
         releaseNo--; // Уменьшение счетчика порядкового номера релизов в 1 спойлере
@@ -68,9 +64,7 @@ document.addEventListener("DOMContentLoaded", () => { // Событие загу
 
   if (buildNo > 0 || buildNo != undefined) {
     document.querySelector('#about #build-number').textContent = '#' + buildNo; // Если нет ошибок
-  } else {
-    document.querySelector('#about #build-number').textContent = 'unknown'; // Если есть
-  }
+  } else document.querySelector('#about #build-number').textContent = 'unknown'; // Если есть
 
   for (var e = 0; e < allReleases.length; e++) { // Цикл опроса абсолютно всех релизов
     var fullReleaseName = allReleases[e].querySelector('span'); // Поиск уже выданного релизу спана с именем релиза
@@ -85,7 +79,5 @@ document.addEventListener("DOMContentLoaded", () => { // Событие загу
 
   if (latestVersion != undefined) {
     document.querySelector('#about #latest-version').textContent = latestVersion; // Если нет ошибок
-  } else {
-    document.querySelector('#about #latest-version').textContent = 'unknown'; // Если есть
-  }
+  } else document.querySelector('#about #latest-version').textContent = 'unknown'; // Если есть
 });

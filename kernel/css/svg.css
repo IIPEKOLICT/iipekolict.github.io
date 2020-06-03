@@ -1,0 +1,23 @@
+/*------------------------------*/
+/*---РАЗДЕЛ SVG-----------------*/
+/*------------------------------*/
+
+.svg_header /* <svg> в шапке */
+{
+  cursor: pointer;
+}
+
+/* Иконка "назад" в шапке ------------------------------*/
+
+.exit-icon_header /* общие стили иконки "назад" в шапке */
+{
+  fill: none;
+  stroke: var(--main_text-color);
+  stroke-width: 8;
+  stroke-miterlimit: 10;
+}
+  .HEADER_RUI .exit-icon_header,
+  .HEADER_ZenUI .exit-icon_header /* стили иконки "назад" в шапке, цвет акцента (для шапки в стиле ZenUI и RUI) */
+  {
+    stroke: var(--accent-color);
+  }

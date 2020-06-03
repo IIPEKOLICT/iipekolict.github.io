@@ -8,27 +8,18 @@
   border-bottom: 2px solid var(--main_border-color);
   font-size: 2rem;
 }
-.header_ZenUI
-{
-  border-color: var(--accent-color);
-}
-.header_OOSColor
-{
-  background-color: var(--main_border-color);
-}
-.header_nav /* Модификация шапки с навигацией внутри */
-{
-  text-align: center;
-}
+  .HEADER_ZenUI /* Шапка при активном стиле шапки "ZenUI" */
+  {
+    border-color: var(--accent-color);
+  }
+  .HEADER_OOSColor /* Шапка при активном стиле шапки "OOS цветная" */
+  {
+    background-color: var(--main_border-color);
+  }
 .header_page /* Модификатор шапки, только для страниц, не являющихся главной в HTML-документе (при ВН) */
 {
   display: flex;
   align-items: center;
-}
-
-.header_RUI
-{
-
 }
 
 /* Иконки ------------------------------*/
@@ -63,17 +54,21 @@
 .header-name /* Сток заголовок в шапке */
 {
   margin: 0;
-  padding: 1em 0;
+  padding: 0.5em 0;
   font-size: 1em;
   line-height: 1em;
 }
-.header_ZenUI .header-name
+  .HEADER_ZenUI .header-name /* Заголовок в шапке при активном стиле шапки "ZenUI" */
+  {
+    color: var(--accent-color);
+  }
+.header_nav .header-name /* Выравнивание по центру, если в шапке есть навигационный блок */
 {
-  color: var(--accent-color);
+  justify-content: center;
 }
 .header-name_main /* Заголовок в шапке в главном блоке в HTML-документе */
 {
-  padding: 1em;
+  padding: 0.5em 1em;
 }
 
 /*------------------------------*/

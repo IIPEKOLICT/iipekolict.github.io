@@ -19,28 +19,21 @@ function hideInteractive() {
     if (interactiveContainer.classList.contains('interactive-container_shown') == true) { // Если контейнер показывается
       interactiveContainer.classList.remove('interactive-container_shown'); // Скрыть контейнер
 
-      if (interactiveButton.classList.contains('interactive-button_shown') == true) { // Если кнопка показывается
-        interactiveButton.classList.remove('interactive-button_shown'); // Скрыть кнопку
-      }
+      if (interactiveButton.classList.contains('interactive-button_shown') == true) interactiveButton.classList.remove('interactive-button_shown'); // Если кнопка показывается - скрыть кнопку
 
       for (var j = 0; j < interactiveBlocks.length; j++) { // Перебор всех блоков
-        if (interactiveBlocks[j].classList.contains('interactive-block_shown') == true) { // Нахождение показываемого
-          interactiveBlocks[j].classList.remove('interactive-block_shown'); // Скрыть
-        }
+        if (interactiveBlocks[j].classList.contains('interactive-block_shown') == true) interactiveBlocks[j].classList.remove('interactive-block_shown'); // Нахождение и скрытие показываемого
       }
     }
   }
 }
-
 
 // Скрытие спойлера при нажатии на кнопку или незадействованную зону
 
 interactive.addEventListener('click', function(event) { // Событие
   if (interactive.contains(event.target) && !interactiveContainer.contains(event.target)) { // Для нез. зоны
     hideInteractive();
-  } else if (interactiveButton.contains(event.target)) { // Для кнопки-скрывашки
-    hideInteractive();
-  }
+  } else if (interactiveButton.contains(event.target)) hideInteractive(); // Для кнопки-скрывашки
 });
 
 // Функция показа спойлера (вешать на ссылки)
@@ -53,18 +46,12 @@ function showInteractive(blockName) {
     if (interactiveContainer.classList.contains('interactive-container_shown') == false) { // Если конт. не показ.
       interactiveContainer.classList.add('interactive-container_shown'); // Показать контенер
 
-      if (interactiveButton.classList.contains('interactive-button_shown') == false) { // Если кнопка не показывается
-        interactiveButton.classList.add('interactive-button_shown'); // Показать кнопку
-      }
+      if (interactiveButton.classList.contains('interactive-button_shown') == false) interactiveButton.classList.add('interactive-button_shown'); // Если кнопка не показывается - показать кнопку
 
       for (var i = 0; i < interactiveBlocks.length; i++) { // Перебор всех блоков
         if (interactiveBlocks[i].id == blockName) { // Блок, на который ссылались
-          if (interactiveBlocks[i].classList.contains('interactive-block_shown') == false) { // Если он скрыт
-            interactiveBlocks[i].classList.add('interactive-block_shown'); // Показать
-          }
-        } else if (interactiveBlocks[i].classList.contains('interactive-block_shown') == true) { // Лишние блоки
-          interactiveBlocks[i].classList.remove('interactive-block_shown'); // Скрыть
-        }
+          if (interactiveBlocks[i].classList.contains('interactive-block_shown') == false) interactiveBlocks[i].classList.add('interactive-block_shown'); // Если он скрыт - показать
+        } else if (interactiveBlocks[i].classList.contains('interactive-block_shown') == true) interactiveBlocks[i].classList.remove('interactive-block_shown'); // Скрыть лишние блоки
       }
     }
   }

@@ -93,7 +93,7 @@ accentInputs.forEach(input => input.addEventListener('change', changeAccent(acp1
 function changeAccent(acp1) { // Функция смены акцента (при нажатии на акц-инпут)
   document.documentElement.style.setProperty('--accent-color', acp1); // Смена цвета
   localStorage.setItem('accentColor', acp1); // Сохранить ключ
-  location.reload();
+  location.reload(); // Перезагрузка, благодаря ей диалоговое окно автоматом закроется при выборе
 }
 
 // Функция смены цветовой схемы
@@ -102,6 +102,8 @@ colorSchemeInputs.forEach(input => input.addEventListener
   ('change', changeColorScheme(csp1,csp2,csp3,csp4,csp5,csp6,csp7,csp8,csp9))); // Прослушка CS-инпутов
 function changeColorScheme(csp1,csp2,csp3,csp4,csp5,csp6,csp7,csp8,csp9) {
   // Функция смены цветовой схемы (при нажатии на CS-инпут)
+
+  // Смена цвета
   document.documentElement.style.setProperty('--main_bg-color', csp1);
   document.documentElement.style.setProperty('--secondary_bg-color', csp2);
   document.documentElement.style.setProperty('--additional_bg-color', csp3);
@@ -111,6 +113,8 @@ function changeColorScheme(csp1,csp2,csp3,csp4,csp5,csp6,csp7,csp8,csp9) {
   document.documentElement.style.setProperty('--secondary_text-color', csp7);
   document.documentElement.style.setProperty('--main_border-color', csp8);
   document.documentElement.style.setProperty('--radio_nonactive-color', csp9);
+
+  // Сохранить ключ
   localStorage.setItem('mainBgColor', csp1);
   localStorage.setItem('secondaryBgColor', csp2);
   localStorage.setItem('additionalBgColor', csp3);
@@ -120,38 +124,39 @@ function changeColorScheme(csp1,csp2,csp3,csp4,csp5,csp6,csp7,csp8,csp9) {
   localStorage.setItem('secondaryTextColor', csp7);
   localStorage.setItem('mainBorderColor', csp8);
   localStorage.setItem('radioNonactiveColor', csp9);
-  location.reload();
+  location.reload(); // Перезагрузка, благодаря ей диалоговое окно автоматом закроется при выборе
 }
 
 // Функция смены стиля шапки
 
-headerStyleInputs.forEach(input => input.addEventListener('change', changeHeaderStyle(checkedHS))); // Прослушка
-function changeHeaderStyle(checkedHS) { // Функция смены
-  for (var i = 0; i < headers.length; i++) {
-    if (headers[i].classList.contains(checkedHS) == false) {
-      headers[i].classList.add(checkedHS);
+headerStyleInputs.forEach(input => input.addEventListener('change', changeHeaderStyle(checkedHS))); // Прослушка инпутов, меняющих стиль шапки
+function changeHeaderStyle(checkedHS) { // Функция смены стиля шапки
+  for (var i = 0; i < headers.length; i++) { // перебор всех шапок
+    if (headers[i].classList.contains(checkedHS) == false) { // если нет нужного класса-стиля
+      headers[i].classList.add(checkedHS); // добавить
 
-      for (var j = 0; j < headerStyles.length; j++) {
-        if (headers[i].classList.contains(headerStyles[j]) == true && checkedHS != headerStyles[j]) headers[i].classList.remove(headerStyles[j]);
+      for (var j = 0; j < headerStyles.length; j++) { // перебор всех вариантов стилей
+        if (headers[i].classList.contains(headerStyles[j]) == true && checkedHS != headerStyles[j]) headers[i].classList.remove(headerStyles[j]); // если есть лишние классы - убрать
       }
     }
   }
-  localStorage.setItem('headerStyle', checkedHS); // Сохранить ключ
-  location.reload();
+  localStorage.setItem('headerStyle', checkedHS); // Сохранить ключ стиля шапки
+  location.reload(); // Перезагрузка, благодаря ей диалоговое окно автоматом закроется при выборе
 }
 
 // Функция смены стиля UI
 
-uiStyleInputs.forEach(input => input.addEventListener('change', changeUiStyle(usp1))); // Прослушка
-function changeUiStyle(usp1) { // Функция смены
-  if (page.classList.contains(usp1) == false) {
-    page.classList.add(usp1);
+uiStyleInputs.forEach(input => input.addEventListener('change', changeUiStyle(usp1))); // Прослушка инпутов, менющих стиль UI
+function changeUiStyle(usp1) { // Функция смены стиля UI
+  if (page.classList.contains(usp1) == false) { // если нет нужного класса-стиля
+    page.classList.add(usp1); // добавить
     localStorage.setItem('uiStyle', usp1); // Сохранить ключ
 
-    for (var i = 0; i < uiStyles.length; i++) {
+    for (var i = 0; i < uiStyles.length; i++) { // перебор всех вариантов стилей
       if (page.classList.contains(uiStyles[i]) == true && usp1 != uiStyles[i]) page.classList.remove(uiStyles[i]);
+       // если есть лишние классы - убрать
     }
 
-    location.reload();
+    location.reload(); // Перезагрузка, благодаря ей диалоговое окно автоматом закроется при выборе
   }
 }

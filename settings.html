@@ -13,11 +13,11 @@
     <link rel="stylesheet" href="kernel/css/test.css">
   </head>
 
-  <body class="page OOS-style">
+  <body class="page UI_OOS">
 
     <div id="start" class="page-block">
       <header class="header">
-        <h1 class="header-name header-name_main">Настройки</h1>
+        <h1 class="header-name header-name_main two-line">Настройки</h1>
       </header>
 
       <main class="main main-section">
@@ -113,7 +113,7 @@
         <div class="header-back_icon" onclick="history.back()">
           <object class="header-icon_svg" type="image/svg+xml" data="kernel/svg/exit-icon_header.svg"></object>
         </div>
-        <h2 class="header-name">Цвет акцента</h2>
+        <h2 class="header-name two-line">Цвет акцента</h2>
       </header>
 
       <div class="main page-block_main">
@@ -244,7 +244,7 @@
         <div class="header-back_icon" onclick="history.back()">
           <object class="header-icon_svg" type="image/svg+xml" data="kernel/svg/exit-icon_header.svg"></object>
         </div>
-        <h2 class="header-name">Цветовая схема</h2>
+        <h2 class="header-name two-line">Цветовая схема</h2>
       </header>
 
       <div class="main page-block_main">
@@ -289,7 +289,7 @@
         <div class="header-back_icon" onclick="history.back()">
           <object class="header-icon_svg" type="image/svg+xml" data="kernel/svg/exit-icon_header.svg"></object>
         </div>
-        <h2 class="header-name">Другое</h2>
+        <h2 class="header-name two-line">Другое</h2>
       </header>
 
       <div class="main page-block_main">
@@ -304,7 +304,7 @@
         <div class="header-back_icon" onclick="history.back()">
           <object class="header-icon_svg" type="image/svg+xml" data="kernel/svg/exit-icon_header.svg"></object>
         </div>
-        <h2 class="header-name">Список изменений</h2>
+        <h2 class="header-name two-line">Список изменений</h2>
       </header>
 
       <div class="main page-block_main">
@@ -314,12 +314,20 @@
           <div class="menu-item spoiler-container">
             <div class="menu-item_text-container release-info">
               <h3 class="menu-item_text menu-item_name"></h3>
-              <time class="menu-item_text menu-item_description" datatime="2020-05-27">27.05.2020</time>
+              <time class="menu-item_text menu-item_description" datatime="2020-06-03">03.06.2020</time>
             </div>
             <details class="spoiler spoiler_changelog">
               <summary class="spoiler-button spoiler-button_changelog"></summary>
+              <div class="delimiter_changelog"></div>
               <ul class="release-notes">
-                <li class="release-note"></li>
+                <li class="release-note">еще какие-то исправления и улучшения</li>
+                <li class="release-note">избавился от необходимости вручную выставлять отступ сверху для первого списка в спойлерах ченжлога за счет псевдоблока-фикса</li>
+                <li class="release-note">заголовки в плиточном меню и шапке теперь двухстрочные</li>
+              </ul>
+              <ul class="release-notes">
+                <li class="release-note">прокомментил все новые стили, функции и т. д.</li>
+                <li class="release-note">создал css-раздел специально для svg</li>
+                <li class="release-note">добил стили шапки, полная работоспособность (иконки "назад" теперь тоже подхватывают)</li>
               </ul>
               <ul class="release-notes">
                 <li class="release-note">сделал 4 варика стиля шапки, остается только допилить свг-часть...</li>
@@ -361,6 +369,7 @@
             </div>
             <details class="spoiler spoiler_changelog">
               <summary class="spoiler-button spoiler-button_changelog"></summary>
+              <div class="delimiter_changelog"></div>
               <ul class="release-notes">
                 <li class="release-note">в настройках появился пункт "Бета-тест"</li>
                 <li class="release-note">заменил все svg, кроме навигационного с инлайного на object-svg, пофиксил тамошний баг с темами (вставкой внешнего ксс-файла, урезанной для свг копии движка тем)</li>
@@ -391,6 +400,7 @@
             </div>
             <details class="spoiler spoiler_changelog">
               <summary class="spoiler-button spoiler-button_changelog"></summary>
+              <div class="delimiter_changelog"></div>
               <ul class="release-notes">
                 <li class="release-note">все интерфейсные иконки имеют единый стиль оформления, css на засран svg-параметрами</li>
               </ul>
@@ -418,6 +428,7 @@
             </div>
             <details class="spoiler spoiler_changelog">
               <summary class="spoiler-button spoiler-button_changelog"></summary>
+              <div class="delimiter_changelog"></div>
               <ul class="release-notes">
                 <li class="release-note">интеграция всех изменений</li>
               </ul>
@@ -440,6 +451,7 @@
             </div>
             <details class="spoiler spoiler_changelog">
               <summary class="spoiler-button spoiler-button_changelog"></summary>
+              <div class="delimiter_changelog"></div>
               <ul class="release-notes">
                 <li class="release-note">изменил чекпоинт 16:9 на 3:4 в оверлеях (на мобилке не работало с прежним значением)</li>
               </ul>
@@ -462,6 +474,7 @@
             </div>
             <details class="spoiler spoiler_changelog">
               <summary class="spoiler-button spoiler-button_changelog"></summary>
+              <div class="delimiter_changelog"></div>
               <ul class="release-notes">
                 <li class="release-note">ширина оверлея узких мониторов увеличена до 730 пикселей</li>
                 <li class="release-note">вызов навигации на стратовой по нажатию кнопки рядом с хедером</li>
@@ -504,6 +517,7 @@
             </div>
             <details class="spoiler spoiler_changelog">
               <summary class="spoiler-button spoiler-button_changelog"></summary>
+              <div class="delimiter_changelog"></div>
               <ul class="release-notes">
                 <li class="release-note">более оптимизированные хедеры и обновленный стиль главного меню</li>
               </ul>
@@ -536,6 +550,7 @@
             </div>
             <details class="spoiler spoiler_changelog">
               <summary class="spoiler-button spoiler-button_changelog"></summary>
+              <div class="delimiter_changelog"></div>
               <ul class="release-notes">
                 <li class="release-note">перепаковал</li>
                 <li class="release-note">упорядочил</li>
@@ -569,7 +584,7 @@
         <div class="header-back_icon" onclick="history.back()">
           <object class="header-icon_svg" type="image/svg+xml" data="kernel/svg/exit-icon_header.svg"></object>
         </div>
-        <h2 class="header-name">Об устройстве</h2>
+        <h2 class="header-name two-line">Об устройстве</h2>
       </header>
 
       <div class="main page-block_main">
@@ -656,11 +671,10 @@
         <div class="header-back_icon" onclick="history.back()">
           <object class="header-icon_svg" type="image/svg+xml" data="kernel/svg/exit-icon_header.svg"></object>
         </div>
-        <h2 class="header-name">Бета-тест</h2>
+        <h2 class="header-name two-line">Бета-тест</h2>
       </header>
 
       <div class="main page-block_main">
-
         <section class="main-section interactive-link" onclick="showInteractive('header-style')">
           <h3 class="main-header interactive-link_name">Стиль шапки</h3>
         </section>
@@ -680,19 +694,19 @@
           <h3 class="interactive-header">Стиль хедера</h3>
 
           <label class="radio-label" for="hs1">
-            <input type="radio" id="hs1" name="header-style" onchange="changeHeaderStyle('header_stock')">
+            <input type="radio" id="hs1" name="header-style" onchange="changeHeaderStyle('HEADER_stock')">
             <span class="radio-name radio-name_interactive">Сток</span>
           </label>
           <label class="radio-label" for="hs2">
-            <input type="radio" id="hs2" name="header-style" onchange="changeHeaderStyle('header_RUI')">
+            <input type="radio" id="hs2" name="header-style" onchange="changeHeaderStyle('HEADER_RUI')">
             <span class="radio-name radio-name_interactive">RUI</span>
           </label>
           <label class="radio-label" for="hs3">
-            <input type="radio" id="hs3" name="header-style" onchange="changeHeaderStyle('header_ZenUI')">
+            <input type="radio" id="hs3" name="header-style" onchange="changeHeaderStyle('HEADER_ZenUI')">
             <span class="radio-name radio-name_interactive">ZenUI</span>
           </label>
           <label class="radio-label" for="hs4">
-            <input type="radio" id="hs4" name="header-style" onchange="changeHeaderStyle('header_OOSColor')">
+            <input type="radio" id="hs4" name="header-style" onchange="changeHeaderStyle('HEADER_OOSColor')">
             <span class="radio-name radio-name_interactive">Как в цветной теме OOS</span>
           </label>
         </div>
@@ -700,19 +714,19 @@
           <h3 class="interactive-header">Стиль UI</h3>
 
           <label class="radio-label" for="us1">
-            <input type="radio" id="us1" name="ui-style" onchange="changeUiStyle('OOS-style')">
+            <input type="radio" id="us1" name="ui-style" onchange="changeUiStyle('UI_OOS')">
             <span class="radio-name radio-name_interactive">OOS</span>
           </label>
           <label class="radio-label" for="us2">
-            <input type="radio" id="us2" name="ui-style" onchange="changeUiStyle('ZenUI-style')">
+            <input type="radio" id="us2" name="ui-style" onchange="changeUiStyle('UI_ZenUI')">
             <span class="radio-name radio-name_interactive">ZenUI</span>
           </label>
           <label class="radio-label" for="us3">
-            <input type="radio" id="us3" name="ui-style" onchange="changeUiStyle('OneUI-style')">
+            <input type="radio" id="us3" name="ui-style" onchange="changeUiStyle('UI_OneUI')">
             <span class="radio-name radio-name_interactive">OneUI</span>
           </label>
           <label class="radio-label" for="us4">
-            <input type="radio" id="us4" name="ui-style" onchange="changeUiStyle('RUI-style')">
+            <input type="radio" id="us4" name="ui-style" onchange="changeUiStyle('UI_RUI')">
             <span class="radio-name radio-name_interactive">RUI</span>
           </label>
         </div>

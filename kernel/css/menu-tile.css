@@ -27,19 +27,17 @@
 
 .menu-tile_img /* Картинка-превью в плитке */
 {
-  height: 8.5em;
+  height: 8em;
   object-fit: cover; /* Фикс для масштабирования, картинку теперь не растянет в колбасу */
   border-radius: inherit;
 }
 .menu-tile_name /* Заголовок плитки */
 {
-  margin: 0.5em 0;
-  white-space: nowrap; /* Отменяем перенос текста */
-  overflow: hidden; /* Обрезаем содержимое */
-  text-overflow: ellipsis; /* Многоточие */
+  justify-content: center;
 }
 .menu-tile_description /* Подробное описание, доступно при открытии спойлера */
 {
+  margin-top: 0.5em;
   padding-top: 0.4em;
   text-align: justify;
   color: var(--secondary_text-color);

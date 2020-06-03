@@ -2,36 +2,36 @@
 /*---РАЗДЕЛ CHANGELOG-----------*/
 /*------------------------------*/
 
-.release-info
+.release-info /* инфа о стабл-сборке (заголовок + дата) */
 {
   padding: 0 1em;
   height: 3.5em;
   position: absolute;
 }
+.delimiter_changelog /* фикс-разделитель кнопки-скрывашки и списков в спойлере */
+{
+  clear: both;
+}
 
 /* Стили <ul> ------------------------------*/
 
-.release-notes
+.release-notes /* дефолтные стили */
 {
   margin: 0;
   padding: 0.4em 1em;
   list-style-type: circle;
   color: var(--main_text-color);
 }
-.release-notes:first-of-type
-{
-  padding-top: 4em;
-}
 
 /* Стили <li> ------------------------------*/
 
-.release-note
+.release-note /* дефолтные стили */
 {
   padding: 0.1em 0;
   color: var(--secondary_text-color);
   font-size: 0.8em;
 }
-.release-note:first-of-type
+.release-note:first-of-type /* первая строчка */
 {
   padding-top: 0.4em;
   border-top: 1px solid var(--secondary_text-color);
@@ -47,7 +47,7 @@
 
 @media (max-aspect-ratio: 6/5) /* узкие экраны до 6:5 */
 {
-  .release-info
+  .release-info /* инфа о стабл-сборке (заголовок + дата) */
   {
     padding: 0 0.25em;
     height: 2.4em;
@@ -55,18 +55,14 @@
 
   /* Стили <ul> ------------------------------*/
 
-  .release-notes
+  .release-notes /* дефолтные стили */
   {
     font-size: 0.8em;
-  }
-  .release-notes:first-of-type
-  {
-    padding-top: 3.5em;
   }
 
   /* Стили <li> ------------------------------*/
 
-  .release-note
+  .release-note /* дефолтные стили */
   {
     font-size: 0.6em;
   }
