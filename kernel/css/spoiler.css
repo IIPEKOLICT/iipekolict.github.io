@@ -8,7 +8,7 @@
 {
   padding: 0.5em;
   height: auto;
-  background-color: var(--additional_bg-color);
+  background-color: var(--secondary_bg-color);
 }
 
 /* Стили <details> в #changelog (кнопка сбоку) ------------------------------*/

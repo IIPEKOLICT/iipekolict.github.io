@@ -15,7 +15,6 @@
 {
   background-color: var(--hover_bg-color);
   border-color: var(--accent-color);
-  filter: brightness(75%);
 }
 
 /* Иконка слева ------------------------------*/

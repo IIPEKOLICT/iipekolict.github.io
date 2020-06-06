@@ -2,48 +2,48 @@
 /*---ДОПОЛНИТЕЛЬНЫЙ МОДУЛЬ ДВИЖКА ТЕМ (ТОЛЬКО ДЛЯ НАСТРОЕК)---*/
 /*------------------------------------------------------------*/
 
-// Проверки локального хранилища
+// Массив с параметрами отмеченных элементов
+
+var checkedInputs = [
+  ['checkedAccentNo','checkedColorSchemeNo','checkedHeaderStyleNo','checkedUiStyleNo'], // Ключи в ЛХ
+  ["accent-color","color-scheme","header-style","ui-style"], // Name-группы инпутов
+  ["ac1","cs1","hs1","us1"] // Стоковые значения id
+]
+
+// Функции-оптимизаторы
+
+function readCheckedNo(checkedArray) { // Функция чтения из ЛХ инфы об отмеченных инпутах
+  for (var i = 0; i < checkedArray[0].length; i++) { // Перебор всех ключей
+    if (localStorage.getItem(checkedArray[0][i])) { // Если в ЛХ есть ключ номера выбранного акц-инпута
+      var checkedNo = localStorage.getItem(checkedArray[0][i]); // Извлечение
+      document.querySelector('input[name=' + checkedArray[1][i] + '][id=' + checkedNo + ']')
+      .setAttribute('checked','checked'); // Отметить как выбраннный
+    } else {
+      localStorage.setItem(checkedArray[0][i], checkedArray[2][i]); // Дефолтные значения, если нет
+      document.querySelector('input[name=' + checkedArray[1][i] + '][id=' + checkedArray[2][i] + ']')
+      .setAttribute('checked','checked');
+    }
+  }
+}
+
+function recordCheckedNo(inputConst,key) { // Функция записи инфы в ЛХ об отмеченном инпуте
+  for (var i = 0; i < inputConst.length; i++) { // Цикл опроса всех инпутов
+    inputConst[i].onclick = function() { // Если инпут нажат
+      localStorage.setItem(key, this.id); // Сохранить ключ номера акц-инпута
+    }
+  }
+}
+
+function varRecord(varArray,varValues) { // функция для записи переменной и ключа ЛХ
+  for (var i = 0; i < varArray[0].length; i++) { // перебор всех названий переменных (массив)
+    document.documentElement.style.setProperty(varArray[0][i], varValues[i]); // установка установка переменным соотв. зачений (2 массив со значениями)
+    localStorage.setItem(varArray[0][i], varValues[i]); // запись инфы в ЛХ
+  }
+}
 
 document.addEventListener("DOMContentLoaded", () => { // Событие загузки страницы
 
-  // Расстановка checked-инпутов
-
-  if(localStorage.getItem('checkedAccentNo')) { // Если в ЛХ есть ключ номера выбранного акц-инпута
-    var checkedAccentNo = localStorage.getItem('checkedAccentNo');
-    document.querySelector('input[name="accent-color"][id="' + checkedAccentNo + '"]')
-    .setAttribute('checked','checked'); // Отметить как выбраннный
-  } else {
-    localStorage.setItem('checkedAccentNo', 'ac1'); // Дефолтные значения, если нет
-    document.querySelector('input[name="accent-color"][id="ac1"]')
-    .setAttribute('checked','checked');
-  }
-  if(localStorage.getItem('checkedColorSchemeNo')) { // Если в ЛХ есть ключ номера выбранного CS-инпута
-    var checkedColorSchemeNo = localStorage.getItem('checkedColorSchemeNo');
-    document.querySelector('input[name="color-scheme"][id="' + checkedColorSchemeNo + '"]')
-    .setAttribute('checked','checked'); // Отметить как выбраннный
-  } else {
-    localStorage.setItem('checkedColorSchemeNo', 'cs1'); // Дефолтные значения, если нет
-    document.querySelector('input[name="color-scheme"][id="cs1"]')
-    .setAttribute('checked','checked');
-  }
-  if(localStorage.getItem('checkedHeaderStyleNo')) { // Если в ЛХ есть ключ номера выбранного инпута стиля шапки
-    var checkedHeaderStyleNo = localStorage.getItem('checkedHeaderStyleNo');
-    document.querySelector('input[name="header-style"][id="' + checkedHeaderStyleNo + '"]')
-    .setAttribute('checked','checked'); // Отметить как выбраннный
-  } else {
-    localStorage.setItem('checkedHeaderStyleNo', 'hs1'); // Дефолтные значения, если нет
-    document.querySelector('input[name="header-style"][id="hs1"]')
-    .setAttribute('checked','checked');
-  }
-  if(localStorage.getItem('checkedUiStyleNo')) { // Если в ЛХ есть ключ номера выбранного инпута стиля UI
-    var checkedUiStyleNo = localStorage.getItem('checkedUiStyleNo');
-    document.querySelector('input[name="ui-style"][id="' + checkedUiStyleNo + '"]')
-    .setAttribute('checked','checked'); // Отметить как выбраннный
-  } else {
-    localStorage.setItem('checkedUiStyleNo', 'us1'); // Дефолтные значения, если нет
-    document.querySelector('input[name="ui-style"][id="us1"]')
-    .setAttribute('checked','checked');
-  }
+  readCheckedNo(checkedInputs); // Расстановка checked-инпутов
 
   // Покраска инпутов с цветами акцента
 
@@ -59,104 +59,49 @@ document.addEventListener("DOMContentLoaded", () => { // Событие загу
 
 const accentInputs = [].slice.call(document.querySelectorAll
   ('input[type="radio"][name="accent-color"]')); // Все инпуты, меняющие цвет акцента
+recordCheckedNo(accentInputs,checkedInputs[0][0]);
+
 const colorSchemeInputs = [].slice.call(document.querySelectorAll
   ('input[type="radio"][name="color-scheme"]')); // Все инпуты, меняющие цветовую схему
+recordCheckedNo(colorSchemeInputs,checkedInputs[0][1]);
+
 const headerStyleInputs = [].slice.call(document.querySelectorAll
   ('input[type="radio"][name="header-style"]')); // Все инпуты, меняющие стиль шапки
+recordCheckedNo(headerStyleInputs,checkedInputs[0][2]);
+
 const uiStyleInputs = [].slice.call(document.querySelectorAll
   ('input[type="radio"][name="ui-style"]')); // Все инпуты, меняющие стиль UI
-
-for (var i = 0; i < accentInputs.length; i++) { // Цикл опроса всех акц-инпутов
-  accentInputs[i].onclick = function() { // Если инпут нажат
-    localStorage.setItem('checkedAccentNo', this.id); // Сохранить ключ номера акц-инпута
-  }
-}
-for (var i = 0; i < colorSchemeInputs.length; i++) { // Цикл опроса всех CS-инпутов
-  colorSchemeInputs[i].onclick = function() { // Если инпут нажат
-    localStorage.setItem('checkedColorSchemeNo', this.id); // Сохранить ключ номера CS-инпута
-  }
-}
-for (var i = 0; i < headerStyleInputs.length; i++) { // Цикл опроса всех инпутов стиля шапки
-  headerStyleInputs[i].onclick = function() { // Если инпут нажат
-    localStorage.setItem('checkedHeaderStyleNo', this.id); // Сохранить ключ номера инпута
-  }
-}
-for (var i = 0; i < uiStyleInputs.length; i++) { // Цикл опроса всех инпутов стиля UI
-  uiStyleInputs[i].onclick = function() { // Если инпут нажат
-    localStorage.setItem('checkedUiStyleNo', this.id); // Сохранить ключ номера инпута
-  }
-}
+recordCheckedNo(uiStyleInputs,checkedInputs[0][3]);
 
 // Функция смены цвета акцента
 
-accentInputs.forEach(input => input.addEventListener('change', changeAccent(acp1))); // Прослушка акц-инпутов
-function changeAccent(acp1) { // Функция смены акцента (при нажатии на акц-инпут)
-  document.documentElement.style.setProperty('--accent-color', acp1); // Смена цвета
-  localStorage.setItem('accentColor', acp1); // Сохранить ключ
-  location.reload(); // Перезагрузка, благодаря ей диалоговое окно автоматом закроется при выборе
+accentInputs.forEach(input => input.addEventListener('change', changeAccent(targetAC))); // Прослушка акц-инпутов
+function changeAccent(targetAC) { // Функция смены акцента (при нажатии на акц-инпут)
+  varRecord(vars[0],targetAC); // запись переменных
 }
 
 // Функция смены цветовой схемы
 
-colorSchemeInputs.forEach(input => input.addEventListener
-  ('change', changeColorScheme(csp1,csp2,csp3,csp4,csp5,csp6,csp7,csp8,csp9))); // Прослушка CS-инпутов
-function changeColorScheme(csp1,csp2,csp3,csp4,csp5,csp6,csp7,csp8,csp9) {
-  // Функция смены цветовой схемы (при нажатии на CS-инпут)
-
-  // Смена цвета
-  document.documentElement.style.setProperty('--main_bg-color', csp1);
-  document.documentElement.style.setProperty('--secondary_bg-color', csp2);
-  document.documentElement.style.setProperty('--additional_bg-color', csp3);
-  document.documentElement.style.setProperty('--icon_bg-color', csp4);
-  document.documentElement.style.setProperty('--hover_bg-color', csp5);
-  document.documentElement.style.setProperty('--main_text-color', csp6);
-  document.documentElement.style.setProperty('--secondary_text-color', csp7);
-  document.documentElement.style.setProperty('--main_border-color', csp8);
-  document.documentElement.style.setProperty('--radio_nonactive-color', csp9);
-
-  // Сохранить ключ
-  localStorage.setItem('mainBgColor', csp1);
-  localStorage.setItem('secondaryBgColor', csp2);
-  localStorage.setItem('additionalBgColor', csp3);
-  localStorage.setItem('iconBgColor', csp4);
-  localStorage.setItem('hoverBgColor', csp5);
-  localStorage.setItem('mainTextColor', csp6);
-  localStorage.setItem('secondaryTextColor', csp7);
-  localStorage.setItem('mainBorderColor', csp8);
-  localStorage.setItem('radioNonactiveColor', csp9);
-  location.reload(); // Перезагрузка, благодаря ей диалоговое окно автоматом закроется при выборе
+colorSchemeInputs.forEach(input => input.addEventListener ('change', changeColorScheme(targetCS)));
+  // Прослушка CS-инпутов
+function changeColorScheme(targetCS) { // Функция смены цветовой схемы (при нажатии на CS-инпут)
+  varRecord(vars[1],targetCS); // запись переменных
 }
 
 // Функция смены стиля шапки
 
-headerStyleInputs.forEach(input => input.addEventListener('change', changeHeaderStyle(checkedHS))); // Прослушка инпутов, меняющих стиль шапки
-function changeHeaderStyle(checkedHS) { // Функция смены стиля шапки
-  for (var i = 0; i < headers.length; i++) { // перебор всех шапок
-    if (headers[i].classList.contains(checkedHS) == false) { // если нет нужного класса-стиля
-      headers[i].classList.add(checkedHS); // добавить
-
-      for (var j = 0; j < headerStyles.length; j++) { // перебор всех вариантов стилей
-        if (headers[i].classList.contains(headerStyles[j]) == true && checkedHS != headerStyles[j]) headers[i].classList.remove(headerStyles[j]); // если есть лишние классы - убрать
-      }
-    }
-  }
-  localStorage.setItem('headerStyle', checkedHS); // Сохранить ключ стиля шапки
-  location.reload(); // Перезагрузка, благодаря ей диалоговое окно автоматом закроется при выборе
+headerStyleInputs.forEach(input => input.addEventListener('change', changeHeaderStyle(targetHS)));
+  // Прослушка инпутов, меняющих стиль шапки
+function changeHeaderStyle(targetHS) { // Функция смены стиля шапки
+  classSwith(styles[0],targetHS);
+  localStorage.setItem(styles[0][0], targetHS); // Сохранить ключ стиля шапки
 }
 
 // Функция смены стиля UI
 
-uiStyleInputs.forEach(input => input.addEventListener('change', changeUiStyle(usp1))); // Прослушка инпутов, менющих стиль UI
-function changeUiStyle(usp1) { // Функция смены стиля UI
-  if (page.classList.contains(usp1) == false) { // если нет нужного класса-стиля
-    page.classList.add(usp1); // добавить
-    localStorage.setItem('uiStyle', usp1); // Сохранить ключ
-
-    for (var i = 0; i < uiStyles.length; i++) { // перебор всех вариантов стилей
-      if (page.classList.contains(uiStyles[i]) == true && usp1 != uiStyles[i]) page.classList.remove(uiStyles[i]);
-       // если есть лишние классы - убрать
-    }
-
-    location.reload(); // Перезагрузка, благодаря ей диалоговое окно автоматом закроется при выборе
-  }
+uiStyleInputs.forEach(input => input.addEventListener('change', changeUiStyle(targetUI)));
+  // Прослушка инпутов, менющих стиль UI
+function changeUiStyle(targetUI) { // Функция смены стиля UI
+  classSwith(styles[1],targetUI);
+  localStorage.setItem(styles[1][0], targetUI); // Сохранить ключ
 }

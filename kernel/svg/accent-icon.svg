@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <?xml-stylesheet type="text/css" href="../css/root.css"?>
-<!-- Generator: Adobe Illustrator 24.1.2, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg version="1.1" id="Слой_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve" style="cursor: pointer;"	class="svg">
+<?xml-stylesheet type="text/css" href="../css/svg.css"?>
+<svg version="1.1" id="Слой_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve" class="svg_settings">
 	<script xlink:href="../js/theme.js" />
 	<g fill="none" stroke="var(--accent-color)">
 		<path d="M62,31c1.1,0,2,0.9,2,2v37c0,1.1-0.9,2-2,2H38c-1.1,0-2-0.9-2-2V33c0-1.1,0.9-2,2-2H62 M62,30H38c-1.7,0-3,1.3-3,3v37

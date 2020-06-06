@@ -12,7 +12,6 @@ var interactiveBlocks = interactiveContainer.querySelectorAll('.interactive-bloc
 // Функция скрытия спойлера (вешать на незадействованную зону и кнопку-скрывашку)
 
 function hideInteractive() {
-
   if (interactive.classList.contains('interactive_shown') == true) { // Если зона показывается
     interactive.classList.remove('interactive_shown'); // Скрыть всю зону
 
@@ -31,9 +30,9 @@ function hideInteractive() {
 // Скрытие спойлера при нажатии на кнопку или незадействованную зону
 
 interactive.addEventListener('click', function(event) { // Событие
-  if (interactive.contains(event.target) && !interactiveContainer.contains(event.target)) { // Для нез. зоны
-    hideInteractive();
-  } else if (interactiveButton.contains(event.target)) hideInteractive(); // Для кнопки-скрывашки
+  if (interactive.contains(event.target) && !interactiveContainer.contains(event.target)) hideInteractive();
+    // Для нез. зоны
+  else if (interactiveButton.contains(event.target)) hideInteractive(); // Для кнопки-скрывашки
 });
 
 // Функция показа спойлера (вешать на ссылки)

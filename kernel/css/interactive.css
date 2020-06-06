@@ -64,14 +64,14 @@
   text-align: center;
   vertical-align: middle;
   color: var(--secondary_text-color);
-  border-top: 2px solid var(--hover_bg-color);
+  border-top: 2px solid var(--secondary_text-color);
   cursor: pointer;
   transition: 0.3s ease;
 }
 .interactive-button:hover /* стиль кнопки-скрывашки при наведении */
 {
-  background-color: var(--hover_bg-color);
-  color: var(--main_text-color);
+  background-color: var(--secondary_text-color);
+  color: var(--hover_bg-color);
 }
 .interactive-button_shown /* стиль кнопки-скрывашки при показе */
 {
@@ -91,7 +91,7 @@
 }
 .interactive-link:hover /* стиль блоков-ссылок при наведении */
 {
-  background-color: var(--hover_bg-color);
+  background-color: var(--main_border-color);
 }
 .interactive-link_name
 {

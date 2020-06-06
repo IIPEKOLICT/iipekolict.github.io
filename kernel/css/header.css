@@ -8,11 +8,11 @@
   border-bottom: 2px solid var(--main_border-color);
   font-size: 2rem;
 }
-  .HEADER_ZenUI /* Шапка при активном стиле шапки "ZenUI" */
+  .header.HEADER_ZenUI /* Шапка при активном стиле шапки "ZenUI" */
   {
     border-color: var(--accent-color);
   }
-  .HEADER_OOSColor /* Шапка при активном стиле шапки "OOS цветная" */
+  .header.HEADER_OOSColor /* Шапка при активном стиле шапки "OOS цветная" */
   {
     background-color: var(--main_border-color);
   }
@@ -58,7 +58,7 @@
   font-size: 1em;
   line-height: 1em;
 }
-  .HEADER_ZenUI .header-name /* Заголовок в шапке при активном стиле шапки "ZenUI" */
+  .header-name.HEADER_ZenUI /* Заголовок в шапке при активном стиле шапки "ZenUI" */
   {
     color: var(--accent-color);
   }

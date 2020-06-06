@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="kernel/css/test.css">
   </head>
 
-  <body class="page UI_OOS">
+  <body class="page">
 
     <div id="start" class="page-block">
       <header class="header">
@@ -121,12 +121,12 @@
           <h3 class="main-header">Цветовая палитра из чистого дроида</h3>
 
           <label class="radio-label label_custom-colored" for="ac1">
-            <input onchange="changeAccent('#80cbc4')"
+            <input onchange="changeAccent(['#80cbc4']), reload()"
             type="radio" id="ac1" name="accent-color" value="#80cbc4">
             <span class="radio-name">AOSP</span>
           </label>
           <label class="radio-label label_custom-colored" for="ac2">
-            <input onchange="changeAccent('#2381e1')"
+            <input onchange="changeAccent(['#2381e1']), reload()"
             type="radio" id="ac2" name="accent-color" value="#2381e1">
             <span class="radio-name">Pixel Expierence</span>
           </label>
@@ -136,57 +136,57 @@
           <h3 class="main-header">Цветовая палитра из Oxygen OS</h3>
 
           <label class="radio-label label_custom-colored" for="ac3">
-            <input onchange="changeAccent('#42a5f6')"
+            <input onchange="changeAccent(['#42a5f6']), reload()"
             type="radio" id="ac3" name="accent-color" value="#42a5f6">
             <span class="radio-name">OOS Blue</span>
           </label>
           <label class="radio-label label_custom-colored" for="ac4">
-            <input onchange="changeAccent('#9675ce')"
+            <input onchange="changeAccent(['#9675ce']), reload()"
             type="radio" id="ac4" name="accent-color" value="#9675ce">
             <span class="radio-name">OOS Purple</span>
           </label>
           <label class="radio-label label_custom-colored" for="ac5">
-            <input onchange="changeAccent('#eb0028')"
+            <input onchange="changeAccent(['#eb0028']), reload()"
             type="radio" id="ac5" name="accent-color" value="#eb0028">
             <span class="radio-name">OOS Red</span>
           </label>
           <label class="radio-label label_custom-colored" for="ac6">
-            <input onchange="changeAccent('#cc6f4e')"
+            <input onchange="changeAccent(['#cc6f4e']), reload()"
             type="radio" id="ac6" name="accent-color" value="#cc6f4e">
             <span class="radio-name">OOS Brown</span>
           </label>
           <label class="radio-label label_custom-colored" for="ac7">
-            <input onchange="changeAccent('#25c6da')"
+            <input onchange="changeAccent(['#25c6da']), reload()"
             type="radio" id="ac7" name="accent-color" value="#25c6da">
             <span class="radio-name">OOS Cyan</span>
           </label>
           <label class="radio-label label_custom-colored" for="ac8">
-            <input onchange="changeAccent('#4461d6')"
+            <input onchange="changeAccent(['#4461d6']), reload()"
             type="radio" id="ac8" name="accent-color" value="#4461d6">
             <span class="radio-name">OOS DarkBlue</span>
           </label>
           <label class="radio-label label_custom-colored" for="ac9">
-            <input onchange="changeAccent('#e5a544')"
+            <input onchange="changeAccent(['#e5a544']), reload()"
             type="radio" id="ac9" name="accent-color" value="#e5a544">
             <span class="radio-name">OOS Orange</span>
           </label>
           <label class="radio-label label_custom-colored" for="ac10">
-            <input onchange="changeAccent('#f06292')"
+            <input onchange="changeAccent(['#f06292']), reload()"
             type="radio" id="ac10" name="accent-color" value="#f06292">
             <span class="radio-name">OOS Pink</span>
           </label>
           <label class="radio-label label_custom-colored" for="ac11">
-            <input onchange="changeAccent('#208559')"
+            <input onchange="changeAccent(['#208559']), reload()"
             type="radio" id="ac11" name="accent-color" value="#208559">
             <span class="radio-name">OOS DarkGreen</span>
           </label>
           <label class="radio-label label_custom-colored" for="ac12">
-            <input onchange="changeAccent('#7dc32f')"
+            <input onchange="changeAccent(['#7dc32f']), reload()"
             type="radio" id="ac12" name="accent-color" value="#7dc32f">
             <span class="radio-name">OOS Green</span>
           </label>
           <label class="radio-label label_custom-colored" for="ac13">
-            <input onchange="changeAccent('#b968c7')"
+            <input onchange="changeAccent(['#b968c7']), reload()"
             type="radio" id="ac13" name="accent-color" value="#b968c7">
             <span class="radio-name">OOS LightPurple</span>
           </label>
@@ -196,27 +196,27 @@
           <h3 class="main-header">Другие цвета</h3>
 
           <label class="radio-label label_custom-colored" for="ac14">
-            <input onchange="changeAccent('aqua')"
+            <input onchange="changeAccent(['aqua']), reload()"
             type="radio" id="ac14" name="accent-color" value="aqua">
             <span class="radio-name">Васильковый</span>
           </label>
           <label class="radio-label label_custom-colored" for="ac15">
-            <input onchange="changeAccent('maroon')"
+            <input onchange="changeAccent(['maroon']), reload()"
             type="radio" id="ac15" name="accent-color" value="maroon">
             <span class="radio-name">Бордовый</span>
           </label>
           <label class="radio-label label_custom-colored" for="ac16">
-            <input onchange="changeAccent('navy')"
+            <input onchange="changeAccent(['navy']), reload()"
             type="radio" id="ac16" name="accent-color" value="navy">
             <span class="radio-name">Темно-синий</span>
           </label>
           <label class="radio-label label_custom-colored" for="ac17">
-            <input onchange="changeAccent('olive')"
+            <input onchange="changeAccent(['olive']), reload()"
             type="radio" id="ac17" name="accent-color" value="olive">
             <span class="radio-name">Болотистый</span>
           </label>
           <label class="radio-label label_custom-colored" for="ac18">
-            <input onchange="changeAccent('teal')"
+            <input onchange="changeAccent(['teal']), reload()"
             type="radio" id="ac18" name="accent-color" value="teal">
             <span class="radio-name">Сине-зеленый</span>
           </label>
@@ -226,12 +226,12 @@
           <h3 class="main-header">Черный/белый</h3>
 
           <label class="radio-label label_custom-colored" for="ac19">
-            <input onchange="changeAccent('black')"
+            <input onchange="changeAccent(['black']), reload()"
             type="radio" id="ac19" name="accent-color" value="black" disabled>
             <span class="radio-name">Черный</span>
           </label>
           <label class="radio-label label_custom-colored" for="ac20">
-            <input onchange="changeAccent('white')"
+            <input onchange="changeAccent(['white']), reload()"
             type="radio" id="ac20" name="accent-color" value="white" disabled>
             <span class="radio-name">Белый</span>
           </label>
@@ -252,23 +252,23 @@
           <h3 class="main-header">Темные</h3>
 
           <label class="radio-label" for="cs1">
-            <input onchange="changeColorScheme('black','#424242','#1d1d1d','#141414','#505050','white','#7a7a7a','#1e1e1e','#898989')" type="radio" id="cs1" name="color-scheme">
+            <input onchange="changeColorScheme(['black','#424242','#141414','#1a1a1a','white','#7a7a7a','#1e1e1e','#898989']), reload()" type="radio" id="cs1" name="color-scheme">
             <span class="radio-name">Oxygen OS 9</span>
           </label>
           <label class="radio-label" for="cs2">
-            <input onchange="changeColorScheme('black','#212121','#121212','#141414','#292929','#d8d8d8','#8a8a8a','#1e1e1e','#898989')" type="radio" id="cs2" name="color-scheme">
+            <input onchange="changeColorScheme(['black','#212121','#141414','#1a1a1a','#d8d8d8','#8a8a8a','#1e1e1e','#898989']), reload()" type="radio" id="cs2" name="color-scheme">
             <span class="radio-name">Oxygen OS 10</span>
           </label>
           <label class="radio-label" for="cs3">
-            <input onchange="changeColorScheme('black','#333','#121212','#141414','#414141','white','#8c8c8c','#333333','#666')" type="radio" id="cs3" name="color-scheme">
+            <input onchange="changeColorScheme(['black','#333','#141414','#252525','white','#8c8c8c','#333333','#666']), reload()" type="radio" id="cs3" name="color-scheme">
             <span class="radio-name">Realme UI</span>
           </label>
           <label class="radio-label" for="cs4">
-            <input onchange="changeColorScheme('black','#252525','#232522','#252525','#333','#fafafa','#909090','#3f3f3f','#797979')" type="radio" id="cs4" name="color-scheme">
+            <input onchange="changeColorScheme(['black','#252525','#252525','#333','#fafafa','#909090','#3f3f3f','#797979']), reload()" type="radio" id="cs4" name="color-scheme">
             <span class="radio-name">One UI</span>
           </label>
           <label class="radio-label" for="cs5">
-            <input onchange="changeColorScheme('#161616','#424242','black','#252525','#505050','white','#b9b9b9','#323232','#c1c1c1')" type="radio" id="cs5" name="color-scheme">
+            <input onchange="changeColorScheme(['#161616','#424242','#252525','#505050','white','#b9b9b9','#323232','#c1c1c1']), reload()" type="radio" id="cs5" name="color-scheme">
             <span class="radio-name">Zen UI 6</span>
           </label>
         </section>
@@ -277,7 +277,7 @@
           <h3 class="main-header">Светлые</h3>
 
           <label class="radio-label" for="cs6">
-            <input onchange="changeColorScheme('#fafafa','white','#dfdfdf','white','#efefef','#191919','#969696','#e6e6e6','#999')" type="radio" id="cs6" name="color-scheme">
+            <input onchange="changeColorScheme(['#fafafa','white','white','#efefef','#191919','#969696','#e6e6e6','#999']), reload()" type="radio" id="cs6" name="color-scheme">
             <span class="radio-name">Oxygen OS 9</span>
           </label>
         </section>
@@ -314,11 +314,17 @@
           <div class="menu-item spoiler-container">
             <div class="menu-item_text-container release-info">
               <h3 class="menu-item_text menu-item_name"></h3>
-              <time class="menu-item_text menu-item_description" datatime="2020-06-03">03.06.2020</time>
+              <time class="menu-item_text menu-item_description" datatime="2020-06-07">07.06.2020</time>
             </div>
             <details class="spoiler spoiler_changelog">
               <summary class="spoiler-button spoiler-button_changelog"></summary>
               <div class="delimiter_changelog"></div>
+              <ul class="release-notes release_opened">
+                <li class="release-note">переделан и приведен к адекватному виду раздел #about</li>
+                <li class="release-note">исправлены проблемы с цветовой схемой и выделением элементов</li>
+                <li class="release-note">новый алгоритм нейминга версий в ченжлоге, теперь есть closed и open beta сборки</li>
+                <li class="release-note">нехило оптимизирован и улучшен движок тем</li>
+              </ul>
               <ul class="release-notes">
                 <li class="release-note">еще какие-то исправления и улучшения</li>
                 <li class="release-note">избавился от необходимости вручную выставлять отступ сверху для первого списка в спойлерах ченжлога за счет псевдоблока-фикса</li>
@@ -588,55 +594,58 @@
       </header>
 
       <div class="main page-block_main">
-        <section class="main-section">
-          <article class="about-header">
-            <div class="about-header_img"></div>
-            <aside class="about-header_specs">
-              <div class="menu-item_text-container">
-                <div class="menu-item_text menu-item_name about_primary-text"></div>
-                <div class="menu-item_text menu-item_description about_secondary-text">
-                  <span class="txt-in-pc">AMD Ryzen<sup class="sup">TM</sup> 9 3900X</span>
-                  <span class="txt-in-mobile">Snapdragon<sup class="sup">TM</sup> 855</span>
-                </div>
+        <section class="main-section about-header">
+          <div class="about-header_img"></div>
+          <aside class="about-header_specs">
+            <div id="about-1spec" class="menu-item_text-container">
+              <div class="menu-item_text menu-item_name about_primary-text"></div>
+              <div class="menu-item_text menu-item_description about_secondary-text">
+                <span class="txt-in-pc">AMD Ryzen<sup class="sup">TM</sup> 9 3900X</span>
+                <span class="txt-in-mobile text_OOS">Snapdragon<sup class="sup">TM</sup> 855</span>
+                <span class="txt-in-mobile text_ZenUI">Snapdragon<sup class="sup">TM</sup> 855</span>
+                <span class="txt-in-mobile text_RUI">Snapdragon<sup class="sup">TM</sup> 710</span>
+                <span class="txt-in-mobile text_OneUI">Snapdragon<sup class="sup">TM</sup> 730</span>
               </div>
-              <div class="menu-item_text-container">
-                <div class="menu-item_text menu-item_name about_primary-text"></div>
-                <div class="menu-item_text menu-item_description about_secondary-text"></div>
-              </div>
-              <div class="menu-item_text-container">
-                <div class="menu-item_text menu-item_name about_primary-text"></div>
-                <div class="menu-item_text menu-item_description about_secondary-text"></div>
-              </div>
-              <div class="menu-item_text-container">
-                <div class="menu-item_text menu-item_name about_primary-text"></div>
-                <div class="menu-item_text menu-item_description about_secondary-text"></div>
-              </div>
-            </aside>
-          </article>
+            </div>
+            <div id="about-2spec" class="menu-item_text-container">
+              <div class="menu-item_text menu-item_name about_primary-text"></div>
+              <div class="menu-item_text menu-item_description about_secondary-text"></div>
+            </div>
+            <div id="about-3spec" class="menu-item_text-container">
+              <div class="menu-item_text menu-item_name about_primary-text"></div>
+              <div class="menu-item_text menu-item_description about_secondary-text"></div>
+            </div>
+            <div id="about-4spec" class="menu-item_text-container">
+              <div class="menu-item_text menu-item_name about_primary-text"></div>
+              <div class="menu-item_text menu-item_description about_secondary-text"></div>
+            </div>
+          </aside>
+        </section>
 
+        <section class="main-section">
           <div class="about-section">
-            <div class="about-container">
-              <div class="menu-item_text-container">
+            <div id="about-title" class="about-container">
+              <div class="menu-item_text-container about-text">
                 <div class="menu-item_text menu-item_name about_primary-text"></div>
                 <div class="menu-item_text menu-item_description about_secondary-text"></div>
               </div>
             </div>
-            <div class="about-container">
-              <div class="menu-item_text-container">
+            <div id="about-model" class="about-container">
+              <div class="menu-item_text-container about-text">
                 <div class="menu-item_text menu-item_name about_primary-text"></div>
                 <div class="menu-item_text menu-item_description about_secondary-text"></div>
               </div>
             </div>
           </div>
           <div class="about-section">
-            <div class="about-container">
-              <div class="menu-item_text-container">
+            <div id="about-os" class="about-container">
+              <div class="menu-item_text-container about-text">
                 <div class="menu-item_text menu-item_name about_primary-text"></div>
                 <div class="menu-item_text menu-item_description about_secondary-text"></div>
               </div>
             </div>
-            <div class="about-container">
-              <div class="menu-item_text-container">
+            <div id="about-ui" class="about-container">
+              <div class="menu-item_text-container about-text">
                 <div class="menu-item_text menu-item_name about_primary-text"></div>
                 <div class="menu-item_text menu-item_description about_secondary-text">
                   <a id="latest-version" class="link-hidden" href="#changelog"></a>
@@ -645,16 +654,16 @@
             </div>
           </div>
           <div class="about-section">
-            <div class="about-container">
-              <div class="menu-item_text-container">
+            <div id="about-build" class="about-container">
+              <div class="menu-item_text-container about-text">
                 <div class="menu-item_text menu-item_name about_primary-text"></div>
                 <div class="menu-item_text menu-item_description about_secondary-text">
                   <span class=""><a id="build-number" class="link-hidden" href="#changelog"></a></span>
                 </div>
               </div>
             </div>
-            <div class="about-container">
-              <div class="menu-item_text-container">
+            <div id="about-date" class="about-container">
+              <div class="menu-item_text-container about-text">
                 <div class="menu-item_text menu-item_name about_primary-text"></div>
                 <div class="menu-item_text menu-item_description about_secondary-text">
                   <span id="build-date"></span>
@@ -694,19 +703,19 @@
           <h3 class="interactive-header">Стиль хедера</h3>
 
           <label class="radio-label" for="hs1">
-            <input type="radio" id="hs1" name="header-style" onchange="changeHeaderStyle('HEADER_stock')">
+            <input type="radio" id="hs1" name="header-style" onchange="changeHeaderStyle('HEADER_stock'), reload()">
             <span class="radio-name radio-name_interactive">Сток</span>
           </label>
           <label class="radio-label" for="hs2">
-            <input type="radio" id="hs2" name="header-style" onchange="changeHeaderStyle('HEADER_RUI')">
+            <input type="radio" id="hs2" name="header-style" onchange="changeHeaderStyle('HEADER_RUI'), reload()">
             <span class="radio-name radio-name_interactive">RUI</span>
           </label>
           <label class="radio-label" for="hs3">
-            <input type="radio" id="hs3" name="header-style" onchange="changeHeaderStyle('HEADER_ZenUI')">
+            <input type="radio" id="hs3" name="header-style" onchange="changeHeaderStyle('HEADER_ZenUI'), reload()">
             <span class="radio-name radio-name_interactive">ZenUI</span>
           </label>
           <label class="radio-label" for="hs4">
-            <input type="radio" id="hs4" name="header-style" onchange="changeHeaderStyle('HEADER_OOSColor')">
+            <input type="radio" id="hs4" name="header-style" onchange="changeHeaderStyle('HEADER_OOSColor'), reload()">
             <span class="radio-name radio-name_interactive">Как в цветной теме OOS</span>
           </label>
         </div>
@@ -714,19 +723,19 @@
           <h3 class="interactive-header">Стиль UI</h3>
 
           <label class="radio-label" for="us1">
-            <input type="radio" id="us1" name="ui-style" onchange="changeUiStyle('UI_OOS')">
+            <input type="radio" id="us1" name="ui-style" onchange="changeUiStyle('UI_OOS'), reload()">
             <span class="radio-name radio-name_interactive">OOS</span>
           </label>
           <label class="radio-label" for="us2">
-            <input type="radio" id="us2" name="ui-style" onchange="changeUiStyle('UI_ZenUI')">
+            <input type="radio" id="us2" name="ui-style" onchange="changeUiStyle('UI_ZenUI'), reload()">
             <span class="radio-name radio-name_interactive">ZenUI</span>
           </label>
           <label class="radio-label" for="us3">
-            <input type="radio" id="us3" name="ui-style" onchange="changeUiStyle('UI_OneUI')">
+            <input type="radio" id="us3" name="ui-style" onchange="changeUiStyle('UI_OneUI'), reload()">
             <span class="radio-name radio-name_interactive">OneUI</span>
           </label>
           <label class="radio-label" for="us4">
-            <input type="radio" id="us4" name="ui-style" onchange="changeUiStyle('UI_RUI')">
+            <input type="radio" id="us4" name="ui-style" onchange="changeUiStyle('UI_RUI'), reload()">
             <span class="radio-name radio-name_interactive">RUI</span>
           </label>
         </div>
