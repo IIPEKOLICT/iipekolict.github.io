@@ -2,9 +2,29 @@
 /*---РАЗДЕЛ ADDON---------------*/
 /*------------------------------*/
 
-.txt-in-mobile /* класс для показа содержимого только на мобиле */
+/* Показ контента в зависимости от активного стиля UI ------------------------------*/
+
+.content_OOS, .content_ZenUI, .content_RUI, .content_OneUI
 {
-  display: none;
+  display: none; /* Скрыть по дефолту контент, зависящий от UI */
+}
+.UI_OOS .content_OOS,
+.UI_ZenUI .content_ZenUI,
+.UI_RUI .content_RUI,
+.UI_OneUI .content_OneUI
+{
+  display: block; /* Показать контент, зависящий от UI */
+}
+
+/* Другое ------------------------------*/
+
+.txt-in-mobile,
+.content_OOS.txt-in-mobile,
+.content_ZenUI.txt-in-mobile,
+.content_RUI.txt-in-mobile,
+.content_OneUI.txt-in-mobile
+{
+  display: none; /* класс для показа содержимого только на мобиле */
 }
 .link-hidden /* дефолтные ссылки (никак не выделены) */
 {
@@ -28,12 +48,43 @@
 
 @media (max-aspect-ratio: 3/4) /* диапазон 3:4 и уже */
 {
+  /* Другое ------------------------------*/
+
   .txt-in-pc /* класс для показа содержимого только на компе */
   {
     display: none;
   }
-  .txt-in-mobile /* класс для показа содержимого только на мобиле */
+  .txt-in-mobile,
+  .UI_OOS .content_OOS.txt-in-mobile,
+  .UI_ZenUI .content_ZenUI.txt-in-mobile,
+  .UI_RUI .content_RUI.txt-in-mobile,
+  .UI_OneUI .content_OneUI.txt-in-mobile
   {
-    display: block;
+    display: block; /* класс для показа содержимого только на мобиле */
+  }
+}
+
+/*------------------------------*/
+/*---ОВЕРЛЕЙ >[6:5]-------------*/
+/*------------------------------*/
+
+@media (min-aspect-ratio: 6/5) /* экраны шире 6:5 */
+{
+  /* Раскладка в две колонки ------------------------------*/
+
+  .two-columns
+  {
+    width: calc(50% - 1em);
+    box-sizing: border-box; /* Чтобы считало размеры с учетом бордеров и паддингов */
+  }
+  .two-columns:nth-of-type(odd) /* Прилипание к левому краю и маргин нечетных плиток */
+  {
+    margin-right: 1em;
+    float: left;
+  }
+  .two-columns:nth-of-type(even) /* Прилипание к правому краю и маргин четных плиток */
+  {
+    margin-left: 1em;
+    float: right;
   }
 }

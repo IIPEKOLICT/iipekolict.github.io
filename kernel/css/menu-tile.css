@@ -71,9 +71,13 @@
   {
     display: none;
   }
+  .menu-tile_name /* Заголовок плитки */
+  {
+    padding-bottom: 0.5em;
+  }
   .spoiler_tile[open] .menu-tile_description /* Фикс наслоения <summary> для содержимого спойлера плитки */
   {
-    padding-bottom: 4em;
+    padding-bottom: 4.5em;
   }
 }
 
@@ -94,36 +98,5 @@
   .menu-tile_description /* Подробное описание, доступно при открытии спойлера */
   {
     padding-top: 0.6em;
-  }
-}
-
-/*------------------------------*/
-/*---ОВЕРЛЕЙ >[6:5]-------------*/
-/*------------------------------*/
-
-@media (min-aspect-ratio: 6/5) /* экраны шире 6:5 */
-{
-  .menu-tile:nth-of-type(1),
-  .menu-tile:nth-of-type(2) /* Выравнивание отступа сверху для первой строки плиток */
-  {
-    margin-top: 0.5em;
-  }
-  .menu-tile:nth-last-of-type(1),
-  .menu-tile:nth-last-of-type(2) /* Выравнивание отступа снизу для последней строки плиток */
-  {
-    margin-bottom: 2em;
-  }
-
-  /* Раскладка в две колонки ------------------------------*/
-
-  .menu-tile:nth-of-type(odd) /* Прилипание к левому краю и маргин нечетных плиток */
-  {
-    margin-right: 1em;
-    float: left;
-  }
-  .menu-tile:nth-of-type(even) /* Прилипание к правому краю и маргин четных плиток */
-  {
-    margin-left: 1em;
-    float: right;
   }
 }

@@ -23,9 +23,9 @@
       <main class="main main-section">
 
         <a class="link-hidden" href="#accent">
-          <section class="menu-item">
+          <section class="menu-item two-columns">
             <div class="menu-item_icon">
-              <object class="menu-item_svg" type="image/svg+xml" data="kernel/svg/accent-icon.svg"></object>
+              <object class="menu-item_svg" type="image/svg+xml" data="kernel/svg/settings/accent-icon.svg"></object>
             </div>
             <aside class="menu-item_text-container">
               <div class="menu-item_text menu-item_name">Цвет акцента</div>
@@ -35,9 +35,9 @@
         </a>
 
         <a class="link-hidden" href="#color">
-          <section class="menu-item">
+          <section class="menu-item two-columns">
             <div class="menu-item_icon">
-              <object class="menu-item_svg" type="image/svg+xml" data="kernel/svg/color-icon.svg"></object>
+              <object class="menu-item_svg" type="image/svg+xml" data="kernel/svg/settings/color-icon.svg"></object>
             </div>
             <aside class="menu-item_text-container">
               <div class="menu-item_text menu-item_name">Цветовая схема</div>
@@ -47,9 +47,9 @@
         </a>
 
         <a class="link-hidden" href="#other">
-          <section class="menu-item">
+          <section class="menu-item two-columns">
             <div class="menu-item_icon">
-              <object class="menu-item_svg" type="image/svg+xml" data="kernel/svg/other-icon.svg"></object>
+              <object class="menu-item_svg" type="image/svg+xml" data="kernel/svg/settings/other-icon.svg"></object>
             </div>
             <aside class="menu-item_text-container">
               <div class="menu-item_text menu-item_name">Другое</div>
@@ -59,9 +59,9 @@
         </a>
 
         <a class="link-hidden" href="#changelog">
-          <section class="menu-item">
+          <section class="menu-item two-columns">
             <div class="menu-item_icon">
-              <object class="menu-item_svg" type="image/svg+xml" data="kernel/svg/changelog-icon.svg"></object>
+              <object class="menu-item_svg" type="image/svg+xml" data="kernel/svg/settings/changelog-icon.svg"></object>
             </div>
             <aside class="menu-item_text-container">
               <div class="menu-item_text menu-item_name">Список изменений</div>
@@ -71,9 +71,9 @@
         </a>
 
         <a class="link-hidden" href="#about">
-          <section class="menu-item">
+          <section class="menu-item two-columns">
             <div class="menu-item_icon">
-              <object class="menu-item_svg" type="image/svg+xml" data="kernel/svg/about-icon.svg"></object>
+              <object class="menu-item_svg" type="image/svg+xml" data="kernel/svg/settings/about-icon.svg"></object>
             </div>
             <aside class="menu-item_text-container">
               <div class="menu-item_text menu-item_name">Об устройстве</div>
@@ -83,9 +83,9 @@
         </a>
 
         <a class="link-hidden" href="#test">
-          <section class="menu-item">
+          <section class="menu-item two-columns">
             <div class="menu-item_icon">
-              <object class="menu-item_svg" type="image/svg+xml" data="kernel/svg/test-icon.svg"></object>
+              <object class="menu-item_svg" type="image/svg+xml" data="kernel/svg/settings/test-icon.svg"></object>
             </div>
             <aside class="menu-item_text-container">
               <div class="menu-item_text menu-item_name">Бета-тест</div>
@@ -94,10 +94,10 @@
           </section>
         </a>
 
-        <a class="link-hidden" onclick="history.back()">
-          <section class="menu-item">
+        <a class="link-hidden" onclick="history.back()" style="cursor: pointer;">
+          <section class="menu-item two-columns">
             <div class="menu-item_icon">
-              <object class="menu-item_svg" type="image/svg+xml" data="kernel/svg/exit-icon.svg"></object>
+              <object class="menu-item_svg" type="image/svg+xml" data="kernel/svg/settings/exit-icon.svg"></object>
             </div>
             <aside class="menu-item_text-container">
               <div class="menu-item_text menu-item_name">Назад</div>
@@ -110,8 +110,8 @@
 
     <div id="accent" class="page-block">
       <header class="header header_page">
-        <div class="header-back_icon" onclick="history.back()">
-          <object class="header-icon_svg" type="image/svg+xml" data="kernel/svg/exit-icon_header.svg"></object>
+        <div class="header-icon" onclick="history.back()">
+          <object class="header-icon_svg" type="image/svg+xml" data="kernel/svg/header/back-icon.svg"></object>
         </div>
         <h2 class="header-name two-line">Цвет акцента</h2>
       </header>
@@ -225,12 +225,12 @@
         <section class="main-section">
           <h3 class="main-header">Черный/белый</h3>
 
-          <label class="radio-label label_custom-colored" for="ac19">
+          <label class="radio-label" for="ac19">
             <input onchange="changeAccent(['black']), reload()"
             type="radio" id="ac19" name="accent-color" value="black" disabled>
             <span class="radio-name">Черный</span>
           </label>
-          <label class="radio-label label_custom-colored" for="ac20">
+          <label class="radio-label" for="ac20">
             <input onchange="changeAccent(['white']), reload()"
             type="radio" id="ac20" name="accent-color" value="white" disabled>
             <span class="radio-name">Белый</span>
@@ -241,8 +241,8 @@
 
     <div id="color" class="page-block">
       <header class="header header_page">
-        <div class="header-back_icon" onclick="history.back()">
-          <object class="header-icon_svg" type="image/svg+xml" data="kernel/svg/exit-icon_header.svg"></object>
+        <div class="header-icon" onclick="history.back()">
+          <object class="header-icon_svg" type="image/svg+xml" data="kernel/svg/header/back-icon.svg"></object>
         </div>
         <h2 class="header-name two-line">Цветовая схема</h2>
       </header>
@@ -286,23 +286,23 @@
 
     <div id="other" class="page-block">
       <header class="header header_page">
-        <div class="header-back_icon" onclick="history.back()">
-          <object class="header-icon_svg" type="image/svg+xml" data="kernel/svg/exit-icon_header.svg"></object>
+        <div class="header-icon" onclick="history.back()">
+          <object class="header-icon_svg" type="image/svg+xml" data="kernel/svg/header/back-icon.svg"></object>
         </div>
         <h2 class="header-name two-line">Другое</h2>
       </header>
 
       <div class="main page-block_main">
-        <section class="main-section">
-
+        <section class="main-section interactive-link" onclick="showInteractive('header-style')">
+          <h3 class="main-header interactive-link_name">Стиль шапки</h3>
         </section>
       </div>
     </div>
 
     <div id="changelog" class="page-block">
       <header class="header header_page">
-        <div class="header-back_icon" onclick="history.back()">
-          <object class="header-icon_svg" type="image/svg+xml" data="kernel/svg/exit-icon_header.svg"></object>
+        <div class="header-icon" onclick="history.back()">
+          <object class="header-icon_svg" type="image/svg+xml" data="kernel/svg/header/back-icon.svg"></object>
         </div>
         <h2 class="header-name two-line">Список изменений</h2>
       </header>
@@ -320,6 +320,15 @@
               <summary class="spoiler-button spoiler-button_changelog"></summary>
               <div class="delimiter_changelog"></div>
               <ul class="release-notes release_opened">
+                <li class="release-note">окраска svg-иконок теперь по классам</li>
+                <li class="release-note">часики на JS на стартовой</li>
+                <li class="release-note">стартовая страница теперь является одной большой шторкой (!!!)</li>
+                <li class="release-note">теперь можно запихать в шапки целую кучу иконок в комповой версии и ничего не сломается</li>
+                <li class="release-note">сделал новое, похожее на шторку из RUI навигационное меню</li>
+                <li class="release-note">выделил класс для отображения в 2 колонки на широких экранах, теперь можно вешать на элементы с фисированным постоянным размером</li>
+              </ul>
+              <ul class="release-notes">
+                <li class="release-note">в разделе "Об устройстве" в мобильной версии в зависимости от выбранного ui показываются соответствующие спеки</li>
                 <li class="release-note">переделан и приведен к адекватному виду раздел #about</li>
                 <li class="release-note">исправлены проблемы с цветовой схемой и выделением элементов</li>
                 <li class="release-note">новый алгоритм нейминга версий в ченжлоге, теперь есть closed и open beta сборки</li>
@@ -587,8 +596,8 @@
 
     <div id="about" class="page-block">
       <header class="header header_page">
-        <div class="header-back_icon" onclick="history.back()">
-          <object class="header-icon_svg" type="image/svg+xml" data="kernel/svg/exit-icon_header.svg"></object>
+        <div class="header-icon" onclick="history.back()">
+          <object class="header-icon_svg" type="image/svg+xml" data="kernel/svg/header/back-icon.svg"></object>
         </div>
         <h2 class="header-name two-line">Об устройстве</h2>
       </header>
@@ -601,10 +610,10 @@
               <div class="menu-item_text menu-item_name about_primary-text"></div>
               <div class="menu-item_text menu-item_description about_secondary-text">
                 <span class="txt-in-pc">AMD Ryzen<sup class="sup">TM</sup> 9 3900X</span>
-                <span class="txt-in-mobile text_OOS">Snapdragon<sup class="sup">TM</sup> 855</span>
-                <span class="txt-in-mobile text_ZenUI">Snapdragon<sup class="sup">TM</sup> 855</span>
-                <span class="txt-in-mobile text_RUI">Snapdragon<sup class="sup">TM</sup> 710</span>
-                <span class="txt-in-mobile text_OneUI">Snapdragon<sup class="sup">TM</sup> 730</span>
+                <span class="content_OOS txt-in-mobile">Snapdragon<sup class="sup">TM</sup> 855</span>
+                <span class="content_ZenUI txt-in-mobile">Snapdragon<sup class="sup">TM</sup> 855</span>
+                <span class="content_RUI txt-in-mobile">Snapdragon<sup class="sup">TM</sup> 710</span>
+                <span class="content_OneUI txt-in-mobile">Snapdragon<sup class="sup">TM</sup> 730</span>
               </div>
             </div>
             <div id="about-2spec" class="menu-item_text-container">
@@ -677,21 +686,15 @@
 
     <div id="test" class="page-block">
       <header class="header header_page">
-        <div class="header-back_icon" onclick="history.back()">
-          <object class="header-icon_svg" type="image/svg+xml" data="kernel/svg/exit-icon_header.svg"></object>
+        <div class="header-icon" onclick="history.back()">
+          <object class="header-icon_svg" type="image/svg+xml" data="kernel/svg/header/back-icon.svg"></object>
         </div>
         <h2 class="header-name two-line">Бета-тест</h2>
       </header>
 
       <div class="main page-block_main">
-        <section class="main-section interactive-link" onclick="showInteractive('header-style')">
-          <h3 class="main-header interactive-link_name">Стиль шапки</h3>
-        </section>
         <section class="main-section interactive-link" onclick="showInteractive('ui-style')">
           <h3 class="main-header interactive-link_name">Стиль UI</h3>
-        </section>
-        <section class="main-section interactive-link" onclick="showInteractive('test')">
-          <h3 class="main-header interactive-link_name">Тестовый</h3>
         </section>
       </div>
     </div>
@@ -699,16 +702,18 @@
     <div id="interactive" class="interactive">
       <div id="interactive-container" class="interactive-container">
         <div id="interactive-button" class="interactive-content interactive-button"></div>
+
+        <!-- Переключатель стилей шапки -->
         <div id="header-style" class="interactive-content interactive-block">
-          <h3 class="interactive-header">Стиль хедера</h3>
+          <h3 class="interactive-header">Стиль шапки</h3>
 
           <label class="radio-label" for="hs1">
             <input type="radio" id="hs1" name="header-style" onchange="changeHeaderStyle('HEADER_stock'), reload()">
-            <span class="radio-name radio-name_interactive">Сток</span>
+            <span class="radio-name radio-name_interactive">Стоковый вариант</span>
           </label>
           <label class="radio-label" for="hs2">
             <input type="radio" id="hs2" name="header-style" onchange="changeHeaderStyle('HEADER_RUI'), reload()">
-            <span class="radio-name radio-name_interactive">RUI</span>
+            <span class="radio-name radio-name_interactive">Realme UI</span>
           </label>
           <label class="radio-label" for="hs3">
             <input type="radio" id="hs3" name="header-style" onchange="changeHeaderStyle('HEADER_ZenUI'), reload()">
@@ -719,12 +724,14 @@
             <span class="radio-name radio-name_interactive">Как в цветной теме OOS</span>
           </label>
         </div>
+
+        <!-- Переключатель стилей UI -->
         <div id="ui-style" class="interactive-content interactive-block">
           <h3 class="interactive-header">Стиль UI</h3>
 
           <label class="radio-label" for="us1">
             <input type="radio" id="us1" name="ui-style" onchange="changeUiStyle('UI_OOS'), reload()">
-            <span class="radio-name radio-name_interactive">OOS</span>
+            <span class="radio-name radio-name_interactive">Oxygen OS</span>
           </label>
           <label class="radio-label" for="us2">
             <input type="radio" id="us2" name="ui-style" onchange="changeUiStyle('UI_ZenUI'), reload()">
@@ -736,13 +743,8 @@
           </label>
           <label class="radio-label" for="us4">
             <input type="radio" id="us4" name="ui-style" onchange="changeUiStyle('UI_RUI'), reload()">
-            <span class="radio-name radio-name_interactive">RUI</span>
+            <span class="radio-name radio-name_interactive">Realme UI</span>
           </label>
-        </div>
-        <div id="test" class="interactive-content interactive-block">
-          <h3 class="interactive-header">Тестовый блок</h3>
-
-          Блок 3<br />в<br />вв<br />ввв
         </div>
       </div>
     </div>

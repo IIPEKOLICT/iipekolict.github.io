@@ -12,7 +12,7 @@
 
 .main-section /* секции внутри <main> */
 {
-  padding: 0 4vw;
+  padding: 1em 4vw;
   border-bottom: 1px solid var(--main_border-color);
 }
 .main-section:last-of-type /* у последней секции нет бордера снизу */
@@ -75,7 +75,7 @@
 @media (max-aspect-ratio: 6/5) /* узкие экраны до 6:5 */
 {
   /* Секция ------------------------------*/
-  
+
   .main-section /* секции внутри <main> */
   {
     padding: 0 1em;

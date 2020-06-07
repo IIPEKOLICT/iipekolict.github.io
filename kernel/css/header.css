@@ -4,7 +4,11 @@
 
 .header /* Сток шапка */
 {
-  padding: 0;
+  height: 3em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
   border-bottom: 2px solid var(--main_border-color);
   font-size: 2rem;
 }
@@ -18,15 +22,14 @@
   }
 .header_page /* Модификатор шапки, только для страниц, не являющихся главной в HTML-документе (при ВН) */
 {
-  display: flex;
   align-items: center;
 }
 
 /* Иконки ------------------------------*/
 
-.header-back_icon /* Контейнер иконки "назад" в шапке */
+.header-icon /* Сток-контейнер иконок в шапке */
 {
-  margin: 0.5em;
+  margin: 0 0.5em;
   padding: 0.45em;
   display: flex;
   cursor: pointer;
@@ -34,19 +37,15 @@
   border-radius: 50%;
   transition: ease-out 0.3s;
 }
-.header-back_icon:hover /* Контейнер иконки "назад" в шапке при наведении */
+.header-icon:hover /* Сток-контейнер иконок в шапке при наведении */
 {
   border-color: var(--accent-color);
   transform: scale(0.6);
 }
-  .header-icon_svg /* Свг-порт иконок "назад" и "меню" в шапке, размер 1ем */
-  {
-    width: 1em;
-    height: 1em;
-  }
-.header-nav_icon /* Иконка нав меню в хедере (в комповой версии скрыть) */
+.header-icon_svg /* Свг-порт иконок в шапке, размер 1ем */
 {
-  display: none;
+  width: 1em;
+  height: 1em;
 }
 
 /* Заголовок ------------------------------*/
@@ -54,7 +53,7 @@
 .header-name /* Сток заголовок в шапке */
 {
   margin: 0;
-  padding: 0.5em 0;
+  flex: auto;
   font-size: 1em;
   line-height: 1em;
 }
@@ -62,13 +61,9 @@
   {
     color: var(--accent-color);
   }
-.header_nav .header-name /* Выравнивание по центру, если в шапке есть навигационный блок */
-{
-  justify-content: center;
-}
 .header-name_main /* Заголовок в шапке в главном блоке в HTML-документе */
 {
-  padding: 0.5em 1em;
+  padding-left: 1em;
 }
 
 /*------------------------------*/
@@ -77,11 +72,6 @@
 
 @media (max-aspect-ratio: 3/4) /* диапазон 3:4 и уже */
 {
-  .header_nav /* Модификатор шапки, только те, что содержат в себе меню навигации */
-  {
-    display: flex;
-    flex-direction: row;
-  }
   .header_page /* Модификатор шапки, только для страниц, не являющихся главной в HTML-документе */
   {
     font-size: 1.5rem;
@@ -89,30 +79,10 @@
 
   /* Иконки ------------------------------*/
 
-  .header-back_icon /* Контейнер иконки "назад" в шапке */
+  .header-icon /* Сток-контейнер иконок в шапке */
   {
-    margin: 0.7em 0;
+    margin: 0 0.2em;
     padding: 0.7em;
     border-width: 0.1em;
-  }
-  .header-nav_icon /* Контейнер иконки "меню" в шапке */
-  {
-    margin: 0.5em;
-    padding: 0.5em;
-    display: flex;
-    cursor: pointer;
-  }
-  .header-nav_icon:hover rect /* Контейнер иконки "назад" в шапке при наведении */
-  {
-    fill: var(--accent-color);
-  }
-
-  /* Заголовок ------------------------------*/
-
-  .header-name_main /* Заголовок в шапке на главной в HTML-документе странице */
-  {
-    padding-right: 0;
-    flex: 80%;
-    text-align: left;
   }
 }

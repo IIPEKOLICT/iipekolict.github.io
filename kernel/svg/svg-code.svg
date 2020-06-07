@@ -1,15 +1,17 @@
-<g id="00">   <g fill="none" stroke="none">
-<g id="01">   <g fill="none" stroke="var(--accent-color)">
-<g id="02">   <g fill="none" stroke="var(--secondary_bg-color)">
-<g id="10">   <g fill="var(--accent-color)" stroke="none">
-<g id="11">   <g fill="var(--accent-color)" stroke="var(--accent-color)">
-<g id="12">   <g fill="var(--accent-color)" stroke="var(--secondary_bg-color)">
-<g id="20">   <g fill="var(--secondary_bg-color)" stroke="none">
-<g id="21">   <g fill="var(--secondary_bg-color)" stroke="var(--accent-color)">
-<g id="22">   <g fill="var(--secondary_bg-color)" stroke="var(--secondary_bg-color)">
+<!-- Двухзначное число, десятки - fill, единицы - stroke; расшифровка значений идентификаторов ниже: -->
+
+<g id="0" color="none">
+<g id="1" color="var(--accent-color)">
+<g id="2" color="var(--main_bg-color)">
+<g id="3" color="var(--secondary_bg-color)">
+<g id="4" color="var(--icon_bg-color)">
+<g id="5" color="var(--main_text-color)">
+<g id="6" color="var(--secondary_text-color)">
+<g id="7" color="var(--main_border-color)">
+<g id="8" color="var(--radio_nonactive-color)">
 
 <!-- Фикс для работы движка тем -->
 
-<?xml-stylesheet type="text/css" href="../css/root.css"?> <!-- 2 строчкой -->
-<?xml-stylesheet type="text/css" href="../css/svg.css"?> <!-- 3 строчкой -->
-<script xlink:href="../js/theme.js" /> <!-- Внутрь свг-тега -->
+<?xml-stylesheet type="text/css" href="../../css/root.css"?> <!-- 2 строчкой -->
+<?xml-stylesheet type="text/css" href="../../css/svg.css"?> <!-- 3 строчкой -->
+<script xlink:href="../../js/theme.js" /> <!-- Внутрь свг-тега -->

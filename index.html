@@ -8,129 +8,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	  <title>Стартовая</title>
     <link rel="stylesheet" href="kernel/css/bootloader.css">
-    <link rel="stylesheet" href="kernel/css/nav.css">
   </head>
 
-  <body class="page UI_OOS">
+  <body class="page nav">
 
-    <header class="header header_nav">
-      <h1 class="header-name header-name_main two-line">Стартовая</h1>
-      <div class="header-nav_icon" onclick="showInteractive('TEST_nav')">
-        <svg class="header-icon_svg" width="100" height="100" viewBox="0 0 100 100">
-          <g fill="var(--main_text-color)">
-	          <rect x="10" y="10" width="80" height="15"/>
-	          <rect x="10" y="42.5" width="80" height="15"/>
-	          <rect x="10" y="75" width="80" height="15"/>
-          </g>
-        </svg>
+    <section class="nav-header">
+      <h1 id="nav-time">Время</h1>
+    </section>
+
+    <section class="main-section nav-container">
+      <div class="nav-row">
+        <a class="link-hidden nav-item" href="portfolio.html">
+          <div class="nav-icon">
+            <svg class="nav-icon_svg" width="100" height="100" viewBox="0 0 100 100">
+              <g class="svg-g_60">
+              	<rect x="10" y="30" width="80" height="30"/>
+              	<rect x="10" y="65" width="25" height="15"/>
+              	<rect x="65" y="65" width="25" height="15"/>
+              	<rect x="30" y="75" width="40" height="5"/>
+              	<rect x="40" y="65" width="20" height="5"/>
+              </g>
+              <g class="svg-g_06">
+              	<polyline stroke-width="6" stroke-miterlimit="10" points="30,33 30,13 70,13 70,33"/>
+              </g>
+            </svg>
+          </div>
+          <div class="nav-name">Портфолио</div>
+        </a>
+
+        <a class="link-hidden nav-item" href="settings.html#start">
+          <div class="nav-icon">
+            <svg class="nav-icon_svg" width="100" height="100" viewBox="0 0 100 100">
+              <g class="svg-g_06">
+	              <ellipse stroke-width="16.7304" stroke-miterlimit="10" cx="50" cy="50" rx="21.7" ry="21.6"/>
+              </g>
+              <g class="svg-g_60">
+                <path d="M55.8,30H44.2C43,30,42,29,42,27.8V12.2c0-1.2,1-2.2,2.2-2.2h11.5c1.2,0,2.2,1,2.2,2.2v15.5C58,29,57,30,55.8,30z"/>
+              	<path d="M55.8,90H44.2C43,90,42,89,42,87.8V72.2c0-1.2,1-2.2,2.2-2.2h11.5c1.2,0,2.2,1,2.2,2.2v15.5C58,89,57,90,55.8,90z"/>
+              	<path d="M27.8,58H12.2C11,58,10,57,10,55.8V44.2c0-1.2,1-2.2,2.2-2.2h15.5c1.2,0,2.2,1,2.2,2.2v11.5C30,57,29,58,27.8,58z"/>
+              	<path d="M87.8,58H72.2C71,58,70,57,70,55.8V44.2c0-1.2,1-2.2,2.2-2.2h15.5c1.2,0,2.2,1,2.2,2.2v11.5C90,57,89,58,87.8,58z"/>
+              	<path d="M40.1,31.9l-8.1,8.1c-0.9,0.9-2.3,0.9-3.2,0l-11-11c-0.9-0.9-0.9-2.3,0-3.2l8.1-8.1c0.9-0.9,2.3-0.9,3.2,0l11,11C40.9,29.6,40.9,31.1,40.1,31.9z"/>
+              	<path d="M82.4,74.2l-8.1,8.1c-0.9,0.9-2.3,0.9-3.2,0l-11-11c-0.9-0.9-0.9-2.3,0-3.2l8.1-8.1c0.9-0.9,2.3-0.9,3.2,0l11,11C83.2,71.9,83.2,73.4,82.4,74.2z"/>
+              	<path d="M31.9,59.9l8.1,8.1c0.9,0.9,0.9,2.3,0,3.2l-11,11c-0.9,0.9-2.3,0.9-3.2,0l-8.1-8.1c-0.9-0.9-0.9-2.3,0-3.2l11-11C29.6,59.1,31.1,59.1,31.9,59.9z"/>
+              	<path d="M74.1,17.8l8.1,8.1c0.9,0.9,0.9,2.3,0,3.2l-11,11c-0.9,0.9-2.3,0.9-3.2,0l-8.1-8.1c-0.9-0.9-0.9-2.3,0-3.2l11-11C71.8,16.9,73.2,16.9,74.1,17.8z"/>
+              </g>
+            </svg>
+          </div>
+          <div class="nav-name">Настройки</div>
+        </a>
       </div>
-      <nav id="nav" class="nav nav_hidden">
-        <ul class="nav-menu">
-          <li class="nav-item nav-item_header">
-            <a class="link-hidden nav-item_link" href="settings.html#start">Настройки</a>
-          </li>
-          <li class="nav-item nav-item_header">
-            <a class="link-hidden nav-item_link" href="settings.html#start">Настройки</a>
-          </li>
-        </ul>
-      </nav>
-    </header>
-
-    <main class="main">
-      <section id="portfolio" class="main-section">
-        <h2 class="main-header">Портфолио</h2>
-
-        <a class="link-hidden menu-tile" href="sites/backup2019/index.html">
-          <details class="spoiler spoiler_tile">
-            <summary class="spoiler-button spoiler-button_tile"></summary>
-            <div class="menu-tile_description">
-              Впредверии осеннего призыва резко понадобилось собрать всю изученную
-              важную информацию в одном месте (на всякий пожарный), заодно потренировался делать сайты.
-            </div>
-          </details>
-          <img class="menu-tile_img" src="res/preview/backup2019.png" />
-          <div class="menu-tile_name two-line">Сайт-бэкап 2019 года</div>
-        </a>
-
-        <a class="link-hidden menu-tile" href="sites/portfolio/index.html">
-          <details class="spoiler spoiler_tile">
-            <summary class="spoiler-button spoiler-button_tile"></summary>
-            <div class="menu-tile_description">
-              Какое-то написанное на понятном большинству верстальщиков языке говно.
-            </div>
-          </details>
-          <img class="menu-tile_img" src="res/preview/portfolio.png" />
-          <div class="menu-tile_name two-line">Сайт-портфолио с HTML Academy</div>
-        </a>
-      </section>
-
-      <section id="sandbox" class="main-section">
-        <h2 class="main-header">Песочница</h2>
-
-        <a class="link-hidden menu-tile" href="sites/loshicakernel/index.html">
-          <details class="spoiler spoiler_tile">
-            <summary class="spoiler-button spoiler-button_tile"></summary>
-            <div class="menu-tile_description">
-              Тупое говно тупого говна.
-            </div>
-          </details>
-          <img class="menu-tile_img" src="res/preview/loshicakernel.png" />
-          <div class="menu-tile_name two-line">Тестовая мобильная версия</div>
-        </a>
-
-        <a class="link-hidden menu-tile" href="sites/test/index.html">
-          <details class="spoiler spoiler_tile">
-            <summary class="spoiler-button spoiler-button_tile"></summary>
-            <div class="menu-tile_description">
-              Сайт, созданный специально для того, чтобы внутри обкатывать новые функции.
-            </div>
-          </details>
-          <img class="menu-tile_img" src="res/preview/test.png" />
-          <div class="menu-tile_name two-line">Тестовая страница</div>
-        </a>
-      </section>
-    </main>
-
-    <footer class="footer">
-      <nav class="nav nav_hidden">
-        <ul class="nav-menu">
-          <li class="nav-item nav-item_footer">
-            <a class="link-hidden nav-item_link" href="#portfolio">Портфолио</a>
-          </li>
-          <li class="nav-item nav-item_footer">
-            <a class="link-hidden nav-item_link" href="#sandbox">Песочница</a>
-          </li>
-          <li class="nav-item nav-item_footer">
-            <a class="link-hidden nav-item_link" href="settings.html#start">Настройки</a>
-          </li>
-          <li class="nav-item nav-item_footer">
-            <a class="link-hidden nav-item_link" href="test-settings.html#start">Тест</a>
-          </li>
-        </ul>
-      </nav>
-      <div class="footer-container">
-        <p class="footer-text">Loshica Corporation<sup class="sup">TM</sup>, @all rights reсerved</p>
-        <p class="footer-text">Made in Loshica, Russland</p>
-      </div>
-    </footer>
-
-    <div id="interactive" class="interactive">
-      <div id="interactive-container" class="interactive-container">
-        <div id="interactive-button" class="interactive-content interactive-button"></div>
-        <div id="TEST_nav" class="interactive-content interactive-block">
-          <ul class="nav-menu">
-            <li class="nav-item nav-item_header">
-              <a class="link-hidden nav-item_link" href="settings.html#start">Настройки</a>
-            </li>
-            <li class="nav-item nav-item_header">
-              <a class="link-hidden nav-item_link" href="settings.html#start">Настройки</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
+    </section>
 
     <script src="kernel/js/theme.js"></script>
-    <script src="kernel/js/interactive.js"></script>
+    <script src="kernel/js/time.js"></script>
   </body>
 </html>

@@ -89,6 +89,10 @@
   cursor: pointer;
   transition: 0.3s ease;
 }
+.interactive-link:last-of-type /* стиль последнего блока-ссылки */
+{
+  border-bottom: 1px solid var(--main_border-color);
+}
 .interactive-link:hover /* стиль блоков-ссылок при наведении */
 {
   background-color: var(--main_border-color);
@@ -177,6 +181,10 @@
   .interactive-content /* общие стили для контента в спойлере */
   {
     padding: 2em;
+  }
+  .interactive-block /* стиль блоков в спойлере по дефолту (скрыты, фикс неоправданно маленькой ширины) */
+  {
+    min-width: 15em;
   }
 
   /* Кнопка-скрывашка снизу ------------------------------*/

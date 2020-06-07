@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/css" href="../css/root.css"?>
-<?xml-stylesheet type="text/css" href="../css/svg.css"?>
+<?xml-stylesheet type="text/css" href="../../css/root.css"?>
+<?xml-stylesheet type="text/css" href="../../css/svg.css"?>
 <svg version="1.1" id="_x31_" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve" class="svg_settings">
-	<script xlink:href="../js/theme.js" />
-	 <circle fill="none" stroke="var(--accent-color)" stroke-width="4" stroke-miterlimit="10" cx="50" cy="50" r="38"/>
-	 <g fill="var(--accent-color)">
+	<script xlink:href="../../js/theme.js" />
+	 <circle class="svg-g_01" stroke-width="4" stroke-miterlimit="10" cx="50" cy="50" r="38"/>
+	 <g class="svg-g_10">
 	 	<ellipse cx="50" cy="35" rx="5.3" ry="5"/>
 	 	<rect x="46" y="45" width="8" height="25"/>
 	 </g>

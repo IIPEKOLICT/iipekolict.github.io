@@ -43,11 +43,7 @@
 .about_secondary-text /* Стиль второстепенного текста */
 {
   color: var(--main_text-color);
-}
-
-.text_ZenUI, .text_RUI, .text_OneUI
-{
-  display: none; /* Скрыть по дефолту текст, зависящий от UI */
+  height: 2em;
 }
 
 /* Текст в спеках сверху страницы ------------------------------*/
@@ -103,23 +99,6 @@
   .UI_OneUI .about-header_img /* Картинка при OneUI-стиле */
   {
     background-image: url(../icons/galaxy-a80.png);
-  }
-
-  /* Классы для текста ------------------------------*/
-
-  .UI_OOS .text_OOS,
-  .UI_ZenUI .text_ZenUI,
-  .UI_RUI .text_RUI,
-  .UI_OneUI .text_OneUI
-  {
-    display: block; /* Показать текст, зависящий от UI */
-  }
-
-  .UI_ZenUI .text_OOS,
-  .UI_RUI .text_OOS,
-  .UI_OneUI .text_OOS
-  {
-    display: none; /* Скрыть UI_OOS текст при отличном от UI_OOS стиле UI */
   }
 
   /* Текст в спеках сверху страницы ------------------------------*/

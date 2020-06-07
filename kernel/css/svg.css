@@ -8,17 +8,55 @@
   cursor: pointer;
 }
 
-/* Иконка "назад" в шапке ------------------------------*/
+/* Универсальные классы для групп по цветам ------------------------------*/
 
-.exit-icon_header /* общие стили иконки "назад" в шапке */
+.svg-g_00, .svg-g_01, .svg-g_02, .svg-g_03, .svg-g_04, .svg-g_05, .svg-g_06, .svg-g_07, .svg-g_08
 {
-  fill: none;
-  stroke: var(--main_text-color);
-  stroke-width: 8;
-  stroke-miterlimit: 10;
+  fill: none; /* все с бесцветной заливкой */
 }
-  .HEADER_RUI .exit-icon_header,
-  .HEADER_ZenUI .exit-icon_header /* стили иконки "назад" в шапке, цвет акцента (для шапки в стиле ZenUI и RUI) */
-  {
-    stroke: var(--accent-color);
-  }
+.svg-g_00, .svg-g_10, .svg-g_20, .svg-g_30, .svg-g_40, .svg-g_50, .svg-g_60, .svg-g_70, .svg-g_80
+{
+  stroke: none;/* все с бесцветной обводкой*/
+}
+.svg-g_01 {stroke: var(--accent-color)}
+.svg-g_04 {stroke: var(--icon_bg-color)}
+.svg-g_05 {stroke: var(--main_text-color)}
+.svg-g_06 {stroke: var(--secondary_text-color)}
+.svg-g_10 {fill: var(--accent-color)}
+.svg-g_11
+{
+  fill: var(--accent-color);
+  stroke: var(--accent-color);
+}
+.svg-g_40 {fill: var(--icon_bg-color)}
+.svg-g_41
+{
+  fill: var(--icon_bg-color);
+  stroke: var(--accent-color);
+}
+.svg-g_50 {fill: var(--main_text-color)}
+.svg-g_60 {fill: var(--secondary_text-color)}
+.svg-g_66
+{
+  fill: var(--secondary_text-color);
+  stroke: var(--secondary_text-color);
+}
+
+/* Иконки в шапке ------------------------------*/
+
+.HEADER_RUI .header-icon_back,
+.HEADER_ZenUI .header-icon_back
+{
+  stroke: var(--accent-color); /* стили иконок в шапке, цвет акцента (для шапки в стиле ZenUI и RUI) */
+}
+
+/* Иконки в навигационном меню ------------------------------*/
+
+ /* анимация при наведении на пункт нав меню */
+.nav-item:hover .svg-g_06 {stroke: var(--main_bg-color)}
+.nav-item:hover .svg-g_60 {fill: var(--main_bg-color)}
+.nav-item:hover .svg-g_66
+{
+  fill: var(--main_bg-color);
+  stroke: var(--main_bg-color);
+}

@@ -15,7 +15,7 @@
 .footer-text /* стили текста в футере */
 {
   margin: inherit;
-  padding: 0.5em;
+  padding: 1em;
   color: var(--secondary_text-color);
   font-size: 1em;
 }

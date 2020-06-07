@@ -2,48 +2,83 @@
 /*---РАЗДЕЛ NAV-----------------*/
 /*------------------------------*/
 
-/* Разметка ------------------------------*/
-
 .nav /* материнский блок */
 {
-  text-align: center;
-  font-size: 1rem;
-  line-height: 2em;
-}
-.nav-menu /* контейнер с пунктами меню (<ul>) */
-{
-  margin: inherit;
-  padding-left: 0;
   width: 100%;
-  display: table;
-  table-layout: fixed;
-  list-style-type: none;
+  height: 100%;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1rem;
+  line-height: 1em;
+}
+
+/* Шапка с временем ------------------------------*/
+
+.nav-header
+{
+  display: flex;
+  flex: auto;
+  align-items: center;
+  font-size: 2em;
+}
+
+/* Разметка (контейнеры) ------------------------------*/
+
+.nav-container /* контейнер для всего меню */
+{
+  height: 16em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.nav-row /* контейнер-строка */
+{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
 /* Стиль пунктов меню ------------------------------*/
 
 .nav-item /* пункт меню */
 {
-  display: table-cell;
-  transform: scale(0.8);
+  width: 8em;
+  height: 8em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   transition: ease-out 0.3s;
 }
 .nav-item:hover /* пункт меню при наведении */
 {
+  transform: scale(0.85);
+}
+.nav-icon /* контейнер иконки пункта меню */
+{
+  margin-bottom: 0.5em;
+  padding: 1em;
+  width: 3em;
+  height: 3em;
+  background-color: var(--icon_bg-color);
+  border-radius: 50%;
+  transition: ease-out 0.3s;
+}
+.nav-item:hover .nav-icon /* иконка пункта меню при наведении на пункт меню */
+{
+  background-color: var(--accent-color);
+}
+  .nav-icon_svg /* свг-порт иконки пункта меню */
+  {
+    width: inherit;
+    height: inherit;
+  }
+.nav-item:hover .nav-name /* название пункта меню при наведении на пункт меню */
+{
   color: var(--accent-color);
-  border-color: var(--accent-color);
-}
-.nav-item_header /* модификация пункта меню для хедера */
-{
-  border-top: 2px solid var(--main_border-color);
-}
-.nav-item_footer /* модификация пункта меню для футера */
-{
-  border-bottom: 2px solid var(--main_border-color);
-}
-.nav-item_link /* ссылка, лежащая в каждом из пунктов меню */
-{
-  display: block;
 }
 
 /*------------------------------*/
@@ -52,51 +87,27 @@
 
 @media (max-aspect-ratio: 3/4) /* диапазон 3:4 и уже */
 {
-  /* Разметка ------------------------------*/
+  /* Шапка с временем ------------------------------*/
 
-  #nav /* материнский блок, дополнительные параметры, которые на компах не нужны */
+  .nav-header
   {
-    display: none;
+    /* padding-top: 1em; */
+    font-size: 3em;
   }
-  .nav /* материнский блок */
-  {
-    font-size: 2rem;
-  }
-  .nav_hidden /* класс для скрытия навигационного блока (переключаются скриптом) */
-  {
-    display: none;
-  }
-  .nav_shown /* класс для показа навигационного блока (переключаются скриптом) */
-  {
-    display: block;
-  }
-}
 
-/*------------------------------*/
-/*---ОВЕРЛЕЙ [3:4 - 6:5]--------*/
-/*------------------------------*/
+  /* Разметка (контейнеры) ------------------------------*/
 
-@media (min-aspect-ratio: 3/4) and (max-aspect-ratio: 6/5) /* диапазон 3:4 - 6:5 */
-{
-  /* Разметка ------------------------------*/
+  .nav-container /* контейнер для всего меню */
+  {
+    padding: 2em 0;
+  }
 
-  #nav /* материнский блок, дополнительные параметры, которые на компах не нужны */
+  /* Стиль пунктов меню ------------------------------*/
+
+  .nav-item /* пункт меню */
   {
-    position: inherit;
-    background: none;
-    border: none;
-  }
-  .nav /* материнский блок */
-  {
-    font-size: 1rem;
-  }
-  .nav_hidden /* класс для скрытия навигационного блока (переключаются скриптом) */
-  {
-    display: block;
-  }
-  .nav_shown /* класс для показа навигационного блока (переключаются скриптом) */
-  {
-    display: none;
+    width: 6em;
+    height: 6em;
   }
 }
 
@@ -106,28 +117,27 @@
 
 @media (max-aspect-ratio: 6/5) /* узкие экраны до 6:5 */
 {
-  /* Разметка ------------------------------*/
+  /* Разметка (контейнеры) ------------------------------*/
 
-  .nav-item /* пункт меню */
+  .nav-container /* контейнер для всего меню */
   {
-    display: block;
-    background-color: var(--secondary_bg-color);
-    border: 2px solid var(--secondary_bg-color);
-    border-radius: 0.5em;
+    height: 14em;
+    padding-bottom: 1em;
+    justify-content: flex-end;
   }
 
   /* Стиль пунктов меню ------------------------------*/
 
-  .nav-item:first-of-type /* самый первый пункт меню */
+  .nav-item /* пункт меню */
   {
-    margin-top: 0.2em;
+    width: 6.5em;
+    height: 6.5em;
   }
-  .nav-item:last-of-type /* самый нижний пункт меню */
+  .nav-icon /* иконка пункта меню */
   {
-    margin-bottom: 0.2em;
-  }
-  .nav-item:hover /* пункт меню при наведении */
-  {
-    background-color: var(--hover_bg-color);
+    margin-bottom: 0.5em;
+    padding: 0.8em;
+    width: 2.5em;
+    height: 2.5em;
   }
 }
