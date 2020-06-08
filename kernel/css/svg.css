@@ -44,10 +44,14 @@
 
 /* Иконки в шапке ------------------------------*/
 
-.HEADER_RUI .header-icon_back,
-.HEADER_ZenUI .header-icon_back
+ /* стили иконок в шапке, цвет акцента (для шапки в стиле ZenUI и RUI) */
+.HEADER_RUI .svg-g_05, .HEADER_ZenUI .svg-g_05
 {
-  stroke: var(--accent-color); /* стили иконок в шапке, цвет акцента (для шапки в стиле ZenUI и RUI) */
+  stroke: var(--accent-color);
+}
+.HEADER_RUI .svg-g_50, .HEADER_ZenUI .svg-g_50
+{
+  fill: var(--accent-color);
 }
 
 /* Иконки в навигационном меню ------------------------------*/

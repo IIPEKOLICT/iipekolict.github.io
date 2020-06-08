@@ -252,23 +252,28 @@
           <h3 class="main-header">Темные</h3>
 
           <label class="radio-label" for="cs1">
-            <input onchange="changeColorScheme(['black','#424242','#141414','#1a1a1a','white','#7a7a7a','#1e1e1e','#898989']), reload()" type="radio" id="cs1" name="color-scheme">
+            <input onchange="changeColorScheme(['black','#424242','#141414','#1a1a1a','white','#7a7a7a',
+            '#1e1e1e','#898989']), reload()" type="radio" id="cs1" name="color-scheme">
             <span class="radio-name">Oxygen OS 9</span>
           </label>
           <label class="radio-label" for="cs2">
-            <input onchange="changeColorScheme(['black','#212121','#141414','#1a1a1a','#d8d8d8','#8a8a8a','#1e1e1e','#898989']), reload()" type="radio" id="cs2" name="color-scheme">
+            <input onchange="changeColorScheme(['black','#212121','#141414','#1a1a1a','#d8d8d8','#8a8a8a',
+            '#1e1e1e','#898989']), reload()" type="radio" id="cs2" name="color-scheme">
             <span class="radio-name">Oxygen OS 10</span>
           </label>
           <label class="radio-label" for="cs3">
-            <input onchange="changeColorScheme(['black','#333','#141414','#252525','white','#8c8c8c','#333333','#666']), reload()" type="radio" id="cs3" name="color-scheme">
+            <input onchange="changeColorScheme(['black','#333','#141414','#252525','white','#8c8c8c',
+            '#333333','#666']), reload()" type="radio" id="cs3" name="color-scheme">
             <span class="radio-name">Realme UI</span>
           </label>
           <label class="radio-label" for="cs4">
-            <input onchange="changeColorScheme(['black','#252525','#252525','#333','#fafafa','#909090','#3f3f3f','#797979']), reload()" type="radio" id="cs4" name="color-scheme">
+            <input onchange="changeColorScheme(['black','#252525','#252525','#333','#fafafa','#909090',
+            '#3f3f3f','#797979']), reload()" type="radio" id="cs4" name="color-scheme">
             <span class="radio-name">One UI</span>
           </label>
           <label class="radio-label" for="cs5">
-            <input onchange="changeColorScheme(['#161616','#424242','#252525','#505050','white','#b9b9b9','#323232','#c1c1c1']), reload()" type="radio" id="cs5" name="color-scheme">
+            <input onchange="changeColorScheme(['#161616','#424242','#252525','#505050','white','#b9b9b9',
+            '#323232','#c1c1c1']), reload()" type="radio" id="cs5" name="color-scheme">
             <span class="radio-name">Zen UI 6</span>
           </label>
         </section>
@@ -277,7 +282,8 @@
           <h3 class="main-header">Светлые</h3>
 
           <label class="radio-label" for="cs6">
-            <input onchange="changeColorScheme(['#fafafa','white','white','#efefef','#191919','#969696','#e6e6e6','#999']), reload()" type="radio" id="cs6" name="color-scheme">
+            <input onchange="changeColorScheme(['#fafafa','white','white','#efefef','#191919','#969696',
+            '#e6e6e6','#999']), reload()" type="radio" id="cs6" name="color-scheme">
             <span class="radio-name">Oxygen OS 9</span>
           </label>
         </section>
@@ -314,11 +320,16 @@
           <div class="menu-item spoiler-container">
             <div class="menu-item_text-container release-info">
               <h3 class="menu-item_text menu-item_name"></h3>
-              <time class="menu-item_text menu-item_description" datatime="2020-06-07">07.06.2020</time>
+              <time class="menu-item_text menu-item_description" datatime="2020-06-08">08.06.2020</time>
             </div>
             <details class="spoiler spoiler_changelog">
               <summary class="spoiler-button spoiler-button_changelog"></summary>
               <div class="delimiter_changelog"></div>
+              <ul class="release-notes release_opened">
+                <li class="release-note">откорректировал высоту заголовков секций и interactive-link, была чересчур большой</li>
+                <li class="release-note">мелкие исправления и улучшения</li>
+                <li class="release-note">исправлены недоработки с иконками в шапке, теперь стили шапки ZenU и RUI работают правильно</li>
+              </ul>
               <ul class="release-notes release_opened">
                 <li class="release-note">окраска svg-иконок теперь по классам</li>
                 <li class="release-note">часики на JS на стартовой</li>
@@ -712,16 +723,16 @@
             <span class="radio-name radio-name_interactive">Стоковый вариант</span>
           </label>
           <label class="radio-label" for="hs2">
-            <input type="radio" id="hs2" name="header-style" onchange="changeHeaderStyle('HEADER_RUI'), reload()">
-            <span class="radio-name radio-name_interactive">Realme UI</span>
+            <input type="radio" id="hs2" name="header-style" onchange="changeHeaderStyle('HEADER_OOSColor'), reload()">
+            <span class="radio-name radio-name_interactive">Как в цветной теме OOS</span>
           </label>
           <label class="radio-label" for="hs3">
-            <input type="radio" id="hs3" name="header-style" onchange="changeHeaderStyle('HEADER_ZenUI'), reload()">
-            <span class="radio-name radio-name_interactive">ZenUI</span>
+            <input type="radio" id="hs3" name="header-style" onchange="changeHeaderStyle('HEADER_RUI'), reload()">
+            <span class="radio-name radio-name_interactive">Realme UI</span>
           </label>
           <label class="radio-label" for="hs4">
-            <input type="radio" id="hs4" name="header-style" onchange="changeHeaderStyle('HEADER_OOSColor'), reload()">
-            <span class="radio-name radio-name_interactive">Как в цветной теме OOS</span>
+            <input type="radio" id="hs4" name="header-style" onchange="changeHeaderStyle('HEADER_ZenUI'), reload()">
+            <span class="radio-name radio-name_interactive">ZenUI</span>
           </label>
         </div>
 
@@ -734,16 +745,16 @@
             <span class="radio-name radio-name_interactive">Oxygen OS</span>
           </label>
           <label class="radio-label" for="us2">
-            <input type="radio" id="us2" name="ui-style" onchange="changeUiStyle('UI_ZenUI'), reload()">
-            <span class="radio-name radio-name_interactive">ZenUI</span>
+            <input type="radio" id="us2" name="ui-style" onchange="changeUiStyle('UI_RUI'), reload()">
+            <span class="radio-name radio-name_interactive">Realme UI</span>
           </label>
           <label class="radio-label" for="us3">
             <input type="radio" id="us3" name="ui-style" onchange="changeUiStyle('UI_OneUI'), reload()">
             <span class="radio-name radio-name_interactive">OneUI</span>
           </label>
           <label class="radio-label" for="us4">
-            <input type="radio" id="us4" name="ui-style" onchange="changeUiStyle('UI_RUI'), reload()">
-            <span class="radio-name radio-name_interactive">Realme UI</span>
+            <input type="radio" id="us4" name="ui-style" onchange="changeUiStyle('UI_ZenUI'), reload()">
+            <span class="radio-name radio-name_interactive">ZenUI</span>
           </label>
         </div>
       </div>
