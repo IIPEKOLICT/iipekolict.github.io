@@ -3,7 +3,7 @@
 <?xml-stylesheet type="text/css" href="../../css/svg.css"?>
 <svg version="1.1" id="_x31_" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve" onclick="history.back()" class="svg_settings">
 	<script xlink:href="../../js/theme.js" />
-	<g class="svg-g_01" stroke-width="8" stroke-miterlimit="10">
+	<g class="g01" stroke-width="8" stroke-miterlimit="10">
 		<line x1="16" y1="50" x2="90" y2="50"/>
 		<polyline points="44.3,79.6 14,50 44,20"/>
 	</g>

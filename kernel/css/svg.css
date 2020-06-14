@@ -8,59 +8,25 @@
   cursor: pointer;
 }
 
-/* Универсальные классы для групп по цветам ------------------------------*/
-
-.svg-g_00, .svg-g_01, .svg-g_02, .svg-g_03, .svg-g_04, .svg-g_05, .svg-g_06, .svg-g_07, .svg-g_08
-{
-  fill: none; /* все с бесцветной заливкой */
-}
-.svg-g_00, .svg-g_10, .svg-g_20, .svg-g_30, .svg-g_40, .svg-g_50, .svg-g_60, .svg-g_70, .svg-g_80
-{
-  stroke: none;/* все с бесцветной обводкой*/
-}
-.svg-g_01 {stroke: var(--accent-color)}
-.svg-g_04 {stroke: var(--icon_bg-color)}
-.svg-g_05 {stroke: var(--main_text-color)}
-.svg-g_06 {stroke: var(--secondary_text-color)}
-.svg-g_10 {fill: var(--accent-color)}
-.svg-g_11
-{
-  fill: var(--accent-color);
-  stroke: var(--accent-color);
-}
-.svg-g_40 {fill: var(--icon_bg-color)}
-.svg-g_41
-{
-  fill: var(--icon_bg-color);
-  stroke: var(--accent-color);
-}
-.svg-g_50 {fill: var(--main_text-color)}
-.svg-g_60 {fill: var(--secondary_text-color)}
-.svg-g_66
-{
-  fill: var(--secondary_text-color);
-  stroke: var(--secondary_text-color);
-}
-
 /* Иконки в шапке ------------------------------*/
 
  /* стили иконок в шапке, цвет акцента (для шапки в стиле ZenUI и RUI) */
-.HEADER_RUI .svg-g_05, .HEADER_ZenUI .svg-g_05
+.HEADER_RUI .g05, .HEADER_ZenUI .g05
 {
-  stroke: var(--accent-color);
+  stroke: var(--accent-color) !important;
 }
-.HEADER_RUI .svg-g_50, .HEADER_ZenUI .svg-g_50
+.HEADER_RUI .g50, .HEADER_ZenUI .g50
 {
-  fill: var(--accent-color);
+  fill: var(--accent-color) !important;
 }
 
 /* Иконки в навигационном меню ------------------------------*/
 
  /* анимация при наведении на пункт нав меню */
-.nav-item:hover .svg-g_06 {stroke: var(--main_bg-color)}
-.nav-item:hover .svg-g_60 {fill: var(--main_bg-color)}
-.nav-item:hover .svg-g_66
+.nav-item:hover .g06 {stroke: var(--main_bg-color) !important}
+.nav-item:hover .g60 {fill: var(--main_bg-color) !important}
+.nav-item:hover .g66
 {
-  fill: var(--main_bg-color);
-  stroke: var(--main_bg-color);
+  fill: var(--main_bg-color) !important;
+  stroke: var(--main_bg-color) !important;
 }

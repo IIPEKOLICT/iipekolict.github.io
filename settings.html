@@ -249,43 +249,50 @@
 
       <div class="main page-block_main">
         <section class="main-section">
-          <h3 class="main-header">Темные</h3>
-
-          <label class="radio-label" for="cs1">
-            <input onchange="changeColorScheme(['black','#424242','#141414','#1a1a1a','white','#7a7a7a',
-            '#1e1e1e','#898989']), reload()" type="radio" id="cs1" name="color-scheme">
-            <span class="radio-name">Oxygen OS 9</span>
+          <label class="radio-label content_OOS" for="cs1">
+            <input onchange="changeColorScheme(colorSchemes[0][1],'dark'), reload()" type="radio" id="cs1" name="color-scheme">
+            <span class="radio-name">Темная</span>
           </label>
-          <label class="radio-label" for="cs2">
-            <input onchange="changeColorScheme(['black','#212121','#141414','#1a1a1a','#d8d8d8','#8a8a8a',
-            '#1e1e1e','#898989']), reload()" type="radio" id="cs2" name="color-scheme">
+          <label class="radio-label content_OOS" for="cs2">
+            <input onchange="changeColorScheme(colorSchemes[0][3],'light'), reload()" type="radio" id="cs2" name="color-scheme">
+            <span class="radio-name">Светлая</span>
+          </label>
+
+          <label class="radio-label content_RUI" for="cs3">
+            <input onchange="changeColorScheme(colorSchemes[1][1],'dark'), reload()" type="radio" id="cs3" name="color-scheme">
+            <span class="radio-name">Темная</span>
+          </label>
+          <label class="radio-label content_RUI" for="cs4">
+            <input onchange="changeColorScheme(colorSchemes[1][3],'light'), reload()" type="radio" id="cs4" name="color-scheme">
+            <span class="radio-name">Светлая</span>
+          </label>
+
+          <label class="radio-label content_OneUI" for="cs5">
+            <input onchange="changeColorScheme(colorSchemes[2][1],'dark'), reload()" type="radio" id="cs5" name="color-scheme">
+            <span class="radio-name">Темная</span>
+          </label>
+          <label class="radio-label content_OneUI" for="cs6">
+            <input onchange="changeColorScheme(colorSchemes[2][3],'light'), reload()" type="radio" id="cs6" name="color-scheme">
+            <span class="radio-name">Светлая</span>
+          </label>
+
+          <label class="radio-label content_ZenUI" for="cs7">
+            <input onchange="changeColorScheme(colorSchemes[3][1],'dark'), reload()" type="radio" id="cs7" name="color-scheme">
+            <span class="radio-name">Темная</span>
+          </label>
+          <label class="radio-label content_ZenUI" for="cs8">
+            <input onchange="changeColorScheme(colorSchemes[3][3],'light'), reload()" type="radio" id="cs8" name="color-scheme">
+            <span class="radio-name">Светлая</span>
+          </label>
+
+          <label class="radio-label" for="cs9">
+            <input onchange="changeColorScheme(
+            ['black','#212121','#141414','#1a1a1a','#d8d8d8','#8a8a8a','#1e1e1e','#898989']), reload()" type="radio" id="cs9" name="color-scheme">
             <span class="radio-name">Oxygen OS 10</span>
           </label>
-          <label class="radio-label" for="cs3">
-            <input onchange="changeColorScheme(['black','#333','#141414','#252525','white','#8c8c8c',
-            '#333333','#666']), reload()" type="radio" id="cs3" name="color-scheme">
-            <span class="radio-name">Realme UI</span>
-          </label>
-          <label class="radio-label" for="cs4">
-            <input onchange="changeColorScheme(['black','#252525','#252525','#333','#fafafa','#909090',
-            '#3f3f3f','#797979']), reload()" type="radio" id="cs4" name="color-scheme">
-            <span class="radio-name">One UI</span>
-          </label>
-          <label class="radio-label" for="cs5">
-            <input onchange="changeColorScheme(['#161616','#424242','#252525','#505050','white','#b9b9b9',
-            '#323232','#c1c1c1']), reload()" type="radio" id="cs5" name="color-scheme">
-            <span class="radio-name">Zen UI 6</span>
-          </label>
         </section>
-
-        <section class="main-section">
-          <h3 class="main-header">Светлые</h3>
-
-          <label class="radio-label" for="cs6">
-            <input onchange="changeColorScheme(['#fafafa','white','white','#efefef','#191919','#969696',
-            '#e6e6e6','#999']), reload()" type="radio" id="cs6" name="color-scheme">
-            <span class="radio-name">Oxygen OS 9</span>
-          </label>
+        <section class="main-section interactive-link" onclick="showInteractive('header-style')">
+          <h3 class="main-header interactive-link_name">Стиль шапки</h3>
         </section>
       </div>
     </div>
@@ -299,8 +306,8 @@
       </header>
 
       <div class="main page-block_main">
-        <section class="main-section interactive-link" onclick="showInteractive('header-style')">
-          <h3 class="main-header interactive-link_name">Стиль шапки</h3>
+        <section class="main-section interactive-link" onclick="showInteractive('ui-style')">
+          <h3 class="main-header interactive-link_name">Стиль UI</h3>
         </section>
       </div>
     </div>
@@ -316,6 +323,25 @@
       <div class="main page-block_main">
         <section class="main-section">
           <h3 class="main-header"></h3>
+
+          <div class="menu-item spoiler-container">
+            <div class="menu-item_text-container release-info">
+              <h3 class="menu-item_text menu-item_name"></h3>
+              <time class="menu-item_text menu-item_description" datatime="2020-06-15">15.06.2020</time>
+            </div>
+            <details class="spoiler spoiler_changelog">
+              <summary class="spoiler-button spoiler-button_changelog"></summary>
+              <div class="delimiter_changelog"></div>
+              <ul class="release-notes">
+                <li class="release-note">реализовал раздачу цветов заливки/обводки элементам в css через массив в js</li>
+                <li class="release-note">добавлены светлые цветовые схемы для стилей UI "RUI", "OneUI" и "ZenUI"</li>
+                <li class="release-note">теперь имеется функция для удаленной установки отмеченного инпута</li>
+                <li class="release-note">при переключении стиля UI автоматом врубает нужную цветовую схему, если до того была активна дефолтная</li>
+                <li class="release-note">при переключении стиля UI доступны только предназначенные для этого UI дефолтные цветовые схемы</li>
+                <li class="release-note">дефолтные цветовые схемы теперь хранятся в массиве</li>
+              </ul>
+            </details>
+          </div>
 
           <div class="menu-item spoiler-container">
             <div class="menu-item_text-container release-info">
@@ -704,9 +730,7 @@
       </header>
 
       <div class="main page-block_main">
-        <section class="main-section interactive-link" onclick="showInteractive('ui-style')">
-          <h3 class="main-header interactive-link_name">Стиль UI</h3>
-        </section>
+
       </div>
     </div>
 
@@ -741,19 +765,19 @@
           <h3 class="interactive-header">Стиль UI</h3>
 
           <label class="radio-label" for="us1">
-            <input type="radio" id="us1" name="ui-style" onchange="changeUiStyle('UI_OOS'), reload()">
+            <input type="radio" id="us1" name="ui-style" onchange="changeUiStyle('UI_OOS',colorSchemes[0]), reload()">
             <span class="radio-name radio-name_interactive">Oxygen OS</span>
           </label>
           <label class="radio-label" for="us2">
-            <input type="radio" id="us2" name="ui-style" onchange="changeUiStyle('UI_RUI'), reload()">
+            <input type="radio" id="us2" name="ui-style" onchange="changeUiStyle('UI_RUI',colorSchemes[1]), reload()">
             <span class="radio-name radio-name_interactive">Realme UI</span>
           </label>
           <label class="radio-label" for="us3">
-            <input type="radio" id="us3" name="ui-style" onchange="changeUiStyle('UI_OneUI'), reload()">
+            <input type="radio" id="us3" name="ui-style" onchange="changeUiStyle('UI_OneUI',colorSchemes[2]), reload()">
             <span class="radio-name radio-name_interactive">OneUI</span>
           </label>
           <label class="radio-label" for="us4">
-            <input type="radio" id="us4" name="ui-style" onchange="changeUiStyle('UI_ZenUI'), reload()">
+            <input type="radio" id="us4" name="ui-style" onchange="changeUiStyle('UI_ZenUI',colorSchemes[3]), reload()">
             <span class="radio-name radio-name_interactive">ZenUI</span>
           </label>
         </div>

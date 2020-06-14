@@ -37,11 +37,28 @@ var styles = [ // Массив с параметрами переключате�
   ]
 ]
 
+var colorsSVG = [ // Массив с параметрами классов для покраски svg
+  ['0','1','2','3','4','5','6','7','8'], // Идентификаторы цветов
+  ['none','var(--accent-color)','var(--main_bg-color)','var(--secondary_bg-color)','var(--icon_bg-color)',
+  'var(--main_text-color)','var(--secondary_text-color)','var(--main_border-color)',
+  'var(--radio_nonactive-color)'] // Значения, соответствующие своим идентификаторам
+]
+
 // Функции-оптимизаторы
 
 function reload() { location.reload() } // функция перезагрузки страницы
 
 function varRead(varArray) { // функция для чтения инфы о переменной из ЛХ и ее установки
+
+  /*
+  if (localStorage.getItem(varArray[1][0][0])) {
+    var bgColorValue = localStorage.getItem(varArray[1][0][0]); // извлечь
+
+    if (bgColorValue != 'black') blackAccent.removeAttribute('disabled')
+    else if (bgColorValue != 'white') whiteAccent.removeAttribute('disabled');
+  }
+  */
+
   for (var i = 0; i < varArray.length; i++) {
     for (var j = 0; j < varArray[i][0].length; j++) { // перебор всех названий переменных (массив)
       if (localStorage.getItem(varArray[i][0][j])) { // если сеть ключ
@@ -86,4 +103,17 @@ function classSwith(classArray,targetClass) { // функция для разд�
 document.addEventListener("DOMContentLoaded", () => { // Событие загузки страницы
   varRead(vars); // установка переменных
   for (var i = 0; i < styles.length; i++) styleRead(styles[i]); // Установка всех стилей-классов
+
+  // Покраска элементов в svg
+
+  for (var i = 0; i < colorsSVG[0].length; i++) { // Перебор всех идентификаторов
+    for (var j = 0; j < colorsSVG[0].length; j++) {
+      var g = document.querySelectorAll('.g' + i + j); // Массив со всеми элементами этого класса-покрасчика
+
+      for (var k = 0; k < g.length; k++) { // Перебор всех элементов массива
+        g[k].style.setProperty('fill', colorsSVG[1][i]); // Установить цвет заливки
+        g[k].style.setProperty('stroke', colorsSVG[1][j]); // Установить цвет обводки
+      }
+    }
+  }
 });

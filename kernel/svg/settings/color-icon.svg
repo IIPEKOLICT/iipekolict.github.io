@@ -3,19 +3,19 @@
 <?xml-stylesheet type="text/css" href="../../css/svg.css"?>
 <svg version="1.1" id="Слой_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve" class="svg_settings">
 	<script xlink:href="../../js/theme.js" />
-	 <g class="svg-g_11">
+	 <g class="g11">
 	  <path stroke-width="4" stroke-miterlimit="10" d="M58,30H12V16c0-2.2,1.8-4,4-4h38c2.2,0,4,1.8,4,4V30z"/>
 	  <path stroke-width="4" stroke-miterlimit="10" d="M84,88H46c-2.2,0-4-1.8-4-4V46c0-2.2,1.8-4,4-4h38c2.2,0,4,1.8,4,4v38C88,86.2,86.2,88,84,88z"/>
 	 </g>
-	 <path class="svg-g_01" stroke-width="4" stroke-miterlimit="10" d="M54,58H16c-2.2,0-4-1.8-4-4V16c0-2.2,1.8-4,4-4h38c2.2,0,4,1.8,4,4v38C58,56.2,56.2,58,54,58z"/>
-	 <path class="svg-g_41" stroke-width="4" stroke-miterlimit="10" d="M88,60H42V46c0-2.2,1.8-4,4-4h38c2.2,0,4,1.8,4,4V60z"/>
-	 <g class="svg-g_04">
+	 <path class="g01" stroke-width="4" stroke-miterlimit="10" d="M54,58H16c-2.2,0-4-1.8-4-4V16c0-2.2,1.8-4,4-4h38c2.2,0,4,1.8,4,4v38C58,56.2,56.2,58,54,58z"/>
+	 <path class="g41" stroke-width="4" stroke-miterlimit="10" d="M88,60H42V46c0-2.2,1.8-4,4-4h38c2.2,0,4,1.8,4,4V60z"/>
+	 <g class="g04">
 	  <line stroke-width="4" stroke-miterlimit="10" x1="38" y1="62" x2="38" y2="38"/>
 	  <line stroke-width="4" stroke-miterlimit="10" x1="62" y1="38" x2="38" y2="38"/>
 	 </g>
-	 <g class="svg-g_40">
+	 <g class="g40">
 	  <path d="M56,80h-2c-2.2,0-4-1.8-4-4v-2c0-2.2,1.8-4,4-4h2c2.2,0,4,1.8,4,4v2C60,78.2,58.2,80,56,80z"/>
 	  <path d="M76,80h-2c-2.2,0-4-1.8-4-4v-2c0-2.2,1.8-4,4-4h2c2.2,0,4,1.8,4,4v2C80,78.2,78.2,80,76,80z"/>
 	 </g>
-	 <path class="svg-g_10" d="M26,50h-2c-2.2,0-4-1.8-4-4v-2c0-2.2,1.8-4,4-4h2c2.2,0,4,1.8,4,4v2C30,48.2,28.2,50,26,50z"/>
+	 <path class="g10" d="M26,50h-2c-2.2,0-4-1.8-4-4v-2c0-2.2,1.8-4,4-4h2c2.2,0,4,1.8,4,4v2C30,48.2,28.2,50,26,50z"/>
 </svg>

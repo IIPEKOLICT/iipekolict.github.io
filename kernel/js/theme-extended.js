@@ -2,12 +2,29 @@
 /*---ДОПОЛНИТЕЛЬНЫЙ МОДУЛЬ ДВИЖКА ТЕМ (ТОЛЬКО ДЛЯ НАСТРОЕК)---*/
 /*------------------------------------------------------------*/
 
-// Массив с параметрами отмеченных элементов
-
-var checkedInputs = [
+var checkedInputs = [ // Массив с параметрами отмеченных элементов
   ['checkedAccentNo','checkedColorSchemeNo','checkedHeaderStyleNo','checkedUiStyleNo'], // Ключи в ЛХ
   ["accent-color","color-scheme","header-style","ui-style"], // Name-группы инпутов
   ["ac1","cs1","hs1","us1"] // Стоковые значения id
+]
+
+var colorSchemes = [ // Массив с параметрами темных/светлых цветовых схем
+  [ // Для стиля UI "UI_OOS"
+    ["cs1"],['black','#424242','#141414','#1a1a1a','white','#7a7a7a','#1e1e1e','#898989'], // Темная
+    ["cs2"],['#fafafa','white','white','#efefef','#191919','#969696','#e6e6e6','#999'] // Светлая
+  ],
+  [ // Для стиля UI "UI_RUI"
+    ["cs3"],['black','#333','#141414','#252525','white','#8c8c8c','#333333','#666'], // Темная
+    ["cs4"],['white','white','#ddd','#f7f7f7','black','#737373','#e5e5e5','#ccc'] // Светлая
+  ],
+  [ // Для стиля UI "UI_OneUI"
+    ["cs5"],['black','#252525','#252525','#333','#fafafa','#909090','#3f3f3f','#797979'], // Темная
+    ["cs6"],['#f2f2f2','#fcfcfc','white','#e3e3e3','#161616','#989898','#ececec','#b3b3b3'] // Светлая
+  ],
+  [ // Для стиля UI "UI_ZenUI"
+    ["cs7"],['#161616','#424242','#252525','#505050','white','#b9b9b9','#323232','#c1c1c1'], // Темная
+    ["cs8"],['#fafafa','white','#ddd','#ededed','#202020','#787878','#dcdcdc','#989898'] // Светлая
+  ]
 ]
 
 // Функции-оптимизаторы
@@ -39,6 +56,12 @@ function varRecord(varArray,varValues) { // функция для записи �
     document.documentElement.style.setProperty(varArray[0][i], varValues[i]); // установка установка переменным соотв. зачений (2 массив со значениями)
     localStorage.setItem(varArray[0][i], varValues[i]); // запись инфы в ЛХ
   }
+}
+
+function markInput(inputKey,inputName,inputId) { // Функция, отмечающая определенный инпут
+  document.querySelector('input[name=' + inputName + '][id=' + inputId + ']')
+  .setAttribute('checked','checked'); // Отметить как выбраннный
+  localStorage.setItem(inputKey, inputId); // Сохранить ключ в ЛХ
 }
 
 document.addEventListener("DOMContentLoaded", () => { // Событие загузки страницы
@@ -82,10 +105,11 @@ function changeAccent(targetAC) { // Функция смены акцента (�
 
 // Функция смены цветовой схемы
 
-colorSchemeInputs.forEach(input => input.addEventListener ('change', changeColorScheme(targetCS)));
+colorSchemeInputs.forEach(input => input.addEventListener ('change', changeColorScheme(targetCS,typeCS)));
   // Прослушка CS-инпутов
-function changeColorScheme(targetCS) { // Функция смены цветовой схемы (при нажатии на CS-инпут)
+function changeColorScheme(targetCS,typeCS) { // Функция смены цветовой схемы (при нажатии на CS-инпут)
   varRecord(vars[1],targetCS); // запись переменных
+  localStorage.setItem('colorSchemeType', typeCS); // Сохранить ключ типа ЦС (если темная/светлая)
 }
 
 // Функция смены стиля шапки
@@ -99,9 +123,21 @@ function changeHeaderStyle(targetHS) { // Функция смены стиля �
 
 // Функция смены стиля UI
 
-uiStyleInputs.forEach(input => input.addEventListener('change', changeUiStyle(targetUI)));
-  // Прослушка инпутов, менющих стиль UI
-function changeUiStyle(targetUI) { // Функция смены стиля UI
+uiStyleInputs.forEach(input => input.addEventListener('change', changeUiStyle(targetUI,colorSchemeArray)));
+ // Прослушка инпутов, меняющих стиль UI
+function changeUiStyle(targetUI,colorSchemeArray) { // Функция смены стиля UI
   classSwith(styles[1],targetUI);
   localStorage.setItem(styles[1][0], targetUI); // Сохранить ключ
+
+  if (localStorage.getItem('colorSchemeType')) { // Если в ЛХ есть ключ типа ЦС (темная/светлая)
+    var colorSchemeType = localStorage.getItem('colorSchemeType'); // Извлечение
+
+    if (colorSchemeType == 'dark') { // Если активна была темная ЦС
+      varRecord(vars[1],colorSchemeArray[1]); // Установка из массива нужной для данного UI ЦС
+      markInput(checkedInputs[0][1],checkedInputs[1][1],colorSchemeArray[0][0]); // Отметить нужн. инпут
+    } else if (colorSchemeType == 'light') { // Если активна была светлая ЦС
+      varRecord(vars[1],colorSchemeArray[3]); // Установка из массива нужной для данного UI ЦС
+      markInput(checkedInputs[0][1],checkedInputs[1][1],colorSchemeArray[2][0]); // Отметить нужн. инпут
+    }
+  }
 }
