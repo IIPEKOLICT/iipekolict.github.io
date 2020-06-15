@@ -2,12 +2,22 @@
 /*---РАЗДЕЛ RADIO--------------*/
 /*------------------------------*/
 
+/* Стоковые радиокнопки ------------------------------*/
+
 .radio-label /* лейблы для радиокнопок */
 {
   display: block;
   cursor: pointer;
   line-height: 2.4em;
 }
+  .radio-label.hidden-label /* скрытые лейблы для радиокнопок */
+  {
+    display: none;
+  }
+  .radio-label_inline /* лейблы для радиокнопок в строчку (горизонтальные) */
+  {
+    display: inline-block;
+  }
 [type="radio"] /* Фикс видимости инпутов для радиокнопок */
 {
   margin: -1px;
@@ -23,6 +33,10 @@
 {
   display: block;
 }
+.label_custom-colored .radio-name /* текст подписи крашенной радиокнопки */
+{
+  color: var(--accent-color);
+}
 [type="radio"] + .radio-name::before /* стиль неотмеченной радиокнопки */
 {
   content: '';
@@ -36,10 +50,6 @@
   box-shadow: 0 0 0 0.1em var(--radio_nonactive-color);
   transition: 0.3s ease all;
 }
-[type="radio"] + .radio-name_interactive::before /* стиль неотмеченной радиокнопки в интерактивном спойлере */
-{
-  border-color: var(--secondary_bg-color); /* да, там другой фон */
-}
 [type="radio"]:checked + .radio-name::before /* стиль отмеченной радиокнопки */
 {
   background-color: var(--accent-color);
@@ -49,7 +59,42 @@
 {
   box-shadow: 0 0 0 0.1em var(--accent-color);
 }
-.label_custom-colored .radio-name /* текст подписи крашенной радиокнопки */
+[type="radio"] + .radio-name_interactive::before /* стиль неотмеченной радиокнопки в интерактивном спойлере */
 {
+  border-color: var(--secondary_bg-color); /* да, там другой фон */
+}
+
+/* Квадратные чекбоксы с галочкой посередине (для акцента) ------------------------------*/
+
+[type="radio"] + .square-checkbox::before /* стиль неотмеченного квадратного чекбокса (с галочкой посередине) */
+{
+  content: '✓';
+  margin: 0.2em;
+  width: 2em;
+  height: 2em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--accent-color);
   color: var(--accent-color);
+  font-size: 2.5em;
+  transition: 0.3s ease;
+}
+[type="radio"]:checked + .square-checkbox::before /* стиль отмеченного квадратного чекбокса (с галочкой посередине) */
+{
+  color: var(--main_bg-color);
+}
+
+/*------------------------------*/
+/*---ОВЕРЛЕЙ [6:5]--------------*/
+/*------------------------------*/
+
+@media (max-aspect-ratio: 6/5) /* узкие экраны до 6:5 */
+{
+  /* Квадратные чекбоксы с галочкой посередине (для акцента) ------------------------------*/
+
+  [type="radio"] + .square-checkbox::before /* стиль неотмеченного квадратного чекбокса (с галочкой посередине) */
+  {
+    font-size: 1.25em;
+  }
 }

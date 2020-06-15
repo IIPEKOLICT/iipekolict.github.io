@@ -4,6 +4,7 @@
 
 .main /* сток <main> и все блоки, выполняющие его роль */
 {
+  padding-top: calc(6rem + 2px);
   text-align: center;
   font-size: 1rem;
 }
@@ -18,6 +19,10 @@
 .main-section:last-of-type /* у последней секции нет бордера снизу */
 {
   border-bottom: none;
+}
+.main-section_center
+{
+  text-align: center;
 }
 .main-section::after /* фикс для нормальной работы с флоачеными плитками (невидимый псевдоэлемент в конце секции) */
 {
@@ -54,6 +59,10 @@
   {
     font-size: 1.25rem;
   }
+  .main_page /* модификатор майна для второстепенных страниц при ВН */
+  {
+    padding-top: calc(4.5rem + 2px);
+  }
 }
 
 /*------------------------------*/
@@ -78,7 +87,7 @@
 
   .main-section /* секции внутри <main> */
   {
-    padding: 0 1em;
+    padding: 0.7em 1em;
   }
 
   /* Заголовок секции ------------------------------*/

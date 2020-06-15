@@ -44,20 +44,21 @@ var colorsSVG = [ // Массив с параметрами классов дл�
   'var(--radio_nonactive-color)'] // Значения, соответствующие своим идентификаторам
 ]
 
+var mainBgColorValues = [ // Массив с возможными вариантами значений основного цвета фона
+  ['black','#161616'],['white','#fafafa','#f2f2f2'] // 0 строка - темные, 1 - светлые
+]
+
+var checkedInputs = [ // Массив с параметрами отмеченных элементов
+  ['checkedAccentNo','checkedColorSchemeNo','checkedHeaderStyleNo','checkedUiStyleNo'], // Ключи в ЛХ
+  ["accent-color","color-scheme","header-style","ui-style"], // Name-группы инпутов
+  ["ac1","cs1","hs1","us1"] // Стоковые значения id
+]
+
 // Функции-оптимизаторы
 
 function reload() { location.reload() } // функция перезагрузки страницы
 
 function varRead(varArray) { // функция для чтения инфы о переменной из ЛХ и ее установки
-
-  /*
-  if (localStorage.getItem(varArray[1][0][0])) {
-    var bgColorValue = localStorage.getItem(varArray[1][0][0]); // извлечь
-
-    if (bgColorValue != 'black') blackAccent.removeAttribute('disabled')
-    else if (bgColorValue != 'white') whiteAccent.removeAttribute('disabled');
-  }
-  */
 
   for (var i = 0; i < varArray.length; i++) {
     for (var j = 0; j < varArray[i][0].length; j++) { // перебор всех названий переменных (массив)
@@ -71,6 +72,13 @@ function varRead(varArray) { // функция для чтения инфы о �
           // установить пер. стоковое значение
       }
     }
+  }
+}
+
+function varRecord(varArray,varValues) { // функция для записи переменной и ключа ЛХ
+  for (var j = 0; j < varArray[0].length; j++) { // перебор всех названий переменных (массив)
+    document.documentElement.style.setProperty(varArray[0][j], varValues[j]); // установка установка переменным соотв. зачений (2 массив со значениями)
+    localStorage.setItem(varArray[0][j], varValues[j]); // запись инфы в ЛХ
   }
 }
 
@@ -100,6 +108,25 @@ function classSwith(classArray,targetClass) { // функция для разд�
   }
 }
 
+function markInput(inputKey,inputName,inputId) { // Функция, отмечающая определенный инпут
+  document.querySelector('input[name=' + inputName + '][id=' + inputId + ']')
+  .setAttribute('checked','checked'); // Отметить как выбраннный
+  localStorage.setItem(inputKey, inputId); // Сохранить ключ в ЛХ
+}
+
+function whiteBlackAccent(neededAccent,bgVariantsArray) {
+    // Функция для черного/белого акцента при переключении ЦС (меняет на сток акцент, если ЦА == ОЦФ)
+  if (localStorage.getItem(vars[0][0][0]) == neededAccent) { // Если цвет акцента - исследуемый цвет
+    for (var i = 0; i < bgVariantsArray.length; i++) { // Перебор всех светлых/темных зн. осн. цвета фона
+      if (localStorage.getItem(vars[1][0][0]) == bgVariantsArray[i]) {
+         // Если основной цвет фона равен 1 из них
+        varRecord(vars[0],vars[0][1]); // Смена цвета акцента на стоковый
+        markInput(checkedInputs[0][0],checkedInputs[1][0],checkedInputs[2][0]); // Отметить стоковый инпут ЦА
+      } 
+    }
+  }
+}
+
 document.addEventListener("DOMContentLoaded", () => { // Событие загузки страницы
   varRead(vars); // установка переменных
   for (var i = 0; i < styles.length; i++) styleRead(styles[i]); // Установка всех стилей-классов
@@ -116,4 +143,7 @@ document.addEventListener("DOMContentLoaded", () => { // Событие загу
       }
     }
   }
+
+  whiteBlackAccent('black',mainBgColorValues[0]); // Проверка на равенство цвета акцента и ОЦФ (для ч. и б.)
+  whiteBlackAccent('white',mainBgColorValues[1]); // Если да - меняет цвет акцента на стоковый
 });

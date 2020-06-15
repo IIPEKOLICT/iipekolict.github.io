@@ -2,12 +2,6 @@
 /*---ДОПОЛНИТЕЛЬНЫЙ МОДУЛЬ ДВИЖКА ТЕМ (ТОЛЬКО ДЛЯ НАСТРОЕК)---*/
 /*------------------------------------------------------------*/
 
-var checkedInputs = [ // Массив с параметрами отмеченных элементов
-  ['checkedAccentNo','checkedColorSchemeNo','checkedHeaderStyleNo','checkedUiStyleNo'], // Ключи в ЛХ
-  ["accent-color","color-scheme","header-style","ui-style"], // Name-группы инпутов
-  ["ac1","cs1","hs1","us1"] // Стоковые значения id
-]
-
 var colorSchemes = [ // Массив с параметрами темных/светлых цветовых схем
   [ // Для стиля UI "UI_OOS"
     ["cs1"],['black','#424242','#141414','#1a1a1a','white','#7a7a7a','#1e1e1e','#898989'], // Темная
@@ -51,19 +45,6 @@ function recordCheckedNo(inputConst,key) { // Функция записи инф
   }
 }
 
-function varRecord(varArray,varValues) { // функция для записи переменной и ключа ЛХ
-  for (var i = 0; i < varArray[0].length; i++) { // перебор всех названий переменных (массив)
-    document.documentElement.style.setProperty(varArray[0][i], varValues[i]); // установка установка переменным соотв. зачений (2 массив со значениями)
-    localStorage.setItem(varArray[0][i], varValues[i]); // запись инфы в ЛХ
-  }
-}
-
-function markInput(inputKey,inputName,inputId) { // Функция, отмечающая определенный инпут
-  document.querySelector('input[name=' + inputName + '][id=' + inputId + ']')
-  .setAttribute('checked','checked'); // Отметить как выбраннный
-  localStorage.setItem(inputKey, inputId); // Сохранить ключ в ЛХ
-}
-
 document.addEventListener("DOMContentLoaded", () => { // Событие загузки страницы
 
   readCheckedNo(checkedInputs); // Расстановка checked-инпутов
@@ -75,6 +56,20 @@ document.addEventListener("DOMContentLoaded", () => { // Событие загу
   for (var i = 0; i < coloredLabels.length; i++) { // Цикл опроса всех крашеных лейблов
     var labelColor = coloredLabels[i].querySelector('input').value; // Извлечение value из инпута
     coloredLabels[i].style.setProperty('--accent-color', labelColor); // Установка цвета кнопки
+  }
+
+  var bgColorValue = localStorage.getItem(vars[1][0][0]); // извлечь
+  var blackAccentLabel = document.getElementById('black-accent_label'); // лейбл черного акц.
+  var whiteAccentLabel = document.getElementById('white-accent_label'); // лейбл белого акц.
+
+  for (var i = 0; i < mainBgColorValues[0].length; i++) { // Перебор темных вариаций осн. цв. фона
+    if (bgColorValue == mainBgColorValues[0][i]) blackAccentLabel.classList.add('hidden-label')
+     // Если основной увет фона - один из них, то скрыть лейбл с черным акцентом
+  }
+
+  for (var i = 0; i < mainBgColorValues[1].length; i++) { // Перебор светлых вариаций осн. цв. фона
+    if (bgColorValue == mainBgColorValues[1][i]) whiteAccentLabel.classList.add('hidden-label')
+    // Если основной увет фона - один из них, то скрыть лейбл с белым акцентом
   }
 });
 

@@ -4,11 +4,15 @@
 
 .header /* Сток шапка */
 {
+  top: 0;
+  width: 100%;
   height: 3em;
+  position: fixed;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  background-color: var(--main_bg-color);
   border-bottom: 2px solid var(--main_border-color);
   font-size: 2rem;
 }
