@@ -21,6 +21,10 @@ var vars = [ // Массив с параметрами переменных
     ['--main_bg-color','--secondary_bg-color','--icon_bg-color','--hover_bg-color',
     '--main_text-color','--secondary_text-color','--main_border-color','--radio_nonactive-color'], // Переменные
     ['black','#424242','#141414','#1a1a1a','white','#7a7a7a','#1e1e1e','#898989'] // Стоковые значения
+  ],
+  [ // Радиус закруглений
+    ['--main_border-radius','--interactive_border-radius','--button_border-radius'], // Переменные
+    ['0.5em','1em','0.25em'] // Стоковые значения
   ]
 ]
 
@@ -49,9 +53,10 @@ var mainBgColorValues = [ // Массив с возможными вариант
 ]
 
 var checkedInputs = [ // Массив с параметрами отмеченных элементов
-  ['checkedAccentNo','checkedColorSchemeNo','checkedHeaderStyleNo','checkedUiStyleNo'], // Ключи в ЛХ
-  ["accent-color","color-scheme","header-style","ui-style"], // Name-группы инпутов
-  ["ac1","cs1","hs1","us1"] // Стоковые значения id
+  ['checkedAccentNo','checkedColorSchemeNo','checkedHeaderStyleNo','checkedUiStyleNo','checkedBorderRadiusNo'],
+   // Ключи в ЛХ
+  ["accent-color","color-scheme","header-style","ui-style","border-radius"], // Name-группы инпутов
+  ["ac1","cs1","hs1","us1","br1"] // Стоковые значения id
 ]
 
 // Функции-оптимизаторы

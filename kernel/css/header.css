@@ -38,7 +38,7 @@
   display: flex;
   cursor: pointer;
   border: 0.05em solid rgba(0,0,0,0);
-  border-radius: 50%;
+  border-radius: var(--icon_border-radius);
   transition: ease-out 0.3s;
 }
 .header-icon:hover /* Сток-контейнер иконок в шапке при наведении */

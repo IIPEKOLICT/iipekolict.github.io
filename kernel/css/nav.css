@@ -64,7 +64,7 @@
   width: 3em;
   height: 3em;
   background-color: var(--icon_bg-color);
-  border-radius: 50%;
+  border-radius: var(--icon_border-radius);
   transition: ease-out 0.3s;
 }
 .nav-item:hover .nav-icon /* иконка пункта меню при наведении на пункт меню */

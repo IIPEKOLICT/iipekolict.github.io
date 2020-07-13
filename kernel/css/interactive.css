@@ -23,7 +23,7 @@
 {
   height: 0;
   background-color: var(--secondary_bg-color);
-  border-radius: 1em 1em 0 0;
+  border-radius: var(--interactive_border-radius) var(--interactive_border-radius) 0 0;
   transform: translateY(100%);
   transition: 0.3s ease;
 }
@@ -174,7 +174,7 @@
 
   .interactive-container /* контейнер по дефолту (скрыт) */
   {
-    border-radius: 1em;
+    border-radius: var(--interactive_border-radius);
     transform: translateY(0);
     opacity: 0;
   }

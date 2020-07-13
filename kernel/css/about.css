@@ -65,13 +65,19 @@
 
 /* Текст в 6 блоках снизу ------------------------------*/
 
-#about-title .about_primary-text::before {content: 'Название устройства'}
-#about-title .about_secondary-text::before {content: 'Правильный комп'}
-#about-model .about_primary-text::before {content: 'Модель'}
+#about-model .about_primary-text::before {content: 'Название устройства'}
 #about-model .about_secondary-text::before {content: 'Asus ROG PC'}
 #about-os .about_primary-text::before {content: 'Версия Windows'}
 #about-os .about_secondary-text::before {content: '10 1903 Build'}
-#about-ui .about_primary-text::before {content: 'Версия ядра'}
+
+#about-ui .about_primary-text::before {content: 'Стиль UI'}
+#about-ui.UI_OOS .about_secondary-text::before {content: 'Oxygen OS'}
+#about-ui.UI_RUI .about_secondary-text::before {content: 'Realme UI'}
+#about-ui.UI_OneUI .about_secondary-text::before {content: 'OneUI'}
+#about-ui.UI_ZenUI .about_secondary-text::before {content: 'ZenUI'}
+
+#about-version .about_primary-text::before {content: 'Версия системы'}
+#about-version .about_secondary-text::before {content: 'LoshicaDragon '}
 #about-build .about_primary-text::before {content: 'Номер сборки'}
 #about-date .about_primary-text::before {content: 'Дата сборки'}
 
@@ -81,68 +87,6 @@
 
 @media (max-aspect-ratio: 3/4) /* диапазон 3:4 и уже */
 {
-  /* Картинка и спеки устройства ------------------------------*/
-
-  .about-header_img /* Стиль картинки в верхнем контейнере */
-  {
-    background: url(../icons/oneplus-7p.png) no-repeat 50% 50%;
-    background-size: 10em;
-  }
-  .UI_ZenUI .about-header_img /* Картинка при ZenUI-стиле */
-  {
-    background-image: url(../icons/zenfone-6.png);
-  }
-  .UI_RUI .about-header_img /* Картинка при RUI-стиле */
-  {
-    background-image: url(../icons/realme-x.png);
-  }
-  .UI_OneUI .about-header_img /* Картинка при OneUI-стиле */
-  {
-    background-image: url(../icons/galaxy-a80.png);
-  }
-
-  /* Текст в спеках сверху страницы ------------------------------*/
-
-  #about-2spec .about_primary-text::before {content: 'хранилище'}
-  #about-2spec .about_secondary-text::before {content: '8GB RAM + 128GB ROM'}
-  #about-3spec .about_primary-text::before {content: 'камера'}
-  #about-3spec .about_secondary-text::before {content: '48 + 16 + 8 MP Triple Camera'}
-  #about-4spec .about_secondary-text::before {content: 'Fluid AMOLED 6,67" Display'}
-
-  .UI_ZenUI #about-3spec .about_secondary-text::before {content: '48 + 13 MP Camera'}
-  .UI_ZenUI #about-4spec .about_secondary-text::before {content: 'Super IPS+ 6,39" Display'}
-
-  .UI_RUI #about-3spec .about_secondary-text::before {content: '48 + 5 MP Camera'}
-  .UI_RUI #about-4spec .about_secondary-text::before {content: 'Super Amoled 6,53" Display'}
-
-  .UI_OneUI #about-3spec .about_secondary-text::before {content: '48 + 8 MP Camera with ToF'}
-  .UI_OneUI #about-4spec .about_secondary-text::before {content: 'Super Amoled 6,69" Display'}
-
-  /* Текст в 6 блоках снизу ------------------------------*/
-
-  #about-title .about_secondary-text::before {content: 'Правильный смартфон'}
-  #about-model .about_secondary-text::before {content: 'OnePlus 7 Pro'}
-  #about-os .about_primary-text::before {content: 'Версия Android'}
-  #about-os .about_secondary-text::before {content: '10'}
-
-  #about-model.UI_ZenUI .about_secondary-text::before {content: 'Zenfone 6'}
-  #about-model.UI_RUI .about_secondary-text::before {content: 'Realme X'}
-  #about-model.UI_OneUI .about_secondary-text::before {content: 'Samsung Galaxy A80'}
-}
-
-/*------------------------------*/
-/*---ОВЕРЛЕЙ [6:5]--------------*/
-/*------------------------------*/
-
-@media (max-aspect-ratio: 6/5) /* узкие экраны до 6:5 */
-{
-  /* Контейнер со спеками в самом верху страницы ------------------------------*/
-
-  .about-header
-  {
-    height: 10em;
-  }
-
   /* Конструкция из 6 блоков снизу страницы ------------------------------*/
 
   .about-section /* Секция со спеками (квадратичная) */
@@ -170,13 +114,62 @@
   {
     padding-left: 1.5em;
   }
+
+  /* Картинка и спеки устройства ------------------------------*/
+
+  .UI_OOS .about-header_img /* Стиль картинки в верхнем контейнере */
+  {
+    background: url(../icons/oneplus-7p.png) no-repeat 50% 50%;
+    background-size: 10em;
+  }
+  .UI_RUI .about-header_img /* Картинка при RUI-стиле */
+  {
+    background-image: url(../icons/realme-x.png);
+  }
+  .UI_OneUI .about-header_img /* Картинка при OneUI-стиле */
+  {
+    background-image: url(../icons/galaxy-a80.png);
+  }
+  .UI_ZenUI .about-header_img /* Картинка при ZenUI-стиле */
+  {
+    background-image: url(../icons/zenfone-6.png);
+  }
+
+  /* Текст в спеках сверху страницы ------------------------------*/
+
+  #about-2spec .about_primary-text::before {content: 'хранилище'}
+  #about-2spec .about_secondary-text::before {content: '8GB RAM + 128GB ROM'}
+  #about-3spec .about_primary-text::before {content: 'камера'}
+  
+  .UI_OOS #about-3spec .about_secondary-text::before {content: '48 + 16 + 8 MP Triple Camera'}
+  .UI_OOS #about-4spec .about_secondary-text::before {content: 'Fluid AMOLED 6,67" Display'}
+
+  .UI_RUI #about-3spec .about_secondary-text::before {content: '48 + 5 MP Camera'}
+  .UI_RUI #about-4spec .about_secondary-text::before {content: 'Super Amoled 6,53" Display'}
+
+  .UI_OneUI #about-3spec .about_secondary-text::before {content: '48 + 8 MP Camera with ToF'}
+  .UI_OneUI #about-4spec .about_secondary-text::before {content: 'Super Amoled 6,69" Display'}
+
+  .UI_ZenUI #about-3spec .about_secondary-text::before {content: '48 + 13 MP Camera'}
+  .UI_ZenUI #about-4spec .about_secondary-text::before {content: 'Super IPS+ 6,39" Display'}
+
+  
+  /* Текст в 6 блоках снизу ------------------------------*/
+
+  #about-model.UI_OOS .about_secondary-text::before {content: 'OnePlus 7 Pro'}
+  #about-model.UI_RUI .about_secondary-text::before {content: 'Realme X'}
+  #about-model.UI_OneUI .about_secondary-text::before {content: 'Samsung Galaxy A80'}
+  #about-model.UI_ZenUI .about_secondary-text::before {content: 'Zenfone 6'}
+  
+  #about-os .about_primary-text::before {content: 'Версия Android'}
+  #about-os .about_secondary-text::before {content: '10'}
 }
 
 /*------------------------------*/
-/*---ОВЕРЛЕЙ >[6:5]-------------*/
+/*---ОВЕРЛЕЙ >[3:4]-------------*/
 /*------------------------------*/
 
-@media (min-aspect-ratio: 6/5) /* экраны шире 6:5 */
+@media (min-aspect-ratio: 3/4) /* экраны шире 3:4 */
 {
   /* Конструкция из 6 блоков снизу страницы ------------------------------*/
 
@@ -195,5 +188,33 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+  }
+}
+
+/*------------------------------*/
+/*---ОВЕРЛЕЙ [3:4 - 6:5]--------*/
+/*------------------------------*/
+
+@media (min-aspect-ratio: 3/4) and (max-aspect-ratio: 6/5) /* диапазон 3:4 - 6:5 */
+{
+  /* Конструкция из 6 блоков снизу страницы ------------------------------*/
+
+  .about-container /* Контейнеры в секции */
+  {
+    height: 2em;
+  }
+}
+
+/*------------------------------*/
+/*---ОВЕРЛЕЙ [6:5]--------------*/
+/*------------------------------*/
+
+@media (max-aspect-ratio: 6/5) /* узкие экраны до 6:5 */
+{
+  /* Контейнер со спеками в самом верху страницы ------------------------------*/
+
+  .about-header
+  {
+    height: 10em;
   }
 }

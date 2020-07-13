@@ -91,6 +91,11 @@ const uiStyleInputs = [].slice.call(document.querySelectorAll
   ('input[type="radio"][name="ui-style"]')); // Все инпуты, меняющие стиль UI
 recordCheckedNo(uiStyleInputs,checkedInputs[0][3]);
 
+const borderRadiusInputs = [].slice.call(document.querySelectorAll
+  ('input[type="radio"][name="border-radius"]')); // Все инпуты, меняющие радиус закруглений
+recordCheckedNo(borderRadiusInputs,checkedInputs[0][4]);
+
+
 // Функция смены цвета акцента
 
 accentInputs.forEach(input => input.addEventListener('change', changeAccent(targetAC))); // Прослушка акц-инпутов
@@ -135,4 +140,12 @@ function changeUiStyle(targetUI,colorSchemeArray) { // Функция смены
       markInput(checkedInputs[0][1],checkedInputs[1][1],colorSchemeArray[2][0]); // Отметить нужн. инпут
     }
   }
+}
+
+// Функция смены радиуса закруглений
+
+borderRadiusInputs.forEach(input => input.addEventListener('change', changeBorderRadius(targetBR)));
+ // Прослушка радиус-инпутов
+function changeBorderRadius(targetBR) { // Функция смены акцента (при нажатии на акц-инпут)
+  varRecord(vars[2],targetBR); // запись переменных
 }

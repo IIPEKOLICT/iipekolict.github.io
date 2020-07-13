@@ -8,7 +8,7 @@
   height: 5em;
   text-align: left;
   border: 1px solid var(--main_bg-color);
-  border-radius: 0.5em;
+  border-radius: var(--main_border-radius);
   transition: 0.3s ease;
 }
 .menu-item:hover /* контейнер при наведении */
@@ -27,7 +27,7 @@
   height: 2em;
   float: left;
   background: var(--icon_bg-color) no-repeat 50% 50%;
-  border-radius: 50%;
+  border-radius: var(--icon_border-radius);
 }
   .menu-item_svg /* Свг-порт для иконки слева */
   {
