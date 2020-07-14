@@ -2,22 +2,26 @@
 /*---ДОПОЛНИТЕЛЬНЫЙ МОДУЛЬ ДВИЖКА ТЕМ (ТОЛЬКО ДЛЯ НАСТРОЕК)---*/
 /*------------------------------------------------------------*/
 
-var colorSchemes = [ // Массив с параметрами темных/светлых цветовых схем
+var uiParametres = [ // Массив с параметрами UI
   [ // Для стиля UI "UI_OOS"
-    ["cs1"],['black','#424242','#141414','#1a1a1a','white','#7a7a7a','#1e1e1e','#898989'], // Темная
-    ["cs2"],['#fafafa','white','white','#efefef','#191919','#969696','#e6e6e6','#999'] // Светлая
+    ["cs1"],['black','#424242','#141414','#1a1a1a','white','#7a7a7a','#1e1e1e','#898989'], // Темная тема
+    ["cs2"],['#fafafa','white','white','#efefef','#191919','#969696','#e6e6e6','#999'], // Светлая тема
+    ["br1"],['0.4em','0.6em','0.25em'] // Дефолтные закругления
   ],
   [ // Для стиля UI "UI_RUI"
-    ["cs3"],['black','#333','#141414','#252525','white','#8c8c8c','#333333','#666'], // Темная
-    ["cs4"],['white','white','#ddd','#f7f7f7','black','#737373','#e5e5e5','#ccc'] // Светлая
+    ["cs3"],['black','#333','#141414','#252525','white','#8c8c8c','#333333','#666'], // Темная тема
+    ["cs4"],['white','white','#ddd','#f7f7f7','black','#737373','#e5e5e5','#ccc'], // Светлая тема
+    ["br2"],['0.6em','1.2em','0.5em'] // Дефолтные закругления
   ],
   [ // Для стиля UI "UI_OneUI"
-    ["cs5"],['black','#252525','#252525','#333','#fafafa','#909090','#3f3f3f','#797979'], // Темная
-    ["cs6"],['#f2f2f2','#fcfcfc','white','#e3e3e3','#161616','#989898','#ececec','#b3b3b3'] // Светлая
+    ["cs5"],['black','#252525','#252525','#333','#fafafa','#909090','#3f3f3f','#797979'], // Темная тема
+    ["cs6"],['#f2f2f2','#fcfcfc','white','#e3e3e3','#161616','#989898','#ececec','#b3b3b3'], // Светлая тема
+    ["br3"],['1em','1.2em','1.25em'] // Дефолтные закругления
   ],
   [ // Для стиля UI "UI_ZenUI"
-    ["cs7"],['#161616','#424242','#252525','#505050','white','#b9b9b9','#323232','#c1c1c1'], // Темная
-    ["cs8"],['#fafafa','white','#ddd','#ededed','#202020','#787878','#dcdcdc','#989898'] // Светлая
+    ["cs7"],['#161616','#424242','#252525','#505050','white','#b9b9b9','#323232','#c1c1c1'], // Темная тема
+    ["cs8"],['#fafafa','white','#ddd','#ededed','#202020','#787878','#dcdcdc','#989898'], // Светлая тема
+    ["br4"],['0.5em','0.5em','1.25em'] // Дефолтные закругления
   ]
 ]
 
@@ -95,6 +99,9 @@ const borderRadiusInputs = [].slice.call(document.querySelectorAll
   ('input[type="radio"][name="border-radius"]')); // Все инпуты, меняющие радиус закруглений
 recordCheckedNo(borderRadiusInputs,checkedInputs[0][4]);
 
+const iconShapeInputs = [].slice.call(document.querySelectorAll
+  ('input[type="radio"][name="icon-shape"]')); // Все инпуты, меняющие форму иконок
+recordCheckedNo(iconShapeInputs,checkedInputs[0][5]);
 
 // Функция смены цвета акцента
 
@@ -123,9 +130,9 @@ function changeHeaderStyle(targetHS) { // Функция смены стиля �
 
 // Функция смены стиля UI
 
-uiStyleInputs.forEach(input => input.addEventListener('change', changeUiStyle(targetUI,colorSchemeArray)));
+uiStyleInputs.forEach(input => input.addEventListener('change', changeUiStyle(targetUI,uiParametresArray)));
  // Прослушка инпутов, меняющих стиль UI
-function changeUiStyle(targetUI,colorSchemeArray) { // Функция смены стиля UI
+function changeUiStyle(targetUI,uiParametresArray) { // Функция смены стиля UI
   classSwith(styles[1],targetUI);
   localStorage.setItem(styles[1][0], targetUI); // Сохранить ключ
 
@@ -133,19 +140,37 @@ function changeUiStyle(targetUI,colorSchemeArray) { // Функция смены
     var colorSchemeType = localStorage.getItem('colorSchemeType'); // Извлечение
 
     if (colorSchemeType == 'dark') { // Если активна была темная ЦС
-      varRecord(vars[1],colorSchemeArray[1]); // Установка из массива нужной для данного UI ЦС
-      markInput(checkedInputs[0][1],checkedInputs[1][1],colorSchemeArray[0][0]); // Отметить нужн. инпут
+      varRecord(vars[1],uiParametresArray[1]); // Установка из массива нужной для данного UI ЦС
+      markInput(checkedInputs[0][1],checkedInputs[1][1],uiParametresArray[0][0]); // Отметить нужн. инпут
     } else if (colorSchemeType == 'light') { // Если активна была светлая ЦС
-      varRecord(vars[1],colorSchemeArray[3]); // Установка из массива нужной для данного UI ЦС
-      markInput(checkedInputs[0][1],checkedInputs[1][1],colorSchemeArray[2][0]); // Отметить нужн. инпут
+      varRecord(vars[1],uiParametresArray[3]); // Установка из массива нужной для данного UI ЦС
+      markInput(checkedInputs[0][1],checkedInputs[1][1],uiParametresArray[2][0]); // Отметить нужн. инпут
+    }
+  }
+
+  if (localStorage.getItem('borderRadiusType')) { // Если в ЛХ есть ключ типа РЗ (дефолтный/кастомный)
+    var borderRadiusType = localStorage.getItem('borderRadiusType'); // Извлечение
+
+    if (borderRadiusType == 'default') { // Если активен был дефолтный набор рз
+      varRecord(vars[2],uiParametresArray[5]); // Установка из массива нужного для данного UI рз
+      markInput(checkedInputs[0][4],checkedInputs[1][4],uiParametresArray[4][0]); // Отметить нужн. инпут
     }
   }
 }
 
 // Функция смены радиуса закруглений
 
-borderRadiusInputs.forEach(input => input.addEventListener('change', changeBorderRadius(targetBR)));
+borderRadiusInputs.forEach(input => input.addEventListener('change', changeBorderRadius(targetBR,radiusType)));
  // Прослушка радиус-инпутов
-function changeBorderRadius(targetBR) { // Функция смены акцента (при нажатии на акц-инпут)
+function changeBorderRadius(targetBR,radiusType) { // Функция радиуса закруглений (при нажатии на рз-инпут)
   varRecord(vars[2],targetBR); // запись переменных
+  localStorage.setItem('borderRadiusType', radiusType); // Сохранить ключ типа РЗ (default/custom)
+}
+
+// Функция смены формы иконок
+
+iconShapeInputs.forEach(input => input.addEventListener('change', changeIconShape(targetIS)));
+ // Прослушка инпутов для смены формы иконок
+function changeIconShape(targetIS) { // Функция формы иконок (при нажатии на фи-инпут)
+  varRecord(vars[3],targetIS); // запись переменных
 }

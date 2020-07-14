@@ -239,44 +239,44 @@
       <div class="main main_page page-block_main">
         <section class="main-section">
           <label class="radio-label content_OOS" for="cs1">
-            <input onchange="changeColorScheme(colorSchemes[0][1],'dark'), reload()" type="radio" id="cs1" name="color-scheme">
+            <input onchange="changeColorScheme(uiParametres[0][1],'dark'), reload()" type="radio" id="cs1" name="color-scheme">
             <span class="radio-name">Темная</span>
           </label>
           <label class="radio-label content_OOS" for="cs2">
-            <input onchange="changeColorScheme(colorSchemes[0][3],'light'), reload()" type="radio" id="cs2" name="color-scheme">
+            <input onchange="changeColorScheme(uiParametres[0][3],'light'), reload()" type="radio" id="cs2" name="color-scheme">
             <span class="radio-name">Светлая</span>
           </label>
 
           <label class="radio-label content_RUI" for="cs3">
-            <input onchange="changeColorScheme(colorSchemes[1][1],'dark'), reload()" type="radio" id="cs3" name="color-scheme">
+            <input onchange="changeColorScheme(uiParametres[1][1],'dark'), reload()" type="radio" id="cs3" name="color-scheme">
             <span class="radio-name">Темная</span>
           </label>
           <label class="radio-label content_RUI" for="cs4">
-            <input onchange="changeColorScheme(colorSchemes[1][3],'light'), reload()" type="radio" id="cs4" name="color-scheme">
+            <input onchange="changeColorScheme(uiParametres[1][3],'light'), reload()" type="radio" id="cs4" name="color-scheme">
             <span class="radio-name">Светлая</span>
           </label>
 
           <label class="radio-label content_OneUI" for="cs5">
-            <input onchange="changeColorScheme(colorSchemes[2][1],'dark'), reload()" type="radio" id="cs5" name="color-scheme">
+            <input onchange="changeColorScheme(uiParametres[2][1],'dark'), reload()" type="radio" id="cs5" name="color-scheme">
             <span class="radio-name">Темная</span>
           </label>
           <label class="radio-label content_OneUI" for="cs6">
-            <input onchange="changeColorScheme(colorSchemes[2][3],'light'), reload()" type="radio" id="cs6" name="color-scheme">
+            <input onchange="changeColorScheme(uiParametres[2][3],'light'), reload()" type="radio" id="cs6" name="color-scheme">
             <span class="radio-name">Светлая</span>
           </label>
 
           <label class="radio-label content_ZenUI" for="cs7">
-            <input onchange="changeColorScheme(colorSchemes[3][1],'dark'), reload()" type="radio" id="cs7" name="color-scheme">
+            <input onchange="changeColorScheme(uiParametres[3][1],'dark'), reload()" type="radio" id="cs7" name="color-scheme">
             <span class="radio-name">Темная</span>
           </label>
           <label class="radio-label content_ZenUI" for="cs8">
-            <input onchange="changeColorScheme(colorSchemes[3][3],'light'), reload()" type="radio" id="cs8" name="color-scheme">
+            <input onchange="changeColorScheme(uiParametres[3][3],'light'), reload()" type="radio" id="cs8" name="color-scheme">
             <span class="radio-name">Светлая</span>
           </label>
 
           <label class="radio-label" for="cs9">
             <input onchange="changeColorScheme(
-            ['black','#212121','#141414','#1a1a1a','#d8d8d8','#8a8a8a','#1e1e1e','#898989']), reload()" type="radio" id="cs9" name="color-scheme">
+            ['black','#212121','#141414','#1a1a1a','#d8d8d8','#8a8a8a','#1e1e1e','#898989'],'custom'), reload()" type="radio" id="cs9" name="color-scheme">
             <span class="radio-name">Oxygen OS 10</span>
           </label>
         </section>
@@ -316,11 +316,17 @@
           <div class="menu-item spoiler-container">
             <div class="menu-item_text-container release-info">
               <h3 class="menu-item_text menu-item_name"></h3>
-              <time class="menu-item_text menu-item_description" datatime="2020-07-13">13.07.2020</time>
+              <time class="menu-item_text menu-item_description" datatime="2020-07-14">14.07.2020</time>
             </div>
             <details class="spoiler spoiler_changelog">
               <summary class="spoiler-button spoiler-button_changelog"></summary>
               <div class="delimiter_changelog"></div>
+              <ul class="release-notes">
+                <li class="release-note">добавлено 4 варианта формы иконок: круг, скругленный квадрат (25%), почти квадрат (10%) и квадрат</li>
+                <li class="release-note">Добавлена возможность изменять форму иконок</li>
+                <li class="release-note">при переключении стиля UI если был выбран default-рз, то подхватывается автоматом default рз для оного UI</li>
+                <li class="release-note">добавлено 5 наборов радиусов закруглений (OOS, RUI, OneUI, ZenUI, без закруглений)</li>
+              </ul>
               <ul class="release-notes">
                 <li class="release-note">добавлена функция для изменения радиусов закруглений и 2 варианта оных</li>
                 <li class="release-note">радиусы закруглений теперь реализованы через переменные</li>
@@ -735,6 +741,9 @@
         <section class="main-section interactive-link" onclick="showInteractive('border-radius')">
           <h3 class="main-header interactive-link_name">Радиус закруглений</h3>
         </section>
+        <section class="main-section interactive-link" onclick="showInteractive('icon-shape')">
+          <h3 class="main-header interactive-link_name">Форма иконок</h3>
+        </section>
       </div>
 
       <header class="header header_page">
@@ -776,19 +785,19 @@
           <h3 class="interactive-header">Стиль UI</h3>
 
           <label class="radio-label" for="us1">
-            <input type="radio" id="us1" name="ui-style" onchange="changeUiStyle('UI_OOS',colorSchemes[0]), reload()">
+            <input type="radio" id="us1" name="ui-style" onchange="changeUiStyle('UI_OOS',uiParametres[0]), reload()">
             <span class="radio-name radio-name_interactive">Oxygen OS</span>
           </label>
           <label class="radio-label" for="us2">
-            <input type="radio" id="us2" name="ui-style" onchange="changeUiStyle('UI_RUI',colorSchemes[1]), reload()">
+            <input type="radio" id="us2" name="ui-style" onchange="changeUiStyle('UI_RUI',uiParametres[1]), reload()">
             <span class="radio-name radio-name_interactive">Realme UI</span>
           </label>
           <label class="radio-label" for="us3">
-            <input type="radio" id="us3" name="ui-style" onchange="changeUiStyle('UI_OneUI',colorSchemes[2]), reload()">
+            <input type="radio" id="us3" name="ui-style" onchange="changeUiStyle('UI_OneUI',uiParametres[2]), reload()">
             <span class="radio-name radio-name_interactive">OneUI</span>
           </label>
           <label class="radio-label" for="us4">
-            <input type="radio" id="us4" name="ui-style" onchange="changeUiStyle('UI_ZenUI',colorSchemes[3]), reload()">
+            <input type="radio" id="us4" name="ui-style" onchange="changeUiStyle('UI_ZenUI',uiParametres[3]), reload()">
             <span class="radio-name radio-name_interactive">ZenUI</span>
           </label>
         </div>
@@ -798,12 +807,46 @@
           <h3 class="interactive-header">Радиус закруглений</h3>
 
           <label class="radio-label" for="br1">
-            <input type="radio" id="br1" name="border-radius" onchange="changeBorderRadius(['0.5em','1em','0.25em']), reload()">
-            <span class="radio-name radio-name_interactive">Стоковый вариант</span>
+            <input type="radio" id="br1" name="border-radius" onchange="changeBorderRadius(uiParametres[0][5],'default'), reload()">
+            <span class="radio-name radio-name_interactive">Oxygen OS</span>
           </label>
           <label class="radio-label" for="br2">
-            <input type="radio" id="br2" name="border-radius" onchange="changeBorderRadius(['1em','2.5em','0.5em']), reload()">
-            <span class="radio-name radio-name_interactive">Тестовый вариант</span>
+            <input type="radio" id="br2" name="border-radius" onchange="changeBorderRadius(uiParametres[1][5],'default'), reload()">
+            <span class="radio-name radio-name_interactive">Realme UI</span>
+          </label>
+          <label class="radio-label" for="br3">
+            <input type="radio" id="br3" name="border-radius" onchange="changeBorderRadius(uiParametres[2][5],'default'), reload()">
+            <span class="radio-name radio-name_interactive">OneUI</span>
+          </label>
+          <label class="radio-label" for="br4">
+            <input type="radio" id="br4" name="border-radius" onchange="changeBorderRadius(uiParametres[3][5],'default'), reload()">
+            <span class="radio-name radio-name_interactive">ZenUI</span>
+          </label>
+          <label class="radio-label" for="br5">
+            <input type="radio" id="br5" name="border-radius" onchange="changeBorderRadius(['0','0','0'],'custom'), reload()">
+            <span class="radio-name radio-name_interactive">Отключить закругления</span>
+          </label>
+        </div>
+
+        <!-- Переключатель формы иконок -->
+        <div id="icon-shape" class="interactive-content interactive-block">
+          <h3 class="interactive-header">Форма иконок</h3>
+
+          <label class="radio-label" for="is1">
+            <input type="radio" id="is1" name="icon-shape" onchange="changeIconShape(['50%']), reload()">
+            <span class="radio-name radio-name_interactive">Круг</span>
+          </label>
+          <label class="radio-label" for="is2">
+            <input type="radio" id="is2" name="icon-shape" onchange="changeIconShape(['25%']), reload()">
+            <span class="radio-name radio-name_interactive">Скругленный квадрат</span>
+          </label>
+          <label class="radio-label" for="is3">
+            <input type="radio" id="is3" name="icon-shape" onchange="changeIconShape(['10%']), reload()">
+            <span class="radio-name radio-name_interactive">Почти квадрат</span>
+          </label>
+          <label class="radio-label" for="is4">
+            <input type="radio" id="is4" name="icon-shape" onchange="changeIconShape(['0']), reload()">
+            <span class="radio-name radio-name_interactive">Квадрат</span>
           </label>
         </div>
       </div>
