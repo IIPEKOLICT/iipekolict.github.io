@@ -34,7 +34,7 @@
 
 .about_primary-text /* Стиль основного текста */
 {
-  color: var(--secondary_text-color);
+  color: var(--secondary_text-color, #7a7a7a);
 }
 .about-header .about_primary-text /* Весь основной текст заглавными в верхнем контейнере */
 {
@@ -42,7 +42,7 @@
 }
 .about_secondary-text /* Стиль второстепенного текста */
 {
-  color: var(--main_text-color);
+  color: var(--main_text-color, white);
   height: 2em;
 }
 
@@ -93,7 +93,7 @@
   {
     padding: 0.75em 0;
     flex-direction: row;
-    border-bottom: 1px solid var(--main_border-color);
+    border-bottom: 1px solid var(--main_border-color, #1e1e1e);
   }
   .about-section:last-of-type /* Последняя секция со спеками (квадратичная) */
   {
@@ -107,7 +107,7 @@
   }
   .about-container:nth-of-type(odd) /* Нечетные контейнеры в секции */
   {
-    border-right: 1px solid var(--main_border-color);
+    border-right: 1px solid var(--main_border-color, #1e1e1e);
     padding-right: 0.75em;
   }
   .about-container:nth-of-type(even) /*Четные контейнеры в секции */
@@ -181,7 +181,7 @@
   .about-container /* Контейнеры в секции */
   {
     height: 3em;
-    border-top: 1px solid var(--main_border-color);
+    border-top: 1px solid var(--main_border-color, #1e1e1e);
   }
   .about-text /* Стиль текстового контейнера внутри контейнера */
   {

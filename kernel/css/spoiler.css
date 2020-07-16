@@ -8,7 +8,7 @@
 {
   padding: 0.5em;
   height: auto;
-  background-color: var(--secondary_bg-color);
+  background-color: var(--secondary_bg-color, #424242);
 }
 
 /* Стили <details> в #changelog (кнопка сбоку) ------------------------------*/
@@ -43,9 +43,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  color: var(--main_bg-color);
-  background-color: var(--accent-color);
-  border-radius: var(--button_border-radius);
+  color: var(--main_bg-color, black);
+  background-color: var(--accent-color, #80cbc4);
+  border-radius: var(--button_border-radius, 0.25em);
   cursor: pointer;
 }
 .spoiler-button::after /* дефолтная подпись суммари (псевдоэлемент) */

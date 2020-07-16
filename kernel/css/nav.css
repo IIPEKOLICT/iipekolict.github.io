@@ -63,13 +63,13 @@
   padding: 1em;
   width: 3em;
   height: 3em;
-  background-color: var(--icon_bg-color);
-  border-radius: var(--icon_border-radius);
+  background-color: var(--icon_bg-color, #141414);
+  border-radius: var(--icon_border-radius, 50%);
   transition: ease-out 0.3s;
 }
 .nav-item:hover .nav-icon /* иконка пункта меню при наведении на пункт меню */
 {
-  background-color: var(--accent-color);
+  background-color: var(--accent-color, #80cbc4);
 }
   .nav-icon_svg /* свг-порт иконки пункта меню */
   {
@@ -78,7 +78,7 @@
   }
 .nav-item:hover .nav-name /* название пункта меню при наведении на пункт меню */
 {
-  color: var(--accent-color);
+  color: var(--accent-color, #80cbc4);
 }
 
 /*------------------------------*/

@@ -35,7 +35,7 @@
 }
 .label_custom-colored .radio-name /* текст подписи крашенной радиокнопки */
 {
-  color: var(--accent-color);
+  color: var(--accent-color, #80cbc4);
 }
 [type="radio"] + .radio-name::before /* стиль неотмеченной радиокнопки */
 {
@@ -45,23 +45,23 @@
   height: 0.6em;
   vertical-align: -0.3em;
   display: inline-block;
-  border: 0.3em solid var(--main_bg-color);
+  border: 0.3em solid var(--main_bg-color, black);
   border-radius: 0.6em;
-  box-shadow: 0 0 0 0.1em var(--radio_nonactive-color);
+  box-shadow: 0 0 0 0.1em var(--radio_nonactive-color, #898989);
   transition: 0.3s ease all;
 }
 [type="radio"]:checked + .radio-name::before /* стиль отмеченной радиокнопки */
 {
-  background-color: var(--accent-color);
-  box-shadow: 0 0 0 0.1em var(--accent-color);
+  background-color: var(--accent-color, #80cbc4);
+  box-shadow: 0 0 0 0.1em var(--accent-color, #80cbc4);
 }
 .label_custom-colored [type="radio"] + .radio-name::before /* стиль неотмеченной радиокнопки в крашеных лейблах */
 {
-  box-shadow: 0 0 0 0.1em var(--accent-color);
+  box-shadow: 0 0 0 0.1em var(--accent-color, #80cbc4);
 }
 [type="radio"] + .radio-name_interactive::before /* стиль неотмеченной радиокнопки в интерактивном спойлере */
 {
-  border-color: var(--secondary_bg-color); /* да, там другой фон */
+  border-color: var(--secondary_bg-color, #424242); /* да, там другой фон */
 }
 
 /* Квадратные чекбоксы с галочкой посередине (для акцента) ------------------------------*/
@@ -75,14 +75,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: var(--accent-color);
-  color: var(--accent-color);
+  background-color: var(--accent-color, #80cbc4);
+  color: var(--accent-color, #80cbc4);
   font-size: 2.5em;
   transition: 0.3s ease;
 }
 [type="radio"]:checked + .square-checkbox::before /* стиль отмеченного квадратного чекбокса (с галочкой посередине) */
 {
-  color: var(--main_bg-color);
+  color: var(--main_bg-color, black);
 }
 
 /*------------------------------*/

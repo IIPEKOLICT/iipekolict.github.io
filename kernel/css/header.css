@@ -12,17 +12,17 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  background-color: var(--main_bg-color);
-  border-bottom: 2px solid var(--main_border-color);
+  background-color: var(--main_bg-color, black);
+  border-bottom: 2px solid var(--main_border-color, #1e1e1e);
   font-size: 2rem;
 }
   .header.HEADER_ZenUI /* Шапка при активном стиле шапки "ZenUI" */
   {
-    border-color: var(--accent-color);
+    border-color: var(--accent-color, #80cbc4);
   }
   .header.HEADER_OOSColor /* Шапка при активном стиле шапки "OOS цветная" */
   {
-    background-color: var(--main_border-color);
+    background-color: var(--main_border-color, #1e1e1e);
   }
 .header_page /* Модификатор шапки, только для страниц, не являющихся главной в HTML-документе (при ВН) */
 {
@@ -38,12 +38,12 @@
   display: flex;
   cursor: pointer;
   border: 0.05em solid rgba(0,0,0,0);
-  border-radius: var(--icon_border-radius);
+  border-radius: var(--icon_border-radius, 50%);
   transition: ease-out 0.3s;
 }
 .header-icon:hover /* Сток-контейнер иконок в шапке при наведении */
 {
-  border-color: var(--accent-color);
+  border-color: var(--accent-color, #80cbc4);
   transform: scale(0.6);
 }
 .header-icon_svg /* Свг-порт иконок в шапке, размер 1ем */
@@ -63,7 +63,7 @@
 }
   .header-name.HEADER_ZenUI /* Заголовок в шапке при активном стиле шапки "ZenUI" */
   {
-    color: var(--accent-color);
+    color: var(--accent-color, #80cbc4);
   }
 .header-name_main /* Заголовок в шапке в главном блоке в HTML-документе */
 {

@@ -316,11 +316,19 @@
           <div class="menu-item spoiler-container">
             <div class="menu-item_text-container release-info">
               <h3 class="menu-item_text menu-item_name"></h3>
-              <time class="menu-item_text menu-item_description" datatime="2020-07-14">14.07.2020</time>
+              <time class="menu-item_text menu-item_description" datatime="2020-07-16">16.07.2020</time>
             </div>
             <details class="spoiler spoiler_changelog">
               <summary class="spoiler-button spoiler-button_changelog"></summary>
               <div class="delimiter_changelog"></div>
+              <ul class="release-notes">
+                <li class="release-note">реализован автоподхват стокового для данного стиля UI стиля диалоговых окон при смене UI</li>
+                <li class="release-note">добавлена возможность изменения стиля диалоговых окон посредством смены классов</li>
+                <li class="release-note">добавлены запасные значения для css-переменных на случай непрочтения оных/если браузер не поддерживает их</li>
+                <li class="release-note">добавлен css-раздел для кастомных шрифтов</li>
+                <li class="release-note">добавлено 8 шрифтов со свободным переключением</li>
+                <li class="release-note">добавлена возможность изменения шрифта</li>
+              </ul>
               <ul class="release-notes">
                 <li class="release-note">добавлено 4 варианта формы иконок: круг, скругленный квадрат (25%), почти квадрат (10%) и квадрат</li>
                 <li class="release-note">Добавлена возможность изменять форму иконок</li>
@@ -744,6 +752,12 @@
         <section class="main-section interactive-link" onclick="showInteractive('icon-shape')">
           <h3 class="main-header interactive-link_name">Форма иконок</h3>
         </section>
+        <section class="main-section interactive-link" onclick="showInteractive('font-family')">
+          <h3 class="main-header interactive-link_name">Шрифт</h3>
+        </section>
+        <section class="main-section interactive-link" onclick="showInteractive('interactive-style')">
+          <h3 class="main-header interactive-link_name">Стиль диалоговых окон</h3>
+        </section>
       </div>
 
       <header class="header header_page">
@@ -847,6 +861,66 @@
           <label class="radio-label" for="is4">
             <input type="radio" id="is4" name="icon-shape" onchange="changeIconShape(['0']), reload()">
             <span class="radio-name radio-name_interactive">Квадрат</span>
+          </label>
+        </div>
+
+        <!-- Переключатель шрифта -->
+        <div id="font-family" class="interactive-content interactive-block">
+          <h3 class="interactive-header">Шрифт</h3>
+
+          <label class="radio-label" for="ff1">
+            <input type="radio" id="ff1" name="font-family" onchange="changeFontFamily(['Arial']), reload()">
+            <span class="radio-name radio-name_interactive">Arial</span>
+          </label>
+          <label class="radio-label" for="ff2">
+            <input type="radio" id="ff2" name="font-family" onchange="changeFontFamily(['Tahoma']), reload()">
+            <span class="radio-name radio-name_interactive">Tahoma</span>
+          </label>
+          <label class="radio-label" for="ff3">
+            <input type="radio" id="ff3" name="font-family" onchange="changeFontFamily(['Oxygen Mono']), reload()">
+            <span class="radio-name radio-name_interactive">Oxygen Mono</span>
+          </label>
+          <label class="radio-label" for="ff4">
+            <input type="radio" id="ff4" name="font-family" onchange="changeFontFamily(['Roboto Condensed']), reload()">
+            <span class="radio-name radio-name_interactive">Roboto Condensed</span>
+          </label>
+          <label class="radio-label" for="ff5">
+            <input type="radio" id="ff5" name="font-family" onchange="changeFontFamily(['Bitter']), reload()">
+            <span class="radio-name radio-name_interactive">Bitter</span>
+          </label>
+          <label class="radio-label" for="ff6">
+            <input type="radio" id="ff6" name="font-family" onchange="changeFontFamily(['OpenGost Type B TT']), reload()">
+            <span class="radio-name radio-name_interactive">ГОСТ</span>
+          </label>
+          <label class="radio-label" for="ff7">
+            <input type="radio" id="ff7" name="font-family" onchange="changeFontFamily(['USSR Stencil']), reload()">
+            <span class="radio-name radio-name_interactive">USSR Stencil</span>
+          </label>
+          <label class="radio-label" for="ff8">
+            <input type="radio" id="ff8" name="font-family" onchange="changeFontFamily(['Times New Roman']), reload()">
+            <span class="radio-name radio-name_interactive">Times New Roman</span>
+          </label>
+        </div>
+
+        <!-- Переключатель стиля диалоговых окон -->
+        <div id="interactive-style" class="interactive-content interactive-block">
+          <h3 class="interactive-header">Стиль диалоговых окон</h3>
+
+          <label class="radio-label" for="ias1">
+            <input type="radio" id="ias1" name="interactive-style" onchange="changeInteractiveStyle(uiParametres[0][7][0]), reload()">
+            <span class="radio-name radio-name_interactive">Oxygen OS</span>
+          </label>
+          <label class="radio-label" for="ias2">
+            <input type="radio" id="ias2" name="interactive-style" onchange="changeInteractiveStyle(uiParametres[1][7][0]), reload()">
+            <span class="radio-name radio-name_interactive">Realme UI</span>
+          </label>
+          <label class="radio-label" for="ias3">
+            <input type="radio" id="ias3" name="interactive-style" onchange="changeInteractiveStyle(uiParametres[2][7][0]), reload()">
+            <span class="radio-name radio-name_interactive">OneUI</span>
+          </label>
+          <label class="radio-label" for="ias4">
+            <input type="radio" id="ias4" name="interactive-style" onchange="changeInteractiveStyle(uiParametres[3][7][0]), reload()">
+            <span class="radio-name radio-name_interactive">ZenUI</span>
           </label>
         </div>
       </div>

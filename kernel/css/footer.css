@@ -4,7 +4,7 @@
 
 .footer /* сток <footer> */
 {
-  border-top: 2px solid var(--main_border-color);
+  border-top: 2px solid var(--main_border-color, #1e1e1e);
   font-size: 0.8rem;
 }
 .footer-container /* контейнер для содержимого футера */
@@ -16,7 +16,7 @@
 {
   margin: inherit;
   padding: 1em;
-  color: var(--secondary_text-color);
+  color: var(--secondary_text-color, #7a7a7a);
   font-size: 1em;
 }
 

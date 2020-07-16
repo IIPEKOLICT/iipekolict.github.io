@@ -7,14 +7,14 @@
   margin: 0.5em 0;
   height: 5em;
   text-align: left;
-  border: 1px solid var(--main_bg-color);
-  border-radius: var(--main_border-radius);
+  border: 1px solid var(--main_bg-color, black);
+  border-radius: var(--main_border-radius, 0.5em);
   transition: 0.3s ease;
 }
 .menu-item:hover /* контейнер при наведении */
 {
-  background-color: var(--hover_bg-color);
-  border-color: var(--accent-color);
+  background-color: var(--hover_bg-color, #1a1a1a);
+  border-color: var(--accent-color, #80cbc4);
 }
 
 /* Иконка слева ------------------------------*/
@@ -26,8 +26,8 @@
   width: 2em;
   height: 2em;
   float: left;
-  background: var(--icon_bg-color) no-repeat 50% 50%;
-  border-radius: var(--icon_border-radius);
+  background: var(--icon_bg-color, #141414) no-repeat 50% 50%;
+  border-radius: var(--icon_border-radius, 50%);
 }
   .menu-item_svg /* Свг-порт для иконки слева */
   {
@@ -56,7 +56,7 @@
 }
 .menu-item_description /* описание */
 {
-  color: var(--secondary_text-color);
+  color: var(--secondary_text-color, #7a7a7a);
   font-size: 0.8em;
   line-height: 1.875em;
   white-space: nowrap; /* Отменяем перенос текста */

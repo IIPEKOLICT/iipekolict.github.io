@@ -36,6 +36,10 @@
   --interactive_border-radius: 1em; /* Диалоговое окно */
   --button_border-radius: 0.25em; /* Кнопки */
   --icon_border-radius: 50%; /* Иконки */
+
+  /* Шрифт */
+
+  --main_font-family: Arial; /* Основной */
 }
 
 /*------------------------------*/

@@ -22,8 +22,8 @@
 .interactive-container /* контейнер по дефолту (скрыт) */
 {
   height: 0;
-  background-color: var(--secondary_bg-color);
-  border-radius: var(--interactive_border-radius) var(--interactive_border-radius) 0 0;
+  background-color: var(--secondary_bg-color, #424242);
+  border-radius: var(--interactive_border-radius, 1em) var(--interactive_border-radius, 1em) 0 0;
   transform: translateY(100%);
   transition: 0.3s ease;
 }
@@ -63,15 +63,15 @@
   height: 0;
   text-align: center;
   vertical-align: middle;
-  color: var(--secondary_text-color);
-  border-top: 1px solid var(--secondary_text-color);
+  color: var(--secondary_text-color, #7a7a7a);
+  border-top: 1px solid var(--secondary_text-color, #7a7a7a);
   cursor: pointer;
   transition: 0.3s ease;
 }
 .interactive-button:hover /* стиль кнопки-скрывашки при наведении */
 {
-  background-color: var(--secondary_text-color);
-  color: var(--hover_bg-color);
+  background-color: var(--secondary_text-color, #7a7a7a);
+  color: var(--hover_bg-color, #1a1a1a);
 }
 .interactive-button_shown /* стиль кнопки-скрывашки при показе */
 {
@@ -91,11 +91,11 @@
 }
 .interactive-link:last-of-type /* стиль последнего блока-ссылки */
 {
-  border-bottom: 1px solid var(--main_border-color);
+  border-bottom: 1px solid var(--main_border-color, #1e1e1e);
 }
 .interactive-link:hover /* стиль блоков-ссылок при наведении */
 {
-  background-color: var(--main_border-color);
+  background-color: var(--main_border-color, #1e1e1e);
 }
 .interactive-link_name /* стиль заголовков блоков-ссылок */
 {
@@ -174,7 +174,7 @@
 
   .interactive-container /* контейнер по дефолту (скрыт) */
   {
-    border-radius: var(--interactive_border-radius);
+    border-radius: var(--interactive_border-radius, 1em);
     transform: translateY(0);
     opacity: 0;
   }

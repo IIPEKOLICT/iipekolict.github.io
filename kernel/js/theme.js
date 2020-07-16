@@ -11,6 +11,7 @@ var settingsSvgs = document.querySelectorAll('.svg_settings'); // все <svg> �
 var headerSvgs = document.querySelectorAll('.svg_header'); // все <svg> в шапках
 var aboutContainers = document.querySelectorAll('.about-container'); // все контейнеры в нижней секции about
 var aboutHeader = document.querySelectorAll('.about-header'); // верхняя секция about
+var interactiveContainers = document.querySelectorAll('.interactive-container'); // контейнеры-диалоговые окна
 
 var vars = [ // Массив с параметрами переменных
   [ // Акцент
@@ -29,6 +30,10 @@ var vars = [ // Массив с параметрами переменных
   [ // Форма иконок
     ['--icon_border-radius'], // Переменные
     ['50%'] // Стоковые значения
+  ],
+  [ // Шрифт
+    ['--main_font-family'], // Переменные
+    ['Arial'] // Стоковые значения
   ]
 ]
 
@@ -36,12 +41,17 @@ var styles = [ // Массив с параметрами переключате�
   [ // Стиль шапки
     ['headerStyle'], // Ключ в ЛХ
     [headers,headerNames,headerSvgs], // Модифицируемые элементы
-    ['HEADER_stock','HEADER_RUI','HEADER_ZenUI','HEADER_OOSColor'] // Возможные значения
+    ['HEADER_stock','HEADER_OOSColor','HEADER_RUI','HEADER_ZenUI'] // Возможные значения
   ],
   [ // Стиль UI
     ['uiStyle'], // Ключ в ЛХ
     [pages,settingsSvgs,headerSvgs,aboutContainers,aboutHeader], // Модифицируемые элементы
-    ['UI_OOS','UI_ZenUI','UI_OneUI','UI_RUI'] // Возможные значения
+    ['UI_OOS','UI_RUI','UI_OneUI','UI_ZenUI'] // Возможные значения
+  ],
+  [ // Стиль диалоговых окон
+    ['interactiveStyle'], // Ключ в ЛХ
+    [interactiveContainers], // Модифицируемые элементы
+    ['interactive_OOS','interactive_RUI','interactive_OneUI','interactive_ZenUI'] // Возможные значения
   ]
 ]
 
@@ -58,9 +68,10 @@ var mainBgColorValues = [ // Массив с возможными вариант
 
 var checkedInputs = [ // Массив с параметрами отмеченных элементов
   ['checkedAccentNo','checkedColorSchemeNo','checkedHeaderStyleNo','checkedUiStyleNo','checkedBorderRadiusNo',
-  'checkedIconShapeNo'], // Ключи в ЛХ
-  ["accent-color","color-scheme","header-style","ui-style","border-radius","icon-shape"], // Name-группы инпутов
-  ["ac1","cs1","hs1","us1","br1","is1"] // Стоковые значения id
+  'checkedIconShapeNo','checkedFontFamilyNo','checkedInteractiveStyleNo'], // Ключи в ЛХ
+  ["accent-color","color-scheme","header-style","ui-style","border-radius","icon-shape","font-family",
+  "interactive-style"], // Name-группы инпутов
+  ["ac1","cs1","hs1","us1","br1","is1","ff1","ias1"] // Стоковые значения id
 ]
 
 // Функции-оптимизаторы

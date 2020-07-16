@@ -9,9 +9,9 @@
   margin: 0;
   display: flex;
   flex-direction: column;
-  background-color: var(--main_bg-color);
-  color: var(--main_text-color);
-  font-family: Arial, sans-serif;
+  background-color: var(--main_bg-color, black);
+  color: var(--main_text-color, white);
+  font-family: var(--main_font-family, Arial), sans-serif;
 }
 .page-block:not(:target) /* все блоки внутристраничной навигации, кроме выбранной - скрыть */
 {

@@ -6,22 +6,26 @@ var uiParametres = [ // Массив с параметрами UI
   [ // Для стиля UI "UI_OOS"
     ["cs1"],['black','#424242','#141414','#1a1a1a','white','#7a7a7a','#1e1e1e','#898989'], // Темная тема
     ["cs2"],['#fafafa','white','white','#efefef','#191919','#969696','#e6e6e6','#999'], // Светлая тема
-    ["br1"],['0.4em','0.6em','0.25em'] // Дефолтные закругления
+    ["br1"],['0.4em','0.6em','0.25em'], // Дефолтные закругления
+    ["ias1"],['interactive_OOS'] // Дефолтный стиль диалоговых окон
   ],
   [ // Для стиля UI "UI_RUI"
     ["cs3"],['black','#333','#141414','#252525','white','#8c8c8c','#333333','#666'], // Темная тема
     ["cs4"],['white','white','#ddd','#f7f7f7','black','#737373','#e5e5e5','#ccc'], // Светлая тема
-    ["br2"],['0.6em','1.2em','0.5em'] // Дефолтные закругления
+    ["br2"],['0.6em','1.2em','0.5em'], // Дефолтные закругления
+    ["ias2"],['interactive_RUI'] // Дефолтный стиль диалоговых окон
   ],
   [ // Для стиля UI "UI_OneUI"
     ["cs5"],['black','#252525','#252525','#333','#fafafa','#909090','#3f3f3f','#797979'], // Темная тема
     ["cs6"],['#f2f2f2','#fcfcfc','white','#e3e3e3','#161616','#989898','#ececec','#b3b3b3'], // Светлая тема
-    ["br3"],['1em','1.2em','1.25em'] // Дефолтные закругления
+    ["br3"],['1em','1.2em','1.25em'], // Дефолтные закругления
+    ["ias3"],['interactive_OneUI'] // Дефолтный стиль диалоговых окон
   ],
   [ // Для стиля UI "UI_ZenUI"
     ["cs7"],['#161616','#424242','#252525','#505050','white','#b9b9b9','#323232','#c1c1c1'], // Темная тема
     ["cs8"],['#fafafa','white','#ddd','#ededed','#202020','#787878','#dcdcdc','#989898'], // Светлая тема
-    ["br4"],['0.5em','0.5em','1.25em'] // Дефолтные закругления
+    ["br4"],['0.5em','0.5em','1.25em'], // Дефолтные закругления
+    ["ias4"],['interactive_ZenUI'] // Дефолтный стиль диалоговых окон
   ]
 ]
 
@@ -103,6 +107,14 @@ const iconShapeInputs = [].slice.call(document.querySelectorAll
   ('input[type="radio"][name="icon-shape"]')); // Все инпуты, меняющие форму иконок
 recordCheckedNo(iconShapeInputs,checkedInputs[0][5]);
 
+const fontFamilyInputs = [].slice.call(document.querySelectorAll
+  ('input[type="radio"][name="font-family"]')); // Все инпуты, меняющие шрифт
+recordCheckedNo(fontFamilyInputs,checkedInputs[0][6]);
+
+const interactiveStyleInputs = [].slice.call(document.querySelectorAll
+  ('input[type="radio"][name="interactive-style"]')); // Все инпуты, меняющие стиль диалоговых окон
+recordCheckedNo(interactiveStyleInputs,checkedInputs[0][7]);
+
 // Функция смены цвета акцента
 
 accentInputs.forEach(input => input.addEventListener('change', changeAccent(targetAC))); // Прослушка акц-инпутов
@@ -156,6 +168,10 @@ function changeUiStyle(targetUI,uiParametresArray) { // Функция смен�
       markInput(checkedInputs[0][4],checkedInputs[1][4],uiParametresArray[4][0]); // Отметить нужн. инпут
     }
   }
+
+  classSwith(styles[2],uiParametresArray[7][0]); // Изменить стиль диалоговых окон на дефолтный для данного UI
+  localStorage.setItem(styles[2][0],uiParametresArray[7][0]); // Сохранить ключ стиля диалоговых окон
+  markInput(checkedInputs[0][7],checkedInputs[1][7],uiParametresArray[6][0]); // Отметить нужн. инпут
 }
 
 // Функция смены радиуса закруглений
@@ -173,4 +189,21 @@ iconShapeInputs.forEach(input => input.addEventListener('change', changeIconShap
  // Прослушка инпутов для смены формы иконок
 function changeIconShape(targetIS) { // Функция формы иконок (при нажатии на фи-инпут)
   varRecord(vars[3],targetIS); // запись переменных
+}
+
+// Функция смены шрифта
+
+fontFamilyInputs.forEach(input => input.addEventListener('change', changeFontFamily(targetFF)));
+ // Прослушка инпутов для смены шрифта
+function changeFontFamily(targetFF) { // Функция смены шрифта (при нажатии на сш-инпут)
+  varRecord(vars[4],targetFF); // запись переменных
+}
+
+// Функция смены стиля диалоговых окон
+
+interactiveStyleInputs.forEach(input => input.addEventListener('change', changeInteractiveStyle(targetIaS)));
+  // Прослушка инпутов, меняющих стиль диалоговых окон
+function changeInteractiveStyle(targetIaS) { // Функция смены стиля диалоговых окон
+  classSwith(styles[2],targetIaS);
+  localStorage.setItem(styles[2][0], targetIaS); // Сохранить ключ стиля диалоговых окон
 }

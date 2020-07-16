@@ -11,16 +11,16 @@
   display: flex;
   flex-direction: column-reverse; /* Инверсный порядок, иначе картинку не получится скрыть спойлером */
   justify-content: space-between;
-  background-color: var(--secondary_bg-color);
-  border: 2px solid var(--secondary_bg-color);
-  border-radius: var(--main_border-radius);
+  background-color: var(--secondary_bg-color, #424242);
+  border: 2px solid var(--secondary_bg-color, #424242);
+  border-radius: var(--main_border-radius, 0.5em);
   box-sizing: border-box; /* Чтобы считало размеры с учетом бордеров и паддингов */
   transition: ease-out 0.3s;
 }
 .menu-tile:hover /* Контейнер при наведении */
 {
-  background-color: var(--hover_bg-color);
-  border-color: var(--accent-color);
+  background-color: var(--hover_bg-color, #1a1a1a);
+  border-color: var(--accent-color, #80cbc4);
 }
 
 /* Содержимое плитки ------------------------------*/
@@ -40,12 +40,12 @@
   margin-top: 0.5em;
   padding-top: 0.4em;
   text-align: justify;
-  color: var(--secondary_text-color);
+  color: var(--secondary_text-color, #7a7a7a);
   font-size: 0.6em;
 }
 .spoiler_tile[open] .menu-tile_description /* Граница и анимашка для содержимого спойлера плитки */
 {
-  border-top: 1px solid var(--secondary_text-color);
+  border-top: 1px solid var(--secondary_text-color, #7a7a7a);
   animation: menu-tile_description 0.75s;
 }
   @keyframes menu-tile_description {
