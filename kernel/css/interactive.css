@@ -16,6 +16,20 @@
   justify-content: flex-end;
   background-color: rgba(0,0,0,0.5);
 }
+  .interactive_shown.interactive_OOS /* стиль всей области при показе (стиль OOS) */
+  {
+    justify-content: center;
+    align-items: center;
+  }
+  .interactive_shown.interactive_OneUI /* стиль всей области при показе (стиль OneUI) */
+  {
+    padding-bottom: 5%;
+  }
+  .interactive_shown.interactive_ZenUI /* стиль всей области при показе (стиль ZenUI) */
+  {
+    padding: 5%;
+    width: 90%;
+  }
 
 /* Контейнер (диалоговое окно) ------------------------------*/
 
@@ -23,17 +37,39 @@
 {
   height: 0;
   background-color: var(--secondary_bg-color, #424242);
-  border-radius: var(--interactive_border-radius, 1em) var(--interactive_border-radius, 1em) 0 0;
-  transform: translateY(100%);
+  border-radius: var(--interactive_border-radius, 1em);
   transition: 0.3s ease;
 }
+  .interactive-container.interactive_OOS,
+  .interactive-container.interactive_ZenUI /* контейнер по дефолту (скрыт) (стиль OOS и ZenUI) */
+  {
+    opacity: 0;
+  }
+  .interactive-container.interactive_RUI /* контейнер по дефолту (скрыт) (стиль RUI) */
+  {
+    border-radius: var(--interactive_border-radius, 1em) var(--interactive_border-radius, 1em) 0 0;
+  }
+  .interactive-container.interactive_RUI,
+  .interactive-container.interactive_OneUI /* контейнер по дефолту (скрыт) (стиль RUI и OneUI) */
+  {
+    transform: translateY(100%);
+  }
 .interactive-container_shown /* контейнер при показе */
 {
   height: auto;
   display: flex;
   flex-direction: column-reverse;
-  transform: translateY(0);
 }
+  .interactive-container_shown.interactive_OOS,
+  .interactive-container_shown.interactive_ZenUI /* контейнер при показе (стиль OOS и ZenUI) */
+  {
+    opacity: 1;
+  }
+  .interactive-container_shown.interactive_RUI,
+  .interactive-container_shown.interactive_OneUI /* контейнер при показе (стиль RUI и OneUI) */
+  {
+    transform: translateY(0);
+  }
 
 /* Блоки в контейнере ------------------------------*/
 
@@ -49,6 +85,10 @@
 {
   display: block;
 }
+  .interactive-container_shown.interactive_OOS .interactive-block_shown
+  {
+    min-width: 50vw; /* фикс блоков для OOS-стиля, дабы не было слишком узко */
+  }
 
 .interactive-header
 {
@@ -68,19 +108,54 @@
   cursor: pointer;
   transition: 0.3s ease;
 }
+  .interactive-button.interactive_OOS,
+  .interactive-button.interactive_OneUI /* стиль кнопки-скрывашки по дефолту (скрыта) (стиль OOS и OneUI) */
+  {
+    color: var(--accent-color, #80cbc4);
+    border-top: none;
+    border-radius: inherit;
+  }
+  .interactive-button.interactive_RUI /* стиль кнопки-скрывашки по дефолту (скрыта) (стиль RUI) */
+  {
+    color: var(--secondary_text-color, #7a7a7a);
+  }
+  .interactive-button.interactive_ZenUI /* стиль кнопки-скрывашки по дефолту (скрыта) (стиль ZenUI) */
+  {
+    color: var(--accent-color, #80cbc4);
+    border-radius: 0 0 var(--interactive_border-radius, 1em) var(--interactive_border-radius, 1em);
+  }
 .interactive-button:hover /* стиль кнопки-скрывашки при наведении */
 {
   background-color: var(--secondary_text-color, #7a7a7a);
   color: var(--hover_bg-color, #1a1a1a);
 }
+  .interactive-button:hover.interactive_OOS,
+  .interactive-button:hover.interactive_OneUI /* стиль кнопки-скрывашки при наведении (стиль OOS и OneUI) */
+  {
+    background-color: var(--accent-color, #80cbc4);
+    color: var(--main_bg-color, black);
+  }
+  .interactive-button:hover.interactive_RUI /* стиль кнопки-скрывашки при наведении (стиль RUI) */
+  {
+    border-top: 1px solid rgba(0,0,0,0);
+    margin: 0;
+  }
 .interactive-button_shown /* стиль кнопки-скрывашки при показе */
 {
   height: auto;
 }
+  .interactive-button_shown.interactive_RUI /* стиль кнопки-скрывашки при показе (стиль RUI) */
+  {
+    margin: 0 1em 0 1em;
+  }
 .interactive-button::before /* псевдоэлемент, в котором хранится текст кнопки-скрывашки */
 {
-  content: "Отменить";
+  content: "Отмена";
 }
+  .interactive-button.interactive_OneUI::before /* исключение для OneUI-стиля, текст кнопки-скрывашки */
+  {
+    content: "ОК";
+  }
 
 /* Блоки-ссылки на блоки в спойлере ------------------------------*/
 
@@ -175,7 +250,6 @@
   .interactive-container /* контейнер по дефолту (скрыт) */
   {
     border-radius: var(--interactive_border-radius, 1em);
-    transform: translateY(0);
     opacity: 0;
   }
   .interactive-container_shown /* контейнер при показе */

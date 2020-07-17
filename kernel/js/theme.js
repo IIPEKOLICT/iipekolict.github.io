@@ -11,7 +11,9 @@ var settingsSvgs = document.querySelectorAll('.svg_settings'); // все <svg> �
 var headerSvgs = document.querySelectorAll('.svg_header'); // все <svg> в шапках
 var aboutContainers = document.querySelectorAll('.about-container'); // все контейнеры в нижней секции about
 var aboutHeader = document.querySelectorAll('.about-header'); // верхняя секция about
+var interactive = document.querySelectorAll('.interactive'); // диалоговые окна (мат. блок)
 var interactiveContainers = document.querySelectorAll('.interactive-container'); // контейнеры-диалоговые окна
+var interactiveButtons = document.querySelectorAll('.interactive-button'); // кнопки-скрывашки в диал. окнах
 
 var vars = [ // Массив с параметрами переменных
   [ // Акцент
@@ -50,7 +52,7 @@ var styles = [ // Массив с параметрами переключате�
   ],
   [ // Стиль диалоговых окон
     ['interactiveStyle'], // Ключ в ЛХ
-    [interactiveContainers], // Модифицируемые элементы
+    [interactive,interactiveContainers,interactiveButtons], // Модифицируемые элементы
     ['interactive_OOS','interactive_RUI','interactive_OneUI','interactive_ZenUI'] // Возможные значения
   ]
 ]
