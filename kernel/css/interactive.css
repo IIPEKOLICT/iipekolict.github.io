@@ -21,15 +21,6 @@
     justify-content: center;
     align-items: center;
   }
-  .interactive_shown.interactive_OneUI /* стиль всей области при показе (стиль OneUI) */
-  {
-    padding-bottom: 5%;
-  }
-  .interactive_shown.interactive_ZenUI /* стиль всей области при показе (стиль ZenUI) */
-  {
-    padding: 5%;
-    width: 90%;
-  }
 
 /* Контейнер (диалоговое окно) ------------------------------*/
 
@@ -45,15 +36,6 @@
   {
     opacity: 0;
   }
-  .interactive-container.interactive_RUI /* контейнер по дефолту (скрыт) (стиль RUI) */
-  {
-    border-radius: var(--interactive_border-radius, 1em) var(--interactive_border-radius, 1em) 0 0;
-  }
-  .interactive-container.interactive_RUI,
-  .interactive-container.interactive_OneUI /* контейнер по дефолту (скрыт) (стиль RUI и OneUI) */
-  {
-    transform: translateY(100%);
-  }
 .interactive-container_shown /* контейнер при показе */
 {
   height: auto;
@@ -64,11 +46,6 @@
   .interactive-container_shown.interactive_ZenUI /* контейнер при показе (стиль OOS и ZenUI) */
   {
     opacity: 1;
-  }
-  .interactive-container_shown.interactive_RUI,
-  .interactive-container_shown.interactive_OneUI /* контейнер при показе (стиль RUI и OneUI) */
-  {
-    transform: translateY(0);
   }
 
 /* Блоки в контейнере ------------------------------*/
@@ -85,12 +62,8 @@
 {
   display: block;
 }
-  .interactive-container_shown.interactive_OOS .interactive-block_shown
-  {
-    min-width: 50vw; /* фикс блоков для OOS-стиля, дабы не было слишком узко */
-  }
 
-.interactive-header
+.interactive-header /* заголовок блока в диалоговом меню */
 {
   margin-top: 0;
   text-align: center;
@@ -164,10 +137,19 @@
   cursor: pointer;
   transition: 0.3s ease;
 }
+  .interactive-link.UI_RUI:first-of-type,
+  .interactive-link.UI_ZenUI:first-of-type /* стиль первого блока-ссылки при RUI-стилистике */
+  {
+    border-top: 1px solid var(--main_border-color, #1e1e1e);
+  }
 .interactive-link:last-of-type /* стиль последнего блока-ссылки */
 {
   border-bottom: 1px solid var(--main_border-color, #1e1e1e);
 }
+  .interactive-link.UI_OneUI:last-of-type /* стиль последнего блока-ссылки, стиль UI OneUI */
+  {
+    border-bottom: none;
+  }
 .interactive-link:hover /* стиль блоков-ссылок при наведении */
 {
   background-color: var(--main_border-color, #1e1e1e);
@@ -178,6 +160,11 @@
   padding: 0.5em 0;
   border-bottom: none;
 }
+  .interactive-link_name.UI_OneUI /* стиль заголовков блоков-ссылок (стиль UI OneUI) */
+  {
+    padding: 0;
+    border-bottom: none;
+  }
 
 /*------------------------------*/
 /*---ОВЕРЛЕЙ [3:4]--------------*/
@@ -213,12 +200,43 @@
   {
     flex-direction: column;
   }
+    .interactive_shown.interactive_OneUI /* стиль всей области при показе (стиль OneUI) */
+    {
+      padding-bottom: 5%;
+    }
+    .interactive_shown.interactive_ZenUI /* стиль всей области при показе (стиль ZenUI) */
+    {
+      padding: 5%;
+      width: 90%;
+    }
+
+  /* Контейнер (диалоговое окно) ------------------------------*/
+
+  .interactive-container.interactive_RUI /* контейнер по дефолту (скрыт) (стиль RUI) */
+  {
+    border-radius: var(--interactive_border-radius, 1em) var(--interactive_border-radius, 1em) 0 0;
+  }
+  .interactive-container.interactive_RUI,
+  .interactive-container.interactive_OneUI /* контейнер по дефолту (скрыт) (стиль RUI и OneUI) */
+  {
+    transform: translateY(100%);
+  }
+  .interactive-container_shown.interactive_RUI,
+  .interactive-container_shown.interactive_OneUI /* контейнер при показе (стиль RUI и OneUI) */
+  {
+    transform: translateY(0);
+  }
 
   /* Блоки в контейнере ------------------------------*/
 
   .interactive-content /* общие стили для контента в спойлере */
   {
     padding: 1em;
+  }
+
+  .interactive-container_shown.interactive_OOS .interactive-block_shown
+  {
+    min-width: 60vw; /* фикс блоков для OOS-стиля, дабы не было слишком узко */
   }
 
   /* Блоки-ссылки на блоки в спойлере ------------------------------*/
@@ -252,6 +270,11 @@
     border-radius: var(--interactive_border-radius, 1em);
     opacity: 0;
   }
+    .interactive-container.interactive_RUI,
+    .interactive-container.interactive_OneUI /* контейнер по дефолту (скрыт) (стиль RUI и OneUI) */
+    {
+      transform: translateY(0);
+    }
   .interactive-container_shown /* контейнер при показе */
   {
     opacity: 1;

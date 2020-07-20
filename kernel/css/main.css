@@ -16,11 +16,29 @@
   padding: 1em 4vw;
   border-bottom: 1px solid var(--main_border-color, #1e1e1e);
 }
+  .main-section.UI_RUI,
+  .main-section.UI_ZenUI /* секции внутри <main>, стиль UI RUI, ZenUI */
+  {
+    margin: 0 4vw;
+    padding: 1em 0;
+  }
+  .main-section.UI_OneUI /* секции внутри <main>, стиль UI OneUI */
+  {
+    margin-bottom: 1em;
+    background-color: var(--secondary_bg-color, #424242);
+    border-radius: var(--main_border-radius, 0.5em);
+    border-bottom: none;
+  }
+    #start .main-section.UI_OneUI /* секции внутри <main>, стиль UI RUI, ZenUI (исключение для блока #start) */
+    {
+      margin-bottom: 0;
+      background-color: rgba(0,0,0,0);
+    }
 .main-section:last-of-type /* у последней секции нет бордера снизу */
 {
   border-bottom: none;
 }
-.main-section_center
+.main-section_center /* секции внутри <main>, модификатор для центрирования */
 {
   text-align: center;
 }
@@ -40,7 +58,11 @@
   border-bottom: 2px solid var(--main_bg-color, black);
   transition: ease-out 0.3s;
 }
-.main-section:hover .main-header /* при наведении на содержимое секции ее заголовок подчеркивается снизу  */
+  .main-header.UI_OneUI /* заголовок секции, стиль UI OneUI */
+  {
+    border-bottom: 2px solid var(--secondary_bg-color, #424242);
+  }
+.main-section:hover .main-header /* при наведении на содержимое секции ее заголовок подчеркивается снизу */
 {
   border-color: var(--accent-color, #80cbc4);
 }
@@ -89,6 +111,11 @@
   {
     padding: 0.7em 1em;
   }
+    .main-section.UI_RUI /* секции внутри <main>, стиль UI RUI */
+    {
+      margin: 0 1em;
+      padding: 0.7em 0;
+    }
 
   /* Заголовок секции ------------------------------*/
 

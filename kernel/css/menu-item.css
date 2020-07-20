@@ -11,6 +11,11 @@
   border-radius: var(--main_border-radius, 0.5em);
   transition: 0.3s ease;
 }
+  .menu-item.UI_OneUI /* контейнер/материнский блок, стиль UI OneUI */
+  {
+    margin: 0.75em 0;
+    background-color: var(--secondary_bg-color, #424242);
+  }
 .menu-item:hover /* контейнер при наведении */
 {
   background-color: var(--hover_bg-color, #1a1a1a);
@@ -29,6 +34,10 @@
   background: var(--icon_bg-color, #141414) no-repeat 50% 50%;
   border-radius: var(--icon_border-radius, 50%);
 }
+  .menu-item_icon.UI_OneUI /* контейнер для иконки слева, стиль UI OneUI */
+  {
+    background-color: rgba(0,0,0,0);
+  }
   .menu-item_svg /* Свг-порт для иконки слева */
   {
     width: 2em;

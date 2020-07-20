@@ -281,7 +281,7 @@
           </label>
         </section>
         <section class="main-section interactive-link" onclick="showInteractive('header-style')">
-          <h3 class="main-header interactive-link_name">Стиль шапки</h3>
+          <p class="main-header interactive-link_name">Стиль шапки</p>
         </section>
       </div>
 
@@ -296,7 +296,7 @@
     <div id="other" class="page-block">
       <div class="main main_page page-block_main">
         <section class="main-section interactive-link" onclick="showInteractive('ui-style')">
-          <h3 class="main-header interactive-link_name">Стиль UI</h3>
+          <p class="main-header interactive-link_name">Стиль UI</p>
         </section>
       </div>
 
@@ -316,11 +316,16 @@
           <div class="menu-item spoiler-container">
             <div class="menu-item_text-container release-info">
               <h3 class="menu-item_text menu-item_name"></h3>
-              <time class="menu-item_text menu-item_description" datatime="2020-07-18">18.07.2020</time>
+              <time class="menu-item_text menu-item_description" datatime="2020-07-20">20.07.2020</time>
             </div>
             <details class="spoiler spoiler_changelog">
               <summary class="spoiler-button spoiler-button_changelog"></summary>
               <div class="delimiter_changelog"></div>
+              <ul class="release-notes release_opened">
+                <li class="release-note">добавлена большая часть отличий для 4 вариаций стиля UI (1 итерация переключателя UI)</li>
+                <li class="release-note">теперь более точечное изменение элементов за счет модифицирующих классов</li>
+                <li class="release-note">исправлены баги с отображением и анимацией диалоговых икон при различных стилях UI</li>
+              </ul>
               <ul class="release-notes">
                 <li class="release-note">прокомментил весь новый код</li>
                 <li class="release-note">добавлено 4 варианта стилей диалоговых окон с различной анимацией и внешним видом: OOS, RUI, OneUI, ZenUI</li>
@@ -751,16 +756,16 @@
     <div id="test" class="page-block">
       <div class="main main_page page-block_main">
         <section class="main-section interactive-link" onclick="showInteractive('border-radius')">
-          <h3 class="main-header interactive-link_name">Радиус закруглений</h3>
+          <p class="main-header interactive-link_name">Радиус закруглений</p>
         </section>
         <section class="main-section interactive-link" onclick="showInteractive('icon-shape')">
-          <h3 class="main-header interactive-link_name">Форма иконок</h3>
+          <p class="main-header interactive-link_name">Форма иконок</p>
         </section>
         <section class="main-section interactive-link" onclick="showInteractive('font-family')">
-          <h3 class="main-header interactive-link_name">Шрифт</h3>
+          <p class="main-header interactive-link_name">Шрифт</p>
         </section>
         <section class="main-section interactive-link txt-in-mobile" onclick="showInteractive('interactive-style')">
-          <h3 class="main-header interactive-link_name">Стиль диалоговых окон</h3>
+          <p class="main-header interactive-link_name">Стиль диалоговых окон</p>
         </section>
       </div>
 
@@ -784,7 +789,7 @@
             <input type="radio" id="hs1" name="header-style" onchange="changeHeaderStyle('HEADER_stock'), reload()">
             <span class="radio-name radio-name_interactive">Стоковый вариант</span>
           </label>
-          <label class="radio-label" for="hs2">
+          <label class="radio-label content_OOS" for="hs2">
             <input type="radio" id="hs2" name="header-style" onchange="changeHeaderStyle('HEADER_OOSColor'), reload()">
             <span class="radio-name radio-name_interactive">Как в цветной теме OOS</span>
           </label>

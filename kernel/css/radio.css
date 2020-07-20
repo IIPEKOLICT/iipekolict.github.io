@@ -50,6 +50,10 @@
   box-shadow: 0 0 0 0.1em var(--radio_nonactive-color, #898989);
   transition: 0.3s ease all;
 }
+.main-section.UI_OneUI [type="radio"] + .radio-name::before /* стиль неотмеч. радиокнопки при акт. стиле UI OneUI */
+{
+  border: 0.3em solid var(--secondary_bg-color, #424242);
+}
 [type="radio"]:checked + .radio-name::before /* стиль отмеченной радиокнопки */
 {
   background-color: var(--accent-color, #80cbc4);

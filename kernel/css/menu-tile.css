@@ -17,6 +17,10 @@
   box-sizing: border-box; /* Чтобы считало размеры с учетом бордеров и паддингов */
   transition: ease-out 0.3s;
 }
+  .menu-tile.UI_OneUI /* Контейнер/материнский блок плитки, стиль UI OneUI */
+  {
+    border-color: var(--main_border-color, #1e1e1e);
+  }
 .menu-tile:hover /* Контейнер при наведении */
 {
   background-color: var(--hover_bg-color, #1a1a1a);

@@ -24,6 +24,12 @@
   {
     background-color: var(--main_border-color, #1e1e1e);
   }
+  .header.UI_RUI,
+  .header.UI_OneUI,
+  .header.UI_ZenUI /* Шапка при активных стилях UI RUI, OneUI, ZenUI */
+  {
+    border-bottom: 2px solid rgba(0,0,0,0);
+  }
 .header_page /* Модификатор шапки, только для страниц, не являющихся главной в HTML-документе (при ВН) */
 {
   align-items: center;
