@@ -10,10 +10,6 @@
   height: auto;
   background-color: var(--secondary_bg-color, #424242);
 }
-  .spoiler-container.UI_OneUI /* контейнер со спойлером, стиль UI OneUI */
-  {
-    border: 2px solid var(--main_border-color, #1e1e1e);
-  }
 
 /* Стили <details> в #changelog (кнопка сбоку) ------------------------------*/
 

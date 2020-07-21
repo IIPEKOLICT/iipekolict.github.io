@@ -17,7 +17,7 @@
 
     <div id="start" class="page-block">
       <main class="main">
-        <section class="main-section">
+        <section class="main-section section-container">
           <a class="link-hidden" href="#accent">
             <section class="menu-item two-columns">
               <div class="menu-item_icon">
@@ -298,6 +298,18 @@
         <section class="main-section interactive-link" onclick="showInteractive('ui-style')">
           <p class="main-header interactive-link_name">Стиль UI</p>
         </section>
+        <section class="main-section interactive-link txt-in-mobile" onclick="showInteractive('interactive-style')">
+          <p class="main-header interactive-link_name">Стиль диалоговых окон</p>
+        </section>
+        <section class="main-section interactive-link" onclick="showInteractive('border-radius')">
+          <p class="main-header interactive-link_name">Радиус закруглений</p>
+        </section>
+        <section class="main-section interactive-link" onclick="showInteractive('icon-shape')">
+          <p class="main-header interactive-link_name">Форма иконок</p>
+        </section>
+        <section class="main-section interactive-link" onclick="showInteractive('font-family')">
+          <p class="main-header interactive-link_name">Шрифт</p>
+        </section> 
       </div>
 
       <header class="header header_page">
@@ -310,17 +322,21 @@
 
     <div id="changelog" class="page-block">
       <div class="main main_page page-block_main">
-        <section class="main-section">
+        <section class="main-section section-container">
           <h3 class="main-header"></h3>
 
           <div class="menu-item spoiler-container">
             <div class="menu-item_text-container release-info">
               <h3 class="menu-item_text menu-item_name"></h3>
-              <time class="menu-item_text menu-item_description" datatime="2020-07-20">20.07.2020</time>
+              <time class="menu-item_text menu-item_description" datatime="2020-07-21">21.07.2020</time>
             </div>
             <details class="spoiler spoiler_changelog">
               <summary class="spoiler-button spoiler-button_changelog"></summary>
               <div class="delimiter_changelog"></div>
+              <ul class="release-notes release_opened">
+                <li class="release-note">временный фикс для еще нескольких багов стиля UI OneUI</li>
+                <li class="release-note">исправлено и оптимизировано отображение двухуровневых секций при активном стиле UI OneUI</li>
+              </ul>
               <ul class="release-notes release_opened">
                 <li class="release-note">добавлена большая часть отличий для 4 вариаций стиля UI (1 итерация переключателя UI)</li>
                 <li class="release-note">теперь более точечное изменение элементов за счет модифицирующих классов</li>
@@ -495,7 +511,7 @@
           </div>
         </section>
 
-        <section class="main-section">
+        <section class="main-section section-container">
           <h3 class="main-header"></h3>
 
           <div class="menu-item spoiler-container">
@@ -755,18 +771,7 @@
 
     <div id="test" class="page-block">
       <div class="main main_page page-block_main">
-        <section class="main-section interactive-link" onclick="showInteractive('border-radius')">
-          <p class="main-header interactive-link_name">Радиус закруглений</p>
-        </section>
-        <section class="main-section interactive-link" onclick="showInteractive('icon-shape')">
-          <p class="main-header interactive-link_name">Форма иконок</p>
-        </section>
-        <section class="main-section interactive-link" onclick="showInteractive('font-family')">
-          <p class="main-header interactive-link_name">Шрифт</p>
-        </section>
-        <section class="main-section interactive-link txt-in-mobile" onclick="showInteractive('interactive-style')">
-          <p class="main-header interactive-link_name">Стиль диалоговых окон</p>
-        </section>
+        
       </div>
 
       <header class="header header_page">

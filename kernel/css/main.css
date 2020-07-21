@@ -29,11 +29,6 @@
     border-radius: var(--main_border-radius, 0.5em);
     border-bottom: none;
   }
-    #start .main-section.UI_OneUI /* секции внутри <main>, стиль UI RUI, ZenUI (исключение для блока #start) */
-    {
-      margin-bottom: 0;
-      background-color: rgba(0,0,0,0);
-    }
 .main-section:last-of-type /* у последней секции нет бордера снизу */
 {
   border-bottom: none;
@@ -49,6 +44,12 @@
   clear: both;
 }
 
+.section-container.UI_OneUI /* Фикс там, где свойства main-section не нужны */
+{
+  margin-bottom: 0;
+  background-color: rgba(0,0,0,0);
+}
+
 /* Заголовок секции ------------------------------*/
 
 .main-header /* заголовок секции */
@@ -58,10 +59,6 @@
   border-bottom: 2px solid var(--main_bg-color, black);
   transition: ease-out 0.3s;
 }
-  .main-header.UI_OneUI /* заголовок секции, стиль UI OneUI */
-  {
-    border-bottom: 2px solid var(--secondary_bg-color, #424242);
-  }
 .main-section:hover .main-header /* при наведении на содержимое секции ее заголовок подчеркивается снизу */
 {
   border-color: var(--accent-color, #80cbc4);
