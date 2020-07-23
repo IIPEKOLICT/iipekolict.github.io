@@ -148,6 +148,8 @@ function changeUiStyle(targetUI,uiParametresArray) { // Функция смен�
   classSwith(styles[1],targetUI);
   localStorage.setItem(styles[1][0], targetUI); // Сохранить ключ
 
+  // Проверка на светлую/темную тему, если активна была стоковая для прошлого UI
+
   if (localStorage.getItem('colorSchemeType')) { // Если в ЛХ есть ключ типа ЦС (темная/светлая)
     var colorSchemeType = localStorage.getItem('colorSchemeType'); // Извлечение
 
@@ -160,18 +162,21 @@ function changeUiStyle(targetUI,uiParametresArray) { // Функция смен�
     }
   }
 
-  if (localStorage.getItem('borderRadiusType')) { // Если в ЛХ есть ключ типа РЗ (дефолтный/кастомный)
-    var borderRadiusType = localStorage.getItem('borderRadiusType'); // Извлечение
+  // Проверка на радиус закруглений, если был активен один из дефолтных
 
-    if (borderRadiusType == 'default') { // Если активен был дефолтный набор рз
-      varRecord(vars[2],uiParametresArray[5]); // Установка из массива нужного для данного UI рз
-      markInput(checkedInputs[0][4],checkedInputs[1][4],uiParametresArray[4][0]); // Отметить нужн. инпут
-    }
+  var borderRadiusType = localStorage.getItem('borderRadiusType'); // Извлечение ключа из ЛХ
+
+  if (borderRadiusType != 'custom') { // Если активен был дефолтный набор рз, либо ключ пуст
+    varRecord(vars[2],uiParametresArray[5]); // Установка из массива нужного для данного UI радуиса закруглений
+    markInput(checkedInputs[0][4],checkedInputs[1][4],uiParametresArray[4][0]); // Отметить нужн. инпут
+    localStorage.setItem('borderRadiusType', 'default'); // Запись инфы в ЛХ
   }
 
+  // Автоподхват стиля диалоговых окон
+  
   classSwith(styles[2],uiParametresArray[7][0]); // Изменить стиль диалоговых окон на дефолтный для данного UI
-  localStorage.setItem(styles[2][0],uiParametresArray[7][0]); // Сохранить ключ стиля диалоговых окон
   markInput(checkedInputs[0][7],checkedInputs[1][7],uiParametresArray[6][0]); // Отметить нужн. инпут
+  localStorage.setItem(styles[2][0],uiParametresArray[7][0]); // Сохранить ключ стиля диалоговых окон
 }
 
 // Функция смены радиуса закруглений
