@@ -150,16 +150,14 @@ function changeUiStyle(targetUI,uiParametresArray) { // Функция смен�
 
   // Проверка на светлую/темную тему, если активна была стоковая для прошлого UI
 
-  if (localStorage.getItem('colorSchemeType')) { // Если в ЛХ есть ключ типа ЦС (темная/светлая)
-    var colorSchemeType = localStorage.getItem('colorSchemeType'); // Извлечение
+  var colorSchemeType = localStorage.getItem('colorSchemeType'); // Извлечение ключа типа активной ЦС
 
-    if (colorSchemeType == 'dark') { // Если активна была темная ЦС
-      varRecord(vars[1],uiParametresArray[1]); // Установка из массива нужной для данного UI ЦС
-      markInput(checkedInputs[0][1],checkedInputs[1][1],uiParametresArray[0][0]); // Отметить нужн. инпут
-    } else if (colorSchemeType == 'light') { // Если активна была светлая ЦС
-      varRecord(vars[1],uiParametresArray[3]); // Установка из массива нужной для данного UI ЦС
-      markInput(checkedInputs[0][1],checkedInputs[1][1],uiParametresArray[2][0]); // Отметить нужн. инпут
-    }
+  if (colorSchemeType != 'light' && colorSchemeType != 'custom') { // Если активна была темная ЦС
+    varRecord(vars[1],uiParametresArray[1]); // Установка из массива нужной для данного UI ЦС
+    markInput(checkedInputs[0][1],checkedInputs[1][1],uiParametresArray[0][0]); // Отметить нужн. инпут
+  } else if (colorSchemeType != 'dark' && colorSchemeType != 'custom') { // Если активна была светлая ЦС
+    varRecord(vars[1],uiParametresArray[3]); // Установка из массива нужной для данного UI ЦС
+    markInput(checkedInputs[0][1],checkedInputs[1][1],uiParametresArray[2][0]); // Отметить нужн. инпут
   }
 
   // Проверка на радиус закруглений, если был активен один из дефолтных

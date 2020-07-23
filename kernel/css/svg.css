@@ -30,3 +30,14 @@
   fill: var(--main_bg-color, black) !important;
   stroke: var(--main_bg-color, black) !important;
 }
+
+/* Иконки в строчном меню ------------------------------*/
+
+.UI_OneUI .g04
+{
+  stroke: var(--secondary_bg-color, #424242) !important;
+}
+.UI_OneUI .g40, .UI_OneUI .g41
+{
+  fill: var(--secondary_bg-color, #424242) !important;
+}
