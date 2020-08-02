@@ -130,42 +130,6 @@
     content: "ОК";
   }
 
-/* Блоки-ссылки на блоки в спойлере ------------------------------*/
-
-.interactive-link /* стиль блоков-ссылок */
-{
-  cursor: pointer;
-  transition: 0.3s ease;
-}
-  .interactive-link.UI_RUI:first-of-type,
-  .interactive-link.UI_ZenUI:first-of-type /* стиль первого блока-ссылки при RUI-стилистике */
-  {
-    border-top: 1px solid var(--main_border-color, #1e1e1e);
-  }
-.interactive-link:last-of-type /* стиль последнего блока-ссылки */
-{
-  border-bottom: 1px solid var(--main_border-color, #1e1e1e);
-}
-  .interactive-link.UI_OneUI:last-of-type /* стиль последнего блока-ссылки, стиль UI OneUI */
-  {
-    border-bottom: none;
-  }
-.interactive-link:hover /* стиль блоков-ссылок при наведении */
-{
-  background-color: var(--main_border-color, #1e1e1e);
-}
-.interactive-link_name /* стиль заголовков блоков-ссылок */
-{
-  margin: 0;
-  padding: 0.5em 0;
-  border-bottom: none;
-}
-  .interactive-link_name.UI_OneUI /* стиль заголовков блоков-ссылок (стиль UI OneUI) */
-  {
-    padding: 0;
-    border-bottom: none;
-  }
-
 /*------------------------------*/
 /*---ОВЕРЛЕЙ [3:4]--------------*/
 /*------------------------------*/
@@ -237,13 +201,6 @@
   .interactive-container_shown.interactive_OOS .interactive-block_shown
   {
     min-width: 60vw; /* фикс блоков для OOS-стиля, дабы не было слишком узко */
-  }
-
-  /* Блоки-ссылки на блоки в спойлере ------------------------------*/
-
-  .interactive-link_name /* стиль заголовков блоков-ссылок */
-  {
-    padding: 0;
   }
 }
 

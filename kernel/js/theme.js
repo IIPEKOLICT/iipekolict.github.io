@@ -4,25 +4,29 @@
 
 // Элементы
 
-var pages = document.querySelectorAll('.page'); // <body>, класс в нем задает стиль UI
-var headers = document.querySelectorAll('.header'); // все шапки
-var headerNames = document.querySelectorAll('.header-name'); // все заголовки в шапках
-var headerSvgs = document.querySelectorAll('.svg_header'); // все <svg> в шапках
-var settingsSvgs = document.querySelectorAll('.svg_settings'); // все <svg> на стартовой настроек
-var aboutHeader = document.querySelectorAll('.about-header'); // верхняя секция about
+var aboutContainers = document.querySelectorAll('.about-container'); // все контейнеры в нижней секции about
+var aboutHeader = document.querySelectorAll('.about-header'); // верхний раздел about
 var aboutHeaderImage = document.querySelectorAll('.about-header_img'); // изображение устройства в разделе #about
 var aboutSecondaryTexts = document.querySelectorAll('.about_secondary-text'); // второстепенные текста в #about
-var aboutContainers = document.querySelectorAll('.about-container'); // все контейнеры в нижней секции about
-var aboutSections = document.querySelectorAll('.about-section'); // все секции в нижней секции about
+var aboutSections = document.querySelectorAll('.about-section'); // все секции в нижнем разделе about
+var headerNames = document.querySelectorAll('.header-name'); // все заголовки в шапках
+var headers = document.querySelectorAll('.header'); // все шапки
+var headerSvgs = document.querySelectorAll('.svg_header'); // все <svg> в шапках
 var interactive = document.querySelectorAll('.interactive'); // диалоговые окна (мат. блок)
-var interactiveContainers = document.querySelectorAll('.interactive-container'); // контейнеры-диалоговые окна
 var interactiveButtons = document.querySelectorAll('.interactive-button'); // кнопки-скрывашки в диал. окнах
-var interactiveLinks = document.querySelectorAll('.interactive-link'); // ссылки на блоки в диалоговых окнах
-var mainSections = document.querySelectorAll('.main-section'); // все секции
-var mainHeaders = document.querySelectorAll('.main-header'); // все заголовки секций
-var menuItems = document.querySelectorAll('.menu-item'); // все дефолтные пункты меню
-var menuItemIcons = document.querySelectorAll('.menu-item_icon'); // все иконки в пунктах меню
+var interactiveContainers = document.querySelectorAll('.interactive-container'); // контейнеры-диалоговые окна
+var mainArticleMultiples = document.querySelectorAll('.main-article_multiple'); // все разделы с 2+ секциями внутри
+var mainArticles = document.querySelectorAll('.main-article'); // все разделы
+var mainHeaders = document.querySelectorAll('.main-header'); // все заголовки разделов
+var menuIcons = document.querySelectorAll('.menu-icon'); // все иконки в секциях-пунктах меню
 var menuTiles = document.querySelectorAll('.menu-tile'); // все элементы плиточного меню
+var pages = document.querySelectorAll('.page'); // <body>, класс в нем задает стиль UI
+var sectionInteractives = document.querySelectorAll('.section_interactive'); // все секции-ссылки на диал. окна
+var sectionMenus = document.querySelectorAll('.section_menu'); // все секции-пункты меню
+var sections = document.querySelectorAll('.section'); // все секции
+var settingsSvgs = document.querySelectorAll('.svg_settings'); // все <svg> на стартовой настроек
+
+// Массивы с параметрами
 
 var vars = [ // Массив с параметрами переменных
   [ // Акцент
@@ -56,9 +60,9 @@ var styles = [ // Массив с параметрами переключате�
   ],
   [ // Стиль UI
     ['uiStyle'], // Ключ в ЛХ
-    [pages,headers,headerSvgs,settingsSvgs,aboutHeader,aboutHeaderImage,aboutSecondaryTexts,aboutContainers,
-    aboutSections,interactiveLinks,mainSections,mainHeaders,menuItems,menuItemIcons,menuTiles],
-     // Модифицируемые элементы
+    [aboutContainers,aboutHeader,aboutHeaderImage,aboutSecondaryTexts,aboutSections,headers,headerSvgs,
+    mainArticleMultiples,mainArticles,mainHeaders,menuIcons,menuTiles,pages,sectionInteractives,sectionMenus,
+    sections,settingsSvgs], // Модифицируемые элементы
     ['UI_OOS','UI_RUI','UI_OneUI','UI_ZenUI'] // Возможные значения
   ],
   [ // Стиль диалоговых окон

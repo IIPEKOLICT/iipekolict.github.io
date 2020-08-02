@@ -3,19 +3,13 @@
 <?xml-stylesheet type="text/css" href="../../css/svg.css"?>
 <svg version="1.1" id="Слой_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve" class="svg_settings">
 	<script xlink:href="../../js/theme.js" />
-	 <g class="g11">
-	  <path stroke-width="4" stroke-miterlimit="10" d="M58,30H12V16c0-2.2,1.8-4,4-4h38c2.2,0,4,1.8,4,4V30z"/>
-	  <path stroke-width="4" stroke-miterlimit="10" d="M84,88H46c-2.2,0-4-1.8-4-4V46c0-2.2,1.8-4,4-4h38c2.2,0,4,1.8,4,4v38C88,86.2,86.2,88,84,88z"/>
-	 </g>
-	 <path class="g01" stroke-width="4" stroke-miterlimit="10" d="M54,58H16c-2.2,0-4-1.8-4-4V16c0-2.2,1.8-4,4-4h38c2.2,0,4,1.8,4,4v38C58,56.2,56.2,58,54,58z"/>
-	 <path class="g41" stroke-width="4" stroke-miterlimit="10" d="M88,60H42V46c0-2.2,1.8-4,4-4h38c2.2,0,4,1.8,4,4V60z"/>
-	 <g class="g04">
-	  <line stroke-width="4" stroke-miterlimit="10" x1="38" y1="62" x2="38" y2="38"/>
-	  <line stroke-width="4" stroke-miterlimit="10" x1="62" y1="38" x2="38" y2="38"/>
-	 </g>
-	 <g class="g40">
-	  <path d="M56,80h-2c-2.2,0-4-1.8-4-4v-2c0-2.2,1.8-4,4-4h2c2.2,0,4,1.8,4,4v2C60,78.2,58.2,80,56,80z"/>
-	  <path d="M76,80h-2c-2.2,0-4-1.8-4-4v-2c0-2.2,1.8-4,4-4h2c2.2,0,4,1.8,4,4v2C80,78.2,78.2,80,76,80z"/>
-	 </g>
-	 <path class="g10" d="M26,50h-2c-2.2,0-4-1.8-4-4v-2c0-2.2,1.8-4,4-4h2c2.2,0,4,1.8,4,4v2C30,48.2,28.2,50,26,50z"/>
+	<g class="g10">
+		<path d="M76.7,30H13.3c-1.8,0-3.3-1.5-3.3-3.3V13.3c0-1.8,1.5-3.3,3.3-3.3h63.3c1.8,0,3.3,1.5,3.3,3.3v13.3
+		C80,28.5,78.5,30,76.7,30z"/>
+		<path d="M56.6,90H43.4c-1.9,0-3.4-1.5-3.4-3.4V63.4c0-1.9,1.5-3.4,3.4-3.4h13.1c1.9,0,3.4,1.5,3.4,3.4v23.1
+		C60,88.5,58.5,90,56.6,90z"/>
+	</g>
+	<g class="g01">
+		<polyline stroke-width="6" stroke-miterlimit="10" points="50,72 50,60 87,40 87,20 80,20"/>
+	</g>
 </svg>

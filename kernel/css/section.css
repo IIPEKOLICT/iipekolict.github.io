@@ -1,0 +1,89 @@
+/*------------------------------*/
+/*---РАЗДЕЛ SECTION-------------*/
+/*------------------------------*/
+
+.section /* стили секции */
+{
+  padding: 0.5em 4vw;
+  text-align: left;
+}
+.section_center /* модификатор секции с центрированием */
+{
+  text-align: center;
+}
+.section_changelog /* модификатор секции для #changelog */
+{
+  margin: 0.5em 4vw;
+  border: 1px solid var(--main_bg-color, black);
+  border-radius: var(--main_border-radius, 0.5em);
+  transition: 0.3s ease;
+}
+  .section_changelog.UI_OneUI /* стиль при OneUI UI */
+  {
+    margin: 0;
+    border: 0;
+  }
+.section_changelog:hover /* стили при наведении на секции в #changelog */
+{
+  background-color: var(--hover_bg-color, #1a1a1a);
+  border-color: var(--accent-color, #80cbc4);
+}
+
+/* Секция-пункт меню ------------------------------*/
+
+.section_menu /* кликабельная секция (пункт меню) */
+{
+  height: 5em;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+  .section_menu.UI_OneUI /* стиль OneUI */
+  {
+    border-radius: inherit;
+  }
+.section_menu:hover /* секция-пункт меню при наведении */
+{
+  background-color: var(--hover_bg-color, #1a1a1a);
+}
+
+/* Секция-ссылка на диалоговое окно ------------------------------*/
+
+.section_interactive /* секция-ссылка на диалоговое окно */
+{
+  display: flex;
+  align-items: center;
+}
+  .section_interactive.UI_RUI,
+  .section_interactive.UI_OneUI /* секция-ссылка на диалоговое окно при активных стилях UI RUI/OneUI */
+  {
+    height: 4em;
+    margin: 0.5em 0;
+  }
+
+/*------------------------------*/
+/*---ОВЕРЛЕЙ [6:5]--------------*/
+/*------------------------------*/
+
+@media (max-aspect-ratio: 6/5) /* узкие экраны до 6:5 */
+{
+  .section_changelog /* модификатор секции для #changelog */
+  {
+    height: 3em;
+  }
+
+  /* Секция-пункт меню ------------------------------*/
+
+  .section_menu /* кликабельная секция (пункт меню) */
+  {
+    height: 3em;
+  }
+
+  /* Секция-ссылка на диалоговое окно ------------------------------*/
+
+  .section_interactive.UI_RUI,
+  .section_interactive.UI_OneUI /* секция-ссылка на диалоговое окно при активных стилях UI RUI/OneUI */
+  {
+    height: 2em;
+    margin: 0.5em 0;
+  }
+}

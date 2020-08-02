@@ -13,7 +13,7 @@
   justify-content: space-between;
   background-color: var(--secondary_bg-color, #424242);
   border: 2px solid var(--secondary_bg-color, #424242);
-  border-radius: var(--main_border-radius, 0.5em);
+  border-radius: var(--main_border-radius, 0.5em) !important;
   box-sizing: border-box; /* Чтобы считало размеры с учетом бордеров и паддингов */
   transition: ease-out 0.3s;
 }

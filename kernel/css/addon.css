@@ -30,6 +30,7 @@
 {
   text-decoration: none;
   color: inherit;
+  border-radius: inherit;
 }
 .sup /* надстрочное начертание */
 {
@@ -74,17 +75,28 @@
 
   .two-columns
   {
-    width: calc(50% - 1em);
+    width: 50%;
     box-sizing: border-box; /* Чтобы считало размеры с учетом бордеров и паддингов */
   }
-  .two-columns:nth-of-type(odd) /* Прилипание к левому краю и маргин нечетных плиток */
+  .two-columns:nth-of-type(odd) /* Прилипание к левому краю */
   {
-    margin-right: 1em;
     float: left;
   }
-  .two-columns:nth-of-type(even) /* Прилипание к правому краю и маргин четных плиток */
+  .two-columns:nth-of-type(even) /* Прилипание к правому краю */
+  {
+    float: right;
+  }
+
+  .two-columns.menu-tile /* ширина при раскладке в 2 колонки, если menu-tile */
+  {
+    width: calc(50% - 1em);
+  }
+  .two-columns.menu-tile:nth-of-type(odd) /* Маргин нечетных плиток, если menu-tile */
+  {
+    margin-right: 1em;
+  }
+  .two-columns.menu-tile:nth-of-type(even) /* Маргин четных плиток, если menu-tile */
   {
     margin-left: 1em;
-    float: right;
   }
 }

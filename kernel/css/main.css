@@ -9,61 +9,80 @@
   font-size: 1rem;
 }
 
-/* Секция ------------------------------*/
+/* Разделы ------------------------------*/
 
-.main-section /* секции внутри <main> */
-{
-  padding: 1em 4vw;
-  border-bottom: 1px solid var(--main_border-color, #1e1e1e);
-}
-  .main-section.UI_RUI,
-  .main-section.UI_ZenUI /* секции внутри <main>, стиль UI RUI, ZenUI */
-  {
-    margin: 0 4vw;
-    padding: 1em 0;
-  }
-  .main-section.UI_OneUI /* секции внутри <main>, стиль UI OneUI */
+  .main-article.UI_OneUI /* разделы внутри <main>, стиль UI OneUI */
   {
     margin-bottom: 1em;
     background-color: var(--secondary_bg-color, #424242);
     border-radius: var(--main_border-radius, 0.5em);
-    border-bottom: none;
   }
-.main-section:last-of-type /* у последней секции нет бордера снизу */
-{
-  border-bottom: none;
-}
-.main-section_center /* секции внутри <main>, модификатор для центрирования */
+.main-article_center /* разделы внутри <main>, модификатор для центрирования */
 {
   text-align: center;
 }
-.main-section::after /* фикс для нормальной работы с флоачеными плитками (невидимый псевдоэлемент в конце секции) */
+.main-article_edge /* разделы внутри <main>, модификатор для боковых отступов */
+{
+  padding: 0 4vw;
+}
+
+/* Границы (псевдоэлементы) разделов ------------------------------*/
+
+.main-article::after /* дефолтная граница в конце раздела */
 {
   content: '';
+  height: 1px;
+  width: 100%;
   display: block;
+  background-color: var(--main_border-color, #1e1e1e);
+  clear: both;
+}
+  .main-article.UI_RUI::after,
+  .main-article.UI_ZenUI::after /* для RUI/ZenUI UI */
+  {
+    margin: 0 4vw;
+    width: calc(100% - 8vw);
+  }
+  .main-article.UI_OneUI::after/* для OneUI UI */
+  {
+    height: 0;
+  }
+.main-article:last-of-type:not(.main-article_single):not(.UI_OneUI)::after /* случаи, когда граница не нужна */
+{
+  content: none;
+}
+.main-article_multiple.UI_OneUI:not(:last-of-type)::after,
+.main-article_multiple.UI_ZenUI:not(:last-of-type)::after
+ /* границы между подразделами в разделах с несколькими подразделами (2+) */
+{
+  content: '';
+  margin: 0 4vw;
+  height: 1px;
+  width: calc(100% - 8vw);
+  display: block;
+  background-color: var(--main_border-color, #1e1e1e);
   clear: both;
 }
 
-.section-container.UI_OneUI /* Фикс там, где свойства main-section не нужны */
-{
-  margin-bottom: 0;
-  background-color: rgba(0,0,0,0);
-}
+/* Заголовок раздела ------------------------------*/
 
-/* Заголовок секции ------------------------------*/
-
-.main-header /* заголовок секции */
+.main-header /* заголовок раздела */
 {
-  margin: 0.3em 0;
-  padding: 0.2em 0;
+  margin: 0 4vw;
+  padding-top: 0.5em;
+  padding-bottom: 0.2em;
   border-bottom: 2px solid var(--main_bg-color, black);
   transition: ease-out 0.3s;
 }
-.main-section:hover .main-header /* при наведении на содержимое секции ее заголовок подчеркивается снизу */
+  .main-header.UI_OneUI /* заголовок раздела, стиль OneUI */
+  {
+    border-bottom: none;
+  }
+.main-article:hover .main-header /* при наведении на содержимое раздела его заголовок подчеркивается снизу */
 {
   border-color: var(--accent-color, #80cbc4);
 }
-#changelog .main-header::after /* Допись в заголовок секции в ченжлоге */
+#changelog .main-header::after /* Допись в заголовок раздела в ченжлоге */
 {
   content: " версия";
 }
@@ -97,27 +116,15 @@
 }
 
 /*------------------------------*/
-/*---ОВЕРЛЕЙ [6:5]--------------*/
+/*---ОВЕРЛЕЙ >[6:5]-------------*/
 /*------------------------------*/
 
-@media (max-aspect-ratio: 6/5) /* узкие экраны до 6:5 */
+@media (min-aspect-ratio: 6/5) /* экраны шире 6:5 */
 {
-  /* Секция ------------------------------*/
+  /* Границы (псевдоэлементы) разделов ------------------------------*/
 
-  .main-section /* секции внутри <main> */
+  .main-article_multiple.two-columns.UI_OneUI:not(:last-of-type)::after /* фикс 2-колоночных разделов для OneUI */
   {
-    padding: 0.7em 1em;
-  }
-    .main-section.UI_RUI /* секции внутри <main>, стиль UI RUI */
-    {
-      margin: 0 1em;
-      padding: 0.7em 0;
-    }
-
-  /* Заголовок секции ------------------------------*/
-
-  .main-header /* заголовок секции */
-  {
-    margin: 0.5em 0;
+    content: none;
   }
 }

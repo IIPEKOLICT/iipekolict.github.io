@@ -12,6 +12,10 @@
   flex-direction: row;
   border-bottom: none;
 }
+.about-header::after
+{
+  content: none;
+}
 
 /* Картинка и спеки устройства ------------------------------*/
 
@@ -76,7 +80,7 @@
 #about-ui .about_secondary-text.UI_OneUI::before {content: 'OneUI'}
 #about-ui .about_secondary-text.UI_ZenUI::before {content: 'ZenUI'}
 
-#about-version .about_primary-text::before {content: 'Версия системы'}
+#about-version .about_primary-text::before {content: 'Версия ядра'}
 #about-version .about_secondary-text::before {content: 'LoshicaDragon '}
 #about-build .about_primary-text::before {content: 'Номер сборки'}
 #about-date .about_primary-text::before {content: 'Дата сборки'}
@@ -91,7 +95,8 @@
 
   .about-section /* Секция со спеками (квадратичная) */
   {
-    padding: 0.75em 0;
+    margin: 0 4vw;
+    padding: 0;
     flex-direction: row;
     border-bottom: 1px solid var(--main_border-color, #1e1e1e);
   }
@@ -101,6 +106,7 @@
   }
   .about-container /* Контейнеры в секции */
   {
+    margin: 4vw 0;
     height: 5em;
     display: flex;
     flex: 50%;
@@ -108,11 +114,11 @@
   .about-container:nth-of-type(odd) /* Нечетные контейнеры в секции */
   {
     border-right: 1px solid var(--main_border-color, #1e1e1e);
-    padding-right: 0.75em;
+    padding-right: 4vw;
   }
   .about-container:nth-of-type(even) /*Четные контейнеры в секции */
   {
-    padding-left: 1.5em;
+    padding-left: 4vw;
   }
 
   /* Картинка и спеки устройства ------------------------------*/
@@ -180,14 +186,22 @@
   {
     padding: 0;
     flex-direction: column;
-    border-bottom: 1px solid var(--main_border-color, #1e1e1e);
   }
+    .about-section.UI_OneUI
+    {
+      border-bottom: 1px solid var(--main_border-color, #1e1e1e);
+    }
     .about-section.UI_OneUI:last-of-type /* Секция со спеками (квадратичная) (стиль UI OneUI, последняя) */
     {
       border-bottom: none;
     }
+  .about-section:last-of-type
+  {
+    border-bottom: 1px solid var(--main_border-color, #1e1e1e);
+  }
   .about-container /* Контейнеры в секции */
   {
+    padding: 0 4vw;
     height: 3em;
     border-top: 1px solid var(--main_border-color, #1e1e1e);
   }
