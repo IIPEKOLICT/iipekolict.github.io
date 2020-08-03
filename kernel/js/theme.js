@@ -56,7 +56,7 @@ var styles = [ // Массив с параметрами переключате�
   [ // Стиль шапки
     ['headerStyle'], // Ключ в ЛХ
     [headers,headerNames,headerSvgs], // Модифицируемые элементы
-    ['HEADER_stock','HEADER_OOSColor','HEADER_RUI','HEADER_ZenUI'] // Возможные значения
+    ['HEADER_stock','HEADER_OOSColor','HEADER_RUI','HEADER_OneUI','HEADER_ZenUI'] // Возможные значения
   ],
   [ // Стиль UI
     ['uiStyle'], // Ключ в ЛХ

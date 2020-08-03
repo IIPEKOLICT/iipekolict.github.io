@@ -375,11 +375,16 @@
             <section class="section section_changelog spoiler-container">
               <div class="menu-text_container release-info">
                 <h3 class="menu-text menu-name"></h3>
-                <time class="menu-text menu-description" datatime="2020-08-02">02.08.2020</time>
+                <time class="menu-text menu-description" datatime="2020-08-03">03.08.2020</time>
               </div>
               <details class="spoiler spoiler_changelog">
                 <summary class="spoiler-button spoiler-button_changelog"></summary>
                 <div class="delimiter_changelog"></div>
+                <ul class="release-notes">
+                  <li class="release-note">автоподхват дефолтных стилей шапки при смене стиля UI</li>
+                  <li class="release-note">добавлен стиль шапки OneUI</li>
+                  <li class="release-note">добавлена иконка в шапке "назад" в стиле OneUI при соответствующем стиле шапки</li>
+                </ul>
                 <ul class="release-notes">
                   <li class="release-note">добавлена страница "шрифт", настройка оного перенесена туда</li>
                   <li class="release-note">исправлены баги в #about</li>
@@ -907,19 +912,23 @@
           <h3 class="interactive-header">Стиль шапки</h3>
 
           <label class="radio-label" for="hs1">
-            <input type="radio" id="hs1" name="header-style" onchange="changeHeaderStyle('HEADER_stock'), reload()">
+            <input type="radio" id="hs1" name="header-style" onchange="changeHeaderStyle('HEADER_stock','default'), reload()">
             <span class="radio-name radio-name_interactive">Стоковый вариант</span>
           </label>
           <label class="radio-label content_OOS" for="hs2">
-            <input type="radio" id="hs2" name="header-style" onchange="changeHeaderStyle('HEADER_OOSColor'), reload()">
+            <input type="radio" id="hs2" name="header-style" onchange="changeHeaderStyle('HEADER_OOSColor','exclusive'), reload()">
             <span class="radio-name radio-name_interactive">Как в цветной теме OOS</span>
           </label>
           <label class="radio-label" for="hs3">
-            <input type="radio" id="hs3" name="header-style" onchange="changeHeaderStyle('HEADER_RUI'), reload()">
+            <input type="radio" id="hs3" name="header-style" onchange="changeHeaderStyle('HEADER_RUI','default'), reload()">
             <span class="radio-name radio-name_interactive">Realme UI</span>
           </label>
           <label class="radio-label" for="hs4">
-            <input type="radio" id="hs4" name="header-style" onchange="changeHeaderStyle('HEADER_ZenUI'), reload()">
+            <input type="radio" id="hs4" name="header-style" onchange="changeHeaderStyle('HEADER_OneUI','default'), reload()">
+            <span class="radio-name radio-name_interactive">OneUI</span>
+          </label>
+          <label class="radio-label" for="hs5">
+            <input type="radio" id="hs5" name="header-style" onchange="changeHeaderStyle('HEADER_ZenUI','default'), reload()">
             <span class="radio-name radio-name_interactive">ZenUI</span>
           </label>
         </div>
