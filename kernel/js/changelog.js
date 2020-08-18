@@ -8,16 +8,16 @@ document.addEventListener("DOMContentLoaded", () => { // Событие загу
 
   var allReleases = document.querySelectorAll('#changelog .release-notes'); // Все релизы (для номера сборки)
   var buildNo = allReleases.length; // Счетчик номера сборки
-  var sections = document.querySelectorAll('#changelog .main-article'); // Поиск всех разделов
+  var sections = document.querySelectorAll('#changelog .article'); // Поиск всех артиклей
   var sectionNo = sections.length; // Счетчик номера секции
 
   // Дата последней сборки (поиск + занести в "Об устройстве")
 
   document.querySelector('#about #build-date').textContent = sections[0].querySelector('#changelog time:first-of-type').textContent;
 
-  for (var a = 0; a < sections.length; a++) { // Перебор всех разделов
+  for (var a = 0; a < sections.length; a++) { // Перебор всех артиклей
 
-    // Нейминг заголовков разделов
+    // Нейминг заголовков артиклей
 
     var sectionHeader = sections[a].querySelector('.main-header'); // Поиск
     sectionHeader.textContent = sectionNo; // Вычисление названия
@@ -25,15 +25,15 @@ document.addEventListener("DOMContentLoaded", () => { // Событие загу
     // Нейминг версий
 
     var versions = sections[a].querySelectorAll('.release-info .menu-name'); // Поиск
-    var versionNo = versions.length; // Обратный счетчик количесва версий в 1 разделе
+    var versionNo = versions.length; // Обратный счетчик количесва версий в 1 артикле
 
-    for (var b = 0; b < versions.length; b++) { // Перебор версий в 1 разделе
+    for (var b = 0; b < versions.length; b++) { // Перебор версий в 1 артикле
 
       if (versions.length != 1) {
-        versions[b].textContent = sectionHeader.textContent + '.' + versionNo; // Если версий в разделе не 1
-      } else versions[b].textContent = sectionHeader.textContent; // Если в разделе 1 версия
+        versions[b].textContent = sectionHeader.textContent + '.' + versionNo; // Если версий в артикле не 1
+      } else versions[b].textContent = sectionHeader.textContent; // Если в артикле 1 версия
 
-      versionNo--; // Уменьшение счетчика версий в 1 разделе
+      versionNo--; // Уменьшение счетчика версий в 1 артикле
     }
 
     sectionNo--; // Уменьшение счетчика номера раздела

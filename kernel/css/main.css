@@ -4,64 +4,9 @@
 
 .main /* сток <main> и все блоки, выполняющие его роль */
 {
-  padding-top: calc(6rem + 2px);
+  padding-top: calc(6*var(--pc_font-size, 4vh) + 2px);
   text-align: center;
-  font-size: 1rem;
-}
-
-/* Разделы ------------------------------*/
-
-  .main-article.UI_OneUI /* разделы внутри <main>, стиль UI OneUI */
-  {
-    margin-bottom: 1em;
-    background-color: var(--secondary_bg-color, #424242);
-    border-radius: var(--main_border-radius, 0.5em);
-  }
-.main-article_center /* разделы внутри <main>, модификатор для центрирования */
-{
-  text-align: center;
-}
-.main-article_edge /* разделы внутри <main>, модификатор для боковых отступов */
-{
-  padding: 0 4vw;
-}
-
-/* Границы (псевдоэлементы) разделов ------------------------------*/
-
-.main-article::after /* дефолтная граница в конце раздела */
-{
-  content: '';
-  height: 1px;
-  width: 100%;
-  display: block;
-  background-color: var(--main_border-color, #1e1e1e);
-  clear: both;
-}
-  .main-article.UI_RUI::after,
-  .main-article.UI_ZenUI::after /* для RUI/ZenUI UI */
-  {
-    margin: 0 4vw;
-    width: calc(100% - 8vw);
-  }
-  .main-article.UI_OneUI::after/* для OneUI UI */
-  {
-    height: 0;
-  }
-.main-article:last-of-type:not(.main-article_single):not(.UI_OneUI)::after /* случаи, когда граница не нужна */
-{
-  content: none;
-}
-.main-article_multiple.UI_OneUI:not(:last-of-type)::after,
-.main-article_multiple.UI_ZenUI:not(:last-of-type)::after
- /* границы между подразделами в разделах с несколькими подразделами (2+) */
-{
-  content: '';
-  margin: 0 4vw;
-  height: 1px;
-  width: calc(100% - 8vw);
-  display: block;
-  background-color: var(--main_border-color, #1e1e1e);
-  clear: both;
+  font-size: 1em;
 }
 
 /* Заголовок раздела ------------------------------*/
@@ -72,13 +17,13 @@
   padding-top: 0.5em;
   padding-bottom: 0.2em;
   border-bottom: 2px solid var(--main_bg-color, black);
-  transition: ease-out 0.3s;
+  transition: ease-out var(--main_animation-duration, 0.3s);
 }
   .main-header.UI_OneUI /* заголовок раздела, стиль OneUI */
   {
     border-bottom: none;
   }
-.main-article:hover .main-header /* при наведении на содержимое раздела его заголовок подчеркивается снизу */
+.article:hover .main-header /* при наведении на содержимое артикля его заголовок подчеркивается снизу */
 {
   border-color: var(--accent-color, #80cbc4);
 }
@@ -95,11 +40,12 @@
 {
   .main /* сток <main> и все блоки, выполняющие его роль */
   {
-    font-size: 1.25rem;
+    padding-top: calc(6*var(--mobile_font-size, 5vw) + 2px);
+    font-size: 1.25em;
   }
   .main_page /* модификатор майна для второстепенных страниц при ВН */
   {
-    padding-top: calc(4.5rem + 2px);
+    padding-top: calc(4.5*var(--mobile_font-size, 5vw) + 2px);
   }
 }
 
@@ -111,20 +57,7 @@
 {
   .main /* сток <main> и все блоки, выполняющие его роль */
   {
-    font-size: 1.5rem;
-  }
-}
-
-/*------------------------------*/
-/*---ОВЕРЛЕЙ >[6:5]-------------*/
-/*------------------------------*/
-
-@media (min-aspect-ratio: 6/5) /* экраны шире 6:5 */
-{
-  /* Границы (псевдоэлементы) разделов ------------------------------*/
-
-  .main-article_multiple.two-columns.UI_OneUI:not(:last-of-type)::after /* фикс 2-колоночных разделов для OneUI */
-  {
-    content: none;
+    padding-top: calc(6*var(--tablet_font-size, 4vw) + 2px);
+    font-size: 1.5em;
   }
 }

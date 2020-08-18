@@ -9,14 +9,14 @@ var aboutHeader = document.querySelectorAll('.about-header'); // верхний 
 var aboutHeaderImage = document.querySelectorAll('.about-header_img'); // изображение устройства в разделе #about
 var aboutSecondaryTexts = document.querySelectorAll('.about_secondary-text'); // второстепенные текста в #about
 var aboutSections = document.querySelectorAll('.about-section'); // все секции в нижнем разделе about
+var articleMultiples = document.querySelectorAll('.article_multiple'); // все множественные артикли
+var articles = document.querySelectorAll('.article'); // все артикли
 var headerNames = document.querySelectorAll('.header-name'); // все заголовки в шапках
 var headers = document.querySelectorAll('.header'); // все шапки
 var headerSvgs = document.querySelectorAll('.svg_header'); // все <svg> в шапках
 var interactive = document.querySelectorAll('.interactive'); // диалоговые окна (мат. блок)
 var interactiveButtons = document.querySelectorAll('.interactive-button'); // кнопки-скрывашки в диал. окнах
 var interactiveContainers = document.querySelectorAll('.interactive-container'); // контейнеры-диалоговые окна
-var mainArticleMultiples = document.querySelectorAll('.main-article_multiple'); // все разделы с 2+ секциями внутри
-var mainArticles = document.querySelectorAll('.main-article'); // все разделы
 var mainHeaders = document.querySelectorAll('.main-header'); // все заголовки разделов
 var menuIcons = document.querySelectorAll('.menu-icon'); // все иконки в секциях-пунктах меню
 var menuTiles = document.querySelectorAll('.menu-tile'); // все элементы плиточного меню
@@ -49,6 +49,14 @@ var vars = [ // Массив с параметрами переменных
   [ // Шрифт
     ['--main_font-family'], // Переменные
     ['Arial'] // Стоковые значения
+  ],
+  [ // Длительность анимации
+    ['--main_animation-duration'], // Переменные
+    ['0.3s'] // Стоковые значения
+  ],
+  [ // Масштаб интерфейса (базовый размер шрифта)
+    ['--pc_font-size','--tablet_font-size','--mobile_font-size'], // Переменные
+    ['4vh','4vw','5vw'] // Стоковые значения
   ]
 ]
 
@@ -60,9 +68,9 @@ var styles = [ // Массив с параметрами переключате�
   ],
   [ // Стиль UI
     ['uiStyle'], // Ключ в ЛХ
-    [aboutContainers,aboutHeader,aboutHeaderImage,aboutSecondaryTexts,aboutSections,headers,headerSvgs,
-    mainArticleMultiples,mainArticles,mainHeaders,menuIcons,menuTiles,pages,sectionInteractives,sectionMenus,
-    sections,settingsSvgs], // Модифицируемые элементы
+    [aboutContainers,aboutHeader,aboutHeaderImage,aboutSecondaryTexts,aboutSections,articleMultiples,articles,
+    headers,headerSvgs,mainHeaders,menuIcons,menuTiles,pages,sectionInteractives,sectionMenus,sections,
+    settingsSvgs], // Модифицируемые элементы
     ['UI_OOS','UI_RUI','UI_OneUI','UI_ZenUI'] // Возможные значения
   ],
   [ // Стиль диалоговых окон
@@ -85,10 +93,11 @@ var mainBgColorValues = [ // Массив с возможными вариант
 
 var checkedInputs = [ // Массив с параметрами отмеченных элементов
   ['checkedAccentNo','checkedColorSchemeNo','checkedHeaderStyleNo','checkedUiStyleNo','checkedBorderRadiusNo',
-  'checkedIconShapeNo','checkedFontFamilyNo','checkedInteractiveStyleNo'], // Ключи в ЛХ
+  'checkedIconShapeNo','checkedFontFamilyNo','checkedInteractiveStyleNo','checkedAnimationDurationNo',
+  'checkedFontSizeNo'], // Ключи в ЛХ
   ["accent-color","color-scheme","header-style","ui-style","border-radius","icon-shape","font-family",
-  "interactive-style"], // Name-группы инпутов
-  ["ac1","cs1","hs1","us1","br1","is1","ff1","ias1"] // Стоковые значения id
+  "interactive-style","animation-duration","font-size"], // Name-группы инпутов
+  ["ac1","cs1","hs1","us1","br1","is1","ff1","ias1","ad2","fs3"] // Стоковые значения id
 ]
 
 // Функции-оптимизаторы

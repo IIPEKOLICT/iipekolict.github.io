@@ -11,18 +11,37 @@
 {
   text-align: center;
 }
+
+/* Секция в ченжлоге ------------------------------*/
+
 .section_changelog /* модификатор секции для #changelog */
 {
   margin: 0.5em 4vw;
   border: 1px solid var(--main_bg-color, black);
   border-radius: var(--main_border-radius, 0.5em);
-  transition: 0.3s ease;
+  transition: var(--main_animation-duration, 0.3s) ease;
 }
   .section_changelog.UI_OneUI /* стиль при OneUI UI */
   {
     margin: 0;
     border: 0;
+    border-radius: 0;
   }
+    .article_multiple:first-of-type .section_changelog.UI_OneUI
+     /* закругления сверху для 1 секции в множественном артикле */
+    {
+      border-radius: var(--main_border-radius, 0.5em) var(--main_border-radius, 0.5em) 0 0;
+    }
+    .article_multiple:last-of-type .section_changelog.UI_OneUI
+     /* закругления снизу для последней секции в множественном артикле */
+    {
+      border-radius: 0 0 var(--main_border-radius, 0.5em) var(--main_border-radius, 0.5em);
+    }
+    .article_multiple:first-of-type:last-of-type .section_changelog.UI_OneUI
+     /* закругления для единственной секции в множественном артикле */
+    {
+      border-radius: var(--main_border-radius, 0.5em);
+    }
 .section_changelog:hover /* стили при наведении на секции в #changelog */
 {
   background-color: var(--hover_bg-color, #1a1a1a);
@@ -33,11 +52,10 @@
 
 .section_menu /* кликабельная секция (пункт меню) */
 {
-  height: 5em;
   cursor: pointer;
-  transition: 0.3s ease;
+  transition: var(--main_animation-duration, 0.3s) ease;
 }
-  .section_menu.UI_OneUI /* стиль OneUI */
+  .article_single .section_menu.UI_OneUI /* стиль OneUI, секции в одиночных артиклях */
   {
     border-radius: inherit;
   }
@@ -66,6 +84,8 @@
 
 @media (max-aspect-ratio: 6/5) /* узкие экраны до 6:5 */
 {
+  /* Секция в ченжлоге ------------------------------*/
+
   .section_changelog /* модификатор секции для #changelog */
   {
     height: 3em;
@@ -77,6 +97,16 @@
   {
     height: 3em;
   }
+      .article_multiple:first-of-type .section_menu.UI_OneUI
+      /* закругления сверху для 1 секции в множественном артикле */
+      {
+        border-radius: var(--main_border-radius, 0.5em) var(--main_border-radius, 0.5em) 0 0;
+      }
+      .article_multiple:last-of-type .section_menu.UI_OneUI
+      /* закругления снизу для последней секции в множественном артикле */
+      {
+        border-radius: 0 0 var(--main_border-radius, 0.5em) var(--main_border-radius, 0.5em);
+      }
 
   /* Секция-ссылка на диалоговое окно ------------------------------*/
 
@@ -86,4 +116,37 @@
     height: 2em;
     margin: 0.5em 0;
   }
+}
+
+/*------------------------------*/
+/*---ОВЕРЛЕЙ >[6:5]-------------*/
+/*------------------------------*/
+
+@media (min-aspect-ratio: 6/5) /* экраны шире 6:5 */
+{
+  /* Секция-пункт меню ------------------------------*/
+
+  .section_menu /* кликабельная секция (пункт меню) */
+  {
+    height: 5em;
+  }
+    .section_menu.UI_OneUI /* стиль OneUI */
+    {
+      border-radius: var(--main_border-radius, 0.5em);
+    }
+      .article_multiple:not(.two-columns) .section_menu.UI_OneUI
+       /* закругления сверху для 1 секции в множественном артикле */
+      {
+        border-radius: 0;
+      }
+      .article_multiple:not(.two-columns):first-of-type .section_menu.UI_OneUI
+       /* закругления сверху для 1 секции в множественном артикле */
+      {
+        border-radius: var(--main_border-radius, 0.5em) var(--main_border-radius, 0.5em) 0 0;
+      }
+      .article_multiple:not(.two-columns):last-of-type .section_menu.UI_OneUI
+       /* закругления снизу для последней секции в множественном артикле */
+      {
+        border-radius: 0 0 var(--main_border-radius, 0.5em) var(--main_border-radius, 0.5em);
+      }
 }

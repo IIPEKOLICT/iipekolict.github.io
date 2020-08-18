@@ -29,7 +29,7 @@
   height: 0;
   background-color: var(--secondary_bg-color, #424242);
   border-radius: var(--interactive_border-radius, 1em);
-  transition: 0.3s ease;
+  transition: var(--main_animation-duration, 0.3s) ease;
 }
   .interactive-container.interactive_OOS,
   .interactive-container.interactive_ZenUI /* контейнер по дефолту (скрыт) (стиль OOS и ZenUI) */
@@ -79,7 +79,7 @@
   color: var(--secondary_text-color, #7a7a7a);
   border-top: 1px solid var(--secondary_text-color, #7a7a7a);
   cursor: pointer;
-  transition: 0.3s ease;
+  transition: var(--main_animation-duration, 0.3s) ease;
 }
   .interactive-button.interactive_OOS,
   .interactive-button.interactive_OneUI /* стиль кнопки-скрывашки по дефолту (скрыта) (стиль OOS и OneUI) */
@@ -138,7 +138,7 @@
 {
   .interactive /* вся область по дефолту (скрыта) */
   {
-    font-size: 1rem;
+    font-size: 1em;
   }
 }
 
@@ -150,7 +150,7 @@
 {
   .interactive /* вся область по дефолту (скрыта) */
   {
-    font-size: 0.8rem;
+    font-size: 0.8em;
   }
 }
 
@@ -212,7 +212,7 @@
 {
   .interactive /* вся область по дефолту (скрыта) */
   {
-    font-size: 0.75rem;
+    font-size: 0.75em;
   }
   .interactive_shown /* стиль всей области при показе */
   {

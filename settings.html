@@ -16,9 +16,13 @@
   <body class="page">
 
     <div id="start" class="page-block">
+      <header class="header">
+        <h1 class="header-name header-name_main two-line">Настройки</h1>
+      </header>
+
       <main class="main">
-        <article class="main-article">
-          <a class="link-hidden two-columns main-article_multiple" href="#accent">
+        <article class="article">
+          <a class="link-hidden two-columns article_multiple" href="#accent">
             <section class="section section_menu">
               <div class="menu-icon">
                 <object class="menu-svg" type="image/svg+xml" data="kernel/svg/settings/accent-icon.svg"></object>
@@ -30,7 +34,7 @@
             </section>
           </a>
   
-          <a class="link-hidden two-columns main-article_multiple" href="#color">
+          <a class="link-hidden two-columns article_multiple" href="#color">
             <section class="section section_menu">
               <div class="menu-icon">
                 <object class="menu-svg" type="image/svg+xml" data="kernel/svg/settings/color-icon.svg"></object>
@@ -42,19 +46,19 @@
             </section>
           </a>
 
-          <a class="link-hidden two-columns main-article_multiple" href="#font">
+          <a class="link-hidden two-columns article_multiple" href="#text">
             <section class="section section_menu">
               <div class="menu-icon">
                 <object class="menu-svg" type="image/svg+xml" data="kernel/svg/settings/font-icon.svg"></object>
               </div>
               <aside class="menu-text_container">
-                <div class="menu-text menu-name">Шрифт</div>
+                <div class="menu-text menu-name">Параметры текста</div>
                 <div class="menu-text menu-description">Стиль, размер шрифта и т. д.</div>
               </aside>
             </section>
           </a>
   
-          <a class="link-hidden two-columns main-article_multiple" href="#other">
+          <a class="link-hidden two-columns article_multiple" href="#other">
             <section class="section section_menu">
               <div class="menu-icon">
                 <object class="menu-svg" type="image/svg+xml" data="kernel/svg/settings/other-icon.svg"></object>
@@ -67,8 +71,8 @@
           </a>
         </article>
 
-        <article class="main-article">
-          <a class="link-hidden two-columns main-article_multiple" href="#changelog">
+        <article class="article">
+          <a class="link-hidden two-columns article_multiple" href="#changelog">
             <section class="section section_menu">
               <div class="menu-icon">
                 <object class="menu-svg" type="image/svg+xml" data="kernel/svg/settings/changelog-icon.svg"></object>
@@ -80,7 +84,7 @@
             </section>
           </a>
   
-          <a class="link-hidden two-columns main-article_multiple" href="#about">
+          <a class="link-hidden two-columns article_multiple" href="#about">
             <section class="section section_menu">
               <div class="menu-icon">
                 <object class="menu-svg" type="image/svg+xml" data="kernel/svg/settings/about-icon.svg"></object>
@@ -93,8 +97,8 @@
           </a>
         </article>
 
-        <article class="main-article">
-          <a class="link-hidden two-columns main-article_multiple" href="#test">
+        <article class="article">
+          <a class="link-hidden two-columns article_multiple" href="#test">
             <section class="section section_menu">
               <div class="menu-icon">
                 <object class="menu-svg" type="image/svg+xml" data="kernel/svg/settings/test-icon.svg"></object>
@@ -106,7 +110,7 @@
             </section>
           </a>
   
-          <a class="link-hidden two-columns main-article_multiple" onclick="history.back()" style="cursor: pointer;">
+          <a class="link-hidden two-columns article_multiple" onclick="history.back()" style="cursor: pointer;">
             <section class="section section_menu">
               <div class="menu-icon">
                 <object class="menu-svg" type="image/svg+xml" data="kernel/svg/settings/exit-icon.svg"></object>
@@ -119,15 +123,18 @@
           </a>
         </article>
       </main> 
-
-      <header class="header">
-        <h1 class="header-name header-name_main two-line">Настройки</h1>
-      </header>
     </div>
 
     <div id="accent" class="page-block">
+      <header class="header header_page">
+        <div class="header-icon" onclick="history.back()">
+          <object class="header-icon_svg" type="image/svg+xml" data="kernel/svg/header/back-icon.svg"></object>
+        </div>
+        <h2 class="header-name two-line">Цвет акцента</h2>
+      </header>
+
       <div class="main main_page page-block_main">
-        <article class="main-article main-article_center">
+        <article class="article article_center">
           <section class="section section_center">
             <!-- Цветовая палитра чистого дроида -->
 
@@ -243,18 +250,18 @@
           </section>
         </article>
       </div>
+    </div>
 
+    <div id="color" class="page-block">
       <header class="header header_page">
         <div class="header-icon" onclick="history.back()">
           <object class="header-icon_svg" type="image/svg+xml" data="kernel/svg/header/back-icon.svg"></object>
         </div>
-        <h2 class="header-name two-line">Цвет акцента</h2>
+        <h2 class="header-name two-line">Цветовая схема</h2>
       </header>
-    </div>
 
-    <div id="color" class="page-block">
       <div class="main main_page page-block_main">
-        <article class="main-article">
+        <article class="article">
           <section class="section">
             <label class="radio-label content_OOS" for="cs1">
               <input onchange="changeColorScheme(uiParametres[0][1],'dark'), reload()" type="radio" id="cs1" name="color-scheme">
@@ -299,87 +306,138 @@
             </label>
           </section>
         </article>
-        <article class="main-article main-article_single" onclick="showInteractive('header-style')">
+        <article class="article article_single" onclick="showInteractive('header-style')">
           <section class="section section_menu section_interactive">
             <p class="section-header">Стиль шапки</p>
           </section>
         </article>
       </div>
-
-      <header class="header header_page">
-        <div class="header-icon" onclick="history.back()">
-          <object class="header-icon_svg" type="image/svg+xml" data="kernel/svg/header/back-icon.svg"></object>
-        </div>
-        <h2 class="header-name two-line">Цветовая схема</h2>
-      </header>
     </div>
 
-    <div id="font" class="page-block">
-      <div class="main main_page page-block_main">
-        <article class="main-article main-article_single" onclick="showInteractive('font-family')">
-          <section class="section section_menu section_interactive">
-            <p class="section-header">Шрифт</p>
-          </section>
-        </article>
-      </div>
-
+    <div id="text" class="page-block">
       <header class="header header_page">
         <div class="header-icon" onclick="history.back()">
           <object class="header-icon_svg" type="image/svg+xml" data="kernel/svg/header/back-icon.svg"></object>
         </div>
-        <h2 class="header-name two-line">Шрифт</h2>
+        <h2 class="header-name two-line">Параметры текста</h2>
       </header>
+
+      <div class="main main_page page-block_main">
+        <article class="article">
+          <h3 class="main-header">Шрифт</h3>
+
+          <div class="article_multiple">
+            <section class="section">
+              <label class="radio-label" for="ff1">
+                <input type="radio" id="ff1" name="font-family" onchange="changeFontFamily(['Arial']), reload()">
+                <span class="radio-name">Arial</span>
+              </label>
+              <label class="radio-label" for="ff2">
+                <input type="radio" id="ff2" name="font-family" onchange="changeFontFamily(['Tahoma']), reload()">
+                <span class="radio-name">Tahoma</span>
+              </label>
+              <label class="radio-label" for="ff3">
+                <input type="radio" id="ff3" name="font-family" onchange="changeFontFamily(['Oxygen Mono']), reload()">
+                <span class="radio-name">Oxygen Mono</span>
+              </label>
+              <label class="radio-label" for="ff4">
+                <input type="radio" id="ff4" name="font-family" onchange="changeFontFamily(['Roboto Condensed']), reload()">
+                <span class="radio-name">Roboto Condensed</span>
+              </label>
+              <label class="radio-label" for="ff5">
+                <input type="radio" id="ff5" name="font-family" onchange="changeFontFamily(['Bitter']), reload()">
+                <span class="radio-name">Bitter</span>
+              </label>
+              <label class="radio-label" for="ff6">
+                <input type="radio" id="ff6" name="font-family" onchange="changeFontFamily(['OpenGost Type B TT']), reload()">
+                <span class="radio-name">ГОСТ</span>
+              </label>
+              <label class="radio-label" for="ff7">
+                <input type="radio" id="ff7" name="font-family" onchange="changeFontFamily(['USSR Stencil']), reload()">
+                <span class="radio-name">USSR Stencil</span>
+              </label>
+              <label class="radio-label" for="ff8">
+                <input type="radio" id="ff8" name="font-family" onchange="changeFontFamily(['Times New Roman']), reload()">
+                <span class="radio-name">Times New Roman</span>
+              </label>
+            </section>
+          </div>
+        </article>
+      </div>
     </div>
 
     <div id="other" class="page-block">
-      <div class="main main_page page-block_main">
-        <article class="main-article main-article_single" onclick="showInteractive('ui-style')">
-          <section class="section section_menu section_interactive">
-            <p class="section-header">Стиль UI</p>
-          </section>
-        </article>
-
-        <article class="main-article main-article_single" onclick="showInteractive('interactive-style')">
-          <section class="section section_menu section_interactive">
-            <p class="section-header">Стиль диалоговых окон</p>
-          </section>
-        </article>
-
-        <article class="main-article main-article_single" onclick="showInteractive('border-radius')">
-          <section class="section section_menu section_interactive">
-            <p class="section-header">Радиус закруглений</p>
-          </section>
-        </article>
-
-        <article class="main-article main-article_single" onclick="showInteractive('icon-shape')">
-          <section class="section section_menu section_interactive">
-            <p class="section-header">Форма иконок</p>
-          </section>
-        </article>
-      </div>
-
       <header class="header header_page">
         <div class="header-icon" onclick="history.back()">
           <object class="header-icon_svg" type="image/svg+xml" data="kernel/svg/header/back-icon.svg"></object>
         </div>
         <h2 class="header-name two-line">Другое</h2>
       </header>
+
+      <div class="main main_page page-block_main">
+        <article class="article article_single" onclick="showInteractive('ui-style')">
+          <section class="section section_menu section_interactive">
+            <p class="section-header">Стиль UI</p>
+          </section>
+        </article>
+
+        <article class="article article_single" onclick="showInteractive('interactive-style')">
+          <section class="section section_menu section_interactive">
+            <p class="section-header">Стиль диалоговых окон</p>
+          </section>
+        </article>
+
+        <article class="article article_single" onclick="showInteractive('border-radius')">
+          <section class="section section_menu section_interactive">
+            <p class="section-header">Радиус закруглений</p>
+          </section>
+        </article>
+
+        <article class="article article_single" onclick="showInteractive('icon-shape')">
+          <section class="section section_menu section_interactive">
+            <p class="section-header">Форма иконок</p>
+          </section>
+        </article>
+
+        <article class="article article_single" onclick="showInteractive('animation-duration')">
+          <section class="section section_menu section_interactive">
+            <p class="section-header">Длительность анимации</p>
+          </section>
+        </article>
+
+        <article class="article article_single" onclick="showInteractive('font-size')">
+          <section class="section section_menu section_interactive">
+            <p class="section-header">Масштаб интерфейса</p>
+          </section>
+        </article>
+      </div>
     </div>
 
     <div id="changelog" class="page-block">
       <div class="main main_page page-block_main">
-        <article class="main-article">
+        <article class="article">
           <h3 class="main-header"></h3>
 
-          <div class="main-article_multiple">
+          <div class="article_multiple">
             <section class="section section_changelog spoiler-container">
               <div class="menu-text_container release-info">
                 <h3 class="menu-text menu-name"></h3>
-                <time class="menu-text menu-description" datatime="2020-08-03">03.08.2020</time>
+                <time class="menu-text menu-description" datatime="2020-08-04">18.08.2020</time>
               </div>
               <details class="spoiler spoiler_changelog">
                 <summary class="spoiler-button spoiler-button_changelog"></summary>
                 <div class="delimiter_changelog"></div>
+                <ul class="release-notes release_opened">
+                  <li class="release-note">добавлена возможность изменять масштаб интерфейса (базовый размер шрифта), тоже 5 вариков</li>
+                  <li class="release-note">длительность анимации теперь в переменной + возможность изменять, 5 вариантов</li>
+                  <li class="release-note">небольшие улучшения и доработки</li>
+                  <li class="release-note">исправлен дурацкий нейминг артиклей</li>
+                </ul>
+                <ul class="release-notes">
+                  <li class="release-note">исправлен баг с лишними бордерами у двухколоночных секций при стиле ZenUI</li>
+                  <li class="release-note">отныне одинаковая логика выделения ченложных и обычных секций</li>
+                  <li class="release-note">исправлены все некрасивости при выделении секций при стиле OneUI</li>
+                </ul>
                 <ul class="release-notes">
                   <li class="release-note">автоподхват дефолтных стилей шапки при смене стиля UI</li>
                   <li class="release-note">добавлен стиль шапки OneUI</li>
@@ -399,10 +457,10 @@
           </div>
         </article>
 
-        <article class="main-article">
+        <article class="article">
           <h3 class="main-header"></h3>
 
-          <div class="main-article_multiple">
+          <div class="article_multiple">
             <section class="section section_changelog spoiler-container">
               <div class="menu-text_container release-info">
                 <h3 class="menu-text menu-name"></h3>
@@ -470,7 +528,7 @@
             </section>
           </div>
 
-          <div class="main-article_multiple">
+          <div class="article_multiple">
             <section class="section section_changelog spoiler-container">
               <div class="menu-text_container release-info">
                 <h3 class="menu-text menu-name"></h3>
@@ -543,7 +601,7 @@
             </section>
           </div>
 
-          <div class="main-article_multiple">
+          <div class="article_multiple">
             <section class="section section_changelog spoiler-container">
               <div class="menu-text_container release-info">
                 <h3 class="menu-text menu-name"></h3>
@@ -576,7 +634,7 @@
             </section>
           </div>
 
-          <div class="main-article_multiple">
+          <div class="article_multiple">
             <section class="section section_changelog spoiler-container">
               <div class="menu-text_container release-info">
                 <h3 class="menu-text menu-name"></h3>
@@ -603,10 +661,10 @@
           </div>
         </article>
 
-        <article class="main-article">
+        <article class="article">
           <h3 class="main-header"></h3>
 
-          <div class="main-article_multiple">
+          <div class="article_multiple">
             <section class="section section_changelog spoiler-container">
               <div class="menu-text_container release-info">
                 <h3 class="menu-text menu-name"></h3>
@@ -631,7 +689,7 @@
             </section>
           </div>
 
-          <div class="main-article_multiple">
+          <div class="article_multiple">
             <section class="section section_changelog spoiler-container">
               <div class="menu-text_container release-info">
                 <h3 class="menu-text menu-name"></h3>
@@ -656,7 +714,7 @@
             </section>
           </div>
 
-          <div class="main-article_multiple">
+          <div class="article_multiple">
             <section class="section section_changelog spoiler-container">
               <div class="menu-text_container release-info">
                 <h3 class="menu-text menu-name"></h3>
@@ -701,7 +759,7 @@
             </section>
           </div>
 
-          <div class="main-article_multiple">
+          <div class="article_multiple">
             <section class="section section_changelog spoiler-container">
               <div class="menu-text_container release-info">
                 <h3 class="menu-text menu-name"></h3>
@@ -736,7 +794,7 @@
             </section>
           </div>
 
-          <div class="main-article_multiple">
+          <div class="article_multiple">
             <section class="section section_changelog spoiler-container">
               <div class="menu-text_container release-info">
                 <h3 class="menu-text menu-name"></h3>
@@ -783,7 +841,7 @@
 
     <div id="about" class="page-block">
       <div class="main main_page page-block_main">
-        <article class="main-article about-header">
+        <article class="article about-header">
           <div class="about-header_img"></div>
           <aside class="about-header_specs">
             <div id="about-1spec" class="menu-text_container">
@@ -811,7 +869,7 @@
           </aside>
         </article>
 
-        <article class="main-article">
+        <article class="article">
           <section class="section about-section">
             <div id="about-model" class="about-container">
               <div class="menu-text_container about-text">
@@ -872,20 +930,56 @@
     </div>
 
     <div id="test" class="page-block">
+      <header class="header header_page">
+        <div class="header-icon" onclick="history.back()">
+          <object class="header-icon_svg" type="image/svg+xml" data="kernel/svg/header/back-icon.svg"></object>
+        </div>
+        <h2 class="header-name two-line">Бета-тест</h2>
+      </header>
+
       <div class="main main_page page-block_main">
-        <article class="main-article">
+        <article class="article">
           <h3 class="main-header">Заголовок</h3>
 
-          <div class="main-article_multiple">
-            <section class="section">
+          <div class="article_multiple">
+            <section class="section section_menu">
               <aside class="menu-text_container">
                 <div class="menu-text menu-name">Цвет акцента</div>
                 <div class="menu-text menu-description">Цвет элементов интерфейса при наведении</div>
               </aside>
             </section>
           </div>
-          <div class="main-article_multiple">
-            <section class="section">
+          <div class="article_multiple">
+            <section class="section section_menu">
+              <aside class="menu-text_container">
+                <div class="menu-text menu-name">Цвет акцента</div>
+                <div class="menu-text menu-description">Цвет элементов интерфейса при наведении</div>
+              </aside>
+            </section>
+          </div>
+        </article>
+
+        <article class="article">
+          <h3 class="main-header">Заголовок</h3>
+
+          <div class="article_multiple">
+            <section class="section section_menu">
+              <aside class="menu-text_container">
+                <div class="menu-text menu-name">Цвет акцента</div>
+                <div class="menu-text menu-description">Цвет элементов интерфейса при наведении</div>
+              </aside>
+            </section>
+          </div>
+          <div class="article_multiple">
+            <section class="section section_menu">
+              <aside class="menu-text_container">
+                <div class="menu-text menu-name">Цвет акцента</div>
+                <div class="menu-text menu-description">Цвет элементов интерфейса при наведении</div>
+              </aside>
+            </section>
+          </div>
+          <div class="article_multiple">
+            <section class="section section_menu">
               <aside class="menu-text_container">
                 <div class="menu-text menu-name">Цвет акцента</div>
                 <div class="menu-text menu-description">Цвет элементов интерфейса при наведении</div>
@@ -894,13 +988,6 @@
           </div>
         </article>
       </div>
-
-      <header class="header header_page">
-        <div class="header-icon" onclick="history.back()">
-          <object class="header-icon_svg" type="image/svg+xml" data="kernel/svg/header/back-icon.svg"></object>
-        </div>
-        <h2 class="header-name two-line">Бета-тест</h2>
-      </header>
     </div>
 
     <div id="interactive" class="interactive">
@@ -913,23 +1000,23 @@
 
           <label class="radio-label" for="hs1">
             <input type="radio" id="hs1" name="header-style" onchange="changeHeaderStyle('HEADER_stock','default'), reload()">
-            <span class="radio-name radio-name_interactive">Стоковый вариант</span>
+            <span class="radio-name">Стоковый вариант</span>
           </label>
           <label class="radio-label content_OOS" for="hs2">
             <input type="radio" id="hs2" name="header-style" onchange="changeHeaderStyle('HEADER_OOSColor','exclusive'), reload()">
-            <span class="radio-name radio-name_interactive">Как в цветной теме OOS</span>
+            <span class="radio-name">Как в цветной теме OOS</span>
           </label>
           <label class="radio-label" for="hs3">
             <input type="radio" id="hs3" name="header-style" onchange="changeHeaderStyle('HEADER_RUI','default'), reload()">
-            <span class="radio-name radio-name_interactive">Realme UI</span>
+            <span class="radio-name">Realme UI</span>
           </label>
           <label class="radio-label" for="hs4">
             <input type="radio" id="hs4" name="header-style" onchange="changeHeaderStyle('HEADER_OneUI','default'), reload()">
-            <span class="radio-name radio-name_interactive">OneUI</span>
+            <span class="radio-name">OneUI</span>
           </label>
           <label class="radio-label" for="hs5">
             <input type="radio" id="hs5" name="header-style" onchange="changeHeaderStyle('HEADER_ZenUI','default'), reload()">
-            <span class="radio-name radio-name_interactive">ZenUI</span>
+            <span class="radio-name">ZenUI</span>
           </label>
         </div>
 
@@ -939,19 +1026,19 @@
 
           <label class="radio-label" for="us1">
             <input type="radio" id="us1" name="ui-style" onchange="changeUiStyle('UI_OOS',uiParametres[0]), reload()">
-            <span class="radio-name radio-name_interactive">Oxygen OS</span>
+            <span class="radio-name">Oxygen OS</span>
           </label>
           <label class="radio-label" for="us2">
             <input type="radio" id="us2" name="ui-style" onchange="changeUiStyle('UI_RUI',uiParametres[1]), reload()">
-            <span class="radio-name radio-name_interactive">Realme UI</span>
+            <span class="radio-name">Realme UI</span>
           </label>
           <label class="radio-label" for="us3">
             <input type="radio" id="us3" name="ui-style" onchange="changeUiStyle('UI_OneUI',uiParametres[2]), reload()">
-            <span class="radio-name radio-name_interactive">OneUI</span>
+            <span class="radio-name">OneUI</span>
           </label>
           <label class="radio-label" for="us4">
             <input type="radio" id="us4" name="ui-style" onchange="changeUiStyle('UI_ZenUI',uiParametres[3]), reload()">
-            <span class="radio-name radio-name_interactive">ZenUI</span>
+            <span class="radio-name">ZenUI</span>
           </label>
         </div>
 
@@ -961,23 +1048,23 @@
 
           <label class="radio-label" for="br1">
             <input type="radio" id="br1" name="border-radius" onchange="changeBorderRadius(uiParametres[0][5],'default'), reload()">
-            <span class="radio-name radio-name_interactive">Oxygen OS</span>
+            <span class="radio-name">Oxygen OS</span>
           </label>
           <label class="radio-label" for="br2">
             <input type="radio" id="br2" name="border-radius" onchange="changeBorderRadius(uiParametres[1][5],'default'), reload()">
-            <span class="radio-name radio-name_interactive">Realme UI</span>
+            <span class="radio-name">Realme UI</span>
           </label>
           <label class="radio-label" for="br3">
             <input type="radio" id="br3" name="border-radius" onchange="changeBorderRadius(uiParametres[2][5],'default'), reload()">
-            <span class="radio-name radio-name_interactive">OneUI</span>
+            <span class="radio-name">OneUI</span>
           </label>
           <label class="radio-label" for="br4">
             <input type="radio" id="br4" name="border-radius" onchange="changeBorderRadius(uiParametres[3][5],'default'), reload()">
-            <span class="radio-name radio-name_interactive">ZenUI</span>
+            <span class="radio-name">ZenUI</span>
           </label>
           <label class="radio-label" for="br5">
             <input type="radio" id="br5" name="border-radius" onchange="changeBorderRadius(['0','0','0'],'custom'), reload()">
-            <span class="radio-name radio-name_interactive">Отключить закругления</span>
+            <span class="radio-name">Отключить закругления</span>
           </label>
         </div>
 
@@ -987,57 +1074,19 @@
 
           <label class="radio-label" for="is1">
             <input type="radio" id="is1" name="icon-shape" onchange="changeIconShape(['50%']), reload()">
-            <span class="radio-name radio-name_interactive">Круг</span>
+            <span class="radio-name">Круг</span>
           </label>
           <label class="radio-label" for="is2">
             <input type="radio" id="is2" name="icon-shape" onchange="changeIconShape(['25%']), reload()">
-            <span class="radio-name radio-name_interactive">Скругленный квадрат</span>
+            <span class="radio-name">Скругленный квадрат</span>
           </label>
           <label class="radio-label" for="is3">
             <input type="radio" id="is3" name="icon-shape" onchange="changeIconShape(['10%']), reload()">
-            <span class="radio-name radio-name_interactive">Почти квадрат</span>
+            <span class="radio-name">Почти квадрат</span>
           </label>
           <label class="radio-label" for="is4">
             <input type="radio" id="is4" name="icon-shape" onchange="changeIconShape(['0']), reload()">
-            <span class="radio-name radio-name_interactive">Квадрат</span>
-          </label>
-        </div>
-
-        <!-- Переключатель шрифта -->
-        <div id="font-family" class="interactive-content interactive-block">
-          <h3 class="interactive-header">Шрифт</h3>
-
-          <label class="radio-label" for="ff1">
-            <input type="radio" id="ff1" name="font-family" onchange="changeFontFamily(['Arial']), reload()">
-            <span class="radio-name radio-name_interactive">Arial</span>
-          </label>
-          <label class="radio-label" for="ff2">
-            <input type="radio" id="ff2" name="font-family" onchange="changeFontFamily(['Tahoma']), reload()">
-            <span class="radio-name radio-name_interactive">Tahoma</span>
-          </label>
-          <label class="radio-label" for="ff3">
-            <input type="radio" id="ff3" name="font-family" onchange="changeFontFamily(['Oxygen Mono']), reload()">
-            <span class="radio-name radio-name_interactive">Oxygen Mono</span>
-          </label>
-          <label class="radio-label" for="ff4">
-            <input type="radio" id="ff4" name="font-family" onchange="changeFontFamily(['Roboto Condensed']), reload()">
-            <span class="radio-name radio-name_interactive">Roboto Condensed</span>
-          </label>
-          <label class="radio-label" for="ff5">
-            <input type="radio" id="ff5" name="font-family" onchange="changeFontFamily(['Bitter']), reload()">
-            <span class="radio-name radio-name_interactive">Bitter</span>
-          </label>
-          <label class="radio-label" for="ff6">
-            <input type="radio" id="ff6" name="font-family" onchange="changeFontFamily(['OpenGost Type B TT']), reload()">
-            <span class="radio-name radio-name_interactive">ГОСТ</span>
-          </label>
-          <label class="radio-label" for="ff7">
-            <input type="radio" id="ff7" name="font-family" onchange="changeFontFamily(['USSR Stencil']), reload()">
-            <span class="radio-name radio-name_interactive">USSR Stencil</span>
-          </label>
-          <label class="radio-label" for="ff8">
-            <input type="radio" id="ff8" name="font-family" onchange="changeFontFamily(['Times New Roman']), reload()">
-            <span class="radio-name radio-name_interactive">Times New Roman</span>
+            <span class="radio-name">Квадрат</span>
           </label>
         </div>
 
@@ -1047,19 +1096,71 @@
 
           <label class="radio-label" for="ias1">
             <input type="radio" id="ias1" name="interactive-style" onchange="changeInteractiveStyle(uiParametres[0][7][0]), reload()">
-            <span class="radio-name radio-name_interactive">Oxygen OS</span>
+            <span class="radio-name">Oxygen OS</span>
           </label>
           <label class="radio-label" for="ias2">
             <input type="radio" id="ias2" name="interactive-style" onchange="changeInteractiveStyle(uiParametres[1][7][0]), reload()">
-            <span class="radio-name radio-name_interactive">Realme UI</span>
+            <span class="radio-name">Realme UI</span>
           </label>
           <label class="radio-label" for="ias3">
             <input type="radio" id="ias3" name="interactive-style" onchange="changeInteractiveStyle(uiParametres[2][7][0]), reload()">
-            <span class="radio-name radio-name_interactive">OneUI</span>
+            <span class="radio-name">OneUI</span>
           </label>
           <label class="radio-label" for="ias4">
             <input type="radio" id="ias4" name="interactive-style" onchange="changeInteractiveStyle(uiParametres[3][7][0]), reload()">
-            <span class="radio-name radio-name_interactive">ZenUI</span>
+            <span class="radio-name">ZenUI</span>
+          </label>
+        </div>
+
+        <!-- Переключатель длительности анимации -->
+        <div id="animation-duration" class="interactive-content interactive-block">
+          <h3 class="interactive-header">Длительность анимации</h3>
+
+          <label class="radio-label" for="ad1">
+            <input type="radio" id="ad1" name="animation-duration" onchange="changeAnimationDuration(['0s']), reload()">
+            <span class="radio-name">Без анимации</span>
+          </label>
+          <label class="radio-label" for="ad2">
+            <input type="radio" id="ad2" name="animation-duration" onchange="changeAnimationDuration(['0.3s']), reload()">
+            <span class="radio-name">0,3 секунды</span>
+          </label>
+          <label class="radio-label" for="ad3">
+            <input type="radio" id="ad3" name="animation-duration" onchange="changeAnimationDuration(['0.5s']), reload()">
+            <span class="radio-name">0,5 секунды</span>
+          </label>
+          <label class="radio-label" for="ad4">
+            <input type="radio" id="ad4" name="animation-duration" onchange="changeAnimationDuration(['0.75s']), reload()">
+            <span class="radio-name">0,75 секунд</span>
+          </label>
+          <label class="radio-label" for="ad5">
+            <input type="radio" id="ad5" name="animation-duration" onchange="changeAnimationDuration(['1s']), reload()">
+            <span class="radio-name">1 секунда</span>
+          </label>
+        </div>
+
+        <!-- Переключатель базового размера шрифта (интерфейса) -->
+        <div id="font-size" class="interactive-content interactive-block">
+          <h3 class="interactive-header">Масштаб интерфейса</h3>
+
+          <label class="radio-label" for="fs1">
+            <input type="radio" id="fs1" name="font-size" onchange="changeFontSize(['3.2vh','3.2vw','4vw']), reload()">
+            <span class="radio-name">80%</span>
+          </label>
+          <label class="radio-label" for="fs2">
+            <input type="radio" id="fs2" name="font-size" onchange="changeFontSize(['3.6vh','3.6vw','4.5vw']), reload()">
+            <span class="radio-name">90%</span>
+          </label>
+          <label class="radio-label" for="fs3">
+            <input type="radio" id="fs3" name="font-size" onchange="changeFontSize(['4vh','4vw','5vw']), reload()">
+            <span class="radio-name">100% (рекоммендуется)</span>
+          </label>
+          <label class="radio-label" for="fs4">
+            <input type="radio" id="fs4" name="font-size" onchange="changeFontSize(['4.4vh','4.4vw','5.5vw']), reload()">
+            <span class="radio-name">110%</span>
+          </label>
+          <label class="radio-label" for="fs5">
+            <input type="radio" id="fs5" name="font-size" onchange="changeFontSize(['4.8vh','4.8vw','6vw']), reload()">
+            <span class="radio-name">120%</span>
           </label>
         </div>
       </div>

@@ -5,7 +5,7 @@
 .footer /* сток <footer> */
 {
   border-top: 2px solid var(--main_border-color, #1e1e1e);
-  font-size: 0.8rem;
+  font-size: 0.8em;
 }
 .footer-container /* контейнер для содержимого футера */
 {
@@ -28,7 +28,7 @@
 {
   .footer /* сток <footer> */
   {
-    font-size: 1rem;
+    font-size: 1em;
   }
 }
 

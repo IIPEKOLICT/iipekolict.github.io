@@ -14,7 +14,8 @@
   align-items: center;
   background-color: var(--main_bg-color, black);
   border-bottom: 2px solid var(--main_border-color, #1e1e1e);
-  font-size: 2rem;
+  font-size: 2em;
+  order: 2;
 }
   .header.HEADER_ZenUI /* Шапка при активном стиле шапки "ZenUI" */
   {
@@ -45,7 +46,7 @@
   cursor: pointer;
   border: 0.05em solid rgba(0,0,0,0);
   border-radius: var(--icon_border-radius, 50%);
-  transition: ease-out 0.3s;
+  transition: ease-out var(--main_animation-duration, 0.3s);
 }
 .header-icon:hover /* Сток-контейнер иконок в шапке при наведении */
 {
@@ -84,7 +85,7 @@
 {
   .header_page /* Модификатор шапки, только для страниц, не являющихся главной в HTML-документе */
   {
-    font-size: 1.5rem;
+    font-size: 1.5em;
   }
 
   /* Иконки ------------------------------*/

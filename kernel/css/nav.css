@@ -11,7 +11,7 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  font-size: 1rem;
+  font-size: 1em;
   line-height: 1em;
 }
 
@@ -51,7 +51,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  transition: ease-out 0.3s;
+  transition: ease-out var(--main_animation-duration, 0.3s);
 }
 .nav-item:hover /* пункт меню при наведении */
 {
@@ -65,7 +65,7 @@
   height: 3em;
   background-color: var(--icon_bg-color, #141414);
   border-radius: var(--icon_border-radius, 50%);
-  transition: ease-out 0.3s;
+  transition: ease-out var(--main_animation-duration, 0.3s);
 }
 .nav-item:hover .nav-icon /* иконка пункта меню при наведении на пункт меню */
 {

@@ -12,6 +12,7 @@
   background-color: var(--main_bg-color, black);
   color: var(--main_text-color, white);
   font-family: var(--main_font-family, Arial), sans-serif;
+  font-size: var(--pc_font-size, 4vh);
 }
 .page-block:not(:target) /* все блоки внутристраничной навигации, кроме выбранной - скрыть */
 {
@@ -20,4 +21,32 @@
 .page-block_main /* дефолтное выравнивание текста на второстепенных страницах при ВН */
 {
   text-align: left;
+}
+
+/*------------------------------*/
+/*---ОВЕРЛЕЙ [3:4]--------------*/
+/*------------------------------*/
+
+@media (max-aspect-ratio: 3/4) /* диапазон 3:4 и уже */
+{
+  /* Стили <body> и иммитирующих его блоков ------------------------------*/
+
+  .page /* дефолтные <body> */
+  {
+    font-size: var(--mobile_font-size, 5vw);
+  }
+}
+
+/*------------------------------*/
+/*---ОВЕРЛЕЙ [3:4 - 6:5]--------*/
+/*------------------------------*/
+
+@media (min-aspect-ratio: 3/4) and (max-aspect-ratio: 6/5) /* диапазон 3:4 - 6:5 */
+{
+  /* Стили <body> и иммитирующих его блоков ------------------------------*/
+
+  .page /* дефолтные <body> */
+  {
+    font-size: var(--tablet_font-size, 4vw);
+  }
 }

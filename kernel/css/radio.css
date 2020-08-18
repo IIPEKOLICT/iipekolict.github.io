@@ -48,9 +48,9 @@
   border: 0.3em solid var(--main_bg-color, black);
   border-radius: 0.6em;
   box-shadow: 0 0 0 0.1em var(--radio_nonactive-color, #898989);
-  transition: 0.3s ease all;
+  transition: var(--main_animation-duration, 0.3s) ease all;
 }
-.main-article.UI_OneUI [type="radio"] + .radio-name::before /* стиль неотмеч. радиокнопки при акт. стиле UI OneUI */
+.article.UI_OneUI [type="radio"] + .radio-name::before /* стиль неотмеч. радиокнопки при акт. стиле UI OneUI */
 {
   border: 0.3em solid var(--secondary_bg-color, #424242);
 }
@@ -63,7 +63,7 @@
 {
   box-shadow: 0 0 0 0.1em var(--accent-color, #80cbc4);
 }
-[type="radio"] + .radio-name_interactive::before /* стиль неотмеченной радиокнопки в интерактивном спойлере */
+.interactive-container [type="radio"] + .radio-name::before /* стиль неотмеченной радиокнопки в диалоговом окне */
 {
   border-color: var(--secondary_bg-color, #424242); /* да, там другой фон */
 }
@@ -82,7 +82,7 @@
   background-color: var(--accent-color, #80cbc4);
   color: var(--accent-color, #80cbc4);
   font-size: 2.5em;
-  transition: 0.3s ease;
+  transition: var(--main_animation-duration, 0.3s) ease;
 }
 [type="radio"]:checked + .square-checkbox::before /* стиль отмеченного квадратного чекбокса (с галочкой посередине) */
 {
