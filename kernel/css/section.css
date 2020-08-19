@@ -77,6 +77,11 @@
     height: 4em;
     margin: 0.5em 0;
   }
+  .article_multiple .section_interactive.UI_OneUI
+   /* секция-ссылка на диалоговое окно при активом стиле UI OneUI в множественном артикле */
+  {
+    margin: 0;
+  }
 
 /*------------------------------*/
 /*---ОВЕРЛЕЙ [6:5]--------------*/
@@ -110,12 +115,12 @@
 
   /* Секция-ссылка на диалоговое окно ------------------------------*/
 
-  .section_interactive.UI_RUI,
-  .section_interactive.UI_OneUI /* секция-ссылка на диалоговое окно при активных стилях UI RUI/OneUI */
-  {
-    height: 2em;
-    margin: 0.5em 0;
-  }
+    .section_interactive.UI_RUI,
+    .section_interactive.UI_OneUI /* секция-ссылка на диалоговое окно при активных стилях UI RUI/OneUI */
+    {
+      height: 2em;
+      margin: 0.5em 0;
+    }
 }
 
 /*------------------------------*/
@@ -149,4 +154,11 @@
       {
         border-radius: 0 0 var(--main_border-radius, 0.5em) var(--main_border-radius, 0.5em);
       }
+
+  /* Секция-ссылка на диалоговое окно ------------------------------*/
+
+  .section_interactive /* секция-ссылка на диалоговое окно */
+  {
+    height: 3.5em;
+  }
 }
