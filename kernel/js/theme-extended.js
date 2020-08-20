@@ -151,14 +151,6 @@ const interactiveStyleInputs = [].slice.call(document.querySelectorAll
   ('input[type="radio"][name="interactive-style"]')); // Все инпуты, меняющие стиль диалоговых окон
 recordCheckedNo(interactiveStyleInputs,checkedInputs[0][7]);
 
-const animationDurationInputs = [].slice.call(document.querySelectorAll
-  ('input[type="radio"][name="animation-duration"]')); // Все инпуты, меняющие скорость анимации
-recordCheckedNo(animationDurationInputs,checkedInputs[0][8]);
-
-const fontSizeInputs = [].slice.call(document.querySelectorAll
-  ('input[type="radio"][name="font-size"]')); // Все инпуты, меняющие масштаб интерфейса (баз размер шрифта)
-recordCheckedNo(fontSizeInputs,checkedInputs[0][9]);
-
 // Функция смены цвета акцента
 
 accentInputs.forEach(input => input.addEventListener('change', changeAccent(targetAC))); // Прослушка акц-инпутов
@@ -264,20 +256,4 @@ interactiveStyleInputs.forEach(input => input.addEventListener('change', changeI
 function changeInteractiveStyle(targetIaS) { // Функция смены стиля диалоговых окон
   classSwith(styles[2],targetIaS);
   localStorage.setItem(styles[2][0], targetIaS); // Сохранить ключ стиля диалоговых окон
-}
-
-// Функция смены цвета акцента
-
-animationDurationInputs.forEach(input => input.addEventListener('change', changeAnimationDuration(targetAD)));
- // Прослушка инпутов длительности анимации
-function changeAnimationDuration(targetAD) { // Функция смены длит анимации
-  varRecord(vars[5],targetAD); // запись переменных
-}
-
-// Функция смены масштаба интерфейса (баз размера шрифта)
-
-fontSizeInputs.forEach(input => input.addEventListener('change', changeFontSize(targetFS)));
- // Прослушка инпутов масштаба интерфейса
-function changeFontSize(targetFS) { // Функция смены масштаба интерфейса (баз размера шрифта)
-  varRecord(vars[6],targetFS); // запись переменных
 }

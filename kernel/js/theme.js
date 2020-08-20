@@ -21,6 +21,7 @@ var mainHeaders = document.querySelectorAll('.main-header'); // все заго�
 var menuIcons = document.querySelectorAll('.menu-icon'); // все иконки в секциях-пунктах меню
 var menuTiles = document.querySelectorAll('.menu-tile'); // все элементы плиточного меню
 var pages = document.querySelectorAll('.page'); // <body>, класс в нем задает стиль UI
+var ranges = document.querySelectorAll('.range'); // все ползунки
 var sectionInteractives = document.querySelectorAll('.section_interactive'); // все секции-ссылки на диал. окна
 var sectionMenus = document.querySelectorAll('.section_menu'); // все секции-пункты меню
 var sections = document.querySelectorAll('.section'); // все секции
@@ -69,7 +70,7 @@ var styles = [ // Массив с параметрами переключате�
   [ // Стиль UI
     ['uiStyle'], // Ключ в ЛХ
     [aboutContainers,aboutHeader,aboutHeaderImage,aboutSecondaryTexts,aboutSections,articleMultiples,articles,
-    headers,headerSvgs,mainHeaders,menuIcons,menuTiles,pages,sectionInteractives,sectionMenus,sections,
+    headers,headerSvgs,mainHeaders,menuIcons,menuTiles,pages,ranges,sectionInteractives,sectionMenus,sections,
     settingsSvgs], // Модифицируемые элементы
     ['UI_OOS','UI_RUI','UI_OneUI','UI_ZenUI'] // Возможные значения
   ],
@@ -93,11 +94,11 @@ var mainBgColorValues = [ // Массив с возможными вариант
 
 var checkedInputs = [ // Массив с параметрами отмеченных элементов
   ['checkedAccentNo','checkedColorSchemeNo','checkedHeaderStyleNo','checkedUiStyleNo','checkedBorderRadiusNo',
-  'checkedIconShapeNo','checkedFontFamilyNo','checkedInteractiveStyleNo','checkedAnimationDurationNo',
-  'checkedFontSizeNo'], // Ключи в ЛХ
+  'checkedIconShapeNo','checkedFontFamilyNo','checkedInteractiveStyleNo'],
+   // Ключи в ЛХ
   ["accent-color","color-scheme","header-style","ui-style","border-radius","icon-shape","font-family",
-  "interactive-style","animation-duration","font-size"], // Name-группы инпутов
-  ["ac1","cs1","hs1","us1","br1","is1","ff1","ias1","ad2","fs3"] // Стоковые значения id
+  "interactive-style"], // Name-группы инпутов
+  ["ac1","cs1","hs1","us1","br1","is1","ff1","ias1"] // Стоковые значения id
 ]
 
 // Функции-оптимизаторы

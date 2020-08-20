@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/css" href="../../css/root.css"?>
+<?xml-stylesheet type="text/css" href="../../css/svg.css"?>
+<svg version="1.1" id="Слой_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve" class="svg_settings">
+	<script xlink:href="../../js/theme.js" />
+  <g class="g60" fill="white" stroke="none">
+    <rect x="10" y="30" width="80" height="30"/>
+    <rect x="10" y="65" width="25" height="15"/>
+    <rect x="65" y="65" width="25" height="15"/>
+    <rect x="30" y="75" width="40" height="5"/>
+    <rect x="40" y="65" width="20" height="5"/>
+  </g>
+  <g class="g06" fill="none" stroke="white">
+    <polyline stroke-width="6" stroke-miterlimit="10" points="30,33 30,13 70,13 70,33"/>
+  </g>
+</svg>

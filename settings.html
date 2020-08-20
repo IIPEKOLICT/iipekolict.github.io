@@ -6,7 +6,8 @@
     <meta name="keywords" content="Сайты" />
     <meta name="description" content="Мое портфолио; сайты, сделанные мной" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-	  <title>Настройки</title>
+    <title>Настройки</title>
+    <link rel="shortcut icon" href="kernel/svg/title/settings-icon.svg" type="image/svg">
     <link rel="stylesheet" href="kernel/css/bootloader.css">
     <link rel="stylesheet" href="kernel/css/changelog.css">
     <link rel="stylesheet" href="kernel/css/about.css">
@@ -262,7 +263,7 @@
 
       <div class="main main_page page-block_main">
         <article class="article">
-          <div class="article_multiple" onclick="showInteractive('ui-style')">
+          <div class="article_multiple two-columns" onclick="showInteractive('ui-style')">
             <section class="section section_menu section_interactive">
               <aside class="menu-text_container">
                 <div class="menu-text menu-name">Стиль UI</div>
@@ -270,54 +271,56 @@
               </aside>
             </section>
           </div>
-          <div class="article_multiple" onclick="showInteractive('color-scheme')">
+          <div class="article_multiple two-columns" onclick="showInteractive('color-scheme')">
             <section class="section section_menu section_interactive">
               <aside class="menu-text_container">
                 <div class="menu-text menu-name">Цветовая схема</div>
-                <div class="menu-text menu-description">Выбор используемой цветовой палитры интерфейса</div>
+                <div class="menu-text menu-description">Выбор используемой цветовой палитры</div>
               </aside>
             </section>
           </div>
         </article>
 
         <article class="article">
-          <div class="article_multiple" onclick="showInteractive('header-style')">
+          <div class="article_multiple two-columns" onclick="showInteractive('header-style')">
             <section class="section section_menu section_interactive">
               <aside class="menu-text_container">
                 <div class="menu-text menu-name">Стиль шапки</div>
               </aside>
             </section>
           </div>
-          <div class="article_multiple" onclick="showInteractive('interactive-style')">
+          <div class="article_multiple two-columns" onclick="showInteractive('interactive-style')">
             <section class="section section_menu section_interactive">
               <aside class="menu-text_container">
                 <div class="menu-text menu-name">Стиль диалоговых окон</div>
               </aside>
             </section>
           </div>
-          <div class="article_multiple" onclick="showInteractive('border-radius')">
+          <div class="article_multiple two-columns" onclick="showInteractive('border-radius')">
             <section class="section section_menu section_interactive">
               <aside class="menu-text_container">
                 <div class="menu-text menu-name">Радиус закруглений</div>
               </aside>
             </section>
           </div>
-          <div class="article_multiple" onclick="showInteractive('icon-shape')">
+          <div class="article_multiple two-columns" onclick="showInteractive('icon-shape')">
             <section class="section section_menu section_interactive">
               <aside class="menu-text_container">
                 <div class="menu-text menu-name">Форма иконок</div>
-                <div class="menu-text menu-description">Изменение радиуса закруглений у иконок пунктов меню</div>
+                <div class="menu-text menu-description">Изменение радиуса закруглений у иконок</div>
               </aside>
             </section>
           </div>
         </article>
 
-        <article class="article article_single" onclick="showInteractive('font-size')">
-          <section class="section section_menu section_interactive">
-            <aside class="menu-text_container">
-              <div class="menu-text menu-name">Масштаб интерфейса</div>
-              <div class="menu-text menu-description">Изменение размера всех элементов на страницах</div>
-            </aside>
+        <article class="article article_single">
+          <h3 class="main-header">Масштаб интерфейса</h3>
+
+          <section class="section">
+            <div class="range-container">
+              <div id="interface-scale-demo" class="range-demo menu-description"></div>
+              <input type="range" min="50" max="150" step="10" class="range" id="interface-scale-range">
+            </div>
           </section>
         </article>
       </div>
@@ -423,12 +426,14 @@
       </header>
 
       <div class="main main_page page-block_main">
-        <article class="article article_single" onclick="showInteractive('animation-duration')">
-          <section class="section section_menu section_interactive">
-            <aside class="menu-text_container">
-              <div class="menu-text menu-name">Длительность анимации</div>
-              <div class="menu-text menu-description">Изменение дефолтной длительности анимации</div>
-            </aside>
+        <article class="article article_single">
+          <h3 class="main-header">Длительность анимации</h3>
+
+          <section class="section">
+            <div class="range-container">
+              <div id="animation-duration-demo" class="range-demo menu-description"></div>
+              <input type="range" max="1" step="0.1" class="range" id="animation-duration-range">
+            </div>
           </section>
         </article>
       </div>
@@ -438,6 +443,25 @@
       <div class="main main_page page-block_main">
         <article class="article">
           <h3 class="main-header"></h3>
+
+          <div class="article_multiple">
+            <section class="section section_changelog spoiler-container">
+              <div class="menu-text_container release-info">
+                <h3 class="menu-text menu-name"></h3>
+                <time class="menu-text menu-description" datatime="2020-08-20">20.08.2020</time>
+              </div>
+              <details class="spoiler spoiler_changelog">
+                <summary class="spoiler-button spoiler-button_changelog"></summary>
+                <div class="delimiter_changelog"></div>
+                <ul class="release-notes">
+                  <li class="release-note">прикрутил иконки к заголовкам страниц в браузере (используются свгшные)</li>
+                  <li class="release-note">переключатели длительности анимации и масштаба интерфейса теперь слайдерами идут</li>
+                  <li class="release-note">добавлены слайдеры, пока неказистые(</li>
+                  <li class="release-note">исправлен баг с отображением длинных текстов-описаний в секциях при раскладке в 2 колоки</li>
+                </ul>
+              </details>
+            </section>
+          </div>
 
           <div class="article_multiple">
             <section class="section section_changelog spoiler-container">
@@ -986,6 +1010,15 @@
           </div>
         </article>
 
+        <article class="article article_single">
+          <section class="section section_menu section_interactive">
+            <label class="switch">
+              <input type="checkbox">
+              <span class="slider"></span>
+            </label>
+          </section>
+        </article>
+
         <article class="article article_single" onclick="showInteractive('ui-style')">
           <section class="section section_menu section_interactive">
             <p class="section-header">Стиль UI</p>
@@ -1221,5 +1254,6 @@
     <script src="kernel/js/theme-extended.js"></script>
     <script src="kernel/js/changelog.js"></script>
     <script src="kernel/js/interactive.js"></script>
+    <script src="kernel/js/test.js"></script>
   </body>
 </html>
