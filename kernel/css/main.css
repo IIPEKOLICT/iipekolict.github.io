@@ -3,34 +3,22 @@
 /*------------------------------*/
 
 .main /* сток <main> и все блоки, выполняющие его роль */
-{
-  padding-top: calc(6*var(--pc_font-size, 4vh) + 2px);
+{ 
+  padding-top: calc(6 * var(--pc_font-size, 4vh) + 2px);
   text-align: center;
   font-size: 1em;
 }
-
-/* Заголовок раздела ------------------------------*/
-
-.main-header /* заголовок раздела */
-{
-  margin: 0 4vw;
-  padding-top: 0.5em;
-  padding-bottom: 0.2em;
-  border-bottom: 2px solid var(--main_bg-color, black);
-  transition: ease-out var(--main_animation-duration, 0.3s);
-}
-  .main-header.UI_OneUI /* заголовок раздела, стиль OneUI */
+  .main.OneUI-mode /* сток <main> при активации OneUI mode */
   {
-    border-bottom: none;
+    padding-top: calc(50vh + 2px);
+    -webkit-transition: var(--main_animation-duration, 0.3s);
+    transition: var(--main_animation-duration, 0.3s);
   }
-.article:hover .main-header /* при наведении на содержимое артикля его заголовок подчеркивается снизу */
-{
-  border-color: var(--accent-color, #80cbc4);
-}
-#changelog .main-header::after /* Допись в заголовок раздела в ченжлоге */
-{
-  content: " версия";
-}
+  .main.OneUI-mode.scroll /* сток <main> при активации OneUI mode и при скроллинге страницы */
+  {
+    padding-top: calc(6 * var(--pc_font-size, 4vh) + 2px);
+    min-height: calc(100vh - 6 * var(--pc_font-size, 4vh));
+  }
 
 /*------------------------------*/
 /*---ОВЕРЛЕЙ [3:4]--------------*/
@@ -40,13 +28,23 @@
 {
   .main /* сток <main> и все блоки, выполняющие его роль */
   {
-    padding-top: calc(6*var(--mobile_font-size, 5vw) + 2px);
+    padding-top: calc(6 * var(--mobile_font-size, 5vw) + 2px);
     font-size: 1.25em;
   }
+    .main.OneUI-mode.scroll /* сток <main> при активации OneUI mode и при скроллинге страницы */
+    {
+      padding-top: calc(6 * var(--mobile_font-size, 5vw) + 2px);
+      min-height: calc(100vh - 6 * var(--mobile_font-size, 5vw) - 2px);
+    }
   .main_page /* модификатор майна для второстепенных страниц при ВН */
   {
-    padding-top: calc(4.5*var(--mobile_font-size, 5vw) + 2px);
+    padding-top: calc(4.5 * var(--mobile_font-size, 5vw) + 2px);
   }
+    .main_page.OneUI-mode.scroll /* <main> на страничках ВН при активации OneUI mode и при скроллинге страницы */
+    {
+      padding-top: calc(4.5 * var(--mobile_font-size, 5vw) + 2px);
+      min-height: calc(100vh - 4.5 * var(--mobile_font-size, 5vw));
+    }
 }
 
 /*------------------------------*/
@@ -57,7 +55,12 @@
 {
   .main /* сток <main> и все блоки, выполняющие его роль */
   {
-    padding-top: calc(6*var(--tablet_font-size, 4vw) + 2px);
+    padding-top: calc(6 * var(--tablet_font-size, 4vw) + 2px);
     font-size: 1.5em;
   }
+    .main.OneUI-mode.scroll /* сток <main> при активации OneUI mode и при скроллинге страницы */
+    {
+      padding-top: calc(6 * var(--tablet_font-size, 4vw) + 2px);
+      min-height: calc(100vh - 6 * var(--tablet_font-size, 4vw));
+    }
 }

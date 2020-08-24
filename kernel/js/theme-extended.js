@@ -2,11 +2,13 @@
 /*---ДОПОЛНИТЕЛЬНЫЙ МОДУЛЬ ДВИЖКА ТЕМ (ТОЛЬКО ДЛЯ НАСТРОЕК)---*/
 /*------------------------------------------------------------*/
 
+// Массивы с параметрами
+
 var uiParametres = [ // Массив с параметрами UI
   [ // Для стиля UI "UI_OOS"
-    [
-      ["cs1"],['black','#424242','#141414','#1a1a1a','white','#7a7a7a','#1e1e1e','#898989'], // Темная тема
-      ["cs2"],['#fafafa','white','white','#efefef','#191919','#969696','#e6e6e6','#999'] // Светлая тема
+    [ // Темная/светлая тема
+      ["cs1"],['black','#424242','#141414','#1a1a1a','white','#7a7a7a','#1e1e1e','#898989','#4d4d4d','#b9b9b9'],
+      ["cs2"],['#fafafa','white','white','#efefef','#191919','#969696','#e6e6e6','#999','#e1e1e1','#ececec']
     ],
     [
       ["hs1"],['HEADER_stock'] // Дефолтный стиль шапки
@@ -16,12 +18,15 @@ var uiParametres = [ // Массив с параметрами UI
     ],
     [
       ["ias1"],['interactive_OOS'] // Дефолтный стиль диалоговых окон
+    ],
+    [
+      ["ss1"],['switch_OOS'] // Дефолтный стиль переключателей
     ]
   ],
   [ // Для стиля UI "UI_RUI"
-    [
-      ["cs3"],['black','#333','#141414','#252525','white','#8c8c8c','#333333','#666'], // Темная тема
-      ["cs4"],['white','white','#ddd','#f7f7f7','black','#737373','#e5e5e5','#ccc'] // Светлая тема
+    [ // Темная/светлая тема
+      ["cs3"],['black','#333','#141414','#252525','white','#8c8c8c','#333333','#666','#757575','#fff'],
+      ["cs4"],['white','white','#ddd','#f7f7f7','black','#737373','#e5e5e5','#ccc','#e5e5e5','#fff']
     ],
     [
       ["hs3"],['HEADER_RUI'] // Дефолтный стиль шапки
@@ -31,12 +36,15 @@ var uiParametres = [ // Массив с параметрами UI
     ],
     [
       ["ias2"],['interactive_RUI'] // Дефолтный стиль диалоговых окон
+    ],
+    [
+      ["ss2"],['switch_RUI'] // Дефолтный стиль переключателей
     ]
   ],
   [ // Для стиля UI "UI_OneUI"
-    [
-      ["cs5"],['black','#252525','#252525','#333','#fafafa','#909090','#3f3f3f','#797979'], // Темная тема
-      ["cs6"],['#f2f2f2','#fcfcfc','white','#e3e3e3','#161616','#989898','#ececec','#b3b3b3'], // Светлая тема
+    [ // Темная/светлая тема
+      ["cs5"],['black','#252525','#252525','#333','#fafafa','#909090','#3f3f3f','#797979','#505050','#fafafa'],
+      ["cs6"],['#f2f2f2','#fcfcfc','white','#e3e3e3','#161616','#989898','#ececec','#b3b3b3','#a9a9a9','#fcfcfc']
     ],
     [
       ["hs4"],['HEADER_OneUI'] // Дефолтный стиль шапки
@@ -46,12 +54,15 @@ var uiParametres = [ // Массив с параметрами UI
     ],
     [
       ["ias3"],['interactive_OneUI'] // Дефолтный стиль диалоговых окон
+    ],
+    [
+      ["ss3"],['switch_OneUI'] // Дефолтный стиль переключателей
     ]
   ],
   [ // Для стиля UI "UI_ZenUI"
-    [
-      ["cs7"],['#161616','#424242','#252525','#505050','white','#b9b9b9','#323232','#c1c1c1'], // Темная тема
-      ["cs8"],['#fafafa','white','#ddd','#ededed','#202020','#787878','#dcdcdc','#989898'] // Светлая тема
+    [ // Темная/светлая тема
+      ["cs7"],['#161616','#424242','#252525','#505050','white','#b9b9b9','#323232','#c1c1c1','#696969','#b4b4b4'],
+      ["cs8"],['#fafafa','white','#ddd','#ededed','#202020','#787878','#dcdcdc','#989898','#ccc','#e7e7e7']
     ],
     [
       ["hs5"],['HEADER_ZenUI'] // Дефолтный стиль шапки
@@ -61,6 +72,9 @@ var uiParametres = [ // Массив с параметрами UI
     ],
     [
       ["ias4"],['interactive_ZenUI'] // Дефолтный стиль диалоговых окон
+    ],
+    [
+      ["ss4"],['switch_ZenUI'] // Дефолтный стиль переключателей
     ]
   ]
 ]
@@ -86,6 +100,29 @@ function recordCheckedNo(inputConst,key) { // Функция записи инф
     inputConst[i].onclick = function() { // Если инпут нажат
       localStorage.setItem(key, this.id); // Сохранить ключ номера акц-инпута
     }
+  }
+}
+
+// универсальные функции для чекбоксов
+
+function offCheckboxInput(checkboxIdArray) { // функция, деактивирующая чекбокс
+  for (var m = 0; m < checkboxIdArray.length; m++) {
+    if (document.getElementById(checkboxIdArray[m]).checked) 
+    document.getElementById(checkboxIdArray[m]).removeAttribute('checked');
+  }
+}
+
+function checkboxChecked(checkboxArray) { // функция, отмечающая инпуты чекбоксов
+  for (var i = 0; i < checkboxArray.length; i++) {
+    if (localStorage.getItem(checkboxArray[i][0][0]) == 'on') { // если активен
+      for (var m = 0; m < checkboxArray[i][3].length; m++) { // отметить чекбокс
+        if (document.getElementById(checkboxArray[i][3][m]).checked == false) 
+        document.getElementById(checkboxArray[i][3][m]).setAttribute('checked','checked');
+      }
+    }
+    else if (localStorage.getItem(checkboxArray[i][0][0]) == 'off') offCheckboxInput(checkboxArray[i][3])
+     // если не активен, но есть ключ - чекбокс не активен тоже
+    else offCheckboxInput(checkboxArray[i][3]) // если нет ключа / в ключе дичь - чекбокс не активен тоже
   }
 }
 
@@ -115,6 +152,8 @@ document.addEventListener("DOMContentLoaded", () => { // Событие загу
     if (bgColorValue == mainBgColorValues[1][i]) whiteAccentLabel.classList.add('hidden-label')
     // Если основной увет фона - один из них, то скрыть лейбл с белым акцентом
   }
+
+  checkboxChecked(checkboxParametres); // расстановка чекбоксов (отмечен/нет)
 });
 
 // Запись инфы в ЛХ о checked-инпуте (его id)
@@ -150,6 +189,10 @@ recordCheckedNo(fontFamilyInputs,checkedInputs[0][6]);
 const interactiveStyleInputs = [].slice.call(document.querySelectorAll
   ('input[type="radio"][name="interactive-style"]')); // Все инпуты, меняющие стиль диалоговых окон
 recordCheckedNo(interactiveStyleInputs,checkedInputs[0][7]);
+
+const switchStyleInputs = [].slice.call(document.querySelectorAll
+  ('input[type="radio"][name="switch-style"]')); // Все инпуты, меняющие стиль переключателей
+recordCheckedNo(switchStyleInputs,checkedInputs[0][8]);
 
 // Функция смены цвета акцента
 
@@ -222,6 +265,12 @@ function changeUiStyle(targetUI,uiParametresArray) { // Функция смен�
   classSwith(styles[2],uiParametresArray[3][1][0]); // Изменить стиль диалоговых окон на дефолтный для данного UI
   markInput(checkedInputs[0][7],checkedInputs[1][7],uiParametresArray[3][0][0]); // Отметить нужн. инпут
   localStorage.setItem(styles[2][0],uiParametresArray[3][1][0]); // Сохранить ключ стиля диалоговых окон
+
+  // Автоподхват стиля переключателей
+  
+  classSwith(styles[3],uiParametresArray[4][1][0]); // Изменить стиль переключателей на дефолтный для данного UI
+  markInput(checkedInputs[0][8],checkedInputs[1][8],uiParametresArray[4][0][0]); // Отметить нужн. инпут
+  localStorage.setItem(styles[3][0],uiParametresArray[4][1][0]); // Сохранить ключ стиля переключателей
 }
 
 // Функция смены радиуса закруглений
@@ -256,4 +305,13 @@ interactiveStyleInputs.forEach(input => input.addEventListener('change', changeI
 function changeInteractiveStyle(targetIaS) { // Функция смены стиля диалоговых окон
   classSwith(styles[2],targetIaS);
   localStorage.setItem(styles[2][0], targetIaS); // Сохранить ключ стиля диалоговых окон
+}
+
+// Функция смены стиля переключателей
+
+switchStyleInputs.forEach(input => input.addEventListener('change', changeSwitchStyle(targetSS)));
+  // Прослушка инпутов, меняющих стиль переключателей
+function changeSwitchStyle(targetSS) { // Функция смены стиля переключателей
+  classSwith(styles[3],targetSS);
+  localStorage.setItem(styles[3][0], targetSS); // Сохранить ключ стиля переключателей
 }

@@ -23,7 +23,7 @@
 
       <main class="main">
         <article class="article">
-          <a class="link-hidden two-columns article_multiple" href="#accent">
+          <a class="link-hidden two-columns article_multiple" href="#accent" onchange="checkBigPage('#accent')">
             <section class="section section_menu">
               <div class="menu-icon">
                 <object class="menu-svg" type="image/svg+xml" data="kernel/svg/settings/accent-icon.svg"></object>
@@ -59,7 +59,7 @@
             </section>
           </a>
   
-          <a class="link-hidden two-columns article_multiple" href="#other">
+          <a class="link-hidden two-columns article_multiple" href="#other" onchange="checkBigPage('#other')">
             <section class="section section_menu">
               <div class="menu-icon">
                 <object class="menu-svg" type="image/svg+xml" data="kernel/svg/settings/other-icon.svg"></object>
@@ -211,41 +211,41 @@
           <!-- Словесные цвета -->
 
             <label class="radio-label label_custom-colored radio-label_inline" for="ac14">
-              <input onchange="changeAccent(['aqua']), reload()"
-              type="radio" id="ac14" name="accent-color" value="aqua">
+              <input onchange="changeAccent(['#0ff']), reload()"
+              type="radio" id="ac14" name="accent-color" value="#0ff">
               <span class="square-checkbox"></span>
             </label>
             <label class="radio-label label_custom-colored radio-label_inline" for="ac15">
-              <input onchange="changeAccent(['maroon']), reload()"
-              type="radio" id="ac15" name="accent-color" value="maroon">
+              <input onchange="changeAccent(['#800000']), reload()"
+              type="radio" id="ac15" name="accent-color" value="#800000">
               <span class="square-checkbox"></span>
             </label>
             <label class="radio-label label_custom-colored radio-label_inline" for="ac16">
-              <input onchange="changeAccent(['navy']), reload()"
-              type="radio" id="ac16" name="accent-color" value="navy">
+              <input onchange="changeAccent(['#000080']), reload()"
+              type="radio" id="ac16" name="accent-color" value="#000080">
               <span class="square-checkbox"></span>
             </label>
             <label class="radio-label label_custom-colored radio-label_inline" for="ac17">
-              <input onchange="changeAccent(['olive']), reload()"
-              type="radio" id="ac17" name="accent-color" value="olive">
+              <input onchange="changeAccent(['#808000']), reload()"
+              type="radio" id="ac17" name="accent-color" value="#808000">
               <span class="square-checkbox"></span>
             </label>
             <label class="radio-label label_custom-colored radio-label_inline" for="ac18">
-              <input onchange="changeAccent(['teal']), reload()"
-              type="radio" id="ac18" name="accent-color" value="teal">
+              <input onchange="changeAccent(['#008080']), reload()"
+              type="radio" id="ac18" name="accent-color" value="#008080">
               <span class="square-checkbox"></span>
             </label>
 
             <!-- Черный/белый -->
 
             <label id="black-accent_label" class="radio-label label_custom-colored radio-label_inline" for="ac19">
-              <input onchange="changeAccent(['black']), reload()"
-              type="radio" id="ac19" name="accent-color" value="black">
+              <input onchange="changeAccent(['#000']), reload()"
+              type="radio" id="ac19" name="accent-color" value="#000">
               <span class="square-checkbox"></span>
             </label>
             <label id="white-accent_label" class="radio-label label_custom-colored radio-label_inline" for="ac20">
-              <input onchange="changeAccent(['white']), reload()"
-              type="radio" id="ac20" name="accent-color" value="white">
+              <input onchange="changeAccent(['#fff']), reload()"
+              type="radio" id="ac20" name="accent-color" value="#fff">
               <span class="square-checkbox"></span>
             </label>
           </section>
@@ -314,7 +314,7 @@
         </article>
 
         <article class="article article_single">
-          <h3 class="main-header">Масштаб интерфейса</h3>
+          <h3 class="article-header">Масштаб интерфейса</h3>
 
           <section class="section">
             <div class="range-container">
@@ -336,7 +336,7 @@
 
       <div class="main main_page page-block_main">
         <article class="article">
-          <h3 class="main-header">Без засечек</h3>
+          <h3 class="article-header">Без засечек</h3>
 
           <div class="article_multiple">
             <section class="section">
@@ -369,7 +369,7 @@
         </article>
 
         <article class="article">
-          <h3 class="main-header">С засечками</h3>
+          <h3 class="article-header">С засечками</h3>
 
           <div class="article_multiple">
             <section class="section">
@@ -386,7 +386,7 @@
         </article>
 
         <article class="article">
-          <h3 class="main-header">Моноширинные</h3>
+          <h3 class="article-header">Моноширинные</h3>
 
           <div class="article_multiple">
             <section class="section">
@@ -403,7 +403,7 @@
         </article>
 
         <article class="article">
-          <h3 class="main-header">Декоративные</h3>
+          <h3 class="article-header">Декоративные</h3>
 
           <div class="article_multiple">
             <section class="section">
@@ -427,7 +427,7 @@
 
       <div class="main main_page page-block_main">
         <article class="article article_single">
-          <h3 class="main-header">Длительность анимации</h3>
+          <h3 class="article-header">Длительность анимации</h3>
 
           <section class="section">
             <div class="range-container">
@@ -440,19 +440,37 @@
     </div>
 
     <div id="changelog" class="page-block">
+      <header class="header header_page">
+        <div class="header-icon" onclick="history.back()">
+          <object class="header-icon_svg" type="image/svg+xml" data="kernel/svg/header/back-icon.svg"></object>
+        </div>
+        <h2 class="header-name two-line">Список изменений</h2>
+      </header>
+
       <div class="main main_page page-block_main">
         <article class="article">
-          <h3 class="main-header"></h3>
+          <h3 class="article-header"></h3>
 
           <div class="article_multiple">
             <section class="section section_changelog spoiler-container">
               <div class="menu-text_container release-info">
                 <h3 class="menu-text menu-name"></h3>
-                <time class="menu-text menu-description" datatime="2020-08-20">20.08.2020</time>
+                <time class="menu-text menu-description" datatime="2020-08-24">24.08.2020</time>
               </div>
               <details class="spoiler spoiler_changelog">
                 <summary class="spoiler-button spoiler-button_changelog"></summary>
                 <div class="delimiter_changelog"></div>
+                <ul class="release-notes release_opened">
+                  <li class="release-note">вроде все ок с ван режимом, пока что без возможности изменения высоты шапки</li>
+                  <li class="release-note">оная функция поддерживает 2+ инпутов и 2+ добавляемых классов, к слову</li>
+                  <li class="release-note">теперь можно фигачить пачками тумблерные настроечки, ибо есть универсальная функция под них</li>
+                  <li class="release-note">OneUI mode (!!!)</li>
+                </ul>
+                <ul class="release-notes">
+                  <li class="release-note">+ 4 стиля переключателей (для каждого UI)</li>
+                  <li class="release-note">реализован автоподхват стилей тумблеров (переключателей) при смене UI</li>
+                  <li class="release-note">добавлен переключатель стиля тумблеров</li>
+                </ul>
                 <ul class="release-notes">
                   <li class="release-note">прикрутил иконки к заголовкам страниц в браузере (используются свгшные)</li>
                   <li class="release-note">переключатели длительности анимации и масштаба интерфейса теперь слайдерами идут</li>
@@ -509,7 +527,7 @@
         </article>
 
         <article class="article">
-          <h3 class="main-header"></h3>
+          <h3 class="article-header"></h3>
 
           <div class="article_multiple">
             <section class="section section_changelog spoiler-container">
@@ -713,7 +731,7 @@
         </article>
 
         <article class="article">
-          <h3 class="main-header"></h3>
+          <h3 class="article-header"></h3>
 
           <div class="article_multiple">
             <section class="section section_changelog spoiler-container">
@@ -880,17 +898,17 @@
             </section>
           </div>
         </article>
-      </div>
+      </div> 
+    </div>
 
+    <div id="about" class="page-block">
       <header class="header header_page">
         <div class="header-icon" onclick="history.back()">
           <object class="header-icon_svg" type="image/svg+xml" data="kernel/svg/header/back-icon.svg"></object>
         </div>
-        <h2 class="header-name two-line">Список изменений</h2>
+        <h2 class="header-name two-line">Об устройстве</h2>
       </header>
-    </div>
 
-    <div id="about" class="page-block">
       <div class="main main_page page-block_main">
         <article class="article about-header">
           <div class="about-header_img"></div>
@@ -971,13 +989,6 @@
           </section>
         </article>
       </div>
-
-      <header class="header header_page">
-        <div class="header-icon" onclick="history.back()">
-          <object class="header-icon_svg" type="image/svg+xml" data="kernel/svg/header/back-icon.svg"></object>
-        </div>
-        <h2 class="header-name two-line">Об устройстве</h2>
-      </header>
     </div>
 
     <div id="test" class="page-block">
@@ -990,7 +1001,7 @@
 
       <div class="main main_page page-block_main">
         <article class="article">
-          <h3 class="main-header">Тест фичи с шапкой из OneUI</h3>
+          <h3 class="article-header">Тест фичи с шапкой из OneUI</h3>
 
           <div class="article_multiple">
             <section class="section section_menu">
@@ -1012,9 +1023,13 @@
 
         <article class="article article_single">
           <section class="section section_menu section_interactive">
-            <label class="switch">
-              <input type="checkbox">
-              <span class="slider"></span>
+            <label class="switch-label">
+              <aside class="menu-text_container">
+                <div class="menu-text menu-name">OneUI mode</div>
+                <div class="menu-text menu-description">Фича с огромной шапкой из OneUI</div>
+              </aside>
+              <input type="checkbox" id="OneUI-mode" onchange="changeCheckbox(checkboxParametres[0]), reload()">
+              <span class="switch"></span>
             </label>
           </section>
         </article>
@@ -1022,6 +1037,12 @@
         <article class="article article_single" onclick="showInteractive('ui-style')">
           <section class="section section_menu section_interactive">
             <p class="section-header">Стиль UI</p>
+          </section>
+        </article>
+
+        <article class="article article_single" onclick="showInteractive('switch-style')">
+          <section class="section section_menu section_interactive">
+            <p class="section-header">Стиль переключателей</p>
           </section>
         </article>
       </div>
@@ -1076,6 +1097,53 @@
           <label class="radio-label" for="us4">
             <input type="radio" id="us4" name="ui-style" onchange="changeUiStyle('UI_ZenUI',uiParametres[3]), reload()">
             <span class="radio-name">ZenUI</span>
+          </label>
+        </div>
+
+        <!-- Переключатель цветовых схем -->
+        <div id="color-scheme" class="interactive-content interactive-block">
+          <h3 class="interactive-header">Цветовая схема</h3>
+
+          <label class="radio-label content_OOS" for="cs1">
+            <input onchange="changeColorScheme(uiParametres[0][0][1],'dark'), reload()" type="radio" id="cs1" name="color-scheme">
+            <span class="radio-name">Темная</span>
+          </label>
+          <label class="radio-label content_OOS" for="cs2">
+            <input onchange="changeColorScheme(uiParametres[0][0][3],'light'), reload()" type="radio" id="cs2" name="color-scheme">
+            <span class="radio-name">Светлая</span>
+          </label>
+
+          <label class="radio-label content_RUI" for="cs3">
+            <input onchange="changeColorScheme(uiParametres[1][0][1],'dark'), reload()" type="radio" id="cs3" name="color-scheme">
+            <span class="radio-name">Темная</span>
+          </label>
+          <label class="radio-label content_RUI" for="cs4">
+            <input onchange="changeColorScheme(uiParametres[1][0][3],'light'), reload()" type="radio" id="cs4" name="color-scheme">
+            <span class="radio-name">Светлая</span>
+          </label>
+
+          <label class="radio-label content_OneUI" for="cs5">
+            <input onchange="changeColorScheme(uiParametres[2][0][1],'dark'), reload()" type="radio" id="cs5" name="color-scheme">
+            <span class="radio-name">Темная</span>
+          </label>
+          <label class="radio-label content_OneUI" for="cs6">
+            <input onchange="changeColorScheme(uiParametres[2][0][3],'light'), reload()" type="radio" id="cs6" name="color-scheme">
+            <span class="radio-name">Светлая</span>
+          </label>
+
+          <label class="radio-label content_ZenUI" for="cs7">
+            <input onchange="changeColorScheme(uiParametres[3][0][1],'dark'), reload()" type="radio" id="cs7" name="color-scheme">
+            <span class="radio-name">Темная</span>
+          </label>
+          <label class="radio-label content_ZenUI" for="cs8">
+            <input onchange="changeColorScheme(uiParametres[3][0][3],'light'), reload()" type="radio" id="cs8" name="color-scheme">
+            <span class="radio-name">Светлая</span>
+          </label>
+
+          <label class="radio-label" for="cs9">
+            <input onchange="changeColorScheme(
+            ['black','#212121','#141414','#1a1a1a','#d8d8d8','#8a8a8a','#1e1e1e','#898989','#3e3e3e','#d1d1d1'],'custom'), reload()" type="radio" id="cs9" name="color-scheme">
+            <span class="radio-name">Oxygen OS 10</span>
           </label>
         </div>
 
@@ -1149,107 +1217,31 @@
           </label>
         </div>
 
-        <!-- Переключатель длительности анимации -->
-        <div id="animation-duration" class="interactive-content interactive-block">
-          <h3 class="interactive-header">Длительность анимации</h3>
+        <!-- Переключатель стиля переключателей (тумблеров) -->
+        <div id="switch-style" class="interactive-content interactive-block">
+          <h3 class="interactive-header">Стиль переключателей</h3>
 
-          <label class="radio-label" for="ad1">
-            <input type="radio" id="ad1" name="animation-duration" onchange="changeAnimationDuration(['0s']), reload()">
-            <span class="radio-name">Без анимации</span>
+          <label class="radio-label" for="ss1">
+            <input type="radio" id="ss1" name="switch-style" onchange="changeSwitchStyle(uiParametres[0][4][1][0]), reload()">
+            <span class="radio-name">Oxygen OS</span>
           </label>
-          <label class="radio-label" for="ad2">
-            <input type="radio" id="ad2" name="animation-duration" onchange="changeAnimationDuration(['0.3s']), reload()">
-            <span class="radio-name">0,3 секунды</span>
+          <label class="radio-label" for="ss2">
+            <input type="radio" id="ss2" name="switch-style" onchange="changeSwitchStyle(uiParametres[1][4][1][0]), reload()">
+            <span class="radio-name">Realme UI</span>
           </label>
-          <label class="radio-label" for="ad3">
-            <input type="radio" id="ad3" name="animation-duration" onchange="changeAnimationDuration(['0.5s']), reload()">
-            <span class="radio-name">0,5 секунды</span>
+          <label class="radio-label" for="ss3">
+            <input type="radio" id="ss3" name="switch-style" onchange="changeSwitchStyle(uiParametres[2][4][1][0]), reload()">
+            <span class="radio-name">OneUI</span>
           </label>
-          <label class="radio-label" for="ad4">
-            <input type="radio" id="ad4" name="animation-duration" onchange="changeAnimationDuration(['0.75s']), reload()">
-            <span class="radio-name">0,75 секунд</span>
-          </label>
-          <label class="radio-label" for="ad5">
-            <input type="radio" id="ad5" name="animation-duration" onchange="changeAnimationDuration(['1s']), reload()">
-            <span class="radio-name">1 секунда</span>
-          </label>
-        </div>
-
-        <!-- Переключатель базового размера шрифта (интерфейса) -->
-        <div id="font-size" class="interactive-content interactive-block">
-          <h3 class="interactive-header">Масштаб интерфейса</h3>
-
-          <label class="radio-label" for="fs1">
-            <input type="radio" id="fs1" name="font-size" onchange="changeFontSize(['3.2vh','3.2vw','4vw']), reload()">
-            <span class="radio-name">80%</span>
-          </label>
-          <label class="radio-label" for="fs2">
-            <input type="radio" id="fs2" name="font-size" onchange="changeFontSize(['3.6vh','3.6vw','4.5vw']), reload()">
-            <span class="radio-name">90%</span>
-          </label>
-          <label class="radio-label" for="fs3">
-            <input type="radio" id="fs3" name="font-size" onchange="changeFontSize(['4vh','4vw','5vw']), reload()">
-            <span class="radio-name">100% (рекоммендуется)</span>
-          </label>
-          <label class="radio-label" for="fs4">
-            <input type="radio" id="fs4" name="font-size" onchange="changeFontSize(['4.4vh','4.4vw','5.5vw']), reload()">
-            <span class="radio-name">110%</span>
-          </label>
-          <label class="radio-label" for="fs5">
-            <input type="radio" id="fs5" name="font-size" onchange="changeFontSize(['4.8vh','4.8vw','6vw']), reload()">
-            <span class="radio-name">120%</span>
-          </label>
-        </div>
-
-        <!-- Переключатель цветовых схем -->
-        <div id="color-scheme" class="interactive-content interactive-block">
-          <h3 class="interactive-header">Цветовая схема</h3>
-
-          <label class="radio-label content_OOS" for="cs1">
-            <input onchange="changeColorScheme(uiParametres[0][0][1],'dark'), reload()" type="radio" id="cs1" name="color-scheme">
-            <span class="radio-name">Темная</span>
-          </label>
-          <label class="radio-label content_OOS" for="cs2">
-            <input onchange="changeColorScheme(uiParametres[0][0][3],'light'), reload()" type="radio" id="cs2" name="color-scheme">
-            <span class="radio-name">Светлая</span>
-          </label>
-
-          <label class="radio-label content_RUI" for="cs3">
-            <input onchange="changeColorScheme(uiParametres[1][0][1],'dark'), reload()" type="radio" id="cs3" name="color-scheme">
-            <span class="radio-name">Темная</span>
-          </label>
-          <label class="radio-label content_RUI" for="cs4">
-            <input onchange="changeColorScheme(uiParametres[1][0][3],'light'), reload()" type="radio" id="cs4" name="color-scheme">
-            <span class="radio-name">Светлая</span>
-          </label>
-
-          <label class="radio-label content_OneUI" for="cs5">
-            <input onchange="changeColorScheme(uiParametres[2][0][1],'dark'), reload()" type="radio" id="cs5" name="color-scheme">
-            <span class="radio-name">Темная</span>
-          </label>
-          <label class="radio-label content_OneUI" for="cs6">
-            <input onchange="changeColorScheme(uiParametres[2][0][3],'light'), reload()" type="radio" id="cs6" name="color-scheme">
-            <span class="radio-name">Светлая</span>
-          </label>
-
-          <label class="radio-label content_ZenUI" for="cs7">
-            <input onchange="changeColorScheme(uiParametres[3][0][1],'dark'), reload()" type="radio" id="cs7" name="color-scheme">
-            <span class="radio-name">Темная</span>
-          </label>
-          <label class="radio-label content_ZenUI" for="cs8">
-            <input onchange="changeColorScheme(uiParametres[3][0][3],'light'), reload()" type="radio" id="cs8" name="color-scheme">
-            <span class="radio-name">Светлая</span>
-          </label>
-
-          <label class="radio-label" for="cs9">
-            <input onchange="changeColorScheme(
-            ['black','#212121','#141414','#1a1a1a','#d8d8d8','#8a8a8a','#1e1e1e','#898989'],'custom'), reload()" type="radio" id="cs9" name="color-scheme">
-            <span class="radio-name">Oxygen OS 10</span>
+          <label class="radio-label" for="ss4">
+            <input type="radio" id="ss4" name="switch-style" onchange="changeSwitchStyle(uiParametres[3][4][1][0]), reload()">
+            <span class="radio-name">ZenUI</span>
           </label>
         </div>
       </div>
     </div>
 
+    <script src="kernel/js/jquery.js"></script>
     <script src="kernel/js/theme.js"></script>
     <script src="kernel/js/theme-extended.js"></script>
     <script src="kernel/js/changelog.js"></script>

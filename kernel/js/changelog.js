@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", () => { // Событие загу
 
     // Нейминг заголовков артиклей
 
-    var sectionHeader = sections[a].querySelector('.main-header'); // Поиск
+    var sectionHeader = sections[a].querySelector('.article-header'); // Поиск
     sectionHeader.textContent = sectionNo; // Вычисление названия
 
     // Нейминг версий

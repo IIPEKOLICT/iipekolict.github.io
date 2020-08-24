@@ -4,40 +4,43 @@
 
 // Элементы
 
-var aboutContainers = document.querySelectorAll('.about-container'); // все контейнеры в нижней секции about
+var aboutContainer = document.querySelectorAll('.about-container'); // все контейнеры в нижней секции about
 var aboutHeader = document.querySelectorAll('.about-header'); // верхний раздел about
 var aboutHeaderImage = document.querySelectorAll('.about-header_img'); // изображение устройства в разделе #about
-var aboutSecondaryTexts = document.querySelectorAll('.about_secondary-text'); // второстепенные текста в #about
-var aboutSections = document.querySelectorAll('.about-section'); // все секции в нижнем разделе about
-var articleMultiples = document.querySelectorAll('.article_multiple'); // все множественные артикли
-var articles = document.querySelectorAll('.article'); // все артикли
-var headerNames = document.querySelectorAll('.header-name'); // все заголовки в шапках
-var headers = document.querySelectorAll('.header'); // все шапки
-var headerSvgs = document.querySelectorAll('.svg_header'); // все <svg> в шапках
+var aboutSecondaryText = document.querySelectorAll('.about_secondary-text'); // второстепенные текста в #about
+var aboutSection = document.querySelectorAll('.about-section'); // все секции в нижнем разделе about
+var article = document.querySelectorAll('.article'); // все артикли
+var articleHeader = document.querySelectorAll('.article-header'); // все заголовки артиклей
+var articleMultiple = document.querySelectorAll('.article_multiple'); // все множественные артикли
+var headerName = document.querySelectorAll('.header-name'); // все заголовки в шапках
+var header = document.querySelectorAll('.header'); // все шапки
+var headerSvg = document.querySelectorAll('.svg_header'); // все <svg> в шапках
 var interactive = document.querySelectorAll('.interactive'); // диалоговые окна (мат. блок)
-var interactiveButtons = document.querySelectorAll('.interactive-button'); // кнопки-скрывашки в диал. окнах
-var interactiveContainers = document.querySelectorAll('.interactive-container'); // контейнеры-диалоговые окна
-var mainHeaders = document.querySelectorAll('.main-header'); // все заголовки разделов
-var menuIcons = document.querySelectorAll('.menu-icon'); // все иконки в секциях-пунктах меню
-var menuTiles = document.querySelectorAll('.menu-tile'); // все элементы плиточного меню
-var pages = document.querySelectorAll('.page'); // <body>, класс в нем задает стиль UI
-var ranges = document.querySelectorAll('.range'); // все ползунки
-var sectionInteractives = document.querySelectorAll('.section_interactive'); // все секции-ссылки на диал. окна
-var sectionMenus = document.querySelectorAll('.section_menu'); // все секции-пункты меню
-var sections = document.querySelectorAll('.section'); // все секции
-var settingsSvgs = document.querySelectorAll('.svg_settings'); // все <svg> на стартовой настроек
+var interactiveButton = document.querySelectorAll('.interactive-button'); // кнопки-скрывашки в диал. окнах
+var interactiveContainer = document.querySelectorAll('.interactive-container'); // контейнеры-диалоговые окна
+var main = document.querySelectorAll('.main'); // все <main>
+var menuIcon = document.querySelectorAll('.menu-icon'); // все иконки в секциях-пунктах меню
+var menuTile = document.querySelectorAll('.menu-tile'); // все элементы плиточного меню
+var page = document.querySelectorAll('.page'); // <body>, класс в нем задает стиль UI
+var range = document.querySelectorAll('.range'); // все ползунки
+var sectionInteractive = document.querySelectorAll('.section_interactive'); // все секции-ссылки на диал. окна
+var sectionMenu = document.querySelectorAll('.section_menu'); // все секции-пункты меню
+var section = document.querySelectorAll('.section'); // все секции
+var settingsSvg = document.querySelectorAll('.svg_settings'); // все <svg> на стартовой настроек
+var switches = document.querySelectorAll('.switch'); // все переключатели
 
 // Массивы с параметрами
 
 var vars = [ // Массив с параметрами переменных
   [ // Акцент
-    ['--accent-color'], // Переменные
-    ['#80cbc4'] // Стоковые значения
+    ['--accent-color','--accent_opacity-color'], // Переменные
+    ['#80cbc4','rgba(128,203,196,0.7)'] // Стоковые значения
   ],
   [ // Цветовая схема
     ['--main_bg-color','--secondary_bg-color','--icon_bg-color','--hover_bg-color',
-    '--main_text-color','--secondary_text-color','--main_border-color','--radio_nonactive-color'], // Переменные
-    ['black','#424242','#141414','#1a1a1a','white','#7a7a7a','#1e1e1e','#898989'] // Стоковые значения
+    '--main_text-color','--secondary_text-color','--main_border-color','--radio_nonactive-color',
+    '--switch_nonactive-color','--switch-before_nonactive-color'], // Переменные
+    ['black','#424242','#141414','#1a1a1a','white','#7a7a7a','#1e1e1e','#898989','#4d4d4d','#b9b9b9'] // Стоковые значения
   ],
   [ // Радиус закруглений
     ['--main_border-radius','--interactive_border-radius','--button_border-radius'], // Переменные
@@ -64,20 +67,25 @@ var vars = [ // Массив с параметрами переменных
 var styles = [ // Массив с параметрами переключателей классов
   [ // Стиль шапки
     ['headerStyle'], // Ключ в ЛХ
-    [headers,headerNames,headerSvgs], // Модифицируемые элементы
+    [header,headerName,headerSvg], // Модифицируемые элементы
     ['HEADER_stock','HEADER_OOSColor','HEADER_RUI','HEADER_OneUI','HEADER_ZenUI'] // Возможные значения
   ],
   [ // Стиль UI
     ['uiStyle'], // Ключ в ЛХ
-    [aboutContainers,aboutHeader,aboutHeaderImage,aboutSecondaryTexts,aboutSections,articleMultiples,articles,
-    headers,headerSvgs,mainHeaders,menuIcons,menuTiles,pages,ranges,sectionInteractives,sectionMenus,sections,
-    settingsSvgs], // Модифицируемые элементы
+    [aboutContainer,aboutHeader,aboutHeaderImage,aboutSecondaryText,aboutSection,article,articleHeader,
+    articleMultiple,header,headerSvg,menuIcon,menuTile,page,range,sectionInteractive,sectionMenu,section,
+    settingsSvg], // Модифицируемые элементы
     ['UI_OOS','UI_RUI','UI_OneUI','UI_ZenUI'] // Возможные значения
   ],
   [ // Стиль диалоговых окон
     ['interactiveStyle'], // Ключ в ЛХ
-    [interactive,interactiveContainers,interactiveButtons], // Модифицируемые элементы
+    [interactive,interactiveContainer,interactiveButton], // Модифицируемые элементы
     ['interactive_OOS','interactive_RUI','interactive_OneUI','interactive_ZenUI'] // Возможные значения
+  ],
+  [ // Стиль переключателей
+    ['switchStyle'], // Ключ в ЛХ
+    [switches], // Модифицируемые элементы
+    ['switch_OOS','switch_RUI','switch_OneUI','switch_ZenUI'] // Возможные значения
   ]
 ]
 
@@ -94,11 +102,20 @@ var mainBgColorValues = [ // Массив с возможными вариант
 
 var checkedInputs = [ // Массив с параметрами отмеченных элементов
   ['checkedAccentNo','checkedColorSchemeNo','checkedHeaderStyleNo','checkedUiStyleNo','checkedBorderRadiusNo',
-  'checkedIconShapeNo','checkedFontFamilyNo','checkedInteractiveStyleNo'],
+  'checkedIconShapeNo','checkedFontFamilyNo','checkedInteractiveStyleNo','checkedSwitchStyleNo'],
    // Ключи в ЛХ
   ["accent-color","color-scheme","header-style","ui-style","border-radius","icon-shape","font-family",
-  "interactive-style"], // Name-группы инпутов
-  ["ac1","cs1","hs1","us1","br1","is1","ff1","ias1"] // Стоковые значения id
+  "interactive-style","switch-style"], // Name-группы инпутов
+  ["ac1","cs1","hs1","us1","br1","is1","ff1","ias1","ss1"] // Стоковые значения id
+]
+
+var checkboxParametres = [ // массив с параметрами чекбоксов
+  [ // OneUI mode
+    ['OneUI-mode'], // ключ в ЛХ
+    [header,main], // модифицируемые элементы
+    ['OneUI-mode'], // присваиваемые классы
+    ["OneUI-mode"] // id чекбокса
+  ]
 ]
 
 // Функции-оптимизаторы
@@ -174,7 +191,98 @@ function whiteBlackAccent(neededAccent,bgVariantsArray) {
   }
 }
 
+function setOpacityAccent() {
+  if (localStorage.getItem('--accent-color')) {
+    const hexToRgb = hex => hex.replace(/^#?([a-f\d])([a-f\d])([a-f\d])$/i,(m, r, g, b) => 
+    '#' + r + r + g + g + b + b).substring(1).match(/.{2}/g).map(x => parseInt(x, 16));
+
+    let accentRGB = hexToRgb(localStorage.getItem('--accent-color'));
+    let opacityAccent = 'rgba(' + accentRGB[0] + ',' + accentRGB[1] + ',' + accentRGB[2] + ',0.6)';
+    localStorage.setItem('--accent_opacity-color', opacityAccent);
+  }
+}
+
+// Слайдер масштаба интерфейса
+
+var scaleRange = document.getElementById("interface-scale-range"); // Слайдер для изменения масштаба интерфейса
+var scaleDemo = document.getElementById("interface-scale-demo"); // Демка оного слайдера
+
+if (scaleRange != null && scaleDemo != null) {
+  scaleRange.oninput = function() {
+    var interfaceScale = this.value;
+  
+    localStorage.setItem('interfaceScale',interfaceScale); // сохранить в ЛХ ключ
+    varRecord(vars[6],[(interfaceScale * 0.04) + 'vh',(interfaceScale * 0.04) + 'vw',(interfaceScale * 0.05) + 'vw']);
+    scaleDemo.textContent = interfaceScale + '% от стокового'; // установить значение демки слайдера
+  }
+}
+
+// Слайдер длительности анимации
+
+var animeRange = document.getElementById("animation-duration-range"); // Слайдер для изменения длит анимации
+var animeDemo = document.getElementById("animation-duration-demo"); // Демка оного слайдера
+
+if (animeRange != null && animeDemo != null) {
+  animeRange.oninput = function() {
+    var animationDuration = this.value;
+  
+    localStorage.setItem('animationDuration',animationDuration); // сохранить в ЛХ ключ
+    varRecord(vars[5],[animationDuration + 's']);
+    animeDemo.textContent = animationDuration + ' сек.'; // установить значение демки слайдера
+  }
+}
+
+// универсальные функции для чекбоксов
+
+function changeCheckbox(arrayForCheckbox) { // универсальная, вешать на инпуты чекбоксов
+  for (var i = 0; i < arrayForCheckbox[3].length; i++) { // на случай, если сделаю несколько чекбоксов для 1 задачи
+    if (document.getElementById(arrayForCheckbox[3][i]).checked) { // если активен чекбокс
+      localStorage.setItem(arrayForCheckbox[0][0],'on'); // Сохранить ключ
+      addClassByCheckbox(arrayForCheckbox); // раздача классов элементам
+    } else {
+      localStorage.setItem(arrayForCheckbox[0][0],'off'); // Сохранить ключ
+      removeClassByCheckbox(arrayForCheckbox); // убираем классы у элементов
+    }
+  }
+}
+
+function addClassByCheckbox(array) { // функция для раздачи классов элементам
+  for (var j = 0; j < array[1].length; j++) {
+    for (var k = 0; k < array[1][j].length; k++) {
+      for (var l = 0; l < array[2].length; l++) {
+        if (array[1][j][k].classList.contains(array[2][l]) == false) 
+        array[1][j][k].classList.add(array[2][l]);
+      }
+    }
+  }
+}
+
+function removeClassByCheckbox(array) { // функция, отбирающая классы у элементов
+  for (var j = 0; j < array[1].length; j++) {
+    for (var k = 0; k < array[1][j].length; k++) {
+      for (var l = 0; l < array[2].length; l++) {
+        if (array[1][j][k].classList.contains(array[2][l]) == true) 
+        array[1][j][k].classList.remove(array[2][l])
+      }
+    }
+  }
+}
+
+function checkboxClasses(checkboxArray) { // функция для раздачи классов чекбоксами
+  for (var i = 0; i < checkboxArray.length; i++) {
+    if (localStorage.getItem(checkboxArray[i][0][0]) == 'on') addClassByCheckbox(checkboxArray[i])
+     // если активен - раздать классы
+    else if (localStorage.getItem(checkboxArray[i][0][0]) == 'off') removeClassByCheckbox(checkboxArray[i])
+     // если не активен, но есть ключ - забрать классы
+    else { // если нет ключа / в ключе дичь
+      localStorage.setItem(checkboxArray[i][0][0],'off'); // Сохранить ключ
+      removeClassByCheckbox(checkboxArray[i]); // забрать классы
+    }
+  }
+}
+
 document.addEventListener("DOMContentLoaded", () => { // Событие загузки страницы
+  setOpacityAccent();
   varRead(vars); // установка переменных
   for (var i = 0; i < styles.length; i++) styleRead(styles[i]); // Установка всех стилей-классов
 
@@ -193,4 +301,47 @@ document.addEventListener("DOMContentLoaded", () => { // Событие загу
 
   whiteBlackAccent('black',mainBgColorValues[0]); // Проверка на равенство цвета акцента и ОЦФ (для ч. и б.)
   whiteBlackAccent('white',mainBgColorValues[1]); // Если да - меняет цвет акцента на стоковый
+
+  if (localStorage.getItem('interfaceScale')) { // если сеть ключ
+    var interfaceScale = localStorage.getItem('interfaceScale'); // извлечь
+
+    varRecord(vars[6],[(interfaceScale * 0.04) + 'vh',(interfaceScale * 0.04) + 'vw',(interfaceScale * 0.05) + 'vw']);
+
+    if (scaleRange != null) scaleRange.value = interfaceScale; // установить значение слайдера
+    if (scaleDemo != null) scaleDemo.textContent = interfaceScale + '% от стокового';
+     // установить значение демки слайдера
+  } else { // если нет ключа
+    localStorage.setItem('interfaceScale', '100'); // дефолтный ключ
+    varRecord(vars[6],['4vh','4vw','5vw']); // установить пер. стоковое значение
+    if (scaleRange != null) scaleRange.value = '100'; // установить значение слайдера
+    if (scaleDemo != null) scaleDemo.textContent = '100% от стокового'; // установить значение демки слайдера
+  }
+
+  if (localStorage.getItem('animationDuration')) { // если сеть ключ
+    var animationDuration = localStorage.getItem('animationDuration'); // извлечь
+
+    varRecord(vars[5],[animationDuration + 's']);
+    if (animeRange != null) animeRange.value = animationDuration; // установить значение слайдера
+    if (animeDemo != null) animeDemo.textContent = animationDuration + ' сек.';
+     // установить значение демки слайдера
+  } else { // если нет ключа
+    localStorage.setItem('animationDuration','0.3s'); // дефолтный ключ
+    varRecord(vars[5],['0.3s']); // установить пер. стоковое значение
+    if (animeRange != null) animeRange.value = '0.3'; // установить значение слайдера
+    if (animeDemo != null) animeDemo.textContent = '0.3 сек.'; // установить значение демки слайдера
+  }
+
+  checkboxClasses(checkboxParametres); // раздача классов чекбоксами
+});
+
+// скроллинг-функция OneUI mode (не универсальная)
+
+$(window).scroll(function() { // событие скроллинга => функция
+  if ($(window).scrollTop() > 0) { // скроллинг вниз страницы
+    $('.header.OneUI-mode').addClass('scroll'); // добавляем класс шапке и майну
+    $('.main.OneUI-mode').addClass('scroll');
+  } else { // когда в самом верху страницы (скроллинга нет)
+    $('.header.OneUI-mode').removeClass('scroll'); // забираем класс у шапки и майна
+    $('.main.OneUI-mode').removeClass('scroll');
+  }
 });

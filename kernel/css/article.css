@@ -57,6 +57,29 @@
   clear: both;
 }
 
+/* Заголовки артиклей ------------------------------*/
+
+.article-header
+{
+  margin: 0 4vw;
+  padding-top: 0.5em;
+  padding-bottom: 0.2em;
+  border-bottom: 2px solid var(--main_bg-color, black);
+  transition: ease-out var(--main_animation-duration, 0.3s);
+}
+  .article-header.UI_OneUI /* заголовок артикля, стиль OneUI */
+  {
+    border-bottom: none;
+  }
+.article:hover .article-header /* при наведении на содержимое артикля его заголовок подчеркивается снизу */
+{
+  border-color: var(--accent-color, #80cbc4);
+}
+#changelog .article-header::after /* Допись в заголовок артикля в ченжлоге */
+{
+  content: " версия";
+}
+
 /*------------------------------*/
 /*---ОВЕРЛЕЙ >[6:5]-------------*/
 /*------------------------------*/

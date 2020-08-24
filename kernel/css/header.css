@@ -15,7 +15,7 @@
   background-color: var(--main_bg-color, black);
   border-bottom: 2px solid var(--main_border-color, #1e1e1e);
   font-size: 2em;
-  order: 2;
+  z-index: 2;
 }
   .header.HEADER_ZenUI /* Шапка при активном стиле шапки "ZenUI" */
   {
@@ -30,6 +30,17 @@
   .header.UI_ZenUI /* Шапка при активных стилях UI RUI, OneUI, ZenUI */
   {
     border-bottom: 2px solid rgba(0,0,0,0);
+  }
+
+  .header.OneUI-mode /* Сток шапка при активации OneUI mode */
+  {
+    height: 50vh;
+    -webkit-transition: var(--main_animation-duration, 0.3s);
+    transition: var(--main_animation-duration, 0.3s);
+  }
+  .header.OneUI-mode.scroll /* Сток шапка при активации OneUI mode и при скроллинге вниз */
+  {
+    height: 3em;
   }
 .header_page /* Модификатор шапки, только для страниц, не являющихся главной в HTML-документе (при ВН) */
 {

@@ -2,57 +2,36 @@
 /*---ТЕСТОВЫЙ МОДУЛЬ------------------------------------------*/
 /*------------------------------------------------------------*/
 
-// Слайдер масштаба интерфейса
+/*
 
-var scaleRange = document.getElementById("interface-scale-range"); // Слайдер для изменения масштаба интерфейса
-var scaleDemo = document.getElementById("interface-scale-demo"); // Демка оного слайдера
+if (localStorage.getItem('OneUI-mode')) if (localStorage.getItem('OneUI-mode') == 'on') {
+  var pageBlock = document.querySelectorAll('.page-block');
 
-scaleRange.oninput = function() {
-  var interfaceScale = this.value;
-
-  localStorage.setItem('interfaceScale',interfaceScale); // сохранить в ЛХ ключ
-  varRecord(vars[6],[(interfaceScale * 0.04) + 'vh',(interfaceScale * 0.04) + 'vw',(interfaceScale * 0.05) + 'vw']);
-  scaleDemo.textContent = interfaceScale + '% от стокового'; // установить значение демки слайдера
+  setInterval (function() {
+    for (var i = 1; i < pageBlock.length; i++) {
+      var pageHeader =  pageBlock[i].querySelector('.header');
+      var pageMain = pageBlock[i].querySelector('.main');
+    
+      var windowHeight = document.documentElement.clientHeight;
+      var headerHeight = pageHeader.offsetHeight;
+      var mainHeight = pageMain.offsetHeight - headerHeight - 2;
+    
+      if (mainHeight > (windowHeight - headerHeight)) {
+        if (pageHeader.classList.contains('big-page') == false) pageHeader.classList.add('big-page');
+        if (pageMain.classList.contains('big-page') == false) pageMain.classList.add('big-page');
+        if (pageHeader.classList.contains('small-page') == true) pageHeader.classList.remove('small-page');
+        if (pageMain.classList.contains('small-page') == true) pageMain.classList.remove('small-page');
+      } else {
+        if (pageHeader.classList.contains('big-page') == true) pageHeader.classList.remove('big-page');
+        if (pageMain.classList.contains('big-page') == true) pageMain.classList.remove('big-page');
+        if (pageHeader.classList.contains('small-page') == false) pageHeader.classList.add('small-page');
+        if (pageMain.classList.contains('small-page') == false) pageMain.classList.add('small-page');
+      }
+    }
+  }, 100);
 }
 
-// Слайдер длительности анимации
+*/
 
-var animeRange = document.getElementById("animation-duration-range"); // Слайдер для изменения длит анимации
-var animeDemo = document.getElementById("animation-duration-demo"); // Демка оного слайдера
 
-animeRange.oninput = function() {
-  var animationDuration = this.value;
 
-  localStorage.setItem('animationDuration',animationDuration); // сохранить в ЛХ ключ
-  varRecord(vars[5],[animationDuration + 's']);
-  animeDemo.textContent = animationDuration + ' сек.'; // установить значение демки слайдера
-}
-
-document.addEventListener("DOMContentLoaded", () => { // Событие загузки страницы
-
-  if (localStorage.getItem('interfaceScale')) { // если сеть ключ
-    var interfaceScale = localStorage.getItem('interfaceScale'); // извлечь
-
-    varRecord(vars[6],[(interfaceScale * 0.04) + 'vh',(interfaceScale * 0.04) + 'vw',(interfaceScale * 0.05) + 'vw']);
-    scaleRange.value = interfaceScale; // установить значение слайдера
-    scaleDemo.textContent = interfaceScale + '% от стокового'; // установить значение демки слайдера
-  } else { // если нет ключа
-    localStorage.setItem('interfaceScale', '100'); // дефолтный ключ
-    varRecord(vars[6],['4vh','4vw','5vw']); // установить пер. стоковое значение
-    scaleRange.value = '100'; // установить значение слайдера
-    scaleDemo.textContent = '100% от стокового'; // установить значение демки слайдера
-  }
-
-  if (localStorage.getItem('animationDuration')) { // если сеть ключ
-    var animationDuration = localStorage.getItem('animationDuration'); // извлечь
-
-    varRecord(vars[5],[animationDuration + 's']);
-    animeRange.value = animationDuration; // установить значение слайдера
-    animeDemo.textContent = animationDuration + ' сек.'; // установить значение демки слайдера
-  } else { // если нет ключа
-    localStorage.setItem('animationDuration','0.3s'); // дефолтный ключ
-    varRecord(vars[5],['0.3s']); // установить пер. стоковое значение
-    animeRange.value = '0.3'; // установить значение слайдера
-    animeDemo.textContent = '0.3 сек.'; // установить значение демки слайдера
-  }
-});

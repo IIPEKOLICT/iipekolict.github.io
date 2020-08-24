@@ -8,6 +8,7 @@
   width: 100%;
   height: 0;
   position: fixed;
+  z-index: 3;
 }
 .interactive_shown /* стиль всей области при показе */
 {
