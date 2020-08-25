@@ -319,7 +319,7 @@
           <section class="section">
             <div class="range-container">
               <div id="interface-scale-demo" class="range-demo menu-description"></div>
-              <input type="range" min="50" max="150" step="10" class="range" id="interface-scale-range">
+              <input type="range" min="70" max="130" step="5" class="range" id="interface-scale-range">
             </div>
           </section>
         </article>
@@ -460,6 +460,15 @@
               <details class="spoiler spoiler_changelog">
                 <summary class="spoiler-button spoiler-button_changelog"></summary>
                 <div class="delimiter_changelog"></div>
+                <ul class="release-notes release_opened">
+                  <li class="release-note">исправлена ругань свг-иконок в консоли</li>
+                  <li class="release-note">добавлена возможность изменять высоту шапки при активном OneUI mode от 25% до 50% высоты окна браузера с шагом 2.5</li>
+                  <li class="release-note">уменьшен диапазон изменения масштаба интерфейса, 150% слишком сильно ломал все</li>
+                  <li class="release-note">исправлены баги, связанные с ползунками, код функций оных оптимизирован</li>
+                </ul>
+                <ul class="release-notes release_opened">
+                  <li class="release-note">откат к дефолтным параметрам (50%), высота шапки теперь - переменная</li>
+                </ul>
                 <ul class="release-notes release_opened">
                   <li class="release-note">в мобильной версии высота шапки при OneUI mode увеличена до 45%</li>
                 </ul>
@@ -1028,17 +1037,29 @@
           </div>
         </article>
 
-        <article class="article article_single">
-          <section class="section section_menu section_interactive">
-            <label class="switch-label">
-              <aside class="menu-text_container">
-                <div class="menu-text menu-name">OneUI mode</div>
-                <div class="menu-text menu-description">Фича с огромной шапкой из OneUI</div>
-              </aside>
-              <input type="checkbox" id="OneUI-mode" onchange="changeCheckbox(checkboxParametres[0]), reload()">
-              <span class="switch"></span>
-            </label>
-          </section>
+        <article class="article">
+          <div class="article_multiple">
+            <section class="section section_menu section_interactive">
+              <label class="switch-label">
+                <aside class="menu-text_container">
+                  <div class="menu-text menu-name">OneUI mode</div>
+                  <div class="menu-text menu-description">Фича с огромной шапкой из OneUI</div>
+                </aside>
+                <input type="checkbox" id="OneUI-mode" onchange="changeCheckbox(checkboxParametres[0]), reload()">
+                <span class="switch"></span>
+              </label>
+            </section>
+          </div>
+          <div class="article_multiple">
+            <h3 class="article-header">Высота шапки</h3>
+
+            <section class="section">
+              <div class="range-container">
+                <div id="oneui-height-demo" class="range-demo menu-description"></div>
+                <input type="range" min="25" max="50" step="2.5" class="range" id="oneui-height-range">
+              </div>
+            </section>
+          </div>
         </article>
 
         <article class="article article_single" onclick="showInteractive('ui-style')">
@@ -1149,7 +1170,7 @@
 
           <label class="radio-label" for="cs9">
             <input onchange="changeColorScheme(
-            ['black','#212121','#141414','#1a1a1a','#d8d8d8','#8a8a8a','#1e1e1e','#898989','#3e3e3e','#d1d1d1'],'custom'), reload()" type="radio" id="cs9" name="color-scheme">
+            ['#000','#212121','#141414','#1a1a1a','#d8d8d8','#8a8a8a','#1e1e1e','#898989','#3e3e3e','#d1d1d1'],'custom'), reload()" type="radio" id="cs9" name="color-scheme">
             <span class="radio-name">Oxygen OS 10</span>
           </label>
         </div>

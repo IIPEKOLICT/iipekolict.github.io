@@ -10,7 +10,7 @@
 }
   .main.OneUI-mode /* сток <main> при активации OneUI mode */
   {
-    padding-top: 50vh;
+    padding-top: var(--oneui-mode_header-height, 50vh);
     -webkit-transition: var(--main_animation-duration, 0.3s);
     transition: var(--main_animation-duration, 0.3s);
   }
@@ -31,12 +31,6 @@
     padding-top: calc(6 * var(--mobile_font-size, 5vw) + 2px);
     font-size: 1.25em;
   }
-    /**/
-    .main.OneUI-mode /* сток <main> при активации OneUI mode */
-    {
-      padding-top: 45vh;
-    }
-    /**/
     .main.OneUI-mode.scroll /* сток <main> при активации OneUI mode и при скроллинге страницы */
     {
       padding-top: calc(6 * var(--mobile_font-size, 5vw) + 2px);
@@ -49,7 +43,7 @@
     .main_page.OneUI-mode.scroll /* <main> на страничках ВН при активации OneUI mode и при скроллинге страницы */
     {
       padding-top: calc(4.5 * var(--mobile_font-size, 5vw) + 2px);
-      min-height: calc(100vh - 4.5 * var(--mobile_font-size, 5vw));
+      min-height: calc(100vh - 4.5 * var(--mobile_font-size, 5vw) + 2px);
     }
 }
 

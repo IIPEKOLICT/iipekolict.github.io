@@ -11,7 +11,7 @@
 
   /* цветовая схема, цвета фона */
 
-  --main_bg-color: black; /* основной */
+  --main_bg-color: #000; /* основной */
   --secondary_bg-color: #424242; /* второстепенный */
   --icon_bg-color: #141414; /* дефолтный фон иконок */
   --hover_bg-color: #1a1a1a; /* при наведении */
@@ -51,4 +51,8 @@
   /* Длительность анимации */
 
   --main_animation-duration: 0.3s;
+
+  /* Стоковая высота шапки при OneUI mode */
+
+  --oneui-mode_header-height: 50vh;
 }

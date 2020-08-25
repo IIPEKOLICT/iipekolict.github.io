@@ -2,4 +2,4 @@
 
 <?xml-stylesheet type="text/css" href="../../css/root.css"?> <!-- 2 строчкой -->
 <?xml-stylesheet type="text/css" href="../../css/svg.css"?> <!-- 3 строчкой -->
-<script xlink:href="../../js/theme.js" /> <!-- Внутрь свг-тега -->
+<script xlink:href="../../js/theme-svg.js" /> <!-- Внутрь свг-тега -->

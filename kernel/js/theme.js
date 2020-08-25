@@ -29,6 +29,13 @@ var section = document.querySelectorAll('.section'); // все секции
 var settingsSvg = document.querySelectorAll('.svg_settings'); // все <svg> на стартовой настроек
 var switches = document.querySelectorAll('.switch'); // все переключатели
 
+var animeDemo = document.getElementById("animation-duration-demo"); // Демка ползунка изменения длит анимации
+var animeRange = document.getElementById("animation-duration-range"); // Ползунок для изменения длит анимации
+var oneuiHeightDemo = document.getElementById("oneui-height-demo"); // Демка ползунка изменения высоты шапки при OM
+var oneuiHeightRange = document.getElementById("oneui-height-range"); // Ползунок для изменения высоты шапки при OM
+var scaleDemo = document.getElementById("interface-scale-demo"); // Демка ползунка изменения масштаба интерфейса
+var scaleRange = document.getElementById("interface-scale-range"); // Ползунок для изменения масштаба интерфейса
+
 // Массивы с параметрами
 
 var vars = [ // Массив с параметрами переменных
@@ -40,7 +47,7 @@ var vars = [ // Массив с параметрами переменных
     ['--main_bg-color','--secondary_bg-color','--icon_bg-color','--hover_bg-color',
     '--main_text-color','--secondary_text-color','--main_border-color','--radio_nonactive-color',
     '--switch_nonactive-color','--switch-before_nonactive-color'], // Переменные
-    ['black','#424242','#141414','#1a1a1a','white','#7a7a7a','#1e1e1e','#898989','#4d4d4d','#b9b9b9'] // Стоковые значения
+    ['#000','#424242','#141414','#1a1a1a','white','#7a7a7a','#1e1e1e','#898989','#4d4d4d','#b9b9b9'] // Стоковые значения
   ],
   [ // Радиус закруглений
     ['--main_border-radius','--interactive_border-radius','--button_border-radius'], // Переменные
@@ -61,6 +68,10 @@ var vars = [ // Массив с параметрами переменных
   [ // Масштаб интерфейса (базовый размер шрифта)
     ['--pc_font-size','--tablet_font-size','--mobile_font-size'], // Переменные
     ['4vh','4vw','5vw'] // Стоковые значения
+  ],
+  [ // Высота шапки при включенном OneUI mode
+    ['--oneui-mode_header-height'], // Переменные
+    ['50vh'] // Стоковые значения
   ]
 ]
 
@@ -97,7 +108,7 @@ var colorsSVG = [ // Массив с параметрами классов дл�
 ]
 
 var mainBgColorValues = [ // Массив с возможными вариантами значений основного цвета фона
-  ['black','#161616'],['white','#fafafa','#f2f2f2'] // 0 строка - темные, 1 - светлые
+  ['#000','#161616'],['#fff','#fafafa','#f2f2f2'] // 0 строка - темные, 1 - светлые
 ]
 
 var checkedInputs = [ // Массив с параметрами отмеченных элементов
@@ -107,6 +118,38 @@ var checkedInputs = [ // Массив с параметрами отмеченн
   ["accent-color","color-scheme","header-style","ui-style","border-radius","icon-shape","font-family",
   "interactive-style","switch-style"], // Name-группы инпутов
   ["ac1","cs1","hs1","us1","br1","is1","ff1","ias1","ss1"] // Стоковые значения id
+]
+
+var rangeParametres = [ // массив с параметрами ползунков
+  [ // длительность анимации
+    [
+      [animeRange],[animeDemo],['animationDuration'],[vars[5]],[' сек.'],['0.3'],['0.3s']
+    ], // 0 - range-элемент, 1 - demo-элемент, 2 - ключ в ЛХ, 3 - массив с зап. перем., 4 - допись в демке,
+       // 5 - сток value, 6 - сток значения переменных
+    [
+      [['1'],['s']]
+    ] // множитель и допись, для каждой переменной
+  ],
+  [ // масштаб интерфейса
+    [
+      [scaleRange],[scaleDemo],['interfaceScale'],[vars[6]],['% от стокового'],['100'],['4vh','4vw','5vw']
+    ], // 0 - range-элемент, 1 - demo-элемент, 2 - ключ в ЛХ, 3 - массив с зап. перем., 4 - допись в демке,
+       // 5 - сток value, 6 - сток значения переменных
+    [
+      [['0.04'],['vh']],
+      [['0.04'],['vw']],
+      [['0.05'],['vw']]
+    ] // множитель и допись, для каждой переменной
+  ],
+  [ // высота шапки при активном OneUI mode
+    [
+      [oneuiHeightRange],[oneuiHeightDemo],['oneuiHeight'],[vars[7]],['% от высоты окна браузера'],['50'],['50vh']
+    ], // 0 - range-элемент, 1 - demo-элемент, 2 - ключ в ЛХ, 3 - массив с зап. перем., 4 - допись в демке,
+       // 5 - сток value, 6 - сток значения переменных
+    [
+      [['1'],['vh']]
+    ] // множитель и допись, для каждой переменной
+  ]
 ]
 
 var checkboxParametres = [ // массив с параметрами чекбоксов
@@ -191,44 +234,43 @@ function whiteBlackAccent(neededAccent,bgVariantsArray) {
   }
 }
 
-function setOpacityAccent() {
-  if (localStorage.getItem('--accent-color')) {
+function setOpacityAccent() { // функция для записи бледного акцента (для тумблеров)
+  if (localStorage.getItem('--accent-color')) { // если есть ключ цвета акцента
     const hexToRgb = hex => hex.replace(/^#?([a-f\d])([a-f\d])([a-f\d])$/i,(m, r, g, b) => 
     '#' + r + r + g + g + b + b).substring(1).match(/.{2}/g).map(x => parseInt(x, 16));
-
-    let accentRGB = hexToRgb(localStorage.getItem('--accent-color'));
+     // перобразователь из hex в rgb, поддерживает и 3-значные
+    let accentRGB = hexToRgb(localStorage.getItem('--accent-color')); // преобразуем в массив [r,g,b]
     let opacityAccent = 'rgba(' + accentRGB[0] + ',' + accentRGB[1] + ',' + accentRGB[2] + ',0.6)';
-    localStorage.setItem('--accent_opacity-color', opacityAccent);
+     // сборка значения бледного акцента
+    localStorage.setItem('--accent_opacity-color', opacityAccent); // запись в ЛХ
   }
 }
 
-// Слайдер масштаба интерфейса
+// универсальные функции для ползунков
 
-var scaleRange = document.getElementById("interface-scale-range"); // Слайдер для изменения масштаба интерфейса
-var scaleDemo = document.getElementById("interface-scale-demo"); // Демка оного слайдера
-
-if (scaleRange != null && scaleDemo != null) {
-  scaleRange.oninput = function() {
-    var interfaceScale = this.value;
-  
-    localStorage.setItem('interfaceScale',interfaceScale); // сохранить в ЛХ ключ
-    varRecord(vars[6],[(interfaceScale * 0.04) + 'vh',(interfaceScale * 0.04) + 'vw',(interfaceScale * 0.05) + 'vw']);
-    scaleDemo.textContent = interfaceScale + '% от стокового'; // установить значение демки слайдера
+function rangeSetValue(rangeArray) { // функция для записи переменных ползунками
+  if (rangeArray[0][0][0] != null && rangeArray[0][1][0] != null) rangeArray[0][0][0].oninput = function() {
+    var convertedValues = []; // если range и его демка существуют + создать пустой массив для преобр. пер.
+    localStorage.setItem(rangeArray[0][2][0],this.value); // сохранить в ЛХ ключ
+    for (var i = 0; i < rangeArray[1].length; i++) // перебор 2-го массива с множителями и дописями
+      convertedValues.push((this.value * rangeArray[1][i][0]) + rangeArray[1][i][1]);
+       // преобразование каждой переменной в нужный вид и запись в качестве элемента в массив
+    varRecord(rangeArray[0][3][0],convertedValues); // запись элементов оного массива в систему (:root)
+    rangeArray[0][1][0].textContent = this.value + rangeArray[0][4][0]; // установить значение демки слайдера
   }
 }
 
-// Слайдер длительности анимации
-
-var animeRange = document.getElementById("animation-duration-range"); // Слайдер для изменения длит анимации
-var animeDemo = document.getElementById("animation-duration-demo"); // Демка оного слайдера
-
-if (animeRange != null && animeDemo != null) {
-  animeRange.oninput = function() {
-    var animationDuration = this.value;
-  
-    localStorage.setItem('animationDuration',animationDuration); // сохранить в ЛХ ключ
-    varRecord(vars[5],[animationDuration + 's']);
-    animeDemo.textContent = animationDuration + ' сек.'; // установить значение демки слайдера
+function rangeReadValue(rangeArray) { // функция для чтения инфы из ЛХ и записи переменных
+  for (var i = 0; i < rangeArray.length; i++) if (localStorage.getItem(rangeArray[i][0][2][0])) { // если есть ключ
+    var rangeValue = localStorage.getItem(rangeArray[i][0][2][0]); // извлечь
+    var convertedValues = []; // создать пустой массив для преобр. пер.
+    for (var j = 0; j < rangeArray[i][1].length; j++) // перебор 2-го массива с множителями и дописями
+      convertedValues.push((rangeValue * rangeArray[i][1][j][0]) + rangeArray[i][1][j][1]);
+      // преобразование каждой переменной в нужный вид и запись в качестве элемента в массив
+    varRecord(rangeArray[i][0][3][0],convertedValues); // запись элементов оного массива в систему (:root)
+  } else { // если нет ключа
+    localStorage.setItem(rangeArray[i][0][2][0], rangeArray[i][0][5][0]); // дефолтный ключ
+    varRecord(rangeArray[i][0][3][0],rangeArray[i][0][6]); // установить пер. стоковое значение
   }
 }
 
@@ -299,40 +341,14 @@ document.addEventListener("DOMContentLoaded", () => { // Событие загу
     }
   }
 
-  whiteBlackAccent('black',mainBgColorValues[0]); // Проверка на равенство цвета акцента и ОЦФ (для ч. и б.)
-  whiteBlackAccent('white',mainBgColorValues[1]); // Если да - меняет цвет акцента на стоковый
+  whiteBlackAccent('#000',mainBgColorValues[0]); // Проверка на равенство цвета акцента и ОЦФ (для ч. и б.)
+  whiteBlackAccent('#fff',mainBgColorValues[1]); // Если да - меняет цвет акцента на стоковый
 
-  if (localStorage.getItem('interfaceScale')) { // если сеть ключ
-    var interfaceScale = localStorage.getItem('interfaceScale'); // извлечь
-
-    varRecord(vars[6],[(interfaceScale * 0.04) + 'vh',(interfaceScale * 0.04) + 'vw',(interfaceScale * 0.05) + 'vw']);
-
-    if (scaleRange != null) scaleRange.value = interfaceScale; // установить значение слайдера
-    if (scaleDemo != null) scaleDemo.textContent = interfaceScale + '% от стокового';
-     // установить значение демки слайдера
-  } else { // если нет ключа
-    localStorage.setItem('interfaceScale', '100'); // дефолтный ключ
-    varRecord(vars[6],['4vh','4vw','5vw']); // установить пер. стоковое значение
-    if (scaleRange != null) scaleRange.value = '100'; // установить значение слайдера
-    if (scaleDemo != null) scaleDemo.textContent = '100% от стокового'; // установить значение демки слайдера
-  }
-
-  if (localStorage.getItem('animationDuration')) { // если сеть ключ
-    var animationDuration = localStorage.getItem('animationDuration'); // извлечь
-
-    varRecord(vars[5],[animationDuration + 's']);
-    if (animeRange != null) animeRange.value = animationDuration; // установить значение слайдера
-    if (animeDemo != null) animeDemo.textContent = animationDuration + ' сек.';
-     // установить значение демки слайдера
-  } else { // если нет ключа
-    localStorage.setItem('animationDuration','0.3s'); // дефолтный ключ
-    varRecord(vars[5],['0.3s']); // установить пер. стоковое значение
-    if (animeRange != null) animeRange.value = '0.3'; // установить значение слайдера
-    if (animeDemo != null) animeDemo.textContent = '0.3 сек.'; // установить значение демки слайдера
-  }
-
+  rangeReadValue(rangeParametres);
   checkboxClasses(checkboxParametres); // раздача классов чекбоксами
 });
+
+for (var i = 0; i < rangeParametres.length; i++) rangeSetValue(rangeParametres[i]); // запись ползунками их пер.
 
 // скроллинг-функция OneUI mode (не универсальная)
 

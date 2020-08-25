@@ -7,7 +7,7 @@
 var uiParametres = [ // Массив с параметрами UI
   [ // Для стиля UI "UI_OOS"
     [ // Темная/светлая тема
-      ["cs1"],['black','#424242','#141414','#1a1a1a','white','#7a7a7a','#1e1e1e','#898989','#4d4d4d','#b9b9b9'],
+      ["cs1"],['#000','#424242','#141414','#1a1a1a','white','#7a7a7a','#1e1e1e','#898989','#4d4d4d','#b9b9b9'],
       ["cs2"],['#fafafa','white','white','#efefef','#191919','#969696','#e6e6e6','#999','#e1e1e1','#ececec']
     ],
     [
@@ -25,8 +25,8 @@ var uiParametres = [ // Массив с параметрами UI
   ],
   [ // Для стиля UI "UI_RUI"
     [ // Темная/светлая тема
-      ["cs3"],['black','#333','#141414','#252525','white','#8c8c8c','#333333','#666','#757575','#fff'],
-      ["cs4"],['white','white','#ddd','#f7f7f7','black','#737373','#e5e5e5','#ccc','#e5e5e5','#fff']
+      ["cs3"],['#000','#333','#141414','#252525','white','#8c8c8c','#333333','#666','#757575','#fff'],
+      ["cs4"],['#fff','white','#ddd','#f7f7f7','black','#737373','#e5e5e5','#ccc','#e5e5e5','#fff']
     ],
     [
       ["hs3"],['HEADER_RUI'] // Дефолтный стиль шапки
@@ -43,7 +43,7 @@ var uiParametres = [ // Массив с параметрами UI
   ],
   [ // Для стиля UI "UI_OneUI"
     [ // Темная/светлая тема
-      ["cs5"],['black','#252525','#252525','#333','#fafafa','#909090','#3f3f3f','#797979','#505050','#fafafa'],
+      ["cs5"],['#000','#252525','#252525','#333','#fafafa','#909090','#3f3f3f','#797979','#505050','#fafafa'],
       ["cs6"],['#f2f2f2','#fcfcfc','white','#e3e3e3','#161616','#989898','#ececec','#b3b3b3','#a9a9a9','#fcfcfc']
     ],
     [
@@ -103,6 +103,20 @@ function recordCheckedNo(inputConst,key) { // Функция записи инф
   }
 }
 
+// универсальные функции для ползунков
+
+function rangeChecked(rangeArray) { // функция для чтения инфы из ЛХ и отметки/подписи ползунков и их демок
+  for (var i = 0; i < rangeArray.length; i++) if (localStorage.getItem(rangeArray[i][0][2][0])) { // если есть ключ 
+    rangeArray[i][0][0][0].value = localStorage.getItem(rangeArray[i][0][2][0]); // установить значение ползунка
+    rangeArray[i][0][1][0].textContent = localStorage.getItem(rangeArray[i][0][2][0]) + rangeArray[i][0][4][0];
+     // установить значение демки слайдера
+  } else { // если нет ключа
+    rangeArray[i][0][0][0].value = rangeArray[i][0][5][0]; // установить сток значение слайдера
+    rangeArray[i][0][1][0].textContent = rangeArray[i][0][5][0] + rangeArray[i][0][4][0];
+     // установить сток значение демки слайдера
+  }
+}
+
 // универсальные функции для чекбоксов
 
 function offCheckboxInput(checkboxIdArray) { // функция, деактивирующая чекбокс
@@ -153,6 +167,7 @@ document.addEventListener("DOMContentLoaded", () => { // Событие загу
     // Если основной увет фона - один из них, то скрыть лейбл с белым акцентом
   }
 
+  rangeChecked(rangeParametres);
   checkboxChecked(checkboxParametres); // расстановка чекбоксов (отмечен/нет)
 });
 
