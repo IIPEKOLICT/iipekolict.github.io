@@ -34,9 +34,9 @@
 
   .header.OneUI-mode /* Сток шапка при активации OneUI mode */
   {
-    height: 50vh;
-    -webkit-transition: var(--main_animation-duration, 0.3s);
-    transition: var(--main_animation-duration, 0.3s);
+    height: calc(50vh - 2px);
+    -webkit-transition: calc(1.5 * var(--main_animation-duration, 0.3s));
+    transition: calc(1.5 * var(--main_animation-duration, 0.3s));
   }
   .header.OneUI-mode.scroll /* Сток шапка при активации OneUI mode и при скроллинге вниз */
   {
@@ -94,6 +94,12 @@
 
 @media (max-aspect-ratio: 3/4) /* диапазон 3:4 и уже */
 {
+    /**/
+    .header.OneUI-mode /* Сток шапка при активации OneUI mode */
+    {
+      height: calc(40vh - 2px);
+    }
+    /**/
   .header_page /* Модификатор шапки, только для страниц, не являющихся главной в HTML-документе */
   {
     font-size: 1.5em;

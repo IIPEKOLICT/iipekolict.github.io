@@ -10,9 +10,9 @@
 }
   .main.OneUI-mode /* сток <main> при активации OneUI mode */
   {
-    padding-top: calc(50vh + 2px);
-    -webkit-transition: var(--main_animation-duration, 0.3s);
-    transition: var(--main_animation-duration, 0.3s);
+    padding-top: 50vh;
+    -webkit-transition: calc(1.5 * var(--main_animation-duration, 0.3s));
+    transition: calc(1.5 * var(--main_animation-duration, 0.3s));
   }
   .main.OneUI-mode.scroll /* сток <main> при активации OneUI mode и при скроллинге страницы */
   {
@@ -31,6 +31,12 @@
     padding-top: calc(6 * var(--mobile_font-size, 5vw) + 2px);
     font-size: 1.25em;
   }
+    /**/
+    .main.OneUI-mode /* сток <main> при активации OneUI mode */
+    {
+      padding-top: 40vh;
+    }
+    /**/
     .main.OneUI-mode.scroll /* сток <main> при активации OneUI mode и при скроллинге страницы */
     {
       padding-top: calc(6 * var(--mobile_font-size, 5vw) + 2px);
