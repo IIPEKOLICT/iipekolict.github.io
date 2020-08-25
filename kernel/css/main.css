@@ -11,13 +11,13 @@
   .main.OneUI-mode /* сток <main> при активации OneUI mode */
   {
     padding-top: 50vh;
-    -webkit-transition: calc(1.5 * var(--main_animation-duration, 0.3s));
-    transition: calc(1.5 * var(--main_animation-duration, 0.3s));
+    -webkit-transition: var(--main_animation-duration, 0.3s);
+    transition: var(--main_animation-duration, 0.3s);
   }
   .main.OneUI-mode.scroll /* сток <main> при активации OneUI mode и при скроллинге страницы */
   {
     padding-top: calc(6 * var(--pc_font-size, 4vh) + 2px);
-    min-height: calc(100vh - 6 * var(--pc_font-size, 4vh));
+    min-height: calc(100vh - 6 * var(--pc_font-size, 4vh) + 2px);
   }
 
 /*------------------------------*/
@@ -34,13 +34,13 @@
     /**/
     .main.OneUI-mode /* сток <main> при активации OneUI mode */
     {
-      padding-top: 40vh;
+      padding-top: 45vh;
     }
     /**/
     .main.OneUI-mode.scroll /* сток <main> при активации OneUI mode и при скроллинге страницы */
     {
       padding-top: calc(6 * var(--mobile_font-size, 5vw) + 2px);
-      min-height: calc(100vh - 6 * var(--mobile_font-size, 5vw) - 2px);
+      min-height: calc(100vh - 6 * var(--mobile_font-size, 5vw) + 2px);
     }
   .main_page /* модификатор майна для второстепенных страниц при ВН */
   {
@@ -67,6 +67,6 @@
     .main.OneUI-mode.scroll /* сток <main> при активации OneUI mode и при скроллинге страницы */
     {
       padding-top: calc(6 * var(--tablet_font-size, 4vw) + 2px);
-      min-height: calc(100vh - 6 * var(--tablet_font-size, 4vw));
+      min-height: calc(100vh - 6 * var(--tablet_font-size, 4vw) + 2px);
     }
 }
