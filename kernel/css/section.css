@@ -7,6 +7,13 @@
   padding: 0.5em 4vw;
   text-align: left;
 }
+  .switch-container .section:first-of-type /* первая секция внутри тумблерного контейнера */
+  {
+    position: relative;
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+  }
 .section_center /* модификатор секции с центрированием */
 {
   text-align: center;
@@ -52,12 +59,57 @@
 
 .section_menu /* кликабельная секция (пункт меню) */
 {
+  position: relative;
   cursor: pointer;
   transition: var(--main_animation-duration, 0.3s) ease;
 }
   .article_single .section_menu.UI_OneUI /* стиль OneUI, секции в одиночных артиклях */
   {
     border-radius: inherit;
+  }
+  .switch-container .section_menu:last-of-type
+  {
+    padding-left: 0; /* правые секции внутри тумблерного контейнера */
+  }
+  .switch-container .section_menu:last-of-type::before
+  { /* разграничительная полоска между секицями в тумблерном контейнере */
+    content: '';
+    margin-top: calc((100% - 1.6em) / 2);
+    margin-bottom: calc((100% - 1.6em) / 2);
+    height: 1.6em;
+    width: calc(4vw - 2px);
+    display: block;
+    border-left: 2px solid var(--main_border-color, #1e1e1e);
+  }
+
+  /* стиль OneUI, одиночные секции в тумблерных контейнерах */
+
+  .article_single .switch-container .section_menu:first-of-type.UI_OneUI
+  {
+    border-radius: var(--main_border-radius, 0.5em) 0 0 var(--main_border-radius, 0.5em);
+  }
+  .article_single .switch-container .section_menu:last-of-type.UI_OneUI
+  {
+    border-radius: 0 var(--main_border-radius, 0.5em) var(--main_border-radius, 0.5em) 0;
+  }
+
+  /* стиль OneUI, множественные секции в тумблерных контейнерах */
+
+  .article_multiple:first-of-type .switch-container .section_menu:first-of-type.UI_OneUI
+  {
+    border-radius: var(--main_border-radius, 0.5em) 0 0 0;
+  }
+  .article_multiple:first-of-type .switch-container .section_menu:last-of-type.UI_OneUI
+  {
+    border-radius: 0 var(--main_border-radius, 0.5em) 0 0;
+  }
+  .article_multiple:last-of-type .switch-container .section_menu:first-of-type.UI_OneUI
+  {
+    border-radius: 0 0 0 var(--main_border-radius, 0.5em);
+  }
+  .article_multiple:last-of-type .switch-container .section_menu:last-of-type.UI_OneUI
+  {
+    border-radius: 0 0 var(--main_border-radius, 0.5em) 0;
   }
 .section_menu:hover /* секция-пункт меню при наведении */
 {
@@ -77,11 +129,19 @@
     height: 4em;
     margin: 0.5em 0;
   }
-  .article_multiple .section_interactive.UI_OneUI
-   /* секция-ссылка на диалоговое окно при активом стиле UI OneUI в множественном артикле */
+  .article_multiple .section_interactive.UI_OneUI,
+  .switch-container .section_interactive.UI_OneUI
   {
     margin: 0;
-  }
+  } /* секция-ссылка на диалоговое окно при активом стиле UI OneUI в множественном артикле и тумблерном контейнере */
+
+/* Текст в секциях ------------------------------*/
+
+.section-description /* второстепенный текст */
+{
+  color: var(--secondary_text-color, #7a7a7a);
+  font-size: 0.5em;
+}
 
 /*------------------------------*/
 /*---ОВЕРЛЕЙ [6:5]--------------*/
@@ -129,6 +189,13 @@
 
 @media (min-aspect-ratio: 6/5) /* экраны шире 6:5 */
 {
+  .section::after /* фикс для 2-ч колоночного отображения (когда у содержимого секции оное) */
+  {
+    content: '';
+    display: block;
+    clear: both;
+  }
+
   /* Секция-пункт меню ------------------------------*/
 
   .section_menu /* кликабельная секция (пункт меню) */
@@ -154,11 +221,24 @@
       {
         border-radius: 0 0 var(--main_border-radius, 0.5em) var(--main_border-radius, 0.5em);
       }
+    .switch-container .section_menu:last-of-type::before
+    { /* разграничительная полоска между секицями в тумблерном контейнере */
+      margin-top: calc((100% - 1.8em) / 2);
+      margin-bottom: calc((100% - 1.8em) / 2);
+      height: 1.8em;
+    }
 
   /* Секция-ссылка на диалоговое окно ------------------------------*/
 
   .section_interactive /* секция-ссылка на диалоговое окно */
   {
     height: 3.5em;
+  }
+
+  /* Текст в секциях ------------------------------*/
+
+  .section-description /* второстепенный текст */
+  {
+    font-size: 0.8em;
   }
 }

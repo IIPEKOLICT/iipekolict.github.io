@@ -15,6 +15,13 @@
 {
   display: block; /* Показать контент, зависящий от UI */
 }
+.UI_OOS .row-label.content_OOS,
+.UI_ZenUI .row-label.content_ZenUI,
+.UI_RUI .row-label.content_RUI,
+.UI_OneUI .row-label.content_OneUI
+{
+  display: flex; /* Показать контент, зависящий от UI (фикс для горизонтальных лейблов) */
+}
 
 /* Другое ------------------------------*/
 
@@ -31,6 +38,14 @@
   text-decoration: none;
   color: inherit;
 }
+.link-stretch /* растягиваемые ссылки (на всю высоту и ширину родителя) */
+{
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
 .sup /* надстрочное начертание */
 {
   font-size: 0.5em;
@@ -40,6 +55,14 @@
   height: 2em;
   display: flex;
   align-items: center;
+}
+.inline /* инлайновый модификатор */
+{
+  display: inline-block;
+}
+.hidden-label /* класс для скрытия лейблов */
+{
+  display: none;
 }
 
 /*------------------------------*/
@@ -86,15 +109,18 @@
     float: right;
   }
 
-  .two-columns.menu-tile /* ширина при раскладке в 2 колонки, если menu-tile */
+  .two-columns.menu-tile, /* ширина при раскладке в 2 колонки, если menu-tile */
+  .two-columns.radio-label /* ширина при раскладке в 2 колонки, если radio-label */
   {
     width: calc(50% - 1em);
   }
-  .two-columns.menu-tile:nth-of-type(odd) /* Маргин нечетных плиток, если menu-tile */
+  .two-columns.menu-tile:nth-of-type(odd), /* Маргин нечетных плиток, если menu-tile */
+  .two-columns.radio-label:nth-of-type(odd) /* Маргин нечетных плиток, если radio-label */
   {
     margin-right: 1em;
   }
-  .two-columns.menu-tile:nth-of-type(even) /* Маргин четных плиток, если menu-tile */
+  .two-columns.menu-tile:nth-of-type(even), /* Маргин четных плиток, если menu-tile */
+  .two-columns.radio-label:nth-of-type(even) /* Маргин четных плиток, если radio-label */
   {
     margin-left: 1em;
   }

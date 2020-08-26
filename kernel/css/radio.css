@@ -2,71 +2,121 @@
 /*---РАЗДЕЛ RADIO--------------*/
 /*------------------------------*/
 
-/* Стоковые радиокнопки ------------------------------*/
+/* Универсальные стили для горизонтальных инпутов ------------------------------*/
 
-.radio-label /* лейблы для радиокнопок */
+.row-label /* стоковый горизонтальный лейбл */
 {
-  display: block;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   cursor: pointer;
-  line-height: 2.4em;
 }
-  .radio-label.hidden-label /* скрытые лейблы для радиокнопок */
+.row-label input {display:none} /* скрыть инпут внутри */
+.row-label .radio-name /* текст подписи радиокнопки */
+{
+  padding: 0.5em 0;
+  flex: 1;
+}
+
+/* Лейбл для стоковых радиокнопок ------------------------------*/
+
+.radio-label /* Сток лейбл */
+{
+  justify-content: flex-start;
+}
+  .UI_OOS .radio-label,
+  .UI_RUI .radio-label /* Сток лейбл при стилях OOS и RUI (кнопки справа) */
   {
-    display: none;
+    flex-direction: row-reverse;
   }
-  .radio-label_inline /* лейблы для радиокнопок в строчку (горизонтальные) */
-  {
-    display: inline-block;
-  }
-[type="radio"] /* Фикс видимости инпутов для радиокнопок */
+
+/* Сама сток радиокнопка (неотмеченная) ------------------------------*/
+
+.radio-button
 {
-  margin: -1px;
-  padding: 0;
-  height: 1px;
-  width: 1px;
-  position: absolute;
-  overflow: hidden;
-  border: 0;
-  clip: rect(0 0 0 0);
-}
-[type="radio"] + .radio-name /* текст подписи радиокнопки */
-{
-  display: block;
-}
-.label_custom-colored .radio-name /* текст подписи крашенной радиокнопки */
-{
-  color: var(--accent-color, #80cbc4);
-}
-[type="radio"] + .radio-name::before /* стиль неотмеченной радиокнопки */
-{
-  content: '';
-  margin: 0 0.6em;
-  width: 0.6em;
-  height: 0.6em;
-  vertical-align: -0.3em;
-  display: inline-block;
-  border: 0.3em solid var(--main_bg-color, black);
-  border-radius: 0.6em;
-  box-shadow: 0 0 0 0.1em var(--radio_nonactive-color, #898989);
+  margin: 0.6em;
+  border: solid var(--main_bg-color, black);
   transition: var(--main_animation-duration, 0.3s) ease all;
 }
-.article.UI_OneUI [type="radio"] + .radio-name::before /* стиль неотмеч. радиокнопки при акт. стиле UI OneUI */
+  .radio-button.UI_OOS
+  {
+    width: 0.6em;
+    height: 0.6em;
+    border-width: 0.3em;
+    border-radius: 0.6em;
+    box-shadow: 0 0 0 0.1em var(--radio_nonactive-color, #898989);
+  }
+  .radio-button.UI_RUI
+  {
+    width: 0.84em;
+    height: 0.84em;
+    border-width: 0.14em;
+    border-radius: 0.56em;
+    box-shadow: 0 0 0 0.14em var(--radio_nonactive-color, #898989);
+  }
+  .radio-button.UI_OneUI
+  {
+    width: 0.76em;
+    height: 0.76em;
+    border-width: 0.16em;
+    border-radius: 0.54em;
+    box-shadow: 0 0 0 0.16em var(--radio_nonactive-color, #898989);
+  }
+  .radio-button.UI_ZenUI
+  {
+    width: 0.7em;
+    height: 0.7em;
+    border-width: 0.22em;
+    border-radius: 0.57em;
+    box-shadow: 0 0 0 0.13em var(--radio_nonactive-color, #898989);
+  }
+.article.UI_OneUI .radio-button, /* стиль неотмеч. радиокнопки при акт. стиле UI OneUI */
+.interactive-container .radio-button /* стиль неотмеченной радиокнопки в диалоговом окне */
 {
-  border: 0.3em solid var(--secondary_bg-color, #424242);
+  border-color: var(--secondary_bg-color, #424242);
 }
-[type="radio"]:checked + .radio-name::before /* стиль отмеченной радиокнопки */
+
+/* Покраска в цвета акцента для радиокнопок в крашенных лейблах ------------------------------*/
+
+  .label_custom-colored .radio-button.UI_OOS
+  {
+    box-shadow: 0 0 0 0.1em var(--accent-color, #80cbc4);
+  }
+  .label_custom-colored .radio-button.UI_RUI
+  {
+    box-shadow: 0 0 0 0.14em var(--accent-color, #80cbc4);
+  }
+  .label_custom-colored .radio-button.UI_OneUI
+  {
+    box-shadow: 0 0 0 0.16em var(--accent-color, #80cbc4);
+  }
+  .label_custom-colored .radio-button.UI_ZenUI
+  {
+    box-shadow: 0 0 0 0.13em var(--accent-color, #80cbc4);
+  }
+
+/* Сама сток радиокнопка (отмеченная) ------------------------------*/
+
+[type="radio"]:checked + .radio-button
 {
   background-color: var(--accent-color, #80cbc4);
-  box-shadow: 0 0 0 0.1em var(--accent-color, #80cbc4);
 }
-.label_custom-colored [type="radio"] + .radio-name::before /* стиль неотмеченной радиокнопки в крашеных лейблах */
-{
-  box-shadow: 0 0 0 0.1em var(--accent-color, #80cbc4);
-}
-.interactive-container [type="radio"] + .radio-name::before /* стиль неотмеченной радиокнопки в диалоговом окне */
-{
-  border-color: var(--secondary_bg-color, #424242); /* да, там другой фон */
-}
+  [type="radio"]:checked + .radio-button.UI_OOS
+  {
+    box-shadow: 0 0 0 0.1em var(--accent-color, #80cbc4);
+  }
+  [type="radio"]:checked + .radio-button.UI_RUI
+  {
+    box-shadow: 0 0 0 0.14em var(--accent-color, #80cbc4);
+  }
+  [type="radio"]:checked + .radio-button.UI_OneUI
+  {
+    box-shadow: 0 0 0 0.16em var(--accent-color, #80cbc4);
+  }
+  [type="radio"]:checked + .radio-button.UI_ZenUI
+  {
+    box-shadow: 0 0 0 0.13em var(--accent-color, #80cbc4);
+  }
 
 /* Квадратные чекбоксы с галочкой посередине (для акцента) ------------------------------*/
 
@@ -95,6 +145,13 @@
 
 @media (max-aspect-ratio: 6/5) /* узкие экраны до 6:5 */
 {
+  /* Универсальные стили для горизонтальных инпутов ------------------------------*/
+  
+  .interactive .radio-name /* текст радиокнопки в диалоговом окне */
+  {
+    flex: calc(100% - 2.6em);
+  }
+
   /* Квадратные чекбоксы с галочкой посередине (для акцента) ------------------------------*/
 
   [type="radio"] + .square-checkbox::before /* стиль неотмеченного квадратного чекбокса (с галочкой посередине) */

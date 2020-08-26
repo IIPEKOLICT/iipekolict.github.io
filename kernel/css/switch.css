@@ -2,19 +2,21 @@
 /*---РАЗДЕЛ SWITCH--------------*/
 /*------------------------------*/
 
+.switch-container /* тумблерный контейнер (текстовый контейнер-ссылка + лейбл с переключателем в строчку) */
+{
+  display: flex;
+  justify-content: space-between;
+  border-radius: inherit;
+}
+
 /* Лейбл с переключателем ------------------------------*/
 
 .switch-label /* Лейбл */
 {
   height: inherit;
   width: 100%;
-  display: flex;
-  flex-direction: row;
   justify-content: space-between;
-  align-items: center;
-  cursor: pointer;
 }
-.switch-label input {display:none} /* Инпут в лейбле (скрыть) */
 
 /* Дорожка ------------------------------*/
 
@@ -122,7 +124,7 @@ input:focus + .switch
 {
   /* Дорожка ------------------------------*/
 
-    .switch.switch_OOS /* Сам слайдер */
+    .switch.switch_OOS
     {
       margin: 0.485em;
       height: 0.7em;
@@ -130,14 +132,14 @@ input:focus + .switch
       border-radius: 0.49em;
       border-width: 0.14em;
     }
-    .switch.switch_RUI /* Сам слайдер */
+    .switch.switch_RUI
     {
       margin: 0.275em;
       height: 1.4em;
       width: 2.45em;
       border-radius: 0.7em;
     }
-    .switch.switch_OneUI /* Сам слайдер */
+    .switch.switch_OneUI
     {
       margin: 0.46em;
       height: 0.9em;
@@ -145,44 +147,44 @@ input:focus + .switch
       border-radius: 0.54em;
       border-width: 0.09em;
     }
-    .switch.switch_ZenUI /* Сам слайдер */
+    .switch.switch_ZenUI
     {
-      margin: 0.66em;
-      height: 1.2em;
-      width: 1.68em;
-      border-radius: 0.6em;
+      margin: 0.6em;
+      height: 1.28em;
+      width: 1.8em;
+      border-radius: 0.64em;
     }
-    
+
   /* Кружочек ------------------------------*/
 
-    .switch.switch_OOS:before /* Кружочек */
+    .switch.switch_OOS:before
     {
       top: -0.35em;
       left: -0.35em;
       height: 1.4em;
       width: 1.4em;
     }
-    .switch.switch_RUI:before /* Кружочек */
+    .switch.switch_RUI:before
     {
       margin: 0.2625em;
       height: 0.525em;
       width: 0.525em;
       border-width: 0.175em;
     }
-    .switch.switch_OneUI:before /* Кружочек */
+    .switch.switch_OneUI:before
     {
-      top: -0.24em;
-      left: -0.24em;
+      top: -0.25em;
+      left: -0.25em;
       height: 1.2em;
       width: 1.2em;
-      border-width: 0.09em;
+      border-width: 0.1em;
     }
-    .switch.switch_ZenUI:before /* Кружочек */
+    .switch.switch_ZenUI:before
     {
-      top: -0.05em;
-      left: -0.59em;
-      height: 1.3em;
-      width: 1.3em;
+      top: -0.06em;
+      left: -0.6em;
+      height: 1.4em;
+      width: 1.4em;
     }
 
   /* Кружочек при отмеченном инпуте ------------------------------*/
@@ -196,15 +198,15 @@ input:focus + .switch
     }
     input:checked + .switch.switch_OneUI:before
     {
-      -webkit-transform: translateX(1.09em);
-      -ms-transform: translateX(1.09em);
-      transform: translateX(1.09em);
+      -webkit-transform: translateX(1.11em);
+      -ms-transform: translateX(1.11em);
+      transform: translateX(1.11em);
     }
     input:checked + .switch.switch_ZenUI:before
     {
-      -webkit-transform: translateX(1.56em);
-      -ms-transform: translateX(1.56em);
-      transform: translateX(1.56em);
+      -webkit-transform: translateX(1.6em);
+      -ms-transform: translateX(1.6em);
+      transform: translateX(1.6em);
     }
 }
 
@@ -218,7 +220,7 @@ input:focus + .switch
 
     .switch.switch_OOS
     {
-      margin: 0.34em;
+      margin: 0.59em;
       height: 0.8em;
       width: 2em;
       border-radius: 0.56em;
@@ -226,14 +228,14 @@ input:focus + .switch
     }
     .switch.switch_RUI
     {
-      margin: 0.1em;
+      margin: 0.35em;
       height: 1.6em;
       width: 2.8em;
       border-radius: 0.8em;
     }
     .switch.switch_OneUI
     {
-      margin: 0.11em;
+      margin: 0.36em;
       height: 1.06em;
       width: 2.54em;
       border-radius: 0.65em;
@@ -241,7 +243,7 @@ input:focus + .switch
     }
     .switch.switch_ZenUI
     {
-      margin: 0.76em;
+      margin: 0.72em;
       height: 1.48em;
       width: 2.06em;
       border-radius: 0.74em;
