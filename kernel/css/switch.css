@@ -141,11 +141,11 @@ input:focus + .switch
     }
     .switch.switch_OneUI
     {
-      margin: 0.46em;
-      height: 0.9em;
-      width: 1.9em;
-      border-radius: 0.54em;
-      border-width: 0.09em;
+      margin: 0.375em;
+      height: 1.16em;
+      width: 2.11em;
+      border-radius: 0.65em;
+      border-width: 0.07em;
     }
     .switch.switch_ZenUI
     {
@@ -173,11 +173,11 @@ input:focus + .switch
     }
     .switch.switch_OneUI:before
     {
-      top: -0.25em;
-      left: -0.25em;
-      height: 1.2em;
-      width: 1.2em;
-      border-width: 0.1em;
+      top: -0.12em;
+      left: -0.12em;
+      height: 1.26em;
+      width: 1.26em;
+      border-width: 0.07em;
     }
     .switch.switch_ZenUI:before
     {
@@ -198,9 +198,9 @@ input:focus + .switch
     }
     input:checked + .switch.switch_OneUI:before
     {
-      -webkit-transform: translateX(1.11em);
-      -ms-transform: translateX(1.11em);
-      transform: translateX(1.11em);
+      -webkit-transform: translateX(0.95em);
+      -ms-transform: translateX(0.95em);
+      transform: translateX(0.95em);
     }
     input:checked + .switch.switch_ZenUI:before
     {
@@ -235,11 +235,11 @@ input:focus + .switch
     }
     .switch.switch_OneUI
     {
-      margin: 0.36em;
-      height: 1.06em;
-      width: 2.54em;
-      border-radius: 0.65em;
-      border-width: 0.12em;
+      margin: 0.47em;
+      height: 1.32em;
+      width: 2.4em;
+      border-radius: 0.74em;
+      border-width: 0.08em;
     }
     .switch.switch_ZenUI
     {
@@ -267,11 +267,11 @@ input:focus + .switch
     }
     .switch.switch_OneUI:before
     {
-      top: -0.27em;
-      left: -0.27em;
-      height: 1.36em;
-      width: 1.36em;
-      border-width: 0.12em;
+      top: -0.14em;
+      left: -0.14em;
+      height: 1.44em;
+      width: 1.44em;
+      border-width: 0.08em;
     }
     .switch.switch_ZenUI:before
     {
@@ -292,9 +292,9 @@ input:focus + .switch
     }
     input:checked + .switch.switch_OneUI:before
     {
-      -webkit-transform: translateX(1.48em);
-      -ms-transform: translateX(1.48em);
-      transform: translateX(1.48em);
+      -webkit-transform: translateX(1.08em);
+      -ms-transform: translateX(1.08em);
+      transform: translateX(1.08em);
     }
     input:checked + .switch.switch_ZenUI:before
     {

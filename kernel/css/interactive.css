@@ -10,14 +10,14 @@
   position: fixed;
   z-index: 3;
 }
-.interactive_shown /* стиль всей области при показе */
+.interactive.shown /* стиль всей области при показе */
 {
   height: 100%;
   display: flex;
   justify-content: flex-end;
   background-color: rgba(0,0,0,0.5);
 }
-  .interactive_shown.interactive_OOS /* стиль всей области при показе (стиль OOS) */
+  .interactive.shown.interactive_OOS /* стиль всей области при показе (стиль OOS) */
   {
     justify-content: center;
     align-items: center;
@@ -37,14 +37,14 @@
   {
     opacity: 0;
   }
-.interactive-container_shown /* контейнер при показе */
+.interactive-container.shown /* контейнер при показе */
 {
   height: auto;
   display: flex;
   flex-direction: column-reverse;
 }
-  .interactive-container_shown.interactive_OOS,
-  .interactive-container_shown.interactive_ZenUI /* контейнер при показе (стиль OOS и ZenUI) */
+  .interactive-container.shown.interactive_OOS,
+  .interactive-container.shown.interactive_ZenUI /* контейнер при показе (стиль OOS и ZenUI) */
   {
     opacity: 1;
   }
@@ -59,7 +59,7 @@
 {
   display: none;
 }
-.interactive-block_shown /* стиль блоков в спойлере при показе */
+.interactive-block.shown /* стиль блоков в спойлере при показе */
 {
   display: block;
 }
@@ -98,6 +98,14 @@
     color: var(--accent-color, #80cbc4);
     border-radius: 0 0 var(--interactive_border-radius, 1em) var(--interactive_border-radius, 1em);
   }
+.interactive-button.shown /* стиль кнопки-скрывашки при показе */
+{
+  height: auto;
+}
+  .interactive-button.shown.interactive_RUI /* стиль кнопки-скрывашки при показе (стиль RUI) */
+  {
+    margin: 0 1em 0 1em;
+  }
 .interactive-button:hover /* стиль кнопки-скрывашки при наведении */
 {
   background-color: var(--secondary_text-color, #7a7a7a);
@@ -113,14 +121,6 @@
   {
     border-top: 1px solid rgba(0,0,0,0);
     margin: 0;
-  }
-.interactive-button_shown /* стиль кнопки-скрывашки при показе */
-{
-  height: auto;
-}
-  .interactive-button_shown.interactive_RUI /* стиль кнопки-скрывашки при показе (стиль RUI) */
-  {
-    margin: 0 1em 0 1em;
   }
 .interactive-button::before /* псевдоэлемент, в котором хранится текст кнопки-скрывашки */
 {
@@ -161,15 +161,15 @@
 
 @media (max-aspect-ratio: 6/5) /* узкие экраны до 6:5 */
 {
-  .interactive_shown /* стиль всей области при показе */
+  .interactive.shown /* стиль всей области при показе */
   {
     flex-direction: column;
   }
-    .interactive_shown.interactive_OneUI /* стиль всей области при показе (стиль OneUI) */
+    .interactive.shown.interactive_OneUI /* стиль всей области при показе (стиль OneUI) */
     {
       padding-bottom: 5%;
     }
-    .interactive_shown.interactive_ZenUI /* стиль всей области при показе (стиль ZenUI) */
+    .interactive.shown.interactive_ZenUI /* стиль всей области при показе (стиль ZenUI) */
     {
       padding: 5%;
       width: 90%;
@@ -177,20 +177,20 @@
 
   /* Контейнер (диалоговое окно) ------------------------------*/
 
-  .interactive-container.interactive_RUI /* контейнер по дефолту (скрыт) (стиль RUI) */
-  {
-    border-radius: var(--interactive_border-radius, 1em) var(--interactive_border-radius, 1em) 0 0;
-  }
-  .interactive-container.interactive_RUI,
-  .interactive-container.interactive_OneUI /* контейнер по дефолту (скрыт) (стиль RUI и OneUI) */
-  {
-    transform: translateY(100%);
-  }
-  .interactive-container_shown.interactive_RUI,
-  .interactive-container_shown.interactive_OneUI /* контейнер при показе (стиль RUI и OneUI) */
-  {
-    transform: translateY(0);
-  }
+    .interactive-container.interactive_RUI /* контейнер по дефолту (скрыт) (стиль RUI) */
+    {
+      border-radius: var(--interactive_border-radius, 1em) var(--interactive_border-radius, 1em) 0 0;
+    }
+    .interactive-container.interactive_RUI,
+    .interactive-container.interactive_OneUI /* контейнер по дефолту (скрыт) (стиль RUI и OneUI) */
+    {
+      transform: translateY(100%);
+    }
+    .interactive-container.shown.interactive_RUI,
+    .interactive-container.shown.interactive_OneUI /* контейнер при показе (стиль RUI и OneUI) */
+    {
+      transform: translateY(0);
+    }
 
   /* Блоки в контейнере ------------------------------*/
 
@@ -199,10 +199,10 @@
     padding: 1em;
   }
 
-  .interactive-container_shown.interactive_OOS .interactive-block_shown
-  {
-    min-width: 60vw; /* фикс блоков для OOS-стиля, дабы не было слишком узко */
-  }
+    .interactive-container.shown.interactive_OOS .interactive-block.shown
+    {
+      min-width: 60vw; /* фикс блоков для OOS-стиля, дабы не было слишком узко */
+    }
 }
 
 /*------------------------------*/
@@ -215,7 +215,7 @@
   {
     font-size: 0.75em;
   }
-  .interactive_shown /* стиль всей области при показе */
+  .interactive.shown /* стиль всей области при показе */
   {
     justify-content: center;
     align-items: center;
@@ -233,7 +233,7 @@
     {
       transform: translateY(0);
     }
-  .interactive-container_shown /* контейнер при показе */
+  .interactive-container.shown /* контейнер при показе */
   {
     opacity: 1;
   }
@@ -251,7 +251,7 @@
 
   /* Кнопка-скрывашка снизу ------------------------------*/
 
-  .interactive-button_shown /* стиль кнопки-скрывашки при показе */
+  .interactive-button.shown /* стиль кнопки-скрывашки при показе */
   {
     display: none;
   }

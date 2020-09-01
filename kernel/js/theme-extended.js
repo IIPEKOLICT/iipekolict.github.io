@@ -2,9 +2,13 @@
 /*---ДОПОЛНИТЕЛЬНЫЙ МОДУЛЬ ДВИЖКА ТЕМ (ТОЛЬКО ДЛЯ НАСТРОЕК)---*/
 /*------------------------------------------------------------*/
 
-// Массивы с параметрами
+/*------------------------------------------------------------*/
+/*--- Массивы с параметрами ----------------------------------*/
+/*------------------------------------------------------------*/
 
-var uiParametres = [ // Массив с параметрами UI
+// Массив с параметрами UI
+
+let uiParametres = [
   [ // Для стиля UI "UI_OOS"
     [ // Темная/светлая тема
       ["cs1"],['#000','#424242','#141414','#1a1a1a','white','#7a7a7a','#1e1e1e','#898989','#4d4d4d','#b9b9b9'],
@@ -47,12 +51,16 @@ var uiParametres = [ // Массив с параметрами UI
   ]
 ]
 
-// функции для расстановки отмеченных инпутов
+/*------------------------------------------------------------*/
+/*--- Функции для расстановки отмеченных инпутов -------------*/
+/*------------------------------------------------------------*/
 
-function readCheckedNo(checkedArray) { // Функция чтения из ЛХ инфы об отмеченных инпутах
-  for (var i = 0; i < checkedArray[0].length; i++) { // Перебор всех ключей
+// Функция чтения из ЛХ инфы об отмеченных инпутах
+
+function readCheckedNo(checkedArray) {
+  for (let i = 0; i < checkedArray[0].length; i++) { // Перебор всех ключей
     if (localStorage.getItem(checkedArray[0][i])) { // Если в ЛХ есть ключ номера выбранного акц-инпута
-      var checkedNo = localStorage.getItem(checkedArray[0][i]); // Извлечение
+      let checkedNo = localStorage.getItem(checkedArray[0][i]); // Извлечение
       document.querySelector('input[name=' + checkedArray[1][i] + '][id=' + checkedNo + ']')
       .setAttribute('checked','checked'); // Отметить как выбраннный
     } else {
@@ -63,189 +71,224 @@ function readCheckedNo(checkedArray) { // Функция чтения из ЛХ 
   }
 }
 
-function recordCheckedNo(inputConst,key) { // Функция записи инфы в ЛХ об отмеченном инпуте
-  for (var i = 0; i < inputConst.length; i++) // Цикл опроса всех инпутов
+// Функция записи инфы в ЛХ об отмеченном инпуте
+
+function recordCheckedNo(inputConst,key) {
+  for (let i = 0; i < inputConst.length; i++) // Цикл опроса всех инпутов
     inputConst[i].onclick = function() { // Если инпут нажат
       localStorage.setItem(key, this.id); // Сохранить ключ номера акц-инпута
     }
 }
 
-// универсальные функции для ползунков
+/*------------------------------------------------------------*/
+/*--- Универсальные функции для ползунков --------------------*/
+/*------------------------------------------------------------*/
 
-function rangeChecked(rangeArray) { // функция для чтения инфы из ЛХ и отметки/подписи ползунков и их демок
-  for (var i = 0; i < rangeArray.length; i++) if (localStorage.getItem(rangeArray[i][0][2][0])) { // если есть ключ
-    rangeArray[i][0][0][0].value = localStorage.getItem(rangeArray[i][0][2][0]); // установить значение ползунка
-    rangeArray[i][0][1][0].textContent = localStorage.getItem(rangeArray[i][0][2][0]) + rangeArray[i][0][4][0];
+// функция для чтения инфы из ЛХ и отметки/подписи ползунков и их демок
+
+function rangeChecked(rangeArray) {
+  for (let i = 0; i < rangeArray.length; i++) if (localStorage.getItem(rangeArray[i][0][2][0])) { // если есть ключ
+    rangeArray[i][0][0][0].val(localStorage.getItem(rangeArray[i][0][2][0])); // установить значение ползунка
+    rangeArray[i][0][1][0].text(localStorage.getItem(rangeArray[i][0][2][0]) + rangeArray[i][0][4][0]);
      // установить значение демки слайдера
   } else { // если нет ключа
-    rangeArray[i][0][0][0].value = rangeArray[i][0][5][0]; // установить сток значение слайдера
-    rangeArray[i][0][1][0].textContent = rangeArray[i][0][5][0] + rangeArray[i][0][4][0];
+    rangeArray[i][0][0][0].val(rangeArray[i][0][5][0]); // установить сток значение слайдера
+    rangeArray[i][0][1][0].text(rangeArray[i][0][5][0] + rangeArray[i][0][4][0]);
      // установить сток значение демки слайдера
   }
 }
 
-// универсальные функции для чекбоксов
+/*------------------------------------------------------------*/
+/*--- Универсальные функции для чекбоксов --------------------*/
+/*------------------------------------------------------------*/
 
-function checkboxChecked(checkboxArray) { // функция, отмечающая инпуты чекбоксов
-  for (var i = 0; i < checkboxArray.length; i++) {
-    if (localStorage.getItem(checkboxArray[i][0][0]) == 'on') onCheckboxInput(checkboxArray[i][3])
+// функция, отмечающая инпуты чекбоксов
+
+function checkboxChecked(checkboxArray) {
+  for (let i = 0; i < checkboxArray.length; i++) {
+    if (localStorage.getItem(checkboxArray[i][0][0]) == 'on') onCheckboxInput(checkboxArray[i])
      // если есть в ключе инфа о том, что активен - отметить все чекбоксы
-    else offCheckboxInput(checkboxArray[i][3]) // если нет - чекбоксы не активны
+    else offCheckboxInput(checkboxArray[i]) // если нет - чекбоксы не активны
   }
 }
 
-document.addEventListener("DOMContentLoaded", () => { // Событие загузки страницы
+/*------------------------------------------------------------*/
+/*--- Универсальные функции для автоподхвата дефолтных пар. --*/
+/*------------------------------------------------------------*/
+
+// Автоподхват переменных
+
+function setDefaultUiVars(typeKey,varArray,defaultParArray,inputKey,inputName) {
+  if (localStorage.getItem(typeKey) != 'custom') { // Если активен был дефолтный вариант, либо ключ пуст
+    localStorage.setItem(typeKey, 'default'); // Запись инфы в ЛХ о типе стиля (дефолтный)
+    varRecord(varArray, defaultParArray[1]); // Установка из массива нужных для данного UI переменных
+    markInput(inputKey, inputName, defaultParArray[0][0]); // Отметить нужн. инпут
+  }
+}
+
+// Автоподхват стилей (классы)
+
+function setDefaultUiClass(typeKey,classArray,defaultParArray,inputKey,inputName) {
+  if (localStorage.getItem(typeKey) != 'custom') { // Если активен был дефолтный вариант, либо ключ пуст
+    localStorage.setItem(typeKey, 'default'); // Запись инфы в ЛХ о типе стиля (дефолтный)
+    localStorage.setItem(classArray[0], defaultParArray[1][0]); // Сохранить ключ стиля
+    markInput(inputKey, inputName, defaultParArray[0][0]); // Отметить нужн. инпут
+  }
+}
+
+/*------------------------------------------------------------*/
+/*--- Событие загузки страницы -------------------------------*/
+/*------------------------------------------------------------*/
+
+$(document).ready(function() {
   readCheckedNo(checkedInputs); // расстановка checked-инпутов
   rangeChecked(rangeParametres); // расстановка range-значений
   checkboxChecked(checkboxParametres); // расстановка чекбоксов (отмечен/нет)
 
   // Покраска инпутов с цветами акцента
 
-  var coloredLabels = document.querySelectorAll('.label_custom-colored'); // Все крашенные value лейблы
-
-  for (var i = 0; i < coloredLabels.length; i++) { // Цикл опроса всех крашеных лейблов
-    var labelColor = coloredLabels[i].querySelector('input').value; // Извлечение value из инпута
-    coloredLabels[i].style.setProperty('--accent-color', labelColor); // Установка цвета кнопки
-  }
+  $.each($('.label_custom-colored'), function () { $(this).css('--accent-color', $(this).find('input').val()) });
 
   // Скрытие белого/черного цвета акцента в зависимости от цветовой схемы
 
-  var bgColorValue = localStorage.getItem(vars[1][0][0]); // извлечь
-  var blackAccentLabel = document.getElementById('black-accent_label'); // лейбл черного акц.
-  var whiteAccentLabel = document.getElementById('white-accent_label'); // лейбл белого акц.
-
-  for (var i = 0; i < mainBgColorValues[0].length; i++) // Перебор темных вариаций осн. цв. фона
-    if (bgColorValue == mainBgColorValues[0][i]) blackAccentLabel.classList.add('hidden-label')
-     // Если основной увет фона - один из них, то скрыть лейбл с черным акцентом
-  for (var i = 0; i < mainBgColorValues[1].length; i++) // Перебор светлых вариаций осн. цв. фона
-    if (bgColorValue == mainBgColorValues[1][i]) whiteAccentLabel.classList.add('hidden-label')
-    // Если основной увет фона - один из них, то скрыть лейбл с белым акцентом
+  $.each(mainBgColorValues[0], function (name, value) {
+    if (localStorage.getItem(vars[1][0][0]) == value) $('#black-accent_label').addClass('hidden-label')
+  });
+  $.each(mainBgColorValues[1], function (name, value) {
+    if (localStorage.getItem(vars[1][0][0]) == value) $('#white-accent_label').addClass('hidden-label')
+  });
 });
 
-// Запись инфы в ЛХ о checked-инпуте (его id)
+/*------------------------------------------------------------*/
+/*--- Запись инфы в ЛХ о checked-инпуте (его id) -------------*/
+/*------------------------------------------------------------*/
+
+// Все инпуты, меняющие цвет акцента
 
 const accentInputs = [].slice.call(document.querySelectorAll
-  ('input[type="radio"][name="accent-color"]')); // Все инпуты, меняющие цвет акцента
-recordCheckedNo(accentInputs,checkedInputs[0][0]);
+  ('input[type="radio"][name="accent-color"]'));
+recordCheckedNo(accentInputs, checkedInputs[0][0]);
+
+// Все инпуты, меняющие цветовую схему
 
 const colorSchemeInputs = [].slice.call(document.querySelectorAll
-  ('input[type="radio"][name="color-scheme"]')); // Все инпуты, меняющие цветовую схему
-recordCheckedNo(colorSchemeInputs,checkedInputs[0][1]);
+  ('input[type="radio"][name="color-scheme"]'));
+recordCheckedNo(colorSchemeInputs, checkedInputs[0][1]);
+
+// Все инпуты, меняющие стиль шапки
 
 const headerStyleInputs = [].slice.call(document.querySelectorAll
-  ('input[type="radio"][name="header-style"]')); // Все инпуты, меняющие стиль шапки
-recordCheckedNo(headerStyleInputs,checkedInputs[0][2]);
+  ('input[type="radio"][name="header-style"]'));
+recordCheckedNo(headerStyleInputs, checkedInputs[0][2]);
+
+// Все инпуты, меняющие стиль UI
 
 const uiStyleInputs = [].slice.call(document.querySelectorAll
-  ('input[type="radio"][name="ui-style"]')); // Все инпуты, меняющие стиль UI
-recordCheckedNo(uiStyleInputs,checkedInputs[0][3]);
+  ('input[type="radio"][name="ui-style"]'));
+recordCheckedNo(uiStyleInputs, checkedInputs[0][3]);
+
+// Все инпуты, меняющие радиус закруглений
 
 const borderRadiusInputs = [].slice.call(document.querySelectorAll
-  ('input[type="radio"][name="border-radius"]')); // Все инпуты, меняющие радиус закруглений
-recordCheckedNo(borderRadiusInputs,checkedInputs[0][4]);
+  ('input[type="radio"][name="border-radius"]'));
+recordCheckedNo(borderRadiusInputs, checkedInputs[0][4]);
+
+// Все инпуты, меняющие форму иконок
 
 const iconShapeInputs = [].slice.call(document.querySelectorAll
-  ('input[type="radio"][name="icon-shape"]')); // Все инпуты, меняющие форму иконок
-recordCheckedNo(iconShapeInputs,checkedInputs[0][5]);
+  ('input[type="radio"][name="icon-shape"]'));
+recordCheckedNo(iconShapeInputs, checkedInputs[0][5]);
+
+// Все инпуты, меняющие шрифт
 
 const fontFamilyInputs = [].slice.call(document.querySelectorAll
-  ('input[type="radio"][name="font-family"]')); // Все инпуты, меняющие шрифт
-recordCheckedNo(fontFamilyInputs,checkedInputs[0][6]);
+  ('input[type="radio"][name="font-family"]'));
+recordCheckedNo(fontFamilyInputs, checkedInputs[0][6]);
+
+// Все инпуты, меняющие стиль диалоговых окон
 
 const interactiveStyleInputs = [].slice.call(document.querySelectorAll
-  ('input[type="radio"][name="interactive-style"]')); // Все инпуты, меняющие стиль диалоговых окон
-recordCheckedNo(interactiveStyleInputs,checkedInputs[0][7]);
+  ('input[type="radio"][name="interactive-style"]'));
+recordCheckedNo(interactiveStyleInputs, checkedInputs[0][7]);
+
+// Все инпуты, меняющие стиль переключателей
 
 const switchStyleInputs = [].slice.call(document.querySelectorAll
-  ('input[type="radio"][name="switch-style"]')); // Все инпуты, меняющие стиль переключателей
-recordCheckedNo(switchStyleInputs,checkedInputs[0][8]);
+  ('input[type="radio"][name="switch-style"]'));
+recordCheckedNo(switchStyleInputs, checkedInputs[0][8]);
+
+/*------------------------------------------------------------*/
+/*--- Функции на радиокнопках --------------------------------*/
+/*------------------------------------------------------------*/
 
 // Функция смены цвета акцента
 
 accentInputs.forEach(input => input.addEventListener('change', changeAccent(targetAC))); // Прослушка акц-инпутов
 function changeAccent(targetAC) { // Функция смены акцента (при нажатии на акц-инпут)
-  varRecord(vars[0],targetAC); // запись переменных
+  varRecord(vars[0], targetAC); // запись переменных
 }
 
 // Функция смены цветовой схемы
 
-colorSchemeInputs.forEach(input => input.addEventListener ('change', changeColorScheme(targetCS,typeCS)));
+colorSchemeInputs.forEach(input => input.addEventListener ('change', changeColorScheme(targetCS, typeCS)));
   // Прослушка CS-инпутов
-function changeColorScheme(targetCS,typeCS) { // Функция смены цветовой схемы (при нажатии на CS-инпут)
-  varRecord(vars[1],targetCS); // запись переменных
-  localStorage.setItem('colorSchemeType', typeCS); // Сохранить ключ типа ЦС (если темная/светлая)
+function changeColorScheme(targetCS, typeCS) { // Функция смены цветовой схемы (при нажатии на CS-инпут)
+  varRecord(vars[1], targetCS); // запись переменных
+  localStorage.setItem('typeCS', typeCS); // Сохранить ключ типа ЦС (если темная/светлая)
 }
 
 // Функция смены стиля шапки
 
-headerStyleInputs.forEach(input => input.addEventListener('change', changeHeaderStyle(targetHS,typeHS)));
+headerStyleInputs.forEach(input => input.addEventListener('change', changeHeaderStyle(targetHS, typeHS)));
   // Прослушка инпутов, меняющих стиль шапки
-function changeHeaderStyle(targetHS,typeHS) { // Функция смены стиля шапки
-  classSwith(styles[0],targetHS);
+function changeHeaderStyle(targetHS, typeHS) { // Функция смены стиля шапки
   localStorage.setItem(styles[0][0], targetHS); // Сохранить ключ стиля шапки
-  localStorage.setItem('headerStyleType', typeHS); // Сохранить ключ типа СШ (дефолтный/кастомный)
+  localStorage.setItem('typeHS', typeHS); // Сохранить ключ типа СШ (дефолтный/кастомный)
 }
 
 // Функция смены стиля UI
 
-uiStyleInputs.forEach(input => input.addEventListener('change', changeUiStyle(targetUI,uiParametresArray)));
+uiStyleInputs.forEach(input => input.addEventListener('change', changeUiStyle(targetUI, uiParametresArray)));
  // Прослушка инпутов, меняющих стиль UI
-function changeUiStyle(targetUI,uiParametresArray) { // Функция смены стиля UI
-  classSwith(styles[1],targetUI);
+function changeUiStyle(targetUI, uiParametresArray) { // Функция смены стиля UI
   localStorage.setItem(styles[1][0], targetUI); // Сохранить ключ
 
   // Проверка на светлую/темную тему, если активна была стоковая для прошлого UI
 
-  var colorSchemeType = localStorage.getItem('colorSchemeType'); // Извлечение ключа типа активной ЦС
+  let colorSchemeType = localStorage.getItem('typeCS'); // Извлечение ключа типа активной ЦС
 
   if (colorSchemeType != 'light' && colorSchemeType != 'custom') { // Если активна была темная ЦС
-    varRecord(vars[1],uiParametresArray[0][1]); // Установка из массива нужной для данного UI ЦС
-    markInput(checkedInputs[0][1],checkedInputs[1][1],uiParametresArray[0][0][0]); // Отметить нужн. инпут
+    varRecord(vars[1], uiParametresArray[0][1]); // Установка из массива нужной для данного UI ЦС
+    markInput(checkedInputs[0][1], checkedInputs[1][1], uiParametresArray[0][0][0]); // Отметить нужн. инпут
   } else if (colorSchemeType != 'dark' && colorSchemeType != 'custom') { // Если активна была светлая ЦС
-    varRecord(vars[1],uiParametresArray[0][3]); // Установка из массива нужной для данного UI ЦС
-    markInput(checkedInputs[0][1],checkedInputs[1][1],uiParametresArray[0][2][0]); // Отметить нужн. инпут
+    varRecord(vars[1], uiParametresArray[0][3]); // Установка из массива нужной для данного UI ЦС
+    markInput(checkedInputs[0][1], checkedInputs[1][1], uiParametresArray[0][2][0]); // Отметить нужн. инпут
   }
 
   // Проверка на стиль шапки, если был активен один из дефолтных
 
-  var headerStyleType = localStorage.getItem('headerStyleType'); // Извлечение ключа из ЛХ
-
-  if (headerStyleType != 'custom') { // Если активен был дефолтный набор рз, либо ключ пуст
-    classSwith(styles[0],uiParametresArray[1][1][0]); // Изменить стиль диалоговых окон на дефолтный для данного UI
-    markInput(checkedInputs[0][2],checkedInputs[1][2],uiParametresArray[1][0][0]); // Отметить нужн. инпут
-    localStorage.setItem(styles[0][0],uiParametresArray[1][1][0]); // Сохранить ключ стиля диалоговых окон
-  }
+  setDefaultUiClass('typeHS', styles[0], uiParametresArray[1], checkedInputs[0][2], checkedInputs[1][2]);
 
   // Проверка на радиус закруглений, если был активен один из дефолтных
 
-  var borderRadiusType = localStorage.getItem('borderRadiusType'); // Извлечение ключа из ЛХ
-
-  if (borderRadiusType != 'custom') { // Если активен был дефолтный набор рз, либо ключ пуст
-    varRecord(vars[2],uiParametresArray[2][1]); // Установка из массива нужного для данного UI радуиса закруглений
-    markInput(checkedInputs[0][4],checkedInputs[1][4],uiParametresArray[2][0][0]); // Отметить нужн. инпут
-    localStorage.setItem('borderRadiusType', 'default'); // Запись инфы в ЛХ
-  }
+  setDefaultUiVars('typeBR', vars[2], uiParametresArray[2], checkedInputs[0][4], checkedInputs[1][4]);
 
   // Автоподхват стиля диалоговых окон
 
-  classSwith(styles[2],uiParametresArray[3][1][0]); // Изменить стиль диалоговых окон на дефолтный для данного UI
-  markInput(checkedInputs[0][7],checkedInputs[1][7],uiParametresArray[3][0][0]); // Отметить нужн. инпут
-  localStorage.setItem(styles[2][0],uiParametresArray[3][1][0]); // Сохранить ключ стиля диалоговых окон
+  setDefaultUiClass('typeIaS', styles[2], uiParametresArray[3], checkedInputs[0][7], checkedInputs[1][7]);
 
   // Автоподхват стиля переключателей
 
-  classSwith(styles[3],uiParametresArray[4][1][0]); // Изменить стиль переключателей на дефолтный для данного UI
-  markInput(checkedInputs[0][8],checkedInputs[1][8],uiParametresArray[4][0][0]); // Отметить нужн. инпут
-  localStorage.setItem(styles[3][0],uiParametresArray[4][1][0]); // Сохранить ключ стиля переключателей
+  setDefaultUiClass('typeSS', styles[3], uiParametresArray[4], checkedInputs[0][8], checkedInputs[1][8]);
 }
 
 // Функция смены радиуса закруглений
 
-borderRadiusInputs.forEach(input => input.addEventListener('change', changeBorderRadius(targetBR,radiusType)));
+borderRadiusInputs.forEach(input => input.addEventListener('change', changeBorderRadius(targetBR, typeBR)));
  // Прослушка радиус-инпутов
-function changeBorderRadius(targetBR,radiusType) { // Функция радиуса закруглений (при нажатии на рз-инпут)
-  varRecord(vars[2],targetBR); // запись переменных
-  localStorage.setItem('borderRadiusType', radiusType); // Сохранить ключ типа РЗ (default/custom)
+function changeBorderRadius(targetBR, typeBR) { // Функция радиуса закруглений (при нажатии на рз-инпут)
+  varRecord(vars[2], targetBR); // запись переменных
+  localStorage.setItem('typeBR', typeBR); // Сохранить ключ типа РЗ (default/custom)
 }
 
 // Функция смены формы иконок
@@ -253,7 +296,7 @@ function changeBorderRadius(targetBR,radiusType) { // Функция радиу�
 iconShapeInputs.forEach(input => input.addEventListener('change', changeIconShape(targetIS)));
  // Прослушка инпутов для смены формы иконок
 function changeIconShape(targetIS) { // Функция формы иконок (при нажатии на фи-инпут)
-  varRecord(vars[3],targetIS); // запись переменных
+  varRecord(vars[3], targetIS); // запись переменных
 }
 
 // Функция смены шрифта
@@ -261,23 +304,23 @@ function changeIconShape(targetIS) { // Функция формы иконок (
 fontFamilyInputs.forEach(input => input.addEventListener('change', changeFontFamily(targetFF)));
  // Прослушка инпутов для смены шрифта
 function changeFontFamily(targetFF) { // Функция смены шрифта (при нажатии на сш-инпут)
-  varRecord(vars[4],targetFF); // запись переменных
+  varRecord(vars[4], targetFF); // запись переменных
 }
 
 // Функция смены стиля диалоговых окон
 
-interactiveStyleInputs.forEach(input => input.addEventListener('change', changeInteractiveStyle(targetIaS)));
-  // Прослушка инпутов, меняющих стиль диалоговых окон
-function changeInteractiveStyle(targetIaS) { // Функция смены стиля диалоговых окон
-  classSwith(styles[2],targetIaS);
+interactiveStyleInputs.forEach(input => input.addEventListener('change', changeInteractiveStyle(targetIaS, typeIaS)));
+ // Прослушка инпутов, меняющих стиль диалоговых окон
+function changeInteractiveStyle(targetIaS, typeIaS) { // Функция смены стиля диалоговых окон
   localStorage.setItem(styles[2][0], targetIaS); // Сохранить ключ стиля диалоговых окон
+  localStorage.setItem('typeIaS', typeIaS); // Сохранить ключ типа РЗ (default/custom)
 }
 
 // Функция смены стиля переключателей
 
-switchStyleInputs.forEach(input => input.addEventListener('change', changeSwitchStyle(targetSS)));
+switchStyleInputs.forEach(input => input.addEventListener('change', changeSwitchStyle(targetSS, typeSS)));
   // Прослушка инпутов, меняющих стиль переключателей
-function changeSwitchStyle(targetSS) { // Функция смены стиля переключателей
-  classSwith(styles[3],targetSS);
+function changeSwitchStyle(targetSS, typeSS) { // Функция смены стиля переключателей
   localStorage.setItem(styles[3][0], targetSS); // Сохранить ключ стиля переключателей
+  localStorage.setItem('typeSS', typeSS); // Сохранить ключ типа РЗ (default/custom)
 }

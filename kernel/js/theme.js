@@ -2,44 +2,11 @@
 /*---ОБЯЗАТЕЛЬНЫЙ МОДУЛЬ ДВИЖКА ТЕМ---------------------------*/
 /*------------------------------------------------------------*/
 
-// Элементы
+/*------------------------------------------------------------*/
+/*--- Массивы с параметрами ----------------------------------*/
+/*------------------------------------------------------------*/
 
-var aboutContainer = document.querySelectorAll('.about-container'); // все контейнеры в нижней секции about
-var aboutHeader = document.querySelectorAll('.about-header'); // верхний раздел about
-var aboutHeaderImage = document.querySelectorAll('.about-header_img'); // изображение устройства в разделе #about
-var aboutSecondaryText = document.querySelectorAll('.about_secondary-text'); // второстепенные текста в #about
-var aboutSection = document.querySelectorAll('.about-section'); // все секции в нижнем разделе about
-var article = document.querySelectorAll('.article'); // все артикли
-var articleHeader = document.querySelectorAll('.article-header'); // все заголовки артиклей
-var articleMultiple = document.querySelectorAll('.article_multiple'); // все множественные артикли
-var headerName = document.querySelectorAll('.header-name'); // все заголовки в шапках
-var header = document.querySelectorAll('.header'); // все шапки
-var headerSvg = document.querySelectorAll('.svg_header'); // все <svg> в шапках
-var interactive = document.querySelectorAll('.interactive'); // диалоговые окна (мат. блок)
-var interactiveButton = document.querySelectorAll('.interactive-button'); // кнопки-скрывашки в диал. окнах
-var interactiveContainer = document.querySelectorAll('.interactive-container'); // контейнеры-диалоговые окна
-var main = document.querySelectorAll('.main'); // все <main>
-var menuIcon = document.querySelectorAll('.menu-icon'); // все иконки в секциях-пунктах меню
-var menuTile = document.querySelectorAll('.menu-tile'); // все элементы плиточного меню
-var page = document.querySelectorAll('.page'); // <body>, класс в нем задает стиль UI
-var radioButton = document.querySelectorAll('.radio-button'); // все радиокнопки
-var range = document.querySelectorAll('.range'); // все ползунки
-var sectionInteractive = document.querySelectorAll('.section_interactive'); // все секции-ссылки на диал. окна
-var sectionMenu = document.querySelectorAll('.section_menu'); // все секции-пункты меню
-var section = document.querySelectorAll('.section'); // все секции
-var settingsSvg = document.querySelectorAll('.svg_settings'); // все <svg> на стартовой настроек
-var switches = document.querySelectorAll('.switch'); // все переключатели
-
-var animeDemo = document.getElementById("animation-duration-demo"); // Демка ползунка изменения длит анимации
-var animeRange = document.getElementById("animation-duration-range"); // Ползунок для изменения длит анимации
-var oneuiHeightDemo = document.getElementById("oneui-height-demo"); // Демка ползунка изменения высоты шапки при OM
-var oneuiHeightRange = document.getElementById("oneui-height-range"); // Ползунок для изменения высоты шапки при OM
-var scaleDemo = document.getElementById("interface-scale-demo"); // Демка ползунка изменения масштаба интерфейса
-var scaleRange = document.getElementById("interface-scale-range"); // Ползунок для изменения масштаба интерфейса
-
-// Массивы с параметрами
-
-var vars = [ // Массив с параметрами переменных
+let vars = [ // Массив с параметрами переменных
   [ // Акцент
     ['--accent-color','--accent_opacity-color'], // Переменные
     ['#80cbc4','rgba(128,203,196,0.7)'] // Стоковые значения
@@ -76,43 +43,50 @@ var vars = [ // Массив с параметрами переменных
   ]
 ]
 
-var styles = [ // Массив с параметрами переключателей классов
+// Массив с параметрами переключателей классов
+
+let styles = [
   [ // Стиль шапки
     ['headerStyle'], // Ключ в ЛХ
-    [header,headerName,headerSvg], // Модифицируемые элементы
+    [$('.header'),$('.header-name'),$('.svg_header')], // Модифицируемые элементы
     ['HEADER_stock','HEADER_OOSColor','HEADER_RUI','HEADER_OneUI','HEADER_ZenUI'] // Возможные значения
   ],
   [ // Стиль UI
     ['uiStyle'], // Ключ в ЛХ
-    [aboutContainer,aboutHeader,aboutHeaderImage,aboutSecondaryText,aboutSection,article,articleHeader,
-    articleMultiple,header,headerSvg,menuIcon,menuTile,page,radioButton,range,sectionInteractive,sectionMenu,
-    section,settingsSvg], // Модифицируемые элементы
+    [$('.about-container'),$('.about-header'),$('.about-header_img'),$('.about_secondary-text'),
+    $('.about-section'),$('.article'),$('.article-header'),$('.article_multiple'),$('.header'),
+    $('.menu-icon'),$('.menu-tile'),$('.page'),$('.radio-button'),$('.section'),
+    $('.section_interactive'),$('.section_menu'),$('.svg_header'),$('.svg_settings')], // Модифицируемые элементы
     ['UI_OOS','UI_RUI','UI_OneUI','UI_ZenUI'] // Возможные значения
   ],
   [ // Стиль диалоговых окон
     ['interactiveStyle'], // Ключ в ЛХ
-    [interactive,interactiveContainer,interactiveButton], // Модифицируемые элементы
+    [$('.interactive'),$('.interactive-button'),$('.interactive-container')], // Модифицируемые элементы
     ['interactive_OOS','interactive_RUI','interactive_OneUI','interactive_ZenUI'] // Возможные значения
   ],
   [ // Стиль переключателей
     ['switchStyle'], // Ключ в ЛХ
-    [switches], // Модифицируемые элементы
+    [$('.switch')], // Модифицируемые элементы
     ['switch_OOS','switch_RUI','switch_OneUI','switch_ZenUI'] // Возможные значения
   ]
 ]
 
-var colorsSVG = [ // Массив с параметрами классов для покраски svg
+// Массив с параметрами классов для покраски svg
+
+let colorsSVG = [
   ['0','1','2','3','4','5','6','7','8'], // Идентификаторы цветов
   ['none','var(--accent-color)','var(--main_bg-color)','var(--secondary_bg-color)','var(--icon_bg-color)',
   'var(--main_text-color)','var(--secondary_text-color)','var(--main_border-color)',
   'var(--radio_nonactive-color)'] // Значения, соответствующие своим идентификаторам
 ]
 
-var mainBgColorValues = [ // Массив с возможными вариантами значений основного цвета фона
-  ['#000','#161616'],['#fff','#fafafa','#f2f2f2'] // 0 строка - темные, 1 - светлые
-]
+// Массив с возможными вариантами значений основного цвета фона
 
-var checkedInputs = [ // Массив с параметрами отмеченных элементов
+let mainBgColorValues = [['#000','#161616'],['#fff','#fafafa','#f2f2f2']] // 0 строка - темные, 1 - светлые
+
+// Массив с параметрами отмеченных элементов
+
+let checkedInputs = [
   ['checkedAccentNo','checkedColorSchemeNo','checkedHeaderStyleNo','checkedUiStyleNo','checkedBorderRadiusNo',
   'checkedIconShapeNo','checkedFontFamilyNo','checkedInteractiveStyleNo','checkedSwitchStyleNo'],
    // Ключи в ЛХ
@@ -121,10 +95,13 @@ var checkedInputs = [ // Массив с параметрами отмеченн
   ["ac1","cs1","hs1","us1","br1","is1","ff1","ias1","ss1"] // Стоковые значения id
 ]
 
-var rangeParametres = [ // массив с параметрами ползунков
+// массив с параметрами ползунков
+
+let rangeParametres = [
   [ // длительность анимации
     [
-      [animeRange],[animeDemo],['animationDuration'],[vars[5]],[' сек.'],['0.3'],['0.3s']
+      [$('#animation-duration-range')],[$('#animation-duration-demo')],['animationDuration'],[vars[5]],
+      [' сек.'],['0.3'],['0.3s']
     ], // 0 - range-элемент, 1 - demo-элемент, 2 - ключ в ЛХ, 3 - массив с зап. перем., 4 - допись в демке,
        // 5 - сток value, 6 - сток значения переменных
     [
@@ -133,7 +110,8 @@ var rangeParametres = [ // массив с параметрами ползунк
   ],
   [ // масштаб интерфейса
     [
-      [scaleRange],[scaleDemo],['interfaceScale'],[vars[6]],['% от стокового'],['100'],['4vh','4vw','5vw']
+      [$('#interface-scale-range')],[$('#interface-scale-demo')],['interfaceScale'],[vars[6]],
+      ['% от стокового'],['100'],['4vh','4vw','5vw']
     ], // 0 - range-элемент, 1 - demo-элемент, 2 - ключ в ЛХ, 3 - массив с зап. перем., 4 - допись в демке,
        // 5 - сток value, 6 - сток значения переменных
     [
@@ -144,7 +122,8 @@ var rangeParametres = [ // массив с параметрами ползунк
   ],
   [ // высота шапки при активном OneUI mode
     [
-      [oneuiHeightRange],[oneuiHeightDemo],['oneuiHeight'],[vars[7]],['% от высоты окна браузера'],['50'],['50vh']
+      [$('#oneui-height-range')],[$('#oneui-height-demo')],['oneuiHeight'],[vars[7]],
+      ['% от высоты окна браузера'],['50'],['50vh']
     ], // 0 - range-элемент, 1 - demo-элемент, 2 - ключ в ЛХ, 3 - массив с зап. перем., 4 - допись в демке,
        // 5 - сток value, 6 - сток значения переменных
     [
@@ -153,22 +132,29 @@ var rangeParametres = [ // массив с параметрами ползунк
   ]
 ]
 
-var checkboxParametres = [ // массив с параметрами чекбоксов
+// массив с параметрами чекбоксов
+
+let checkboxParametres = [
   [ // OneUI mode
     ['OneUI-mode'], // ключ в ЛХ
-    [header,main], // модифицируемые элементы
+    [$('.header'),$('.main')], // модифицируемые элементы
     ['OneUI-mode'], // присваиваемые классы
-    ["OneUI-mode1","OneUI-mode2"] // id чекбоксов
+    ["OneUI-mode1","OneUI-mode2"], // id чекбоксов
+    ["oneui-height-range"] // id элементов, которые disabled при неактивном чекбоксе
   ]
 ]
 
-// функции для переключателей переменных
+/*------------------------------------------------------------*/
+/*--- Функции для переключателей переменных ------------------*/
+/*------------------------------------------------------------*/
 
-function varRead(varArray) { // функция для чтения инфы о переменной из ЛХ и ее установки
-  for (var i = 0; i < varArray.length; i++) for (var j = 0; j < varArray[i][0].length; j++) {
+// функция для чтения инфы о переменной из ЛХ и ее установки
+
+function varRead(varArray) {
+  for (let i = 0; i < varArray.length; i++) for (let j = 0; j < varArray[i][0].length; j++) {
    // перебор всех названий переменных (массив)
     if (localStorage.getItem(varArray[i][0][j])) { // если сеть ключ
-      var varValue = localStorage.getItem(varArray[i][0][j]); // извлечь
+      let varValue = localStorage.getItem(varArray[i][0][j]); // извлечь
       document.documentElement.style.setProperty(varArray[i][0][j], varValue);
        // установить переменной значение ключа
     } else { // если нет ключа
@@ -179,55 +165,71 @@ function varRead(varArray) { // функция для чтения инфы о �
   }
 }
 
-function varRecord(varArray,varValues) { // функция для записи переменной и ключа ЛХ
-  for (var j = 0; j < varArray[0].length; j++) { // перебор всех названий переменных (массив)
-    document.documentElement.style.setProperty(varArray[0][j], varValues[j]);
+// функция для записи переменной и ключа ЛХ
+
+function varRecord(varArray,varValues) {
+  for (let i = 0; i < varArray[0].length; i++) { // перебор всех названий переменных (массив)
+    document.documentElement.style.setProperty(varArray[0][i], varValues[i]);
      // установка установка переменным соотв. зачений (2 массив со значениями)
-    localStorage.setItem(varArray[0][j], varValues[j]); // запись инфы в ЛХ
+    localStorage.setItem(varArray[0][i], varValues[i]); // запись инфы в ЛХ
   }
 }
 
-// функции для переключателей классов (на радиокнопках)
+/*------------------------------------------------------------*/
+/*--- Функции для переключателей классов (на радиокнопках) ---*/
+/*------------------------------------------------------------*/
 
-function styleRead(styleArray) { // функция для установки классов-стилей при загрузке страницы
-  if (localStorage.getItem(styleArray[0][0])) classSwith(styleArray,localStorage.getItem(styleArray[0][0]))
-  else {
-    localStorage.setItem(styleArray[0][0], styleArray[2][0]); // Дефолтный ключ, если сохраненного не было
-    classSwith(styleArray,styleArray[2][0]); // установка сток значений
-  }
-}
+// функция для переключения строго одного класса из массива
 
-function classSwith(classArray,targetClass) { // функция для переключения строго одного класса из массива
-  for (var i = 0; i < classArray[1].length; i++) // Перебор всех модифицируемых элементов
-    for (var j = 0; j < classArray[1][i].length; j++) // перебор всех элементов этого типа
+function classSwith(classArray,targetClass) {
+  for (let i = 0; i < classArray[1].length; i++) // Перебор всех модифицируемых элементов
+    for (let j = 0; j < classArray[1][i].length; j++) // перебор всех элементов этого типа
       if (classArray[1][i][j].classList.contains(targetClass) == false) { // если нет нужного класса-стиля
         classArray[1][i][j].classList.add(targetClass); // добавить
-        for (var k = 0; k < classArray[2].length; k++) // перебор всех вариантов стилей
-          if (classArray[1][i][j].classList.contains(classArray[2][k]) == true && targetClass != classArray[2][k])  classArray[1][i][j].classList.remove(classArray[2][k]) // если есть лишние классы - убрать
+        for (let k = 0; k < classArray[2].length; k++) // перебор всех вариантов стилей
+          if (classArray[1][i][j].classList.contains(classArray[2][k]) == true && targetClass != classArray[2][k]) 
+          classArray[1][i][j].classList.remove(classArray[2][k]) // если есть лишние классы - убрать
       }
 }
 
-function markInput(inputKey,inputName,inputId) { // Функция, отмечающая определенный инпут
+// функция для установки классов-стилей при загрузке страницы
+
+function styleRead(styleArray) {
+  if (localStorage.getItem(styleArray[0][0])) classSwith(styleArray,localStorage.getItem(styleArray[0][0]))
+  else {
+    localStorage.setItem(styleArray[0][0], styleArray[2][0]); // Дефолтный ключ, если сохраненного не было
+    classSwith(styleArray, styleArray[2][0]); // установка сток значений
+  }
+}
+
+// Функция, отмечающая определенный инпут
+
+function markInput(inputKey, inputName, inputId) {
   document.querySelector('input[name=' + inputName + '][id=' + inputId + ']').setAttribute('checked','checked');
    // Отметить как выбраннный
   localStorage.setItem(inputKey, inputId); // Сохранить ключ в ЛХ
 }
 
-// другое
+/*------------------------------------------------------------*/
+/*--- Другое -------------------------------------------------*/
+/*------------------------------------------------------------*/
 
-function reload() {location.reload()} // функция перезагрузки страницы
+function reload() { location.reload() } // функция перезагрузки страницы
+
+// Функция для черного/белого акцента при переключении ЦС (меняет на сток акцент, если ЦА == ОЦФ)
 
 function whiteBlackAccent(neededAccent,bgVariantsArray) {
-    // Функция для черного/белого акцента при переключении ЦС (меняет на сток акцент, если ЦА == ОЦФ)
-  if (localStorage.getItem(vars[0][0][0]) == neededAccent) for (var i = 0; i < bgVariantsArray.length; i++)
+  if (localStorage.getItem(vars[0][0][0]) == neededAccent) for (let i = 0; i < bgVariantsArray.length; i++)
    // Если цвет акцента - исследуемый цвет => перебор всех светлых/темных зн. осн. цвета фона
     if (localStorage.getItem(vars[1][0][0]) == bgVariantsArray[i]) { // Если основной цвет фона равен 1 из них
-      varRecord(vars[0],vars[0][1]); // Смена цвета акцента на стоковый
-      markInput(checkedInputs[0][0],checkedInputs[1][0],checkedInputs[2][0]); // Отметить стоковый инпут ЦА
+      varRecord(vars[0], vars[0][1]); // Смена цвета акцента на стоковый
+      markInput(checkedInputs[0][0], checkedInputs[1][0], checkedInputs[2][0]); // Отметить стоковый инпут ЦА
     }
 }
 
-function setOpacityAccent() { // функция для записи бледного акцента (для тумблеров)
+// функция для записи бледного акцента (для тумблеров)
+
+function setOpacityAccent() {
   if (localStorage.getItem('--accent-color')) { // если есть ключ цвета акцента
     const hexToRgb = hex => hex.replace(/^#?([a-f\d])([a-f\d])([a-f\d])$/i,(m, r, g, b) =>
     '#' + r + r + g + g + b + b).substring(1).match(/.{2}/g).map(x => parseInt(x, 16));
@@ -239,101 +241,137 @@ function setOpacityAccent() { // функция для записи бледно
   }
 }
 
-// универсальные функции для ползунков
+/*------------------------------------------------------------*/
+/*--- Универсальные функции для ползунков --------------------*/
+/*------------------------------------------------------------*/
 
-function rangeSetValue(rangeArray) { // функция для записи переменных ползунками
-  if (rangeArray[0][0][0] != null && rangeArray[0][1][0] != null) rangeArray[0][0][0].oninput = function() {
-    var convertedValues = []; // если range и его демка существуют + создать пустой массив для преобр. пер.
-    localStorage.setItem(rangeArray[0][2][0],this.value); // сохранить в ЛХ ключ
-    for (var i = 0; i < rangeArray[1].length; i++) // перебор 2-го массива с множителями и дописями
-      convertedValues.push((this.value * rangeArray[1][i][0]) + rangeArray[1][i][1]);
-       // преобразование каждой переменной в нужный вид и запись в качестве элемента в массив
-    varRecord(rangeArray[0][3][0],convertedValues); // запись элементов оного массива в систему (:root)
-    rangeArray[0][1][0].textContent = this.value + rangeArray[0][4][0]; // установить значение демки слайдера
-  }
+// функция для преобразования значений ползунков к необходимому виду
+
+function convertValues(array, stockValue) {
+  // 1. создать пустой массив для преобреобразования переменных
+  // 2. преобразование каждой переменной в нужный вид и запись в качестве элемента в свежесозданный массив
+  let convertedValues = []; 
+  $.each(array, function() { convertedValues.push((stockValue * this[0][0]) + this[1][0]) });
+  return convertedValues;
 }
 
-function rangeReadValue(rangeArray) { // функция для чтения инфы из ЛХ и записи переменных
-  for (var i = 0; i < rangeArray.length; i++) if (localStorage.getItem(rangeArray[i][0][2][0])) { // если есть ключ
-    var rangeValue = localStorage.getItem(rangeArray[i][0][2][0]); // извлечь
-    var convertedValues = []; // создать пустой массив для преобр. пер.
-    for (var j = 0; j < rangeArray[i][1].length; j++) // перебор 2-го массива с множителями и дописями
-      convertedValues.push((rangeValue * rangeArray[i][1][j][0]) + rangeArray[i][1][j][1]);
-      // преобразование каждой переменной в нужный вид и запись в качестве элемента в массив
-    varRecord(rangeArray[i][0][3][0],convertedValues); // запись элементов оного массива в систему (:root)
+// функция для записи переменных ползунками
+
+function rangeSetValue(rangeArray) {
+  if (rangeArray[0][0][0] != null) $(rangeArray[0][0][0]).on('click', function() {
+    let value = this.value; // значение ползунка при нажатии
+    localStorage.setItem(rangeArray[0][2][0], value); // сохранить в ЛХ ключ
+    varRecord(rangeArray[0][3][0], convertValues(rangeArray[1], value)); // запись перем. в систему (:root)
+    $(rangeArray[0][1][0]).text(value + rangeArray[0][4][0]); // установить значение демки ползунка
+  });
+}
+
+// функция для чтения инфы из ЛХ и записи переменных
+
+function rangeReadValue(rangeArray) {
+  for (let i = 0; i < rangeArray.length; i++) if (localStorage.getItem(rangeArray[i][0][2][0])) { // если есть ключ
+    let value = localStorage.getItem(rangeArray[i][0][2][0]); // извлечь
+    varRecord(rangeArray[i][0][3][0], convertValues(rangeArray[i][1], value)); // запись перем. в систему (:root)
   } else { // если нет ключа
     localStorage.setItem(rangeArray[i][0][2][0], rangeArray[i][0][5][0]); // дефолтный ключ
-    varRecord(rangeArray[i][0][3][0],rangeArray[i][0][6]); // установить пер. стоковое значение
+    varRecord(rangeArray[i][0][3][0], rangeArray[i][0][6]); // установить пер. стоковое значение
   }
 }
 
-// универсальные функции для чекбоксов
+/*------------------------------------------------------------*/
+/*--- Универсальные функции для чекбоксов --------------------*/
+/*------------------------------------------------------------*/
 
-function onCheckboxInput(checkboxIdArray) { // функция, активирующая все чекбоксы одной функции
-  for (var m = 0; m < checkboxIdArray.length; m++) if (document.getElementById(checkboxIdArray[m]).checked == false)
-    document.getElementById(checkboxIdArray[m]).setAttribute('checked','checked')
+// функция, активирующая все чекбоксы одной функции
+
+function onCheckboxInput(checkboxArray) {
+  for (let i = 0; i < checkboxArray[3].length; i++) 
+    if (document.getElementById(checkboxArray[3][i]).checked == false) {
+      document.getElementById(checkboxArray[3][i]).setAttribute('checked','checked')
+    }
+  for (let j = 0; j < checkboxArray[4].length; j++) // раздача disabled зависящим от чекбокса элементам
+    if (document.getElementById(checkboxArray[4][j]).hasAttribute('disabled'))
+      document.getElementById(checkboxArray[4][j]).removeAttribute('disabled');
 }
 
-function offCheckboxInput(checkboxIdArray) { // функция, деактивирующая все чекбоксы одной функции
-  for (var m = 0; m < checkboxIdArray.length; m++) if (document.getElementById(checkboxIdArray[m]).checked)
-    document.getElementById(checkboxIdArray[m]).removeAttribute('checked')
+// функция, деактивирующая все чекбоксы одной функции
+
+function offCheckboxInput(checkboxArray) {
+  for (let i = 0; i < checkboxArray[3].length; i++) if (document.getElementById(checkboxArray[3][i]).checked) {
+    document.getElementById(checkboxArray[3][i]).removeAttribute('checked');
+  }
+  for (let j = 0; j < checkboxArray[4].length; j++) // раздача disabled зависящим от чекбокса элементам
+    if (document.getElementById(checkboxArray[4][j]).hasAttribute('disabled') == false)
+      document.getElementById(checkboxArray[4][j]).setAttribute('disabled','disabled');
 }
 
-function addMultipleClass(array) { // функция для раздачи всех классов из массива
-  for (var j = 0; j < array[1].length; j++)
-    for (var k = 0; k < array[1][j].length; k++)
-      for (var l = 0; l < array[2].length; l++) if (array[1][j][k].classList.contains(array[2][l]) == false)
-        array[1][j][k].classList.add(array[2][l])
+// функция для раздачи всех классов из массива
+
+function addMultipleClass(array) {
+  for (let i = 0; i < array[1].length; i++)
+    for (let j = 0; j < array[1][i].length; j++)
+      for (let k = 0; k < array[2].length; k++) 
+        if ($(array[1][i][j]).hasClass(array[2][k]) == false) $(array[1][i][j]).addClass(array[2][k])
 }
 
-function removeMultipleClass(array) { // функция, отбирающая все классы из массива
-  for (var j = 0; j < array[1].length; j++)
-    for (var k = 0; k < array[1][j].length; k++)
-      for (var l = 0; l < array[2].length; l++) if (array[1][j][k].classList.contains(array[2][l]) == true)
-        array[1][j][k].classList.remove(array[2][l])
+// функция, отбирающая все классы из массива
+
+function removeMultipleClass(array) {
+  for (let i = 0; i < array[1].length; i++)
+    for (let j = 0; j < array[1][i].length; j++)
+      for (let k = 0; k < array[2].length; k++) 
+        if ($(array[1][i][j]).hasClass(array[2][k])) $(array[1][i][j]).removeClass(array[2][k])
 }
 
-function changeCheckbox(arrayForCheckbox) { // универсальная, вешать на инпуты чекбоксов
-  for (var i = 0; i < arrayForCheckbox[3].length; i++) { // на случай, если сделаю несколько чекбоксов для 1 задачи
+// универсальная, вешать на инпуты чекбоксов
+
+function changeCheckbox(arrayForCheckbox) {
+  for (let i = 0; i < arrayForCheckbox[3].length; i++) { // на случай, если сделаю несколько чекбоксов для 1 задачи
     if (document.getElementById(arrayForCheckbox[3][i]).checked) { // если активен чекбокс
-      localStorage.setItem(arrayForCheckbox[0][0],'on'); // Сохранить ключ
+      localStorage.setItem(arrayForCheckbox[0][0], 'on'); // Сохранить ключ
       addMultipleClass(arrayForCheckbox); // раздача классов элементам
-      onCheckboxInput(arrayForCheckbox[3]); // чекбоксы активны
+      onCheckboxInput(arrayForCheckbox); // чекбоксы активны
     } else {
-      localStorage.setItem(arrayForCheckbox[0][0],'off'); // Сохранить ключ
+      localStorage.setItem(arrayForCheckbox[0][0], 'off'); // Сохранить ключ
       removeMultipleClass(arrayForCheckbox); // убираем классы у элементов
-      offCheckboxInput(arrayForCheckbox[3]); // чекбоксы неактивны
+      offCheckboxInput(arrayForCheckbox); // чекбоксы неактивны
     }
   }
 }
 
-function checkboxClasses(checkboxArray) { // функция для раздачи классов чекбоксами
-  for (var i = 0; i < checkboxArray.length; i++) {
+// функция для раздачи классов чекбоксами
+
+function checkboxClasses(checkboxArray) {
+  for (let i = 0; i < checkboxArray.length; i++) {
     if (localStorage.getItem(checkboxArray[i][0][0]) == 'on') addMultipleClass(checkboxArray[i])
      // если активен - раздать классы
     else if (localStorage.getItem(checkboxArray[i][0][0]) == 'off') removeMultipleClass(checkboxArray[i])
      // если не активен, но есть ключ - забрать классы
     else { // если нет ключа / в ключе дичь
-      localStorage.setItem(checkboxArray[i][0][0],'off'); // Сохранить ключ
+      localStorage.setItem(checkboxArray[i][0][0], 'off'); // Сохранить ключ
       removeMultipleClass(checkboxArray[i]); // забрать классы
     }
   }
 }
 
-document.addEventListener("DOMContentLoaded", () => { // Событие загузки страницы
+/*------------------------------------------------------------*/
+/*--- Событие загузки страницы -------------------------------*/
+/*------------------------------------------------------------*/
+
+$(document).ready(function() {
   setOpacityAccent(); // установка бледного акцента
   varRead(vars); // установка переменных
   for (var i = 0; i < styles.length; i++) styleRead(styles[i]); // Установка всех стилей-классов
-  whiteBlackAccent('#000',mainBgColorValues[0]); // Проверка на равенство цвета акцента и ОЦФ (для ч. и б.)
-  whiteBlackAccent('#fff',mainBgColorValues[1]); // Если да - меняет цвет акцента на стоковый
+  whiteBlackAccent('#000', mainBgColorValues[0]); // Проверка на равенство цвета акцента и ОЦФ (для ч. и б.)
+  whiteBlackAccent('#fff', mainBgColorValues[1]); // Если да - меняет цвет акцента на стоковый
   rangeReadValue(rangeParametres); // установка переменных ползунков на основании инфы в ЛХ
   checkboxClasses(checkboxParametres); // установка переменных чекбоксов на основании инфы в ЛХ
 
   // Покраска элементов в svg
 
-  for (var i = 0; i < colorsSVG[0].length; i++) for (var j = 0; j < colorsSVG[0].length; j++)
+  for (let i = 0; i < colorsSVG[0].length; i++) for (let j = 0; j < colorsSVG[0].length; j++)
    // Перебор всех идентификаторов
-  for (var k = 0; k < document.querySelectorAll('.g' + i + j).length; k++) { // Перебор всех элементов массива
+  for (let k = 0; k < document.querySelectorAll('.g' + i + j).length; k++) { // Перебор всех элементов массива
     document.querySelectorAll('.g' + i + j)[k].style.setProperty('fill', colorsSVG[1][i]);
      // Установить цвет заливки
     document.querySelectorAll('.g' + i + j)[k].style.setProperty('stroke', colorsSVG[1][j]);
@@ -341,17 +379,24 @@ document.addEventListener("DOMContentLoaded", () => { // Событие загу
   }
 });
 
-for (var i = 0; i < rangeParametres.length; i++) rangeSetValue(rangeParametres[i]);
- // запись ползунками их переменных при изменении значения range (в режиме реального времени)
+/*------------------------------------------------------------*/
+/*--- Неуниверсальные функции --------------------------------*/
+/*------------------------------------------------------------*/
+
+// запись ползунками их переменных при изменении значения range (в режиме реального времени)
+
+$.each(rangeParametres, function() { rangeSetValue($(this)) });
 
 // скроллинг-функция OneUI mode (не универсальная)
 
 $(window).scroll(function() { // событие скроллинга => функция
   if ($(window).scrollTop() > 0) { // скроллинг вниз страницы
-    $('.header.OneUI-mode').addClass('scroll'); // добавляем класс шапке и майну
-    $('.main.OneUI-mode').addClass('scroll');
+     // добавляем класс шапке и майну
+    if ($('.header.OneUI-mode').hasClass('scroll') == false) $('.header.OneUI-mode').addClass('scroll');
+    if ($('.main.OneUI-mode').hasClass('scroll') == false) $('.main.OneUI-mode').addClass('scroll');
   } else { // когда в самом верху страницы (скроллинга нет)
-    $('.header.OneUI-mode').removeClass('scroll'); // забираем класс у шапки и майна
-    $('.main.OneUI-mode').removeClass('scroll');
+     // забираем класс у шапки и майна
+    if ($('.header.OneUI-mode').hasClass('scroll')) $('.header.OneUI-mode').removeClass('scroll');
+    if ($('.main.OneUI-mode').hasClass('scroll')) $('.main.OneUI-mode').removeClass('scroll');
   }
 });

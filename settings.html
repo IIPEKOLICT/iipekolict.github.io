@@ -329,6 +329,24 @@
         </article>
 
         <article class="article article_single">
+          <div class="switch-container">
+            <section class="section section_menu section_interactive">
+              <a class="link-hidden link-stretch" href="#oneui-mode-page"></a>
+              <aside class="menu-text_container">
+                <div class="menu-text menu-name">OneUI mode</div>
+                <div class="menu-text menu-description">Фича с огромной шапкой из OneUI</div>
+              </aside>
+            </section>
+            <section class="section section_menu section_interactive">
+              <label class="row-label switch-label">
+                <input type="checkbox" id="OneUI-mode1" onchange="changeCheckbox(checkboxParametres[0]), reload()">
+                <span class="switch"></span>
+              </label>
+            </section>
+          </div>
+        </article>
+
+        <article class="article article_single">
           <section class="section">
             <aside class="menu-text_container">
               <div class="menu-text menu-name">Масштаб интерфейса</div>
@@ -478,6 +496,26 @@
       <div class="main main_page page-block_main">
         <article class="article">
           <h3 class="article-header"></h3>
+
+          <div class="article_multiple">
+            <section class="section section_changelog spoiler-container">
+              <div class="menu-text_container release-info">
+                <h3 class="menu-text menu-name"></h3>
+                <time class="menu-text menu-description" datatime="2020-09-01">01.09.2020</time>
+              </div>
+              <details class="spoiler spoiler_changelog">
+                <summary class="spoiler-button spoiler-button_changelog"></summary>
+                <div class="delimiter_changelog"></div>
+                <ul class="release-notes">
+                  <li class="release-note">реализована автораздача disabled зависящим от тумблера элементам при его выключении</li>
+                  <li class="release-note">переход на jquery (не полный)</li>
+                </ul>
+                <ul class="release-notes">
+                  <li class="release-note">улушенные размеры и пропорции тумблера OneUI-стиля</li>
+                </ul>
+              </details>
+            </section>
+          </div>
 
           <div class="article_multiple">
             <section class="section section_changelog spoiler-container">
@@ -1050,50 +1088,7 @@
       </header>
 
       <div class="main main_page page-block_main">
-        <article class="article">
-          <h3 class="article-header">Тест фичи с шапкой из OneUI</h3>
-
-          <div class="article_multiple">
-            <section class="section section_menu">
-              <aside class="menu-text_container">
-                <div class="menu-text menu-name">Страница 1</div>
-                <div class="menu-text menu-description">Мало контента</div>
-              </aside>
-            </section>
-          </div>
-          <div class="article_multiple">
-            <section class="section section_menu">
-              <aside class="menu-text_container">
-                <div class="menu-text menu-name">Страница 2</div>
-                <div class="menu-text menu-description">Много контента</div>
-              </aside>
-            </section>
-          </div>
-        </article>
-
-        <article class="article article_single">
-          <div class="switch-container">
-            <section class="section section_menu section_interactive">
-              <a class="link-hidden link-stretch" href="#oneui-mode-page"></a>
-              <aside class="menu-text_container">
-                <div class="menu-text menu-name">OneUI mode</div>
-                <div class="menu-text menu-description">Фича с огромной шапкой из OneUI</div>
-              </aside>
-            </section>
-            <section class="section section_menu section_interactive">
-              <label class="row-label switch-label">
-                <input type="checkbox" id="OneUI-mode1" onchange="changeCheckbox(checkboxParametres[0]), reload()">
-                <span class="switch"></span>
-              </label>
-            </section>
-          </div>
-        </article>
-
-        <article class="article article_single" onclick="showInteractive('ui-style')">
-          <section class="section section_menu section_interactive">
-            <p class="section-header">Стиль UI</p>
-          </section>
-        </article>
+        
       </div>
     </div>
 
@@ -1243,7 +1238,7 @@
             <div class="radio-name">Стоковый вариант</div>
           </label>
           <label class="row-label radio-label content_OOS" for="hs2">
-            <input type="radio" id="hs2" name="header-style" onchange="changeHeaderStyle('HEADER_OOSColor','exclusive'), reload()">
+            <input type="radio" id="hs2" name="header-style" onchange="changeHeaderStyle('HEADER_OOSColor','custom'), reload()">
             <span class="radio-button"></span>
             <div class="radio-name">Как в цветной теме OOS</div>
           </label>
@@ -1269,22 +1264,22 @@
           <h3 class="interactive-header">Стиль диалоговых окон</h3>
 
           <label class="row-label radio-label" for="ias1">
-            <input type="radio" id="ias1" name="interactive-style" onchange="changeInteractiveStyle(uiParametres[0][3][1][0]), reload()">
+            <input type="radio" id="ias1" name="interactive-style" onchange="changeInteractiveStyle(uiParametres[0][3][1][0],'default'), reload()">
             <span class="radio-button"></span>
             <div class="radio-name">Oxygen OS</div>
           </label>
           <label class="row-label radio-label" for="ias2">
-            <input type="radio" id="ias2" name="interactive-style" onchange="changeInteractiveStyle(uiParametres[1][3][1][0]), reload()">
+            <input type="radio" id="ias2" name="interactive-style" onchange="changeInteractiveStyle(uiParametres[1][3][1][0],'default'), reload()">
             <span class="radio-button"></span>
             <div class="radio-name">Realme UI</div>
           </label>
           <label class="row-label radio-label" for="ias3">
-            <input type="radio" id="ias3" name="interactive-style" onchange="changeInteractiveStyle(uiParametres[2][3][1][0]), reload()">
+            <input type="radio" id="ias3" name="interactive-style" onchange="changeInteractiveStyle(uiParametres[2][3][1][0],'default'), reload()">
             <span class="radio-button"></span>
             <div class="radio-name">OneUI</div>
           </label>
           <label class="row-label radio-label" for="ias4">
-            <input type="radio" id="ias4" name="interactive-style" onchange="changeInteractiveStyle(uiParametres[3][3][1][0]), reload()">
+            <input type="radio" id="ias4" name="interactive-style" onchange="changeInteractiveStyle(uiParametres[3][3][1][0],'default'), reload()">
             <span class="radio-button"></span>
             <div class="radio-name">ZenUI</div>
           </label>
@@ -1295,22 +1290,22 @@
           <h3 class="interactive-header">Стиль переключателей</h3>
 
           <label class="row-label radio-label" for="ss1">
-            <input type="radio" id="ss1" name="switch-style" onchange="changeSwitchStyle(uiParametres[0][4][1][0]), reload()">
+            <input type="radio" id="ss1" name="switch-style" onchange="changeSwitchStyle(uiParametres[0][4][1][0],'default'), reload()">
             <span class="radio-button"></span>
             <div class="radio-name">Oxygen OS</div>
           </label>
           <label class="row-label radio-label" for="ss2">
-            <input type="radio" id="ss2" name="switch-style" onchange="changeSwitchStyle(uiParametres[1][4][1][0]), reload()">
+            <input type="radio" id="ss2" name="switch-style" onchange="changeSwitchStyle(uiParametres[1][4][1][0],'default'), reload()">
             <span class="radio-button"></span>
             <div class="radio-name">Realme UI</div>
           </label>
           <label class="row-label radio-label" for="ss3">
-            <input type="radio" id="ss3" name="switch-style" onchange="changeSwitchStyle(uiParametres[2][4][1][0]), reload()">
+            <input type="radio" id="ss3" name="switch-style" onchange="changeSwitchStyle(uiParametres[2][4][1][0],'default'), reload()">
             <span class="radio-button"></span>
             <div class="radio-name">OneUI</div>
           </label>
           <label class="row-label radio-label" for="ss4">
-            <input type="radio" id="ss4" name="switch-style" onchange="changeSwitchStyle(uiParametres[3][4][1][0]), reload()">
+            <input type="radio" id="ss4" name="switch-style" onchange="changeSwitchStyle(uiParametres[3][4][1][0],'default'), reload()">
             <span class="radio-button"></span>
             <div class="radio-name">ZenUI</div>
           </label>

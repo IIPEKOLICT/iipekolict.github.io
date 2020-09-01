@@ -18,4 +18,6 @@ setInterval (function() { // функция установки времени
   $('#hours1').html(hoursNumbers[0]); // запись в html первой цифры часов
   $('#hours2').html(hoursNumbers[1]); // запись в html второй цифры часов
   $('#minutes').html(minutes); // запись в html минут
+
+  console.log('yes');
 }, 300); // повторять с интервалом 0.3 сек

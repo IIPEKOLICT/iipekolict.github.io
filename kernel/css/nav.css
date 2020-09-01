@@ -20,9 +20,23 @@
 .nav-header
 {
   display: flex;
+  flex-direction: column;
   flex: auto;
+  justify-content: center;
   align-items: center;
   font-size: 2em;
+}
+.time
+{
+  display: flex;
+}
+.time h1
+{
+  margin: 0.4em 0;
+}
+.red-hour /* модификатор для покраски единиц в часах в красный */
+{
+  color: red;
 }
 
 /* Разметка (контейнеры) ------------------------------*/

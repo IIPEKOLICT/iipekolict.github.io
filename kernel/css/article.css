@@ -10,6 +10,10 @@
     background-color: var(--secondary_bg-color, #424242);
     border-radius: var(--main_border-radius, 0.5em);
   }
+  .article.UI_OneUI:last-of-type /* последний артикль внутри <main>, стиль UI OneUI */
+  {
+    margin-bottom: 0;
+  }
 .article_center /* артикли внутри <main>, модификатор для центрирования */
 {
   text-align: center;
