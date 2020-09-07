@@ -1088,7 +1088,99 @@
       </header>
 
       <div class="main main_page page-block_main">
-        
+        <article class="article">
+          <h3 class="article-header">Radio (переменные)</h3>
+
+          <div class="article_single">
+            <section class="section">
+              <label class="row-label radio-label two-columns">
+                <input type="radio" id="test-radio-0" name="test-radio">
+                <span class="radio-button"></span>
+                <div class="radio-name">0</div>
+              </label>
+              <label class="row-label radio-label two-columns">
+                <input type="radio" id="test-radio-1" name="test-radio">
+                <span class="radio-button"></span>
+                <div class="radio-name">1</div>
+              </label>
+            </section>
+          </div>
+        </article>
+
+        <article class="article">
+          <h3 class="article-header">Radio (классы)</h3>
+
+          <div class="article_single">
+            <section class="section">
+              <label class="row-label radio-label two-columns">
+                <input type="radio" id="test-radio-k-0" name="test-radio-k">
+                <span class="radio-button"></span>
+                <div class="radio-name">0</div>
+              </label>
+              <label class="row-label radio-label two-columns">
+                <input type="radio" id="test-radio-k-1" name="test-radio-k">
+                <span class="radio-button"></span>
+                <div class="radio-name">1</div>
+              </label>
+            </section>
+          </div>
+        </article>
+
+        <article class="article article_single">
+          <div class="switch-container">
+            <section class="section section_menu section_interactive">
+              <a class="link-hidden link-stretch" href="#test1"></a>
+              <aside class="menu-text_container">
+                <div class="menu-text menu-name">0 чекбокс</div>
+                <div class="menu-text menu-description">Описание</div>
+              </aside>
+            </section>
+            <section class="section section_menu section_interactive">
+              <label class="row-label switch-label">
+                <input type="checkbox" id="test-checkbox0" name="test-checkbox" value="style00">
+                <span class="switch"></span>
+              </label>
+            </section>
+          </div>
+        </article>
+      </div>
+    </div>
+
+    <div id="test1" class="page-block">
+      <header class="header header_page">
+        <div class="header-icon" onclick="history.back()">
+          <object class="header-icon_svg" type="image/svg+xml" data="kernel/svg/header/back-icon.svg"></object>
+        </div>
+        <h2 class="header-name two-line">Тестовая страница</h2>
+      </header>
+
+      <div class="main main_page page-block_main">
+        <article class="article article_single">
+          <section class="section section_menu section_interactive">
+            <label class="row-label switch-label">
+              <aside class="menu-text_container">
+                <div class="menu-text menu-name">1 чекбокс</div>
+                <div class="menu-text menu-description">Описание</div>
+              </aside>
+              <input type="checkbox" id="test-checkbox1" name="test-checkbox" value="style00">
+              <span class="switch"></span>
+            </label>
+          </section>
+        </article>
+
+        <article class="article">
+          <div class="article_multiple">
+            <section class="section">
+              <aside class="menu-text_container">
+                <div class="menu-text menu-name">Ползунок</div>
+              </aside>
+              <div class="range-container">
+                <div id="test-demo" class="range-demo menu-description"></div>
+                <input type="range" min="10" max="100" step="10" class="range" id="test-range">
+              </div>
+            </section>
+          </div>
+        </article>
       </div>
     </div>
 

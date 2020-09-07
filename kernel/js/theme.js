@@ -364,7 +364,7 @@ $(document).ready(function() {
   for (var i = 0; i < styles.length; i++) styleRead(styles[i]); // Установка всех стилей-классов
   whiteBlackAccent('#000', mainBgColorValues[0]); // Проверка на равенство цвета акцента и ОЦФ (для ч. и б.)
   whiteBlackAccent('#fff', mainBgColorValues[1]); // Если да - меняет цвет акцента на стоковый
-  rangeReadValue(rangeParametres); // установка переменных ползунков на основании инфы в ЛХ
+  // rangeReadValue(rangeParametres); // установка переменных ползунков на основании инфы в ЛХ
   checkboxClasses(checkboxParametres); // установка переменных чекбоксов на основании инфы в ЛХ
 
   // Покраска элементов в svg
