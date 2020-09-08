@@ -57,24 +57,24 @@ function varRecord(vars, values) {
   }
 }
 
-for (let i = 0; i < testParametres[0].length; i++) {
-  $('input[name="' + testParametres[0][i][0].name + '"]').on('change', function() {
-    for (let j = 0; j < testParametres[0][i][2].length; j++)
-      if (testParametres[0][i][0].prefix + '-' + j == this.id) {
-        varRecord(testParametres[0][i][1], testParametres[0][i][2][j][0]);
-        localStorage.setItem(testParametres[0][i][0].defaultKey, testParametres[0][i][2][j][1]);
-        localStorage.setItem(testParametres[0][i][0].checkedKey, this.id);
+for (let i = 0; i < themeKernel[0].length; i++) {
+  $('input[name="' + themeKernel[0][i][0].name + '"]').on('change', function() {
+    for (let j = 0; j < themeKernel[0][i][2].length; j++)
+      if (themeKernel[0][i][0].prefix + '-' + j == this.id) {
+        varRecord(themeKernel[0][i][1], themeKernel[0][i][2][j][0]);
+        localStorage.setItem(themeKernel[0][i][0].defaultKey, themeKernel[0][i][2][j][1]);
+        localStorage.setItem(themeKernel[0][i][0].checkedKey, this.id);
       }  
   });
 }
 
-for (let i = 0; i < testParametres[1].length; i++) {
-  $('input[name="' + testParametres[1][i][0].name + '"]').on('change', function() {
-    for (let j = 0; j < testParametres[1][i][3].length; j++)
-      if (testParametres[1][i][0].prefix + '-' + j == this.id) {
-        localStorage.setItem(testParametres[1][i][0].valueKey, testParametres[1][i][3][j][0]);
-        localStorage.setItem(testParametres[1][i][0].defaultKey, testParametres[1][i][3][j][1]);
-        localStorage.setItem(testParametres[1][i][0].checkedKey, this.id);
+for (let i = 0; i < themeKernel[1].length; i++) {
+  $('input[name="' + themeKernel[1][i][0].name + '"]').on('change', function() {
+    for (let j = 0; j < themeKernel[1][i][3].length; j++)
+      if (themeKernel[1][i][0].prefix + '-' + j == this.id) {
+        localStorage.setItem(themeKernel[1][i][0].valueKey, themeKernel[1][i][3][j][0]);
+        localStorage.setItem(themeKernel[1][i][0].defaultKey, themeKernel[1][i][3][j][1]);
+        localStorage.setItem(themeKernel[1][i][0].checkedKey, this.id);
         reload();
       }
   });
@@ -88,23 +88,23 @@ function convertValues(array, stockValue) {
   return convertedValues;
 }
 
-for (let i = 0; i < testParametres[2].length; i++) {
-  $('#' + testParametres[2][i][0].rangeId).on('change', function() {
+for (let i = 0; i < themeKernel[2].length; i++) {
+  $('#' + themeKernel[2][i][0].rangeId).on('change', function() {
     let value = this.value; // значение ползунка при нажатии
-    localStorage.setItem(testParametres[2][i][0].valueKey, value); // сохранить в ЛХ ключ
-    varRecord(testParametres[2][i][1], convertValues(testParametres[2][i][2], value));
-    $('#' + testParametres[2][i][0].demoId).text(value + testParametres[2][i][0].text); // установить значение демки ползунка
+    localStorage.setItem(themeKernel[2][i][0].valueKey, value); // сохранить в ЛХ ключ
+    varRecord(themeKernel[2][i][1], convertValues(themeKernel[2][i][2], value));
+    $('#' + themeKernel[2][i][0].demoId).text(value + themeKernel[2][i][0].text); // установить значение демки ползунка
   });
 }
 
-for (let i = 0; i < testParametres[3].length; i++) {
-  $('input[name="' + testParametres[3][i][0].name + '"]').on('change', function() {
-    for (let j = 0; j < $('input[name="' + testParametres[3][i][0].name + '"]').length; j++) {
+for (let i = 0; i < themeKernel[3].length; i++) {
+  $('input[name="' + themeKernel[3][i][0].name + '"]').on('change', function() {
+    for (let j = 0; j < $('input[name="' + themeKernel[3][i][0].name + '"]').length; j++) {
       if (this.checked) {
-        localStorage.setItem(testParametres[3][i][0].valueKey, testParametres[3][i][2][0]);
+        localStorage.setItem(themeKernel[3][i][0].valueKey, themeKernel[3][i][2][0]);
         reload();
       } else {
-        localStorage.setItem(testParametres[3][i][0].valueKey, testParametres[3][i][2][1]);
+        localStorage.setItem(themeKernel[3][i][0].valueKey, themeKernel[3][i][2][1]);
         reload();
       }
     }
@@ -129,10 +129,10 @@ function wbAccentInput(neededAccent,bgVariantsArray) {
 // Событие загрузки страницы
 
 $(document).ready(function() {
-  radioChecked(testParametres[0]);
-  radioChecked(testParametres[1]);
-  rangeChecked(testParametres[2]);
-  checkboxChecked(testParametres[3]);
+  radioChecked(themeKernel[0]);
+  radioChecked(themeKernel[1]);
+  rangeChecked(themeKernel[2]);
+  checkboxChecked(themeKernel[3]);
 
   // Покраска инпутов с цветами акцента
 

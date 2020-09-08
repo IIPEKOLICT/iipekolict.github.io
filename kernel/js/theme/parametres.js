@@ -6,6 +6,8 @@
 
 // var $ = function (el) { return document.querySelectorAll(el) }
 
+// function $(el) {return document.querySelectorAll(el)}
+
 // Массив с параметрами движка тем
 
 let themeKernel = [
