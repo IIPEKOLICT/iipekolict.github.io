@@ -1,98 +1,8 @@
 /*------------------------------------------------------------*/
-/*---ТЕСТОВЫЙ МОДУЛЬ------------------------------------------*/
+/*---МОДУЛЬ ДЛЯ СТРАНИЦЫ С НАСТРОЙКАМИ------------------------*/
 /*------------------------------------------------------------*/
 
-let themeKernel = [
-  [ // Radio (переменные)
-    [
-      {name: 'test-radio', prefix: 'test-radio', checkedKey: 'test-radio-no', checkedStock: 'test-radio-0',
-      defaultKey: 'test-radio-type'},
-      ['--var-1','--var-2','--var-3'],
-      [
-        [['1','1','1'],['default']],
-        [['1','2','3'],['custom']]
-      ]
-    ]
-  ],
-  [ // Radio (классы)
-    [
-      {name: 'test-radio-k', prefix: 'test-radio-k', checkedKey: 'test-radio-k-no', checkedStock: 'test-radio-k-0', 
-      defaultKey: 'test-style-type', valueKey: 'test-style', valueStock: 'style0'},
-      [$('.page')],
-      ['style0','style1'],
-      [
-        [['style0'],['default']],
-        [['style1'],['custom']]
-      ]
-    ]
-  ],
-  [ // Range (переменные)
-    [
-      {rangeId: 'test-range', demoId: 'test-demo', valueKey: 'test-range-value', valueStock: '50', text: ' %'},
-      ['--var-4','--var-5'],
-      [
-        [['1'],['%']],
-        [['2'],['%']]
-      ]
-    ]
-  ],
-  [ // Checkbox (классы)
-    [
-      {name: 'test-checkbox', valueKey: 'test-checkbox-value'},
-      [$('.page')],
-      ['style00',' '],
-      [$('#test-range')]
-    ]
-  ]
-]
-
-// --- функции
-
-function varReadNew(array) {
-  for (let i = 0; i < array.length; i++)
-    for (let j = 0; j < array[i][1].length; j++) {
-      if (localStorage.getItem(array[i][1][j])) 
-        document.documentElement.style.setProperty(array[i][1][j], localStorage.getItem(array[i][1][j]));
-    }
-}
-
-//
-
-function classSwitchNew(inputArray, value) {
-  for (let i = 0; i < inputArray[1].length; i++)
-    for (let j = 0; j < inputArray[1][i].length; j++) // Перебор всех модифицируемых элементов
-      if ($(inputArray[1][i][j]).hasClass(value) == false) { // если нет нужного класса-стиля
-        $(inputArray[1][i][j]).addClass(value); // добавить
-    
-        for (let k = 0; k < inputArray[2].length; k++) // перебор всех вариантов стилей
-          if ($(inputArray[1][i][j]).hasClass($(inputArray[2][k])) && value != $(inputArray[2][k])) 
-            $(inputArray[1][i][j]).removeClass($(inputArray[2][k])) // если есть лишние классы - убрать
-      }
-}
-
-function styleReadNew(array) {
-  if (localStorage.getItem(array[0].valueKey)) classSwitchNew(array, localStorage.getItem(array[0].valueKey));
-  else {
-    localStorage.setItem(array[0].valueKey, array[0].valueStock);
-    classSwitchNew(array, array[0].valueStock);
-  }
-}
-
-//
-
-
-
-// --- Загрузка страницы
-
-$(document).ready(function() {
-
-  varReadNew(testParametres[0]);
-  for (let i = 0; i < testParametres[1].length; i++) styleReadNew(testParametres[1][i]);
-  for (let i = 0; i < testParametres[3].length; i++) styleReadNew(testParametres[3][i]);
-
-});
-
-// --- Настройки (функции)
+// Функции-считыватели инфы об отмеченных инпутах
 
 function radioChecked(array) {
   for (let i = 0; i < array.length; i++) { // Перебор всех ключей
@@ -108,9 +18,7 @@ function radioChecked(array) {
   }
 }
 
-//
-
-function rangeCheckedNew(array) {
+function rangeChecked(array) {
   for (let i = 0; i < array.length; i++) if (localStorage.getItem(array[i][0].valueKey)) { // если есть ключ
     $('#' + array[i][0].rangeId).val(localStorage.getItem(array[i][0].valueKey)); // установить значение ползунка
     $('#' + array[i][0].demoId).text(localStorage.getItem(array[i][0].valueKey) + array[i][0].text);
@@ -122,9 +30,7 @@ function rangeCheckedNew(array) {
   }
 }
 
-//
-
-function checkboxCheckedNew(array) {
+function checkboxChecked(array) {
   for (let i = 0; i < array.length; i++) {
     let checkbox = $('input[type = "checkbox"][name="' + array[i][0].name + '"]');
 
@@ -141,9 +47,9 @@ function checkboxCheckedNew(array) {
   }
 }
 
-//
+// Функции-обработчики выбора инпута
 
-function varRecordNew(vars, values) {
+function varRecord(vars, values) {
   for (let i = 0; i < vars.length; i++) {
     //$(':root').get(0).style.setProperty(vars[i], values[i]);
     document.documentElement.style.setProperty(vars[i], values[i]);
@@ -155,14 +61,12 @@ for (let i = 0; i < testParametres[0].length; i++) {
   $('input[name="' + testParametres[0][i][0].name + '"]').on('change', function() {
     for (let j = 0; j < testParametres[0][i][2].length; j++)
       if (testParametres[0][i][0].prefix + '-' + j == this.id) {
-        varRecordNew(testParametres[0][i][1], testParametres[0][i][2][j][0]);
+        varRecord(testParametres[0][i][1], testParametres[0][i][2][j][0]);
         localStorage.setItem(testParametres[0][i][0].defaultKey, testParametres[0][i][2][j][1]);
         localStorage.setItem(testParametres[0][i][0].checkedKey, this.id);
       }  
   });
 }
-
-//
 
 for (let i = 0; i < testParametres[1].length; i++) {
   $('input[name="' + testParametres[1][i][0].name + '"]').on('change', function() {
@@ -176,18 +80,22 @@ for (let i = 0; i < testParametres[1].length; i++) {
   });
 }
 
-//
+function convertValues(array, stockValue) {
+  // 1. создать пустой массив для преобреобразования переменных
+  // 2. преобразование каждой переменной в нужный вид и запись в качестве элемента в свежесозданный массив
+  let convertedValues = []; 
+  $.each(array, function() { convertedValues.push((stockValue * this[0][0]) + this[1][0]) });
+  return convertedValues;
+}
 
 for (let i = 0; i < testParametres[2].length; i++) {
   $('#' + testParametres[2][i][0].rangeId).on('change', function() {
     let value = this.value; // значение ползунка при нажатии
     localStorage.setItem(testParametres[2][i][0].valueKey, value); // сохранить в ЛХ ключ
-    varRecordNew(testParametres[2][i][1], convertValues(testParametres[2][i][2], value));
+    varRecord(testParametres[2][i][1], convertValues(testParametres[2][i][2], value));
     $('#' + testParametres[2][i][0].demoId).text(value + testParametres[2][i][0].text); // установить значение демки ползунка
   });
 }
-
-//
 
 for (let i = 0; i < testParametres[3].length; i++) {
   $('input[name="' + testParametres[3][i][0].name + '"]').on('change', function() {
@@ -203,13 +111,39 @@ for (let i = 0; i < testParametres[3].length; i++) {
   });
 }
 
-// --- Загрузка страницы (настройки)
+// Другое
+
+function markInput(inputKey, inputName, inputId) {
+  document.querySelector('input[name=' + inputName + '][id=' + inputId + ']').setAttribute('checked','checked');
+   // Отметить как выбраннный
+  localStorage.setItem(inputKey, inputId); // Сохранить ключ в ЛХ
+}
+
+function wbAccentInput(neededAccent,bgVariantsArray) {
+  if (localStorage.getItem(vars[0][0][0]) == neededAccent) for (let i = 0; i < bgVariantsArray.length; i++)
+   // Если цвет акцента - исследуемый цвет => перебор всех светлых/темных зн. осн. цвета фона
+    if (localStorage.getItem(vars[1][0][0]) == bgVariantsArray[i])
+      markInput(checkedInputs[0][0], checkedInputs[1][0], checkedInputs[2][0]); // Отметить стоковый инпут ЦА
+}
+
+// Событие загрузки страницы
 
 $(document).ready(function() {
-
   radioChecked(testParametres[0]);
   radioChecked(testParametres[1]);
-  rangeCheckedNew(testParametres[2]);
-  checkboxCheckedNew(testParametres[3]);
+  rangeChecked(testParametres[2]);
+  checkboxChecked(testParametres[3]);
 
+  // Покраска инпутов с цветами акцента
+
+  $.each($('.label_custom-colored'), function () { $(this).css('--accent-color', $(this).find('input').val()) });
+
+  // Скрытие белого/черного цвета акцента в зависимости от цветовой схемы
+
+  $.each(mainBgColorValues[0], function (name, value) {
+    if (localStorage.getItem(vars[1][0][0]) == value) $('#black-accent_label').addClass('hidden-label')
+  });
+  $.each(mainBgColorValues[1], function (name, value) {
+    if (localStorage.getItem(vars[1][0][0]) == value) $('#white-accent_label').addClass('hidden-label')
+  });
 });
