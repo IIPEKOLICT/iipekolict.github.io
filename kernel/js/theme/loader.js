@@ -12,6 +12,14 @@ function varRead(array) { // Считыватель css-переменных
     }
 }
 
+function varRecord(vars, values) {
+  for (let i = 0; i < vars.length; i++) {
+    //$(':root').get(0).style.setProperty(vars[i], values[i]);
+    document.documentElement.style.setProperty(vars[i], values[i]);
+    localStorage.setItem(vars[i], values[i]);
+  }
+} 
+
 function classSwitch(inputArray, value) { // Переключатель класса
   for (let i = 0; i < inputArray[1].length; i++)
     for (let j = 0; j < inputArray[1][i].length; j++) // Перебор всех модифицируемых элементов
@@ -25,12 +33,28 @@ function classSwitch(inputArray, value) { // Переключатель клас
 }
 
 function styleRead(array) { // Считыватель классов
-  if (localStorage.getItem(array[0].valueKey)) classSwitchNew(array, localStorage.getItem(array[0].valueKey));
+  if (localStorage.getItem(array[0].valueKey)) classSwitch(array, localStorage.getItem(array[0].valueKey));
   else {
     localStorage.setItem(array[0].valueKey, array[0].valueStock);
-    classSwitchNew(array, array[0].valueStock);
+    classSwitch(array, array[0].valueStock);
   }
 }
+
+function markInput(key, name, id) {
+  document.querySelector('input[name="' + name + '"][id="' + id + '"]').setAttribute('checked','checked');
+   // Отметить как выбраннный
+  localStorage.setItem(key, id); // Сохранить ключ в ЛХ
+}
+
+/*
+
+function markInput(array, id) {
+  document.querySelector('input[name="' + array[0].name + '"][id="' + id + '"]').setAttribute('checked','checked');
+   // Отметить как выбраннный
+  localStorage.setItem(array[0].checkedKey, id); // Сохранить ключ в ЛХ
+}
+
+*/
 
 function setOpacityAccent() {
   if (localStorage.getItem('--accent-color')) { // если есть ключ цвета акцента
@@ -44,21 +68,24 @@ function setOpacityAccent() {
   }
 }
 
-function svgColor() {
-  for (let i = 0; i < colorsSVG[0].length; i++) for (let j = 0; j < colorsSVG[0].length; j++)
+function svgColor(array) {
+  for (let i = 0; i < array.length; i++) for (let j = 0; j < array.length; j++)
    // Перебор всех идентификаторов
   for (let k = 0; k < document.querySelectorAll('.g' + i + j).length; k++) { // Перебор всех элементов массива
-    document.querySelectorAll('.g' + i + j)[k].style.setProperty('fill', colorsSVG[1][i]);
+    document.querySelectorAll('.g' + i + j)[k].style.setProperty('fill', array[i]);
      // Установить цвет заливки
-    document.querySelectorAll('.g' + i + j)[k].style.setProperty('stroke', colorsSVG[1][j]);
+    document.querySelectorAll('.g' + i + j)[k].style.setProperty('stroke', array[j]);
      // Установить цвет обводки
   }
 }
 
-function wbAccent(neededAccent, bgVariantsArray) {
-  if (localStorage.getItem(vars[0][0][0]) == neededAccent) for (let i = 0; i < bgVariantsArray.length; i++)
+function wbAccent(accent, bgVariants) {
+  if (localStorage.getItem('--accent-color') == accent) for (let i = 0; i < bgVariants.length; i++)
    // Если цвет акцента - исследуемый цвет => перебор всех светлых/темных зн. осн. цвета фона
-    if (localStorage.getItem(vars[1][0][0]) == bgVariantsArray[i]) varRecord(vars[0], vars[0][1]);
+    if (localStorage.getItem('--main_bg-color') == bgVariants[i]) {
+      varRecord(['--accent-color'], ['#80cbc4']);
+      markInput(themeKernel[0][0][0].checkedKey, themeKernel[0][0][0].name, 'ac-0');
+    }
 }
 
 // Событие загрузки страницы
@@ -67,9 +94,18 @@ document.addEventListener("DOMContentLoaded", () => {
   setOpacityAccent();
   varRead(themeKernel[0]);
   varRead(themeKernel[2]);
-  wbAccent('#000', mainBgColorValues[0]); // Проверка на равенство цвета акцента и ОЦФ (для ч. и б.)
-  wbAccent('#fff', mainBgColorValues[1]); // Если да - меняет цвет акцента на стоковый
-  svgColor();
+  wbAccent(themeKernel[4][1][0].black, themeKernel[4][1][1]); // Проверка на равенство цвета акцента и ОЦФ (для ч. и б.)
+  wbAccent(themeKernel[4][1][0].white, themeKernel[4][1][2]); // Если да - меняет цвет акцента на стоковый
+  svgColor(themeKernel[4][0]);
   for (let i = 0; i < themeKernel[1].length; i++) styleRead(themeKernel[1][i]);
   for (let i = 0; i < themeKernel[3].length; i++) styleRead(themeKernel[3][i]);
 });
+
+/*
+setInterval(function() {
+  console.log(localStorage.getItem('headerStyleValue'));
+  console.log(localStorage.getItem('uiStyleValue'));
+  console.log(localStorage.getItem('interactiveStyleValue'));
+  console.log(localStorage.getItem('switchStyleValue'));
+}, 300);
+*/

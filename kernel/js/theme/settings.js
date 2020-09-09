@@ -47,15 +47,47 @@ function checkboxChecked(array) {
   }
 }
 
-// Функции-обработчики выбора инпута
+// Другое
 
-function varRecord(vars, values) {
-  for (let i = 0; i < vars.length; i++) {
-    //$(':root').get(0).style.setProperty(vars[i], values[i]);
-    document.documentElement.style.setProperty(vars[i], values[i]);
-    localStorage.setItem(vars[i], values[i]);
+function wbAccentInput(accent,bgVariants) {
+  if (localStorage.getItem(vars[0][0][0]) == accent) for (let i = 0; i < bgVariants.length; i++)
+   // Если цвет акцента - исследуемый цвет => перебор всех светлых/темных зн. осн. цвета фона
+    if (localStorage.getItem('--main_bg-color') == bgVariants[i])
+      markInput(checkedInputs[0][0], checkedInputs[1][0], checkedInputs[2][0]); // Отметить стоковый инпут ЦА
+}
+
+function convertValues(array, stockValue) {
+  // 1. создать пустой массив для преобреобразования переменных
+  // 2. преобразование каждой переменной в нужный вид и запись в качестве элемента в свежесозданный массив
+  let convertedValues = []; 
+  $.each(array, function() { convertedValues.push((stockValue * this[0][0]) + this[1][0]) });
+  return convertedValues;
+}
+
+function defaultUiVar(array, uiValue) {
+  if (localStorage.getItem(array[0].defaultKey) != 'custom') { // Если активен был дефолтный вариант, либо ключ пуст
+    localStorage.setItem(array[0].defaultKey, 'default'); // Запись инфы в ЛХ о типе стиля (дефолтный)
+
+    for (let i = 1; i < array.length; i++) if (array[i].ui == uiValue) {
+      varRecord(array[0].var, array[i].value); // Установка из массива нужных для данного UI переменных
+      markInput(array[0].checkedKey, array[0].name, array[i].id); // Отметить нужн. инпут
+    }
   }
 }
+
+function defaultUiClass(array, uiValue, classArray) {
+  if (localStorage.getItem(array[0].defaultKey) != 'custom') { // Если активен был дефолтный вариант, либо ключ пуст
+    localStorage.setItem(array[0].defaultKey, 'default'); // Запись инфы в ЛХ о типе стиля (дефолтный)
+
+    for (let i = 1; i < array.length; i++) if (array[i].ui == uiValue) {
+      localStorage.setItem(array[i].valueKey, array[i].value); // Сохранить ключ стиля
+      classSwitch(classArray, array[i].value);
+      markInput(array[0].checkedKey, array[0].name, array[i].id); // Отметить нужн. инпут
+    }
+  }
+}
+
+// Функции-обработчики выбора инпута
 
 for (let i = 0; i < themeKernel[0].length; i++) {
   $('input[name="' + themeKernel[0][i][0].name + '"]').on('change', function() {
@@ -64,6 +96,7 @@ for (let i = 0; i < themeKernel[0].length; i++) {
         varRecord(themeKernel[0][i][1], themeKernel[0][i][2][j][0]);
         localStorage.setItem(themeKernel[0][i][0].defaultKey, themeKernel[0][i][2][j][1]);
         localStorage.setItem(themeKernel[0][i][0].checkedKey, this.id);
+        reload();
       }  
   });
 }
@@ -75,17 +108,41 @@ for (let i = 0; i < themeKernel[1].length; i++) {
         localStorage.setItem(themeKernel[1][i][0].valueKey, themeKernel[1][i][3][j][0]);
         localStorage.setItem(themeKernel[1][i][0].defaultKey, themeKernel[1][i][3][j][1]);
         localStorage.setItem(themeKernel[1][i][0].checkedKey, this.id);
-        reload();
+
+        console.log(themeKernel[1][i][0].valueKey);
+        console.log(themeKernel[1][i][0].defaultKey);
+        console.log(themeKernel[1][i][0].checkedKey);
+
+        if (themeKernel[1][i][0].name == 'ui-style') {
+          let csType = localStorage.getItem(themeKernel[4][2][0][0].defaultKey);
+          let currentUi = localStorage.getItem(themeKernel[1][1][0].valueKey);
+
+          if (csType != 'light' && csType != 'custom')
+            for (let k = 1; k < themeKernel[4][2][0].length; k++)
+            console.log(themeKernel[4][2][0][k]);
+              if (themeKernel[4][2][0][k].ui == currentUi) {
+                varRecord(themeKernel[0][1][1], themeKernel[4][2][0][k].darkTheme);
+                markInput(themeKernel[4][2][0][0].checkedKey, themeKernel[4][2][0][0].name, 
+                themeKernel[4][2][0][k].darkThemeId);
+              }
+          else if (csType != 'dark' && csType != 'custom')
+            for (let k = 1; k < themeKernel[4][2][0].length; k++)
+            console.log(themeKernel[4][2][0][k]);
+              if (themeKernel[4][2][0][k].ui == currentUi) {
+                varRecord(themeKernel[0][1][1], themeKernel[4][2][0][k].lightTheme);
+                markInput(themeKernel[4][2][0][0].checkedKey, themeKernel[4][2][0][0].name, 
+                themeKernel[4][2][0][k].lightThemeId);
+              }
+            
+          defaultUiClass(themeKernel[4][2][1], currentUi, themeKernel[1][0]);
+          defaultUiVar(themeKernel[4][2][2], currentUi)
+          defaultUiClass(themeKernel[4][2][3], currentUi, themeKernel[1][2]);
+          defaultUiClass(themeKernel[4][2][4], currentUi, themeKernel[1][3]);
+        }
+
+        //reload();
       }
   });
-}
-
-function convertValues(array, stockValue) {
-  // 1. создать пустой массив для преобреобразования переменных
-  // 2. преобразование каждой переменной в нужный вид и запись в качестве элемента в свежесозданный массив
-  let convertedValues = []; 
-  $.each(array, function() { convertedValues.push((stockValue * this[0][0]) + this[1][0]) });
-  return convertedValues;
 }
 
 for (let i = 0; i < themeKernel[2].length; i++) {
@@ -111,21 +168,6 @@ for (let i = 0; i < themeKernel[3].length; i++) {
   });
 }
 
-// Другое
-
-function markInput(inputKey, inputName, inputId) {
-  document.querySelector('input[name=' + inputName + '][id=' + inputId + ']').setAttribute('checked','checked');
-   // Отметить как выбраннный
-  localStorage.setItem(inputKey, inputId); // Сохранить ключ в ЛХ
-}
-
-function wbAccentInput(neededAccent,bgVariantsArray) {
-  if (localStorage.getItem(vars[0][0][0]) == neededAccent) for (let i = 0; i < bgVariantsArray.length; i++)
-   // Если цвет акцента - исследуемый цвет => перебор всех светлых/темных зн. осн. цвета фона
-    if (localStorage.getItem(vars[1][0][0]) == bgVariantsArray[i])
-      markInput(checkedInputs[0][0], checkedInputs[1][0], checkedInputs[2][0]); // Отметить стоковый инпут ЦА
-}
-
 // Событие загрузки страницы
 
 $(document).ready(function() {
@@ -140,10 +182,10 @@ $(document).ready(function() {
 
   // Скрытие белого/черного цвета акцента в зависимости от цветовой схемы
 
-  $.each(mainBgColorValues[0], function (name, value) {
-    if (localStorage.getItem(vars[1][0][0]) == value) $('#black-accent_label').addClass('hidden-label')
+  $.each(themeKernel[4][1][1], function (name, value) {
+    if (localStorage.getItem('--main_bg-color') == value) $('#black-accent_label').addClass('hidden-label')
   });
-  $.each(mainBgColorValues[1], function (name, value) {
-    if (localStorage.getItem(vars[1][0][0]) == value) $('#white-accent_label').addClass('hidden-label')
+  $.each(themeKernel[4][1][2], function (name, value) {
+    if (localStorage.getItem('--main_bg-color') == value) $('#white-accent_label').addClass('hidden-label')
   });
 });
