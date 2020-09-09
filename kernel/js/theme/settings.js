@@ -75,13 +75,12 @@ function defaultUiVar(array, uiValue) {
   }
 }
 
-function defaultUiClass(array, uiValue, classArray) {
+function defaultUiClass(array, uiValue) {
   if (localStorage.getItem(array[0].defaultKey) != 'custom') { // Если активен был дефолтный вариант, либо ключ пуст
     localStorage.setItem(array[0].defaultKey, 'default'); // Запись инфы в ЛХ о типе стиля (дефолтный)
 
     for (let i = 1; i < array.length; i++) if (array[i].ui == uiValue) {
-      localStorage.setItem(array[i].valueKey, array[i].value); // Сохранить ключ стиля
-      classSwitch(classArray, array[i].value);
+      localStorage.setItem(array[0].valueKey, array[i].value); // Сохранить ключ стиля
       markInput(array[0].checkedKey, array[0].name, array[i].id); // Отметить нужн. инпут
     }
   }
@@ -109,38 +108,30 @@ for (let i = 0; i < themeKernel[1].length; i++) {
         localStorage.setItem(themeKernel[1][i][0].defaultKey, themeKernel[1][i][3][j][1]);
         localStorage.setItem(themeKernel[1][i][0].checkedKey, this.id);
 
-        console.log(themeKernel[1][i][0].valueKey);
-        console.log(themeKernel[1][i][0].defaultKey);
-        console.log(themeKernel[1][i][0].checkedKey);
-
         if (themeKernel[1][i][0].name == 'ui-style') {
           let csType = localStorage.getItem(themeKernel[4][2][0][0].defaultKey);
           let currentUi = localStorage.getItem(themeKernel[1][1][0].valueKey);
 
-          if (csType != 'light' && csType != 'custom')
+          if (csType != 'light' && csType != 'custom') {
             for (let k = 1; k < themeKernel[4][2][0].length; k++)
-            console.log(themeKernel[4][2][0][k]);
               if (themeKernel[4][2][0][k].ui == currentUi) {
                 varRecord(themeKernel[0][1][1], themeKernel[4][2][0][k].darkTheme);
-                markInput(themeKernel[4][2][0][0].checkedKey, themeKernel[4][2][0][0].name, 
-                themeKernel[4][2][0][k].darkThemeId);
+                markInput(themeKernel[4][2][0][0].checkedKey, themeKernel[4][2][0][0].name, themeKernel[4][2][0][k].darkThemeId);
               }
-          else if (csType != 'dark' && csType != 'custom')
+          } else if (csType != 'dark' && csType != 'custom')
             for (let k = 1; k < themeKernel[4][2][0].length; k++)
-            console.log(themeKernel[4][2][0][k]);
               if (themeKernel[4][2][0][k].ui == currentUi) {
                 varRecord(themeKernel[0][1][1], themeKernel[4][2][0][k].lightTheme);
-                markInput(themeKernel[4][2][0][0].checkedKey, themeKernel[4][2][0][0].name, 
-                themeKernel[4][2][0][k].lightThemeId);
+                markInput(themeKernel[4][2][0][0].checkedKey, themeKernel[4][2][0][0].name, themeKernel[4][2][0][k].lightThemeId);
               }
-            
-          defaultUiClass(themeKernel[4][2][1], currentUi, themeKernel[1][0]);
+
+          defaultUiClass(themeKernel[4][2][1], currentUi);
           defaultUiVar(themeKernel[4][2][2], currentUi)
-          defaultUiClass(themeKernel[4][2][3], currentUi, themeKernel[1][2]);
-          defaultUiClass(themeKernel[4][2][4], currentUi, themeKernel[1][3]);
+          defaultUiClass(themeKernel[4][2][3], currentUi);
+          defaultUiClass(themeKernel[4][2][4], currentUi);
         }
 
-        //reload();
+        reload();
       }
   });
 }

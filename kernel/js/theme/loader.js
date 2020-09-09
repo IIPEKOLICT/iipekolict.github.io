@@ -103,9 +103,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 /*
 setInterval(function() {
-  console.log(localStorage.getItem('headerStyleValue'));
-  console.log(localStorage.getItem('uiStyleValue'));
-  console.log(localStorage.getItem('interactiveStyleValue'));
-  console.log(localStorage.getItem('switchStyleValue'));
+  console.log(localStorage.getItem('colorSchemeChecked'));
 }, 300);
 */

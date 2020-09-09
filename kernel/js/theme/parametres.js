@@ -185,7 +185,7 @@ let themeKernel = [
     [ // Вкл/выкл режим OneUI
       {name: 'oneui-mode', valueKey: 'oneuiModeValue'},
       [$('.header'),$('.main')],
-      ['OneUI-mode',' '],
+      ['OneUI-mode',''],
       [$('#oneui-height-range')]
     ]
   ],
@@ -200,7 +200,7 @@ let themeKernel = [
     ],
     [ // массивы для автоподхвата стилей/переменных при смене UI
       [
-        {name: 'color-scheme', defaultKey: 'colorSchemeDefault', checkedkey: 'colorSchemeChecked'},
+        {name: 'color-scheme', defaultKey: 'colorSchemeDefault', checkedKey: 'colorSchemeChecked'},
         {ui: 'UI_OOS', 
         darkTheme: ['#000','#424242','#141414','#1a1a1a','white','#7a7a7a','#1e1e1e','#898989','#4d4d4d','#b9b9b9'], 
         lightTheme: ['#fafafa','white','white','#efefef','#191919','#969696','#e6e6e6','#999','#e1e1e1','#ececec'], 
