@@ -64,25 +64,49 @@ function convertValues(array, stockValue) {
   return convertedValues;
 }
 
-function defaultUiVar(array, uiValue) {
-  if (localStorage.getItem(array[0].defaultKey) != 'custom') { // Если активен был дефолтный вариант, либо ключ пуст
-    localStorage.setItem(array[0].defaultKey, 'default'); // Запись инфы в ЛХ о типе стиля (дефолтный)
-
-    for (let i = 1; i < array.length; i++) if (array[i].ui == uiValue) {
-      varRecord(array[0].var, array[i].value); // Установка из массива нужных для данного UI переменных
-      markInput(array[0].checkedKey, array[0].name, array[i].id); // Отметить нужн. инпут
-    }
+function autoPickupVar_2(array, uiValue) {
+  if (localStorage.getItem(array[0].defaultKey) != array[0].valueType1) { // Если активен был дефолтный вариант, либо ключ пуст
+    localStorage.setItem(array[0].defaultKey, array[0].valueType0); // Запись инфы в ЛХ о типе стиля (дефолтный)
+    
+    for (let i = 0; i < array[2].length; i++) 
+      if (array[2][i][1] == array[0].valueType0 && array[2][i][2] == uiValue) {
+        varRecord(array[1], array[2][i][0]); // Установка из массива нужных для данного UI переменных
+        markInput(array[0].checkedKey, array[0].name, array[0].prefix + '-' + i); // Отметить нужн. инпут
+      }
   }
 }
 
-function defaultUiClass(array, uiValue) {
-  if (localStorage.getItem(array[0].defaultKey) != 'custom') { // Если активен был дефолтный вариант, либо ключ пуст
-    localStorage.setItem(array[0].defaultKey, 'default'); // Запись инфы в ЛХ о типе стиля (дефолтный)
+function autoPickupVar_3(array, uiValue) {
+  let type = localStorage.getItem(array[0].defaultKey);
 
-    for (let i = 1; i < array.length; i++) if (array[i].ui == uiValue) {
-      localStorage.setItem(array[0].valueKey, array[i].value); // Сохранить ключ стиля
-      markInput(array[0].checkedKey, array[0].name, array[i].id); // Отметить нужн. инпут
-    }
+  if (type != array[0].valueType1 && type != array[0].valueType2) {
+    localStorage.setItem(array[0].defaultKey, array[0].valueType0);
+    
+    for (let i = 0; i < array[2].length; i++)
+      if (array[2][i][1] == array[0].valueType0 && array[2][i][2] == uiValue) {
+        varRecord(array[1], array[2][i][0]);
+        markInput(array[0].checkedKey, array[0].name, array[0].prefix + '-' + i);
+      }
+  } else if (type != array[0].valueType0 && type != array[0].valueType2) {
+    localStorage.setItem(array[0].defaultKey, array[0].valueType1);
+
+    for (let i = 0; i < array[2].length; i++)
+      if (array[2][i][1] == array[0].valueType1 && array[2][i][2] == uiValue) {
+        varRecord(array[1], array[2][i][0]);
+        markInput(array[0].checkedKey, array[0].name, array[0].prefix + '-' + i);
+      }
+  }
+}
+
+function autoPickupClass_2(array, uiValue) {
+  if (localStorage.getItem(array[0].defaultKey) != array[0].valueType1) { // Если активен был дефолтный вариант, либо ключ пуст
+    localStorage.setItem(array[0].defaultKey, array[0].valueType0); // Запись инфы в ЛХ о типе стиля (дефолтный)
+    
+    for (let i = 0; i < array[3].length; i++) 
+      if (array[3][i][1] == array[0].valueType0 && array[3][i][2] == uiValue) {
+        localStorage.setItem(array[0].valueKey, array[3][i][0]); // Установка из массива нужных для данного UI переменных
+        markInput(array[0].checkedKey, array[0].name, array[0].prefix + '-' + i); // Отметить нужн. инпут
+      }
   }
 }
 
@@ -109,26 +133,13 @@ for (let i = 0; i < themeKernel[1].length; i++) {
         localStorage.setItem(themeKernel[1][i][0].checkedKey, this.id);
 
         if (themeKernel[1][i][0].name == 'ui-style') {
-          let csType = localStorage.getItem(themeKernel[4][2][0][0].defaultKey);
           let currentUi = localStorage.getItem(themeKernel[1][1][0].valueKey);
 
-          if (csType != 'light' && csType != 'custom') {
-            for (let k = 1; k < themeKernel[4][2][0].length; k++)
-              if (themeKernel[4][2][0][k].ui == currentUi) {
-                varRecord(themeKernel[0][1][1], themeKernel[4][2][0][k].darkTheme);
-                markInput(themeKernel[4][2][0][0].checkedKey, themeKernel[4][2][0][0].name, themeKernel[4][2][0][k].darkThemeId);
-              }
-          } else if (csType != 'dark' && csType != 'custom')
-            for (let k = 1; k < themeKernel[4][2][0].length; k++)
-              if (themeKernel[4][2][0][k].ui == currentUi) {
-                varRecord(themeKernel[0][1][1], themeKernel[4][2][0][k].lightTheme);
-                markInput(themeKernel[4][2][0][0].checkedKey, themeKernel[4][2][0][0].name, themeKernel[4][2][0][k].lightThemeId);
-              }
-
-          defaultUiClass(themeKernel[4][2][1], currentUi);
-          defaultUiVar(themeKernel[4][2][2], currentUi)
-          defaultUiClass(themeKernel[4][2][3], currentUi);
-          defaultUiClass(themeKernel[4][2][4], currentUi);
+          autoPickupVar_3(themeKernel[0][1], currentUi);
+          autoPickupVar_2(themeKernel[0][2], currentUi);
+          autoPickupClass_2(themeKernel[1][0], currentUi);
+          autoPickupClass_2(themeKernel[1][2], currentUi);
+          autoPickupClass_2(themeKernel[1][3], currentUi);
         }
 
         reload();
@@ -168,11 +179,9 @@ $(document).ready(function() {
   checkboxChecked(themeKernel[3]);
 
   // Покраска инпутов с цветами акцента
-
   $.each($('.label_custom-colored'), function () { $(this).css('--accent-color', $(this).find('input').val()) });
 
   // Скрытие белого/черного цвета акцента в зависимости от цветовой схемы
-
   $.each(themeKernel[4][1][1], function (name, value) {
     if (localStorage.getItem('--main_bg-color') == value) $('#black-accent_label').addClass('hidden-label')
   });

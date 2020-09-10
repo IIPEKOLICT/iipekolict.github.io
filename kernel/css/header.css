@@ -59,6 +59,12 @@
   border-radius: var(--icon_border-radius, 50%);
   transition: ease-out var(--main_animation-duration, 0.3s);
 }
+  .header.OneUI-mode:not(.scroll) .header-icon.OM_OneUI
+  {
+    left: 0;
+    bottom: 0;
+    position: absolute;
+  }
 .header-icon:hover /* Сток-контейнер иконок в шапке при наведении */
 {
   border-color: var(--accent-color, #80cbc4);
@@ -82,6 +88,14 @@
   .header-name.HEADER_ZenUI /* Заголовок в шапке при активном стиле шапки "ZenUI" */
   {
     color: var(--accent-color, #80cbc4);
+  }
+  .header.OneUI-mode:not(.scroll) .header-name.OM_OneUI {
+    justify-content: center;
+  }
+  .header.OneUI-mode:not(.scroll) .header-name.OM_OOS11 {
+    padding-left: 4vw;
+    justify-content: flex-start;
+    align-self: flex-start;
   }
 .header-name_main /* Заголовок в шапке в главном блоке в HTML-документе */
 {

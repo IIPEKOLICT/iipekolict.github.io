@@ -2,12 +2,6 @@
 /*---МОДУЛЬ С ПАРАМЕТРАМИ ДВИЖКА ТЕМ--------------------------*/
 /*------------------------------------------------------------*/
 
-// Дешифратор для svg-файлов
-
-// var $ = function (el) { return document.querySelectorAll(el) }
-
-// function $(el) {return document.querySelectorAll(el)}
-
 // Массив с параметрами движка тем
 
 let themeKernel = [
@@ -41,31 +35,31 @@ let themeKernel = [
     ],
     [ // Цветовая схема
       {name: 'color-scheme', prefix: 'cs', checkedKey: 'colorSchemeChecked', checkedStock: 'cs-0',
-      defaultKey: 'colorSchemeDefault'},
+      defaultKey: 'colorSchemeDefault', valueType0: 'dark', valueType1: 'light', valueType2: 'custom'},
       ['--main_bg-color','--secondary_bg-color','--icon_bg-color','--hover_bg-color',
       '--main_text-color','--secondary_text-color','--main_border-color','--radio_nonactive-color',
       '--switch_nonactive-color','--switch-before_nonactive-color'],
       [
-        [['#000','#424242','#141414','#1a1a1a','white','#7a7a7a','#1e1e1e','#898989','#4d4d4d','#b9b9b9'],['dark']],
-        [['#fafafa','white','white','#efefef','#191919','#969696','#e6e6e6','#999','#e1e1e1','#ececec'],['light']],
-        [['#000','#333','#141414','#252525','white','#8c8c8c','#333333','#666','#757575','#fff'],['dark']],
-        [['#fff','white','#ddd','#f7f7f7','black','#737373','#e5e5e5','#ccc','#e5e5e5','#fff'],['light']],
-        [['#000','#252525','#252525','#333','#fafafa','#909090','#3f3f3f','#797979','#505050','#fafafa'],['dark']],
-        [['#f2f2f2','#fcfcfc','white','#e3e3e3','#161616','#989898','#ececec','#b3b3b3','#a9a9a9','#fcfcfc'],['light']],
-        [['#161616','#424242','#252525','#505050','white','#b9b9b9','#323232','#c1c1c1','#696969','#b4b4b4'],['dark']],
-        [['#fafafa','white','#ddd','#ededed','#202020','#787878','#dcdcdc','#989898','#ccc','#e7e7e7'],['light']],
+        [['#000','#424242','#141414','#1a1a1a','white','#7a7a7a','#1e1e1e','#898989','#4d4d4d','#b9b9b9'],['dark'],['UI_OOS']],
+        [['#fafafa','white','white','#efefef','#191919','#969696','#e6e6e6','#999','#e1e1e1','#ececec'],['light'],['UI_OOS']],
+        [['#000','#333','#141414','#252525','white','#8c8c8c','#333333','#666','#757575','#fff'],['dark'],['UI_RUI']],
+        [['#fff','white','#ddd','#f7f7f7','black','#737373','#e5e5e5','#ccc','#e5e5e5','#fff'],['light'],['UI_RUI']],
+        [['#000','#252525','#252525','#333','#fafafa','#909090','#3f3f3f','#797979','#505050','#fafafa'],['dark'],['UI_OneUI']],
+        [['#f2f2f2','#fcfcfc','white','#e3e3e3','#161616','#989898','#ececec','#b3b3b3','#a9a9a9','#fcfcfc'],['light'],['UI_OneUI']],
+        [['#161616','#424242','#252525','#505050','white','#b9b9b9','#323232','#c1c1c1','#696969','#b4b4b4'],['dark'],['UI_ZenUI']],
+        [['#fafafa','white','#ddd','#ededed','#202020','#787878','#dcdcdc','#989898','#ccc','#e7e7e7'],['light'],['UI_ZenUI']],
         [['#000','#212121','#141414','#1a1a1a','#d8d8d8','#8a8a8a','#1e1e1e','#898989','#3e3e3e','#d1d1d1'],['custom']]
       ]
     ],
     [ // Радиус закруглений
       {name: 'border-radius', prefix: 'br', checkedKey: 'borderRadiusChecked', checkedStock: 'br-0',
-      defaultKey: 'borderRadiusDefault'},
+      defaultKey: 'borderRadiusDefault', valueType0: 'default', valueType1: 'custom'},
       ['--main_border-radius','--interactive_border-radius','--button_border-radius'],
       [
-        [['0.4em','0.6em','0.25em'],['default']],
-        [['0.6em','1.2em','0.5em'],['default']],
-        [['1em','1.2em','1.25em'],['default']],
-        [['0.5em','0.5em','1.25em'],['default']],
+        [['0.4em','0.6em','0.25em'],['default'],['UI_OOS']],
+        [['0.6em','1.2em','0.5em'],['default'],['UI_RUI']],
+        [['1em','1.2em','1.25em'],['default'],['UI_OneUI']],
+        [['0.5em','0.5em','1.25em'],['default'],['UI_ZenUI']],
         [['0','0','0'],['custom']]
       ]
     ],
@@ -102,15 +96,16 @@ let themeKernel = [
   [ // Radio (классы)
     [ // Стиль шапки
       {name: 'header-style', prefix: 'hs', checkedKey: 'headerStyleChecked', checkedStock: 'hs-0', 
-      defaultKey: 'headerStyleDefault', valueKey: 'headerStyleValue', valueStock: 'HEADER_stock'},
+      defaultKey: 'headerStyleDefault', valueKey: 'headerStyleValue', valueStock: 'HEADER_stock',
+      valueType0: 'default', valueType1: 'custom'},
       [$('.header'),$('.header-name'),$('.svg_header')],
       ['HEADER_stock','HEADER_OOSColor','HEADER_RUI','HEADER_OneUI','HEADER_ZenUI'],
       [
-        [['HEADER_stock'],['default']],
+        [['HEADER_stock'],['default'],['UI_OOS']],
         [['HEADER_OOSColor'],['custom']],
-        [['HEADER_RUI'],['default']],
-        [['HEADER_OneUI'],['default']],
-        [['HEADER_ZenUI'],['default']]
+        [['HEADER_RUI'],['default'],['UI_RUI']],
+        [['HEADER_OneUI'],['default'],['UI_OneUI']],
+        [['HEADER_ZenUI'],['default'],['UI_ZenUI']]
       ]
     ],
     [ // Стиль UI
@@ -130,26 +125,28 @@ let themeKernel = [
     ],
     [ // Стиль диалоговых окон
       {name: 'interactive-style', prefix: 'ias', checkedKey: 'interactiveStyleChecked', checkedStock: 'ias-0', 
-      defaultKey: 'interactiveStyleDefault', valueKey: 'interactiveStyleValue', valueStock: 'interactive_OOS'},
+      defaultKey: 'interactiveStyleDefault', valueKey: 'interactiveStyleValue', valueStock: 'interactive_OOS',
+      valueType0: 'default', valueType1: 'custom'},
       [$('.interactive'),$('.interactive-button'),$('.interactive-container')],
       ['interactive_OOS','interactive_RUI','interactive_OneUI','interactive_ZenUI'],
       [
-        [['interactive_OOS'],['default']],
-        [['interactive_RUI'],['default']],
-        [['interactive_OneUI'],['default']],
-        [['interactive_ZenUI'],['default']]
+        [['interactive_OOS'],['default'],['UI_OOS']],
+        [['interactive_RUI'],['default'],['UI_RUI']],
+        [['interactive_OneUI'],['default'],['UI_OneUI']],
+        [['interactive_ZenUI'],['default'],['UI_ZenUI']]
       ]
     ],
     [ // Стиль переключателей
       {name: 'switch-style', prefix: 'ss', checkedKey: 'switchStyleChecked', checkedStock: 'ss-0', 
-      defaultKey: 'switchStyleDefault', valueKey: 'switchStyleValue', valueStock: 'switch_OOS'},
+      defaultKey: 'switchStyleDefault', valueKey: 'switchStyleValue', valueStock: 'switch_OOS',
+      valueType0: 'default', valueType1: 'custom'},
       [$('.switch')],
       ['switch_OOS','switch_RUI','switch_OneUI','switch_ZenUI'],
       [
-        [['switch_OOS'],['default']],
-        [['switch_RUI'],['default']],
-        [['switch_OneUI'],['default']],
-        [['switch_ZenUI'],['default']]
+        [['switch_OOS'],['default'],['UI_OOS']],
+        [['switch_RUI'],['default'],['UI_RUI']],
+        [['switch_OneUI'],['default'],['UI_OneUI']],
+        [['switch_ZenUI'],['default'],['UI_ZenUI']]
       ]
     ]
   ],
@@ -186,7 +183,19 @@ let themeKernel = [
       {name: 'oneui-mode', valueKey: 'oneuiModeValue'},
       [$('.header'),$('.main')],
       ['OneUI-mode',''],
-      [$('#oneui-height-range')]
+      [$('#oneui-height-range'),$('#OM_OneUI'),$('#OM_OOS11')]
+    ],
+    [
+      {name: 'oneui-mode_OneUI', valueKey: 'OMOneuiValue'},
+      [$('.header-icon'),$('.header-name')],
+      ['OM_OneUI',''],
+      []
+    ],
+    [
+      {name: 'oneui-mode_OOS11', valueKey: 'OMOOS11Value'},
+      [$('.header-name')],
+      ['OM_OOS11',''],
+      []
     ]
   ],
   [ // Другое
@@ -194,62 +203,9 @@ let themeKernel = [
     'var(--main_text-color)','var(--secondary_text-color)','var(--main_border-color)',
     'var(--radio_nonactive-color)'], // массив для покраски svg
     [ // массивы для контроля черного/белого акцента
-      {black: '#000', white: '#fff'},
+      {b: '#000', w: '#fff'},
       ['#000','#161616'],
       ['#fff','#fafafa','#f2f2f2']
-    ],
-    [ // массивы для автоподхвата стилей/переменных при смене UI
-      [
-        {name: 'color-scheme', defaultKey: 'colorSchemeDefault', checkedKey: 'colorSchemeChecked'},
-        {ui: 'UI_OOS', 
-        darkTheme: ['#000','#424242','#141414','#1a1a1a','white','#7a7a7a','#1e1e1e','#898989','#4d4d4d','#b9b9b9'], 
-        lightTheme: ['#fafafa','white','white','#efefef','#191919','#969696','#e6e6e6','#999','#e1e1e1','#ececec'], 
-        darkThemeId: 'cs-0', lightThemeId: 'cs-1'},
-        {ui: 'UI_RUI', 
-        darkTheme: ['#000','#333','#141414','#252525','white','#8c8c8c','#333333','#666','#757575','#fff'], 
-        lightTheme: ['#fff','white','#ddd','#f7f7f7','black','#737373','#e5e5e5','#ccc','#e5e5e5','#fff'], 
-        darkThemeId: 'cs-2', lightThemeId: 'cs-3'},
-        {ui: 'UI_OneUI', 
-        darkTheme: ['#000','#252525','#252525','#333','#fafafa','#909090','#3f3f3f','#797979','#505050','#fafafa'], 
-        lightTheme: ['#f2f2f2','#fcfcfc','white','#e3e3e3','#161616','#989898','#ececec','#b3b3b3','#a9a9a9','#fcfcfc'], 
-        darkThemeId: 'cs-4', lightThemeId: 'cs-5'},
-        {ui: 'UI_ZenUI', 
-        darkTheme: ['#161616','#424242','#252525','#505050','white','#b9b9b9','#323232','#c1c1c1','#696969','#b4b4b4'], 
-        lightTheme: ['#fafafa','white','#ddd','#ededed','#202020','#787878','#dcdcdc','#989898','#ccc','#e7e7e7'], 
-        darkThemeId: 'cs-6', lightThemeId: 'cs-7'}
-      ],
-      [
-        {name: 'header-style', defaultKey: 'headerStyleDefault', 
-        checkedKey: 'headerStyleChecked', valueKey: 'headerStyleValue'},
-        {ui: 'UI_OOS', value: 'HEADER_stock', id: 'hs-0'},
-        {ui: 'UI_RUI', value: 'HEADER_RUI', id: 'hs-2'},
-        {ui: 'UI_OneUI', value: 'HEADER_OneUI', id: 'hs-3'},
-        {ui: 'UI_ZenUI', value: 'HEADER_ZenUI', id: 'hs-4'}
-      ],
-      [
-        {name: 'border-radius', defaultKey: 'borderRadiusDefault', 
-        checkedKey: 'borderRadiusChecked', var: ['--main_border-radius','--interactive_border-radius','--button_border-radius']},
-        {ui: 'UI_OOS', value: ['0.4em','0.6em','0.25em'], id: 'br-0'},
-        {ui: 'UI_RUI', value: ['0.6em','1.2em','0.5em'], id: 'br-1'},
-        {ui: 'UI_OneUI', value: ['1em','1.2em','1.25em'], id: 'br-2'},
-        {ui: 'UI_ZenUI', value: ['0.5em','0.5em','1.25em'], id: 'br-3'}
-      ],
-      [
-        {name: 'interactive-style', defaultKey: 'interactiveStyleDefault', 
-        checkedKey: 'interactiveStyleChecked', valueKey: 'interactiveStyleValue'},
-        {ui: 'UI_OOS', value: 'interactive_OOS', id: 'ias-0'},
-        {ui: 'UI_RUI', value: 'interactive_RUI', id: 'ias-1'},
-        {ui: 'UI_OneUI', value: 'interactive_OneUI', id: 'ias-2'},
-        {ui: 'UI_ZenUI', value: 'interactive_ZenUI', id: 'ias-3'}
-      ],
-      [
-        {name: 'switch-style', defaultKey: 'switchStyleDefault', 
-        checkedKey: 'switchStyleChecked', valueKey: 'switchStyleValue'},
-        {ui: 'UI_OOS', value: 'switch_OOS', id: 'ss-0'},
-        {ui: 'UI_RUI', value: 'switch_RUI', id: 'ss-1'},
-        {ui: 'UI_OneUI', value: 'switch_OneUI', id: 'ss-2'},
-        {ui: 'UI_ZenUI', value: 'switch_ZenUI', id: 'ss-3'}
-      ]
     ]
   ]
 ]

@@ -4,6 +4,8 @@
 
 // Функции
 
+function reload() { location.reload() } // функция перезагрузки страницы
+
 function varRead(array) { // Считыватель css-переменных
   for (let i = 0; i < array.length; i++)
     for (let j = 0; j < array[i][1].length; j++) {
@@ -14,7 +16,6 @@ function varRead(array) { // Считыватель css-переменных
 
 function varRecord(vars, values) {
   for (let i = 0; i < vars.length; i++) {
-    //$(':root').get(0).style.setProperty(vars[i], values[i]);
     document.documentElement.style.setProperty(vars[i], values[i]);
     localStorage.setItem(vars[i], values[i]);
   }
@@ -45,16 +46,6 @@ function markInput(key, name, id) {
    // Отметить как выбраннный
   localStorage.setItem(key, id); // Сохранить ключ в ЛХ
 }
-
-/*
-
-function markInput(array, id) {
-  document.querySelector('input[name="' + array[0].name + '"][id="' + id + '"]').setAttribute('checked','checked');
-   // Отметить как выбраннный
-  localStorage.setItem(array[0].checkedKey, id); // Сохранить ключ в ЛХ
-}
-
-*/
 
 function setOpacityAccent() {
   if (localStorage.getItem('--accent-color')) { // если есть ключ цвета акцента
@@ -90,19 +81,27 @@ function wbAccent(accent, bgVariants) {
 
 // Событие загрузки страницы
 
-document.addEventListener("DOMContentLoaded", () => {
+$(document).ready(function() {
   setOpacityAccent();
   varRead(themeKernel[0]);
   varRead(themeKernel[2]);
-  wbAccent(themeKernel[4][1][0].black, themeKernel[4][1][1]); // Проверка на равенство цвета акцента и ОЦФ (для ч. и б.)
-  wbAccent(themeKernel[4][1][0].white, themeKernel[4][1][2]); // Если да - меняет цвет акцента на стоковый
+  wbAccent(themeKernel[4][1][0].b, themeKernel[4][1][1]); // Проверка на равенство цвета акцента и ОЦФ (для ч. и б.)
+  wbAccent(themeKernel[4][1][0].w, themeKernel[4][1][2]); // Если да - меняет цвет акцента на стоковый
   svgColor(themeKernel[4][0]);
   for (let i = 0; i < themeKernel[1].length; i++) styleRead(themeKernel[1][i]);
   for (let i = 0; i < themeKernel[3].length; i++) styleRead(themeKernel[3][i]);
 });
 
-/*
-setInterval(function() {
-  console.log(localStorage.getItem('colorSchemeChecked'));
-}, 300);
-*/
+// Скроллинг
+
+$(window).scroll(function() { // событие скроллинга => функция (функция для OneUI mode)
+  if ($(window).scrollTop() > 0) { // скроллинг вниз страницы
+     // добавляем класс шапке и майну
+    if ($('.header.OneUI-mode').hasClass('scroll') == false) $('.header.OneUI-mode').addClass('scroll');
+    if ($('.main.OneUI-mode').hasClass('scroll') == false) $('.main.OneUI-mode').addClass('scroll');
+  } else { // когда в самом верху страницы (скроллинга нет)
+     // забираем класс у шапки и майна
+    if ($('.header.OneUI-mode').hasClass('scroll')) $('.header.OneUI-mode').removeClass('scroll');
+    if ($('.main.OneUI-mode').hasClass('scroll')) $('.main.OneUI-mode').removeClass('scroll');
+  }
+});

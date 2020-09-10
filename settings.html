@@ -313,7 +313,7 @@
             <section class="section section_menu section_interactive">
               <a class="link-hidden link-stretch" href="#oneui-mode-page"></a>
               <aside class="menu-text_container">
-                <div class="menu-text menu-name">OneUI mode</div>
+                <div class="menu-text menu-name">Режим OneUI</div>
                 <div class="menu-text menu-description">Фича с огромной шапкой из OneUI</div>
               </aside>
             </section>
@@ -481,11 +481,16 @@
             <section class="section section_changelog spoiler-container">
               <div class="menu-text_container release-info">
                 <h3 class="menu-text menu-name"></h3>
-                <time class="menu-text menu-description" datatime="2020-09-01">01.09.2020</time>
+                <time class="menu-text menu-description" datatime="2020-09-10">10.09.2020</time>
               </div>
               <details class="spoiler spoiler_changelog">
                 <summary class="spoiler-button spoiler-button_changelog"></summary>
                 <div class="delimiter_changelog"></div>
+                <ul class="release-notes">
+                  <li class="release-note">добавлена возможность сместить вниз кнопку "назад" и поднять заголовок шапки в верхний левый угол при активном режиме OneUI, на тумблерах оное</li>
+                  <li class="release-note">создавать новые переключатели переменных/стилей стало еще проще и быстрее (за счет новой архитектуры движка)</li>
+                  <li class="release-note">переработан полностью движок тем, он стал меньше и быстрее</li>
+                </ul>
                 <ul class="release-notes">
                   <li class="release-note">реализована автораздача disabled зависящим от тумблера элементам при его выключении</li>
                   <li class="release-note">переход на jquery (не полный)</li>
@@ -1126,50 +1131,12 @@
       </div>
     </div>
 
-    <div id="test1" class="page-block">
-      <header class="header header_page">
-        <div class="header-icon" onclick="history.back()">
-          <object class="header-icon_svg" type="image/svg+xml" data="kernel/svg/header/back-icon.svg"></object>
-        </div>
-        <h2 class="header-name two-line">Тестовая страница</h2>
-      </header>
-
-      <div class="main main_page page-block_main">
-        <article class="article article_single">
-          <section class="section section_menu section_interactive">
-            <label class="row-label switch-label">
-              <aside class="menu-text_container">
-                <div class="menu-text menu-name">1 чекбокс</div>
-                <div class="menu-text menu-description">Описание</div>
-              </aside>
-              <input type="checkbox" id="test-checkbox1" name="test-checkbox" value="style00">
-              <span class="switch"></span>
-            </label>
-          </section>
-        </article>
-
-        <article class="article">
-          <div class="article_multiple">
-            <section class="section">
-              <aside class="menu-text_container">
-                <div class="menu-text menu-name">Ползунок</div>
-              </aside>
-              <div class="range-container">
-                <div id="test-demo" class="range-demo menu-description"></div>
-                <input type="range" min="10" max="100" step="10" class="range" id="test-range">
-              </div>
-            </section>
-          </div>
-        </article>
-      </div>
-    </div>
-
     <div id="oneui-mode-page" class="page-block">
       <header class="header header_page">
         <div class="header-icon" onclick="history.back()">
           <object class="header-icon_svg" type="image/svg+xml" data="kernel/svg/header/back-icon.svg"></object>
         </div>
-        <h2 class="header-name two-line">OneUI mode</h2>
+        <h2 class="header-name two-line">Режим OneUI</h2>
       </header>
 
       <div class="main main_page page-block_main">
@@ -1177,7 +1144,7 @@
           <section class="section section_menu section_interactive">
             <label class="row-label switch-label">
               <aside class="menu-text_container">
-                <div class="menu-text menu-name">OneUI mode</div>
+                <div class="menu-text menu-name">Режим OneUI</div>
                 <div class="menu-text menu-description">Фича с огромной шапкой из OneUI</div>
               </aside>
               <input type="checkbox" name="oneui-mode">
@@ -1206,6 +1173,33 @@
                 - ставим 45 или 47,5%). В противном случае визуально будет казаться, что шапка занимает несколько бОльший 
                 размер.
               </p>
+            </section>
+          </div>
+        </article>
+
+        <article class="article">
+          <div class="article_multiple">
+            <section class="section section_menu section_interactive">
+              <label class="row-label switch-label">
+                <aside class="menu-text_container">
+                  <div class="menu-text menu-name">Стиль OneUI</div>
+                  <div class="menu-text menu-description">Кнопка "назад" снизу шапки</div>
+                </aside>
+                <input type="checkbox" name="oneui-mode_OneUI" id = "OM_OneUI">
+                <span class="switch"></span>
+              </label>
+            </section>
+          </div>
+          <div class="article_multiple">
+            <section class="section section_menu section_interactive">
+              <label class="row-label switch-label">
+                <aside class="menu-text_container">
+                  <div class="menu-text menu-name">Стиль Oxygen OS 11</div>
+                  <div class="menu-text menu-description">Заголовок шапки в верхнем левом углу</div>
+                </aside>
+                <input type="checkbox" name="oneui-mode_OOS11" id = "OM_OOS11">
+                <span class="switch"></span>
+              </label>
             </section>
           </div>
         </article>
@@ -1443,13 +1437,14 @@
 
     <script src="kernel/js/jquery-min.js"></script>
 
-    <script src="kernel/js/theme/parametres.js"></script>
-    <script src="kernel/js/theme/loader.js"></script>
-    <script src="kernel/js/theme/addon.js"></script>
+    <script src="kernel/js/theme/kernel.js"></script>
+    <script src="kernel/js/theme/main.js"></script>
     <script src="kernel/js/theme/settings.js"></script>
 
-    <script src="kernel/js/changelog.js"></script>
+    <script src="kernel/js/settings/changelog.js"></script>
+    <!-- <script src="kernel/js/settings/test.js"></script> -->
+    <!-- <script src="kernel/js/settings/lab.js"></script> -->
+
     <script src="kernel/js/interactive.js"></script>
-    <!-- <script src="kernel/js/test.js"></script> -->
   </body>
 </html>

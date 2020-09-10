@@ -2,7 +2,7 @@
 <?xml-stylesheet type="text/css" href="../../css/root.css"?>
 <?xml-stylesheet type="text/css" href="../../css/svg.css"?>
 <svg version="1.1" id="Слой_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve" class="svg_settings">
-	<script xlink:href="../../js/theme-svg.js" />
+	<script xlink:href="../../js/theme/svg.js" />
   <g class="g60" fill="white" stroke="none">
     <rect x="10" y="30" width="80" height="30"/>
     <rect x="10" y="65" width="25" height="15"/>
