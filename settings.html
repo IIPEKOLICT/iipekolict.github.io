@@ -136,7 +136,7 @@
 
     <div id="accent" class="page-block">
       <header class="header header_page">
-        <div class="header-icon" onclick="history.back()">
+        <div class="header-icon back-icon" onclick="history.back()">
           <object class="header-icon_svg" type="image/svg+xml" data="kernel/svg/header/back-icon.svg"></object>
         </div>
         <h2 class="header-name two-line">Цвет акцента</h2>
@@ -481,11 +481,19 @@
             <section class="section section_changelog spoiler-container">
               <div class="menu-text_container release-info">
                 <h3 class="menu-text menu-name"></h3>
-                <time class="menu-text menu-description" datatime="2020-09-10">10.09.2020</time>
+                <time class="menu-text menu-description" datatime="2020-09-13">13.09.2020</time>
               </div>
               <details class="spoiler spoiler_changelog">
                 <summary class="spoiler-button spoiler-button_changelog"></summary>
                 <div class="delimiter_changelog"></div>
+                <ul class="release-notes">
+                  <li class="release-note">обновлена инфа в разделе "Об устройстве"</li>
+                  <li class="release-note">улучшены дефолтные настройки акцента, цветов и пр.</li>
+                  <li class="release-note">стиль UI OOS теперь косплеит Oxygen OS 11, LOS - в основе своей OOS 10</li>
+                  <li class="release-note">добавлен стиль UI "Loshica OS" со всеми вытекающими</li>
+                  <li class="release-note">добавлены прелоадеры для загрузки страницы и применения настроек</li>
+                  <li class="release-note">заглавные тумблеры теперь корректно выглядят + при неактивности оного затемняются/отключаются все зависимые элементы</li>
+                </ul>
                 <ul class="release-notes">
                   <li class="release-note">добавлена возможность сместить вниз кнопку "назад" и поднять заголовок шапки в верхний левый угол при активном режиме OneUI, на тумблерах оное</li>
                   <li class="release-note">создавать новые переключатели переменных/стилей стало еще проще и быстрее (за счет новой архитектуры движка)</li>
@@ -990,10 +998,11 @@
               <div class="menu-text menu-name about_primary-text"></div>
               <div class="menu-text menu-description about_secondary-text">
                 <span class="txt-in-pc">AMD Ryzen<sup class="sup">TM</sup> 9 3900X</span>
-                <span class="content_OOS txt-in-mobile">Snapdragon<sup class="sup">TM</sup> 855</span>
-                <span class="content_ZenUI txt-in-mobile">Snapdragon<sup class="sup">TM</sup> 855</span>
-                <span class="content_RUI txt-in-mobile">Snapdragon<sup class="sup">TM</sup> 710</span>
+                <span class="content_LOS txt-in-mobile">LoshicaDragon<sup class="sup">TM</sup> 865+</span>
+                <span class="content_OOS txt-in-mobile">Snapdragon<sup class="sup">TM</sup> 865</span>
+                <span class="content_RUI txt-in-mobile">Snapdragon<sup class="sup">TM</sup> 712</span>
                 <span class="content_OneUI txt-in-mobile">Snapdragon<sup class="sup">TM</sup> 730</span>
+                <span class="content_ZenUI txt-in-mobile">Snapdragon<sup class="sup">TM</sup> 865</span>
               </div>
             </div>
             <div id="about-2spec" class="menu-text_container">
@@ -1140,12 +1149,11 @@
       </header>
 
       <div class="main main_page page-block_main">
-        <article class="article article_single">
+        <article class="article article_single important">
           <section class="section section_menu section_interactive">
-            <label class="row-label switch-label">
+            <label class="row-label switch-label important-label">
               <aside class="menu-text_container">
-                <div class="menu-text menu-name">Режим OneUI</div>
-                <div class="menu-text menu-description">Фича с огромной шапкой из OneUI</div>
+                <div class="menu-text menu-name">Включить</div>
               </aside>
               <input type="checkbox" name="oneui-mode">
               <span class="switch"></span>
@@ -1153,7 +1161,7 @@
           </section>
         </article>
 
-        <article class="article">
+        <article id="om-height-article" class="article">
           <div class="article_multiple">
             <section class="section">
               <aside class="menu-text_container">
@@ -1177,13 +1185,13 @@
           </div>
         </article>
 
-        <article class="article">
+        <article id="om-styles-article" class="article">
           <div class="article_multiple">
             <section class="section section_menu section_interactive">
               <label class="row-label switch-label">
                 <aside class="menu-text_container">
                   <div class="menu-text menu-name">Стиль OneUI</div>
-                  <div class="menu-text menu-description">Кнопка "назад" снизу шапки</div>
+                  <div class="menu-text menu-description">Кнопки в нижней части шапки</div>
                 </aside>
                 <input type="checkbox" name="oneui-mode_OneUI" id = "OM_OneUI">
                 <span class="switch"></span>
@@ -1219,20 +1227,25 @@
           <label class="row-label radio-label">
             <input type="radio" id="us-0" name="ui-style">
             <span class="radio-button"></span>
-            <div class="radio-name">Oxygen OS</div>
+            <div class="radio-name">Loshica OS</div>
           </label>
           <label class="row-label radio-label">
             <input type="radio" id="us-1" name="ui-style">
             <span class="radio-button"></span>
-            <div class="radio-name">Realme UI</div>
+            <div class="radio-name">Oxygen OS</div>
           </label>
           <label class="row-label radio-label">
             <input type="radio" id="us-2" name="ui-style">
             <span class="radio-button"></span>
-            <div class="radio-name">OneUI</div>
+            <div class="radio-name">Realme UI</div>
           </label>
           <label class="row-label radio-label">
             <input type="radio" id="us-3" name="ui-style">
+            <span class="radio-button"></span>
+            <div class="radio-name">OneUI</div>
+          </label>
+          <label class="row-label radio-label">
+            <input type="radio" id="us-4" name="ui-style">
             <span class="radio-button"></span>
             <div class="radio-name">ZenUI</div>
           </label>
@@ -1242,54 +1255,59 @@
         <div id="color-scheme" class="interactive-content interactive-block">
           <h3 class="interactive-header">Цветовая схема</h3>
 
-          <label class="row-label radio-label content_OOS">
+          <label class="row-label radio-label content_LOS">
             <input type="radio" id="cs-0" name="color-scheme">
             <span class="radio-button"></span>
             <div class="radio-name">Темная</div>
           </label>
-          <label class="row-label radio-label content_OOS">
+          <label class="row-label radio-label content_LOS">
             <input type="radio" id="cs-1" name="color-scheme">
             <span class="radio-button"></span>
             <div class="radio-name">Светлая</div>
           </label>
 
-          <label class="row-label radio-label content_RUI">
+          <label class="row-label radio-label content_OOS">
             <input type="radio" id="cs-2" name="color-scheme">
             <span class="radio-button"></span>
             <div class="radio-name">Темная</div>
           </label>
-          <label class="row-label radio-label content_RUI">
+          <label class="row-label radio-label content_OOS">
             <input type="radio" id="cs-3" name="color-scheme">
             <span class="radio-button"></span>
             <div class="radio-name">Светлая</div>
           </label>
 
-          <label class="row-label radio-label content_OneUI">
+          <label class="row-label radio-label content_RUI">
             <input type="radio" id="cs-4" name="color-scheme">
             <span class="radio-button"></span>
             <div class="radio-name">Темная</div>
           </label>
-          <label class="row-label radio-label content_OneUI">
+          <label class="row-label radio-label content_RUI">
             <input type="radio" id="cs-5" name="color-scheme">
             <span class="radio-button"></span>
             <div class="radio-name">Светлая</div>
           </label>
 
-          <label class="row-label radio-label content_ZenUI">
+          <label class="row-label radio-label content_OneUI">
             <input type="radio" id="cs-6" name="color-scheme">
             <span class="radio-button"></span>
             <div class="radio-name">Темная</div>
           </label>
-          <label class="row-label radio-label content_ZenUI">
+          <label class="row-label radio-label content_OneUI">
             <input type="radio" id="cs-7" name="color-scheme">
             <span class="radio-button"></span>
             <div class="radio-name">Светлая</div>
           </label>
 
-          <label class="row-label radio-label">
+          <label class="row-label radio-label content_ZenUI">
             <input type="radio" id="cs-8" name="color-scheme">
             <span class="radio-button"></span>
-            <div class="radio-name">Oxygen OS 10</div>
+            <div class="radio-name">Темная</div>
+          </label>
+          <label class="row-label radio-label content_ZenUI">
+            <input type="radio" id="cs-9" name="color-scheme">
+            <span class="radio-button"></span>
+            <div class="radio-name">Светлая</div>
           </label>
         </div>
 
@@ -1357,20 +1375,25 @@
           <label class="row-label radio-label">
             <input type="radio" id="ss-0" name="switch-style">
             <span class="radio-button"></span>
-            <div class="radio-name">Oxygen OS</div>
+            <div class="radio-name">Старый Oxygen OS</div>
           </label>
           <label class="row-label radio-label">
             <input type="radio" id="ss-1" name="switch-style">
             <span class="radio-button"></span>
-            <div class="radio-name">Realme UI</div>
+            <div class="radio-name">Новый Oxygen OS</div>
           </label>
           <label class="row-label radio-label">
             <input type="radio" id="ss-2" name="switch-style">
             <span class="radio-button"></span>
-            <div class="radio-name">OneUI</div>
+            <div class="radio-name">Realme UI</div>
           </label>
           <label class="row-label radio-label">
             <input type="radio" id="ss-3" name="switch-style">
+            <span class="radio-button"></span>
+            <div class="radio-name">OneUI</div>
+          </label>
+          <label class="row-label radio-label">
+            <input type="radio" id="ss-4" name="switch-style">
             <span class="radio-button"></span>
             <div class="radio-name">ZenUI</div>
           </label>
@@ -1383,25 +1406,30 @@
           <label class="row-label radio-label">
             <input type="radio" id="br-0" name="border-radius">
             <span class="radio-button"></span>
-            <div class="radio-name">Oxygen OS</div>
+            <div class="radio-name">Стоковый</div>
           </label>
           <label class="row-label radio-label">
             <input type="radio" id="br-1" name="border-radius">
             <span class="radio-button"></span>
-            <div class="radio-name">Realme UI</div>
+            <div class="radio-name">Oxygen OS</div>
           </label>
           <label class="row-label radio-label">
             <input type="radio" id="br-2" name="border-radius">
             <span class="radio-button"></span>
-            <div class="radio-name">OneUI</div>
+            <div class="radio-name">Realme UI</div>
           </label>
           <label class="row-label radio-label">
             <input type="radio" id="br-3" name="border-radius">
             <span class="radio-button"></span>
-            <div class="radio-name">ZenUI</div>
+            <div class="radio-name">OneUI</div>
           </label>
           <label class="row-label radio-label">
             <input type="radio" id="br-4" name="border-radius">
+            <span class="radio-button"></span>
+            <div class="radio-name">ZenUI</div>
+          </label>
+          <label class="row-label radio-label">
+            <input type="radio" id="br-5" name="border-radius">
             <span class="radio-button"></span>
             <div class="radio-name">Отключить закругления</div>
           </label>
@@ -1435,6 +1463,13 @@
       </div>
     </div>
 
+    <!-- Прелоадер -->
+
+    <div id="theme-preloader" class="loader"><div class="loader-text">Применение...</div></div>
+    <div id="default-preloader" class="loader"><div class="loader-animation"></div></div>
+
+    <!-- Скрипты -->
+
     <script src="kernel/js/jquery-min.js"></script>
 
     <script src="kernel/js/theme/kernel.js"></script>
@@ -1442,7 +1477,7 @@
     <script src="kernel/js/theme/settings.js"></script>
 
     <script src="kernel/js/settings/changelog.js"></script>
-    <!-- <script src="kernel/js/settings/test.js"></script> -->
+    <script src="kernel/js/settings/test.js"></script>
     <!-- <script src="kernel/js/settings/lab.js"></script> -->
 
     <script src="kernel/js/interactive.js"></script>

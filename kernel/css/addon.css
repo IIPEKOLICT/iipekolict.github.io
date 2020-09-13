@@ -4,10 +4,11 @@
 
 /* Показ контента в зависимости от активного стиля UI ------------------------------*/
 
-.content_OOS, .content_ZenUI, .content_RUI, .content_OneUI
+.content_LOS, .content_OOS, .content_RUI, .content_OneUI, .content_ZenUI
 {
   display: none; /* Скрыть по дефолту контент, зависящий от UI */
 }
+.UI_LOS .content_LOS,
 .UI_OOS .content_OOS,
 .UI_ZenUI .content_ZenUI,
 .UI_RUI .content_RUI,
@@ -15,6 +16,7 @@
 {
   display: block; /* Показать контент, зависящий от UI */
 }
+.UI_LOS .row-label.content_LOS,
 .UI_OOS .row-label.content_OOS,
 .UI_ZenUI .row-label.content_ZenUI,
 .UI_RUI .row-label.content_RUI,
@@ -26,6 +28,7 @@
 /* Другое ------------------------------*/
 
 .txt-in-mobile,
+.content_LOS.txt-in-mobile,
 .content_OOS.txt-in-mobile,
 .content_ZenUI.txt-in-mobile,
 .content_RUI.txt-in-mobile,
@@ -64,6 +67,10 @@
 {
   display: none;
 }
+.disabled
+{
+  opacity: 0.5;
+}
 
 /*------------------------------*/
 /*---ОВЕРЛЕЙ [3:4]--------------*/
@@ -78,6 +85,7 @@
     display: none;
   }
   .txt-in-mobile,
+  .UI_LOS .content_LOS.txt-in-mobile,
   .UI_OOS .content_OOS.txt-in-mobile,
   .UI_ZenUI .content_ZenUI.txt-in-mobile,
   .UI_RUI .content_RUI.txt-in-mobile,

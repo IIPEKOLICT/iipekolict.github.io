@@ -28,7 +28,7 @@
   appearance: none;
   height: 2em;
   width: 2em;
-  background-color: var(--accent-color, #80cbc4);
+  background-color: var(--accent-color, #42a5f6);
   border-radius: 50%;
   cursor: pointer;
 }
@@ -36,7 +36,7 @@
 {
   height: 2em;
   width: 2em;
-  background-color: var(--accent-color, #80cbc4);
+  background-color: var(--accent-color, #42a5f6);
   border-radius: 50%;
   cursor: pointer;
 }

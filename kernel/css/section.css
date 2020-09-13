@@ -24,7 +24,7 @@
 .section_changelog /* модификатор секции для #changelog */
 {
   margin: 0.5em 4vw;
-  border: 1px solid var(--main_bg-color, black);
+  border: 1px solid var(--main_bg-color, #000);
   border-radius: var(--main_border-radius, 0.5em);
   transition: var(--main_animation-duration, 0.3s) ease;
 }
@@ -52,7 +52,7 @@
 .section_changelog:hover /* стили при наведении на секции в #changelog */
 {
   background-color: var(--hover_bg-color, #1a1a1a);
-  border-color: var(--accent-color, #80cbc4);
+  border-color: var(--accent-color, #42a5f6);
 }
 
 /* Секция-пункт меню ------------------------------*/
@@ -63,6 +63,7 @@
   cursor: pointer;
   transition: var(--main_animation-duration, 0.3s) ease;
 }
+  #start .article_single .section_menu.UI_OOS, /* одиночные артикли на гл. стр., UI OOS */
   .article_single .section_menu.UI_OneUI /* стиль OneUI, секции в одиночных артиклях */
   {
     border-radius: inherit;
@@ -139,7 +140,7 @@
 
 .section-description /* второстепенный текст */
 {
-  color: var(--secondary_text-color, #7a7a7a);
+  color: var(--secondary_text-color, #898989);
   font-size: 0.5em;
 }
 
@@ -162,13 +163,15 @@
   {
     height: 3em;
   }
+      #start .article_multiple:first-of-type .section_menu.UI_OOS,
       .article_multiple:first-of-type .section_menu.UI_OneUI
-      /* закругления сверху для 1 секции в множественном артикле */
+      /* закругления сверху для 1 секции в множественном артикле (гл. стр. OOS/везде OneUI) */
       {
         border-radius: var(--main_border-radius, 0.5em) var(--main_border-radius, 0.5em) 0 0;
       }
+      #start .article_multiple:last-of-type .section_menu.UI_OOS,
       .article_multiple:last-of-type .section_menu.UI_OneUI
-      /* закругления снизу для последней секции в множественном артикле */
+      /* закругления снизу для последней секции в множественном артикле (гл. стр. OOS/везде OneUI) */
       {
         border-radius: 0 0 var(--main_border-radius, 0.5em) var(--main_border-radius, 0.5em);
       }
@@ -202,6 +205,7 @@
   {
     height: 5em;
   }
+    #start .section_menu.UI_OOS, /* Секции на гл. стр., UI OOS */
     .section_menu.UI_OneUI /* стиль OneUI */
     {
       border-radius: var(--main_border-radius, 0.5em);

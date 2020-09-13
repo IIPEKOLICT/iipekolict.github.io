@@ -28,7 +28,7 @@
 .interactive-container /* контейнер по дефолту (скрыт) */
 {
   height: 0;
-  background-color: var(--secondary_bg-color, #424242);
+  background-color: var(--secondary_bg-color, #1f1f1f);
   border-radius: var(--interactive_border-radius, 1em);
   transition: var(--main_animation-duration, 0.3s) ease;
 }
@@ -77,25 +77,25 @@
   height: 0;
   text-align: center;
   vertical-align: middle;
-  color: var(--secondary_text-color, #7a7a7a);
-  border-top: 1px solid var(--secondary_text-color, #7a7a7a);
+  color: var(--secondary_text-color, #898989);
+  border-top: 1px solid var(--secondary_text-color, #898989);
   cursor: pointer;
   transition: var(--main_animation-duration, 0.3s) ease;
 }
   .interactive-button.interactive_OOS,
   .interactive-button.interactive_OneUI /* стиль кнопки-скрывашки по дефолту (скрыта) (стиль OOS и OneUI) */
   {
-    color: var(--accent-color, #80cbc4);
+    color: var(--accent-color, #42a5f6);
     border-top: none;
     border-radius: inherit;
   }
   .interactive-button.interactive_RUI /* стиль кнопки-скрывашки по дефолту (скрыта) (стиль RUI) */
   {
-    color: var(--secondary_text-color, #7a7a7a);
+    color: var(--secondary_text-color, #898989);
   }
   .interactive-button.interactive_ZenUI /* стиль кнопки-скрывашки по дефолту (скрыта) (стиль ZenUI) */
   {
-    color: var(--accent-color, #80cbc4);
+    color: var(--accent-color, #42a5f6);
     border-radius: 0 0 var(--interactive_border-radius, 1em) var(--interactive_border-radius, 1em);
   }
 .interactive-button.shown /* стиль кнопки-скрывашки при показе */
@@ -108,14 +108,14 @@
   }
 .interactive-button:hover /* стиль кнопки-скрывашки при наведении */
 {
-  background-color: var(--secondary_text-color, #7a7a7a);
+  background-color: var(--secondary_text-color, #898989);
   color: var(--hover_bg-color, #1a1a1a);
 }
   .interactive-button:hover.interactive_OOS,
   .interactive-button:hover.interactive_OneUI /* стиль кнопки-скрывашки при наведении (стиль OOS и OneUI) */
   {
-    background-color: var(--accent-color, #80cbc4);
-    color: var(--main_bg-color, black);
+    background-color: var(--accent-color, #42a5f6);
+    color: var(--main_bg-color, #000);
   }
   .interactive-button:hover.interactive_RUI /* стиль кнопки-скрывашки при наведении (стиль RUI) */
   {

@@ -25,24 +25,39 @@
   -webkit-transition: var(--main_animation-duration, 0.3s);
   transition: var(--main_animation-duration, 0.3s);
 }
-  .switch.switch_OOS,
+  .switch.switch_LOS,
   .switch.switch_OneUI,
   .switch.switch_ZenUI
   {
     position: relative;
   }
-  .switch.switch_OOS,
+  .switch.switch_LOS,
   .switch.switch_OneUI
   {
-    border: solid var(--switch_nonactive-color, #4d4d4d);
+    border: solid var(--switch_nonactive-color, #3d3d3d);
   }
   .switch.switch_RUI
   {
-    background-color: var(--radio_nonactive-color, #898989);
+    background-color: var(--radio_nonactive-color, #c7c7c7);
   }
+  .switch.switch_OOS,
   .switch.switch_ZenUI
   {
-    background-color: var(--switch_nonactive-color, #4d4d4d);
+    background-color: var(--switch_nonactive-color, #3d3d3d);
+  }
+
+  /* Модификации для главного тумблера страницы */
+  .article_single.important.checked.UI_OOS .switch.switch_LOS,
+  .article_single.important.checked.UI_OOS .switch.switch_OneUI
+  {
+    border-color: rgba(255,255,255,0.6);
+  }
+  .article_single.important.checked.UI_OOS .switch.switch_OOS,
+  .article_single.important.checked.UI_OOS .switch.switch_RUI,
+  .article_single.important.checked.UI_OOS .switch.switch_OneUI,
+  .article_single.important.checked.UI_OOS .switch.switch_ZenUI
+  {
+    background-color: rgba(255,255,255,0.6);
   }
 
 /* Кружочек ------------------------------*/
@@ -55,65 +70,83 @@
   -webkit-transition: var(--main_animation-duration, 0.3s);
   transition: var(--main_animation-duration, 0.3s);
 }
-  .switch.switch_OOS:before,
+  .switch.switch_LOS:before,
   .switch.switch_OneUI:before,
   .switch.switch_ZenUI:before
   {
     position: absolute;
-    background-color: var(--switch-before_nonactive-color, #b9b9b9);
+    background-color: var(--switch-before_nonactive-color, #d1d1d1);
   }
   .switch.switch_RUI:before
   {
-    background-color: var(--radio_nonactive-color, #898989);
-    border: solid var(--switch-before_nonactive-color, #b9b9b9);
+    background-color: var(--radio_nonactive-color, #c7c7c7);
+    border: solid var(--switch-before_nonactive-color, #d1d1d1);
   }
   .switch.switch_OneUI:before
   {
-    border: solid var(--switch_nonactive-color, #4d4d4d);
+    border: solid var(--switch_nonactive-color, #3d3d3d);
   }
+  .switch.switch_OOS:before,
   .switch.switch_ZenUI:before
   {
-    background-color: var(--switch-before_nonactive-color, #b9b9b9);
+    background-color: var(--switch-before_nonactive-color, #d1d1d1);
+  }
+
+  /* Модификации для главного тумблера страницы */
+.article_single.important.checked.UI_OOS .switch:before
+{
+  background-color: var(--main_text-color, #d8d8d8);
+}
+  .article_single.important.checked.UI_OOS .switch.switch_RUI::before
+  {
+    background-color: var(--accent-color,#80cbc4);
+    border-color: var(--accent-color,#80cbc4);
+  }
+  .article_single.important.checked.UI_OOS .switch.switch_OneUI::before
+  {
+    border-color: var(--main_text-color, #d8d8d8);
   }
 
 /* Дорожка при отмеченном инпуте ------------------------------*/
 
-  input:checked + .switch.switch_OOS,
+  input:checked + .switch.switch_LOS,
   input:checked + .switch.switch_OneUI
   {
-    border-color: var(--accent_opacity-color, rgba(128,203,196,0.6));
+    border-color: var(--accent_opacity-color, rgba(66,165,246,0.5));
   }
   input:checked + .switch.switch_RUI,
   input:checked + .switch.switch_OneUI
   {
-    background-color: var(--accent-color, #80cbc4);
+    background-color: var(--accent-color, #42a5f6);
   }
+  input:checked + .switch.switch_OOS,
   input:checked + .switch.switch_ZenUI
   {
-    background-color: var(--accent_opacity-color, rgba(128,203,196,0.6));
+    background-color: var(--accent_opacity-color, rgba(66,165,246,0.5));
   }
 
 /* Дорожка, когда инпут в фокусе ------------------------------*/
 
 input:focus + .switch
 {
-  box-shadow: 0 0 1px var(--accent-color, #80cbc4);
+  box-shadow: 0 0 1px var(--accent-color, #42a5f6);
 }
 
 /* Кружочек при отмеченном инпуте ------------------------------*/
 
+  input:checked + .switch.switch_LOS:before,
   input:checked + .switch.switch_OOS:before,
   input:checked + .switch.switch_ZenUI:before
   {
-    background-color: var(--accent-color, #80cbc4);
+    background-color: var(--accent-color, #42a5f6);
   }
   input:checked + .switch.switch_RUI:before
   {
-    background-color: var(--switch-before_nonactive-color, #b9b9b9);
+    background-color: var(--switch-before_nonactive-color, #d1d1d1);
   }
   input:checked + .switch.switch_OneUI:before
   {
-    border-color: var(--accent-color, #80cbc4);
+    border-color: var(--accent-color, #42a5f6);
   }
 
 /*------------------------------*/
@@ -124,13 +157,20 @@ input:focus + .switch
 {
   /* Дорожка ------------------------------*/
 
-    .switch.switch_OOS
+    .switch.switch_LOS
     {
       margin: 0.485em;
       height: 0.7em;
       width: 1.75em;
       border-radius: 0.49em;
       border-width: 0.14em;
+    }
+    .switch.switch_OOS
+    {
+      margin: 0.1em;
+      height: 1.4em;
+      width: 2.8em;
+      border-radius: 0.7em;
     }
     .switch.switch_RUI
     {
@@ -157,10 +197,15 @@ input:focus + .switch
 
   /* Кружочек ------------------------------*/
 
-    .switch.switch_OOS:before
+    .switch.switch_LOS:before
     {
       top: -0.35em;
       left: -0.35em;
+      height: 1.4em;
+      width: 1.4em;
+    }
+    .switch.switch_OOS:before
+    {
       height: 1.4em;
       width: 1.4em;
     }
@@ -189,12 +234,18 @@ input:focus + .switch
 
   /* Кружочек при отмеченном инпуте ------------------------------*/
 
-    input:checked + .switch.switch_OOS:before,
+    input:checked + .switch.switch_LOS:before,
     input:checked + .switch.switch_RUI:before
     {
       -webkit-transform: translateX(1.05em);
       -ms-transform: translateX(1.05em);
       transform: translateX(1.05em);
+    }
+    input:checked + .switch.switch_OOS:before
+    {
+      -webkit-transform: translateX(1.4em);
+      -ms-transform: translateX(1.4em);
+      transform: translateX(1.4em);
     }
     input:checked + .switch.switch_OneUI:before
     {
@@ -218,13 +269,20 @@ input:focus + .switch
 {
   /* Дорожка ------------------------------*/
 
-    .switch.switch_OOS
+    .switch.switch_LOS
     {
       margin: 0.59em;
       height: 0.8em;
       width: 2em;
       border-radius: 0.56em;
       border-width: 0.16em;
+    }
+    .switch.switch_OOS
+    {
+      margin: 0.15em;
+      height: 1.6em;
+      width: 3.2em;
+      border-radius: 0.8em;
     }
     .switch.switch_RUI
     {
@@ -251,10 +309,15 @@ input:focus + .switch
 
   /* Кружочек ------------------------------*/
 
-    .switch.switch_OOS:before
+    .switch.switch_LOS:before
     {
       top: -0.4em;
       left: -0.4em;
+      height: 1.6em;
+      width: 1.6em;
+    }
+    .switch.switch_OOS:before
+    {
       height: 1.6em;
       width: 1.6em;
     }
@@ -283,12 +346,18 @@ input:focus + .switch
 
   /* Кружочек при отмеченном инпуте ------------------------------*/
 
-    input:checked + .switch.switch_OOS:before,
+    input:checked + .switch.switch_LOS:before,
     input:checked + .switch.switch_RUI:before
     {
       -webkit-transform: translateX(1.2em);
       -ms-transform: translateX(1.2em);
       transform: translateX(1.2em);
+    }
+    input:checked + .switch.switch_OOS:before
+    {
+      -webkit-transform: translateX(1.6em);
+      -ms-transform: translateX(1.6em);
+      transform: translateX(1.6em);
     }
     input:checked + .switch.switch_OneUI:before
     {

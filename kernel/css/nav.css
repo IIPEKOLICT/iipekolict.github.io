@@ -83,7 +83,7 @@
 }
 .nav-item:hover .nav-icon /* иконка пункта меню при наведении на пункт меню */
 {
-  background-color: var(--accent-color, #80cbc4);
+  background-color: var(--accent-color, #42a5f6);
 }
   .nav-icon_svg /* свг-порт иконки пункта меню */
   {
@@ -92,7 +92,7 @@
   }
 .nav-item:hover .nav-name /* название пункта меню при наведении на пункт меню */
 {
-  color: var(--accent-color, #80cbc4);
+  color: var(--accent-color, #42a5f6);
 }
 
 /*------------------------------*/

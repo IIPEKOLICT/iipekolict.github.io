@@ -13,11 +13,11 @@
  /* стили иконок в шапке, цвет акцента (для шапки в стиле ZenUI и RUI) */
 .HEADER_RUI .g05, .HEADER_ZenUI .g05
 {
-  stroke: var(--accent-color, #80cbc4) !important;
+  stroke: var(--accent-color, #42a5f6) !important;
 }
 .HEADER_RUI .g50, .HEADER_ZenUI .g50
 {
-  fill: var(--accent-color, #80cbc4) !important;
+  fill: var(--accent-color, #42a5f6) !important;
 }
 
  /* смена стиля иконки "назад" при включении стиля шапки OneUI */
@@ -38,10 +38,10 @@
 /* Иконки в навигационном меню ------------------------------*/
 
  /* анимация при наведении на пункт нав меню */
-.nav-item:hover .g06 {stroke: var(--main_bg-color, black) !important}
-.nav-item:hover .g60 {fill: var(--main_bg-color, black) !important}
+.nav-item:hover .g06 {stroke: var(--main_bg-color, #000) !important}
+.nav-item:hover .g60 {fill: var(--main_bg-color, #000) !important}
 .nav-item:hover .g66
 {
-  fill: var(--main_bg-color, black) !important;
-  stroke: var(--main_bg-color, black) !important;
+  fill: var(--main_bg-color, #000) !important;
+  stroke: var(--main_bg-color, #000) !important;
 }

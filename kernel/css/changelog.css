@@ -20,7 +20,7 @@
   margin: 0;
   padding: 0.4em 1em;
   list-style-type: circle;
-  color: var(--main_text-color, white);
+  color: var(--main_text-color, #d8d8d8);
 }
 
 /* Стили <li> ------------------------------*/
@@ -28,13 +28,13 @@
 .release-note /* дефолтные стили */
 {
   padding: 0.1em 0;
-  color: var(--secondary_text-color, #7a7a7a);
+  color: var(--secondary_text-color, #898989);
   font-size: 0.8em;
 }
 .release-note:first-of-type /* первая строчка */
 {
   padding-top: 0.4em;
-  border-top: 1px solid var(--secondary_text-color, #7a7a7a);
+  border-top: 1px solid var(--secondary_text-color, #898989);
 }
 .release-note:first-letter /* Написание первой буквы предложений каппсом */
 {

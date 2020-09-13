@@ -4,15 +4,21 @@
 
 /* <article> ------------------------------*/
 
+  #start .article.UI_OOS /* артикли на гл. стр.,UI OOS*/
+  {
+    margin: 0 4vw;
+  }
+  #start .article.UI_OOS, /* артикли внутри гл. стр., стиль UI OOS */
   .article.UI_OneUI /* артикли внутри <main>, стиль UI OneUI */
   {
-    margin-bottom: 1em;
-    background-color: var(--secondary_bg-color, #424242);
+    margin-top: 1em;
+    background-color: var(--secondary_bg-color, #1f1f1f);
     border-radius: var(--main_border-radius, 0.5em);
   }
-  .article.UI_OneUI:last-of-type /* последний артикль внутри <main>, стиль UI OneUI */
+  #start .article.UI_OOS:first-of-type, /* первый артикль внутри <main> на главной стр., стиль UI OOS */
+  .article.UI_OneUI:first-of-type /* первый артикль внутри <main>, стиль UI OneUI */
   {
-    margin-bottom: 0;
+    margin-top: 0;
   }
 .article_center /* артикли внутри <main>, модификатор для центрирования */
 {
@@ -22,6 +28,22 @@
 {
   padding: 0 4vw;
 }
+
+  /* Модификации для артиклей с главным тумблером страницы */
+  .article_single.important.UI_LOS, /* не отмечен чекбокс, стиль LOS */
+  .article_single.important.UI_OOS /* не отмечен чекбокс, стиль OOS */
+  {
+    background-color: var(--secondary_bg-color, #1f1f1f);
+  }
+  .article_single.important.checked.UI_OOS /* отмечен чекбокс, стиль OOS */
+  {
+    background-color: var(--accent-color, #42a5f6);
+  }
+  .article_single.important.checked.UI_LOS, /* не отмечен чекбокс, стиль LOS */
+  .article_single.important.checked.UI_OneUI /* отмечен чекбокс, стиль OneUI */
+  {
+    background-color: var(--accent_opacity-color, rgba(66,165,246,0.5));
+  }
 
 /* Границы (псевдоэлементы) артиклей ------------------------------*/
 
@@ -40,14 +62,22 @@
     margin: 0 4vw;
     width: calc(100% - 8vw);
   }
+  #start .article.UI_OOS::after, /* Для артиклей на гл. стр., UI OOS */
   .article.UI_OneUI::after /* для OneUI UI */
   {
     height: 0;
   }
-.article:last-of-type:not(.article_single):not(.UI_OneUI)::after /* случаи, когда граница не нужна */
+.article:last-of-type:not(.article_single):not(.UI_OneUI):not(#start .UI_OOS)::after /* случаи, когда граница не нужна */
 {
   content: none;
 }
+  /* Модификации для артиклей с главным тумблером страницы */
+  .article_single.important.UI_LOS::after,
+  .article_single.important.UI_OOS::after,
+  .article_single.important.UI_OneUI::after
+  {
+    height: 0;
+  }
 .article_multiple.UI_OneUI:not(:last-of-type)::after,
 .article_multiple.UI_ZenUI:not(:last-of-type)::after
  /* границы между множественными артиклями */
@@ -85,7 +115,7 @@
 
     .article.UI_ZenUI::after /* для ZenUI UI */
     {
-      background-color: var(--accent-color, #80cbc4);
+      background-color: var(--accent-color, #42a5f6);
     }
     .article:last-of-type.UI_ZenUI::after /* для ZenUI UI */
     {
