@@ -4,7 +4,7 @@
 
 // Массив с параметрами движка тем
 
-let themeKernel = [
+const themeKernel = [
   [ // Radio (переменные)
     [ // Цвет акцента
       {name: 'accent-color', prefix: 'ac', checkedKey: 'accentColorChecked', checkedStock: 'ac-2',
@@ -40,16 +40,26 @@ let themeKernel = [
       '--main_text-color','--secondary_text-color','--main_border-color','--radio_nonactive-color',
       '--switch_nonactive-color','--switch-before_nonactive-color'], // переменные
       [ // параметры инпутов
-        [['#000','#1f1f1f','#141414','#1a1a1a','#d8d8d8','#898989','#1e1e1e','#c7c7c7','#3d3d3d','#d1d1d1'],{type: 'dark', ui: 'UI_LOS'}],
-        [['#fafafa','white','#f2f2f2','#e1e1e1','#262626','#969696','#e6e6e6','#757575','#e1e1e1','#c4c4c4'],{type: 'light', ui: 'UI_LOS'}],
-        [['#000','#1e1e1e','#35363a','#1a1a1a','#fcfcfc','#888','#141416','#36353a','#1f1f1f','#626262'],{type: 'dark', ui: 'UI_OOS'}],
-        [['#fafafa','white','white','#efefef','#191919','#969696','#e6e6e6','#999','#e1e1e1','#ececec'],{type: 'light', ui: 'UI_OOS'}],
-        [['#000','#333','#141414','#252525','white','#8c8c8c','#333333','#666','#757575','white'],{type: 'dark', ui: 'UI_RUI'}],
-        [['#fff','white','#ddd','#f7f7f7','black','#737373','#e5e5e5','#ccc','#e5e5e5','white'],{type: 'light', ui: 'UI_RUI'}],
-        [['#000','#252525','#252525','#333','#fafafa','#909090','#3f3f3f','#797979','#505050','#fafafa'],{type: 'dark', ui: 'UI_OneUI'}],
-        [['#f2f2f2','#fcfcfc','white','#e3e3e3','#161616','#989898','#ececec','#b3b3b3','#a9a9a9','#fcfcfc'],{type: 'light', ui: 'UI_OneUI'}],
-        [['#161616','#424242','#252525','#505050','white','#b9b9b9','#323232','#c1c1c1','#696969','#b4b4b4'],{type: 'dark', ui: 'UI_ZenUI'}],
-        [['#fafafa','white','#ddd','#ededed','#202020','#787878','#dcdcdc','#989898','#ccc','#e7e7e7'],{type: 'light', ui: 'UI_ZenUI'}]
+        [['#000','#1f1f1f','#141414','#1a1a1a','#d8d8d8','#898989','#1e1e1e','#c7c7c7','#3d3d3d','#d1d1d1'],
+        {type: 'dark', ui: 'UI_LOS'}],
+        [['#fafafa','white','#f2f2f2','#e1e1e1','#262626','#969696','#e6e6e6','#757575','#e1e1e1','#c4c4c4'],
+        {type: 'light', ui: 'UI_LOS'}],
+        [['#000','#1e1e1e','#35363a','#1a1a1a','#fcfcfc','#888','#141416','#36353a','#1f1f1f','#626262'],
+        {type: 'dark', ui: 'UI_OOS'}],
+        [['#fafafa','white','white','#efefef','#191919','#969696','#e6e6e6','#999','#e1e1e1','#ececec'],
+        {type: 'light', ui: 'UI_OOS'}],
+        [['#000','#333','#141414','#252525','white','#8c8c8c','#333333','#666','#757575','white'],
+        {type: 'dark', ui: 'UI_RUI'}],
+        [['#fff','white','#ddd','#f7f7f7','black','#737373','#e5e5e5','#ccc','#e5e5e5','white'],
+        {type: 'light', ui: 'UI_RUI'}],
+        [['#000','#252525','#252525','#333','#fafafa','#909090','#3f3f3f','#797979','#505050','#fafafa'],
+        {type: 'dark', ui: 'UI_OneUI'}],
+        [['#f2f2f2','#fcfcfc','white','#e3e3e3','#161616','#989898','#ececec','#b3b3b3','#a9a9a9','#fcfcfc'],
+        {type: 'light', ui: 'UI_OneUI'}],
+        [['#161616','#424242','#252525','#505050','white','#b9b9b9','#323232','#c1c1c1','#696969','#b4b4b4'],
+        {type: 'dark', ui: 'UI_ZenUI'}],
+        [['#fafafa','white','#ddd','#ededed','#202020','#787878','#dcdcdc','#989898','#ccc','#e7e7e7'],
+        {type: 'light', ui: 'UI_ZenUI'}]
       ]
     ],
     [ // Радиус закруглений
@@ -101,13 +111,12 @@ let themeKernel = [
       defaultKey: 'headerStyleDefault', valueKey: 'headerStyleValue', valueStock: 'HEADER_stock',
       valueType0: 'default', valueType1: 'custom'}, // параметры группы инпутов
       [$('.header'),$('.header-name'),$('.svg_header')], // модифицируемые элементы
-      ['HEADER_stock','HEADER_OOSColor','HEADER_RUI','HEADER_OneUI','HEADER_ZenUI'], // варианты класса-модификатора
+      ['HEADER_stock','HEADER_OOSColor','HEADER_RUI','HEADER_ZenUI'], // варианты класса-модификатора
       [ // параметры инпутов
-        [['HEADER_stock'],{type: 'default', ui: 'UI_LOS'}],
-        [['HEADER_OOSColor'],{type: 'custom'}],
-        [['HEADER_RUI'],{type: 'default', ui: 'UI_RUI'}],
-        [['HEADER_OneUI'],{type: 'default', ui: 'UI_OOS', ui2: 'UI_OneUI'}],
-        [['HEADER_ZenUI'],{type: 'default', ui: 'UI_ZenUI'}]
+        [['HEADER_stock'],['default'],['UI_LOS','UI_OOS','UI_OneUI']],
+        [['HEADER_OOSColor'],['custom']],
+        [['HEADER_RUI'],['default'],['UI_RUI']],
+        [['HEADER_ZenUI'],['default'],['UI_ZenUI']]
       ]
     ],
     [ // Стиль UI
@@ -119,11 +128,11 @@ let themeKernel = [
       $('.section_interactive'),$('.section_menu'),$('.svg_header'),$('.svg_settings')], // модифицируемые элементы
       ['UI_LOS','UI_OOS','UI_RUI','UI_OneUI','UI_ZenUI'], // варианты класса-модификатора
       [ // параметры инпутов
-        [['UI_LOS'],{type: 'default'}],
-        [['UI_OOS'],{type: 'default'}],
-        [['UI_RUI'],{type: 'default'}],
-        [['UI_OneUI'],{type: 'default'}],
-        [['UI_ZenUI'],{type: 'default'}]
+        [['UI_LOS'],['default']],
+        [['UI_OOS'],['default']],
+        [['UI_RUI'],['default']],
+        [['UI_OneUI'],['default']],
+        [['UI_ZenUI'],['default']]
 
       ]
     ],
@@ -134,10 +143,10 @@ let themeKernel = [
       [$('.interactive'),$('.interactive-button'),$('.interactive-container')], // модифицируемые элементы
       ['interactive_OOS','interactive_RUI','interactive_OneUI','interactive_ZenUI'], // варианты класса-модификатора
       [ // параметры инпутов
-        [['interactive_OOS'],{type: 'default', ui: 'UI_OOS'}],
-        [['interactive_RUI'],{type: 'default', ui: 'UI_RUI', ui2: 'UI_LOS'}],
-        [['interactive_OneUI'],{type: 'default', ui: 'UI_OneUI'}],
-        [['interactive_ZenUI'],{type: 'default', ui: 'UI_ZenUI'}]
+        [['interactive_OOS'],['default'],['UI_OOS']],
+        [['interactive_RUI'],['default'],['UI_LOS','UI_RUI']],
+        [['interactive_OneUI'],['default'],['UI_OneUI']],
+        [['interactive_ZenUI'],,['default'],['UI_ZenUI']]
       ]
     ],
     [ // Стиль переключателей
@@ -147,11 +156,11 @@ let themeKernel = [
       [$('.switch')], // модифицируемые элементы
       ['switch_LOS','switch_OOS','switch_RUI','switch_OneUI','switch_ZenUI'], // варианты класса-модификатора
       [ // параметры инпутов
-        [['switch_LOS'],{type: 'default', ui: 'UI_LOS'}],
-        [['switch_OOS'],{type: 'default', ui: 'UI_OOS'}],
-        [['switch_RUI'],{type: 'default', ui: 'UI_RUI'}],
-        [['switch_OneUI'],{type: 'default', ui: 'UI_OneUI'}],
-        [['switch_ZenUI'],{type: 'default', ui: 'UI_ZenUI'}]
+        [['switch_LOS'],['default'],['UI_LOS']],
+        [['switch_OOS'],['default'],['UI_OOS']],
+        [['switch_RUI'],['default'],['UI_RUI']],
+        [['switch_OneUI'],['default'],['UI_OneUI']],
+        [['switch_ZenUI'],['default'],['UI_ZenUI']]
       ]
     ]
   ],

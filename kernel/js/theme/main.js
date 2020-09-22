@@ -10,8 +10,9 @@ function showElement(el) { // Универсальная функция для �
   if ($(el).hasClass('shown') == false) $(el).addClass('shown')
 }
 
-if (localStorage.getItem('preloader') != 'theme') showElement('#default-preloader');
-else showElement('#theme-preloader'); // Для отображения правильного прелоадера ("применение..."/аним. загрузки)
+function hideElement(el) { // Универсальная функция для скрытия нужного элемента
+  if ($(el).hasClass('shown')) $(el).removeClass('shown')
+}
 
 function varRead(array) { // Считыватель css-переменных из ЛХ
   for (let i = 0; i < array.length; i++)
@@ -100,11 +101,11 @@ $(document).ready(function() {
     if ($('.main.OneUI-mode').hasClass('scroll') == false) $('.main.OneUI-mode').addClass('scroll');
  }
 
-  let anime = 0.5;
+  let anime = 0.45;
   if (localStorage.getItem('animationDurationValue') > 0.5) anime = localStorage.getItem('animationDurationValue');
 
   setTimeout(function() { // Отключение прелоадера спустя некоторое врем после загрузки страницы
-    if ($('.loader').hasClass('shown')) $('.loader').removeClass('shown');
+    hideElement('.preloader');
     if (localStorage.getItem('preloader') != 'default') localStorage.setItem('preloader', 'default');
   }, anime * 1000);
 });
@@ -122,3 +123,6 @@ $(window).scroll(function() { // Функция для OneUI mode, событи�
     if ($('.main.OneUI-mode').hasClass('scroll')) $('.main.OneUI-mode').removeClass('scroll');
   }
 });
+
+if (localStorage.getItem('preloader') != 'theme') showElement('#default-preloader');
+else showElement('#theme-preloader'); // Для отображения правильного прелоадера ("применение..."/аним. загрузки)

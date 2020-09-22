@@ -5,8 +5,8 @@
 <svg version="1.1" id="_x31_" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve" onclick="history.back()" class="svg_header">
 	<script xlink:href="../../js/theme/svg.js" />
 	<g class="g05" stroke-width="8" stroke-miterlimit="10">
-		<line class="back-icon_stock" x1="16" y1="50" x2="90" y2="50"/>
-		<polyline class="back-icon_stock" points="44.3,79.6 14,50 44,20"/>
-		<polyline class="back-icon_OneUI" points="70.2,86.9 33,50 70,13"/>
+		<line class="content_LOS content_RUI content_ZenUI" x1="16" y1="50" x2="90" y2="50"/>
+		<polyline class="content_LOS content_RUI content_ZenUI" points="44.3,79.6 14,50 44,20"/>
+		<polyline class="content_OOS content_OneUI" points="70.2,86.9 33,50 70,13"/>
 	</g>
 </svg>

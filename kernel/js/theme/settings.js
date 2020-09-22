@@ -68,12 +68,11 @@ function autoPickupVar_2(array, uiValue) { // Автоподхват css-пер�
     localStorage.setItem(array[0].defaultKey, array[0].valueType0); // значит, 1-й тип инпута
     
     for (let i = 0; i < array[2].length; i++) // перебор всех инпутов группы
-      if (array[2][i][1].type == array[0].valueType0)
-        if (array[2][i][1].ui == uiValue || array[2][i][1].ui2 == uiValue) {
-          // если оный имеет 1-й тип инпута и значение UI, равное установленному в данный момент
-          varRecord(array[1], array[2][i][0]); // установка из массива нужных для данного UI переменных
-          markInput(array[0].checkedKey, array[0].name, array[0].prefix + '-' + i); // отметить нужн. инпут
-        }
+      if (array[2][i][1].type == array[0].valueType0 && array[2][i][1].ui == uiValue) {
+        // если оный имеет 1-й тип инпута и значение UI, равное установленному в данный момент
+        varRecord(array[1], array[2][i][0]); // установка из массива нужных для данного UI переменных
+        markInput(array[0].checkedKey, array[0].name, array[0].prefix + '-' + i); // отметить нужн. инпут
+      }
   }
 }
 
@@ -106,8 +105,8 @@ function autoPickupClass_2(array, uiValue) { // Автоподхват клас�
     localStorage.setItem(array[0].defaultKey, array[0].valueType0); // значит, 1-й тип инпута
     
     for (let i = 0; i < array[3].length; i++) // перебор всех инпутов группы
-      if (array[3][i][1].type == array[0].valueType0)
-        if (array[3][i][1].ui == uiValue || array[3][i][1].ui2 == uiValue) {
+      if (array[3][i][1] == array[0].valueType0)
+        for (let j = 0; j < array[3][i][2].length; j++) if (array[3][i][2][j] == uiValue) {
           // если оный имеет 1-й тип инпута и значение UI, равное установленному в данный момент
           localStorage.setItem(array[0].valueKey, array[3][i][0]); // установка из массива нужных для данного UI переменных
           markInput(array[0].checkedKey, array[0].name, array[0].prefix + '-' + i); // отметить нужн. инпут
@@ -138,7 +137,7 @@ for (let i = 0; i < themeKernel[1].length; i++) { // Перебор всех г�
     for (let j = 0; j < themeKernel[1][i][3].length; j++) // перебор всех инпутов группы
       if (themeKernel[1][i][0].prefix + '-' + j == this.id) { // если найдена выбранная
         localStorage.setItem(themeKernel[1][i][0].valueKey, themeKernel[1][i][3][j][0]); // значие - в ЛХ (класс)
-        localStorage.setItem(themeKernel[1][i][0].defaultKey, themeKernel[1][i][3][j][1].type); // ее ключ дефолта
+        localStorage.setItem(themeKernel[1][i][0].defaultKey, themeKernel[1][i][3][j][1]); // ее ключ дефолта
         localStorage.setItem(themeKernel[1][i][0].checkedKey, this.id); // ее id - в ключ отмеченного инпута
 
         if (themeKernel[1][i][0].name == 'ui-style') { // если выбранная кнопка переключает стиль UI

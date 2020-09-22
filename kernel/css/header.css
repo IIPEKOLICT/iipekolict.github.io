@@ -9,19 +9,14 @@
   height: 3em;
   position: fixed;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
-  align-items: center;
   background-color: var(--main_bg-color, #000);
   border-bottom: 2px solid var(--main_border-color, #1e1e1e);
   font-size: 2em;
   z-index: 2;
 }
-  .header.HEADER_ZenUI /* Шапка при активном стиле шапки "ZenUI" */
-  {
-    border-color: var(--accent-color, #42a5f6);
-  }
-  .header.HEADER_OOSColor /* Шапка при активном стиле шапки "OOS цветная" */
+  .header.HEADER_OOSColor:not(.UI_OneUI) /* Шапка при активном стиле шапки "OOS цветная" */
   {
     background-color: var(--main_border-color, #1e1e1e);
   }
@@ -43,14 +38,79 @@
   {
     height: 3em;
   }
-  .header.OneUI-mode.OM_OneUI:not(.scroll),
-  .header.OneUI-mode.OM_OOS11:not(.scroll) /* Смещение кнопок шапки вниз при стилях OneUI mode */
-  {
-    align-items: flex-end;
-  }
-.header_page /* Модификатор шапки, только для страниц, не являющихся главной в HTML-документе (при ВН) */
+
+/* Контейнеры ------------------------------*/
+
+.header-top,
+.header-top.two-line /* Верхний контейнер + фикс для двустрочности */
 {
+  display: none;
+}
+.header-bottom /* Нижний контейнер */
+{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   align-items: center;
+  z-index: 3;
+}
+#start .header-bottom,
+#start .OneUI-mode.OM_OneUI.scroll .header-bottom,
+#start .OneUI-mode.OM_OOS11.scroll .header-bottom,
+.header.OneUI-mode .header-bottom /* Случаи, когда нижний контейнер должен занимать всю высоту шапки */
+{
+  height: inherit;
+}
+
+/* Контейнеры в режиме OneUI------------------------------*/
+
+.header.OneUI-mode.OM_OneUI.scroll .header-top,
+.header.OneUI-mode.OM_OOS11.scroll .header-top /* Верхний контейнер при скроллинге, стили OneUI и OOS11 */
+{
+  height: 0;
+  color: rgba(0,0,0,0);
+  animation: header-name calc(var(--main_animation-duration, 0.3s) * 2);
+}
+  @keyframes header-name /* параметры анимации заголовка */
+  {
+    0% {opacity: 0}
+    50% {opacity: 0}
+    60% {opacity: 0.5}
+    100% {opacity: 1}
+  }
+.header.OneUI-mode.OM_OneUI:not(.scroll) .header-top,
+.header.OneUI-mode.OM_OOS11:not(.scroll) .header-top /* Верхний контейнер, когда нет скролл, стили OneUI и OOS11 */
+{
+  height: auto;
+  display: flex;
+  flex: 1;
+  animation: header-name calc(var(--main_animation-duration, 0.3s) * 2);
+}
+.header.OneUI-mode.OM_OneUI:not(.scroll) .header-top /* Выравнивание текста верх конт при стиле OneUI */
+{
+  justify-content: center;
+  align-items: center;
+}
+.header.OneUI-mode.OM_OneUI:not(.OM_OOS11):not(.scroll) .header-top
+{
+  transform: translateY(1em); /* Фикс, дабы было по центру вертикально при стиле OM OneUI */
+}
+.header.OneUI-mode.OM_OOS11:not(.scroll) .header-top /* Выравнивание текста верх конт при стиле OOS11 */
+{
+  padding: 1em;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.header.OneUI-mode.OM_OneUI:not(.scroll) .header-bottom, /* Ниж конт снизу шапки без скроллинга */
+.header.OneUI-mode.OM_OOS11:not(.scroll) .header-bottom /* при стилях OM OneUI и OOS11 */
+{
+  height: auto;
+  align-items: flex-end;
+}
+#start .OneUI-mode.OM_OneUI:not(.scroll) .header-bottom,
+#start .OneUI-mode.OM_OOS11:not(.scroll) .header-bottom /* Фикс высоты нижнего контейнера на главной стр при ВН */
+{
+  height: auto;
 }
 
 /* Иконки ------------------------------*/
@@ -65,7 +125,7 @@
   border-radius: var(--icon_border-radius, 50%);
   transition: ease-out var(--main_animation-duration, 0.3s);
 }
-  .header.OneUI-mode.OM_OneUI:not(.scroll) .header-icon /* Фикс для кнопок в шапке при OneUI-стиле OneUI mode */
+  .header.OM_OneUI:not(.scroll) .header-icon /* Фикс для кнопок в шапке при OneUI-стиле OneUI mode */
   {
     z-index: 3;
   }
@@ -94,42 +154,23 @@
   flex: auto;
   font-size: 1em;
   line-height: 1em;
+  transition: ease-out var(--main_animation-duration, 0.3s);
 }
   .header-name.HEADER_ZenUI /* Заголовок в шапке при активном стиле шапки "ZenUI" */
   {
     color: var(--accent-color, #42a5f6);
   }
+  .header.OneUI-mode.OM_OneUI:not(.scroll) .header-bottom .header-name,
+  .header.OneUI-mode.OM_OOS11:not(.scroll) .header-bottom .header-name
+  {
+    color: rgba(0,0,0,0);
+    animation: header-name calc(var(--main_animation-duration, 0.3s) * 2);
+  }
 
-  /* Модификации при различных стилях OneUI mode */
-  .header.OneUI-mode.OM_OneUI .header-name /* Высота == родитель, дабы выровнять по центру текст */
-  {
-    height: inherit;
-  }
-  .header.OneUI-mode.OM_OneUI:not(.scroll) .header-name /* Стиль OneUI (заголовок по центру и по центру) */
-  {
-    width: inherit;
-    position: absolute;
-    justify-content: center;
-  }
-  .header.OneUI-mode.OM_OOS11:not(.scroll) .header-name /* Стиль OOS 11 (заголовок вверху слева) */
-  {
-    top: 1em;
-    left: 1em;
-    height: auto;
-    width: auto;
-    position: absolute;
-  }
 .header-name_main /* Заголовок в шапке в главном блоке в HTML-документе */
 {
   padding-left: 1em;
 }
-
-  /* Модификации при различных стилях OneUI mode */
-  .header.OneUI-mode.OM_OneUI:not(.scroll) .header-name_main,
-  .header.OneUI-mode.OM_OOS11:not(.scroll) .header-name_main
-  {
-    padding-left: 0; /* Фикс ненужного паддинга */
-  }
 
 /*------------------------------*/
 /*---ОВЕРЛЕЙ [3:4]--------------*/
@@ -140,6 +181,13 @@
   .header_page /* Модификатор шапки, только для страниц, не являющихся главной в HTML-документе */
   {
     font-size: 1.5em;
+  }
+
+  /* Контейнеры в режиме OneUI------------------------------*/
+
+  .header_page.OneUI-mode.OM_OneUI:not(.OM_OOS11):not(.scroll) .header-top
+  {
+    transform: translateY(1.3em); /* Фикс, дабы было по центру вертикально при стиле OM OneUI */
   }
 
   /* Иконки ------------------------------*/

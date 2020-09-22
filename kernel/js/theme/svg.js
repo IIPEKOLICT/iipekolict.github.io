@@ -4,29 +4,29 @@
 
 // Массив с параметрами движка тем
 
-let themeKernelSvg = [
+const themeKernelSvg = [
   [ // Radio (переменные)
-    [ // Цвет акцента
-      {name: 'accent-color'},
-      ['--accent-color']
+    [ // цвет акцента
+      {name: 'accent-color'}, // параметры группы инпутов
+      ['--accent-color'] // переменные
     ],
-    [ // Цветовая схема
-      {name: 'color-scheme'},
+    [ // цветовая схема
+      {name: 'color-scheme'}, // параметры группы инпутов
       ['--main_bg-color','--secondary_bg-color','--icon_bg-color','--hover_bg-color',
       '--main_text-color','--secondary_text-color','--main_border-color','--radio_nonactive-color',
-      '--switch_nonactive-color','--switch-before_nonactive-color']
+      '--switch_nonactive-color','--switch-before_nonactive-color'] // переменные
     ]
   ],
   [ // Radio (классы)
-    [ // Стиль шапки
-      {name: 'header-style', valueKey: 'headerStyleValue', valueStock: 'HEADER_stock'},
-      [document.querySelectorAll('.svg_header')],
-      ['HEADER_stock','HEADER_OOSColor','HEADER_RUI','HEADER_OneUI','HEADER_ZenUI']
+    [ // стиль шапки
+      {name: 'header-style', valueKey: 'headerStyleValue', valueStock: 'HEADER_stock'}, // параметры группы инпутов
+      [document.querySelectorAll('.svg_header')], // модифицируемые элементы
+      ['HEADER_stock','HEADER_OOSColor','HEADER_RUI','HEADER_OneUI','HEADER_ZenUI'] // варианты класса-стиля
     ],
-    [ // Стиль UI
-      {name: 'ui-style', valueKey: 'uiStyleValue', valueStock: 'UI_OOS'},
-      [document.querySelectorAll('.svg_header'),document.querySelectorAll('.svg_settings')],
-      ['UI_OOS','UI_RUI','UI_OneUI','UI_ZenUI']
+    [ // стиль UI
+      {name: 'ui-style', valueKey: 'uiStyleValue', valueStock: 'UI_OOS'}, // параметры группы инпутов
+      [document.querySelectorAll('.svg_header'),document.querySelectorAll('.svg_settings')], // модифицируемые элементы
+      ['UI_OOS','UI_RUI','UI_OneUI','UI_ZenUI'] // варианты класса-стиля
     ]
   ],
   [ // Другое
@@ -48,7 +48,7 @@ function varRead(array) { // Считыватель css-переменных
 
 function classSwitch(inputArray, value) { // Переключатель класса
   for (let i = 0; i < inputArray[1].length; i++)
-    for (let j = 0; j < inputArray[1][i].length; j++) // Перебор всех модифицируемых элементов
+    for (let j = 0; j < inputArray[1][i].length; j++) // перебор всех модифицируемых элементов
       if (inputArray[1][i][j].classList.contains(value) == false) { // если нет нужного класса-стиля
         inputArray[1][i][j].classList.add(value); // добавить
     
@@ -68,12 +68,12 @@ function styleRead(array) { // Считыватель классов
 
 function svgColor(array) {
   for (let i = 0; i < array.length; i++) for (let j = 0; j < array.length; j++)
-   // Перебор всех идентификаторов
-  for (let k = 0; k < document.querySelectorAll('.g' + i + j).length; k++) { // Перебор всех элементов массива
+   // перебор всех идентификаторов
+  for (let k = 0; k < document.querySelectorAll('.g' + i + j).length; k++) { // перебор всех элементов массива
     document.querySelectorAll('.g' + i + j)[k].style.setProperty('fill', array[i]);
-     // Установить цвет заливки
+     // установить цвет заливки
     document.querySelectorAll('.g' + i + j)[k].style.setProperty('stroke', array[j]);
-     // Установить цвет обводки
+     // установить цвет обводки
   }
 }
 

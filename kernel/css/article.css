@@ -100,6 +100,22 @@
   padding-bottom: 0.2em;
   transition: ease-out var(--main_animation-duration, 0.3s);
 }
+/*
+.article.UI_OneUI
+{
+  margin-top: 2em;
+  position: relative;
+}
+.article.UI_OneUI:first-of-type
+{
+  margin-top: 2em;
+}
+.article-header.UI_OneUI
+{
+  top: -2em;
+  position: absolute;
+}
+*/
 #changelog .article-header::after /* Допись в заголовок артикля в ченжлоге */
 {
   content: " версия";

@@ -18,7 +18,12 @@
 
     <div id="start" class="page-block">
       <header class="header">
-        <h1 class="header-name header-name_main two-line">Настройки</h1>
+        <h2 class="header-top header-name two-line">Настройки</h2>
+        <div class="header-bottom">
+          <div class="header-icon invisible"></div>
+          <h2 class="header-name header-name_main two-line">Настройки</h2>
+          <div class="header-icon invisible"></div>
+        </div>
       </header>
 
       <main class="main">
@@ -136,10 +141,14 @@
 
     <div id="accent" class="page-block">
       <header class="header header_page">
-        <div class="header-icon back-icon" onclick="history.back()">
-          <object class="header-icon_svg" type="image/svg+xml" data="kernel/svg/header/back-icon.svg"></object>
+        <h2 class="header-top header-name two-line">Цвет акцента</h2>
+        <div class="header-bottom">
+          <div class="header-icon" onclick="history.back()">
+            <object class="header-icon_svg" type="image/svg+xml" data="kernel/svg/header/back-icon.svg"></object>
+          </div>
+          <h2 class="header-name two-line">Цвет акцента</h2>
+          <div class="header-icon invisible"></div>
         </div>
-        <h2 class="header-name two-line">Цвет акцента</h2>
       </header>
 
       <div class="main main_page page-block_main">
@@ -243,10 +252,14 @@
 
     <div id="interface" class="page-block">
       <header class="header header_page">
-        <div class="header-icon" onclick="history.back()">
-          <object class="header-icon_svg" type="image/svg+xml" data="kernel/svg/header/back-icon.svg"></object>
+        <h2 class="header-top header-name two-line">Интерфейс</h2>
+        <div class="header-bottom">
+          <div class="header-icon" onclick="history.back()">
+            <object class="header-icon_svg" type="image/svg+xml" data="kernel/svg/header/back-icon.svg"></object>
+          </div>
+          <h2 class="header-name two-line">Интерфейс</h2>
+          <div class="header-icon invisible"></div>
         </div>
-        <h2 class="header-name two-line">Интерфейс</h2>
       </header>
 
       <div class="main main_page page-block_main">
@@ -342,10 +355,14 @@
 
     <div id="font" class="page-block">
       <header class="header header_page">
-        <div class="header-icon" onclick="history.back()">
-          <object class="header-icon_svg" type="image/svg+xml" data="kernel/svg/header/back-icon.svg"></object>
+        <h2 class="header-top header-name two-line">Шрифт</h2>
+        <div class="header-bottom">
+          <div class="header-icon" onclick="history.back()">
+            <object class="header-icon_svg" type="image/svg+xml" data="kernel/svg/header/back-icon.svg"></object>
+          </div>
+          <h2 class="header-name two-line">Шрифт</h2>
+          <div class="header-icon invisible"></div>
         </div>
-        <h2 class="header-name two-line">Шрифт</h2>
       </header>
 
       <div class="main main_page page-block_main">
@@ -444,10 +461,14 @@
 
     <div id="other" class="page-block">
       <header class="header header_page">
-        <div class="header-icon" onclick="history.back()">
-          <object class="header-icon_svg" type="image/svg+xml" data="kernel/svg/header/back-icon.svg"></object>
+        <h2 class="header-top header-name two-line">Другое</h2>
+        <div class="header-bottom">
+          <div class="header-icon" onclick="history.back()">
+            <object class="header-icon_svg" type="image/svg+xml" data="kernel/svg/header/back-icon.svg"></object>
+          </div>
+          <h2 class="header-name two-line">Другое</h2>
+          <div class="header-icon invisible"></div>
         </div>
-        <h2 class="header-name two-line">Другое</h2>
       </header>
 
       <div class="main main_page page-block_main">
@@ -467,10 +488,14 @@
 
     <div id="changelog" class="page-block">
       <header class="header header_page">
-        <div class="header-icon" onclick="history.back()">
-          <object class="header-icon_svg" type="image/svg+xml" data="kernel/svg/header/back-icon.svg"></object>
+        <h2 class="header-top header-name two-line">Список изменений</h2>
+        <div class="header-bottom">
+          <div class="header-icon" onclick="history.back()">
+            <object class="header-icon_svg" type="image/svg+xml" data="kernel/svg/header/back-icon.svg"></object>
+          </div>
+          <h2 class="header-name two-line">Список изменений</h2>
+          <div class="header-icon invisible"></div>
         </div>
-        <h2 class="header-name two-line">Список изменений</h2>
       </header>
 
       <div class="main main_page page-block_main">
@@ -481,11 +506,17 @@
             <section class="section section_changelog spoiler-container">
               <div class="menu-text_container release-info">
                 <h3 class="menu-text menu-name"></h3>
-                <time class="menu-text menu-description" datatime="2020-09-13">13.09.2020</time>
+                <time class="menu-text menu-description" datatime="2020-09-22">22.09.2020</time>
               </div>
               <details class="spoiler spoiler_changelog">
                 <summary class="spoiler-button spoiler-button_changelog"></summary>
                 <div class="delimiter_changelog"></div>
+                <ul class="release-notes release_opened">
+                  <li class="release-note">еще исправления и улучшения</li>
+                  <li class="release-note">улучшен внешний вид квадратичных радиокнопок (раздел цвет акцента)</li>
+                  <li class="release-note">более логичная структура шапки</li>
+                  <li class="release-note">исправлены баги с анимацией шапки в режиме OneUI</li>
+                </ul>
                 <ul class="release-notes">
                   <li class="release-note">обновлена инфа в разделе "Об устройстве"</li>
                   <li class="release-note">улучшены дефолтные настройки акцента, цветов и пр.</li>
@@ -984,10 +1015,14 @@
 
     <div id="about" class="page-block">
       <header class="header header_page">
-        <div class="header-icon" onclick="history.back()">
-          <object class="header-icon_svg" type="image/svg+xml" data="kernel/svg/header/back-icon.svg"></object>
+        <h2 class="header-top header-name two-line">Об устройстве</h2>
+        <div class="header-bottom">
+          <div class="header-icon" onclick="history.back()">
+            <object class="header-icon_svg" type="image/svg+xml" data="kernel/svg/header/back-icon.svg"></object>
+          </div>
+          <h2 class="header-name two-line">Об устройстве</h2>
+          <div class="header-icon invisible"></div>
         </div>
-        <h2 class="header-name two-line">Об устройстве</h2>
       </header>
 
       <div class="main main_page page-block_main">
@@ -1075,10 +1110,14 @@
 
     <div id="test" class="page-block">
       <header class="header header_page">
-        <div class="header-icon" onclick="history.back()">
-          <object class="header-icon_svg" type="image/svg+xml" data="kernel/svg/header/back-icon.svg"></object>
+        <h2 class="header-top header-name two-line">Бета-тест</h2>
+        <div class="header-bottom">
+          <div class="header-icon" onclick="history.back()">
+            <object class="header-icon_svg" type="image/svg+xml" data="kernel/svg/header/back-icon.svg"></object>
+          </div>
+          <h2 class="header-name two-line">Бета-тест</h2>
+          <div class="header-icon invisible"></div>
         </div>
-        <h2 class="header-name two-line">Бета-тест</h2>
       </header>
 
       <div class="main main_page page-block_main">
@@ -1142,10 +1181,14 @@
 
     <div id="oneui-mode-page" class="page-block">
       <header class="header header_page">
-        <div class="header-icon" onclick="history.back()">
-          <object class="header-icon_svg" type="image/svg+xml" data="kernel/svg/header/back-icon.svg"></object>
+        <h2 class="header-top header-name two-line">Режим OneUI</h2>
+        <div class="header-bottom">
+          <div class="header-icon" onclick="history.back()">
+            <object class="header-icon_svg" type="image/svg+xml" data="kernel/svg/header/back-icon.svg"></object>
+          </div>
+          <h2 class="header-name two-line">Режим OneUI</h2>
+          <div class="header-icon invisible"></div>
         </div>
-        <h2 class="header-name two-line">Режим OneUI</h2>
       </header>
 
       <div class="main main_page page-block_main">
@@ -1320,10 +1363,13 @@
             <span class="radio-button"></span>
             <div class="radio-name">Стоковый вариант</div>
           </label>
-          <label class="row-label radio-label content_OOS">
+          <label class="row-label radio-label">
             <input type="radio" id="hs-1" name="header-style">
             <span class="radio-button"></span>
-            <div class="radio-name">Как в цветной теме OOS</div>
+            <div class="radio-name">
+              <div class="menu-text menu-name">Как в цветной теме OOS</div>
+              <div class="menu-text menu-description">Не работает при активном UI OneUI</div>
+            </div>
           </label>
           <label class="row-label radio-label">
             <input type="radio" id="hs-2" name="header-style">
@@ -1332,11 +1378,6 @@
           </label>
           <label class="row-label radio-label">
             <input type="radio" id="hs-3" name="header-style">
-            <span class="radio-button"></span>
-            <div class="radio-name">OneUI</div>
-          </label>
-          <label class="row-label radio-label">
-            <input type="radio" id="hs-4" name="header-style">
             <span class="radio-button"></span>
             <div class="radio-name">ZenUI</div>
           </label>
@@ -1465,8 +1506,8 @@
 
     <!-- Прелоадер -->
 
-    <div id="theme-preloader" class="loader"><div class="loader-text">Применение...</div></div>
-    <div id="default-preloader" class="loader"><div class="loader-animation"></div></div>
+    <div id="theme-preloader" class="preloader"><div class="preloader-text">Применение...</div></div>
+    <div id="default-preloader" class="preloader"><div class="preloader-animation"></div></div>
 
     <!-- Скрипты -->
 
