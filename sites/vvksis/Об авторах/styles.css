@@ -1,0 +1,86 @@
+*{ font-family:Arial, Helvetica, sans-serif; font-size:medium; }
+body {background-color: black; color: white}
+img {filter: invert()}
+table.header, table.footer { width:100%; border:0; color: white; background:url("images/background.jpg") }
+table.header h1 { background: none; }
+table.header a, nav a { color:white; text-decoration:none; }
+/*table.header, td { border:0; border-collapse:collapse; }*/
+table.content { width:100%; }
+table.content td { width:25%; }
+table.content a { text-decoration:none; color:#6495ED; }
+table.footer { height:26px; font-weight:bold; }
+#imgprogram, #imgtheory, #imgpractice, #imgtest { display:block; height:270px; width:220px; }
+#imgprogram { background:url("images/program_gray.jpg"); }
+#imgtheory { background:url("images/theory_gray.jpg"); }
+#imgpractice { background:url("images/practice_gray.jpg"); }
+#imgtest { background:url("images/test_gray.jpg"); }
+#imgprogram:hover { background:url("images/program.jpg"); }
+#imgtheory:hover { background:url("images/theory.jpg"); }
+#imgpractice:hover { background:url("images/practice.jpg"); }
+#imgtest:hover { background:url("images/test.jpg"); }
+div.header { background-color: #CCC; text-align: center; }
+h1, h2 { font-size: x-large; background-color: #336699; border-radius:10px; font-weight:bold; color:white; padding:1ex 0; text-align:center; }
+h2 { font-size: large; }
+h3 { font-size: large; color:#369; padding:0 0 0.5ex 2ex; border-bottom: 1px solid #336699; border-left: 1px solid #336699; }
+section { border: 1px solid #999; width:60%; padding: 10ex 10ex; margin: 20px 0 20px 20%; }
+a { text-decoration:none; color:#369; border-bottom: 1px dotted #369; }
+p { text-align:justify; text-indent:5ex; margin:0 0 0.5ex 0; }
+b { color: #369; }
+p.empty { height:2ex; }
+p.termin { margin:1.5ex 0 1.5ex 5ex; border-left:3px double #369; padding-left:2ex; text-indent:0; font-style:italic; color:#369; }
+p.paragraph { font-weight:bold; text-indent:0; color:#369; margin: 1.5em 0; }
+div.image { border: 1px dotted #369; padding: 20px; margin:0px; border-radius:10px; text-align:center; }
+div.image p { padding-top:10px; text-indent:0; text-align: center; font-size: small; }
+div.table { margin: 20px 0;}
+div.table p {text-indent: 0; text-align: center; }
+table { border:1px solid white; border-collapse:collapse; }
+td, th { border:1px solid #369; }
+
+div.table td { padding-left:2ex; }
+div.table th { color:#369; height:4ex; }
+
+/*Панель навигации*/
+nav { position: fixed; left: 0; bottom: 0; width: 20%; background-color: #121212; border-radius: 0 10px 0 0; border-top: 1px solid white; border-right: 1px solid white;}
+nav div.header { text-align: center; padding:10px 0 5px 0; background:none; font-weight:bold; }
+/*Уровни навигации*/
+/*Первый уровень*/
+ul.dd { background-color: inherit; padding:0; }
+ul.dd li { line-height:1.5em; vertical-align: middle; list-style-type:none; }
+ul.dd li a { margin-left:10%; }
+ul.dd ul { visibility:hidden; position:absolute; left:30%; background-color: #336699; border-radius:10px; border: 1px solid white; }
+ul.dd *.dir { background:none; padding:0;}
+/*Второй уровень*/
+ul.dd li ul { padding:0; width:100%; }
+ul.dd ul ul { left: 300%; padding:0; }
+ul.dd ul li { margin-left:0px; }
+ul.dd ul li a { margin-left:10%; }
+
+/*Эффекты при наведении курсора*/
+ul.dd li.hover,
+ul.dd li:hover { position:relative; cursor:default; background-color:white; border-radius:10px; }
+ul.dd li:hover > a { color:#336699; }
+ul.dd li:hover > ul {visibility: visible;}	
+/*Конец уровней навигации*/
+
+
+
+/*.article { margin-left: 20%; margin-right: 20%; line-height: 1.3; }
+
+
+
+li { margin-left: 20px; }
+
+.header { background-color:#CCC; text-align:center; }
+.image {  }
+
+
+.math { text-align: center; margin: 10px 0; }
+.math p { text-indent: 0; padding-top: 10px; }
+
+
+.table tr { height: 30px; }
+.table td { width: 80px; }
+.table th { text-align: center; }
+
+abbr {cursor: help; border-bottom: 1px dashed #CCC; }
+*/
