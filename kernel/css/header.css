@@ -54,7 +54,7 @@
   align-items: center;
   z-index: 3;
 }
-#start .header-bottom,
+.header-bottom,
 #start .OneUI-mode.OM_OneUI.scroll .header-bottom,
 #start .OneUI-mode.OM_OOS11.scroll .header-bottom,
 .header.OneUI-mode .header-bottom /* Случаи, когда нижний контейнер должен занимать всю высоту шапки */
