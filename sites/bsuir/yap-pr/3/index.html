@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Форма обратной связи</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <main>
+      <h1>Форма заявки на работу в зоопарке</h1>
+      <p><i>Пожалуйста, заполните форму. Обязательные поля помечены <span class="red">*</span></i></p>
+
+      <form action="" method="post">
+        <fieldset>
+          <legend>Контактная информация</legend>
+          <div class="text-container">
+            <label class="label_text" for="name">Имя <span class="red">*</span></label>
+            <input class="input_text" id="name" type="text" required placeholder="Введите свое имя" name="name">
+          </div>
+          <div class="text-container">
+            <label class="label_text" for="phone">Телефон</label>
+            <input class="input_text" id="phone" type="text" placeholder="Введите свой номер" name="phone">
+          </div>
+          <div class="text-container">
+            <label class="label_text" for="email">E-mail <span class="red">*</span></label>
+            <input class="input_text" id="email" type="text" required  placeholder="Введите свой E-mail" name="email">
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Персональная информация</legend>
+          <div class="text-container">
+            <label class="label_text" for="age">Возраст<span class="red">*</span></label>
+            <input class="input_text" id="age" type="text" required placeholder="Введите свой возраст" name="age">
+          </div>
+          <div class="text-container">
+            <label class="label_text" for="gender">Пол</label>
+            <select class="input_text" id="gender" name="gender">
+              <option value="male">Мужчина</option>
+              <option value="female">Женщина</option>
+            </select>
+          </div>
+          <div class="text-container">
+            <label class="label_text label_top-text" for="quality">Перечислите личные качества</label>
+            <textarea class="input_text" id="quality" rows="5" placeholder="Чем можете похвастаться?" name="quality"></textarea>
+          </div>
+        </fieldset>
+
+        <fieldset class="checkbox-container">
+          <legend>Выберите ваших любимых животных</legend>
+          <div class="checkbox-row">
+            <label class="checkbox-label">
+              <input type="checkbox" value="zebra" name="animal">
+              <span>Зебра</span>
+            </label>
+            <label class="checkbox-label">
+              <input type="checkbox" value="kot" name="animal">
+              <span>Кошак</span>
+            </label>
+            <label class="checkbox-label">
+              <input type="checkbox" value="anakonda" name="animal">
+              <span>Анаконда</span>
+            </label>
+            <label class="checkbox-label">
+              <input type="checkbox" value="human" name="animal">
+              <span>Человек</span>
+            </label>
+          </div>
+          <div class="checkbox-row">
+            <label class="checkbox-label">
+              <input type="checkbox" value="slon" name="animal">
+              <span>Слон</span>
+            </label>
+            <label class="checkbox-label">
+              <input type="checkbox" value="antilopa" name="animal">
+              <span>Антилопа</span>
+            </label>
+            <label class="checkbox-label">
+              <input type="checkbox" value="golub" name="animal">
+              <span>Голубь</span>
+            </label>
+            <label class="checkbox-label">
+              <input type="checkbox" value="krab" name="animal">
+              <span>Краб</span>
+            </label>
+          </div>
+        </fieldset>
+
+        <input type="submit" value="Отправить информацию" class="input_submit">
+      </form>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,58 @@
+body {
+  margin: 0; 
+  padding: 0; /* - отступы */
+  font-family: Verdana, Tahoma, sans-serif; /* шрифт */
+  font-size: 10pt; /* дефолтный размер шрифта */
+}
+main {padding: 1em 4em 1em 2em} /* - отступы, как на макете */
+fieldset {
+  margin-bottom: 1em; /* отступ снизу после каждой группы инпутов */
+  width: auto; /* чтоб растягивался на всю доступную ширину */
+}
+
+ /* контейнеры */
+
+fieldset,
+.checkbox-container { /* выравнивание по горизонтали всех дочерних */
+  display: flex;
+  flex-direction: column;
+}
+.text-container,
+.checkbox-row { /* выравнивание по вертикали всех дочерних */
+  display: flex;
+  flex-direction: row;
+}
+.text-container {align-items: center} /* выравнивание по центру по вертикали первых 6 инпутов и их подписей */
+
+/* точечные модификаторы */
+
+.red {color: red} /* красный текст */
+
+
+/* дочерние элементы (инпуты, лейблы и селект) */
+
+.label_text,
+.checkbox-row label {
+  width: 100px; /* фиксированная ширина подписей инпутов и пунктов с флажками */
+}
+.input_text {
+  padding: 0; /* иначе будет не ровно */
+  min-width: 240px; /* фиксированная ширина текстовых полей, селекта */
+  box-sizing: border-box; /* тоже будет не ровно */
+}
+
+ /* отступы */
+
+.text-container label,
+input.input_text,
+select.input_text,
+textarea.input_text,
+.checkbox-label {
+  margin: 0.5em; /* одинаковые для всех элементов поля, дабы не было нагромождения в одну кучу */
+}
+
+ /* кнопка для отправки */
+
+.input_submit {
+  padding: 1em; /* отступы в кнопке (как на макете) */
+}
