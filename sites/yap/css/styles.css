@@ -1,0 +1,123 @@
+:root {
+  --accent-color: #42a5f6;
+  --main_bg-color: #000;
+  --secondary_bg-color: #1f1f1f;
+  --icon_bg-color: #141414;
+  --main_border-color: #1e1e1e;
+  --main_text-color: #d8d8d8;
+  --secondary_text-color: #898989;
+}
+
+/* ---------------------------- */
+
+body {
+  margin: 0; 
+  padding: 0;
+  color: var(--main_text-color, #d8d8d8);
+  background-color: var(--main_bg-color, #000);
+  font-family: Arial, sans-serif;
+}
+header {z-index: 3}
+main {z-index: 2}
+article {padding: 0 4%}
+article:not(:last-of-type) {border-bottom: 10px solid var(--main_border-color, #1e1e1e)}
+
+/* ---------------------------- */
+
+.center {text-align: center}
+
+.section_menu {
+  margin: 0.5em;
+  width: 300px;
+  height: 200px;
+  display: inline-flex;
+  position: relative;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  cursor: pointer;
+  background-color: var(--main_bg-color, #000);
+  border: 2px solid var(--secondary_bg-color, #1f1f1f);
+  border-radius: 1em;
+  transition: 0.3s ease-out;
+}
+.section_menu:hover
+{
+  background-color: var(--secondary_bg-color, #1f1f1f);
+  border: 2px solid var(--accent-color, #42a5f6);
+}
+
+.menu-icon {
+  margin-top: 1em;
+  width: 5em;
+  height: 5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--icon_bg-color, #141414);
+  color: var(--accent-color, #42a5f6);
+  border-radius: 50%;
+}
+.menu-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu-name {
+  font-size: 1.5em;
+}
+.menu-description {
+  color: var(--secondary_text-color, #898989);
+  font-size: 0.75em;
+  line-height: 1.5em;
+  white-space: inherit;
+}
+.link_hidden {
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  text-decoration: none;
+  color: inherit;
+}
+
+/*------------------------------*/
+/*---ОВЕРЛЕЙ [3:4]--------------*/
+/*------------------------------*/
+
+@media (max-aspect-ratio: 3/4) /* диапазон 3:4 и уже */
+{
+  .section_menu {
+    margin: 0.25em 0;
+    padding: 1em;
+    width: auto;
+    height: 3em;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    border: 2px solid var(--main_bg-color, #000);
+  }
+
+  .menu-icon {
+    margin: 1em;
+    margin-left: 0;
+    width: 3em;
+    height: 3em;
+  }
+  .menu-text {
+    align-items: flex-start;
+  }
+  .menu-icon + .menu-text {
+    width: calc(100% - 5em);
+  }
+
+  .menu-name {
+    font-size: 1em;
+  }
+  .menu-description {
+    text-align: left;
+  }
+}
