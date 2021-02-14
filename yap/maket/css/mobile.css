@@ -166,6 +166,7 @@
     min-width: 30px;
     line-height: 35px;
   }
+  .phone-input {max-width: calc(100% - 70px)} /* Сам номер */
   #time.text-input {margin-bottom: 10px} /* Поле ввода времени */
 
   .submit-btn { /* Кнопка "отправить заявку" */

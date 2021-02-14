@@ -97,6 +97,7 @@ scrollUp.addEventListener('click', () => { // Обработчик клика п
   });
 
   if (scrollUp.classList.contains(act)) scrollUp.classList.remove(act); // Убрать акт класс, если был
+  document.documentElement.click();
 });
 
 // НАВИГАЦИЯ ИЗ ШАПКИ

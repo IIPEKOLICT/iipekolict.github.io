@@ -151,7 +151,7 @@
     padding-right: 0;
     min-width: 30px;
   }
-  .phone-input {max-width: calc(100% - 75px);} /* Сам номер */
+  .phone-input {max-width: calc(100% - 75px)} /* Сам номер */
   
   .submit-btn {-ms-flex-item-align: center;-ms-grid-row-align: center;align-self: center} /* Кнопка "отправить заявку" */
   
