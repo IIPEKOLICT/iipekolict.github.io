@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Двери</title>
+    <link rel="stylesheet" href="css/pc.css">
+    <link rel="stylesheet" href="css/tablet.css">
+    <link rel="stylesheet" href="css/mobile.css">
+  </head>
+  <body>
+    <!-- шапка снавигацией -->
+    <header class="header small-text">
+      <ul class="nav">
+        <li class="nav-item">Входные двери<a class="link" href="#vh-dveri"></a></li>
+        <li class="nav-item">Межкомнатные двери<a class="link" href="#mk-dveri"></a></li>
+        <li class="nav-item">Балконные двери<a class="link" href="#bal-dveri"></a></li>
+        <li class="nav-item">Отзывы<a class="link" href="#slider-2"></a></li>
+        <li class="nav-item nav-item_primary">Заказать звонок<a class="link" href="#form"></a></li>
+      </ul>
+    </header>
+    <!-- шапка снавигацией -->
+
+    <main>
+      <!-- первый слайдер -->
+      <div id="slider-1" class="slider-wrapper pc-content tablet-content">
+        <div class="slider-container">
+          <div class="slider-track">
+            <div class="slider-item">
+              <div class="slider-item_text-container">
+                <h2>Цена - качество.</h2>
+                <h4>Выбери свою</h4>
+              </div>
+            </div>
+            <div class="slider-item">
+              <div class="slider-item_text-container">
+                <h2>Стильно, быстро, надежно</h2>
+                <h4>Более 15 лет на рынке</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="slider-buttons">
+          <button class="btn btn-prev" onclick="btnPrev(1)"></button>
+          <button class="btn btn-next" onclick="btnNext(1)"></button>
+        </div>
+        <div class="slider-indicators">
+          <div class="slider-indicator"></div>
+          <div class="slider-indicator"></div>
+        </div>
+      </div>
+      <!-- первый слайдер -->
+
+      <!-- обманка только для планшетов -->
+      <div class="content-wrapper obmanka-wrapper tablet-content">
+        <div class="secondary-text dignity-block">от 320 BYN</div>
+        <div class="secondary-text dignity-block">экологично</div>
+        <div class="secondary-text dignity-block">бесплатная доставка</div>
+      </div>
+      <!-- обманка только для планшетов -->
+
+      <div class="doors">
+
+        <!-- входные двери -->
+        <div id="vh-dveri" class="content-wrapper">
+          <div class="description-container">
+            <div class="text-container">
+              <h3>Входные двери</h3>
+              <p class="content-text secondary-text">Не просто преграда между вашим домом и внешним миром, это еще 
+                и «лицо» вашего жилища, которое задает тон всему интерьеру прямо с порога. Поэтому хочется, чтобы 
+                оно выглядело достойно и привлекательно. Сегодня стилевых решений, в которых может быть изготовлена 
+                дверь, очень много, начиная от старой доброй классики и заканчивая всевозможными современными 
+                направлениями.</p>
+            </div>
+            <div class="dignity-container">
+              <div class="secondary-text dignity-block">от 500 BYN</div>
+              <div class="secondary-text dignity-block">экологично</div>
+              <div class="secondary-text dignity-block">бесплатная доставка</div>
+            </div>
+          </div>
+          <img class="content-img" src="img/vh-dveri.jpg" alt="">
+        </div>
+        <!-- входные двери -->
+  
+        <!-- межкомнатные двери -->
+        <div id="mk-dveri" class="content-wrapper">
+          <img class="content-img mk-dveri" src="img/mk-dveri.jpg" alt="">
+          <div class="description-container">
+            <div class="text-container">
+              <h3>Межкомнатные двери</h3>
+              <p class="content-text secondary-text">Вид и красота двери зависят от внешнего покрытия. Двери 
+                покрывают самыми разными материалами – шпоном, деревом, различными пленками. Но пальму первенства 
+                удерживают ламинированные межкомнатные двери.</p>
+            </div>
+            <div class="dignity-container">
+              <div class="secondary-text dignity-block">от 300 BYN</div>
+              <div class="secondary-text dignity-block">экологично</div>
+              <div class="secondary-text dignity-block">бесплатная упаковка</div>
+            </div>
+          </div>
+        </div>
+        <!-- межкомнатные двери -->
+  
+        <!-- балконные двери -->
+        <div id="bal-dveri" class="content-wrapper">
+          <div class="description-container">
+            <div class="text-container">
+              <h3>Балконные двери</h3>
+              <p class="content-text secondary-text">При любом варианте использования балкона, правильно оформленная 
+                балконная дверь играет очень важную роль. Помимо своей основной задачи, правильно подобранная 
+                конструкция и качественная установка балконной двери защитит остальное помещение от холодного 
+                воздуха, влаги и шума, проникающих с улицы, а также обеспечит оптимальный режим проветривания.</p>
+            </div>
+            <div class="dignity-container">
+              <div class="secondary-text dignity-block">от 320 BYN</div>
+              <div class="secondary-text dignity-block">экологично</div>
+              <div class="secondary-text dignity-block">бесплатная установка</div>
+            </div>
+          </div>
+          <img class="content-img" src="img/bal-dveri.jpg" alt="">
+        </div>
+        <!-- балконные двери -->
+
+      </div>
+      
+      <!-- отзывы (второй слайдер) -->
+      <div id="slider-2" class="content-wrapper slider-wrapper review-wrapper">
+        <h3 class="pc-content tablet-content">Отзывы</h3>
+
+        <div class="slider-container">
+          <div class="slider-track">
+            <div class="slider-item">
+              <img src="img/natasha.jpg" alt="">
+              <h5 class="review-name">Наталья</h5>
+              <p class="review-text secondary-text">Заказ делали через интернет. Замерщик подстроился под график работы. 
+                Установщики приехали вовремя, вежливые и аккуратные работники, демонтаж и монтаж произвели 
+                на отлично и главное быстро. Советую эту компанию!</p>
+            </div>
+            <div class="slider-item">
+              <img src="img/zheka.jpg" alt="">
+              <h5 class="review-name">Евгений</h5>
+              <p class="review-text secondary-text">Хотел бы поблагодарить сотрудников компании за отличную работу. Рекомендую 
+                всем, кто выбирает себе качественные двери и хороший сервис — не пожалеете!</p> 
+            </div>
+            <div class="slider-item">
+              <img src="img/andrey.jpg" alt="">
+              <h5 class="review-name">Андрей</h5>
+              <p class="review-text secondary-text">Дважды пльзовался услугами компании, остался очень доволен. Консультанты 
+                помогли выбрать модели дверей, определиться с цветом. Все работы по замеру, доставке и монтажу 
+                согласовывались в удобное для меня время и выполнялись в срок.</p>
+            </div>
+            <div class="slider-item">
+              <img src="img/ira.jpg" alt="">
+              <h5 class="review-name">Ирина</h5>
+              <p class="review-text secondary-text">Выбрали эту компанию за надежность и качество. Консультанты грамотно все 
+                объяснили  отталкиваясь от наших приоритетов. Замер и установка прошли на раз-два. С мастерами 
+                таке же можно связаться  по телефону. Отличная работа всей команды.</p>
+            </div>
+          </div>
+        </div>
+        <div class="slider-buttons mobile-content">
+          <button class="btn btn-prev" onclick="btnPrev(2)"></button>
+          <button class="btn btn-next" onclick="btnNext(2)"></button>
+        </div>
+        <div class="slider-indicators mobile-content">
+          <div class="slider-indicator"></div>
+          <div class="slider-indicator"></div>
+          <div class="slider-indicator"></div>
+          <div class="slider-indicator"></div>
+        </div>
+      </div>
+      <!-- отзывы (второй слайдер) -->
+
+      <!-- форма -->
+      <div id="form" class="content-wrapper form-wrapper">
+        <img class="pc-content" src="img/google-maps.jpg" alt="">
+        <img class="tablet-content mobile-content" src="img/gm-tablet.jpg" alt="">
+        <form class="form">
+          <h3>Заказать звонок</h3>
+
+          <input type="text" class="text-input small-text" id="surname" placeholder="Фамилия">
+          <input type="text" class="text-input small-text" id="name" placeholder="Имя">
+          <input type="text" class="text-input small-text" id="patronymic" placeholder="Отчество">
+          <input type="text" class="text-input small-text" id="mail" placeholder="Электронная почта">
+
+          <label class="text-input phone-label">
+            <span class="footer-text number-375">+375</span>
+            <input type="text" class="text-input small-text prefix-input" id="prefix" placeholder="29">
+            <input type="text" class="text-input small-text phone-input" id="phone">
+          </label>
+          
+          <input type="text" class="text-input small-text" id="time" placeholder="Укажите время (пример 20:00)">
+          <label class="time-label" for="time">(В данной строке необходимо указать удобное для вас время звонка)</label>
+
+          <input class="submit-btn small-text" type="submit" value="Отправить заявку">
+        </form>
+      </div>
+      <!-- форма -->
+      
+    </main>
+
+    <!-- футер -->
+    <footer class="footer footer-text">
+      <div class="footer-text_container pc-content tablet-content">
+        <p class="footer-text">Наш официальный адрес:<br>г. Минск, ул. Ленина, 4<br><br>УНП<br>00987465398548<br>
+          <br>БИК<br>83478B79DF78</p>
+        <p class="footer-text">Приемная<br>7 902 345<br><br>Отдел продаж<br>7 902 346<br><br>Юридический отдел<br>
+          7 902 347</p>
+        <p class="footer-text">Официальный сайт:<br>dveri.by<br><br>Мы в соцсетях:<br>
+          <a href="#"><img src="img/soc.png"></a></p>
+      </div>
+      <div class="footer-text_container mobile-content">   
+        <div class="footer-text">Официальный сайт: dveri.by<br><br>Мы в соцсетях:<br>
+          <a href="#"><img src="img/soc.png"></a></div>
+        <div class="footer-text">Наш официальный адрес: г. Минск, ул. Ленина, 4<br>УНП 00987465398548<br>
+          БИК 83478B79DF78</div>
+        <div class="footer-text footer-row">
+          <div class="footer-text">Приемная<br>7 902 345</div>
+          <div class="footer-text">Отдел продаж<br>7 902 346</div>
+          <div class="footer-text">Юридический отдел<br>7 902 347</div>
+        </div>
+      </div>
+      <div class="footer-right">
+        <p class="footer-partners_header">Партнеры:</p>
+        <div class="footer-partners_img-container">
+          <div class="footer-partners_col">
+            <a class="footer-partner" href="#"><img src="img/szdo.jpg" alt=""></a>
+            <a class="footer-partner" href="#"><img src="img/camozzi.jpg" alt=""></a>
+          </div>
+          <div class="footer-partners_col">
+            <a class="footer-partner" href="#"><img src="img/beldrev.jpg" alt=""></a>
+            <a class="footer-partner" href="#"><img src="img/beldrevservice.jpg" alt=""></a>
+          </div>
+          <div class="footer-partners_col">
+            <a class="footer-partner" href="#"><img src="img/lesok.jpg" alt=""></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- футер -->
+
+    <div class="scroll-up"></div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

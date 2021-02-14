@@ -1,0 +1,91 @@
+.menu-item {
+  margin: 0.5em;
+  padding: 0.5em;
+  width: 300px;
+  height: 200px;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  cursor: pointer;
+  background-color: var(--main_bg-color, #000);
+  border: 1px solid var(--secondary_bg-color, #1f1f1f);
+  border-radius: 1em;
+  box-sizing: border-box;
+  transition: 0.3s ease-out;
+}
+.menu-item:hover {
+  background-color: var(--secondary_bg-color, #1f1f1f);
+  border-color: var(--accent-color, #42a5f6);
+}
+
+.menu-icon {
+  margin-top: 1em;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--icon_bg-color, #141414);
+  color: var(--accent-color, #42a5f6);
+  border-radius: 50%;
+}
+.menu-text {
+  padding: 1em;
+  height: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu-name {
+  font-size: 1.5em;
+}
+.menu-description {
+  color: var(--secondary_text-color, #898989);
+  text-align: center;
+  font-size: 0.75em;
+  line-height: 1.5em;
+  white-space: normal;
+}
+
+/*------------------------------*/
+/*---ОВЕРЛЕЙ [3:4]--------------*/
+/*------------------------------*/
+
+@media (max-aspect-ratio: 3/4) /* диапазон 3:4 и уже */
+{
+  .menu-item {
+    margin: 0.25em 0;
+    padding: 1em;
+    width: auto;
+    height: calc(5em + 2px);
+    flex-direction: row;
+    justify-content: start;
+    border-color: var(--main_bg-color, #000);
+  }
+
+  .menu-icon {
+    margin: 1em;
+    margin-left: 0;
+    width: 3em;
+    height: 3em;
+  }
+  .menu-text {
+    padding: 1em 0;
+    height: auto;
+    align-items: flex-start;
+  }
+  .menu-icon + .menu-text {
+    width: calc(100% - 5em);
+  }
+
+  .menu-name {
+    font-size: 1em;
+  }
+  .menu-description {
+    text-align: left;
+  }
+}
