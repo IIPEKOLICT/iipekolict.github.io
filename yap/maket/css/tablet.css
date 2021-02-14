@@ -47,15 +47,18 @@
 
   .description-container { /* контейнер для всего, кроме картинки в блоках про двери */
     padding: 30px 0 0 80px;
-    justify-content: flex-start;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
   }
   .content-img { /* стили картинки в блоках с дверями */
     margin: 30px 25px;
-    width: 50%;
-    height: min-content;
-    object-fit: contain;
+    max-width: calc(50% - 50px);
+    height: auto;
+    -o-object-fit: fill;
+       object-fit: fill;
   }
-  .content-img.mk-dveri {width: 50%} /* картинка межкомнатных дверей */
+  .content-img.mk-dveri {width: calc(50% - 50px)} /* картинка межкомнатных дверей */
 
   .text-container {max-width: 275px} /* контенйер с заголовком и абзацем текста */
 
@@ -86,9 +89,15 @@
 
   .obmanka-wrapper { /* Контенер-обманка с достоинствами, виден только на планшетах */
     height: 160px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     background-color: #DEAE83;
   }
   
@@ -100,7 +109,7 @@
     height: auto;
   }
 
-  .review-wrapper .slider-track {flex-wrap: wrap} /* Полоска с эл 2 слайдера */
+  .review-wrapper .slider-track {-ms-flex-wrap: wrap;flex-wrap: wrap} /* Полоска с эл 2 слайдера */
   .review-wrapper .slider-item { /* Элементы 2 слайдера */
     margin: 0 50px;
     padding: 0 0 15px 0;
@@ -114,8 +123,13 @@
     margin: 20px 0;
     width: 100%;
     height: auto;
-    flex-direction: column;
-    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     background-color: transparent;
   }
   .form-wrapper img { /* Картинка в ней */
@@ -125,9 +139,12 @@
   .form { /* Форма */
     padding: 30px calc(50% - 170px);
     width: 100%;
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     background-color: white;
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
   }
 
   .number-375 { /* +375 */
@@ -135,7 +152,7 @@
     min-width: 30px;
   }
   
-  .submit-btn {align-self: center} /* Кнопка "отправить заявку" */
+  .submit-btn {-ms-flex-item-align: center;-ms-grid-row-align: center;align-self: center} /* Кнопка "отправить заявку" */
   
   /* ----- ФУТЕР ----- */
 
@@ -145,23 +162,32 @@
   }
   .footer-text_container { /* Текстовый контейнер (слева который) */
     padding-right: 45px;
-    align-items: flex-start;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
   }
   .footer p + p {margin-left: 45px} /* Текста в нем */
   
   .footer-right { /* Правый контейнер */
     margin-right: 25px;
     width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
   .footer-partners_container {padding-top: 30px} /* Контейнер для партнеров (справа) */
   .footer-partners_header {padding-bottom: 6px} /* Заголовок (Партнеры:) */
   .footer-partners_img-container { /* Контейнер для картинок-ссылок */
     width: 100%;
-    justify-content: space-between;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
   }
-  .footer-partners_col {flex: 1} /* Колонки в нем */
+  .footer-partners_col {-webkit-box-flex: 1;-ms-flex: 1;flex: 1} /* Колонки в нем */
   .footer-partners_col:not(:last-of-type) {margin-right: 16px} /* Все, кроме последней колонки */
   .footer-partner:not(:last-of-type) {margin-bottom: 16px} /* Верхняя картинка-ссылка */
   .footer-partner img { /* Параметры картинок */

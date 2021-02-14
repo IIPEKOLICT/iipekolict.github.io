@@ -61,24 +61,41 @@ h5 {
 .header { /* контейнер шапки */
   padding: 15px 100px;
   height: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
   background-color: #464547;
 }
 
 .nav { /* навигационное меню в шапке */
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   list-style: none;
 }
 .nav-item { /* элемент навигации */
   padding: 0 5px;
   position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   text-align: center;
   border-bottom: 2px solid #464547;
+  -webkit-transition: .3s ease-out;
+  -o-transition: .3s ease-out;
   transition: .3s ease-out;
 }
 .nav-item + .nav-item {margin-left: 20px;} /* все элементы навигации, кроме первого (отступ в 20пх) */
@@ -101,18 +118,31 @@ h5 {
   margin: 0 auto;
   width: 1240px;
   height: 570px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 .doors .content-wrapper:first-of-type {margin-top: 70px} /* первая ст обертка в блоке с дверями */
 
 .description-container { /* контейнер для всего, кроме картинки в блоках про двери */
   padding: 55px 0 30px 110px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   background-color: #DEAE83;
-  flex: 1;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
 }
 @media (min-width: 1300px) { /* различные поля только в десктопе */
 .doors .content-wrapper:nth-of-type(3n+1) .description-container {margin: 30px 0 40px 0}
@@ -131,17 +161,25 @@ h5 {
   color: black;
 }
 
-.dignity-container {display: flex} /* контейнер с кружочками-достоинствами продукта */
+.dignity-container {display: -webkit-box;display: -ms-flexbox;display: flex} /* контейнер с кружочками-достоинствами продукта */
 .dignity-block { /* кружочек */
   width: 98px;
   height: 98px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   text-align: center;
   border-radius: 50%;
   border: 2px solid #fff;
   font-weight: bold;
+  -webkit-transition: .3s ease-out;
+  -o-transition: .3s ease-out;
   transition: .3s ease-out;
 }
 .dignity-block:hover { /* кружочек при наведении */
@@ -154,7 +192,11 @@ h5 {
 
 .slider-container {overflow: hidden} /* контейнер слайдера (по сути окошко) */
 .slider-track { /* полоса с элемантами слайдера */
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-transition: .3s;
+  -o-transition: .3s;
   transition: .3s;
 }
 .slider-item { /* элемент слайдера */
@@ -187,9 +229,15 @@ h5 {
   width: 100%;
   height: 100%;
   position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   z-index: 2;
 }
 button:active, button:focus {outline: none} /* Убирает дефолтные лишние стили кнопок */
@@ -213,9 +261,15 @@ button:active, button:focus {outline: none} /* Убирает дефолтные
   bottom: 0;
   width: 100%;
   position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: flex-end;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
   z-index: 3;
 }
 .slider-indicator { /* Индикатор */
@@ -225,6 +279,8 @@ button:active, button:focus {outline: none} /* Убирает дефолтные
   background-color: #8a8a8a;
   border-radius: 50%;
   opacity: .8;
+  -webkit-transition: .3s;
+  -o-transition: .3s;
   transition: .3s;
 }
 .slider-indicator.active {background-color: white} /* Активный индикатор */
@@ -235,25 +291,40 @@ button:active, button:focus {outline: none} /* Убирает дефолтные
   margin: 100px auto;
   padding: 55px 140px 47px;
   height: 580px;
-  flex-direction: column;
-  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   color: black;
   background-color: white;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 .review-wrapper .slider-container {width: 100%} /* Контейнер 2 слайдера */
 .review-wrapper .slider-track { /* Полоска с эл 2 слайдера */
   padding-top: 30px;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 .review-wrapper .slider-item { /* Элементы 2 слайдера */
   padding: 0 25px;
   min-width: 190px;
   height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .review-name { /* Заголовок (имя челика) в каждом из элементов 2 слайдера */
@@ -276,17 +347,30 @@ button:active, button:focus {outline: none} /* Убирает дефолтные
   padding: 0;
   height: 580px;
   position: relative;
-  justify-content: center;
-  align-items: flex-start;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
   color: black;
   background-color: white;
 }
 .form { /* Форма */
   padding: 55px 168px 60px 110px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
 }
 .form h3 {margin-bottom: 25px} /* Заголовок в форме */
 
@@ -295,7 +379,8 @@ button:active, button:focus {outline: none} /* Убирает дефолтные
   height: 35px;
   width: 100%;
   line-height: 27px;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 #time.text-input {margin-bottom: 0} /* Поле ввода времени */
 .time-label { /* Описание для поля ввода времени */
@@ -305,8 +390,12 @@ button:active, button:focus {outline: none} /* Убирает дефолтные
 }
 
 .phone-label { /* Контейнер для поля номера */
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 .number-375 { /* +375 */
   margin: 0;
@@ -327,13 +416,21 @@ button:active, button:focus {outline: none} /* Убирает дефолтные
   margin-top: 20px;
   width: 200px;
   height: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   color: white;
   background-color: #2A1D17;
   border-radius: 2px;
   cursor: pointer;
+  -webkit-transition: .3s ease-out;
+  -o-transition: .3s ease-out;
   transition: .3s ease-out;
 }
 .submit-btn:hover { /* При наведении */
@@ -350,23 +447,35 @@ input[type="submit"].submit-btn {border: none} /* Убирает стоковы�
   height: 260px;
   color: #fff;
   background-color: #464547;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 .footer-text_container { /* Текстовый контейнер (слева который) */
   padding-right: 53px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: flex-end;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
 }
 .footer p + p {margin-left: 90px} /* Текста в нем */
 
 .footer-partners_container {padding-top: 45px} /* Контейнер для партнеров (справа) */
 .footer-partners_header {padding-bottom: 10px} /* Заголовок (Партнеры:) */
-.footer-partners_img-container {display: flex} /* Контейнер для картинок-ссылок */
+.footer-partners_img-container {display: -webkit-box;display: -ms-flexbox;display: flex} /* Контейнер для картинок-ссылок */
 .footer-partners_col { /* Колонки в нем */
   margin-right: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 .footer-partners_col:last-child {margin-right: 0} /* Минус поле снизу у последней картинки-ссылки */
 .footer-partner {margin-bottom: 25px} /* Вертикальные отступы у картинок-ссылок */
@@ -380,27 +489,43 @@ input[type="submit"].submit-btn {border: none} /* Убирает стоковы�
   width: 50px;
   height: 50px;
   position: fixed;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   background-color: grey;
   border-radius: 50%;
-  box-shadow: inset 0 0 0 1px lightblue;
+  -webkit-box-shadow: inset 0 0 0 1px lightblue;
+          box-shadow: inset 0 0 0 1px lightblue;
   cursor: pointer;
   opacity: 0;
-  transform: translateY(20px);
+  -webkit-transform: translateY(20px);
+      -ms-transform: translateY(20px);
+          transform: translateY(20px);
+  -webkit-transition: .3s ease-out;
+  -o-transition: .3s ease-out;
   transition: .3s ease-out;
   z-index: 3;
 }
 .scroll-up.active { /* Когда активен */
   opacity: .4;
-  transform: translateY(0);
+  -webkit-transform: translateY(0);
+      -ms-transform: translateY(0);
+          transform: translateY(0);
 }
 .scroll-up.active:hover { /* И при наведении */
   background-color: red;
-  box-shadow: inset 0 0 0 1px black;
+  -webkit-box-shadow: inset 0 0 0 1px black;
+          box-shadow: inset 0 0 0 1px black;
   opacity: 1;
-  transform: scale(1.2);
+  -webkit-transform: scale(1.2);
+      -ms-transform: scale(1.2);
+          transform: scale(1.2);
 }
 .scroll-up::before { /* Треугольник внутри */
   content: '';
@@ -408,6 +533,8 @@ input[type="submit"].submit-btn {border: none} /* Убирает стоковы�
   height: 0;
   border: 10px solid transparent;
   border-bottom-color: white;
-  transform: translateY(-5px);
+  -webkit-transform: translateY(-5px);
+      -ms-transform: translateY(-5px);
+          transform: translateY(-5px);
 }
 .scroll-up:hover::before {border-bottom-color: black} /* При наведении на родителя */
