@@ -160,13 +160,17 @@
 
   .text-input {margin-bottom: 10px} /* Стандартный стиль для большинства текстовых полей в форме*/
 
-  .phone-label {-webkit-box-align: start;-ms-flex-align: start;align-items: flex-start} /* Контейнер для поля номера */
+  .phone-label { /* Контейнер для поля номера */
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+  }
   .number-375 { /* +375 */
     padding-right: 5px;
     min-width: 30px;
     line-height: 35px;
   }
-  .phone-input {max-width: calc(100% - 70px)} /* Сам номер */
+  .phone-input {width: calc(100% - 70px)} /* Сам номер */
   #time.text-input {margin-bottom: 10px} /* Поле ввода времени */
 
   .submit-btn { /* Кнопка "отправить заявку" */
