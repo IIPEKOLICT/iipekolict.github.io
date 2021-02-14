@@ -170,7 +170,7 @@
     min-width: 30px;
     line-height: 35px;
   }
-  .phone-input {width: calc(100% - 85px)} /* Сам номер */
+  .phone-input {width: calc(100% - 70px)} /* Сам номер */
   #time.text-input {margin-bottom: 10px} /* Поле ввода времени */
 
   .submit-btn { /* Кнопка "отправить заявку" */
