@@ -69,10 +69,8 @@
        object-fit: fill;
   }
   .content-img.mk-dveri { /* картинка межкомнатных дверей */
-    width: calc(50% - 60px);
-    max-width: calc(50% - 60px);
-    -o-object-fit: contain;
-       object-fit: contain;
+    margin: 30px 20px;
+    width: calc(50% - 50px);
   }
 
   .text-container {max-width: 275px} /* контенйер с заголовком и абзацем текста */
