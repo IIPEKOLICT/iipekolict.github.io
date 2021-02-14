@@ -19,11 +19,9 @@
     margin: 5px 0;
     height: 30px;
     border: 2px solid #464547;
-  }
-  .nav-item:hover { /* анимация эл навигации при наведении */
-    background-color: white;
     border-radius: 10px;
   }
+  .nav-item:hover {background-color: white} /* анимация эл навигации при наведении */
   .nav-item + .nav-item {margin-left: 0} /* все элементы навигации, кроме первого (отступ в 20пх) */
   .nav-item_primary { /* главный элемент навигации (заказать звонок) */
     margin-left: 0;
