@@ -61,17 +61,12 @@
   .content-img { /* стили картинки в блоках с дверями */
     margin: 30px 25px;
     max-width: calc(50% - 50px);
-    width: 50%;
-    /*height: -webkit-min-content;
-    height: -moz-min-content;*/
+    /*width: 50%;*/
     height: auto;
     -o-object-fit: fill;
        object-fit: fill;
   }
-  .content-img.mk-dveri { /* картинка межкомнатных дверей */
-    margin: 30px 20px;
-    width: calc(50% - 50px);
-  }
+  .content-img.mk-dveri {margin-right: 0; width: calc(50% - 50px)} /* картинка межкомнатных дверей */
 
   .text-container {max-width: 275px} /* контенйер с заголовком и абзацем текста */
 
