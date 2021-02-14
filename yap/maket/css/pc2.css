@@ -1,0 +1,547 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap'); /* шрифт робото */
+
+* { /* обнуление всех отступов */
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #e5e5e5;
+  color: #fff;
+  font-family: 'Roboto', sans-serif;
+}
+
+h2 {
+  font-size: 96px;
+  line-height: 85px;
+}
+h2 + h4 {padding-top: 25px}
+h3 {
+  font-size: 36px;
+  line-height: 30px;
+}
+h4 {
+  font-size: 30px;
+  line-height: 30px;
+}
+h5 {
+  font-size: 16px;
+  line-height: 21px;
+}
+
+@media (min-width: 1300px) {
+  .tablet-content:not(.pc-content), 
+  .mobile-content:not(.pc-content) {display: none} /* классы видимости */
+}
+
+.secondary-text { /* текст описания к дверям */
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 21px;
+}
+.small-text { /* текст в форме */
+  font-size: 13px;
+  line-height: 15px;
+}
+.footer-text { /* текст подвала */
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.link { /* класс для ссылок */
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ----- ШАПКА ----- */
+
+.header { /* контейнер шапки */
+  padding: 15px 100px;
+  height: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  background-color: #464547;
+}
+
+.nav { /* навигационное меню в шапке */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style: none;
+}
+.nav-item { /* элемент навигации */
+  padding: 0 5px;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  border-bottom: 2px solid #464547;
+  -webkit-transition: .3s ease-out;
+  -o-transition: .3s ease-out;
+  transition: .3s ease-out;
+}
+.nav-item + .nav-item {margin-left: 20px;} /* все элементы навигации, кроме первого (отступ в 20пх) */
+.nav-item:hover { /* анимация эл навигации при наведении */
+  color: red;
+  border-color: white;
+}
+.nav-item_primary { /* главный элемент навигации (заказать звонок) */
+  margin-left: 40px;
+  width: 200px;
+  background-color: #2A1D17;
+  border: 2px solid #2A1D17;
+  border-radius: 2px;
+}
+
+/* ----- МАИН ----- */
+
+.slider-wrapper {position: relative} /* обетка слайдера */
+.content-wrapper { /* стандартная обертка */
+  margin: 0 auto;
+  width: 1240px;
+  height: 570px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.doors .content-wrapper:first-of-type {margin-top: 70px} /* первая ст обертка в блоке с дверями */
+
+.description-container { /* контейнер для всего, кроме картинки в блоках про двери */
+  padding: 55px 0 30px 110px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  background-color: #DEAE83;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+@media (min-width: 1300px) { /* различные поля только в десктопе */
+.doors .content-wrapper:nth-of-type(3n+1) .description-container {margin: 30px 0 40px 0}
+.doors .content-wrapper:nth-child(3n+2) .description-container {margin: 35px 0}
+.doors .content-wrapper:nth-child(3n+3) .description-container {margin: 40px 0 30px 0}
+}
+.content-img { /* стили картинки в блоках с дверями */
+  width: 500px;
+  height: 570px;
+}
+.content-img.mk-dveri {width: 620px} /* картинка межкомнатных дверей */
+
+.text-container {width: 300px} /* контенйер с заголовком и абзацем текста */
+.content-text { /* абзац текста под заголовком */
+  padding: 15px 0;
+  color: black;
+}
+
+.dignity-container {display: -webkit-box;display: -ms-flexbox;display: flex} /* контейнер с кружочками-достоинствами продукта */
+.dignity-block { /* кружочек */
+  width: 98px;
+  height: 98px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  font-weight: bold;
+  -webkit-transition: .3s ease-out;
+  -o-transition: .3s ease-out;
+  transition: .3s ease-out;
+}
+.dignity-block:hover { /* кружочек при наведении */
+  color: red;
+  border-color: black;
+}
+.dignity-block + .dignity-block {margin-left: 40px} /* все кружочки, кроме первого */
+
+/* ----- СЛАЙДЕР ----- */
+
+.slider-container {overflow: hidden} /* контейнер слайдера (по сути окошко) */
+.slider-track { /* полоса с элемантами слайдера */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-transition: .3s;
+  -o-transition: .3s;
+  transition: .3s;
+}
+.slider-item { /* элемент слайдера */
+  min-width: 100%;
+  height: 600px;
+}
+#slider-1 .slider-item:first-of-type { /* Фон элементов 1 сладера */
+  background: url(../img/dver.jpg) no-repeat;
+  background-size: cover;
+}
+#slider-1 .slider-item:last-of-type { /* Фон элементов 1 сладера */
+  background: url(../img/books.jpg) no-repeat;
+  background-size: cover;
+}
+
+@media (min-width: 2000px) { /* Для супершироких мониторов */
+  #slider-1 { /* 1 слайдер (обертка) */
+    margin: 0 auto;
+    width: 2000px;
+  }
+  #slider-1 .slider-container {width: inherit} /* Контейнер 1 слайдера */
+}
+
+.slider-item_text-container {margin: 160px 0 0 210px} /* Текстовый контейнер на каждом из элементов 1 слайдера */
+
+/* ----- КНОПКИ ДЛЯ СЛАЙДЕРА (ВПЕРЕД/НАЗАД) ----- */
+
+.slider-buttons { /* Контейнер с кнопками вперед/назад */
+  top: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  z-index: 2;
+}
+button:active, button:focus {outline: none} /* Убирает дефолтные лишние стили кнопок */
+.btn { /* Стиль кнопки */
+  margin: 0 30px;
+  height: 0;
+  width: 0;
+  background-color: rgba(0,0,0,0);
+  border: 20px solid transparent; /* Прозрачные границы */
+  cursor: pointer;
+}
+.btn:disabled {opacity: 0} /* Если неактивна - невидима */
+.btn-next {border-left: 20px solid rgba(135, 134, 134, 0.7)} /* Кнопка вперед в виде треугольника */
+.btn-next:hover {border-left-color: red} /* Кнопка вперед при наведении */
+.btn-prev {border-right: 20px solid rgba(135, 134, 134, 0.7)} /* Кнопка назад в виде треугольника */
+.btn-prev:hover {border-right-color: red} /* Кнопка назад при наведении */
+
+/* ----- ИНДИКАТОРЫ ДЛЯ СЛАЙДЕРА (КРУЖОЧКИ СНИЗУ) ----- */
+
+.slider-indicators { /* Контейнер */
+  bottom: 0;
+  width: 100%;
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  z-index: 3;
+}
+.slider-indicator { /* Индикатор */
+  margin: 12px 5px;
+  width: 10px;
+  height: 10px;
+  background-color: #8a8a8a;
+  border-radius: 50%;
+  opacity: .8;
+  -webkit-transition: .3s;
+  -o-transition: .3s;
+  transition: .3s;
+}
+.slider-indicator.active {background-color: white} /* Активный индикатор */
+
+/* ----- ОТЗЫВЫ ----- */
+
+.review-wrapper { /* Обертка блока с отзывами */
+  margin: 100px auto;
+  padding: 55px 140px 47px;
+  height: 580px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: black;
+  background-color: white;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.review-wrapper .slider-container {width: 100%} /* Контейнер 2 слайдера */
+.review-wrapper .slider-track { /* Полоска с эл 2 слайдера */
+  padding-top: 30px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.review-wrapper .slider-item { /* Элементы 2 слайдера */
+  padding: 0 25px;
+  min-width: 190px;
+  height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.review-name { /* Заголовок (имя челика) в каждом из элементов 2 слайдера */
+  padding-top: 5px;
+  padding-bottom: 15px;
+  width: 100%;
+  border-bottom: 1px solid rgba(153, 152, 152, 0.4);
+  text-align: center;
+}
+.review-text { /* Текст отзыва в каждом из элементов 2 слайдера */
+  padding: 25px 0;
+  height: 220px;
+  border-bottom: 1px solid rgba(153, 152, 152, 0.4);
+}
+
+/* ----- ФОРМА ----- */
+
+.form-wrapper { /* Обертка формы заказа звонка */
+  margin: 100px auto;
+  padding: 0;
+  height: 580px;
+  position: relative;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  color: black;
+  background-color: white;
+}
+.form { /* Форма */
+  padding: 55px 168px 60px 110px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+.form h3 {margin-bottom: 25px} /* Заголовок в форме */
+
+.text-input { /* Стандартный стиль для большинства текстовых полей в форме*/
+  margin-bottom: 20px;
+  height: 35px;
+  width: 100%;
+  line-height: 27px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+#time.text-input {margin-bottom: 0} /* Поле ввода времени */
+.time-label { /* Описание для поля ввода времени */
+  color: #424141;
+  font-size: 11px;
+  line-height: 15px;
+}
+
+.phone-label { /* Контейнер для поля номера */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.number-375 { /* +375 */
+  margin: 0;
+  padding-right: 5px;
+  min-width: 40px;
+  font-weight: bold;
+  line-height: 27px;
+}
+.prefix-input { /* Маленькое поле для префикса номера */
+  margin: 0;
+  margin-right: 5px;
+  max-width: 40px;
+  text-align: center;
+}
+.phone-input {margin: 0} /* Сам номер */
+
+.submit-btn { /* Кнопка "отправить заявку" */
+  margin-top: 20px;
+  width: 200px;
+  height: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: white;
+  background-color: #2A1D17;
+  border-radius: 2px;
+  cursor: pointer;
+  -webkit-transition: .3s ease-out;
+  -o-transition: .3s ease-out;
+  transition: .3s ease-out;
+}
+.submit-btn:hover { /* При наведении */
+  color: black;
+  background-color: red;
+}
+input[type="submit"].submit-btn {border: none} /* Убирает стоковые границы инпута */
+
+/* ----- ФУТЕР ----- */
+
+.footer { /* Обертка подвала/футера */
+  padding: 45px 0 45px 100px;
+  width: 100%;
+  height: 260px;
+  color: #fff;
+  background-color: #464547;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.footer-text_container { /* Текстовый контейнер (слева который) */
+  padding-right: 53px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+.footer p + p {margin-left: 90px} /* Текста в нем */
+
+.footer-partners_container {padding-top: 45px} /* Контейнер для партнеров (справа) */
+.footer-partners_header {padding-bottom: 10px} /* Заголовок (Партнеры:) */
+.footer-partners_img-container {display: -webkit-box;display: -ms-flexbox;display: flex} /* Контейнер для картинок-ссылок */
+.footer-partners_col { /* Колонки в нем */
+  margin-right: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.footer-partners_col:last-child {margin-right: 0} /* Минус поле снизу у последней картинки-ссылки */
+.footer-partner {margin-bottom: 25px} /* Вертикальные отступы у картинок-ссылок */
+.footer-partner:last-child {margin-bottom: 0}
+
+/* ----- ЯКОРЬ ----- */
+
+.scroll-up { /* Кружок с тонкой границей */
+  right: 20px;
+  bottom: 20px;
+  width: 50px;
+  height: 50px;
+  position: fixed;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: grey;
+  border-radius: 50%;
+  -webkit-box-shadow: inset 0 0 0 1px lightblue;
+          box-shadow: inset 0 0 0 1px lightblue;
+  cursor: pointer;
+  opacity: 0;
+  -webkit-transform: translateY(20px);
+      -ms-transform: translateY(20px);
+          transform: translateY(20px);
+  -webkit-transition: .3s ease-out;
+  -o-transition: .3s ease-out;
+  transition: .3s ease-out;
+  z-index: 3;
+}
+.scroll-up.active { /* Когда активен */
+  opacity: .4;
+  -webkit-transform: translateY(0);
+      -ms-transform: translateY(0);
+          transform: translateY(0);
+}
+.scroll-up.active:hover { /* И при наведении */
+  background-color: red;
+  -webkit-box-shadow: inset 0 0 0 1px black;
+          box-shadow: inset 0 0 0 1px black;
+  opacity: 1;
+  -webkit-transform: scale(1.2);
+      -ms-transform: scale(1.2);
+          transform: scale(1.2);
+}
+.scroll-up::before { /* Треугольник внутри */
+  content: '';
+  width: 0;
+  height: 0;
+  border: 10px solid transparent;
+  border-bottom-color: white;
+  -webkit-transform: translateY(-5px);
+      -ms-transform: translateY(-5px);
+          transform: translateY(-5px);
+}
+.scroll-up:hover::before {border-bottom-color: black} /* При наведении на родителя */

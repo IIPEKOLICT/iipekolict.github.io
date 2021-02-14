@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+
 @media (max-width: 760px) {
   .pc-content:not(.mobile-content),
   .tablet-content:not(.mobile-content) {display: none} /* классы видимости */
@@ -7,13 +14,21 @@
   .header { /* контейнер шапки */
     padding: 20px;
     height: auto;
-    flex-direction: column;
-    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
 
   .nav { /* навигационное меню в шапке */
     width: 100%;
-    flex-direction: column-reverse;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
   }
   .nav-item { /* элемент навигации */
     margin: 5px 0;
@@ -25,7 +40,8 @@
   .nav-item_primary { /* главный элемент навигации (заказать звонок) */
     margin-left: 0;
     width: 100%;
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
   }
 
   /* ----- МАИН ----- */
@@ -34,14 +50,23 @@
     margin: 5px auto;
     width: 100%;
     height: auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    box-sizing: border-box;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
   }
   .doors .content-wrapper { /* стандартная обертка в блоке с дверями */
     padding: 20px;
     background-color: #DEAE83;
-    flex-direction: column-reverse;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
   }
   .doors .content-wrapper:first-of-type {margin-top: 5px} /* Отступ сверху у первой обертки про двери */
 
@@ -49,12 +74,17 @@
   .content-img { /* стили картинки в блоках с дверями */
     margin-bottom: 15px;
     width: 100%;
+    height: -webkit-min-content;
+    height: -moz-min-content;
     height: min-content;
-    object-fit: contain;
+    -o-object-fit: contain;
+       object-fit: contain;
   }
   .content-img.mk-dveri { /* картинка межкомнатных дверей */
     width: 100%;
-    order: 2;
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
   }
 
   .text-container {width: auto} /* контенйер с заголовком и абзацем текста */
@@ -90,12 +120,14 @@
 
   .review-wrapper .slider-track { /* Полоска с эл 2 слайдера */
     padding-top: 0;
-    justify-content: flex-start;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
   }
   .review-wrapper .slider-item {padding: 0 calc(50% - 95px)} /* Элементы 2 слайдера */
 
   .review-wrapper .slider-buttons,
-  .review-wrapper .slider-indicators {display: flex} /* Кнопки и индикаторы 2 слайдера */
+  .review-wrapper .slider-indicators {display: -webkit-box;display: -ms-flexbox;display: flex} /* Кнопки и индикаторы 2 слайдера */
   .review-wrapper .slider-indicator.active {background-color: red} /* Другой цвет активного инд 2 слайдера */
 
   /* ----- ФОРМА ----- */
@@ -104,9 +136,16 @@
     margin: 5px auto;
     height: auto;
     position: relative;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     background-color: transparent;
   }
   .form-wrapper img { /* Картинка в ней */
@@ -115,7 +154,9 @@
   }
   .form { /* Форма */
     padding: 20px calc(50% - 100px);
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     background-color: white;
   }
   .form h3 { /* Заголовок в форме */
@@ -126,7 +167,7 @@
 
   .text-input {margin-bottom: 10px} /* Стандартный стиль для большинства текстовых полей в форме*/
 
-  .phone-label {align-items: flex-start} /* Контейнер для поля номера */
+  .phone-label {-webkit-box-align: start;-ms-flex-align: start;align-items: flex-start} /* Контейнер для поля номера */
   .number-375 { /* +375 */
     padding-right: 5px;
     min-width: 30px;
@@ -137,7 +178,9 @@
   .submit-btn { /* Кнопка "отправить заявку" */
     margin-top: 10px;
     width: 120px;
-    align-self: center
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center
   }
 
   /* ----- ФУТЕР ----- */
@@ -146,21 +189,35 @@
     padding: 20px;
     width: 100%;
     height: auto;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     position: relative;
   }
   .footer-text_container { /* Текстовый контейнер (слева который) */
     padding-right: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
   }
   .footer-text_container .footer-text + .footer-text {margin-top: 10px} /* Текста в нем */
 
   .footer-row { /* Контейнер-строчка */
     width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-between;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
   }
   .footer-row .footer-text + .footer-text {margin-top: 0} /* Текста в контейнере-строчке */
 
@@ -174,11 +231,16 @@
 
   .footer-partners_container {padding-top: 0} /* Контейнер для партнеров (справа) */
   .footer-partners_header {padding-bottom: 5px} /* Заголовок (Партнеры:) */
-  .footer-partners_img-container {display: flex} /* Контейнер для картинок-ссылок */
+  .footer-partners_img-container {display: -webkit-box;display: -ms-flexbox;display: flex} /* Контейнер для картинок-ссылок */
   .footer-partners_col { /* Колонки в нем */
     margin-right: 8px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
   .footer-partners_col:last-child {margin-right: 0} /* Минус поле снизу у последней картинки-ссылки */
   .footer-partner { /* Стили ссылок */
@@ -190,7 +252,8 @@
   .footer-partner img { /* Стили картинок */
     width: 100%;
     height: 30px;
-    object-fit: cover;
+    -o-object-fit: cover;
+       object-fit: cover;
   }
   .footer-partners_col:last-of-type img {height: 66px} /* Стиль картинки в последней колонке */
 }
@@ -203,6 +266,6 @@
     margin-top: 10px;
   }
 
-  .footer-row {flex-direction: column} /* Колонками, так, как мало места */
+  .footer-row {-webkit-box-orient: vertical;-webkit-box-direction: normal;-ms-flex-direction: column;flex-direction: column} /* Колонками, так, как мало места */
   .footer-row .footer-text + .footer-text {margin-top: 5px} /* Отступ для читаемости */
 }
