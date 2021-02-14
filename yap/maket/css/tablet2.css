@@ -61,11 +61,11 @@
   .content-img { /* стили картинки в блоках с дверями */
     margin: 30px 25px;
     width: 50%;
-    height: -webkit-min-content;
-    height: -moz-min-content;
-    height: min-content;
-    -o-object-fit: contain;
-       object-fit: contain;
+    /*height: -webkit-min-content;
+    height: -moz-min-content;*/
+    height: auto;
+    -o-object-fit: fill;
+       object-fit: fill;
   }
   .content-img.mk-dveri {width: 50%} /* картинка межкомнатных дверей */
 
