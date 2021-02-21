@@ -1,0 +1,19 @@
+@require 'vars.styl'
+
+/* ----- SECTION ----- */
+
+.section
+    padding-top 1em
+
+    &:not(:last-of-type)
+        border-bottom 1px solid $mainBorder
+
+    &__header
+        margin 0 .5em .5em
+        flex-basis 100%
+        color $accent
+        text-align: center
+        text-transform: uppercase 
+
+        @media $mob
+            text-align: left

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Настройки</title>
+    <link rel="shortcut icon" href="ui/svg/title/settings-icon.svg" type="image/svg">
+    <link rel="stylesheet" href="ui/css/core.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header__top"></div>
+        <div class="header__bottom">
+            <div class="header__icon" onclick="history.back()">
+                <object class="header__icon__svg" type="image/svg+xml" data="ui/svg/header/back-icon.svg"></object>
+            </div>
+            <div class="header__name">Настройки</div>
+            <div class="header__icon invisible"></div>
+        </div>
+    </header>
+
+    <main class="main">
+        <section class="section menu">
+            <h2 class="section__header">Внешний вид</h2>
+
+            <div class="menu-item" onclick="showInteractive('accent-color')">
+                <div class="menu-item__text">
+                    <div class="menu-item__text__name">Цвет акцента</div>
+                    <div class="menu-item__text__desc">Цвет элементов интерфейса при наведении</div>
+                </div>
+            </div>
+
+            <label class="menu-item switch-label">
+                <div class="menu-item__text">
+                    <div class="menu-item__text__name">Темная тема</div>
+                </div>
+                <input type="checkbox" name="dark-mode" id="darkMode">
+                <span class="switch"></span>
+            </label>
+        </section>
+        <section class="section menu">
+            <h2 class="section__header">Удобство использования</h2>
+
+            <label class="menu-item switch-label">
+                <div class="menu-item__text">
+                    <div class="menu-item__text__name">Режим OneUI</div>
+                    <div class="menu-item__text__desc">Фича с огромной шапкой из OneUI</div>
+                </div>
+                <input type="checkbox" name="oneui-mode" id="oneuiMode">
+                <span class="switch"></span>
+            </label>
+        </section>
+    </main>
+
+    <div id="dialog" class="dialog">
+        <div id="dialog-container" class="dialog__container">
+            <div id="dialog-btn" class="dialog__btn"></div>
+
+            <div id="accent-color" class="dialog__block">
+                <h3 class="dialog__block__header">Цвет акцента</h3>
+
+                <div class="wrap-container">
+                    <label class="row-label label__colored">
+                        <input type="radio" id="ac-0" name="accent-color" value="#42a5f6">
+                        <span class="radio__accent"></span>
+                    </label>
+                    <label class="row-label label__colored">
+                        <input type="radio" id="ac-1" name="accent-color" value="#9675ce">
+                        <span class="radio__accent"></span>
+                    </label>
+                    <label class="row-label label__colored">
+                        <input type="radio" id="ac-2" name="accent-color" value="#eb0028">
+                        <span class="radio__accent"></span>
+                    </label>
+                    <label class="row-label label__colored">
+                        <input type="radio" id="ac-3" name="accent-color" value="#cc6f4e">
+                        <span class="radio__accent"></span>
+                    </label>
+                    <label class="row-label label__colored">
+                        <input type="radio" id="ac-4" name="accent-color" value="#25c6da">
+                        <span class="radio__accent"></span>
+                    </label>
+                    <label class="row-label label__colored">
+                        <input type="radio" id="ac-5" name="accent-color" value="#4461d6">
+                        <span class="radio__accent"></span>
+                    </label>
+                    <label class="row-label label__colored">
+                        <input type="radio" id="ac-6" name="accent-color" value="#e5a544">
+                        <span class="radio__accent"></span>
+                    </label>
+                    <label class="row-label label__colored">
+                        <input type="radio" id="ac-7" name="accent-color" value="#f06292">
+                        <span class="radio__accent"></span>
+                    </label>
+                    <label class="row-label label__colored">
+                        <input type="radio" id="ac-8" name="accent-color" value="#208559">
+                        <span class="radio__accent"></span>
+                    </label>
+                    <label class="row-label label__colored">
+                        <input type="radio" id="ac-9" name="accent-color" value="#7dc32f">
+                        <span class="radio__accent"></span>
+                    </label>
+                    <label class="row-label label__colored">
+                        <input type="radio" id="ac-10" name="accent-color" value="#b968c7">
+                        <span class="radio__accent"></span>
+                    </label>
+                    <label class="row-label label__colored">
+                        <input type="radio" id="ac-11" name="accent-color" value="#000">
+                        <span class="radio__accent"></span>
+                    </label>
+                    <label class="row-label label__colored">
+                        <input type="radio" id="ac-12" name="accent-color" value="#fff">
+                        <span class="radio__accent"></span>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Прелоадер -->
+
+    <div id="theme-preloader" class="preloader"><div class="preloader__text">Применение...</div></div>
+    <div id="default-preloader" class="preloader"><div class="preloader__animation"></div></div>
+
+    <script src="ui/js/jq-min.js"></script>
+    <script src="ui/js/theme.js"></script>
+    <script src="ui/js/settings.js"></script>
+    <script src="ui/js/dialog.js"></script>
+</body>
+</html>

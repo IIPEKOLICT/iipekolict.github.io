@@ -1,0 +1,18 @@
+/* ----- MAIN ----- */
+.main {
+  padding-top: calc(4em + 2px);
+  font-size: 1.5em;
+  transition: 0.3s;
+}
+@media (max-aspect-ratio: 6/5) {
+  .main.OneUI-mode {
+    padding-top: 50vh;
+    min-height: calc(100vh - 4em);
+  }
+}
+@media (max-aspect-ratio: 6/5) {
+  .main.OneUI-mode.scroll {
+    padding-top: calc(4em + 2px);
+    min-height: calc(100vh - 4em);
+  }
+}

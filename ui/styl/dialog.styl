@@ -1,0 +1,88 @@
+@require 'vars.styl'
+
+/* ----- DIALOG ----- */
+
+.dialog
+    bottom 0
+    width 100%
+    height 0
+    position fixed
+    font-size 2em
+    z-index 3
+
+    @media $tab
+        font-size 1.5em
+
+    &__container
+        height 0
+        background-color $secBg
+        border-radius 1em
+        opacity 0
+        transform translateY(0)
+        transition $trans
+
+        @media $tab
+            transform translateY(100%)
+
+    &__btn
+        height 0
+        text-align center
+        vertical-align middle
+        color $secColor
+        border-top 1px solid $secColor
+        cursor pointer
+        transition $trans ease
+
+    &__block
+        padding 1em
+        min-width 15em
+        display none
+
+        &.shown
+            display block
+
+        &__header
+            margin-bottom .5em
+            text-align center
+
+    &.shown
+        height 100%
+        display flex
+        justify-content center
+        align-items center
+        background-color rgba(0,0,0,0.5)
+
+        @media $tab
+            align-items flex-end
+
+        & .dialog__container
+            height auto
+            display flex
+            flex-direction column-reverse
+            opacity 1
+
+            @media $tab
+                width 100%
+                border-radius 1em 1em 0 0
+                transform translateY(0)
+
+        & .dialog__btn
+            display none
+
+            @media $tab
+                margin 0 1em 0 1em
+                padding 1em 0
+                height auto
+                display flex
+                justify-content center
+                align-content center
+
+            &:hover
+                background-color $secColor
+                color $hoverBg
+
+                @media $tab
+                    margin 0
+
+            &:before
+                content: "Отмена"

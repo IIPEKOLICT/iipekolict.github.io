@@ -1,0 +1,136 @@
+@require 'vars.styl'
+
+/* ----- HEADER ----- */
+
+.header
+    width 100%
+    height 3em
+    position fixed
+    display flex
+    flex-direction: column
+    background-color $mainBg
+    border-bottom 2px solid $mainBorder
+    font-size 2em
+    transition $trans 
+    z-index 2
+
+    &__top
+        display none
+
+    &__bottom
+        height 3em
+        display flex
+        justify-content space-between
+        align-items center
+
+        & .header__name
+            display flex
+            flex auto
+            justify-content center
+            flex-wrap nowrap
+            overflow hidden
+            text-overflow ellipsis
+
+            @media $mob
+                justify-content flex-start
+
+        &__time
+            align-items center
+
+            & .time-container
+                display flex
+                line-height 1em
+  
+    &.OneUI-mode
+        @media $tab
+            height 50vh
+
+        & .header__top
+            @media $tab
+                height auto
+                display flex
+                justify-content: center
+                align-items: center
+                flex 1
+                font-weight 700
+                opacity 1
+                transform translateY(1.5em)
+                transition: $trans
+
+            &__time
+                flex-direction column
+
+                & .time-container
+                    display flex
+                    font-size 2em
+                    line-height 1.2em
+
+                    & .colon
+                        display none
+
+
+        & .header__bottom
+            @media $tab
+                transition: $trans
+
+            & .header__name
+                @media $tab
+                    opacity 0
+
+    &.OneUI-mode.scroll
+        @media $tab
+            height 3em
+            justify-content center
+
+        & .header__top
+            @media $tab
+                height 0
+                flex 0
+                opacity 0  
+
+        & .header__bottom
+
+            & .header__name
+                @media $tab
+                    opacity 1
+                    animation header__name $trans*2
+
+            @keyframes header__name
+                0% {opacity: 0}
+                50% {opacity: 0}
+                60% {opacity: 0.5}
+                100% {opacity: 1}
+        
+    &__icon
+        margin 0 .5em
+        padding calc(.5em - 2px)
+        width 1em
+        height 1em
+        display flex
+        position relative
+        border: 2px solid transparent
+        border-radius: 50%
+        cursor pointer
+        transition: $trans
+
+        @media $mob
+            margin 0 .3em
+            padding calc(.7em - 2px)
+
+        &__svg
+            width 1em
+            height 1em
+
+        &:hover
+            border-color: $accent
+            transform: scale(0.8)
+
+        &.invisible
+            margin 0
+            padding 0
+            width 3em
+            height 0
+            border 0
+            
+            .header__icon__svg
+                display none

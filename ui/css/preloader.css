@@ -1,0 +1,69 @@
+/* ----- PRELOADER ----- */
+.preloader {
+  display: none;
+  font-size: 2.5em;
+  z-index: 4;
+}
+.preloader.shown {
+  top: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  background-color: var(--main_bg-color, #000);
+}
+.preloader__text {
+  padding: 1em;
+}
+.preloader__animation {
+  width: 5em;
+  height: 5em;
+  border: 0.5em solid transparent;
+  border-bottom: 0.5em solid var(--accent_color, #42a5f6);
+  border-left: 0.5em solid var(--accent_color, #42a5f6);
+  border-radius: 100%;
+  transform: translate(-50%, -50%);
+  animation: loader-animation 1s infinite linear;
+}
+@-moz-keyframes loader-animation {
+  0% {
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes loader-animation {
+  0% {
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@-o-keyframes loader-animation {
+  0% {
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes loader-animation {
+  0% {
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}

@@ -1,0 +1,45 @@
+@require 'vars.styl'
+
+:root
+    --accent-color $accent
+    --accent_opacity-color $oAccent
+
+    --main_bg-color $mainBg
+    --secondary_bg-color $secBg
+    --icon_bg-color $iconBg
+    --hover_bg-color $hoverBg
+
+    --main_text-color $mainColor
+    --secondary_text-color $secColor
+    
+    --main_border-color $mainBorder
+    
+    --radio_nonactive-color $radioNA
+    --switch_nonactive-color $switchNA
+    --switch-before_nonactive-color $switchBNA
+    
+*
+    margin: 0
+    padding: 0
+
+body
+    color $mainColor
+    background-color $mainBg
+    font-family 'Open Sans', sans-serif
+    font-size 2vh
+
+    @media $tabOnly
+        font-size 2vw
+
+    @media $mob
+        font-size 3vw
+
+.hidden-link
+    width 100%
+    height 100%
+    position absolute
+    text-decoration none
+    color inherit
+
+.red-text
+    color red
