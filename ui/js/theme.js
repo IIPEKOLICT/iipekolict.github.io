@@ -18,11 +18,11 @@ const themePar = [
         [ // Темная/светлая тема
             {name: 'dark-mode', valueKey: 'darkModeValue', checkedStock: 'on'},
             ['--main_bg-color','--secondary_bg-color','--icon_bg-color','--hover_bg-color',
-            '--main_text-color','--secondary_text-color','--main_border-color','--radio_nonactive-color',
+            '--main_text-color','--secondary_text-color','--divider_color','--radio_nonactive-color',
             '--switch_nonactive-color','--switch-before_nonactive-color'],
             [
-              ['#000','#1f1f1f','#141414','#1a1a1a','#d8d8d8','#898989','#1e1e1e','#c7c7c7','#3d3d3d','#d1d1d1'],
-              ['#fafafa','white','#f2f2f2','#e1e1e1','#262626','#969696','#e6e6e6','#757575','#e1e1e1','#c4c4c4']
+                ['#000','#1f1f1f','#141414','#1a1a1a','#d8d8d8','#898989','#1e1e1e','#c7c7c7','#3d3d3d','#d1d1d1'],
+                ['#f2f2f2','white','#dcdcdc','#eaeaea','#262626','#969696','#e6e6e6','#757575','#e1e1e1','#c4c4c4']
             ],
             ['dark','light'],
             []
@@ -30,14 +30,31 @@ const themePar = [
     ],
     [ // Checkbox (классы)
         [ // Режим OneUI
-            {name: 'oneui-mode', valueKey: 'oneuiModeValue'}, // Параметры группы инпутов
+            {name: 'oneui-mode', valueKey: 'oneuiModeValue', checkedStock: 'off'}, // Параметры группы инпутов
             [$('.header'),$('.main')], // Модифицируемые элементы
             ['OneUI-mode',''], // Варианты класса-модификатора
-            [] // Элементы с аттрибутом disabled при откл чекбоксе
+            [$('#oneui-height-range')] // Элементы с аттрибутом disabled при откл чекбоксе
         ]
     ],
     [ // Range (переменные)
-
+        [ // Высота шапки в режиме OneUI
+            {rangeId: 'oneui-height-range', demoId: 'oneui-height-demo', valueKey: 'oneuiHeightValue', 
+            valueStock: '47.5', text: '% от высоты окна браузера'}, // параметры группы инпутов
+            ['--oneui_header-height'], // переменные
+            [ // модификаторы для преобразования value к необходимому виду
+                [['1'],['vh']]
+            ]
+        ],
+        [ // Масштаб интерфейса
+            {rangeId: 'interface-scale-range', demoId: 'interface-scale-demo', valueKey: 'interfaceScaleValue', 
+            valueStock: '100', text: '% от стокового'}, // параметры группы инпутов
+            ['--pc_font-size','--tab_font-size','--mob_font-size'], // переменные
+            [ // модификаторы для преобразования value к необходимому виду
+                [['0.02'],['vh']],
+                [['0.02'],['vw']],
+                [['0.03'],['vw']]
+            ]
+        ]
     ],
     [ // Другое
         ['none','var(--accent_color)','var(--main_bg-color)','var(--secondary_bg-color)',
@@ -122,12 +139,42 @@ function wbAccent() { // Проверка цвета акцента на рав�
     if ((localStorage.getItem('--accent_color') == '#000' && 
     localStorage.getItem('--main_bg-color') == '#000') ||
     (localStorage.getItem('--accent_color') == '#fff' && 
-    localStorage.getItem('--main_bg-color') == '#fafafa')) {
+    localStorage.getItem('--main_bg-color') == '#f2f2f2')) {
         varRecord(['--accent_color'], ['#42a5f6']);
         markInput(themePar[0][0][0].checkedKey, themePar[0][0][0].name, themePar[0][0][0].checkedStock);
         reload();
     }
 }
+
+// Загрузка страницы
+
+$(document).ready(function() {
+    setOpacityAccent();
+    varRead(themePar[0]);
+    varRead(themePar[2]);
+    varRead(themePar[4]);
+    for (let i = 0; i < themePar[1].length; i++) styleRead(themePar[1][i]);
+    for (let i = 0; i < themePar[3].length; i++) styleRead(themePar[3][i]);
+    svgColor(themePar[5][0]);
+    wbAccent();
+  
+    window.scrollTo({top: 0});
+
+    $('.header').each(function() {
+        if ($(this).find('.header__top').html() === '')
+            $(this).find('.header__top').text($(this).find('.header__bottom .header__name').text())
+    });
+
+    $('.menu-item').each(function(index) {
+        if ($(this).find('.menu-item__icon').html() === '')
+            $(this).find('.menu-item__icon').text(index + 1)
+    });
+
+    setTimeout(function() { // Отключение прелоадера спустя некоторое врем после загрузки страницы
+        hideElement('.preloader');
+        if (localStorage.getItem('preloader') != 'default') localStorage.setItem('preloader', 'default');
+    }, 300);
+});
 
 // Скроллинг страницы
 
@@ -145,34 +192,6 @@ $(window).scroll(function() { // Функция для OneUI mode, событи�
 
 // Прелоадер
 
-if (localStorage.getItem('oneuiModeValue') == 'OneUI-mode' || 
-    localStorage.getItem('preloader') == 'theme')
-    if (localStorage.getItem('preloader') != 'theme') showElement('#default-preloader');
-    else showElement('#theme-preloader');
-    // Для отображения правильного прелоадера ("применение..."/аним. загрузки)
-
-// Загрузка страницы
-
-$(document).ready(function() {
-    setOpacityAccent();
-    varRead(themePar[0]);
-    varRead(themePar[2]);
-    for (let i = 0; i < themePar[1].length; i++) styleRead(themePar[1][i]);
-    for (let i = 0; i < themePar[3].length; i++) styleRead(themePar[3][i]);
-    svgColor(themePar[5][0]);
-    wbAccent();
-  
-    window.scrollTo({top: 0});
-
-    $('.header').each(function() {
-        if ($(this).find('.header__top').html() === '')
-            $(this).find('.header__top').text($(this).find('.header__bottom .header__name').text())
-    });
-
-    setTimeout(function() { // Отключение прелоадера спустя некоторое врем после загрузки страницы
-        hideElement('.preloader');
-        if (localStorage.getItem('preloader') != 'default') localStorage.setItem('preloader', 'default');
-    }, 300);
-});
-
-
+if (localStorage.getItem('preloader') != 'theme') showElement('#default-preloader');
+else showElement('#theme-preloader');
+ // Для отображения правильного прелоадера ("применение..."/аним. загрузки)

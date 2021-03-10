@@ -7,6 +7,8 @@
     <title>Настройки</title>
     <link rel="shortcut icon" href="ui/svg/title/settings-icon.svg" type="image/svg">
     <link rel="stylesheet" href="ui/css/core.css">
+    <link rel="stylesheet" href="ui/css/input.css">
+    <link rel="stylesheet" href="ui/css/addon.css">
 </head>
 <body>
     <header class="header">
@@ -16,7 +18,10 @@
                 <object class="header__icon__svg" type="image/svg+xml" data="ui/svg/header/back-icon.svg"></object>
             </div>
             <div class="header__name">Настройки</div>
-            <div class="header__icon invisible"></div>
+            <div class="header__icon" onclick="showDialog('about')">
+                <a class="hidden-link" onclick="showDialog('about')"></a>
+                <object class="header__icon__svg" type="image/svg+xml" data="ui/svg/header/about-icon.svg"></object>
+            </div>
         </div>
     </header>
 
@@ -24,7 +29,7 @@
         <section class="section menu">
             <h2 class="section__header">Внешний вид</h2>
 
-            <div class="menu-item" onclick="showInteractive('accent-color')">
+            <div class="menu-item" onclick="showDialog('accent-color')">
                 <div class="menu-item__text">
                     <div class="menu-item__text__name">Цвет акцента</div>
                     <div class="menu-item__text__desc">Цвет элементов интерфейса при наведении</div>
@@ -42,14 +47,30 @@
         <section class="section menu">
             <h2 class="section__header">Удобство использования</h2>
 
-            <label class="menu-item switch-label">
-                <div class="menu-item__text">
-                    <div class="menu-item__text__name">Режим OneUI</div>
-                    <div class="menu-item__text__desc">Фича с огромной шапкой из OneUI</div>
+            <div class="menu-item switch-container">
+                <div class="switch-container__left" onclick="showDialog('oneui-mode')">
+                    <div class="menu-item__text">
+                        <div class="menu-item__text__name">Режим OneUI</div>
+                        <div class="menu-item__text__desc">Фича с огромной шапкой из OneUI</div>
+                    </div>
                 </div>
-                <input type="checkbox" name="oneui-mode" id="oneuiMode">
-                <span class="switch"></span>
-            </label>
+                <label class="switch-container__right">
+                    <input type="checkbox" name="oneui-mode" id="oneuiMode0">
+                    <span class="switch"></span>
+                </label>
+            </div>
+
+            <div class="menu-item">
+                <div class="range__container">
+                    <div class="menu-item__text__name">Масштаб интерфейса</div>
+                    <div id="interface-scale-demo" class="range__demo menu-item__text__desc"></div>
+                    <div class="range">
+                        <span class="range__bar"><span class="range__fill"></span></span>
+                        <input id="interface-scale-range" type="range" name="range" class="range__input"
+                         min="60" max="120" value="100" step="5"/>
+                    </div> 
+                </div>
+            </div>
         </section>
     </main>
 
@@ -115,6 +136,43 @@
                     </label>
                 </div>
             </div>
+
+            <div id="oneui-mode" class="dialog__block">
+                <h3 class="dialog__block__header">Режим  OneUI</h3>
+
+                <label class="menu-item switch-label">
+                    <div class="menu-item__text">
+                        <div class="menu-item__text__name">Включить</div>
+                    </div>
+                    <input type="checkbox" name="oneui-mode" id="oneuiMode1">
+                    <span class="switch"></span>
+                </label>
+
+                <div class="range__container">
+                    <div class="menu-item__text__name">Высота шапки</div>
+                    <div id="oneui-height-demo" class="range__demo menu-item__text__desc"></div>
+                    <div class="range">
+                        <span class="range__bar"><span class="range__fill"></span></span>
+                        <input id="oneui-height-range" type="range" name="range" class="range__input"
+                         min="25" max="50" value="47.5" step="2.5"/>
+                    </div> 
+                </div>
+            </div>
+
+            <div id="about" class="dialog__block">
+                <h3 class="dialog__block__header">Информация</h3>
+
+                <div class="about__container">
+                    <object class="about__logo" type="image/svg+xml" data="ui/svg/about-logo.svg"></object>
+                </div>
+
+                    <div class="menu-item__text about__text">
+                        <div class="menu-item__text__name">Loshica OS 4.0.0 Web</div>
+                        <div class="menu-item__text__desc">Loshica Corporation<sup>TM</sup><br>
+                            @all rights reserved</div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -122,6 +180,8 @@
 
     <div id="theme-preloader" class="preloader"><div class="preloader__text">Применение...</div></div>
     <div id="default-preloader" class="preloader"><div class="preloader__animation"></div></div>
+
+    <!-- Скрипты -->
 
     <script src="ui/js/jq-min.js"></script>
     <script src="ui/js/theme.js"></script>

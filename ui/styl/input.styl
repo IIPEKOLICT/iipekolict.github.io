@@ -1,0 +1,344 @@
+@require 'vars.styl'
+
+/* ----- RADIO ----- */
+
+.wrap-container
+    display flex
+    justify-content center
+    align-items center
+    flex-wrap wrap
+
+.row-label
+    display flex
+    flex-direction row
+    align-items center
+    cursor pointer
+
+    & input
+        display none
+
+    &__name
+        padding 0.5em 0
+        flex 1
+
+.radio-label
+    justify-content flex-start
+
+.radio-name
+    @media $tab
+        flex calc(100% - 2.6em)
+
+.radio-btn
+    margin 0.6em
+    width 0.6em
+    height 0.6em
+    border 0.3em solid $mainBg
+    border-radius 0.6em
+    box-shadow 0 0 0 0.1em $radioNA
+    transition $trans ease all
+
+.dialog__container .radio-btn
+    border-color: $secBg
+
+.label__colored .radio-btn
+    box-shadow 0 0 0 0.1em $accent
+
+[type="radio"]:checked + .radio-btn
+    background-color $accent
+    box-shadow 0 0 0 0.1em $accent
+
+[type="radio"] + .radio__accent::before
+    content '✓'
+    margin 0.1em
+    width 2em
+    height 2em
+    display flex
+    justify-content center
+    align-items center
+    background-color $accent
+    border-radius 0.2em
+    color $accent
+    transition $trans ease
+
+    @media $tab
+        font-size 1.25em
+
+    @media $pc
+        font-size 1.5em
+
+[type="radio"]:checked + .radio__accent::before
+    color $mainBg
+
+/* ----- SWITCH ----- */
+
+.switch-label input
+.switch-container input
+    display none
+
+.switch-container
+    padding 0
+    width 22em
+    height 12em
+
+    @media $notMob
+        justify-content center
+
+    @media $mob
+        width 100%
+        height 5em
+
+    &:hover
+        background-color transparent
+
+        @media $mob
+            border-color transparent
+    /*
+    &:hover .switch-container__left .menu-item__text
+        @media $notMob
+            transition $trans
+            transform translateY(-1.5em)
+
+    &:hover .switch-container__right .switch
+        @media $notMob
+            transform translateY(1.5em)
+            */
+        
+    &__left
+        position relative
+        display flex
+        
+        @media $notMob
+            padding-bottom .25em
+            width inherit
+            height calc(50% - .25em)
+            justify-content center
+            align-items flex-end
+            border-radius 1em 1em 0 0
+
+        @media $mob
+            padding .5em
+            height 4em
+            align-items center
+            flex-basis calc(100% - 5em)
+            max-width calc(100% - 5em)
+        
+        & .menu-item__text
+            @media $notMob
+                justify-content flex-end           
+
+    &__right
+        cursor pointer
+
+        @media $notMob
+            width inherit
+            height 50%
+            flex-direction column
+            justify-content flex-start
+            align-items center
+            border-radius 0 0 1em 1em
+
+        @media $mob
+            width 5em
+            height inherit
+            align-items center
+
+        &:hover
+            border-color transparent
+
+        &::before
+        &::after
+            content ''
+
+            @media $notMob
+                width 4em
+                
+            @media $mob
+                height 2em
+                
+        &::before
+            @media $notMob
+                height calc(.25em - 1px)
+                border-top 1px solid $divider
+
+            @media $mob
+                width calc(.5em - 1px)
+                border-left 1px solid $divider
+
+        &::after
+            @media $notMob
+                height .25em
+
+            @media $mob
+                width .5em
+
+    &__left
+    &__right
+        display flex
+        transition $trans
+
+        &:hover
+            background-color $hoverBg
+                
+.switch-label
+    justify-content center
+    background-color transparent
+
+    @media $mob
+        justify-content space-between
+
+    .menu-item__text
+        margin .5em
+        height auto
+
+        @media $mob {
+            margin 0
+            width calc(100% - 5em)
+        }
+
+.dialog .switch-label
+    border-radius .5em
+
+    @media $notMob
+        width calc(100% - 3em)
+        height 3em
+        flex-direction row
+        justify-content space-between
+        align-items center
+
+    &:hover
+        border-color transparent
+
+    & .menu-item__text
+        width auto
+
+.switch
+    margin 0.59em
+    width 2em
+    height 0.8em
+    position relative
+    border: 0.16em solid $switchNA
+    border-radius 0.56em
+    transition $trans
+
+    @media $mob
+        margin 0.985em
+        height 0.7em
+        width 1.75em
+        border-radius 0.49em
+        border-width 0.14em
+
+    &:before
+        content ''
+        top -0.4em
+        left -0.4em
+        width 1.6em
+        height 1.6em
+        display block
+        position absolute
+        background-color $switchBNA
+        border-radius 50%
+        transition $trans
+
+        @media $mob
+            top -0.35em
+            left -0.35em
+            height 1.4em
+            width 1.4em
+
+input:checked + .switch
+    border-color $oAccent
+
+input:focus + .switch
+    box-shadow: 0 0 1px $accent
+
+input:checked + .switch:before
+    background-color $accent
+    transform translateX(1.2em)
+
+    @media $mob
+        transform translateX(1.05em)
+
+/* ----- RANGE ----- */
+
+$baseRange = 7px
+
+.range
+    width 100%
+    height $baseRange*4
+    position relative
+
+    &__input
+        -webkit-appearance none
+        -moz-appearance none
+        appearance none
+        width 100%
+        height: $baseRange*4
+        background-color transparent
+        border-radius $baseRange*2
+        border-width 0 !important
+        outline none
+        position relative
+        z-index 2
+
+        &::-webkit-slider-thumb
+            -webkit-appearance none
+            appearance none
+            height $baseRange*4
+            width $baseRange*4
+            background-color $accent
+            border-radius 50%
+            box-shadow 0 0 0 0 $oAccent
+            cursor pointer
+            outline none
+            transition $trans
+            
+            &:hover
+                box-shadow 0 0 0 1em $oAccent
+
+        &::-moz-range-thumb
+            -webkit-appearance none
+            appearance none
+            height $baseRange*4
+            width $baseRange*4
+            background-color $accent
+            border-radius 50%
+            box-shadow 0 0 0 0 $oAccent
+            cursor pointer
+            outline none
+            transition $trans
+
+    &__container
+        margin .5em
+        width calc(100% - 1em)
+        display flex
+        flex-direction column
+        justify-content space-between
+
+        @media $notMob
+            justify-content center
+            height inherit
+
+        & .menu-item__text__name
+            width auto
+
+    &__bar
+        top $baseRange
+        width 100%
+        height $baseRange*2
+        position absolute
+        background-color $divider
+        border-radius $baseRange*2
+        z-index 1
+        overflow hidden
+
+        .dialog &
+            background-color $secColor
+
+    &__fill
+        display flex
+        height 100%
+        background-color $accent
+
+    &__demo
+        padding .5em 0
+        text-align center

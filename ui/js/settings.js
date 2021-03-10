@@ -37,16 +37,6 @@ function radioChecked(array) { // Установка отмеченных рад
     }
 }
 
-function checkboxChecked(array) { // Установка отмеченных чекбоксов (на основании инфы из ЛХ)
-    for (let i = 0; i < array.length; i++) { // перебор всех групп инпутов
-        let checkbox = $('input[type = "checkbox"][name="' + array[i][0].name + '"]');
-    
-        if (localStorage.getItem(array[i][0].valueKey) == array[i][2][0]) // если есть ключ активного класса
-            onCheckbox(checkbox, array[i][3]); 
-        else offCheckbox(checkbox, array[i][3]); // если нет
-    }
-}
-
 function checkboxVarChecked(array) { // Установка отмеченных чекбоксов (на основании инфы из ЛХ)
     for (let i = 0; i < array.length; i++) { // перебор всех групп инпутов
         let checkbox = $('input[type = "checkbox"][name="' + array[i][0].name + '"]');
@@ -54,11 +44,40 @@ function checkboxVarChecked(array) { // Установка отмеченных 
         if (!localStorage.getItem(array[i][0].valueKey))
             if (array[i][0].checkedStock == 'on') onCheckbox(checkbox, array[i][4])
             else offCheckbox(checkbox, array[i][4]);
-        else if (localStorage.getItem(array[i][0].valueKey) == array[i][3][0]) // если есть ключ активного класса
+        else if (localStorage.getItem(array[i][0].valueKey) == array[i][3][0])
+         // если есть ключ активного класса
             onCheckbox(checkbox, array[i][4])
         else offCheckbox(checkbox, array[i][4]); // если нет
     }
 }
+
+function checkboxChecked(array) { // Установка отмеченных чекбоксов (на основании инфы из ЛХ)
+    for (let i = 0; i < array.length; i++) { // перебор всех групп инпутов
+        let checkbox = $('input[type = "checkbox"][name="' + array[i][0].name + '"]');
+
+        if (!localStorage.getItem(array[i][0].valueKey))
+            if (array[i][0].checkedStock == 'on') onCheckbox(checkbox, array[i][3])
+            else offCheckbox(checkbox, array[i][3]);
+        else if (localStorage.getItem(array[i][0].valueKey) == array[i][2][0])
+         // если есть ключ активного класса
+            onCheckbox(checkbox, array[i][3])
+        else offCheckbox(checkbox, array[i][3]); // если нет
+    }
+}
+
+function rangeChecked(array) { // Установка отмеченных ползунков (на основании инфы из ЛХ)
+    for (let i = 0; i < array.length; i++) if (localStorage.getItem(array[i][0].valueKey)) {
+         // если есть ключ value
+        $('#' + array[i][0].rangeId).val(localStorage.getItem(array[i][0].valueKey));
+         // установить value ползунка
+        $('#' + array[i][0].demoId).text(localStorage.getItem(array[i][0].valueKey) + array[i][0].text);
+        // установить значение демки ползунка
+    } else { // если нет ключа
+        $('#' + array[i][0].rangeId).val(array[i][0].valueStock); // установить сток value слайдера
+        $('#' + array[i][0].demoId).text(array[i][0].valueStock + array[i][0].text);
+        // установить сток значение демки ползунка
+    }
+  }
 
 // Другое
 
@@ -69,6 +88,17 @@ function convertValues(array, stockValue) { // Преобразователь va
     $.each(array, function() { convertedValues.push((stockValue * this[0][0]) + this[1][0]) });
     return convertedValues;
 }
+
+const setRangeFill = () => { // Заливка левой части ползунка
+    $('.range__container').each(function() { // Перебор всех контейнеров для ползунков
+        let input = $(this).find('.range__input');
+        let fillWidth = (input.val() - input.prop('min')) * 100 / (input.prop('max') - input.prop('min'));
+        $(this).find('.range__fill').css('width', fillWidth + '%');
+    });
+}
+    
+$('.range').on('input', setRangeFill); // Установка обработчика
+setRangeFill();
 
 // Функции-обработчики выбора инпута
 
@@ -88,11 +118,12 @@ for (let i = 0; i < themePar[0].length; i++) { // Перебор всех гру
     });
 }
 
-for (let i = 0; i < themePar[2].length; i++) { // Перебор всех групп инпутов чекбоксов
+for (let i = 0; i < themePar[2].length; i++) { // Перебор всех групп инпутов чекбоксов (перем)
     $('input[name="' + themePar[2][i][0].name + '"]').on('change', function() { // при выборе оного
         localStorage.setItem('preloader', 'theme');
         showElement('#theme-preloader');
-        for (let j = 0; j < $('input[name="' + themePar[2][i][0].name + '"]').length; j++) { // пер. всех инп. группы
+        for (let j = 0; j < $('input[name="' + themePar[2][i][0].name + '"]').length; j++) {
+             // пер. всех инп. группы
             if (this.checked) { // если нажат - установить в ЛХ 1-е значение из массива
                 varRecord(themePar[2][i][1], themePar[2][i][2][0]); // запись ее переменных в root
                 localStorage.setItem(themePar[2][i][0].valueKey, themePar[2][i][3][0]);
@@ -105,11 +136,12 @@ for (let i = 0; i < themePar[2].length; i++) { // Перебор всех гру
     });
 }
 
-for (let i = 0; i < themePar[3].length; i++) { // Перебор всех групп инпутов чекбоксов
+for (let i = 0; i < themePar[3].length; i++) { // Перебор всех групп инпутов чекбоксов (класс)
     $('input[name="' + themePar[3][i][0].name + '"]').on('change', function() { // при выборе оного
         localStorage.setItem('preloader', 'theme');
         showElement('#theme-preloader');
-        for (let j = 0; j < $('input[name="' + themePar[3][i][0].name + '"]').length; j++) { // пер. всех инп. группы
+        for (let j = 0; j < $('input[name="' + themePar[3][i][0].name + '"]').length; j++) {
+             // пер. всех инп. группы
             if (this.checked) { // если нажат - установить в ЛХ 1-е значение из массива
                 localStorage.setItem(themePar[3][i][0].valueKey, themePar[3][i][2][0]);
             } else { // если нет - установить в ЛХ 2-е значение из массива
@@ -120,22 +152,37 @@ for (let i = 0; i < themePar[3].length; i++) { // Перебор всех гру
     });
 }
 
+for (let i = 0; i < themePar[4].length; i++) { // Перебор всех групп инпутов ползунков
+    $('#' + themePar[4][i][0].rangeId).on('change', function() { // при изменении значения ползунка
+        let value = this.value; // извлечь значение ползунка
+        localStorage.setItem(themePar[4][i][0].valueKey, value); // сохранить в ЛХ ключ значения ползунка
+        varRecord(themePar[4][i][1], convertValues(themePar[4][i][2], value)); // запись преобр. переменных
+        $('#' + themePar[4][i][0].demoId).text(value + themePar[4][i][0].text);
+         // уст. значение демки ползунка
+    });
+}
+
 $(document).ready(function() {
     radioChecked(themePar[0]);
     checkboxVarChecked(themePar[2]);
     checkboxChecked(themePar[3]);
+    rangeChecked(themePar[4]);
+    setRangeFill();
 
     $.each($('.label__colored'), function () { 
         $(this).css('--accent_color', $(this).find('input').val()) 
     });
 
-    if (localStorage.getItem('--main_bg-color') == '#fafafa') 
+    if (localStorage.getItem('--main_bg-color') == '#f2f2f2') 
         $.each($('#accent-color label'), function () {
             if ($(this).find('input').val() == '#fff') $(this).css("display", "none")
         });
     else $.each($('#accent-color label'), function () {
             if ($(this).find('input').val() == '#000') $(this).css("display", "none")
         });
+
+    if (localStorage.getItem('--accent_color') == '#000' || localStorage.getItem('--accent_color') == '#fff')
+        $('#about').css('--accent_color', '#eb0028');
 });
 
 

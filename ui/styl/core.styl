@@ -1,0 +1,511 @@
+@require 'vars.styl'
+
+/*----- ROOT -----*/
+
+:root
+    --accent-color $accent_Stock
+    --accent_opacity-color $oAccent_Stock
+
+    --main_bg-color $mainBg_Stock
+    --secondary_bg-color $secBg_Stock
+    --icon_bg-color $iconBg_Stock
+    --hover_bg-color $hoverBg_Stock
+
+    --main_text-color $mainColor_Stock
+    --secondary_text-color $secColor_Stock
+    
+    --divider_color $divider_Stock
+    
+    --radio_nonactive-color $radioNA_Stock
+    --switch_nonactive-color $switchNA_Stock
+    --switch-before_nonactive-color $switchBNA_Stock
+
+    --oneui_header-height $oneuiH_Stock
+    --pc_font-size $pcFS_Stock
+    --tab_font-size $tabFS_Stock
+    --mob_font-size $mobFS_Stock
+    
+*
+    margin: 0
+    padding: 0
+
+body
+    color $mainColor
+    background-color $mainBg
+    font-family 'Open Sans', sans-serif
+    font-size $pcFS
+
+    @media $tabOnly
+        font-size $tabFS
+
+    @media $mob
+        font-size $mobFS
+
+.hidden-link
+    width 100%
+    height 100%
+    position absolute
+    text-decoration none
+    color inherit
+
+.accent-text
+    color $accent
+
+.red-text
+    color #eb0028
+
+/*----- FONT -----*/
+
+@font-face
+    font-family 'Open Sans'
+    src: local('Open Sans Light'), local('OpenSans-Light'), 
+    url('../font/opensanslight.woff2') format('woff2'), 
+    url('../font/opensanslight.woff') format('woff'), 
+    url('../font/opensanslight.ttf') format('truetype');
+    font-weight 300
+    font-style normal
+
+@font-face 
+    font-family 'Open Sans'
+    src: local('Open Sans Light Italic'), local('OpenSansLight-Italic'), 
+    url('../font/opensanslightitalic.woff2') format('woff2'), 
+    url('../font/opensanslightitalic.woff') format('woff'), 
+    url('../font/opensanslightitalic.ttf') format('truetype');
+    font-weight 300
+    font-style italic
+
+@font-face 
+    font-family 'Open Sans'
+    src: local('Open Sans Bold'), local('OpenSans-Bold'), 
+    url('../font/opensansbold.woff2') format('woff2'), 
+    url('../font/opensansbold.woff') format('woff'), 
+    url('../font/opensansbold.ttf') format('truetype');
+    font-weight 700
+    font-style normal
+
+@font-face 
+    font-family 'Open Sans'
+    src: local('Open Sans Bold Italic'), local('OpenSans-BoldItalic'), 
+    url('../font/opensansbolditalic.woff2') format('woff2'), 
+    url('../font/opensansbolditalic.woff') format('woff'), 
+    url('../font/opensansbolditalic.ttf') format('truetype');
+    font-weight 700
+    font-style italic
+
+/* ----- PRELOADER ----- */
+
+.preloader
+    display none
+    font-size 2.5em
+    z-index 4
+
+    &.shown
+        top 0
+        height 100%
+        width 100%
+        display flex
+        justify-content center
+        align-items center
+        position fixed
+        background-color $mainBg
+
+    &__text
+        padding 1em
+    
+    &__animation
+        width 5em
+        height 5em
+        border 0.5em solid transparent
+        border-bottom 0.5em solid $accent
+        border-left 0.5em solid $accent
+        border-radius 100%
+        transform translate(-50%, -50%)
+        animation loader-animation 1s infinite linear
+        
+        @keyframes loader-animation
+            0% {
+                -webkit-transform: rotate(0);
+                transform: rotate(0);
+            }
+            100% {
+                -webkit-transform: rotate(360deg);
+                transform: rotate(360deg);
+            }
+
+/* ----- HEADER ----- */
+
+.header
+    width 100%
+    height 3em
+    position fixed
+    display flex
+    flex-direction: column
+    background-color $mainBg
+    border-bottom 2px solid $divider
+    font-size 2em
+    transition $trans 
+    z-index 3
+
+    &__top
+        display none
+
+    &__bottom
+        height 3em
+        display flex
+        justify-content space-between
+        align-items center
+
+        & .header__name
+            display flex
+            flex auto
+            justify-content center
+            flex-wrap nowrap
+            overflow hidden
+            text-overflow ellipsis
+
+            @media $mob
+                justify-content flex-start
+
+        &__time
+            align-items center
+
+            & .time-container
+                display flex
+                line-height 1em
+  
+    &.OneUI-mode
+        @media $tab
+            height $oneuiH
+
+        & .header__top
+            @media $tab
+                height auto
+                display flex
+                justify-content: center
+                align-items: center
+                flex 1
+                font-weight 700
+                opacity 1
+                transform translateY(1.5em)
+                transition: $trans
+
+            &__time
+                flex-direction column
+
+                & .time-container
+                    display flex
+                    font-size 2em
+                    line-height 1.2em
+
+                    & .colon
+                        display none
+
+
+        & .header__bottom
+            @media $tab
+                transition: $trans
+
+            & .header__name
+                @media $tab
+                    opacity 0
+
+    &.OneUI-mode.scroll
+        @media $tab
+            height 3em
+            justify-content center
+
+        & .header__top
+            @media $tab
+                height 0
+                flex 0
+                opacity 0  
+
+        & .header__bottom
+
+            & .header__name
+                @media $tab
+                    opacity 1
+                    animation header__name $trans*2
+
+            @keyframes header__name
+                0% {opacity: 0}
+                50% {opacity: 0}
+                60% {opacity: 0.5}
+                100% {opacity: 1}
+        
+    &__icon
+        margin 0 .5em
+        padding calc(.5em - 2px)
+        width 1em
+        height 1em
+        display flex
+        position relative
+        border: 2px solid transparent
+        border-radius: 50%
+        cursor pointer
+        transition: $trans
+
+        @media $mob
+            margin 0 .3em
+            padding calc(.7em - 2px)
+
+        &__svg
+            width 1em
+            height 1em
+
+        &:hover
+            border-color: $accent
+            transform: scale(0.8)
+
+        &.invisible
+            margin 0
+            padding 0
+            width 3em
+            height 0
+            border 0
+            
+            .header__icon__svg
+                display none
+
+/* ----- MAIN ----- */
+
+.main
+    padding-top calc(4em + 2px)
+    font-size 1.5em
+    transition: $trans
+
+    &.OneUI-mode
+        @media $tab
+            padding-top $oneuiH
+            min-height calc(100vh - 4em)
+
+    &.OneUI-mode.scroll
+        @media $tab
+            padding-top calc(4em + 2px)
+            min-height calc(100vh - 4em)
+
+/* ----- SECTION ----- */
+
+.section
+
+    &:not(:last-of-type)
+        border-bottom 1px solid $divider
+
+    &__header
+        margin .5em
+        flex-basis 100%
+        color $accent
+        text-align: center
+        text-transform: uppercase 
+
+        @media $mob
+            text-align: left
+
+/* ----- MENU ----- */
+
+.menu
+    display flex
+    justify-content center
+    align-items center
+    flex-wrap wrap
+
+    @media $mob
+        flex-direction column
+        justify-content flex-start
+        align-items flex-start
+        flex-wrap nowrap
+
+.menu-item
+    margin .5em
+    padding 1em
+    width 20em
+    height 10em
+    position relative
+    display flex
+    flex-direction column
+    justify-content space-between
+    align-items center
+    background-color $mainBg
+    border 1px solid transparent
+    border-radius 1em
+    cursor pointer
+    transition $trans
+
+    @media $mob
+        margin 0
+        padding .5em
+        width calc(100% - 1em)
+        height 4em
+        flex-direction row
+        justify-content flex-start
+        border-width 0
+        border-radius 0
+
+    &:hover
+        background-color $hoverBg
+        border-color $accent
+
+        @media $mob
+            border-color transparent
+
+    &__icon
+        margin-top .5em
+        width 3em
+        height 3em
+        display flex
+        justify-content center
+        align-items center
+        background-color $iconBg
+        color $accent
+        border-radius 50%
+
+        @media $mob
+            margin .5em
+
+    &__text
+        width 15em
+        height 100%
+        display flex
+        flex-direction column
+        justify-content center
+        align-items center
+
+        @media $mob
+            padding-left: .5em
+            width inherit
+            height auto
+            align-items flex-start
+
+        .menu-item__icon + &
+            height 4em
+            justify-content flex-start      
+
+            @media $mob
+                justify-content center
+                width calc(100% - 4.5em)
+
+        &__name
+            width inherit
+            text-align center
+            font-size 1.2em
+            font-weight bold
+            white-space nowrap
+            overflow hidden
+            text-overflow ellipsis
+
+            @media $mob
+                text-align left
+                font-weight 300
+
+        &__desc
+            color $secColor
+            text-align center
+            font-size 0.8em
+
+            @media $mob
+                text-align left
+
+    .hidden-link
+        transform translateY(-1em)
+
+        @media $mob
+            width inherit
+            transform translateY(0)
+
+/* ----- DIALOG ----- */
+
+.dialog
+    bottom 0
+    width 100%
+    height 0
+    position fixed
+    font-size 2em
+    z-index 4
+
+    @media $tab
+        font-size 1.5em
+
+    &__container
+        height 0
+        background-color $secBg
+        border-radius 1em
+        opacity 0
+        transform translateY(0)
+        transition $trans
+
+        @media $tab
+            transform translateY(100%)
+
+    &__btn
+        height 0
+        text-align center
+        vertical-align middle
+        color $secColor
+        border-top 1px solid $secColor
+        cursor pointer
+        transition $trans ease
+
+    &__block
+        padding 1em
+        min-width 15em
+        display none
+
+        &.shown
+            display flex
+            flex-direction column
+            
+            @media $tab
+                align-items center
+
+        &__header
+            margin-bottom .5em
+            text-align center
+
+    &.shown
+        height 100%
+        display flex
+        justify-content center
+        align-items center
+        background-color rgba(0,0,0,0.5)
+
+        @media $tab
+            align-items flex-end
+
+        & .dialog__container
+            height auto
+            display flex
+            flex-direction column-reverse
+            opacity 1
+
+            @media $tab
+                width 100%
+                border-radius 1em 1em 0 0
+                transform translateY(0)
+
+        & .dialog__btn
+            display none
+
+            @media $tab
+                margin 0 1em 0 1em
+                padding 1em 0
+                height auto
+                display flex
+                justify-content center
+                align-content center
+
+            &:hover
+                background-color $secColor
+                color $hoverBg
+
+                @media $tab
+                    margin 0
+
+            &:before
+                content: "Отмена"
+
+        & #accent-color .wrap-container
+            margin 0 auto
+            max-width 13.2em
+
+            @media $tab
+                max-width 16.5em

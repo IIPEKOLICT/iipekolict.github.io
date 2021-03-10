@@ -10,7 +10,7 @@ const sClass = 'shown'; // Класс для показа элементов
 
 // Функция скрытия диалогового окна
 
-function hideInteractive() {
+function hideDialog() {
     if (dia.hasClass(sClass)) { // Если зона показывается
         dia.removeClass(sClass); // Скрыть всю зону
         for (let i = 0; i < diaBlocks.length; i++) // Перебор всех блоков
@@ -22,14 +22,14 @@ function hideInteractive() {
 // Скрытие диал. окна при нажатии на кнопку или незадействованную зону
 
 dia.click(function(e) { // Событие клика по области диалогового окна
-    if (!diaCont.is(e.target) && diaCont.has(e.target).length === 0) hideInteractive()
-    else if (diaBtn.is(e.target)) hideInteractive();
+    if (!diaCont.is(e.target) && diaCont.has(e.target).length === 0) hideDialog()
+    else if (diaBtn.is(e.target)) hideDialog();
     // Если производится клик вне контейнера или по кнопке-скрывашке - скрыть диалоговое окно
 });
 
 // Функция показа диалогового окна (вешать на ссылки)
 
-function showInteractive(blockId) {
+function showDialog(blockId) {
     if (dia.hasClass(sClass) == false) { // Если зона не показывается
         dia.addClass(sClass); // Показать всю зону
 
