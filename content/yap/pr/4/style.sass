@@ -1,0 +1,322 @@
+// Переменные
+
+$base: 5px // Базовый размер
+$accent: darkgrey // Цвет отмеченных таб-ссылок
+$mainBg: #323232 // Фон майна
+$hoverBg: rgba(255,255,255,.2) // Цвет фона пунктов верхней навигации при наведении
+$divider: grey // Цвет границ/разделителя
+$textColor: white // Основной вет текста
+$primary: royalblue // Цвет заголовков в боковушке
+$contacts: dodgerblue // Цвет контактов
+$opacityH: rgba(0,0,0,.5) // Цвет фона заголовка в главной картинке
+
+$grad: linear-gradient(#3fa3fc, #0248ad) // Цвет фона верхней навигации и кнопок Read More
+$invGrad: linear-gradient(#0248ad, #3fa3fc) // Инвертированный вышеуказанный цвет
+
+// root
+
+*
+    margin: 0
+    padding: 0
+    
+body 
+    background: url(img/background.png) repeat
+    color: white
+    font-family: Arial, Helvetica, sans-serif
+
+/* Стили заголовков */   
+
+h1
+    font-size: 48px
+
+h2
+    font-size: 16px
+    line-height: $base*6
+
+h3
+    font-size: 24px
+
+h4
+    color: $primary
+    font-size: $base*4
+
+h5
+    font-size: 18px
+
+h1,h2,h3,h4,h5
+    font-weight: 400
+
+/* Шапка */ 
+
+.header
+    height: $base*24
+
+.center
+    display: flex
+    justify-content: center
+    align-items: center
+
+/* Маин */ 
+
+.main
+    margin: 0 $base*2
+    background: $mainBg
+    border-radius: $base*2
+    overflow: hidden
+
+    @media (min-width: 1500px)
+        margin: 0 auto
+        width: 1200px
+
+    /* Верхняя навигация */
+
+    &__nav
+        width: 100%
+        height: $base*10
+        display: flex
+        background: $grad
+
+        @media (max-width: 500px)
+            height: $base*40
+            flex-direction: column
+
+        &__item
+            flex-basis: 12%
+            height: 100%
+            transition: .3s ease-out
+
+            @media (max-width: 860px)  
+                flex-basis: 20%
+
+            &:hover
+                color: black !important
+                background-color: $hoverBg
+    
+    &__img
+        width: 100%
+        height: $base*50
+        position: relative
+        background: url("img/home-img.jpg") no-repeat
+        background-size: cover
+
+        &__header
+            padding-left: $base*6
+            bottom: 0
+            width: 100%
+            height: $base*6
+            position: absolute
+            background-color: $opacityH
+
+/* Контент */
+
+.content
+    padding: $base*4
+    flex-grow: 1
+
+    &__header
+        padding-top: $base*2
+
+    &__par
+        padding: $base*2 0
+        font-size: 16px
+        line-height: $base*4
+
+        &:not(:first-of-type)
+            padding-top: $base*4
+
+        &__img
+            margin-right: $base*2
+            width: $base*28
+            height: $base*28
+            float: left
+            background: url("img/home-img.jpg") no-repeat
+            background-size: cover
+            background-position: 50% 50%
+
+            @media (min-width: 500px) and (max-width: 860px)
+                margin: 0 auto $base*2 auto
+                width: $base*40
+                height: $base*40
+                float: none
+                display: flex
+
+            @media (max-width: 500px)
+                display: none
+
+    &__wrapper
+        width: 100%
+        display: flex
+
+        @media (max-width: 500px)
+            flex-direction: column
+
+    /* Боковая часть */
+
+    &__aside
+        padding: $base*4 $base*2
+        min-width: 25%
+
+        @media (min-width: 500px) and (max-width: 860px)
+            font-size: 14px
+
+        @media (max-width: 500px)
+            border-top: 1px solid $divider
+
+        &__item
+            padding-top: $base*2
+
+            @media (max-width: 500px)
+                &:last-of-type
+                    text-align: center
+
+            &__header:not(:first-of-type),
+            &__name,
+            &__text
+                padding-top: $base*2
+
+            &__text
+                padding-bottom: $base*6
+
+/* Используемые на конкретном таб-блоке картинки */
+
+#work .main__img,
+#work .content__par__img
+    background-image: url("img/work-img.jpg")
+
+#testimonials .main__img,
+#testimonials .content__par__img
+    background-image: url("img/testimonials-img.jpg")
+
+#projects .main__img,
+#projects .content__par__img
+    background-image: url("img/projects-img.jpg")
+
+#contact .main__img,
+#contact .content__par__img
+    background-image: url("img/contacts-img.jpg")
+
+/* Контакты */
+
+.contacts
+    padding: $base 0
+    width: 100%
+    display: flex
+
+    @media (min-width: 500px) and (max-width: 860px)  
+        flex-direction: column
+        font-size: 12px
+
+    @media (max-width: 500px)
+        justify-content: center
+
+    &__label
+        padding-right: $base
+
+    &__phone
+        color: $contacts
+        text-decoration: underline
+
+    &__phone,
+    &__email
+        font-size: 16px
+        text-decoration: underline
+        cursor: pointer
+
+        @media (min-width: 500px) and (max-width: 860px)  
+            font-size: 12px
+
+/* Две колонки снизу контента */
+
+.two-columns
+    padding-top: $base*4
+    width: 100%
+    display: flex
+
+    @media (max-width: 860px)
+        flex-direction: column
+
+    &__column
+        flex-basis: 50%
+
+        @media (min-width: 860px)
+            &:first-of-type
+                padding-right: $base*2
+
+            &:last-of-type
+                padding-left: $base*2
+
+        @media (max-width: 500px)
+            padding: $base*2 0
+
+        /* Кнопка Read More */
+
+        & .two-columns__btn
+            width: $base*20
+            height: $base*6
+            background: $grad
+            border: 2px solid $textColor
+            border-radius: $base*3
+            transition: .3s ease-out
+
+            @media (max-width: 500px)
+                margin: 0 auto
+
+            &:hover
+                background: $invGrad
+
+            &::before
+                content: 'Read More'
+                color: $textColor
+                text-decoration: underline            
+
+/* Подвал */
+
+.footer
+    height: $base*20
+    flex-direction: column
+
+    @media (max-width: 500px)
+        height: $base*60
+
+    /* Нижняя навигация */
+
+    &__nav
+        display: flex
+
+        @media (max-width: 500px)
+            flex-direction: column
+
+        &__item
+            margin: $base 0
+            padding: 0 $base
+            font-size: $base*3
+
+            @media (max-width: 500px)
+                display: flex
+                justify-content: center
+                text-align: center
+
+            &:not(:last-of-type)
+                border-right: 2px solid $textColor
+
+                @media (max-width: 500px)
+                    border: 0
+                    
+            &:hover
+                color: $divider
+
+/* Табы */
+
+.tab__link,
+.footer__nav:not(.tab) .footer__nav__item
+    color: inherit
+    text-decoration: none
+
+.tab__link.tab__link--active
+    color: $accent
+
+.tab__block
+    display: none
+
+    &.tab__block--active
+        display: block

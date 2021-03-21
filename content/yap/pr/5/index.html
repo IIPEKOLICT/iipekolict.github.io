@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Функция и обработка событий</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section class="section">
+        <h2 class="section__header"></h2>
+        <div id="hide" class="z1"></div>
+        <input type="button" value="Скрыть блок" id="z1">
+    </section>
+
+    <section class="section">
+        <h2 class="section__header"></h2>
+        <input type="button" value="Скрыть эту кнопку" id="z2">
+    </section>
+
+    <section id="z3" class="section">
+        <h2 class="section__header"></h2>
+        <ul class="list">
+            <li class="list__item">
+                <h3>Лошадь</h3> 
+                <p> Домашняя лошадь — животное семейства непарнокопытных, одомашненный и 
+                единственный сохранившийся подвид дикой лошади, вымершей в дикой природе, 
+                за исключением небольшой популяции лошади Пржевальского.</p>
+                <span class="list__item__close center"></span>
+            </li>
+            <li class="list__item">
+                <h3>Осёл</h3> 
+                <p> 
+                Домашний осёл или ишак — одомашненный подвид дикого осла, сыгравший 
+                важную историческую роль в развитии хозяйства и культуры человека. 
+                Все одомашненные ослы относятся к африканским ослам.</p>
+                <span class="list__item__close center"></span>
+            </li>
+            <li class="list__item">
+                <h3>Корова, а также пара слов о диком быке, о волах.</h3> 
+                <p> 
+                Корова — самка домашнего быка, одомашненного подвида дикого быка, 
+                парнокопытного жвачного животного семейства полорогих. Самцы вида называются 
+                быками, молодняк — телятами, кастрированные самцы — волами.</p>
+                <span class="list__item__close center"></span>
+            </li>
+        </ul>
+    </section>
+
+    <section class="section">
+        <h2 class="section__header"></h2>
+        <input type="button" value="Открыть диалоговое окно" id="z4">
+        <div class="dialog"><div class="dialog__window">
+            <div class="dialog__window__content">
+                При открытии диалогового окна прокрутка клавишами блокируется, также блокируется и 
+                прокрутка всей страницы, кроме диалогового окна. В пределах диалогового окна прокрутка
+                возможна с помощью мыши и ее колесика. Также прокрутка включается, когда мышь вне 
+                браузера. Когда диалоговое окно закрыто, прокрутка на всей странице возможна без 
+                каких-либо ограничений.<br><br>
+                Выход из диалогового окна осуществляется нажатием на затемненную область снаружи окна.
+            </div>
+        </div></div>
+    </section>
+
+    <section id="z5" class="section">
+        <h2 class="section__header"></h2>
+
+        <ul class="list">
+            <li class="list__item">Кристофер Робин</li>
+            <li class="list__item">Винни-Пух</li>
+            <li class="list__item">Ослик Иа</li>
+            <li class="list__item">Мудрая Сова</li>
+            <li class="list__item">Кролик. Просто кролик.</li>
+        </ul>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>

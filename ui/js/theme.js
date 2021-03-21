@@ -164,10 +164,17 @@ $(document).ready(function() {
         if ($(this).find('.header__top').html() === '')
             $(this).find('.header__top').text($(this).find('.header__bottom .header__name').text())
     });
-
+    /*
     $('.menu-item').each(function(index) {
         if ($(this).find('.menu-item__icon').html() === '')
             $(this).find('.menu-item__icon').text(index + 1)
+    });
+    */
+    $('.menu').each(function() {
+        $(this).find('.menu-item').each(function(index) {
+            if ($(this).find('.menu-item__icon').html() === '')
+                $(this).find('.menu-item__icon').text(index + 1)
+        });
     });
 
     setTimeout(function() { // Отключение прелоадера спустя некоторое врем после загрузки страницы

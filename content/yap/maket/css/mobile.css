@@ -18,10 +18,10 @@
 
   .nav { /* навигационное меню в шапке */
     width: 100%;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: reverse;
-        -ms-flex-direction: column-reverse;
-            flex-direction: column-reverse;
+        -ms-flex-direction: column;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+                flex-direction: column;
   }
   .nav-item { /* элемент навигации */
     margin: 5px 0;
@@ -35,6 +35,9 @@
     width: 100%;
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
+            -webkit-box-ordinal-group: 0;
+                -ms-flex-order: -1;
+                    order: -1;
   }
 
   /* ----- МАИН ----- */
