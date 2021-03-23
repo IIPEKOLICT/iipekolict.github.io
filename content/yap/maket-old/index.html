@@ -131,27 +131,27 @@
         <div class="slider-container">
           <div class="slider-track">
             <div class="slider-item">
-              <img src="img/natasha.jpg" alt="">
+              <img class="review-img" src="img/natasha.jpg" alt="">
               <h5 class="review-name">Наталья</h5>
               <p class="review-text secondary-text">Заказ делали через интернет. Замерщик подстроился под график работы. 
                 Установщики приехали вовремя, вежливые и аккуратные работники, демонтаж и монтаж произвели 
                 на отлично и главное быстро. Советую эту компанию!</p>
             </div>
             <div class="slider-item">
-              <img src="img/zheka.jpg" alt="">
+              <img class="review-img" src="img/zheka.jpg" alt="">
               <h5 class="review-name">Евгений</h5>
               <p class="review-text secondary-text">Хотел бы поблагодарить сотрудников компании за отличную работу. Рекомендую 
                 всем, кто выбирает себе качественные двери и хороший сервис — не пожалеете!</p> 
             </div>
             <div class="slider-item">
-              <img src="img/andrey.jpg" alt="">
+              <img class="review-img" src="img/andrey.jpg" alt="">
               <h5 class="review-name">Андрей</h5>
               <p class="review-text secondary-text">Дважды пльзовался услугами компании, остался очень доволен. Консультанты 
                 помогли выбрать модели дверей, определиться с цветом. Все работы по замеру, доставке и монтажу 
                 согласовывались в удобное для меня время и выполнялись в срок.</p>
             </div>
             <div class="slider-item">
-              <img src="img/ira.jpg" alt="">
+              <img class="review-img" src="img/ira.jpg" alt="">
               <h5 class="review-name">Ирина</h5>
               <p class="review-text secondary-text">Выбрали эту компанию за надежность и качество. Консультанты грамотно все 
                 объяснили  отталкиваясь от наших приоритетов. Замер и установка прошли на раз-два. С мастерами 
@@ -202,17 +202,24 @@
 
     <!-- футер -->
     <footer class="footer footer-text">
+      <map name="socmap">
+        <area shape="rect" coords="0, 0, 25, 28" href="#vk">
+        <area shape="rect" coords="25, 0, 50, 28" href="#inst">
+        <area shape="rect" coords="50, 0, 75, 28" href="#facebook">
+      </map>
+
       <div class="footer-text_container pc-content tablet-content">
         <p class="footer-text">Наш официальный адрес:<br>г. Минск, ул. Ленина, 4<br><br>УНП<br>00987465398548<br>
           <br>БИК<br>83478B79DF78</p>
         <p class="footer-text">Приемная<br>7 902 345<br><br>Отдел продаж<br>7 902 346<br><br>Юридический отдел<br>
           7 902 347</p>
         <p class="footer-text">Официальный сайт:<br>dveri.by<br><br>Мы в соцсетях:<br>
-          <a href="#"><img src="img/soc.png"></a></p>
+          <img src="img/soc.png" usemap="#socmap"></p>
       </div>
       <div class="footer-text_container mobile-content">   
         <div class="footer-text">Официальный сайт: dveri.by<br><br>Мы в соцсетях:<br>
-          <a href="#"><img src="img/soc.png"></a></div>
+          <img src="img/soc.png" usemap="#socmap">
+        </div>
         <div class="footer-text">Наш официальный адрес: г. Минск, ул. Ленина, 4<br>УНП 00987465398548<br>
           БИК 83478B79DF78</div>
         <div class="footer-text footer-row">

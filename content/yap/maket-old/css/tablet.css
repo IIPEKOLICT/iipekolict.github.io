@@ -195,6 +195,7 @@
     width: 100%;
     height: 50px;
   }
+  .footer-partners_col:last-of-type .footer-partner {height: 100%}
   .footer-partners_col:last-of-type img { /* Параметры картинок в последней колонке */
     height: inherit;
     max-height: 116px;

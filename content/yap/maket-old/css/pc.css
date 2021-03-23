@@ -327,6 +327,13 @@ button:active, button:focus {outline: none} /* Убирает дефолтные
           align-items: center;
 }
 
+.review-img { /* Изображение написавшего отзыв */
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
 .review-name { /* Заголовок (имя челика) в каждом из элементов 2 слайдера */
   padding-top: 5px;
   padding-bottom: 15px;
@@ -390,6 +397,9 @@ button:active, button:focus {outline: none} /* Убирает дефолтные
 }
 
 .phone-label { /* Контейнер для поля номера */
+  max-width: inherit;
+  box-sizing: border-box;
+  
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
