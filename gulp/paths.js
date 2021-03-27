@@ -1,0 +1,59 @@
+const   srcDir      = 'dev/src/',
+        serverDir   = 'dev/server/',
+        buildDir    = 'content/yap/maket/',
+
+        htmlDir     = '',
+        cssDir      = 'css/',
+        scssDir     = 'scss/',
+        sassDir     = 'sass/',
+        stylDir     = 'styl/',
+        jsDir       = 'js/',
+        fontDir     = 'font/',
+        imgDir      = 'img/',
+        svgDir      = 'svg/',
+
+        allFiles    = '**/*',
+        htmlFiles   = '**/*.html',
+        cssFiles    = '**/*.css',
+        scssFiles   = '**/*.scss',
+        sassFiles   = '**/*.sass',
+        stylFiles   = '**/*.styl',
+        jsFiles     = '**/*.js';
+
+module.exports = {
+    src: {
+        dir: srcDir,
+
+        html: srcDir + htmlDir + htmlFiles,
+        scss: srcDir + scssDir + scssFiles,
+        sass: srcDir + sassDir + sassFiles,
+        styl: srcDir + stylDir + stylFiles,
+        js: srcDir + jsDir + jsFiles,
+        font: srcDir + fontDir,
+        img: srcDir + imgDir,
+        svg: srcDir + svgDir
+    },
+    server: {
+        dir: serverDir,
+        all: serverDir + allFiles,
+
+        html: serverDir + htmlDir,
+        css: serverDir + cssDir,
+        js: serverDir + jsDir,
+        font: serverDir + fontDir,
+        img: serverDir + imgDir,
+        svg: serverDir + svgDir
+    },
+    build: {
+        dir: buildDir,
+
+        scss: buildDir + scssDir,
+        sass: buildDir + sassDir,
+        styl: buildDir + stylDir
+    },
+    inject: {
+        html: serverDir + htmlDir + htmlFiles,
+        css: serverDir + cssDir + cssFiles,
+        js: serverDir + jsDir + jsFiles
+    }
+}

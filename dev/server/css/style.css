@@ -1,0 +1,15 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  border: 0;
+  opacity: 1;
+  color: red;
+  background: black;
+}
+
+body .clock {
+  margin: 2px;
+}
