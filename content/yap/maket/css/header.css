@@ -1,0 +1,13 @@
+@charset "UTF-8";
+
+/* TODO: шапка (1 карусель) */
+
+.header__h4 {
+  margin-top: 25px;
+}
+
+@media (min-width: 500px) and (max-width: 1250px) {
+  .header__h4 {
+    margin-top: 30px;
+  }
+}

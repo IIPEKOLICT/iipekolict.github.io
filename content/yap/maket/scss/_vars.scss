@@ -1,0 +1,25 @@
+$base: 5px;
+$accent: #42a5f6;
+$trans: .3s ease-out;
+
+%center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+%col-sp_bet {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+%link {
+    color: inherit;
+    text-decoration: none;
+}
+
+%fullSize {
+    width: 100%;
+    height: 100%;
+}

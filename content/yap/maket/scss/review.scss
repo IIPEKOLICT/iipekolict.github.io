@@ -1,0 +1,116 @@
+/* TODO: блок отзывов */
+
+@import '_vars';
+
+.review {
+    margin-top: $base*14;
+    padding: $base*11 $base*33 0;
+    width: $base*248;
+    height: $base*116;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    color: black;
+    box-sizing: border-box;
+    line-height: 27px;
+
+    @media (max-width: 1250px) {
+        margin-top: 0;
+        padding: 0 0 $base*6;
+        width: 100%;
+        height: auto !important;
+    }
+
+    @media (max-width: 560px) {
+        padding: $base*4 0;
+    }
+
+    .slider__item {
+        padding-top: $base*6;
+        padding-left: 0;
+        width: $base*38;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        @media (min-width: 1250px) {
+            height: auto;
+            /*
+            &:not(:last-of-type) {
+                padding-right: $base*10; 
+            }
+            */
+        }
+
+        @media (min-width: 560px) and (max-width: 1250px) {
+            padding-top: $base*3;
+        }
+
+        @media (min-width: 560px) {
+            min-width: $base*38;
+        }
+
+        @media (max-width: 560px) {
+            padding-top: 0;
+            padding: 0 calc(50% - 95px);
+        }
+
+        &__container {
+            width: 100%;
+
+            @media (min-width: 560px) and (max-width: 1250px) {
+                margin: 0 auto;
+                width: $base*100;
+                height: auto;
+                overflow: visible;
+            }
+        }
+    }
+
+    .slider__track {
+        @media (min-width: 560px) and (max-width: 1250px) {
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        @media (min-width: 1250px) {
+            width: 100%;
+            justify-content: space-between;
+        }
+    }
+
+    &__header {
+        @media (min-width: 560px) and (max-width: 1250px) {
+            margin-top: $base*6;
+        }
+    }
+
+    &__img {
+        margin-bottom: $base;
+        width: $base*20;
+        height: $base*20;
+        border: 1px solid #56700f;
+        border-radius: 50%;
+    }
+
+    &__author {
+        margin-bottom: $base*3;
+    }
+
+    &__text {
+        padding: $base*5 0;
+        height: $base*44;
+        border-top: 1px solid rgba(153,152,152,.4);
+        border-bottom: 1px solid rgba(153,152,152,.4);
+
+        @media (max-width: 1250px) {
+            text-align: center;
+        }
+    }
+
+    .slider__ind--active {
+        background-color: $accent;
+    }
+}

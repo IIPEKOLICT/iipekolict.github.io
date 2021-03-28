@@ -1,0 +1,103 @@
+/* TODO: inputы в форме */
+
+@import '_vars';
+
+.input {
+    margin-bottom: $base*4;
+    height: $base*7;
+    width: 100%;
+    box-sizing: border-box;
+
+    @media (min-width: 560px) and (max-width: 1250px) {
+        width: $base*68;
+    }
+
+    @media (max-width: 560px) {
+        margin-bottom: $base*2;
+        width: $base*40;
+    }
+
+    &__time {
+        margin-bottom: 0;
+    }
+
+    &__submit {
+        margin-top: $base*4;
+        width: $base*40;
+        height: $base*8;
+        background-color: #2a1d17;
+        color: white;
+        border: 0;
+        border-radius: 2px;
+        cursor: pointer;
+        transition: $trans;
+
+        @media (max-width: 560px) {
+            margin-top: $base*2;
+            width: $base*20;
+            text-align: center;
+            font-size: .65em;
+        }
+
+        &:hover {
+            background-color: $accent;
+        }
+    }
+}
+
+/* TODO: лейблы */
+
+.label {
+    &__phone {
+        display: inline-block;
+
+        #form &__375,
+        #form &__pre {
+            margin-right: $base;
+            width: $base*8;
+        }
+
+        #form &__375 {
+            font-weight: bold;
+            line-height: 27px;
+
+            @media (max-width: 560px) {
+                width: $base*7;
+            }
+        }
+
+        #form &__pre {
+            text-align: center;
+
+            @media (max-width: 560px) {
+                width: $base*6;
+            }
+        }
+
+        &__number {
+            width:  $base*52.9;
+
+            @media (min-width: 560px) and (max-width: 1250px) {
+                width: $base*49.9;
+            }
+
+            @media (max-width: 560px) {
+                width: $base*23.9;
+            }
+        }
+    }
+
+    &__time {
+        color: #424141;
+        font-size: 11px;
+        line-height: $base*3;
+
+        @media (min-width: 560px) and (max-width: 1250px) {
+            width: $base*68;
+        }
+
+        @media (max-width: 560px) {
+            width: $base*40;
+        }
+    }
+}

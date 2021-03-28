@@ -29,9 +29,9 @@ module.exports = {
         sass: srcDir + sassDir + sassFiles,
         styl: srcDir + stylDir + stylFiles,
         js: srcDir + jsDir + jsFiles,
-        font: srcDir + fontDir,
-        img: srcDir + imgDir,
-        svg: srcDir + svgDir
+        font: srcDir + fontDir + allFiles,
+        img: srcDir + imgDir + allFiles,
+        svg: srcDir + svgDir + allFiles
     },
     server: {
         dir: serverDir,

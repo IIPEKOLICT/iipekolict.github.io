@@ -1,0 +1,108 @@
+@charset "UTF-8";
+
+/* TODO: inputы в форме */
+
+.input {
+  margin-bottom: 20px;
+  height: 35px;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.input__time {
+  margin-bottom: 0;
+}
+
+.input__submit {
+  margin-top: 20px;
+  width: 200px;
+  height: 40px;
+  background-color: #2a1d17;
+  color: white;
+  border: 0;
+  border-radius: 2px;
+  cursor: pointer;
+  -webkit-transition: 0.3s ease-out;
+  -o-transition: 0.3s ease-out;
+  transition: 0.3s ease-out;
+}
+
+.input__submit:hover {
+  background-color: #42a5f6;
+}
+
+/* TODO: лейблы */
+
+.label__phone {
+  display: inline-block;
+}
+
+#form .label__phone__375,
+#form .label__phone__pre {
+  margin-right: 5px;
+  width: 40px;
+}
+
+#form .label__phone__375 {
+  font-weight: bold;
+  line-height: 27px;
+}
+
+#form .label__phone__pre {
+  text-align: center;
+}
+
+.label__phone__number {
+  width: 264.5px;
+}
+
+.label__time {
+  color: #424141;
+  font-size: 11px;
+  line-height: 15px;
+}
+
+@media (max-width: 560px) {
+  .input {
+    margin-bottom: 10px;
+    width: 200px;
+  }
+
+  .input__submit {
+    margin-top: 10px;
+    width: 100px;
+    text-align: center;
+    font-size: .65em;
+  }
+
+  #form .label__phone__375 {
+    width: 35px;
+  }
+
+  #form .label__phone__pre {
+    width: 30px;
+  }
+
+  .label__phone__number {
+    width: 119.5px;
+  }
+
+  .label__time {
+    width: 200px;
+  }
+}
+
+@media (min-width: 560px) and (max-width: 1250px) {
+  .input {
+    width: 340px;
+  }
+
+  .label__phone__number {
+    width: 249.5px;
+  }
+
+  .label__time {
+    width: 340px;
+  }
+}

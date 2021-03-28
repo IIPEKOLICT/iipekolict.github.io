@@ -61,11 +61,9 @@ function watcher() {
     );
 }
 
-exports.clean = series(
-    tasks.cleanSrc,
-    tasks.cleanServer
-)
-
+exports.cleanSrc = tasks.cleanSrc;
+exports.cleanServer = tasks.cleanServer;
+exports.cleanBuild = tasks.cleanBuild;
 exports.cleanAll = series(
     tasks.cleanSrc,
     tasks.cleanServer,

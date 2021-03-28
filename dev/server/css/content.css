@@ -1,0 +1,189 @@
+@charset "UTF-8";
+
+/* TODO: Контент (3 блока с дверями) */
+
+.content__dignity__item,
+.primary__dignity {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.content {
+  padding: 55px 0 30px 110px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  background-color: #deae83;
+}
+
+.content__wrapper {
+  width: 1240px;
+  height: 570px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.content__block__text {
+  padding-top: 15px;
+  width: 300px;
+  color: black;
+}
+
+.content__dignity {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  list-style: none;
+}
+
+.content__dignity__item {
+  width: 96px;
+  height: 96px;
+  text-align: center;
+  border: 2px solid white;
+  border-radius: 50%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-weight: bold !important;
+}
+
+.content__dignity__item:not(:first-of-type) {
+  margin-left: 40px;
+}
+
+/* TODO: Блок с преимуществами всех типов дверей только на планшетах */
+
+.primary__dignity {
+  margin-bottom: 20px;
+  width: 100%;
+  height: 160px;
+  background-color: #deae83;
+}
+
+@media (min-width: 1250px) {
+  .content__wrapper:nth-of-type(3n+1) .content {
+    margin: 30px 0 40px 0;
+  }
+
+  .content__wrapper:nth-of-type(3n+2) .content {
+    margin: 35px 0;
+  }
+
+  .content__wrapper:nth-of-type(3n+3) .content {
+    margin: 40px 0 30px 0;
+  }
+}
+
+@media (max-width: 1250px) {
+  .content {
+    padding: 0;
+  }
+
+  .content__wrapper {
+    margin-bottom: 20px;
+    padding: 30px 25px 30px 80px;
+    width: 100%;
+    background-color: #deae83;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+  }
+}
+
+@media (max-width: 800px) {
+  .content__wrapper {
+    padding: 30px 25px;
+    height: auto;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+
+  .content__img {
+    width: 100%;
+    height: auto;
+    -webkit-box-ordinal-group: 0;
+    -webkit-order: -1;
+        -ms-flex-order: -1;
+            order: -1;
+  }
+
+  .content__block__text {
+    width: auto;
+  }
+}
+
+@media (max-width: 560px) {
+  .content__wrapper {
+    margin-bottom: 5px;
+    padding: 20px;
+    -webkit-box-align: start;
+    -webkit-align-items: flex-start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+
+  .content__block {
+    padding-top: 15px;
+  }
+
+  .content__block__text {
+    padding-top: 10px;
+  }
+}
+
+@media (min-width: 800px) and (max-width: 1250px) {
+  .content__wrapper:nth-of-type(3) .content {
+    padding-left: 50px;
+  }
+
+  .content__wrapper {
+    height: 380px;
+  }
+}
+
+@media (min-width: 560px) and (max-width: 800px) {
+  .content__block {
+    padding-top: 30px;
+  }
+}

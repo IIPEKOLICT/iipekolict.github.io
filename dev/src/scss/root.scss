@@ -1,0 +1,95 @@
+@import '_vars';
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #e5e5e5;
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+}
+
+h2 {
+    font-size: 96px;
+    line-height: 85px;
+
+    @media (min-width: 500px) and (max-width: 800px) {
+        font-size: $base*8;
+        line-height: $base*8;
+    }
+}
+h3 {
+    font-size: 36px;
+    line-height: 30px;
+
+    @media (max-width: 1250px) {
+        font-size: $base*5;
+        line-height: 24px;
+    }
+}
+h4 {
+    font-size: 30px;
+    line-height: 30px;
+}
+h5 {
+    font-size: 16px;
+    line-height: 21px;
+}
+
+.text { /* основной вид текста */
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 21px;
+}
+
+button:active,
+button:focus {
+    outline: none;
+}
+
+@media (max-width: 560px) {
+    .info__tab:not(.info__mob),
+    .info__pc:not(.info__mob) {
+        display: none;
+    }
+}
+
+@media (min-width: 560px) and (max-width: 1250px) {
+    .info__mob:not(.info__tab),
+    .info__pc:not(.info__tab) {
+        display: none;
+    }
+}
+
+@media (min-width: 1250px) {
+    .info__mob:not(.info__pc),
+    .info__tab:not(.info__pc) {
+        display: none;
+    }
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main {
+    padding-top: $base*14;
+    padding-bottom: $base*20;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @media (min-width: 560px) and (max-width: 1250px) {
+        padding-top: $base*4;
+        padding-bottom: $base*4;
+    }
+
+    @media (max-width: 560px) {
+        padding-top: $base;
+        padding-bottom: $base;
+    }
+}
