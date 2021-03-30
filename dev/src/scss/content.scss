@@ -1,6 +1,6 @@
 /* TODO: Контент (3 блока с дверями) */
 
-@import '_vars';
+@import '_lib';
 
 .content {
     padding: $base*11 0 $base*6 $base*22;
@@ -70,6 +70,12 @@
             width: 100%;
             height: auto;
             order: -1;
+        }
+
+        /* FIXME: фикс расширения картинок */
+
+        @media (min-width: 800px) and (max-width: 1250px) {
+            flex-grow: 0;
         }
     }
 

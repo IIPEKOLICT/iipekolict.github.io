@@ -1,6 +1,6 @@
 /* TODO: подвал */
 
-@import '_vars';
+@import '_lib';
 
 .footer {
     padding: $base*9 $base*20;
@@ -56,16 +56,10 @@
                 flex-direction: row;
             }
 
-            &__label {
-                display: flex;
-            }
-
-            &__info {
-                display: flex;
-            }
-
             &__label,
             &__info {
+                display: flex;
+
                 @media (max-width: 560px) {
                     display: inline;
                 }

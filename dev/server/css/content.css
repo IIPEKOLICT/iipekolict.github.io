@@ -53,6 +53,10 @@
           justify-content: space-between;
 }
 
+.content__img {
+  /* FIXME: фикс расширения картинок */
+}
+
 .content__block__text {
   padding-top: 15px;
   width: 300px;
@@ -179,6 +183,13 @@
 
   .content__wrapper {
     height: 380px;
+  }
+
+  .content__img {
+    -webkit-box-flex: 0;
+    -webkit-flex-grow: 0;
+        -ms-flex-positive: 0;
+            flex-grow: 0;
   }
 }
 

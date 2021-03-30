@@ -1,6 +1,6 @@
 /* TODO: inputы в форме */
 
-@import '_vars';
+@import '_lib';
 
 .input {
     margin-bottom: $base*4;
@@ -25,6 +25,10 @@
         margin-top: $base*4;
         width: $base*40;
         height: $base*8;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
         background-color: #2a1d17;
         color: white;
         border: 0;
@@ -34,13 +38,15 @@
 
         @media (max-width: 560px) {
             margin-top: $base*2;
-            width: $base*20;
-            text-align: center;
-            font-size: .65em;
+            width: $base*20; 
         }
 
         &:hover {
             background-color: $accent;
+        }
+
+        &::before {
+            content: 'Отправить заявку';
         }
     }
 }

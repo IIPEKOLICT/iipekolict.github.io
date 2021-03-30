@@ -105,6 +105,8 @@
     -webkit-flex-basis: 20%;
         -ms-flex-preferred-size: 20%;
             flex-basis: 20%;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
   }
 
   .nav__item__primary {

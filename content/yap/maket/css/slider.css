@@ -52,7 +52,7 @@
 }
 
 .slider__btn:disabled {
-  opacity: 0;
+  visibility: hidden;
 }
 
 .slider__btn__prev {
@@ -142,6 +142,10 @@
   width: inherit;
 }
 
+#car-1 .h4 {
+  margin-top: 25px;
+}
+
 @media (max-width: 560px) {
   .slider__ind {
     margin: 7.5px;
@@ -160,5 +164,9 @@
   .slider__item {
     padding-top: 165px;
     padding-left: 110px;
+  }
+
+  #car-1 .h4 {
+    margin-top: 30px;
   }
 }

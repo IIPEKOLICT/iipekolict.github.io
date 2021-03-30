@@ -27,6 +27,9 @@
     margin: 5px 0;
     height: 30px;
     border: 2px solid #464547;
+
+    font-size: 16px;
+    line-height: 15px;
   }
   .nav-item:hover {background-color: white} /* анимация эл навигации при наведении */
   .nav-item + .nav-item {margin-left: 0} /* все элементы навигации, кроме первого (отступ в 20пх) */
@@ -178,10 +181,11 @@
 
   .submit-btn { /* Кнопка "отправить заявку" */
     margin-top: 10px;
-    width: 120px;
+    width: 100px;
     -ms-flex-item-align: center;
         -ms-grid-row-align: center;
-        align-self: center
+        align-self: center;
+    font-size: 0.7em;
   }
 
   /* ----- ФУТЕР ----- */

@@ -51,6 +51,9 @@
         -ms-flex-pack: start;
             justify-content: flex-start;
   }
+  .doors .content-wrapper:nth-of-type(even) .description-container {
+    padding: 30px 0 0 48px;
+  }
   .content-img { /* стили картинки в блоках с дверями */
     margin: 30px 25px;
     max-width: calc(50% - 50px);
@@ -58,7 +61,10 @@
     -o-object-fit: fill;
        object-fit: fill;
   }
-  .content-img.mk-dveri {width: calc(50% - 50px)} /* картинка межкомнатных дверей */
+  .content-img.mk-dveri {
+    margin-left: 80px;
+    width: calc(50% - 50px)
+  } /* картинка межкомнатных дверей */
 
   .text-container {max-width: 275px} /* контенйер с заголовком и абзацем текста */
 

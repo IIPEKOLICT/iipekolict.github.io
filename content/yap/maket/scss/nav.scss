@@ -1,6 +1,6 @@
 /* TODO: навигация по сайту над шапкой */
 
-@import '_vars';
+@import '_lib';
 
 .nav {
     padding: $base*3 $base*22 $base*3 0;
@@ -48,7 +48,8 @@
             margin: 0;
             padding: $base;
             width: 100%;
-            flex-basis: 20%;
+            flex-basis: 20%;     
+            box-sizing: border-box;
         }
 
         &:hover {

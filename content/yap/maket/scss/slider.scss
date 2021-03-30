@@ -1,6 +1,6 @@
 /* TODO: карусель */
 
-@import '_vars';
+@import '_lib';
 
 .slider {
     height: $base*120;
@@ -44,11 +44,12 @@
         transition: $trans;
 
         &:disabled {
-            opacity: 0;
+            //opacity: 0;
+            visibility: hidden;
         }
 
         &__prev {
-            border-right: $base*4 solid rgba(135, 134, 134, 0.7);
+            border-right: $base*4 solid $primary;
 
             &:hover {
                 border-right-color: $accent;
@@ -56,7 +57,7 @@
         }
 
         &__next {
-            border-left: $base*4 solid rgba(135, 134, 134, 0.7);
+            border-left: $base*4 solid $primary;
 
             &:hover {
                 border-left-color: $accent;
@@ -123,6 +124,14 @@
 
         &__container {
             width: inherit;
+        }
+    }
+
+    .h4 {
+        margin-top: $base*5;
+
+        @media (min-width: 560px) and (max-width: 1250px) {
+            margin-top: $base*6;
         }
     }
 }

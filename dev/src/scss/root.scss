@@ -1,39 +1,48 @@
-@import '_vars';
+/* TODO: основное */
+
+@import '_lib';
 
 * {
     margin: 0;
     padding: 0;
 }
 
-body {
+.body {
     background-color: #e5e5e5;
     color: #fff;
     font-family: 'Roboto', sans-serif;
 }
 
-h2 {
-    font-size: 96px;
-    line-height: 85px;
+/* TODO: заголовки */
 
-    @media (min-width: 500px) and (max-width: 800px) {
-        font-size: $base*8;
-        line-height: $base*8;
+.h2 {
+    font-size: 96px;
+    line-height: $base*17;
+
+    @media (max-width: 1250px) {
+        font-size: 47px;
+        line-height: 51px;
     }
 }
-h3 {
+.h3 {
     font-size: 36px;
-    line-height: 30px;
+    line-height: $base*6;
 
     @media (max-width: 1250px) {
         font-size: $base*5;
         line-height: 24px;
     }
 }
-h4 {
-    font-size: 30px;
-    line-height: 30px;
+.h4 {
+    font-size: $base*6;
+    line-height: $base*6;
+
+    @media (min-width: 560px) and (max-width: 1250px) {
+        font-size: 18px;
+        line-height: $base*6;
+    }
 }
-h5 {
+.h5 {
     font-size: 16px;
     line-height: 21px;
 }
@@ -45,9 +54,11 @@ h5 {
 }
 
 button:active,
-button:focus {
+button:focus { /* фикс браузерного обрамления кнопок при нажатии */
     outline: none;
 }
+
+/* TODO: классы для скрытия/показа элементов на различных устройствах */
 
 @media (max-width: 560px) {
     .info__tab:not(.info__mob),
@@ -70,11 +81,7 @@ button:focus {
     }
 }
 
-.center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+/* TODO: main */
 
 .main {
     padding-top: $base*14;

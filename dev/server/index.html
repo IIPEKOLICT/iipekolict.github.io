@@ -9,15 +9,16 @@
     <link rel="stylesheet" href="css/content.css">
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/form.css">
-    <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/input.css">
     <link rel="stylesheet" href="css/nav.css">
     <link rel="stylesheet" href="css/review.css">
     <link rel="stylesheet" href="css/root.css">
+    <link rel="stylesheet" href="css/scroll.css">
     <link rel="stylesheet" href="css/slider.css">
     <!-- !css -->
 </head>
-<body>
+<body class="body">
+    <!-- НАВИГАЦИЯ -->
     <nav class="nav">
         <a href="#inside-doors" class="nav__item">Входные двери</a>
         <a href="#interroom-doors" class="nav__item">Межкомнатные двери</a>
@@ -25,29 +26,32 @@
         <a href="#car-2" class="nav__item">Отзывы</a>
         <a href="#form" class="nav__item nav__item__primary">Заказать звонок</a>
     </nav>
+    <!-- НАВИГАЦИЯ -->
 
-    <header id="car-1" class="header slider info__pc info__tab">
+    <!-- 1 КАРУСЕЛЬ -->
+    <header id="car-1" class="slider info__pc info__tab">
         <div class="slider__item__container">
             <div class="slider__track">
                 <div class="slider__item">
-                    <h2 class="header__h2">Цена - качество.</h2>
-                    <h4 class="header__h4">Выбери свою</h4>
+                    <h2 class="h2">Цена - качество.</h2>
+                    <h4 class="h4">Выбери свою</h4>
                 </div>
                 <div class="slider__item">
-                    <h2 class="header__h2">Стильно, быстро, надежно</h2>
-                    <h4 class="header__h4">Более 15 лет на рынке</h4>
+                    <h2 class="h2">Стильно, быстро, надежно</h2>
+                    <h4 class="h4">Более 15 лет на рынке</h4>
                 </div>
             </div>
         </div>
         <div class="slider__btn__container">
-            <button class="slider__btn slider__btn__prev" onclick=""></button>
-            <button class="slider__btn slider__btn__next" onclick=""></button>
+            <button class="slider__btn slider__btn__prev"></button>
+            <button class="slider__btn slider__btn__next"></button>
         </div>
         <div class="slider__ind__container">
             <div class="slider__ind"></div>
             <div class="slider__ind"></div>
         </div>
     </header>
+    <!-- 1 КАРУСЕЛЬ -->
 
     <main class="main">
         <div class="primary__dignity info__tab">
@@ -58,10 +62,11 @@
             </ul>
         </div>
 
+        <!-- ВХОДНЫЕ ДВЕРИ -->
         <div id="inside-doors" class="content__wrapper">
             <div class="content">
                 <div class="content__block">
-                    <h3>Входные двери</h3>
+                    <h3 class="h3">Входные двери</h3>
                     <p class="content__block__text text">Не просто преграда между вашим домом и внешним миром, это еще 
                     и «лицо» вашего жилища, которое задает тон всему интерьеру прямо с порога. Поэтому хочется, чтобы 
                     оно выглядело достойно и привлекательно. Сегодня стилевых решений, в которых может быть изготовлена 
@@ -76,12 +81,14 @@
             </div>
             <img src="img/inside-doors.jpg" alt="" class="content__img">
         </div>
+        <!-- ВХОДНЫЕ ДВЕРИ -->
 
+        <!-- МЕЖКОМНАТНЫЕ ДВЕРИ -->
         <div id="interroom-doors" class="content__wrapper">
             <img src="img/interroom-doors.jpg" alt="" class="content__img">
             <div class="content">
                 <div class="content__block">
-                    <h3>Межкомнатные двери</h3>
+                    <h3 class="h3">Межкомнатные двери</h3>
                     <p class="content__block__text text">Вид и красота двери зависят от внешнего покрытия. Двери 
                         покрывают самыми разными материалами – шпоном, деревом, различными пленками. Но пальму первенства 
                         удерживают ламинированные межкомнатные двери.</p>
@@ -93,11 +100,13 @@
                 </ul>
             </div>
         </div>
+        <!-- МЕЖКОМНАТНЫЕ ДВЕРИ -->
 
+        <!-- БАЛКОННЫЕ ДВЕРИ -->
         <div id="balcony-doors" class="content__wrapper">
             <div class="content">
                 <div class="content__block">
-                    <h3>Балконные двери</h3>
+                    <h3 class="h3">Балконные двери</h3>
                     <p class="content__block__text text">При любом варианте использования балкона, правильно оформленная 
                         балконная дверь играет очень важную роль. Помимо своей основной задачи, правильно подобранная 
                         конструкция и качественная установка балконной двери защитит остальное помещение от холодного 
@@ -111,35 +120,37 @@
             </div>
             <img src="img/balcony-doors.jpg" alt="" class="content__img">
         </div>
+        <!-- БАЛКОННЫЕ ДВЕРИ -->
 
+        <!-- ОТЗЫВЫ -->
         <div id="car-2" class="review slider">
-            <h3 class="review__header info__pc info__tab">Отзывы</h3>
+            <h3 class="review__header h3 info__pc info__tab">Отзывы</h3>
 
             <div class="slider__item__container">
                 <div class="slider__track">
                     <div class="slider__item">
                         <img src="img/natalia.jpg" alt="" class="review__img">
-                        <h5 class="review__author">Наталья</h5>
+                        <h5 class="review__author h5">Наталья</h5>
                         <p class="review__text text">Заказ делали через интернет. Замерщик подстроился под график работы. 
                             Установщики приехали вовремя, вежливые и аккуратные работники, демонтаж и монтаж произвели 
                             на отлично и главное быстро. Советую эту компанию!</p>
                     </div>
                     <div class="slider__item">
                         <img src="img/evgenii.jpg" alt="" class="review__img">
-                        <h5 class="review__author">Евгений</h5>
+                        <h5 class="review__author h5">Евгений</h5>
                         <p class="review__text text">Хотел бы поблагодарить сотрудников компании за отличную работу. Рекомендую 
                             всем, кто выбирает себе качественные двери и хороший сервис — не пожалеете!</p>
                     </div>
                     <div class="slider__item">
                         <img src="img/andrey.jpg" alt="" class="review__img">
-                        <h5 class="review__author">Андрей</h5>
+                        <h5 class="review__author h5">Андрей</h5>
                         <p class="review__text text">Дважды пльзовался услугами компании, остался очень доволен. Консультанты 
                             помогли выбрать модели дверей, определиться с цветом. Все работы по замеру, доставке и монтажу 
                             согласовывались в удобное для меня время и выполнялись в срок.</p>
                     </div>
                     <div class="slider__item">
                         <img src="img/irina.jpg" alt="" class="review__img">
-                        <h5 class="review__author">Ирина</h5>
+                        <h5 class="review__author h5">Ирина</h5>
                         <p class="review__text text">Выбрали эту компанию за надежность и качество. Консультанты грамотно все 
                             объяснили  отталкиваясь от наших приоритетов. Замер и установка прошли на раз-два. С мастерами 
                             таке же можно связаться  по телефону. Отличная работа всей команды.</p>
@@ -147,8 +158,8 @@
                 </div>
             </div>
             <div class="slider__btn__container info__mob">
-                <button class="slider__btn slider__btn__prev" onclick=""></button>
-                <button class="slider__btn slider__btn__next" onclick=""></button>
+                <button class="slider__btn slider__btn__prev"></button>
+                <button class="slider__btn slider__btn__next"></button>
             </div>
             <div class="slider__ind__container info__mob">
                 <div class="slider__ind"></div>
@@ -157,12 +168,14 @@
                 <div class="slider__ind"></div>
             </div>
         </div>
+        <!-- ОТЗЫВЫ -->
 
+        <!-- ФОРМА -->
         <div id="form" class="form__wrapper">
             <img src="img/map-pc.jpg" alt="" class="form__img info__pc"></img>
             <img src="img/map-tab.jpg" alt="" class="form__img info__tab info__mob"></img>
             <form class="form">
-                <h3 class="form__header">Заказать звонок</h3>
+                <h3 class="form__header h3">Заказать звонок</h3>
 
                 <input type="text" class="input" id="surname" placeholder="Фамилия">
                 <input type="text" class="input" id="name" placeholder="Имя">
@@ -178,11 +191,13 @@
                 <input type="text" class="input input__time" id="time" placeholder="Укажите время (пример 20:00)">
                 <label class="label__time" for="time">(В данной строке необходимо указать удобное для вас время звонка)</label>
 
-                <input type="submit" class="input__submit" value="Отправить заявку">
+                <button class="input__submit"></button>
             </form>
         </div>
+        <!-- ФОРМА -->
     </main>
 
+    <!-- ПОДВАЛ -->
     <footer class="footer">
         <div class="footer__address">
             <span class="footer__adress__item">
@@ -229,6 +244,17 @@
             </div>
         </div>
     </footer>
+    <!-- ПОДВАЛ -->
+
+    <!-- ЯКОРЬ -->
+    <figure class="scroll">
+        <svg viewBox="0 0 100 100">
+            <path class="scroll__svg__path" stroke-miterlimit="10px"
+            d="M50,3c25.96,0,47,21.04,47,47S75.96,97,50,97
+            S3,75.96,3,50S24.04,3,50,3z"/>
+        </svg>
+    </figure>
+    <!-- ЯКОРЬ -->
     
     <!-- js -->
     <script src="js/jq-min.js"></script>

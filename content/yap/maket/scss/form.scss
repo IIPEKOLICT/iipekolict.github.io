@@ -1,6 +1,6 @@
 /* TODO: блок с формой */
 
-@import '_vars';
+@import '_lib';
 
 .form {
     padding: $base*11 $base*31 $base*12 $base*22;
@@ -9,7 +9,7 @@
     box-sizing: border-box;
 
     @media (max-width: 1250px) {
-        margin: $base*4 0;
+        margin-top: $base*4;
         padding: $base*6 0;
         align-items: center;
         background-color: white;
@@ -58,7 +58,11 @@
 
     &__header {
         padding-bottom: $base*5;
-        line-height: 30px;
+
+        @media (min-width: 560px) {
+            font-size: 36px;
+            line-height: 27px;
+        }
 
         @media (max-width: 560px) {
             padding-bottom: $base*3;

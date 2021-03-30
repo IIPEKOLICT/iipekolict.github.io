@@ -1,6 +1,11 @@
+// Переменные
+
 $base: 5px;
 $accent: #42a5f6;
+$primary: rgba(135, 134, 134, .7);
 $trans: .3s ease-out;
+
+// Миксины
 
 %center {
     display: flex;

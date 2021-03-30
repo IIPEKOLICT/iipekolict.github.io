@@ -1,0 +1,48 @@
+/* TODO: якорь */
+
+@import '_lib';
+
+.scroll {
+    @extend %center;
+    right: $base*6;
+    bottom: $base*6;
+    width: $base*12;
+    height: $base*12;
+    position: fixed;
+    background-color: white;
+    color: $primary;
+    border-radius: 50%;
+    box-shadow: 0 0 $base 2px $primary;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY($base*4);
+    transition: $trans;
+    z-index: 100;
+
+    &__svg__path {
+        fill: none;
+        stroke: $accent;
+        stroke-width: 6px;
+        box-sizing: border-box;
+        transition: $trans;
+    }
+
+    &--active {
+        opacity: .5;
+        visibility: visible;
+        transform: translateY(0);
+
+        &:hover {
+            color: $accent;
+            opacity: 1;
+        }
+    }
+
+    &::before {
+        @extend %fullSize, %center;
+        content: '🠕';
+        position: absolute;
+        font-size: $base*6;
+    }
+}

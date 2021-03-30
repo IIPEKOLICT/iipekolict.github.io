@@ -48,13 +48,7 @@
           flex-direction: column;
 }
 
-.footer__address__item__label {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-}
-
+.footer__address__item__label,
 .footer__address__item__info {
   display: -webkit-box;
   display: -webkit-flex;
