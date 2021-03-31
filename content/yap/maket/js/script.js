@@ -180,8 +180,17 @@ $('a[href^="#"]').on('click', function(e) {
 
 // Заливка обводки якоря пропорционально скроллу по оси Х
 
+/*
+
 const   path = $('.scroll__svg__path'), // Обводка (элемент)
         length = path.get(0).getTotalLength(); // Ее длина
+
+*/
+
+const   path = $('.scroll__path'), // Обводка (элемент)
+        length = path.get(0).getTotalLength();// * Math.PI; // Ее длина
+
+        //console.log(path.get(0).getTotalLength());
 
 path.css('stroke-dasharray', `${length} ${length}`); // Вид пунктирной обводки
 path.css('transition', 'stroke-dashoffset 20ms'); // Анимация заливки обводки

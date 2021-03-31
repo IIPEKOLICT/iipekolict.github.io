@@ -20,12 +20,35 @@
     transition: $trans;
     z-index: 100;
 
+    /*
     &__svg__path {
         fill: none;
         stroke: $accent;
         stroke-width: 6px;
         box-sizing: border-box;
         transition: $trans;
+    }
+    */
+
+    &__path {
+        fill: none;
+        stroke: $accent;
+        stroke-width: 6px;
+        //box-sizing: border-box;
+        //transition: $trans;
+    }
+
+    &__g {
+        stroke: $primary;
+    }
+
+    &__line {
+        fill: none;
+        stroke-width: 6px;
+    }
+
+    &__polygon {
+        fill: $primary;
     }
 
     &--active {
@@ -34,15 +57,23 @@
         transform: translateY(0);
 
         &:hover {
-            color: $accent;
+            //color: $accent;
             opacity: 1;
+
+            .scroll__g {
+                stroke: $accent;
+            }
+
+            .scroll__polygon {
+                fill: $accent;
+            }
         }
     }
 
     &::before {
-        @extend %fullSize, %center;
-        content: '🠕';
-        position: absolute;
-        font-size: $base*6;
+        //@extend %fullSize, %center;
+        //content: '🠕';
+        //position: absolute;
+        //font-size: $base*6;
     }
 }

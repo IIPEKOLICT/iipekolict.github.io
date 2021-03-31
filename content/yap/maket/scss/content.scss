@@ -75,6 +75,7 @@
         /* FIXME: фикс расширения картинок */
 
         @media (min-width: 800px) and (max-width: 1250px) {
+            //width: min-content;
             flex-grow: 0;
         }
     }

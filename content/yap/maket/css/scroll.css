@@ -2,8 +2,7 @@
 
 /* TODO: якорь */
 
-.scroll,
-.scroll::before {
+.scroll {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -16,11 +15,6 @@
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
-}
-
-.scroll::before {
-  width: 100%;
-  height: 100%;
 }
 
 .scroll {
@@ -44,17 +38,34 @@
   -o-transition: 0.3s ease-out;
   transition: 0.3s ease-out;
   z-index: 100;
+  /*
+    &__svg__path {
+        fill: none;
+        stroke: $accent;
+        stroke-width: 6px;
+        box-sizing: border-box;
+        transition: $trans;
+    }
+    */
 }
 
-.scroll__svg__path {
+.scroll__path {
   fill: none;
   stroke: #42a5f6;
   stroke-width: 6px;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  -webkit-transition: 0.3s ease-out;
-  -o-transition: 0.3s ease-out;
-  transition: 0.3s ease-out;
+}
+
+.scroll__g {
+  stroke: rgba(135, 134, 134, 0.7);
+}
+
+.scroll__line {
+  fill: none;
+  stroke-width: 6px;
+}
+
+.scroll__polygon {
+  fill: rgba(135, 134, 134, 0.7);
 }
 
 .scroll--active {
@@ -66,12 +77,13 @@
 }
 
 .scroll--active:hover {
-  color: #42a5f6;
   opacity: 1;
 }
 
-.scroll::before {
-  content: '🠕';
-  position: absolute;
-  font-size: 30px;
+.scroll--active:hover .scroll__g {
+  stroke: #42a5f6;
+}
+
+.scroll--active:hover .scroll__polygon {
+  fill: #42a5f6;
 }
