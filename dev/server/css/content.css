@@ -190,6 +190,7 @@
     -webkit-flex-grow: 0;
         -ms-flex-positive: 0;
             flex-grow: 0;
+    max-width: calc(50% - 80px);
   }
 }
 
