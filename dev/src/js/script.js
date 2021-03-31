@@ -213,9 +213,13 @@ $(window).scroll(function() { // Событие скроллинга
     else $('.scroll').removeClass('scroll--active');
 });
 
+/*
+
 $('.scroll').on('click', function() {
      // Событие при клике на якорь (скроллинг в самый верх)
     $('html, body').animate({
         scrollTop: 0
     }, 500, 'swing');
 });
+
+*/

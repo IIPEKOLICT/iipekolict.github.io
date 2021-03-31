@@ -13,7 +13,7 @@
     color: $primary;
     border-radius: 50%;
     box-shadow: 0 0 $base 2px $primary;
-    cursor: pointer;
+    //cursor: pointer;
     opacity: 0;
     visibility: hidden;
     transform: translateY($base*4);
@@ -29,6 +29,12 @@
         transition: $trans;
     }
     */
+
+    &__svg {
+        width: inherit;
+        height: inherit;
+        z-index: 101;
+    }
 
     &__path {
         fill: none;

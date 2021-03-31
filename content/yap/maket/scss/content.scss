@@ -78,6 +78,7 @@
             //width: min-content;
             flex-grow: 0;
             max-width: calc(50% - 80px);
+            object-fit: fill;
         }
     }
 
