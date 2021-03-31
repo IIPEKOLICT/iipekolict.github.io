@@ -70,6 +70,23 @@ exports.cleanAll = series(
     tasks.cleanBuild
 )
 
+exports.load = series(
+    tasks.cleanSrc,
+    tasks.cleanServer,
+    tasks.load,
+    parallel(
+        tasks.html, 
+        tasks.compileSass, 
+        tasks.compileStylus, 
+        tasks.js,
+        tasks.font,
+        tasks.img,
+        tasks.svg
+    ),
+    tasks.injectLinks,
+    watcher
+)
+
 exports.start = series(
     tasks.cleanServer,
     parallel(

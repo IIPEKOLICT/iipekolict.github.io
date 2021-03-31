@@ -1,6 +1,7 @@
 const   srcDir      = 'dev/src/',
         serverDir   = 'dev/server/',
         buildDir    = 'content/yap/maket/',
+        loadDir     = 'content/yap/maket/',
 
         htmlDir     = '',
         cssDir      = 'css/',
@@ -55,5 +56,6 @@ module.exports = {
         html: serverDir + htmlDir + htmlFiles,
         css: serverDir + cssDir + cssFiles,
         js: serverDir + jsDir + jsFiles
-    }
+    },
+    load: loadDir + allFiles
 }
