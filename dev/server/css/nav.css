@@ -23,6 +23,7 @@
 }
 
 .nav {
+  /* Блок с навигацией по странице */
   padding: 15px 110px 15px 0;
   height: 40px;
   display: -webkit-box;
@@ -39,6 +40,7 @@
 }
 
 .nav__item {
+  /* Пункт навигации */
   margin: 0 10px;
   padding: 0 5px;
   text-align: center;
@@ -52,6 +54,7 @@
 }
 
 .nav__item__primary {
+  /* Кнопка заказать звонок */
   margin-left: 40px;
   width: 200px;
   background-color: #2a1d17;

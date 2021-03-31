@@ -124,10 +124,10 @@ car_1.on('mouseout', function() { // Если мышь не над 1 карус�
 
 car_2.on('mouseout', function() { // Если мышь не над 2 каруселью
     clicker_2 = true; // Включение автокликера 2 карусели
-    let itemNumber_2 = Math.round(pos_2 / -itemWidth_2());
+    let factItem_2 = Math.round(pos_2 / -itemWidth_2());
      // Вычисление текущей фактической позиции
 
-    if (i_backup % 6 != itemNumber_2) i = itemNumber_2
+    if (i_backup % 6 != factItem_2) i = factItem_2
     else i = i_backup;
     /*
     Если сохраненное значение счетчика не совпадает с позицией
@@ -166,7 +166,7 @@ $(document).ready(function() { // При загрузке страницы
     }, 2000);
 });
 
-// TODO: НАВИГАЦИЯ ИЗ ШАПКИ
+// TODO: ПЛАВНЫЙ ПЕРЕХОД ПО ССЫЛКАМ В ПРЕДЕЛАХ СТРАНИЦЫ 
 
 $('a[href^="#"]').on('click', function(e) {
      // При нажатии всех ссылок, у которых в href есть символ #
@@ -180,17 +180,8 @@ $('a[href^="#"]').on('click', function(e) {
 
 // Заливка обводки якоря пропорционально скроллу по оси Х
 
-/*
-
-const   path = $('.scroll__svg__path'), // Обводка (элемент)
-        length = path.get(0).getTotalLength(); // Ее длина
-
-*/
-
 const   path = $('.scroll__path'), // Обводка (элемент)
         length = path.get(0).getTotalLength();// * Math.PI; // Ее длина
-
-        //console.log(path.get(0).getTotalLength());
 
 path.css('stroke-dasharray', `${length} ${length}`); // Вид пунктирной обводки
 path.css('transition', 'stroke-dashoffset 20ms'); // Анимация заливки обводки
@@ -212,14 +203,3 @@ $(window).scroll(function() { // Событие скроллинга
         $('.scroll').addClass('scroll--active');
     else $('.scroll').removeClass('scroll--active');
 });
-
-/*
-
-$('.scroll').on('click', function() {
-     // Событие при клике на якорь (скроллинг в самый верх)
-    $('html, body').animate({
-        scrollTop: 0
-    }, 500, 'swing');
-});
-
-*/

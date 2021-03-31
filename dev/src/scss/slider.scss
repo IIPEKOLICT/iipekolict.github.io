@@ -2,7 +2,7 @@
 
 @import '_lib';
 
-.slider {
+.slider { /* Обертка слайдера */
     height: $base*120;
     position: relative;
 
@@ -10,13 +10,13 @@
         height: $base*93;
     }
 
-    &__track {
+    &__track { /* Трек слайдера, на котором располагаются слайды */
         height: inherit;
         display: flex;
         transition: $trans;
     }
 
-    &__item {
+    &__item { /* Слайд карусели */
         padding-top: $base*32;
         padding-left: $base*42;
         min-width: 100%;
@@ -28,13 +28,13 @@
             padding-left: $base*22;
         }
         
-        &__container {
+        &__container { /* Контейнер для слайдов */
             height: inherit;
             overflow: hidden;
         }
     }
 
-    &__btn {
+    &__btn { /* Общие стили кнопок вперед/назад */
         margin: 0 $base*6;
         height: 0;
         width: 0;
@@ -43,12 +43,12 @@
         cursor: pointer;
         transition: $trans;
 
-        &:disabled {
-            //opacity: 0;
+        &:disabled { /* Стили отключенной кнопки */
+            opacity: 0;
             visibility: hidden;
         }
 
-        &__prev {
+        &__prev { /* Кнопка назад */
             border-right: $base*4 solid $primary;
 
             &:hover {
@@ -56,7 +56,7 @@
             }
         }
 
-        &__next {
+        &__next { /* Кнопка вперед */
             border-left: $base*4 solid $primary;
 
             &:hover {
@@ -64,7 +64,7 @@
             }
         }
 
-        &__container {
+        &__container { /* Контейнер для кнопок */
             @extend %fullSize;
             top: 0;
             position: absolute;
@@ -75,7 +75,7 @@
         }
     }
 
-    &__ind {
+    &__ind { /* Индикатор активного слайда */
         margin: 12px $base;
         width: $base*2;
         height: $base*2;
@@ -90,11 +90,11 @@
             height: $base;
         }
 
-        &--active {
+        &--active { /* Активный индикатор */
             background-color: white;
         }
 
-        &__container {
+        &__container { /* Контейнер для индикаторов */
             @extend %fullSize;
             bottom: 0;
             position: absolute;
@@ -106,14 +106,14 @@
     }
 }
 
-/* TODO: 1 карусель */
+/* TODO: Только 1 карусель */
 
 #car-1 {
     & .slider__item {
-        &:first-of-type {
+        &:first-of-type { /* Фон 1 слайда */
             background: url(../img/header-door.jpg) no-repeat;
         }
-        &:last-of-type {
+        &:last-of-type { /* Фон 2 слайда */
             background: url(../img/header-books.jpg) no-repeat;
         }
 
@@ -127,7 +127,7 @@
         }
     }
 
-    .h4 {
+    .h4 { /* Второстепенный текст на слайдах */
         margin-top: $base*5;
 
         @media (min-width: 560px) and (max-width: 1250px) {

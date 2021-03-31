@@ -2,7 +2,7 @@
 
 @import '_lib';
 
-.input {
+.input { /* Дефолтные стили инпутов */
     margin-bottom: $base*4;
     height: $base*7;
     width: 100%;
@@ -17,11 +17,11 @@
         width: $base*40;
     }
 
-    &__time {
+    &__time { /* Инпут времени */
         margin-bottom: 0;
     }
 
-    &__submit {
+    &__submit { /* Кнопка для отправки данных */
         margin-top: $base*4;
         width: $base*40;
         height: $base*8;
@@ -54,7 +54,7 @@
 /* TODO: лейблы */
 
 .label {
-    &__phone {
+    &__phone { /* Лейбл для инпутов телефонного номера */
         display: inline-block;
 
         #form &__375,
@@ -63,7 +63,7 @@
             width: $base*8;
         }
 
-        #form &__375 {
+        #form &__375 { /* Спан +375 */
             font-weight: bold;
             line-height: 27px;
 
@@ -72,7 +72,7 @@
             }
         }
 
-        #form &__pre {
+        #form &__pre { /* 2х-значный преффикс номера */
             text-align: center;
 
             @media (max-width: 560px) {
@@ -80,7 +80,7 @@
             }
         }
 
-        &__number {
+        &__number { /* Сам номер */
             width:  $base*52.9;
 
             @media (min-width: 560px) and (max-width: 1250px) {
@@ -93,7 +93,7 @@
         }
     }
 
-    &__time {
+    &__time { /* Лейбл для инпута времени */
         color: #424141;
         font-size: 11px;
         line-height: $base*3;

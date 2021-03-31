@@ -3,6 +3,7 @@
 /* TODO: блок отзывов */
 
 .review {
+  /* Блок с отзывами */
   margin-top: 70px;
   padding: 55px 165px 0;
   width: 1240px;
@@ -28,6 +29,7 @@
 }
 
 .review .slider__item {
+  /* Колонка с отзывом, именем автора и картинкой */
   padding-top: 30px;
   padding-left: 0;
   width: 190px;
@@ -48,10 +50,20 @@
 }
 
 .review .slider__item__container {
+  /* Контейнер для 2 карусели */
   width: 100%;
 }
 
+.review .slider__track {
+  /* Трек, на котором находятся каолонки с отзывами */
+}
+
+.review__header {
+  /* Заголовок */
+}
+
 .review__img {
+  /* Картинка-изображение автора отзыва */
   margin-bottom: 5px;
   width: 100px;
   height: 100px;
@@ -60,10 +72,12 @@
 }
 
 .review__author {
+  /* Его имя */
   margin-bottom: 15px;
 }
 
 .review__text {
+  /* Текст отзыва */
   padding: 25px 0;
   height: 220px;
   border-top: 1px solid rgba(153, 152, 152, 0.4);
@@ -83,11 +97,6 @@
 @media (min-width: 1250px) {
   .review .slider__item {
     height: auto;
-    /*
-            &:not(:last-of-type) {
-                padding-right: $base*10; 
-            }
-            */
   }
 
   .review .slider__track {

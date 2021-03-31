@@ -2,7 +2,7 @@
 
 @import '_lib';
 
-.form {
+.form { /* Блок с формой для заказа звонка */
     padding: $base*11 $base*31 $base*12 $base*22;
     display: flex;
     flex-direction: column;
@@ -21,7 +21,7 @@
         padding: $base*4 0;
     }
 
-    &__wrapper {
+    &__wrapper { /* Контейнер для формы и картинки гугл-карт */
         margin-top: $base*20;
         width: $base*248;
         height: $base*116;
@@ -49,14 +49,14 @@
         }
     }
 
-    &__img {
+    &__img { /* Картинка гугл-карт */
         @media (max-width: 1250px) {
             width: 100%;
             height: auto;
         }
     }
 
-    &__header {
+    &__header { /* Заголовок формы */
         padding-bottom: $base*5;
 
         @media (min-width: 560px) {

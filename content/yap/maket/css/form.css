@@ -3,6 +3,7 @@
 /* TODO: блок с формой */
 
 .form {
+  /* Блок с формой для заказа звонка */
   padding: 55px 155px 60px 110px;
   display: -webkit-box;
   display: -webkit-flex;
@@ -18,6 +19,7 @@
 }
 
 .form__wrapper {
+  /* Контейнер для формы и картинки гугл-карт */
   margin-top: 100px;
   width: 1240px;
   height: 580px;
@@ -29,7 +31,12 @@
   color: black;
 }
 
+.form__img {
+  /* Картинка гугл-карт */
+}
+
 .form__header {
+  /* Заголовок формы */
   padding-bottom: 25px;
 }
 

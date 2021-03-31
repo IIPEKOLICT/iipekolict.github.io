@@ -2,7 +2,7 @@
 
 @import '_lib';
 
-.scroll {
+.scroll { /* Контейнер для якоря, также ссылка на верхний элемент страницы */
     @extend %center;
     right: $base*6;
     bottom: $base*6;
@@ -13,60 +13,46 @@
     color: $primary;
     border-radius: 50%;
     box-shadow: 0 0 $base 2px $primary;
-    //cursor: pointer;
     opacity: 0;
     visibility: hidden;
     transform: translateY($base*4);
     transition: $trans;
     z-index: 100;
 
-    /*
-    &__svg__path {
-        fill: none;
-        stroke: $accent;
-        stroke-width: 6px;
-        box-sizing: border-box;
-        transition: $trans;
-    }
-    */
-
-    &__svg {
+    &__svg { /* Виев-порт свг-картинки якоря */
         width: inherit;
         height: inherit;
         z-index: 101;
     }
 
-    &__path {
+    &__path { /* Обводка свг */
         fill: none;
         stroke: $accent;
         stroke-width: 6px;
-        //box-sizing: border-box;
-        //transition: $trans;
     }
 
-    &__g {
+    &__g { /* Группа, изображающая стрелочку */
         stroke: $primary;
     }
 
-    &__line {
+    &__line { /* Линия в стрелочке */
         fill: none;
         stroke-width: 6px;
     }
 
-    &__polygon {
+    &__polygon { /* Треугольник в сттрелочке */
         fill: $primary;
     }
 
-    &--active {
+    &--active { /* Якорь, когда активен */
         opacity: .5;
         visibility: visible;
         transform: translateY(0);
 
-        &:hover {
-            //color: $accent;
+        &:hover { /* Якорь активен и на него наведена мышь */
             opacity: 1;
 
-            .scroll__g {
+            .scroll__g { /* Стрелочка окрашивается в синий */
                 stroke: $accent;
             }
 
@@ -74,12 +60,5 @@
                 fill: $accent;
             }
         }
-    }
-
-    &::before {
-        //@extend %fullSize, %center;
-        //content: '🠕';
-        //position: absolute;
-        //font-size: $base*6;
     }
 }

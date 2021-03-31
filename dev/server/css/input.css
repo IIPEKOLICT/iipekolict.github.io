@@ -3,6 +3,7 @@
 /* TODO: inputы в форме */
 
 .input {
+  /* Дефолтные стили инпутов */
   margin-bottom: 20px;
   height: 35px;
   width: 100%;
@@ -11,10 +12,12 @@
 }
 
 .input__time {
+  /* Инпут времени */
   margin-bottom: 0;
 }
 
 .input__submit {
+  /* Кнопка для отправки данных */
   margin-top: 20px;
   width: 200px;
   height: 40px;
@@ -54,6 +57,7 @@
 /* TODO: лейблы */
 
 .label__phone {
+  /* Лейбл для инпутов телефонного номера */
   display: inline-block;
 }
 
@@ -64,19 +68,23 @@
 }
 
 #form .label__phone__375 {
+  /* Спан +375 */
   font-weight: bold;
   line-height: 27px;
 }
 
 #form .label__phone__pre {
+  /* 2х-значный преффикс номера */
   text-align: center;
 }
 
 .label__phone__number {
+  /* Сам номер */
   width: 264.5px;
 }
 
 .label__time {
+  /* Лейбл для инпута времени */
   color: #424141;
   font-size: 11px;
   line-height: 15px;

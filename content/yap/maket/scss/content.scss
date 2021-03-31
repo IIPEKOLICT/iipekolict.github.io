@@ -2,7 +2,7 @@
 
 @import '_lib';
 
-.content {
+.content { /* Блок с текстом и преимуществами дверей */
     padding: $base*11 0 $base*6 $base*22;
     display: flex;
     flex-direction: column;
@@ -32,7 +32,7 @@
         padding: 0;
     }
 
-    &__wrapper {
+    &__wrapper { /* Обертка блоков с дверями */
         width: $base*248;
         height: $base*114;
         display: flex;
@@ -65,24 +65,21 @@
         }
     }
 
-    &__img {
+    &__img { /* Изображения дверей (балконные, входные и межкомнатные) */
         @media (max-width: 800px) {
             width: 100%;
             height: auto;
             order: -1;
         }
 
-        /* FIXME: фикс расширения картинок */
-
         @media (min-width: 800px) and (max-width: 1250px) {
-            //width: min-content;
             flex-grow: 0;
             max-width: calc(50% - 80px);
             object-fit: fill;
         }
     }
 
-    &__block {
+    &__block { /* Заголовок и абзац про тип двери */
         @media (min-width: 560px) and (max-width: 800px) {
             padding-top: $base*6;
         }
@@ -106,11 +103,11 @@
         }
     }
 
-    &__dignity {
+    &__dignity { /* Блок с достоинствами дверей (3 кружочка) */
         display: flex;
         list-style: none;
 
-        &__item {
+        &__item { /* Достоинство двери */
             @extend %center;
             width: $base*20 - 4px;
             height: $base*20 - 4px;

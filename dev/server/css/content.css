@@ -19,6 +19,7 @@
 }
 
 .content {
+  /* Блок с текстом и преимуществами дверей */
   padding: 55px 0 30px 110px;
   display: -webkit-box;
   display: -webkit-flex;
@@ -41,6 +42,7 @@
 }
 
 .content__wrapper {
+  /* Обертка блоков с дверями */
   width: 1240px;
   height: 570px;
   display: -webkit-box;
@@ -54,7 +56,11 @@
 }
 
 .content__img {
-  /* FIXME: фикс расширения картинок */
+  /* Изображения дверей (балконные, входные и межкомнатные) */
+}
+
+.content__block {
+  /* Заголовок и абзац про тип двери */
 }
 
 .content__block__text {
@@ -64,6 +70,7 @@
 }
 
 .content__dignity {
+  /* Блок с достоинствами дверей (3 кружочка) */
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -72,6 +79,7 @@
 }
 
 .content__dignity__item {
+  /* Достоинство двери */
   width: 96px;
   height: 96px;
   text-align: center;

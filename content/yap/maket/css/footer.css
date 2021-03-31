@@ -22,6 +22,7 @@
 }
 
 .footer {
+  /* Материнский блок */
   padding: 45px 100px;
   width: 100%;
   height: 260px;
@@ -34,6 +35,10 @@
           box-sizing: border-box;
   font-size: 14px;
   line-height: 20px;
+}
+
+.footer__address {
+  /* Блок с адресом и рег номерами */
 }
 
 .footer__address__item {
@@ -56,6 +61,10 @@
   display: flex;
 }
 
+.footer__phones {
+  /* Блок с номерами телефонов */
+}
+
 .footer__phones__item {
   display: -webkit-box;
   display: -webkit-flex;
@@ -69,6 +78,7 @@
 }
 
 .footer__we {
+  /* Блок с инфой про соцсети и оффиц сайт */
   margin-top: auto;
   width: 135px;
   height: 110px;
@@ -82,6 +92,7 @@
 }
 
 .footer__we__soc {
+  /* Блок с 3 картинками соцсетей */
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -89,6 +100,7 @@
 }
 
 .footer__we__soc__link {
+  /* Каждая из них */
   width: 25px;
   height: 28px;
   display: block;
@@ -108,13 +120,19 @@
 }
 
 .footer__links {
+  /* Блок-контейнер для блока с соцсетями и блока с партнерами */
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
 }
 
+.footer__partners {
+  /* Блок-контейнер с партнерами и надписью партнеры */
+}
+
 .footer__partners__container {
+  /* Блок с партнерами */
   margin-top: 10px;
   height: 125px;
   display: -webkit-box;
@@ -123,16 +141,22 @@
   display: flex;
 }
 
+.footer__partners__col {
+  /* Колонка в блоке партнеров */
+}
+
 .footer__partners__col:not(:last-child) {
   margin-right: 30px;
 }
 
 .footer__partners__col[href="lesok"] {
+  /* Лесок, особые стили */
   height: 100%;
   background-image: url(../img/lesok.jpg);
 }
 
 .footer__partners__link {
+  /* Каждый из партнеров */
   width: 150px;
   height: 50px;
   display: block;

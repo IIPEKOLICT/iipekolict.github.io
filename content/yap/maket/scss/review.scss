@@ -2,7 +2,7 @@
 
 @import '_lib';
 
-.review {
+.review { /* Блок с отзывами */
     margin-top: $base*14;
     padding: $base*11 $base*33 0;
     width: $base*248;
@@ -26,7 +26,7 @@
         padding: $base*4 0;
     }
 
-    .slider__item {
+    .slider__item { /* Колонка с отзывом, именем автора и картинкой */
         padding-top: $base*6;
         padding-left: 0;
         width: $base*38;
@@ -37,11 +37,6 @@
 
         @media (min-width: 1250px) {
             height: auto;
-            /*
-            &:not(:last-of-type) {
-                padding-right: $base*10; 
-            }
-            */
         }
 
         @media (min-width: 560px) and (max-width: 1250px) {
@@ -57,7 +52,7 @@
             padding: 0 calc(50% - 95px);
         }
 
-        &__container {
+        &__container { /* Контейнер для 2 карусели */
             width: 100%;
 
             @media (min-width: 560px) and (max-width: 1250px) {
@@ -69,7 +64,7 @@
         }
     }
 
-    .slider__track {
+    .slider__track { /* Трек, на котором находятся каолонки с отзывами */
         @media (min-width: 560px) and (max-width: 1250px) {
             flex-wrap: wrap;
             justify-content: space-between;
@@ -81,13 +76,13 @@
         }
     }
 
-    &__header {
+    &__header { /* Заголовок */
         @media (min-width: 560px) and (max-width: 1250px) {
             margin-top: $base*6;
         }
     }
 
-    &__img {
+    &__img { /* Картинка-изображение автора отзыва */
         margin-bottom: $base;
         width: $base*20;
         height: $base*20;
@@ -95,11 +90,11 @@
         border-radius: 50%;
     }
 
-    &__author {
+    &__author { /* Его имя */
         margin-bottom: $base*3;
     }
 
-    &__text {
+    &__text { /* Текст отзыва */
         padding: $base*5 0;
         height: $base*44;
         border-top: 1px solid rgba(153,152,152,.4);

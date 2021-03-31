@@ -18,6 +18,7 @@
 }
 
 .scroll {
+  /* Контейнер для якоря, также ссылка на верхний элемент страницы */
   right: 30px;
   bottom: 30px;
   width: 60px;
@@ -37,43 +38,40 @@
   -o-transition: 0.3s ease-out;
   transition: 0.3s ease-out;
   z-index: 100;
-  /*
-    &__svg__path {
-        fill: none;
-        stroke: $accent;
-        stroke-width: 6px;
-        box-sizing: border-box;
-        transition: $trans;
-    }
-    */
 }
 
 .scroll__svg {
+  /* Виев-порт свг-картинки якоря */
   width: inherit;
   height: inherit;
   z-index: 101;
 }
 
 .scroll__path {
+  /* Обводка свг */
   fill: none;
   stroke: #42a5f6;
   stroke-width: 6px;
 }
 
 .scroll__g {
+  /* Группа, изображающая стрелочку */
   stroke: rgba(135, 134, 134, 0.7);
 }
 
 .scroll__line {
+  /* Линия в стрелочке */
   fill: none;
   stroke-width: 6px;
 }
 
 .scroll__polygon {
+  /* Треугольник в сттрелочке */
   fill: rgba(135, 134, 134, 0.7);
 }
 
 .scroll--active {
+  /* Якорь, когда активен */
   opacity: .5;
   visibility: visible;
   -webkit-transform: translateY(0);
@@ -82,10 +80,12 @@
 }
 
 .scroll--active:hover {
+  /* Якорь активен и на него наведена мышь */
   opacity: 1;
 }
 
 .scroll--active:hover .scroll__g {
+  /* Стрелочка окрашивается в синий */
   stroke: #42a5f6;
 }
 

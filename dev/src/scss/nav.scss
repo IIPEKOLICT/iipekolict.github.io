@@ -2,7 +2,7 @@
 
 @import '_lib';
 
-.nav {
+.nav { /* Блок с навигацией по странице */
     padding: $base*3 $base*22 $base*3 0;
     height: $base*8;
     display: flex;
@@ -29,7 +29,7 @@
         font-size: 16px;
     }
 
-    &__item {
+    &__item { /* Пункт навигации */
         @extend %center, %link;
         margin: 0 $base*2;
         padding: 0 $base;
@@ -56,7 +56,7 @@
             background-color: rgba(255,255,255,.3);
         }
 
-        &__primary {
+        &__primary { /* Кнопка заказать звонок */
             margin-left: $base*8;
             width: $base*40;
             background-color: #2a1d17;
