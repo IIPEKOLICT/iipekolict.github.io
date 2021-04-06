@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2 задание по JS</title>
+    <!-- css -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- !css -->
+</head>
+<body class="body">
+    <!-- Форма для ввода данных -->
+    <form action="">
+        <div>
+            <label for="name">Наименование товара:</label>
+            <input type="text" name="name" id="name" required>
+        </div>
+        <div>
+            <label for="quantity">Количество:</label>
+            <input type="number" name="quantity" id="quantity" required>
+            <span>шт.</span>
+        </div>
+        <div>
+            <label for="cost">Стоимость 1 шт:</label>
+            <input type="number" name="cost" id="cost" required>
+            <span>руб.</span>
+        </div>
+        
+        <div>
+            <button id="reset">Очистить таблицу</button>
+            <button id="calc">Добавить в заказ</button>
+        </div>
+    </form>
+    <!-- Форма для ввода данных -->
+
+    <!-- Блок с таблицей -->
+    <div id="rez"></div>
+    <!-- Блок с таблицей -->
+
+    <!-- js -->
+    <script src="js/jq-min.js"></script>
+    <script src="js/script.js"></script>
+    <!-- !js -->
+</body>
+</html>

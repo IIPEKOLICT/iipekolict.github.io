@@ -181,15 +181,14 @@ $('a[href^="#"]').on('click', function(e) {
 // Заливка обводки якоря пропорционально скроллу по оси Х
 
 const   path = $('.scroll__path'), // Обводка (элемент)
-        length = path.get(0).getTotalLength();// * Math.PI; // Ее длина
+        length = path.get(0).getTotalLength(); // Полная длина обводки
 
-path.css('stroke-dasharray', `${length} ${length}`); // Вид пунктирной обводки
-path.css('transition', 'stroke-dashoffset 20ms'); // Анимация заливки обводки
+path.css('stroke-dasharray', `${length} ${length}`).css('transition', 'stroke-dashoffset 20ms');
+ // Вид пунктирной обводки и анимация заливки обводки
 
 const dashOffset = () => { // Функция-заливатор
-    const   height = $(document).height() - $(window).height(),
-            dash = length - ($(window).scrollTop() * length / height);
-
+    let dash = length * (1 - ($(window).scrollTop() / ($(document).height() - $(window).height())));
+        // Расчет на основании текущей позиции скролла отступа незакрашенной части обводки
     path.css('stroke-dashoffset', dash); // Отступ незакрашенной части обводки
 }
 

@@ -1,0 +1,89 @@
+%center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    @extend %center;
+}
+
+form {
+    @extend %center;
+    background-color: darkgrey;
+
+    div {
+        width: 600px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+
+        label {
+            padding: 0 10px;
+            flex-basis: 30%;
+        }
+
+        input[type="text"],
+        input[type="number"] {
+            height: 30px;
+            flex-basis: 50%;
+        }
+
+        span {
+            padding: 10px;
+        }
+
+        button {
+            margin: 0 auto;
+            width: 240px;
+            height: 30px;
+            background-color: #888;
+            border: 2px solid white;
+            border-radius: 15px;
+            cursor: pointer;
+
+            &:hover {
+                color: green;
+            }
+        }
+    }
+}
+
+table {
+    width: 600px;
+    background-color: #aaa;
+
+    caption {
+        padding: 10px;
+        color: darkslateblue;
+        text-transform: capitalize;
+        font-weight: bold;
+    }
+    td {
+        padding: 5px;
+        width: 25%;
+        text-align: center;
+    }
+    th {
+        padding: 10px;
+    }
+    tr {
+        &:nth-child(odd) {
+            background-color: lightblue;
+        }
+
+        &:nth-child(even) {
+            background-color: lightgreen;
+        }
+    }
+}
+
+#summary td {
+    color: darkred;
+    font-weight: bold;
+}

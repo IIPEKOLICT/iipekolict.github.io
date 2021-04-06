@@ -1,7 +1,7 @@
 const   srcDir      = 'dev/src/',
         serverDir   = 'dev/server/',
-        buildDir    = 'content/yap/maket/',
-        loadDir     = 'content/yap/maket/',
+        buildDir    = 'content/yap/js2/',
+        loadDir     = 'content/yap/js2/',
 
         htmlDir     = '',
         cssDir      = 'css/',

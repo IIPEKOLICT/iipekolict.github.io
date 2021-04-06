@@ -1,0 +1,17 @@
+div {
+    background-color: grey;
+}
+
+span {
+    display: flex;
+    flex-direction: column;
+    padding-left: 10px;
+
+    & & {
+        padding-left: 20px;
+
+        span {
+            padding-left: 30px;
+        }
+    }
+}
