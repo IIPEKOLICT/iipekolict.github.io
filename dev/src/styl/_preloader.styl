@@ -1,0 +1,40 @@
+// MODULE: Прелоадер
+
+@import 'nib'
+
+@require '_vars.styl'
+@require '_mixins.styl'
+
+.preloader
+    display none
+    fs(10)
+    z-index 4
+
+    &--shown
+        top 0
+        dimen(100%, 100%)
+        flexi(row, center, center)
+        position fixed
+        background-color --v.mainBg
+
+    &__text
+        padding 1em
+    
+    &__animation
+        dimen(5em, 5em)
+        border 0.5em solid transparent
+        border-bottom 0.5em solid --v.accent
+        border-left 0.5em solid --v.accent
+        border-radius 100%
+        transform translate(-50%, -50%)
+        animation loader-animation 1s infinite linear
+        
+        @keyframes loader-animation
+            0% {
+                -webkit-transform: rotate(0);
+                transform: rotate(0);
+            }
+            100% {
+                -webkit-transform: rotate(360deg);
+                transform: rotate(360deg);
+            }

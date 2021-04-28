@@ -7,7 +7,10 @@ const   gulp            = require('gulp'),
 
 function compileStylus() {
     return gulp
-        .src(patchs.src.styl)
+        .src([
+            patchs.src.styl,
+            '!' + patchs.src.modules
+        ])
         .pipe(stylus({
             use: nib()
         }))

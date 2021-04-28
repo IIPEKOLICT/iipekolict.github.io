@@ -8,7 +8,8 @@ function compileSass() {
     return gulp
         .src([
                 patchs.src.scss,
-                patchs.src.sass
+                patchs.src.sass,
+                '!' + patchs.src.modules
         ])
         .pipe(sass())
         .pipe(gcmq())

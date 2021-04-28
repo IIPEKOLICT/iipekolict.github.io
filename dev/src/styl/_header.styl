@@ -1,0 +1,71 @@
+// MODULE: Шапка
+
+@import 'nib'
+
+@require '_vars.styl'
+@require '_mixins.styl'
+
+// BLOCK: Шапка
+
+.header
+    dimen(100%, b(15))
+    flexi(column, center)
+    position fixed
+    background-color --v.mainBg
+    border-bottom 2px solid --v.divider
+    box-sizing border-box
+    fs(1.5)
+    transition $trans
+    z-index 3
+
+    &__top
+        display none
+
+        .header__name
+            fs(3)
+
+        .header__time
+            flexi(column, center, center)
+
+            &__group
+                display inline-flex
+
+    &__bottom
+        dimen(auto, b(15))
+        flexi(row, space-between, center)
+
+        .header__name
+            flexi(row, center, center)
+            flex-wrap wrap
+
+        .header__time__group
+            display inline-flex
+
+    &__icon
+        margin 0 b(2)
+        padding b(2.5) - 2px
+        dimen(b(10),b(10))
+        flexi(row)
+        position relative
+        border 2px solid transparent
+        border-radius 50%
+        cursor pointer
+        transition $trans
+
+        &:hover
+            border-color --v.accent
+            transform scale(.8)
+
+        &--invisible
+            margin b(2.5) b(4.5)
+            padding 0
+            dimen(b(10), 0)
+            border 0
+            
+            .header__icon__svg
+                display none
+
+        &__svg
+            dimen(inherit, inherit)
+
+        

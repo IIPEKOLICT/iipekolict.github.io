@@ -1,0 +1,64 @@
+// MODULE: Миксины и функции
+
+// BLOCK: Миксины
+
+b(a)
+    $base * a
+
+fs(a)
+    font-size a * $fs
+
+dimen(w, h = auto)
+    width w
+    height h
+
+flexi(a, b = flex-start, c = flex-start)
+    display flex
+    flex-direction a
+    justify-content b
+    align-items c
+
+// BLOCK: Порты CSS-переменных
+
+vars = {
+    accent:     var(--accent_color, #42a5f6)                        #42a5f6
+    oAccent:    var(--accent_opacity-color, rgba(66,165,246,0.5))   rgba(66,165,246,0.5)
+    mainColor:  var(--main_text-color, #d8d8d8)                     #d8d8d8
+    mainBg:     var(--main_bg-color, #000)                          #000
+    divider:    var(--divider_color, #1e1e1e)                       #1e1e1e
+    iconBg:     var(--icon_bg-color, #141414)                       #141414
+    hoverBg:    var(--hover_bg-color, #1a1a1a)                      #1a1a1a
+    secColor:   var(--secondary_text-color, #898989)                #898989
+    secBg:      var(--secondary_bg-color, #1f1f1f)                  #1f1f1f
+    switchNA:   var(--switch_nonactive-color, #3d3d3d)              #3d3d3d
+    switchBNA:  var(--switch-before_nonactive-color, #d1d1d1)       #d1d1d1
+    radioNA:    var(--radio_nonactive-color, #c7c7c7)               #c7c7c7
+
+    oneuiH:     var(--oneui_header-height, 47.5vh)                    47.5vh
+    pcFS:       var(--pc_font-size, 2vh)                              2vh
+    tabFS:      var(--tab_font-size, 2vw)                             2vw
+    mobFS:      var(--mob_font-size, 3vw)                             3vw
+}
+--v = {}
+
+for name, par in vars
+    --v[name] = par[0]
+    --v[name + '_r'] = par[1]
+
+// BLOCK: Медиа-выражения
+
+sizes = {
+    xs: 0       768
+    sm: 769     1023
+    md: 1024    1440
+    lg: 1441    1920
+    xl: 1921    99999999
+}
+--q = {}
+
+for name, pxs in sizes
+    min = '(min-width:' + pxs[0] + 'px)'
+    max = '(max-width:' + pxs[1] + 'px)'
+    --q[name] = min + ' and ' + max
+    --q['-' + name] = 'screen and ' + max
+    --q[name + '-'] = 'screen and ' + min

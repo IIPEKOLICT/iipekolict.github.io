@@ -1,0 +1,36 @@
+// MODULE: Ядро (минимальный необходимый набор функций)
+
+@import 'nib'
+
+@require '_vars.styl'
+@require '_mixins.styl'
+
+// BLOCK: Базовые стили
+
+body
+    color --v.mainColor
+    background-color --v.mainBg
+    font-family 'Open Sans', sans-serif
+
+.link--hidden
+    dimen(100%, 100%)
+    position absolute
+    text-decoration none
+    color inherit
+
+.text
+    &--accent
+        color --v.accent
+    &--red
+        color #eb0028
+
+// BLOCK: Импорты модулей-разделов
+
+@import '_root.styl'
+@import '_font.styl'
+@import '_preloader.styl'
+@import '_header.styl'
+@import '_main.styl'
+@import '_section.styl'
+@import '_menu.styl'
+@import '_dialog.styl'

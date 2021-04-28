@@ -1,10 +1,11 @@
 const   srcDir      = 'dev/src/',
         serverDir   = 'dev/server/',
-        buildDir    = 'content/yap/js2/',
-        loadDir     = 'content/yap/js2/',
+        buildDir    = 'content/new/',
+        loadDir     = 'content/new/',
 
         htmlDir     = '',
         cssDir      = 'css/',
+        cssLibsDir  = 'css-libs/',
         scssDir     = 'scss/',
         sassDir     = 'sass/',
         stylDir     = 'styl/',
@@ -19,20 +20,24 @@ const   srcDir      = 'dev/src/',
         scssFiles   = '**/*.scss',
         sassFiles   = '**/*.sass',
         stylFiles   = '**/*.styl',
-        jsFiles     = '**/*.js';
+        jsFiles     = '**/*.js',
+        moduleFiles = '**/_*';
 
 module.exports = {
     src: {
         dir: srcDir,
 
         html: srcDir + htmlDir + htmlFiles,
+        cssLibs: srcDir + cssLibsDir + cssFiles,
         scss: srcDir + scssDir + scssFiles,
         sass: srcDir + sassDir + sassFiles,
         styl: srcDir + stylDir + stylFiles,
         js: srcDir + jsDir + jsFiles,
         font: srcDir + fontDir + allFiles,
         img: srcDir + imgDir + allFiles,
-        svg: srcDir + svgDir + allFiles
+        svg: srcDir + svgDir + allFiles,
+        
+        modules: srcDir + moduleFiles,
     },
     server: {
         dir: serverDir,

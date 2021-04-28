@@ -3,7 +3,10 @@ const   gulp    = require('gulp'),
 
 function js() {
     return gulp
-        .src(patchs.src.js)
+        .src([
+            patchs.src.js,
+            '!' + patchs.src.modules
+        ])
         .pipe(gulp.dest(patchs.server.js));
 }
 

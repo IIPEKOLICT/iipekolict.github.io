@@ -1,0 +1,36 @@
+// MODULE: Меню
+
+@import 'nib'
+
+@require '_vars.styl'
+@require '_mixins.styl'
+
+// BLOCK: 
+
+.menu
+    flexi(row, center, center)
+    
+    @media --q.sm-
+        flex-wrap wrap
+
+    @media --q.-sm
+        flexi(column)
+        //flex-wrap nowrap
+
+    &-item
+        @media --q.sm-
+            //
+
+        @media --q.-sm
+            padding b(2)
+            dimen(100%, b(10))
+            flexi(row, flex-start, center)
+            //border-radius b(5)
+            box-sizing border-box
+
+        &:hover
+            background-color --v.hoverBg
+            border-color --v.accent
+
+            @media --q.-sm
+                border-color transparent

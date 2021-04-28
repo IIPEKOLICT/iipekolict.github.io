@@ -3,7 +3,7 @@
 
 npm i gulp-cli
 npm init
-npm i --save-dev gulp gulp-sass gulp-stylus gulp-autoprefixer browser-sync del nib gulp-group-css-media-queries require-dir gulp-inject
+npm i --save-dev gulp gulp-sass gulp-stylus gulp-autoprefixer browser-sync del nib gulp-group-css-media-queries require-dir gulp-inject gulp-concat gulp-clean-css
 npm install stylelint gulp-stylelint --save-dev
 npm install stylelint-config-standard stylelint-config-recess-order gulp-stylelint --save-dev
 
@@ -35,8 +35,11 @@ function watcher() {
         },
         notify: false
     });
-    watch([patchs.src.html]).on('change', 
-        series(tasks.html, tasks.injectLinks, browserSync.reload)
+    watch(patchs.src.html).on('change', 
+        series(tasks.html, /*tasks.injectLinks,*/ browserSync.reload)
+    );
+    watch(patchs.src.cssLibs).on('change', 
+        series(tasks.cssLibs, browserSync.reload)
     );
     watch(patchs.src.styl).on('change', 
         series(tasks.compileStylus, browserSync.reload)
@@ -75,7 +78,8 @@ exports.load = series(
     tasks.cleanServer,
     tasks.load,
     parallel(
-        tasks.html, 
+        tasks.html,
+        tasks.cssLibs,
         tasks.compileSass, 
         tasks.compileStylus, 
         tasks.js,
@@ -83,14 +87,15 @@ exports.load = series(
         tasks.img,
         tasks.svg
     ),
-    tasks.injectLinks,
+    //tasks.injectLinks,
     watcher
 )
 
 exports.start = series(
     tasks.cleanServer,
     parallel(
-        tasks.html, 
+        tasks.html,
+        tasks.cssLibs,
         tasks.compileSass, 
         tasks.compileStylus, 
         tasks.js,
@@ -98,7 +103,7 @@ exports.start = series(
         tasks.img,
         tasks.svg
     ),
-    tasks.injectLinks,
+    //tasks.injectLinks,
     watcher
 );
 
@@ -106,7 +111,8 @@ exports.build = series(
     tasks.cleanBuild,
     tasks.cleanServer,
     parallel(
-        tasks.html, 
+        tasks.html,
+        tasks.cssLibs,
         tasks.compileSass, 
         tasks.compileStylus, 
         tasks.js,
@@ -114,6 +120,6 @@ exports.build = series(
         tasks.img,
         tasks.svg
     ),
-    tasks.injectLinks,
+    //tasks.injectLinks,
     tasks.build
 )
