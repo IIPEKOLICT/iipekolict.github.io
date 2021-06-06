@@ -1,7 +1,7 @@
 const   srcDir      = 'dev/src/',
         serverDir   = 'dev/server/',
-        buildDir    = 'content/new/',
-        loadDir     = 'content/new/',
+        buildDir    = 'content/yap/js2-old/',
+        loadDir     = 'content/yap/js2-old/',
 
         htmlDir     = '',
         cssDir      = 'css/',

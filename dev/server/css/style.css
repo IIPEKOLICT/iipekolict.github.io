@@ -1,0 +1,101 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+form {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: -webkit-gradient(linear, left top, left bottom, from(lightblue), to(grey));
+  background: -o-linear-gradient(lightblue, grey);
+  background: linear-gradient(lightblue, grey);
+  font-size: 15px;
+}
+
+form div {
+  width: 500px;
+  height: 30px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+form div label {
+  padding: 0 20px;
+  -webkit-flex-basis: 30%;
+      -ms-flex-preferred-size: 30%;
+          flex-basis: 30%;
+}
+
+form div span {
+  padding: 5px;
+}
+
+form div input[type="text"],
+form div input[type="number"] {
+  height: 20px;
+  -webkit-flex-basis: 50%;
+      -ms-flex-preferred-size: 50%;
+          flex-basis: 50%;
+}
+
+form div button {
+  margin: 0 auto;
+  cursor: pointer;
+}
+
+form div button:hover {
+  color: red;
+}
+
+table {
+  margin: auto;
+  width: 400px;
+  background-color: grey;
+}
+
+table caption {
+  padding: 10px;
+  color: blue;
+  text-transform: capitalize;
+  font-weight: bold;
+}
+
+table td {
+  padding: 5px;
+  width: 25%;
+  text-align: center;
+}
+
+table th {
+  padding: 10px;
+}
+
+table tr:nth-child(odd) {
+  background-color: lightyellow;
+}
+
+table tr:nth-child(even) {
+  background-color: lightblue;
+}
+
+#summary td {
+  color: red;
+  font-weight: bold;
+}
